@@ -1,0 +1,63 @@
+<svg width="1200" height="920" viewBox="0 0 1200 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="70" x2="1050" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="212" y1="164" x2="930" y2="604" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="180" y1="420" x2="1010" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67E8F9"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <filter id="shadow" x="62" y="52" width="1076" height="816" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="32"/>
+      <feGaussianBlur stdDeviation="34"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0209375 0 0 0 0 0.0797396 0 0 0 0 0.140347 0 0 0 0.42 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_5"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_5" result="shape"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="130" y="88" width="940" height="680" rx="40" fill="url(#bg)"/>
+    <rect x="131" y="89" width="938" height="678" rx="39" stroke="rgba(255,255,255,0.1)"/>
+  </g>
+  <circle cx="236" cy="178" r="7" fill="#38BDF8"/>
+  <circle cx="268" cy="178" r="7" fill="#334155"/>
+  <circle cx="300" cy="178" r="7" fill="#334155"/>
+  <rect x="184" y="156" width="168" height="44" rx="22" fill="#0B1220"/>
+  <rect x="184" y="156" width="168" height="44" rx="22" stroke="#164E63"/>
+  <path d="M198 542H1010" stroke="#1E293B" stroke-width="2"/>
+  <path d="M198 650H1010" stroke="#1E293B" stroke-width="2"/>
+  <path d="M198 326H1010" stroke="#1E293B" stroke-width="2"/>
+  <path d="M238 244V688" stroke="#1E293B" stroke-width="2"/>
+  <path d="M407 244V688" stroke="#1E293B" stroke-width="2"/>
+  <path d="M576 244V688" stroke="#1E293B" stroke-width="2"/>
+  <path d="M745 244V688" stroke="#1E293B" stroke-width="2"/>
+  <path d="M914 244V688" stroke="#1E293B" stroke-width="2"/>
+  <path d="M238 604C309 594 343 500 407 476C471 452 521 516 576 514C641 512 666 408 745 394C826 379 870 482 914 466C952 453 985 351 1010 308" stroke="url(#signal)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M238 604C309 594 343 500 407 476C471 452 521 516 576 514C641 512 666 408 745 394C826 379 870 482 914 466C952 453 985 351 1010 308" stroke="#22D3EE" stroke-opacity="0.28" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="407" cy="476" r="10" fill="#0F172A" stroke="#67E8F9" stroke-width="4"/>
+  <circle cx="576" cy="514" r="10" fill="#0F172A" stroke="#67E8F9" stroke-width="4"/>
+  <circle cx="745" cy="394" r="10" fill="#0F172A" stroke="#67E8F9" stroke-width="4"/>
+  <circle cx="914" cy="466" r="10" fill="#0F172A" stroke="#67E8F9" stroke-width="4"/>
+  <rect x="194" y="244" width="200" height="122" rx="28" fill="#0B1220" stroke="#1E293B" stroke-width="2"/>
+  <text x="226" y="288" fill="#94A3B8" font-family="Arial, sans-serif" font-size="24" font-weight="700">DoE Coverage</text>
+  <text x="226" y="332" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="52" font-weight="700">92%</text>
+  <rect x="442" y="244" width="264" height="122" rx="28" fill="#0B1220" stroke="#1E293B" stroke-width="2"/>
+  <text x="474" y="288" fill="#94A3B8" font-family="Arial, sans-serif" font-size="24" font-weight="700">Reliability Window</text>
+  <text x="474" y="332" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="52" font-weight="700">48 months</text>
+  <rect x="756" y="244" width="224" height="122" rx="28" fill="#0B1220" stroke="#1E293B" stroke-width="2"/>
+  <text x="788" y="288" fill="#94A3B8" font-family="Arial, sans-serif" font-size="24" font-weight="700">Field Risk</text>
+  <text x="788" y="332" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="52" font-weight="700">Low</text>
+  <rect x="194" y="706" width="268" height="24" rx="12" fill="#0B1220"/>
+  <rect x="194" y="706" width="268" height="24" rx="12" fill="url(#accent)" fill-opacity="0.85"/>
+  <rect x="482" y="706" width="208" height="24" rx="12" fill="#0B1220"/>
+  <rect x="482" y="706" width="208" height="24" rx="12" fill="#38BDF8" fill-opacity="0.45"/>
+  <rect x="710" y="706" width="300" height="24" rx="12" fill="#0B1220"/>
+  <rect x="710" y="706" width="300" height="24" rx="12" fill="#E2E8F0" fill-opacity="0.16"/>
+</svg>

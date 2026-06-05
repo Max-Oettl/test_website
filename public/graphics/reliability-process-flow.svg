@@ -1,0 +1,32 @@
+<svg width="1400" height="360" viewBox="0 0 1400 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="line" x1="210" y1="180" x2="1180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="360" rx="44" fill="#0F172A"/>
+  <rect x="48" y="48" width="1304" height="264" rx="32" stroke="#1E293B" stroke-width="2"/>
+  <path d="M260 180H1140" stroke="url(#line)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="260" cy="180" r="42" fill="#22D3EE"/>
+  <circle cx="260" cy="180" r="24" fill="#0F172A"/>
+  <circle cx="553" cy="180" r="42" fill="#1E293B" stroke="#38BDF8" stroke-width="6"/>
+  <circle cx="846" cy="180" r="42" fill="#1E293B" stroke="#38BDF8" stroke-width="6"/>
+  <circle cx="1140" cy="180" r="42" fill="#1E293B" stroke="#38BDF8" stroke-width="6"/>
+  <text x="182" y="88" fill="#67E8F9" font-family="Arial, sans-serif" font-size="22" font-weight="700">01</text>
+  <text x="168" y="118" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="28" font-weight="700">Ziele definieren</text>
+  <text x="132" y="272" fill="#94A3B8" font-family="Arial, sans-serif" font-size="20">Anforderungen, Umgebungen,</text>
+  <text x="154" y="300" fill="#94A3B8" font-family="Arial, sans-serif" font-size="20">Kosten und Risiko priorisieren</text>
+  <text x="472" y="88" fill="#67E8F9" font-family="Arial, sans-serif" font-size="22" font-weight="700">02</text>
+  <text x="438" y="118" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="28" font-weight="700">Schwachstellen erkennen</text>
+  <text x="430" y="272" fill="#94A3B8" font-family="Arial, sans-serif" font-size="20">Ausfallmechanismen, FMEA,</text>
+  <text x="458" y="300" fill="#94A3B8" font-family="Arial, sans-serif" font-size="20">FTA und Lastfaelle strukturieren</text>
+  <text x="767" y="88" fill="#67E8F9" font-family="Arial, sans-serif" font-size="22" font-weight="700">03</text>
+  <text x="712" y="118" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="28" font-weight="700">Tests und DoE planen</text>
+  <text x="722" y="272" fill="#94A3B8" font-family="Arial, sans-serif" font-size="20">Versuche effizient aufsetzen,</text>
+  <text x="716" y="300" fill="#94A3B8" font-family="Arial, sans-serif" font-size="20">statistisch auswerten, absichern</text>
+  <text x="1066" y="88" fill="#67E8F9" font-family="Arial, sans-serif" font-size="22" font-weight="700">04</text>
+  <text x="1023" y="118" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="28" font-weight="700">Nachweise fuehren</text>
+  <text x="1017" y="272" fill="#94A3B8" font-family="Arial, sans-serif" font-size="20">Dokumentation, Felddaten und</text>
+  <text x="1018" y="300" fill="#94A3B8" font-family="Arial, sans-serif" font-size="20">Entscheidungsgrundlagen verdichten</text>
+</svg>
