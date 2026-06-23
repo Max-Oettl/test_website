@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title">
+  <title id="title">ZEISS</title>
+  <rect width="240" height="240" fill="#1c238b"/>
+  <ellipse cx="120" cy="292" rx="168" ry="82" fill="#000"/>
+  <text
+    x="120"
+    y="121"
+    fill="#fff"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="83"
+    font-weight="900"
+    letter-spacing="-2"
+    text-anchor="middle"
+  >
+    ZEISS
+  </text>
+</svg>

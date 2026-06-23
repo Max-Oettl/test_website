@@ -1,0 +1,28 @@
+<svg width="960" height="520" viewBox="0 0 960 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="520" rx="42" fill="#F8FAFC"/>
+  <rect x="76" y="68" width="808" height="348" rx="28" fill="white" stroke="#CBD5E1"/>
+  <path d="M154 354H816M154 354V118" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+  <g stroke="#E2E8F0">
+    <path d="M154 306H816M154 258H816M154 210H816M154 162H816"/>
+    <path d="M250 118V354M346 118V354M442 118V354M538 118V354M634 118V354M730 118V354"/>
+  </g>
+  <path d="M174 336C278 332 355 317 429 282C506 245 567 201 632 166C697 131 748 120 816 112" stroke="#0F172A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M174 342C280 350 386 324 484 284C587 241 674 203 816 176" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 12"/>
+  <path d="M174 330C270 314 347 308 423 278C520 240 609 152 816 86" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 12"/>
+  <g fill="#0F172A">
+    <circle cx="230" cy="326" r="5"/>
+    <circle cx="286" cy="319" r="5"/>
+    <circle cx="350" cy="301" r="5"/>
+    <circle cx="412" cy="286" r="5"/>
+    <circle cx="474" cy="258" r="5"/>
+    <circle cx="546" cy="218" r="5"/>
+    <circle cx="618" cy="174" r="5"/>
+    <circle cx="704" cy="135" r="5"/>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <text x="122" y="112" font-size="14" fill="#475569" transform="rotate(-90 122 112)">Ausfallwahrscheinlichkeit</text>
+    <text x="742" y="386" font-size="14" fill="#475569">Zeit / Belastung</text>
+    <text x="118" y="454" font-size="22" font-weight="700" fill="#0F172A">Lebensdauerprognosen brauchen Daten, Modell und Unsicherheit.</text>
+    <text x="118" y="484" font-size="15" fill="#475569">Die gestrichelten Linien zeigen: Ohne Konfidenzbereich ist eine Prognose nur scheinbar präzise.</text>
+  </g>
+</svg>

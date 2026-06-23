@@ -1,0 +1,31 @@
+<svg width="960" height="520" viewBox="0 0 960 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="520" rx="42" fill="#F8FAFC"/>
+  <rect x="68" y="70" width="380" height="330" rx="28" fill="white" stroke="#CBD5E1"/>
+  <g stroke="#E2E8F0" stroke-width="1">
+    <path d="M128 114V354M188 114V354M248 114V354M308 114V354M368 114V354"/>
+    <path d="M104 150H412M104 198H412M104 246H412M104 294H412M104 342H412"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#475569">
+    <text x="108" y="104">Versuchsraum</text>
+    <text x="110" y="382">Faktor A</text>
+    <text x="363" y="382">hoch</text>
+    <text x="78" y="350" transform="rotate(-90 78 350)">Faktor B</text>
+  </g>
+  <circle cx="128" cy="342" r="7" fill="#0F172A"/>
+  <circle cx="248" cy="246" r="7" fill="#22D3EE" stroke="#0E7490" stroke-width="2"/>
+  <circle cx="368" cy="150" r="7" fill="#0F172A"/>
+  <circle cx="128" cy="150" r="7" fill="#0F172A"/>
+  <circle cx="368" cy="342" r="7" fill="#22D3EE" stroke="#0E7490" stroke-width="2"/>
+  <circle cx="248" cy="150" r="7" fill="#0F172A"/>
+  <circle cx="128" cy="246" r="7" fill="#22D3EE" stroke="#0E7490" stroke-width="2"/>
+  <circle cx="368" cy="246" r="7" fill="#0F172A"/>
+  <rect x="512" y="70" width="380" height="330" rx="28" fill="white" stroke="#CBD5E1"/>
+  <path d="M562 330C610 250 668 290 712 232C754 177 797 190 842 126" stroke="#0F172A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M562 354H844M562 354V118" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M566 302C622 284 702 248 842 166" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 10"/>
+  <g font-family="Arial, sans-serif">
+    <text x="542" y="104" font-size="14" fill="#475569">Antwortfläche</text>
+    <text x="604" y="438" font-size="20" font-weight="700" fill="#0F172A">DoE reduziert Versuchsschleifen</text>
+    <text x="604" y="468" font-size="15" fill="#475569">Faktoren, Wechselwirkungen und robuste Einstellungen werden gemeinsam sichtbar.</text>
+  </g>
+</svg>

@@ -1,0 +1,1035 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr>
+      <p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/><a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr>
+      <p:sp>
+<p:nvSpPr><p:cNvPr id="2" name="Background"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="0" y="0"/><a:ext cx="12191695" cy="6858000"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="F5F8FA"/></a:solidFill>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="3" name="Header"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="0" y="0"/><a:ext cx="12191695" cy="1353312"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="061B2D"/></a:solidFill>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="4" name="Header cyan block"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8778240" y="0"/><a:ext cx="3413455" cy="1353312"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="0E7490"><a:alpha val="90000"/></a:srgbClr></a:solidFill>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="5" name="Logo chip"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="10104120" y="256032"/><a:ext cx="1417320" cy="475488"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+</p:sp>
+<p:pic>
+<p:nvPicPr><p:cNvPr id="6" name="RelTest logo"/><p:cNvPicPr/><p:nvPr/></p:nvPicPr>
+<p:blipFill>
+  <a:blip r:embed="rId2"/>
+  <a:stretch><a:fillRect/></a:stretch>
+</p:blipFill>
+<p:spPr>
+  <a:xfrm><a:off x="10222992" y="329184"/><a:ext cx="1179576" cy="320040"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+</p:spPr>
+</p:pic>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="7" name="SEO eyebrow"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="566928" y="201168"/><a:ext cx="4937760" cy="219456"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="900" b="1">
+      <a:solidFill><a:srgbClr val="73D4EA"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>SEO-Einordnung der aktuellen Website</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="900"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="8" name="SEO title"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="566928" y="475488"/><a:ext cx="7818120" cy="438912"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="2600" b="1">
+      <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+      <a:latin typeface="Aptos Display"/>
+    </a:rPr>
+    <a:t>SEO-Stand der alten Website</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="2600"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="9" name="SEO subtitle"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="585216" y="932688"/><a:ext cx="7635240" cy="228600"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="1000">
+      <a:solidFill><a:srgbClr val="C7D8E6"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Wertvoller Bestand mit klaren Verbesserungshebeln für den Relaunch.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="1000"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="10" name="SEO left panel"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="658368" y="1627632"/><a:ext cx="3063240" cy="4443984"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="061B2D"/></a:solidFill>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="11" name="SEO left title"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="914400" y="1883664"/><a:ext cx="2578608" cy="329184"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="1700" b="1">
+      <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+      <a:latin typeface="Aptos Display"/>
+    </a:rPr>
+    <a:t>Ausgangslage</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="1700"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="12" name="SEO left intro"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="914400" y="2304288"/><a:ext cx="2487168" cy="640080"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="1000">
+      <a:solidFill><a:srgbClr val="C7D8E6"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Die alte Website ist kein SEO-Nullpunkt. Sie besitzt bestehende Signale, muss aber kontrolliert migriert werden.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="1000"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="13" name="Strength dot Stärke"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="877824" y="3200400"/><a:ext cx="109728" cy="109728"/></a:xfrm>
+  <a:prstGeom prst="ellipse"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="19B5CE"/></a:solidFill>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="14" name="Strength label Stärke"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="1097280" y="3127248"/><a:ext cx="2468880" cy="164592"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="900" b="1">
+      <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Stärke</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="900"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="15" name="Strength text Stärke"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="1097280" y="3364992"/><a:ext cx="2240280" cy="237744"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="700">
+      <a:solidFill><a:srgbClr val="C7D8E6"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Domain, Inhalte und Themenbreite sind vorhanden.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="700"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="16" name="Strength dot Risiko"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="877824" y="3886200"/><a:ext cx="109728" cy="109728"/></a:xfrm>
+  <a:prstGeom prst="ellipse"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="19B5CE"/></a:solidFill>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="17" name="Strength label Risiko"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="1097280" y="3813048"/><a:ext cx="2468880" cy="164592"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="900" b="1">
+      <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Risiko</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="900"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="18" name="Strength text Risiko"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="1097280" y="4050792"/><a:ext cx="2240280" cy="237744"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="700">
+      <a:solidFill><a:srgbClr val="C7D8E6"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Technische und strukturelle Schwächen können Sichtbarkeit kosten.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="700"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="19" name="Strength dot Chance"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="877824" y="4572000"/><a:ext cx="109728" cy="109728"/></a:xfrm>
+  <a:prstGeom prst="ellipse"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="19B5CE"/></a:solidFill>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="20" name="Strength label Chance"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="1097280" y="4498848"/><a:ext cx="2468880" cy="164592"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="900" b="1">
+      <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Chance</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="900"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="21" name="Strength text Chance"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="1097280" y="4736592"/><a:ext cx="2240280" cy="237744"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="700">
+      <a:solidFill><a:srgbClr val="C7D8E6"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Next.js kann Performance, Struktur und Mehrsprachigkeit verbessern.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="700"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="22" name="SEO left conclusion"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="896112" y="5230368"/><a:ext cx="2359152" cy="493776"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="0E7490"/></a:solidFill>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="23" name="SEO left conclusion text"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="1078992" y="5376672"/><a:ext cx="2011680" cy="182880"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="center"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="800" b="1">
+      <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Nicht pauschal ersetzen, sondern SEO-sicher migrieren.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="800"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="24" name="SEO issue title"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4069080" y="1627632"/><a:ext cx="5303520" cy="292608"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="1500" b="1">
+      <a:solidFill><a:srgbClr val="061B2D"/></a:solidFill>
+      <a:latin typeface="Aptos Display"/>
+    </a:rPr>
+    <a:t>Wichtigste Schwächen und mögliche Folgen</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="1500"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="25" name="SEO issue subtitle"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4069080" y="1956816"/><a:ext cx="6949440" cy="219456"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="800">
+      <a:solidFill><a:srgbClr val="50667A"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Diese Punkte sind keine Showstopper, aber sie begründen, warum der Relaunch SEO-geplant erfolgen muss.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="800"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="26" name="SEO issue 25%"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4069080" y="2359152"/><a:ext cx="3602736" cy="850392"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="DCE7EF"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="27" name="SEO issue marker 25%"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4233672" y="2532888"/><a:ext cx="530352" cy="493776"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="EAF6FA"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="BFE5EE"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="28" name="SEO issue metric 25%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4279392" y="2660904"/><a:ext cx="438912" cy="146304"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="center"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="900" b="1">
+      <a:solidFill><a:srgbClr val="0E7490"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>25%</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="900"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="29" name="SEO issue title 25%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4892040" y="2496312"/><a:ext cx="2578608" cy="201168"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="1000" b="1">
+      <a:solidFill><a:srgbClr val="061B2D"/></a:solidFill>
+      <a:latin typeface="Aptos Display"/>
+    </a:rPr>
+    <a:t>Keine Meta-Descriptions</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="1000"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="30" name="SEO issue consequence 25%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4892040" y="2752344"/><a:ext cx="2542032" cy="310896"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="700">
+      <a:solidFill><a:srgbClr val="40566B"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Google erzeugt Snippets selbst; Suchergebnis weniger überzeugend.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="700"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="31" name="SEO issue 10%"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="7882128" y="2359152"/><a:ext cx="3602736" cy="850392"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="DCE7EF"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="32" name="SEO issue marker 10%"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8046720" y="2532888"/><a:ext cx="530352" cy="493776"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="EAF6FA"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="BFE5EE"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="33" name="SEO issue metric 10%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8092440" y="2660904"/><a:ext cx="438912" cy="146304"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="center"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="900" b="1">
+      <a:solidFill><a:srgbClr val="0E7490"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>10%</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="900"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="34" name="SEO issue title 10%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8705088" y="2496312"/><a:ext cx="2578608" cy="201168"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="1000" b="1">
+      <a:solidFill><a:srgbClr val="061B2D"/></a:solidFill>
+      <a:latin typeface="Aptos Display"/>
+    </a:rPr>
+    <a:t>H1-Struktur uneinheitlich</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="1000"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="35" name="SEO issue consequence 10%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8705088" y="2752344"/><a:ext cx="2542032" cy="310896"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="700">
+      <a:solidFill><a:srgbClr val="40566B"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Hauptthema schwächer; Seite wirkt für Suche weniger sauber.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="700"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="36" name="SEO issue 22%"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4069080" y="3438144"/><a:ext cx="3602736" cy="850392"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="DCE7EF"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="37" name="SEO issue marker 22%"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4233672" y="3611880"/><a:ext cx="530352" cy="493776"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="EAF6FA"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="BFE5EE"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="38" name="SEO issue metric 22%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4279392" y="3739896"/><a:ext cx="438912" cy="146304"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="center"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="900" b="1">
+      <a:solidFill><a:srgbClr val="0E7490"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>22%</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="900"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="39" name="SEO issue title 22%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4892040" y="3575304"/><a:ext cx="2578608" cy="201168"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="1000" b="1">
+      <a:solidFill><a:srgbClr val="061B2D"/></a:solidFill>
+      <a:latin typeface="Aptos Display"/>
+    </a:rPr>
+    <a:t>Kein hreflang</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="1000"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="40" name="SEO issue consequence 22%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4892040" y="3831336"/><a:ext cx="2542032" cy="310896"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="700">
+      <a:solidFill><a:srgbClr val="40566B"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Sprachvarianten werden schlechter zugeordnet.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="700"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="41" name="SEO issue Map"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="7882128" y="3438144"/><a:ext cx="3602736" cy="850392"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="DCE7EF"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="42" name="SEO issue marker Map"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8046720" y="3611880"/><a:ext cx="530352" cy="493776"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="EAF6FA"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="BFE5EE"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="43" name="SEO issue metric Map"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8092440" y="3739896"/><a:ext cx="438912" cy="146304"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="center"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="900" b="1">
+      <a:solidFill><a:srgbClr val="0E7490"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Map</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="900"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="44" name="SEO issue title Map"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8705088" y="3575304"/><a:ext cx="2578608" cy="201168"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="1000" b="1">
+      <a:solidFill><a:srgbClr val="061B2D"/></a:solidFill>
+      <a:latin typeface="Aptos Display"/>
+    </a:rPr>
+    <a:t>Sitemap enthält Neben-URLs</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="1000"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="45" name="SEO issue consequence Map"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8705088" y="3831336"/><a:ext cx="2542032" cy="310896"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="700">
+      <a:solidFill><a:srgbClr val="40566B"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Archive, Login und alte Seiten verbrauchen Crawl-Aufmerksamkeit.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="700"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="46" name="SEO issue LCP"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4069080" y="4517136"/><a:ext cx="3602736" cy="850392"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="DCE7EF"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="47" name="SEO issue marker LCP"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4233672" y="4690872"/><a:ext cx="530352" cy="493776"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="EAF6FA"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="BFE5EE"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="48" name="SEO issue metric LCP"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4279392" y="4818888"/><a:ext cx="438912" cy="146304"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="center"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="900" b="1">
+      <a:solidFill><a:srgbClr val="0E7490"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>LCP</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="900"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="49" name="SEO issue title LCP"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4892040" y="4654296"/><a:ext cx="2578608" cy="201168"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="1000" b="1">
+      <a:solidFill><a:srgbClr val="061B2D"/></a:solidFill>
+      <a:latin typeface="Aptos Display"/>
+    </a:rPr>
+    <a:t>Schwere Startseite</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="1000"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="50" name="SEO issue consequence LCP"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4892040" y="4910328"/><a:ext cx="2542032" cy="310896"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="700">
+      <a:solidFill><a:srgbClr val="40566B"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Langsamer erster Eindruck; Risiko für Core Web Vitals und Anfragen.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="700"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="51" name="SEO issue 20%"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="7882128" y="4517136"/><a:ext cx="3602736" cy="850392"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="DCE7EF"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="52" name="SEO issue marker 20%"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8046720" y="4690872"/><a:ext cx="530352" cy="493776"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="EAF6FA"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="BFE5EE"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="53" name="SEO issue metric 20%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8092440" y="4818888"/><a:ext cx="438912" cy="146304"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="center"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="900" b="1">
+      <a:solidFill><a:srgbClr val="0E7490"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>20%</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="900"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="54" name="SEO issue title 20%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8705088" y="4654296"/><a:ext cx="2578608" cy="201168"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="1000" b="1">
+      <a:solidFill><a:srgbClr val="061B2D"/></a:solidFill>
+      <a:latin typeface="Aptos Display"/>
+    </a:rPr>
+    <a:t>Bilder ohne Alt-Text</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="1000"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="55" name="SEO issue consequence 20%"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="8705088" y="4910328"/><a:ext cx="2542032" cy="310896"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="700">
+      <a:solidFill><a:srgbClr val="40566B"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Bildinhalte für Suchmaschine und Screenreader schlechter verständlich.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="700"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="56" name="SEO bottom bar"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4069080" y="5797296"/><a:ext cx="7415784" cy="310896"/></a:xfrm>
+  <a:prstGeom prst="roundRect"><a:avLst/></a:prstGeom>
+  <a:solidFill><a:srgbClr val="EAF6FA"/></a:solidFill>
+  <a:ln w="9525"><a:solidFill><a:srgbClr val="BFE5EE"/></a:solidFill></a:ln>
+</p:spPr>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="57" name="SEO bottom note"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="4261104" y="5879592"/><a:ext cx="7022592" cy="118872"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="center"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="700" b="1">
+      <a:solidFill><a:srgbClr val="0E7490"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Einordnung: Bestehende Signale erhalten, technische Schwächen beheben und neue Seitenstruktur SEO-gerecht aufbauen.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="700"/>
+</a:p>
+</p:txBody>
+</p:sp>
+<p:sp>
+<p:nvSpPr><p:cNvPr id="58" name="SEO footer note"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr>
+<p:spPr>
+  <a:xfrm><a:off x="658368" y="6446520"/><a:ext cx="9509760" cy="219456"/></a:xfrm>
+  <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+  <a:noFill/>
+  <a:ln><a:noFill/></a:ln>
+</p:spPr>
+<p:txBody>
+  <a:bodyPr wrap="square" anchor="t"><a:spAutoFit/></a:bodyPr>
+  <a:lstStyle/>
+  <a:p>
+  <a:pPr algn="left"/>
+  <a:r>
+    <a:rPr lang="de-DE" sz="800">
+      <a:solidFill><a:srgbClr val="50667A"/></a:solidFill>
+      <a:latin typeface="Aptos"/>
+    </a:rPr>
+    <a:t>Botschaft für den Termin: Die alte Website hat SEO-Wert, aber der Relaunch bietet klare Chancen, wenn URL-Migration, Inhalte und Technik sauber vorbereitet werden.</a:t>
+  </a:r>
+  <a:endParaRPr lang="de-DE" sz="800"/>
+</a:p>
+</p:txBody>
+</p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr>
+</p:sld>

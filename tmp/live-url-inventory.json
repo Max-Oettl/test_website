@@ -1,0 +1,583 @@
+﻿[
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/",
+        "Title":  "Reliability Engineering - Zuverlässigkeit made in Germany",
+        "H1":  "Reliability Engineering made in Germany RelTest Solutions",
+        "Description":  "Lassen Sie sich von unserem Reliability Engineering inspirieren! Wir gestalten mit Ihnen die Zuverlässigkeitslösungen von morgen."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitstechnik/planung/",
+        "Title":  "Zuverlässigkeitsplanung I Planung, Beratung und Umsetzung",
+        "H1":  "Zuverlässigkeitsplanung Anforderungen ganzheitlich definieren",
+        "Description":  "Wir unterstützen Sie bei Ihrer Zuverlässigkeitsplanung I In diesem Schritt werden die zu erfüllenden Zuverlässigkeitsanforderungen definiert."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitstechnik/absicherung/",
+        "Title":  "Zuverlässigkeitsabsicherung I Immer auf der sicheren Seite",
+        "H1":  "Zuverlässigkeitsabsicherung Anforderungen nachhaltig erfüllen",
+        "Description":  "Im Bereich Zuverlässigkeitsabsicherung stellen wir sicher, dass die Zuverlässigkeit Ihres Produkts den gesamten Lebenszyklus besteht."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/coaching/",
+        "Title":  "Coaching im Zuverlässigkeitsmanagement I RelTest Solutions",
+        "H1":  "Coaching im Zuverlässigkeitsmanagement",
+        "Description":  "In unserem Zuverlässigkeitsmanagement-Coaching gehen wir flexibel auf Ihre Problemstellung und Ihrer Vorkenntnisse ein."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/ueber-uns/dr-ing-kevin-lucan/",
+        "Title":  "Dr.-Ing. Kevin Lucan von RelTest Solutions",
+        "H1":  "Dr.-Ing. Kevin Lucan",
+        "Description":  ""
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/aktuelles/",
+        "Title":  "Aktuelles - Bleiben Sie informiert!",
+        "H1":  "Bleiben Sie informiert",
+        "Description":  "Hier finden Sie aktuelle Informationen und Beiträge rund um die Themen Zuverlässigkeitstechnik und Zuverlässigkeitsmanagement."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/seminare/entwicklung-und-absicherung-elektronischer-komponenten/",
+        "Title":  "Seminar: Entwicklung und Absicherung elektronischer Komponenten",
+        "H1":  "Seminar \u0026#8211; Entwicklung und Absicherung elektronischer Komponenten",
+        "Description":  "Basis-Seminar für Einsteiger und Profis zum Thema: Zuverlässige Entwicklung, Erprobung und Produktion von elektronischen Komponenten und Systemen."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitstechnik/schwachstellenanalyse/",
+        "Title":  "Schwachstellenanalyse I Zuverlässigkeitsverbesserung - RelTest Solutions",
+        "H1":  "Schwachstellenanalyse und Zuverlässigkeitsverbesserung",
+        "Description":  "Wir unterstützen Sie bei der frühzeitigen Erkennung von Schwachstellen sowie der kontinuierlichen Zuverlässigkeitsverbesserung."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitstechnik/prognosen/",
+        "Title":  "Zuverlässigkeitsprognose I Wir schauen mit Ihnen in die Zukunft",
+        "H1":  "Zuverlässigkeitsprognose Produktzuverlässigkeit für jedes Ereignis",
+        "Description":  "Die Zuverlässigkeitsprognose hat zum Ziel, anhand eines Lebensdauermodells, die Zuverlässigkeit Ihres Produkts zu bewerten."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitstechnik/erprobung/",
+        "Title":  "Zuverlässigkeitserprobung in der Produktentwicklung",
+        "H1":  "Zuverlässigkeitserprobung gezielte Tests für fundierte Erkenntnisse",
+        "Description":  "Bei einer Zuverlässigkeitserprobung entwickeln wir Erprobungsstrategien für eine zuverlässige Produktentwicklung."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/about-us/dr-ing-kevin-lucan/",
+        "Title":  "Dr.-Ing. Kevin Lucan (Founder) - RelTest Solutions GmbH",
+        "H1":  "Dr.-Ing. Kevin Lucan",
+        "Description":  "Dr.-Ing. Kevin Lucan works as a consultant and trainer in the field of reliability engineering and is the founder of RelTest Solutions GmbH."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/credentials/",
+        "Title":  "References and Case Studies",
+        "H1":  "An extract from our references",
+        "Description":  "Find out about our references and get further, interesting information based on our practice-related case studies or case studies."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/news/",
+        "Title":  "News - Stay informed!",
+        "H1":  "Stay informed",
+        "Description":  "Here you will find current information and articles on the topics of reliability engineering and reliability management."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-engineering/reliability-planning/",
+        "Title":  "Reliability planning I Planning, consulting and implementation",
+        "H1":  "Reliability Planning",
+        "Description":  "We are experts in reliability planning and define the reliability requirements to be met for you as part of your product development."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-engineering/reliability-testing/",
+        "Title":  "Reliability testing in product development",
+        "H1":  "Reliability testing",
+        "Description":  "In reliability testing, we develop customised testing strategies for you for reliable product development."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-engineering/vulnerability-analysis/",
+        "Title":  "Vulnerability analysis and reliability improvement - RelTest Solutions",
+        "H1":  "Vulnerability analysis and reliability improvement",
+        "Description":  "We support you in the early detection of weak points as well as continuous reliability improvement."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/coaching/",
+        "Title":  "Reliability management coaching I RelTest Solutions",
+        "H1":  "Coaching in reliability management",
+        "Description":  "In our reliability management coaching, we respond flexibly to your problem and your previous knowledge."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/consulting/",
+        "Title":  "Reliability Management Consulting I RelTest Solutions",
+        "H1":  "Consulting in reliability management",
+        "Description":  "Consulting in reliability management I We support you in the development of applications and individual business solutions."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-engineering/reliability-forecast/",
+        "Title":  "Reliability forecast I We look into the future with you",
+        "H1":  "Reliability Forecast",
+        "Description":  "Reliability forecast aims to assess the reliability of your product using a life cycle model."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-engineering/reliability-assurance/",
+        "Title":  "Reliability assurance I Always on the safe side",
+        "H1":  "Reliability assurance",
+        "Description":  "In the area of reliability assurance, we ensure that the reliability of your product lasts the entire life cycle."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/buch-fuer-zuverlaessigkeit-im-fahrzeug-und-maschinenbau/",
+        "Title":  "Buch für Zuverlässigkeit im Fahrzeug-und Maschinenbau - RelTest Solutions",
+        "H1":  "Buch für Zuverlässigkeit im Fahrzeug- und Maschinenbau",
+        "Description":  ""
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/maschinenbau/",
+        "Title":  "Zuverlässigkeitsmanagement für die Maschinenbau - Branche",
+        "H1":  "Zuverlässigkeitsmanagement im Maschinenbau als Garant für Ihren Erfolg",
+        "Description":  "Unser Zuverlässigkeitsmanagement für die Maschinenbau - Branche hilft Ihnen mit Coachings, Trainings und Seminaren dabei, Ihre Projektziele zu realisieren."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/ueber-uns/prof-dr-ing-bernd-bertsche/",
+        "Title":  "Prof. Dr.-Ing. Bernd Bertsche von RelTest Solutions",
+        "H1":  "Prof. Dr.-Ing. Bernd Bertsche",
+        "Description":  ""
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/about-us/prof-dr-ing-bernd-bertsche/",
+        "Title":  "Prof. Dr.-Ing. Bernd Bertsche (Founder) - RelTest Solutions GmbH",
+        "H1":  "Prof. Dr.-Ing. Bernd Bertsche",
+        "Description":  "Prof. Dr.-Ing. Bernd Bertsche (founder) is the founder of RelTest Solutions GmbH and developed the research area of reliability technology to worldwide recognition in a leading position."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/consulting/",
+        "Title":  "Consulting im Zuverlässigkeitsmanagement I RelTest Solutions",
+        "H1":  "Consulting im Zuverlässigkeitsmanagement",
+        "Description":  "Consulting im Zuverlässigkeitsmanagement I Wir unterstützen Sie bei der Entwicklung von Anwendungen und individueller Lösungen."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/design-of-experiments/consulting/",
+        "Title":  "Design of Experiments Consulting I RelTest Solutions",
+        "H1":  "Design of Experiments: Consulting",
+        "Description":  "Consulting im Bereich Design of Experiments (DOE) I Wir unterstützen Sie bei der Entwicklung von Anwendungen und individueller Lösungen"
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/design-of-experiments/coaching/",
+        "Title":  "Design of Experiments Coaching I RelTest Solution",
+        "H1":  "Design of Experiments Coaching",
+        "Description":  "In unserem Design of Experiments Coaching gehen wir flexibel auf Ihre Problemstellung und Ihrer Vorkenntnisse ein - Ihre DOE Experten"
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/design-of-experiments/training/",
+        "Title":  "Design of Experiments Trainings I RelTest Solutions",
+        "H1":  "Design of Experiments: Training",
+        "Description":  "Unser Design of Experiments Training bietet Ihnen einen optimalen Einstieg in die Welt der statistischen Versuchsplanung (DOE)."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/seminare/doe-praxisorientierte-statistische-versuchsplanung/",
+        "Title":  "Seminar: DOE – Praxisorientierte, statistische Versuchsplanung",
+        "H1":  "DOE Seminar – Praxisorientierte, statistische Versuchsplanung",
+        "Description":  "Unsere Inhouse-Seminare bieten Ihnen eine umfassende Einführung in die Grundlagen sowie die Behandlung von fortgeschrittenen Themen der DOE bzw. Design of Experiments-Thematik."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/membership-login/",
+        "Title":  "Mitglieder Anmeldung - RelTest Solutions",
+        "H1":  "",
+        "Description":  ""
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitstechnik/",
+        "Title":  "Zuverlässigkeitstechnik - Lebenszyklus erhöhen I Ausfallrisiko reduzieren",
+        "H1":  "Zuverlässigkeitstechnik essenzielle Prozesse für den ganzheitlichen Erfolg Ihrer Produkte",
+        "Description":  "Lassen Sie die Zuverlässigkeit Ihrer Produkte genaustens planen, testen und analysieren. Zuverlässigkeitstechnik I RelTest Solutions"
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/",
+        "Title":  "Unsere Zuverlässigkeitsmanagement-Leistungen im Überblick",
+        "H1":  "Zuverlässigkeitsmanagement Unsere Leistungen für Ihren Projekterfolg",
+        "Description":  "Als Dienstleister im Bereich des Zuverlässigkeitsmanagements bieten wir Ihnen individuelle Lösungen und unterstützen Sie aktiv."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/branchen/",
+        "Title":  "Branchen-Zuverlässigkeitsmanagement",
+        "H1":  "Branchen-Zuverlässigkeitsmanagement für optimierte Prozesse, höhere Qualität und geringere Kosten",
+        "Description":  "Informieren Sie sich über unsere individuellen und umfangreichen Branchenlösungen auf dem Gebiet des Zuverlässigkeitsmanagements und der Zuverlässigkeitstechnik."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/automotive/",
+        "Title":  "Zuverlässigkeitsmanagement für die Automotive - Branche",
+        "H1":  "Zuverlässigkeitsmanagement in der Automotive Branche als Erfolgsfaktor",
+        "Description":  "Unser Zuverlässigkeitsmanagement für die Automotive - Branche hilft Ihnen mit Coachings, Trainings und Seminaren dabei, Ihre Projektziele zu realisieren."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/elektronische-produkte/",
+        "Title":  "Zuverlässigkeitsmanagement für elektronische Produkte",
+        "H1":  "Das Zuverlässigkeitsmanagement als Erfolgsgarant für elektronische Produkte",
+        "Description":  "Unser Zuverlässigkeitsmanagement für elektronische Produkte hilft Ihnen mit Coachings, Trainings und Seminaren dabei, Ihre Projektziele zu realisieren."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/erneuerbare-energien/",
+        "Title":  "Zuverlässigkeitsmanagement für die Erneuerbare Energien - Branche",
+        "H1":  "Das Zuverlässigkeitsmanagement für erneuerbare Energien",
+        "Description":  "Unser Zuverlässigkeitsmanagement für die Erneuerbare Energien - Branche hilft Ihnen mit Coachings, Trainings und Seminaren dabei, Ihre Projektziele zu realisieren."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/konsumgueter/",
+        "Title":  "Zuverlässigkeitsmanagement für die Konsumgüter - Branche",
+        "H1":  "Das Zuverlässigkeitsmanagement als unverzichtbarer Erfolgsfaktor für Ihre Konsumgüter",
+        "Description":  "Unser Zuverlässigkeitsmanagement für die Konsumgüter - Branche hilft Ihnen mit Coachings, Trainings und Seminaren dabei, Ihre Projektziele zu realisieren."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/luft-und-raumfahrt/",
+        "Title":  "Zuverlässigkeitsmanagement für die Luft- und Raumfahrt - Branche",
+        "H1":  "Zuverlässigkeitsmanagement für die Luft- und Raumfahrt",
+        "Description":  "Unser Zuverlässigkeitsmanagement für die Luft- und Raumfahrt - Branche hilft Ihnen mit Coachings, Trainings und Seminaren dabei, Ihre Projektziele zu realisieren."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/medizintechnik/",
+        "Title":  "Zuverlässigkeitsmanagement für die Medizintechnik - Branche",
+        "H1":  "Das Zuverlässigkeitsmanagement in der Medizintechnik als entscheidender Faktor",
+        "Description":  "Unser Zuverlässigkeitsmanagement für die Medizintechnik - Branche hilft Ihnen mit Coachings, Trainings und Seminaren dabei, Ihre Projektziele zu realisieren."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/produktionstechnik/",
+        "Title":  "Zuverlässigkeitsmanagement für die Produktionstechnik - Branche",
+        "H1":  "Das Zuverlässigkeitsmanagement als wichtige Erfolgskomponente für die Produktionstechnik",
+        "Description":  "Unser Zuverlässigkeitsmanagement für die Produktionstechnik - Branche hilft Ihnen mit Coachings, Trainings und Seminaren dabei, Ihre Projektziele zu realisieren."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/",
+        "Title":  "Reliability Engineering - Reliability made in Germany",
+        "H1":  "Reliability Engineering made in Germany RelTest Solutions",
+        "Description":  "Let our reliability engineering inspire you! We design the reliability solutions of tomorrow with you."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-engineering/",
+        "Title":  "Reliability engineering - Increase life cycle I Reduce risk of failure",
+        "H1":  "Reliability engineering essential processes for the holistic success of your products",
+        "Description":  "As experts in the field of reliability engineering, we offer you customised solutions for planning, testing and analysing the reliability of your products."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/",
+        "Title":  "Our reliability management services at a glance",
+        "H1":  "Reliability management Our services for your project success",
+        "Description":  "As a service provider in the field of reliability management, we offer you individual solutions and actively support you."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/industries/",
+        "Title":  "Industry reliability management",
+        "H1":  "Industry related reliability management for optimized processes, higher quality and lower costs",
+        "Description":  "Find out about our individual and comprehensive industry solutions in the field of reliability management and reliability engineering."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/production-technology/",
+        "Title":  "Reliability management for production engineering - industry",
+        "H1":  "Reliability management as an important success component for production engineering",
+        "Description":  "Our reliability management for the production technology sector helps you to realise your project goals with coaching, training and seminars."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/medical/",
+        "Title":  "Reliability management for the medical technology sector",
+        "H1":  "Reliability management in medical technology as a decisive factor",
+        "Description":  "Our reliability management for the medical technology sector helps you to achieve your project goals with coaching, training and seminars."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/mechanical-engineering/",
+        "Title":  "Reliability management for the mechanical engineering sector",
+        "H1":  "Reliability management in mechanical engineering as a guarantee for your success",
+        "Description":  "Our reliability management for the mechanical engineering sector helps you to realise your project goals with coaching, training and seminars."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/aerospace/",
+        "Title":  "Reliability management for the aerospace - industry",
+        "H1":  "Reliability management for aerospace",
+        "Description":  "Our reliability management for the aerospace industry helps you to realise your project goals with coaching, training and seminars."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/consumer-goods/",
+        "Title":  "Reliability management for the consumer goods industry",
+        "H1":  "Reliability management as an indispensable success factor for your consumer goods",
+        "Description":  "Our reliability management for the consumer goods industry helps you to realise your project goals with coaching, training and seminars."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/renewable-energy/",
+        "Title":  "Reliability management for the renewable energy sector",
+        "H1":  "Reliability management for renewable energies",
+        "Description":  "Our reliability management for the renewable energy sector helps you to realise your project goals with coaching, training and seminars."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/electronic-products/",
+        "Title":  "Reliability management for electronic products",
+        "H1":  "Reliability management as a guarantee of success for electronic products",
+        "Description":  "Our reliability management for electronic products helps you realise your project goals with coaching, training and seminars."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/automotive/",
+        "Title":  "Reliability management for the automotive industry",
+        "H1":  "Reliability management in the automotive industry as a success factor",
+        "Description":  "Our reliability management for the automotive industry helps you to achieve your project goals with coaching, training and seminars."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/seminare/zuverlaessigkeit-erprobung-fuer-praktiker/",
+        "Title":  "Seminar: Zuverlässigkeit \u0026amp; Erprobung für Praktiker",
+        "H1":  "Seminar \u0026#8211; Zuverlässigkeit \u0026amp; Erprobung für Praktiker",
+        "Description":  "Das Seminar bietet Profis und Einsteigern eine umfassende, praxisorientierte Einführung in die Zuverlässigkeitstechnik und in praxisbezogene Erprobungsstrategien."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/seminars/",
+        "Title":  "Reliability management seminars I RelTest Solutions",
+        "H1":  "Seminars in reliability management",
+        "Description":  "With our practice-oriented seminars, we provide an optimal introduction to the complex world of reliability management."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/training/",
+        "Title":  "Inhouse-Trainings im Zuverlässigkeitsmanagement I RelTest Solutions",
+        "H1":  "Inhouse-Seminare und -Trainings im Zuverlässigkeitsmanagement",
+        "Description":  "Unser Zuverlässigkeitsmanagement-Training bietet Ihnen einen optimalen Einstieg in die Welt der Zuverlässigkeitstechnik und Versuchsplanung."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/reliability-management/training/",
+        "Title":  "In-house training in reliability management I RelTest Solutions",
+        "H1":  "In-house seminars and training courses in reliability management",
+        "Description":  "Our reliability management training offers you an optimal introduction to the world of reliability engineering and test planning."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/glossar/",
+        "Title":  "Glossar - RelTest Solutions",
+        "H1":  "Glossar",
+        "Description":  "In unserem Glossar Bereich finden Sie, Definitionen und Informationen zu diversen Themen im Umfeld des Reliability Engineering"
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/design-of-experiments-doe/",
+        "Title":  "Design of Experiments (DOE) - RelTest Solutions",
+        "H1":  "",
+        "Description":  ""
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/about-us/",
+        "Title":  "About us and the RelTest Solutions GmbH",
+        "H1":  "RelTest-Solutions",
+        "Description":  "\u0026quot;Reltest\u0026quot; stands for Reliability \u0026amp; Testing and represents our core competencies in the field of reliability technology."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/ueber-uns/",
+        "Title":  "Über Uns - RelTest Solutions",
+        "H1":  "RelTest-Solutions",
+        "Description":  "„Reltest“ steht für Reliability \u0026amp; Testing und repräsentiert namensgebend unsere Kernkompetenzen, in den Bereichen der Zuverlässigkeitstechnik."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/kontakt/",
+        "Title":  "Kontakt",
+        "H1":  "",
+        "Description":  "Sie haben Fragen, benötigen Informationen, Lösungen oder eine Beratung auf dem Gebiet der Zuverlässigkeitstechnik oder des Zuverlässigkeitsmanagements? Sprechen Sie uns an!"
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/en/contact/",
+        "Title":  "Contact us I RelTest Solutions",
+        "H1":  "",
+        "Description":  "Do you have questions, need information, solutions or advice in the field of reliability engineering or reliability management? Get in touch with us!"
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/datenschutz/",
+        "Title":  "Deutschsprachige Datenschutzerklärung auf reltest-solutions.com",
+        "H1":  "Datenschutzerklärung",
+        "Description":  "Deutschsprachige Datenschutzerklärung der RelTest Solutions GmbH auf reltest-solutions.com."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/zuverlaessigkeitsmanagement/seminare/",
+        "Title":  "Seminare im Zuverlässigkeitsmanagement I RelTest Solutions",
+        "H1":  "Seminare im Zuverlässigkeitsmanagement",
+        "Description":  "Mit unseren praxisorientierten Seminaren sorgen wir für einen optimalen Einstieg in die komplexe Welt des Zuverlässigkeitsmanagement."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/impressum/",
+        "Title":  "Deutschsprachiges Impressum auf reltest-solutions.com",
+        "H1":  "Impressum",
+        "Description":  "Deutschsprachiges Impressum der RelTest Solutions GmbH auf reltest-solutions.com."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/referenzen/",
+        "Title":  "Referenzen und Case-Studies (Fallstudien)",
+        "H1":  "Ein Auszug unserer Referenzen",
+        "Description":  "Informieren Sie sich über unsere Referenzen und erhalten Sie weitere, interessante Informationen auf Basis unserer praxisbezogenen Case-Studies bzw. Fallstudien."
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/karriere/werkstudentin-e-learning/",
+        "Title":  "Werkstudent:in E-Learning Content \u0026amp; Plattformpflege - RelTest Solutions",
+        "H1":  "Werkstudent:in E-Learning Content \u0026amp; Plattformpflege (m/w/d)",
+        "Description":  ""
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/karriere/",
+        "Title":  "Karriere - RelTest Solutions",
+        "H1":  "Werde Teil unseres Teams",
+        "Description":  ""
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/karriere/marketing-manager/",
+        "Title":  "Marketing Manager - RelTest Solutions",
+        "H1":  "Brand \u0026amp; Marketing Manager (m/w/d)",
+        "Description":  ""
+    },
+    {
+        "Type":  "page",
+        "Url":  "https://reltest-solutions.com/design-of-experiments/",
+        "Title":  "Design of Experience (DOE)",
+        "H1":  "Design of Experiments (DOE) – Ihr Garant für Qualität, die besteht",
+        "Description":  "Design of Experience hebt Ihre Produkte und Prozesse auf die maximale Qualitätsstufe. RelTest Solutions - Ihre DOE Experten"
+    },
+    {
+        "Type":  "post",
+        "Url":  "https://reltest-solutions.com/webinar-beschleunigte-lebensdauertests/",
+        "Title":  "Webinar Beschleunigte Lebensdauertests - RelTest Solutions",
+        "H1":  "Webinar Beschleunigte Lebensdauertests",
+        "Description":  ""
+    },
+    {
+        "Type":  "post",
+        "Url":  "https://reltest-solutions.com/kooperation-mit-holland-innovative/",
+        "Title":  "Kooperation mit Holland Innovative - RelTest Solutions",
+        "H1":  "Kooperation mit Holland Innovative",
+        "Description":  ""
+    },
+    {
+        "Type":  "post",
+        "Url":  "https://reltest-solutions.com/en/webinar-accelerated-life-testing/",
+        "Title":  "Webinar Accelerated Life Testing - RelTest Solutions",
+        "H1":  "Webinar Accelerated Life Testing",
+        "Description":  ""
+    },
+    {
+        "Type":  "post",
+        "Url":  "https://reltest-solutions.com/rams-award/",
+        "Title":  "RAMS-Award - RelTest Solutions",
+        "H1":  "RAMS-Award",
+        "Description":  ""
+    },
+    {
+        "Type":  "post",
+        "Url":  "https://reltest-solutions.com/en/rams-award-2/",
+        "Title":  "RAMS-Award - RelTest Solutions",
+        "H1":  "RAMS-Award",
+        "Description":  ""
+    },
+    {
+        "Type":  "post",
+        "Url":  "https://reltest-solutions.com/en/smart-data-the-new-approach-to-product-design-by-martin-dazer/",
+        "Title":  "Smart data: the new approach to product design by Martin Dazer - RelTest Solutions",
+        "H1":  "Smart data: the new approach to product design by Martin Dazer",
+        "Description":  ""
+    },
+    {
+        "Type":  "post",
+        "Url":  "https://reltest-solutions.com/en/cooperation-with-holland-innovative/",
+        "Title":  "Cooperation with Holland Innovative - RelTest Solutions",
+        "H1":  "Cooperation with Holland Innovative",
+        "Description":  ""
+    },
+    {
+        "Type":  "post",
+        "Url":  "https://reltest-solutions.com/unser-aktuelles-webinar-zum-thema-effiziente-lebensdauertestplanung/",
+        "Title":  "Unser aktuelles Webinar zum Thema Effiziente Lebensdauertestplanung - RelTest Solutions",
+        "H1":  "Unser aktuelles Webinar zum Thema Effiziente Lebensdauertestplanung",
+        "Description":  ""
+    },
+    {
+        "Type":  "post",
+        "Url":  "https://reltest-solutions.com/en/our-current-webinar-on-efficient-life-test-planning/",
+        "Title":  "Our current webinar on efficient life test planning - RelTest Solutions",
+        "H1":  "Our current webinar on efficient life test planning",
+        "Description":  ""
+    },
+    {
+        "Type":  "post",
+        "Url":  "https://reltest-solutions.com/smart-data-der-neue-ansatz-fuer-das-produktdesign-von-martin-dazer/",
+        "Title":  "Smart data: der neue Ansatz für das Produktdesign von Martin Dazer - RelTest Solutions",
+        "H1":  "Smart data: der neue Ansatz für das Produktdesign von Martin Dazer",
+        "Description":  ""
+    },
+    {
+        "Type":  "category",
+        "Url":  "https://reltest-solutions.com/category/a/",
+        "Title":  "A Archive - RelTest Solutions",
+        "H1":  "",
+        "Description":  ""
+    },
+    {
+        "Type":  "category",
+        "Url":  "https://reltest-solutions.com/category/cee/",
+        "Title":  "Ceeeee Archive - RelTest Solutions",
+        "H1":  "",
+        "Description":  ""
+    },
+    {
+        "Type":  "author",
+        "Url":  "https://reltest-solutions.com/author/MasterRel20/",
+        "Title":  "MasterRel20, Autor bei RelTest Solutions",
+        "H1":  "",
+        "Description":  ""
+    }
+]

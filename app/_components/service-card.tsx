@@ -8,6 +8,13 @@ type ServiceCardProps = {
   href: string;
   icon: string;
   meta: string;
+  image?: {
+    src: string;
+    alt: string;
+    label: string;
+  };
+  topics?: readonly string[];
+  ctaLabel: string;
 };
 
 export function ServiceCard({
@@ -17,7 +24,75 @@ export function ServiceCard({
   href,
   icon,
   meta,
+  image,
+  topics,
+  ctaLabel,
 }: ServiceCardProps) {
+  if (image) {
+    return (
+      <article className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl shadow-slate-200/70 transition duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-950/10">
+        <div className="relative h-44 overflow-hidden bg-slate-100">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+            className="object-cover transition duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/8 to-transparent" />
+          <span className="absolute bottom-4 left-4 rounded-full bg-white/92 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-950 shadow-sm">
+            {image.label}
+          </span>
+        </div>
+        <div className="flex flex-1 flex-col p-7">
+          <div className="flex items-center gap-4">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200">
+              <Image
+                src={icon}
+                alt=""
+                width={44}
+                height={44}
+                className="h-10 w-10"
+              />
+            </div>
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">
+              {meta}
+            </p>
+          </div>
+          <h3 className="mt-7 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+            {title}
+          </h3>
+          <p className="mt-4 text-sm font-semibold text-slate-500">
+            {highlight}
+          </p>
+          <p className="mt-5 text-base leading-8 text-slate-600">
+            {description}
+          </p>
+          {topics ? (
+            <div className="mt-6 flex flex-wrap gap-2">
+              {topics.map((topic) => (
+                <span
+                  key={topic}
+                  className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
+                >
+                  {topic}
+                </span>
+              ))}
+            </div>
+          ) : null}
+          <div className="mt-auto pt-8">
+            <Link
+              href={href}
+              className="inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-cyan-800"
+            >
+              {ctaLabel}
+            </Link>
+          </div>
+        </div>
+      </article>
+    );
+  }
+
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/70 transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-950/10">
       <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-cyan-500 via-sky-500 to-slate-900" />
@@ -28,12 +103,24 @@ export function ServiceCard({
       <h3 className="mt-8 text-2xl font-semibold tracking-[-0.04em] text-slate-950">{title}</h3>
       <p className="mt-4 text-sm font-semibold text-slate-500">{highlight}</p>
       <p className="mt-5 text-base leading-8 text-slate-600">{description}</p>
+      {topics ? (
+        <div className="mt-6 flex flex-wrap gap-2">
+          {topics.map((topic) => (
+            <span
+              key={topic}
+              className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
+            >
+              {topic}
+            </span>
+          ))}
+        </div>
+      ) : null}
       <div className="mt-auto pt-8">
         <Link
           href={href}
           className="inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-cyan-800"
         >
-          Mehr erfahren
+          {ctaLabel}
         </Link>
       </div>
     </article>
