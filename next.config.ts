@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const isVercelPreviewDeployment = process.env.VERCEL_ENV === "preview";
+
 const legacyRedirectPairs = [
   ["/", "/de"],
   ["/zuverlaessigkeitstechnik", "/de/leistungen/zuverlaessigkeitstechnik"],
@@ -179,6 +181,23 @@ function withOptionalTrailingSlash(
 
 const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
+  async headers() {
+    if (!isVercelPreviewDeployment) {
+      return [];
+    }
+
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow, noarchive, nosnippet",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return legacyRedirectPairs.flatMap(([source, destination]) =>
       withOptionalTrailingSlash(source, destination),

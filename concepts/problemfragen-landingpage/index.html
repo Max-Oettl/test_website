@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RelTest Problemfragen Landingpage Konzept</title>
+    <style>
+      :root {
+        --ink: #06111f;
+        --navy: #07182d;
+        --muted: #637388;
+        --soft: #eef5f8;
+        --paper: #f8fbfd;
+        --line: #d9e4ec;
+        --line-strong: #b8c9d8;
+        --cyan: #007fa3;
+        --cyan-soft: #dff4f8;
+        --green: #1f9d76;
+        --amber: #d39b26;
+        --surface: rgba(255, 255, 255, 0.82);
+        --shadow: 0 28px 80px rgba(7, 24, 45, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 92% 8%, rgba(0, 127, 163, 0.1), transparent 28rem),
+          linear-gradient(180deg, #fbfdfe 0%, #eef5f8 48%, #fbfdfe 100%);
+        font-family: "Aptos", "Bahnschrift", "Segoe UI", sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .shell {
+        min-height: 100vh;
+        overflow-x: clip;
+      }
+
+      .site-header {
+        position: fixed;
+        z-index: 20;
+        top: 16px;
+        left: 50%;
+        display: flex;
+        width: min(1180px, calc(100% - 48px));
+        min-height: 66px;
+        transform: translateX(-50%);
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border: 1px solid rgba(184, 201, 216, 0.72);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        padding: 10px 16px 10px 20px;
+        box-shadow: 0 20px 60px rgba(7, 24, 45, 0.08);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 132px;
+        max-height: 42px;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .brand span {
+        display: inline-block;
+        border-left: 1px solid var(--line);
+        padding-left: 18px;
+        color: var(--muted);
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: #34455c;
+        font-size: 0.88rem;
+        font-weight: 850;
+      }
+
+      .nav-cta {
+        border-radius: 999px;
+        background: var(--ink);
+        color: #fff;
+        padding: 13px 18px;
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.72fr);
+        align-items: start;
+        gap: clamp(32px, 4vw, 56px);
+        padding: 124px max(24px, calc((100vw - 1180px) / 2)) 64px;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(rgba(6, 17, 31, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(6, 17, 31, 0.035) 1px, transparent 1px);
+        background-size: 72px 72px;
+        mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 78%, transparent 100%);
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .question-stack {
+        display: grid;
+        gap: clamp(6px, 0.8vw, 14px);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .question {
+        --delay: 0ms;
+        display: block;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
+        text-wrap: balance;
+        font-family: "Bahnschrift", "Aptos", sans-serif;
+        font-size: clamp(3rem, 4.35vw, 3.75rem);
+        font-weight: 800;
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+        animation: questionIn 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        animation-delay: var(--delay);
+      }
+
+      .question:nth-child(2) {
+        --delay: 120ms;
+        color: #10243b;
+      }
+
+      .question:nth-child(3) {
+        --delay: 240ms;
+        color: #1d354d;
+      }
+
+      .hero-statement {
+        max-width: 690px;
+        margin-top: clamp(24px, 3vw, 36px);
+        border-left: 4px solid var(--cyan);
+        padding-left: 24px;
+        color: #31455f;
+        font-size: clamp(1.06rem, 1.35vw, 1.22rem);
+        font-weight: 550;
+        line-height: 1.55;
+      }
+
+      .offer-direct {
+        display: grid;
+        max-width: 700px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .offer-chip {
+        min-height: 92px;
+        border: 1px solid rgba(184, 201, 216, 0.82);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.72);
+        padding: 17px 15px;
+        box-shadow: 0 18px 42px rgba(7, 24, 45, 0.07);
+        backdrop-filter: blur(12px);
+      }
+
+      .offer-chip strong {
+        display: block;
+        color: var(--ink);
+        font-size: 0.96rem;
+        font-weight: 950;
+        letter-spacing: -0.02em;
+      }
+
+      .offer-chip span {
+        display: block;
+        margin-top: 9px;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 650;
+        line-height: 1.45;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 26px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 56px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 16px 22px;
+        font-size: 0.92rem;
+        font-weight: 950;
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          background 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button.primary {
+        background: var(--ink);
+        color: #fff;
+        box-shadow: 0 20px 42px rgba(7, 24, 45, 0.18);
+      }
+
+      .button.secondary {
+        border: 1px solid var(--line-strong);
+        background: rgba(255, 255, 255, 0.66);
+        color: var(--ink);
+      }
+
+      .visual-panel {
+        position: relative;
+        z-index: 1;
+        align-self: start;
+        min-height: 560px;
+        margin-top: 8px;
+        border: 1px solid rgba(184, 201, 216, 0.76);
+        border-radius: 36px;
+        background: #fff;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .visual-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background:
+          linear-gradient(180deg, rgba(6, 17, 31, 0.02) 0%, rgba(6, 17, 31, 0.08) 56%, rgba(6, 17, 31, 0.54) 100%),
+          radial-gradient(circle at 24% 16%, rgba(255, 255, 255, 0.36), transparent 20rem);
+      }
+
+      .hero-photo {
+        position: absolute;
+        inset: 12px;
+        overflow: hidden;
+        border-radius: 28px;
+      }
+
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        transform: scale(1.02);
+        animation: photoSettle 1300ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+      }
+
+      .photo-caption {
+        position: absolute;
+        z-index: 2;
+        right: 28px;
+        bottom: 28px;
+        left: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: end;
+      }
+
+      .photo-card {
+        display: grid;
+        gap: 5px;
+        max-width: 220px;
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.86);
+        padding: 14px 15px;
+        box-shadow: 0 18px 44px rgba(7, 24, 45, 0.18);
+        backdrop-filter: blur(16px);
+        animation: questionIn 850ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        animation-delay: 180ms;
+      }
+
+      .photo-card:nth-child(2) {
+        animation-delay: 280ms;
+      }
+
+      .photo-card strong {
+        display: block;
+        color: var(--ink);
+        font-size: 0.86rem;
+        font-weight: 950;
+      }
+
+      .photo-card span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.74rem;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .photo-label {
+        position: absolute;
+        z-index: 2;
+        top: 28px;
+        left: 28px;
+        max-width: 260px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.82);
+        padding: 11px 15px;
+        color: var(--ink);
+        font-size: 0.75rem;
+        font-weight: 950;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        box-shadow: 0 14px 38px rgba(7, 24, 45, 0.1);
+        backdrop-filter: blur(14px);
+      }
+
+
+      .scroll-hint {
+        position: absolute;
+        bottom: 30px;
+        left: max(24px, calc((100vw - 1180px) / 2));
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 0.84rem;
+        font-weight: 850;
+      }
+
+      .scroll-hint::before {
+        content: "";
+        width: 34px;
+        height: 1px;
+        background: var(--line-strong);
+      }
+
+      .bridge {
+        position: relative;
+        padding: 110px max(24px, calc((100vw - 1180px) / 2));
+      }
+
+      .bridge-card {
+        display: grid;
+        grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+        gap: 64px;
+        align-items: start;
+        border: 1px solid rgba(184, 201, 216, 0.7);
+        border-radius: 38px;
+        background: #fff;
+        box-shadow: var(--shadow);
+        padding: clamp(32px, 5vw, 64px);
+      }
+
+      .sticky-title {
+        position: sticky;
+        top: 130px;
+      }
+
+      .sticky-title h2 {
+        margin: 0;
+        font-family: "Bahnschrift", "Aptos", sans-serif;
+        font-size: clamp(2.7rem, 5vw, 5.5rem);
+        line-height: 0.94;
+        letter-spacing: -0.075em;
+      }
+
+      .sticky-title p {
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: 1.06rem;
+        line-height: 1.75;
+      }
+
+      .topics {
+        display: grid;
+        gap: 16px;
+      }
+
+      .topic {
+        display: grid;
+        grid-template-columns: 46px 1fr;
+        gap: 18px;
+        align-items: start;
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        background: linear-gradient(135deg, #ffffff, #f8fbfd);
+        padding: 24px;
+        transform: translateY(10px);
+        opacity: 0;
+        animation: reveal linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 28%;
+      }
+
+      .topic-mark {
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border-radius: 16px;
+        background: var(--cyan-soft);
+        color: var(--cyan);
+        font-family: "Bahnschrift", "Aptos", sans-serif;
+        font-weight: 950;
+      }
+
+      .topic h3 {
+        margin: 0;
+        font-family: "Bahnschrift", "Aptos", sans-serif;
+        font-size: 1.55rem;
+        letter-spacing: -0.045em;
+      }
+
+      .topic p {
+        margin: 9px 0 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .services {
+        padding: 112px max(24px, calc((100vw - 1180px) / 2)) 124px;
+        background: var(--navy);
+        color: #fff;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 36px;
+        margin-bottom: 42px;
+      }
+
+      .section-head h2 {
+        max-width: 760px;
+        margin: 0;
+        font-family: "Bahnschrift", "Aptos", sans-serif;
+        font-size: clamp(2.8rem, 5vw, 5.9rem);
+        line-height: 0.94;
+        letter-spacing: -0.075em;
+      }
+
+      .section-head p {
+        max-width: 390px;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.68);
+        line-height: 1.75;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .service {
+        position: relative;
+        overflow: hidden;
+        min-height: 390px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.07);
+        padding: 26px;
+        box-shadow: 0 26px 70px rgba(0, 0, 0, 0.16);
+      }
+
+      .service::before {
+        content: "";
+        position: absolute;
+        inset: auto 24px 24px 24px;
+        height: 2px;
+        border-radius: 99px;
+        background: linear-gradient(90deg, var(--cyan), transparent);
+      }
+
+      .service small {
+        display: inline-flex;
+        border-radius: 999px;
+        background: rgba(103, 216, 235, 0.11);
+        color: #8ee5f3;
+        padding: 8px 11px;
+        font-size: 0.72rem;
+        font-weight: 950;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .service h3 {
+        margin: 56px 0 0;
+        font-family: "Bahnschrift", "Aptos", sans-serif;
+        font-size: 1.55rem;
+        line-height: 1.05;
+        letter-spacing: -0.045em;
+      }
+
+      .service p {
+        margin: 16px 0 0;
+        color: rgba(255, 255, 255, 0.68);
+        line-height: 1.65;
+      }
+
+      .service ul {
+        display: grid;
+        gap: 10px;
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .service li {
+        position: relative;
+        padding-left: 18px;
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .service li::before {
+        content: "";
+        position: absolute;
+        top: 0.58em;
+        left: 0;
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: #8ee5f3;
+      }
+
+      .closing {
+        padding: 110px max(24px, calc((100vw - 1180px) / 2));
+        background:
+          linear-gradient(90deg, rgba(248, 251, 253, 0.98), rgba(248, 251, 253, 0.84)),
+          url("../../public/team/home-engineering-consulting.png") center / cover;
+      }
+
+      .closing-box {
+        max-width: 760px;
+        border: 1px solid rgba(184, 201, 216, 0.7);
+        border-radius: 34px;
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: var(--shadow);
+        padding: clamp(30px, 5vw, 58px);
+        backdrop-filter: blur(18px);
+      }
+
+      .closing-box h2 {
+        margin: 0;
+        font-family: "Bahnschrift", "Aptos", sans-serif;
+        font-size: clamp(2.4rem, 4.4vw, 4.8rem);
+        line-height: 0.96;
+        letter-spacing: -0.07em;
+      }
+
+      .closing-box p {
+        margin: 22px 0 0;
+        color: var(--muted);
+        font-size: 1.04rem;
+        line-height: 1.75;
+      }
+
+      @keyframes questionIn {
+        from {
+          transform: translateY(22px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes photoSettle {
+        from {
+          transform: scale(1.075);
+          filter: saturate(0.92) contrast(0.96);
+        }
+        to {
+          transform: scale(1.02);
+          filter: saturate(1) contrast(1);
+        }
+      }
+
+      @keyframes reveal {
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      @media (max-width: 1080px) {
+        .hero,
+        .bridge-card,
+        .section-head {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 132px;
+        }
+
+        .visual-panel {
+          min-height: 460px;
+        }
+
+        .service-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .nav a:not(.nav-cta) {
+          display: none;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .site-header {
+          top: 12px;
+          width: calc(100% - 20px);
+          border-radius: 26px;
+        }
+
+        .brand span {
+          display: none;
+        }
+
+        .brand img {
+          width: 120px;
+        }
+
+        .nav-cta {
+          padding: 11px 13px;
+          font-size: 0.8rem;
+        }
+
+        .hero {
+          padding-top: 118px;
+        }
+
+        .question {
+          overflow-wrap: break-word;
+          hyphens: auto;
+          font-size: clamp(2.7rem, 12vw, 3.9rem);
+          letter-spacing: -0.06em;
+          line-height: 1;
+        }
+
+        .hero-statement {
+          padding-left: 18px;
+          font-size: 1.05rem;
+        }
+
+        .visual-panel {
+          min-height: 420px;
+          border-radius: 28px;
+        }
+
+        .offer-direct {
+          grid-template-columns: 1fr;
+        }
+
+        .offer-chip {
+          min-height: auto;
+        }
+
+        .photo-caption {
+          right: 20px;
+          bottom: 20px;
+          left: 20px;
+        }
+
+        .photo-card {
+          max-width: none;
+          width: 100%;
+        }
+
+        .bridge,
+        .services,
+        .closing {
+          padding-top: 78px;
+          padding-bottom: 84px;
+        }
+
+        .bridge-card {
+          padding: 24px;
+          border-radius: 28px;
+        }
+
+        .sticky-title {
+          position: relative;
+          top: auto;
+        }
+
+        .topic {
+          grid-template-columns: 1fr;
+        }
+
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="site-header">
+        <a class="brand" href="#">
+          <img src="../../public/reltest-solutions-logo.png" alt="RelTest Solutions" />
+          <span>Advanced Reliability Engineering Partner</span>
+        </a>
+        <nav class="nav" aria-label="Konzeptnavigation">
+          <a href="#topics">Einsatzfälle</a>
+          <a href="#services">Leistungen</a>
+          <a href="#contact" class="nav-cta">Projekt besprechen</a>
+        </nav>
+      </header>
+
+      <section class="hero" aria-label="Startbereich">
+        <div class="hero-copy">
+          <ul class="question-stack" aria-label="Typische technische Fragestellungen">
+            <li class="question">Feldausfälle?</li>
+            <li class="question">Unerwartete Streuung?</li>
+            <li class="question">Unsichere Lebensdauerprognosen?</li>
+          </ul>
+          <p class="hero-statement">
+            RelTest unterstützt Unternehmen, wenn technische Unsicherheit zu Projekt-, Kosten-
+            oder Haftungsrisiken wird: als Beratungspartner, langfristige Entwicklungsbegleitung,
+            Inhouse-Schulung oder digitales Lernangebot.
+          </p>
+          <div class="offer-direct" aria-label="Direkt buchbare Leistungsangebote">
+            <a class="offer-chip" href="#services">
+              <strong>Beratung</strong>
+              <span>Zuverlässigkeit, DoE, Testplanung, Risikoanalyse, Datenbewertung.</span>
+            </a>
+            <a class="offer-chip" href="#services">
+              <strong>Langfristige Kooperation</strong>
+              <span>Methoden, Reviews, Dokumentation und Absicherung nach Stand der Technik.</span>
+            </a>
+            <a class="offer-chip" href="#services">
+              <strong>Schulungen vor Ort</strong>
+              <span>Praxisnahe Seminare für Entwicklungs-, Erprobungs- und Qualitätsteams.</span>
+            </a>
+            <a class="offer-chip" href="#services">
+              <strong>RelTest Academy</strong>
+              <span>Strukturiertes E-Learning für Ingenieurinnen und Ingenieure.</span>
+            </a>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="#services">Leistungen ansehen</a>
+            <a class="button secondary" href="#topics">Fachthemen einordnen</a>
+          </div>
+        </div>
+
+        <aside class="visual-panel" aria-label="Beratungssituation mit technischer Analyse">
+          <div class="hero-photo">
+            <img
+              src="../../public/team/home-engineering-consulting.png"
+              alt="RelTest Beratungssituation mit technischer Analyse und Risikomatrix"
+            />
+          </div>
+          <div class="photo-label">Technische Beratung im Projektkontext</div>
+          <div class="photo-caption">
+            <div class="photo-card">
+              <strong>Vom Problem zur Methode</strong>
+              <span>Ausfälle, Streuung und Risiken werden strukturiert eingeordnet.</span>
+            </div>
+            <div class="photo-card">
+              <strong>Vom Wissen zur Entscheidung</strong>
+              <span>Tests, Daten und DoE werden für belastbare Freigaben nutzbar.</span>
+            </div>
+          </div>
+        </aside>
+        <div class="scroll-hint">Scrollen, um die Einordnung zu sehen</div>
+      </section>
+
+      <section class="bridge" id="topics">
+        <div class="bridge-card">
+          <div class="sticky-title">
+            <h2>Aus technischen Fragen werden klare Arbeitspakete.</h2>
+            <p>
+              Der Einstieg zeigt nicht nur Fachbegriffe, sondern typische Situationen, in denen
+              RelTest beauftragt wird: Analyse, Absicherung, Methodenaufbau oder Wissenstransfer.
+            </p>
+          </div>
+          <div class="topics">
+            <article class="topic">
+              <div class="topic-mark">Z</div>
+              <div>
+                <h3>Feldausfälle und Streuung verstehen</h3>
+                <p>
+                  RelTest ordnet Ausfallbilder, Nutzungsprofile, Anforderungen und Daten so ein,
+                  dass Entwicklungsteams nicht nur Symptome sehen, sondern Ursachen und nächste
+                  Schritte erkennen.
+                </p>
+              </div>
+            </article>
+            <article class="topic">
+              <div class="topic-mark">R</div>
+              <div>
+                <h3>Technische Risiken priorisieren</h3>
+                <p>
+                  Kritische Risiken werden bewertet, dokumentiert und in konkrete Maßnahmen für
+                  Entwicklung, Erprobung, Freigabe oder Serie übersetzt.
+                </p>
+              </div>
+            </article>
+            <article class="topic">
+              <div class="topic-mark">T</div>
+              <div>
+                <h3>Tests und DoE effizient planen</h3>
+                <p>
+                  Versuche werden so geplant, dass sie nicht nur Aufwand erzeugen, sondern
+                  belastbare Aussagen über Einflussfaktoren, Streuung und Lebensdauer liefern.
+                </p>
+              </div>
+            </article>
+            <article class="topic">
+              <div class="topic-mark">D</div>
+              <div>
+                <h3>Daten in Entscheidungen übersetzen</h3>
+                <p>
+                  Lebensdauer-, Prüfstands- und Felddaten werden ausgewertet, modelliert und für
+                  Prognosen, Freigaben oder technische Entscheidungen nutzbar gemacht.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="services">
+        <div class="section-head">
+          <h2>Dafür können Sie RelTest konkret beauftragen.</h2>
+          <p>
+            Vier klare Wege führen vom ersten Fachgespräch bis zur dauerhaften methodischen
+            Begleitung.
+          </p>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <small>Consulting</small>
+            <h3>Beratung für Unternehmen</h3>
+            <p>
+              Wenn ein Projekt fachlich feststeckt oder belastbare Entscheidungen zur
+              Zuverlässigkeit braucht.
+            </p>
+            <ul>
+              <li>Analyse von Ausfällen, Streuung und Risiken</li>
+              <li>Testplanung, DoE und Lebensdauernachweise</li>
+              <li>Bewertung von Felddaten, Prüfstandsdaten und Prognosen</li>
+            </ul>
+          </article>
+          <article class="service">
+            <small>Inhouse</small>
+            <h3>Schulungen und Seminare</h3>
+            <p>
+              Wenn Teams eine gemeinsame methodische Basis für Entwicklung, Erprobung und Qualität
+              aufbauen sollen.
+            </p>
+            <ul>
+              <li>Vor-Ort-Schulungen mit Praxisbeispielen</li>
+              <li>Direkte Diskussion konkreter Unternehmensfragen</li>
+              <li>Gemeinsames Verständnis für Zuverlässigkeit und DoE</li>
+            </ul>
+          </article>
+          <article class="service">
+            <small>Digital</small>
+            <h3>RelTest Academy</h3>
+            <p>
+              Wenn Wissen flexibel, skalierbar und unabhängig von einem einzelnen Seminartermin
+              vermittelt werden soll.
+            </p>
+            <ul>
+              <li>Online-Lernen im eigenen Tempo</li>
+              <li>Strukturierte Inhalte für Ingenieurinnen und Ingenieure</li>
+              <li>Gute Ergänzung zu Inhouse-Schulungen</li>
+            </ul>
+          </article>
+          <article class="service">
+            <small>Partnership</small>
+            <h3>Langfristige Kooperation</h3>
+            <p>
+              Wenn Zuverlässigkeit nicht punktuell, sondern dauerhaft im Entwicklungsprozess
+              abgesichert werden soll.
+            </p>
+            <ul>
+              <li>Kontinuierliche Methoden- und Review-Unterstützung</li>
+              <li>Dokumentation nachvollziehbarer Entwicklungsentscheidungen</li>
+              <li>Begleitung nach Stand der Technik ohne juristische Scheinversprechen</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing" id="contact">
+        <div class="closing-box">
+          <h2>Erst die technische Frage klären. Dann den passenden Weg wählen.</h2>
+          <p>
+            Diese Hero-Richtung eignet sich besonders, wenn die Startseite Besucher schnell
+            abholen soll: Problem erkennen, fachlich einordnen, Leistungen verstehen und mit
+            RelTest ins Gespräch kommen.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#">Projekt besprechen</a>
+            <a class="button secondary" href="#">Weitere Fachthemen ansehen</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

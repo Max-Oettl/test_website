@@ -5,7 +5,7 @@ import { SiteFooter } from "../_components/site-footer";
 import { SiteHeader } from "../_components/site-header";
 import { getSiteContent } from "../_content/site-content";
 import { locales, resolveLocale } from "../_i18n/config";
-import { absoluteUrl, siteUrl } from "../_seo/metadata";
+import { absoluteUrl, getRobotsMetadata, siteUrl } from "../_seo/metadata";
 import "../globals.css";
 
 const plexSans = IBM_Plex_Sans({
@@ -35,6 +35,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: metadata.title,
     description: metadata.description,
+    robots: getRobotsMetadata(),
     alternates: {
       canonical: absoluteUrl(`/${locale}`),
       languages: {

@@ -54,6 +54,31 @@ export default async function HomePage({ params }: Props) {
       <HomeHero locale={locale} />
 
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-6 lg:px-8">
+        <SectionHeading {...home.serviceIntro} />
+        <div className="mt-8 flex flex-wrap gap-3">
+          {content.methodHighlights.map((item) => (
+            <span
+              key={item}
+              className="rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-semibold text-cyan-900"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {content.services.map((service) => (
+            <ServiceCard
+              key={service.title}
+              {...service}
+              image={serviceImages[service.href]}
+              href={localizeHref(locale, service.href)}
+              ctaLabel={content.common.learnMore}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center">
           <div className="min-w-0">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-700">
@@ -131,31 +156,6 @@ export default async function HomePage({ params }: Props) {
                 />
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-6 lg:px-8">
-        <SectionHeading {...home.serviceIntro} />
-        <div className="mt-8 flex flex-wrap gap-3">
-          {content.methodHighlights.map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-semibold text-cyan-900"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {content.services.map((service) => (
-            <ServiceCard
-              key={service.title}
-              {...service}
-              image={serviceImages[service.href]}
-              href={localizeHref(locale, service.href)}
-              ctaLabel={content.common.learnMore}
-            />
           ))}
         </div>
       </section>
