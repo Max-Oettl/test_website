@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { PageIntro } from "../../_components/page-intro";
@@ -19,6 +20,11 @@ type AboutLinkCard = AboutCard & {
   external?: boolean;
 };
 
+type AboutImageCard = AboutCard & {
+  src: string;
+  alt: string;
+};
+
 const aboutContent: Record<
   Locale,
   {
@@ -28,6 +34,12 @@ const aboutContent: Record<
       eyebrow: string;
       title: string;
       description: string;
+    };
+    practice: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      imageAlt: string;
     };
     facts: AboutCard[];
     positioning: {
@@ -48,6 +60,12 @@ const aboutContent: Record<
       description: string;
       cards: AboutLinkCard[];
     };
+    gallery: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      images: AboutImageCard[];
+    };
     cta: {
       title: string;
       description: string;
@@ -57,15 +75,24 @@ const aboutContent: Record<
   }
 > = {
   de: {
-    metaTitle: "Über RelTest Solutions | Reliability Engineering Beratung",
+    metaTitle: "Wir sind RelTest | Reliability Engineering Beratung",
     metaDescription:
       "RelTest Solutions ist ein spezialisierter Engineering-Partner für Zuverlässigkeitstechnik, Erprobung, DoE, Datenanalyse und methodische Absicherung.",
     intro: {
-      eyebrow: "Über RelTest Solutions",
+      eyebrow: "Wir sind RelTest",
       title:
-        "Spezialisierte Zuverlässigkeitsberatung für anspruchsvolle technische Produkte.",
+        "Ein spezialisierter Engineering-Partner für belastbare Zuverlässigkeitsentscheidungen.",
       description:
-        "RelTest Solutions unterstützt Industrieunternehmen dabei, Zuverlässigkeit nicht erst am Ende zu prüfen, sondern methodisch in Entwicklung, Erprobung, Datenanalyse und Freigabeentscheidungen zu verankern.",
+        "RelTest Solutions unterstützt Industrieunternehmen dabei, technische Unsicherheit strukturiert einzuordnen: von Anforderungen, Ausfallmechanismen und Versuchsplanung bis zu Datenanalyse, Nachweisführung und langfristiger Entwicklungsbegleitung.",
+    },
+    practice: {
+      eyebrow: "RelTest in der Praxis",
+      title:
+        "Wir verbinden technische Erfahrung, statistische Methodik und Verantwortung im Projekt.",
+      description:
+        "Unsere Arbeit entsteht dort, wo Produkt, Daten und Entscheidung zusammenkommen: in Entwicklungsprojekten, an Prüfständen, in Workshops und in der gemeinsamen Bewertung technischer Risiken.",
+      imageAlt:
+        "RelTest Beratungssituation mit technischen Zeichnungen, Risikomatrix und Produktdaten",
     },
     facts: [
       {
@@ -172,6 +199,35 @@ const aboutContent: Record<
         },
       ],
     },
+    gallery: {
+      eyebrow: "Arbeitskontexte",
+      title: "Kompetenz zeigt sich in konkreten Situationen.",
+      description:
+        "RelTest arbeitet nicht abstrakt über Zuverlässigkeit, sondern an realen technischen Fragestellungen: im Austausch mit Teams, an Daten, an Bauteilen und in der methodischen Vorbereitung von Entscheidungen.",
+      images: [
+        {
+          title: "Beratung und Entscheidungsgrundlagen",
+          description:
+            "Technische Risiken werden gemeinsam eingeordnet und in belastbare nächste Schritte übersetzt.",
+          src: "/about/consulting-simulation-review.png",
+          alt: "Technische Beratungssituation mit Produktdaten und Risikomatrix",
+        },
+        {
+          title: "Erprobung und Produktverständnis",
+          description:
+            "Ausfallmechanismen, Prüfstände und reale Randbedingungen bleiben Teil der Analyse.",
+          src: "/about/component-review.png",
+          alt: "Ingenieurteam bespricht Zuverlässigkeitsfragen an einem Prüfstand",
+        },
+        {
+          title: "Erprobung und Datenbewertung",
+          description:
+            "Schulungen und Workshops schaffen ein gemeinsames Methodenverständnis im Unternehmen.",
+          src: "/about/testbench-data-review.png",
+          alt: "RelTest Seminar zur Zuverlässigkeitstechnik vor Ort",
+        },
+      ],
+    },
     cta: {
       title: "Sie möchten einschätzen, ob RelTest zu Ihrem Thema passt?",
       description:
@@ -181,15 +237,24 @@ const aboutContent: Record<
     },
   },
   en: {
-    metaTitle: "About RelTest Solutions | Reliability Engineering Consulting",
+    metaTitle: "About RelTest | Reliability Engineering Consulting",
     metaDescription:
       "RelTest Solutions is a specialised engineering partner for reliability engineering, testing, DoE, data analysis and robust validation.",
     intro: {
-      eyebrow: "About RelTest Solutions",
+      eyebrow: "About RelTest",
       title:
-        "Specialised reliability consulting for demanding technical products.",
+        "A specialised engineering partner for robust reliability decisions.",
       description:
-        "RelTest Solutions helps industrial companies embed reliability into development, testing, data analysis and release decisions instead of treating it as a late-stage check.",
+        "RelTest Solutions helps industrial companies structure technical uncertainty: from requirements, failure mechanisms and test planning to data analysis, evidence and long-term development support.",
+    },
+    practice: {
+      eyebrow: "RelTest in practice",
+      title:
+        "We combine technical experience, statistical methodology and project responsibility.",
+      description:
+        "Our work happens where product, data and decision meet: in development projects, at test benches, in workshops and in the joint evaluation of technical risks.",
+      imageAlt:
+        "RelTest consulting situation with technical drawings, risk matrix and product data",
     },
     facts: [
       {
@@ -296,6 +361,35 @@ const aboutContent: Record<
         },
       ],
     },
+    gallery: {
+      eyebrow: "Working contexts",
+      title: "Expertise becomes visible in concrete situations.",
+      description:
+        "RelTest does not treat reliability as an abstract topic. The work focuses on real technical questions: with teams, data, components and methodical preparation of decisions.",
+      images: [
+        {
+          title: "Consulting and decision bases",
+          description:
+            "Technical risks are structured together and translated into robust next steps.",
+          src: "/about/consulting-simulation-review.png",
+          alt: "Technical consulting situation with product data and risk matrix",
+        },
+        {
+          title: "Testing and product understanding",
+          description:
+            "Failure mechanisms, test benches and real boundary conditions remain part of the analysis.",
+          src: "/about/component-review.png",
+          alt: "Engineering team discussing reliability questions at a test bench",
+        },
+        {
+          title: "Testing and data evaluation",
+          description:
+            "Training and workshops create a shared methodological understanding inside the company.",
+          src: "/about/testbench-data-review.png",
+          alt: "RelTest on-site seminar on reliability engineering",
+        },
+      ],
+    },
     cta: {
       title: "Would you like to assess whether RelTest fits your topic?",
       description:
@@ -325,6 +419,10 @@ export async function generateMetadata({ params }: Props) {
 export default async function AboutPage({ params }: Props) {
   const locale = await resolveLocale(params);
   const content = aboutContent[locale];
+  const methodImageAlt =
+    locale === "de"
+      ? "Whiteboard mit Ausfallmöglichkeiten, Hypothesen und offenen Punkten"
+      : "Whiteboard with failure possibilities, hypotheses and open points";
 
   return (
     <>
@@ -335,7 +433,35 @@ export default async function AboutPage({ params }: Props) {
       />
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8 lg:py-20">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.28em] text-cyan-700">
+              {content.practice.eyebrow}
+            </p>
+            <h2 className="mt-5 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
+              {content.practice.title}
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              {content.practice.description}
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100 shadow-2xl shadow-slate-200">
+            <Image
+              src="/about/consulting-simulation-review.png"
+              alt={content.practice.imageAlt}
+              width={1536}
+              height={1024}
+              className="aspect-[1.28] h-full w-full object-cover"
+              sizes="(min-width: 1024px) 48vw, 100vw"
+            />
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/38 to-transparent" />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 pb-16 pt-0 sm:px-6 lg:px-8">
           <div className="grid gap-5 md:grid-cols-3">
             {content.facts.map((fact) => (
               <article
@@ -400,38 +526,102 @@ export default async function AboutPage({ params }: Props) {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {content.method.steps.map((step) => (
-              <article
-                key={step.title}
-                className="rounded-[1.75rem] border border-white/80 bg-white/86 p-7 shadow-sm ring-1 ring-slate-200/80 backdrop-blur"
-              >
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700 ring-1 ring-cyan-100">
-                  <svg
-                    aria-hidden="true"
-                    className="h-5 w-5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5 12.5 9.2 16.5 19 6.8"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </span>
-                <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-slate-950">
-                  {step.title}
+          <div className="mt-10 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
+            <div className="relative min-h-[24rem] overflow-hidden rounded-[2rem] border border-white bg-slate-100 shadow-2xl shadow-slate-300/70 ring-1 ring-slate-200/70">
+              <Image
+                src="/about/whiteboard-failure-analysis.png"
+                alt={methodImageAlt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 48vw, 100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/26 via-transparent to-white/8" />
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              {content.method.steps.map((step) => (
+                <article
+                  key={step.title}
+                  className="rounded-[1.75rem] border border-white/80 bg-white/86 p-7 shadow-sm ring-1 ring-slate-200/80 backdrop-blur"
+                >
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700 ring-1 ring-cyan-100">
+                    <svg
+                      aria-hidden="true"
+                      className="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 12.5 9.2 16.5 19 6.8"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </span>
+                  <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-slate-950">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    {step.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <p className="text-sm font-black uppercase tracking-[0.28em] text-cyan-700">
+            {content.gallery.eyebrow}
+          </p>
+          <h2 className="mt-5 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
+            {content.gallery.title}
+          </h2>
+          <p className="mt-5 text-base leading-8 text-slate-600">
+            {content.gallery.description}
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {content.gallery.images.map((image) => (
+            <article
+              key={image.src}
+              className="overflow-hidden rounded-[1.8rem] border border-slate-200 bg-white shadow-sm"
+            >
+              <div className="relative aspect-[1.28] bg-slate-100">
+                <Image
+                  src={image.src}
+                  alt={
+                    image.src === "/about/testbench-data-review.png"
+                      ? locale === "de"
+                        ? "Team bewertet Zuverlässigkeitsdaten an einem Prüfstand"
+                        : "Team evaluating reliability data at a test bench"
+                      : image.alt
+                  }
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                />
+              </div>
+              <div className="p-7">
+                <h3 className="text-xl font-semibold tracking-[-0.03em] text-slate-950">
+                  {image.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  {step.description}
+                  {image.src === "/about/testbench-data-review.png"
+                    ? locale === "de"
+                      ? "Prüfstand, Messdaten und Produktverständnis werden gemeinsam betrachtet."
+                      : "Test bench, measurement data and product understanding are reviewed together."
+                    : image.description}
                 </p>
-              </article>
-            ))}
-          </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

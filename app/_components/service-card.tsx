@@ -15,6 +15,7 @@ type ServiceCardProps = {
   };
   topics?: readonly string[];
   ctaLabel: string;
+  variant?: "default" | "home";
 };
 
 export function ServiceCard({
@@ -27,11 +28,14 @@ export function ServiceCard({
   image,
   topics,
   ctaLabel,
+  variant = "default",
 }: ServiceCardProps) {
+  const isHomeVariant = variant === "home";
+
   if (image) {
     return (
-      <article className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl shadow-slate-200/70 transition duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-950/10">
-        <div className="relative h-44 overflow-hidden bg-slate-100">
+      <article className="service-card group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl shadow-slate-200/70 transition duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-950/10">
+        <div className="service-card-media relative h-44 overflow-hidden bg-slate-100">
           <Image
             src={image.src}
             alt={image.alt}
@@ -40,13 +44,15 @@ export function ServiceCard({
             className="object-cover transition duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/8 to-transparent" />
-          <span className="absolute bottom-4 left-4 rounded-full bg-white/92 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-950 shadow-sm">
-            {image.label}
-          </span>
+          {!isHomeVariant ? (
+            <span className="service-card-label absolute bottom-4 left-4 rounded-full bg-white/92 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-950 shadow-sm">
+              {image.label}
+            </span>
+          ) : null}
         </div>
-        <div className="flex flex-1 flex-col p-7">
-          <div className="flex items-center gap-4">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200">
+        <div className="service-card-body flex flex-1 flex-col p-7">
+          <div className={isHomeVariant ? "flex" : "flex items-center gap-4"}>
+            <div className="service-card-icon flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200">
               <Image
                 src={icon}
                 alt=""
@@ -55,25 +61,29 @@ export function ServiceCard({
                 className="h-10 w-10"
               />
             </div>
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">
-              {meta}
-            </p>
+            {!isHomeVariant ? (
+              <p className="service-card-meta text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">
+                {meta}
+              </p>
+            ) : null}
           </div>
-          <h3 className="mt-7 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+          <h3 className="service-card-title mt-7 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
             {title}
           </h3>
-          <p className="mt-4 text-sm font-semibold text-slate-500">
-            {highlight}
-          </p>
-          <p className="mt-5 text-base leading-8 text-slate-600">
+          {!isHomeVariant ? (
+            <p className="service-card-highlight mt-4 text-sm font-semibold text-slate-500">
+              {highlight}
+            </p>
+          ) : null}
+          <p className="service-card-description mt-5 text-base leading-8 text-slate-600">
             {description}
           </p>
-          {topics ? (
+          {topics && !isHomeVariant ? (
             <div className="mt-6 flex flex-wrap gap-2">
               {topics.map((topic) => (
                 <span
                   key={topic}
-                  className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
+                  className="service-card-topic rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
                 >
                   {topic}
                 </span>
@@ -83,7 +93,7 @@ export function ServiceCard({
           <div className="mt-auto pt-8">
             <Link
               href={href}
-              className="inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-cyan-800"
+              className="service-card-cta inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-cyan-800"
             >
               {ctaLabel}
             </Link>
@@ -94,21 +104,33 @@ export function ServiceCard({
   }
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/70 transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-950/10">
-      <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-cyan-500 via-sky-500 to-slate-900" />
-      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200">
+    <article className="service-card group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/70 transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-950/10">
+      <div className="service-card-rule absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-cyan-500 via-sky-500 to-slate-900" />
+      <div className="service-card-icon mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200">
         <Image src={icon} alt="" width={52} height={52} className="h-12 w-12" />
       </div>
-      <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">{meta}</p>
-      <h3 className="mt-8 text-2xl font-semibold tracking-[-0.04em] text-slate-950">{title}</h3>
-      <p className="mt-4 text-sm font-semibold text-slate-500">{highlight}</p>
-      <p className="mt-5 text-base leading-8 text-slate-600">{description}</p>
-      {topics ? (
+      {!isHomeVariant ? (
+        <p className="service-card-meta text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">
+          {meta}
+        </p>
+      ) : null}
+      <h3 className="service-card-title mt-8 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+        {title}
+      </h3>
+      {!isHomeVariant ? (
+        <p className="service-card-highlight mt-4 text-sm font-semibold text-slate-500">
+          {highlight}
+        </p>
+      ) : null}
+      <p className="service-card-description mt-5 text-base leading-8 text-slate-600">
+        {description}
+      </p>
+      {topics && !isHomeVariant ? (
         <div className="mt-6 flex flex-wrap gap-2">
           {topics.map((topic) => (
             <span
               key={topic}
-              className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
+              className="service-card-topic rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
             >
               {topic}
             </span>
@@ -118,7 +140,7 @@ export function ServiceCard({
       <div className="mt-auto pt-8">
         <Link
           href={href}
-          className="inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-cyan-800"
+          className="service-card-cta inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-cyan-800"
         >
           {ctaLabel}
         </Link>

@@ -3,7 +3,9 @@ import Link from "next/link";
 
 import { getSiteContent } from "../_content/site-content";
 import { localizeHref, type Locale } from "../_i18n/config";
+import { ActiveNavLink } from "./active-nav-link";
 import { LanguageSwitcher } from "./language-switcher";
+import { LandingConceptBodySync } from "./landing-concept-body-sync";
 import { SiteExplorerBand } from "./site-explorer-band";
 
 type SiteHeaderProps = {
@@ -20,6 +22,14 @@ type NavigationDropdown = {
   width: "wide" | "default";
 };
 
+function removeHash(href: string) {
+  return href.split("#")[0] ?? href;
+}
+
+function uniqueItems(items: string[]) {
+  return Array.from(new Set(items));
+}
+
 export function SiteHeader({ locale }: SiteHeaderProps) {
   const { navigation } = getSiteContent(locale);
   const dropdowns: Record<string, NavigationDropdown> = {
@@ -33,17 +43,24 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       items: navigation.knowledgeItems,
       width: "default",
     },
+    "/expertise": {
+      overview: navigation.expertiseOverview,
+      items: navigation.expertiseItems,
+      width: "default",
+    },
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-6 lg:px-8">
+    <>
+      <LandingConceptBodySync />
+      <header className="site-header-shell sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+      <div className="site-header-inner mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-6 lg:px-8">
         <Link
           href={localizeHref(locale, "/")}
           className="flex items-center gap-3"
           aria-label={navigation.homeLabel}
         >
-          <span className="relative block h-11 w-36 sm:w-44">
+          <span className="site-header-logo-mark relative block h-11 w-36 sm:w-44">
             <Image
               src="/reltest-solutions-logo.png"
               alt="RelTest Solutions"
@@ -53,39 +70,55 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
               sizes="(min-width: 640px) 176px, 144px"
             />
           </span>
-          <span className="hidden text-xs font-medium uppercase tracking-[0.22em] text-cyan-700 2xl:block">
+          <span className="site-header-claim hidden text-xs font-medium uppercase tracking-[0.22em] text-cyan-700 2xl:block">
             Reliability & Testing
           </span>
         </Link>
 
         <nav
-          className="hidden items-center gap-5 2xl:gap-6 xl:flex"
+          className="site-header-nav hidden items-center gap-5 2xl:gap-6 xl:flex"
           aria-label={navigation.ariaLabel}
         >
           {navigation.items.map((item) => {
             const dropdown = dropdowns[item.href];
+            const dropdownItems =
+              item.href === "/expertise"
+                ? dropdown?.items?.map((dropdownItem) =>
+                    removeHash(dropdownItem.href),
+                  ) ?? []
+                : [];
+            const activeHrefs = uniqueItems([item.href, ...dropdownItems]).map(
+              (href) => localizeHref(locale, href),
+            );
+            const topLinkClassName =
+              "site-nav-link block whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-cyan-700";
+            const topActiveClassName =
+              "site-nav-link-active bg-cyan-50 text-cyan-800 ring-1 ring-cyan-100";
 
             return dropdown ? (
               <div key={item.href} className="group relative">
-                <Link
+                <ActiveNavLink
                   href={localizeHref(locale, item.href)}
-                  className="block whitespace-nowrap py-2 text-sm font-medium text-slate-700 transition-colors hover:text-cyan-700"
+                  activeHrefs={activeHrefs}
+                  className={topLinkClassName}
+                  activeClassName={topActiveClassName}
                 >
                   {item.label}
-                </Link>
+                </ActiveNavLink>
 
                 <div
                   className={`pointer-events-none absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100 ${
                     dropdown.width === "wide" ? "w-96" : "w-72"
                   }`}
                 >
-                  <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-2xl shadow-slate-950/10">
-                    <Link
+                  <div className="site-nav-dropdown rounded-2xl border border-slate-200 bg-white p-3 shadow-2xl shadow-slate-950/10">
+                    <ActiveNavLink
                       href={localizeHref(locale, item.href)}
                       className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 hover:text-cyan-700"
+                      activeClassName="bg-cyan-50 text-cyan-800 ring-1 ring-cyan-100"
                     >
                       {dropdown.overview}
-                    </Link>
+                    </ActiveNavLink>
                     <div className="my-2 h-px bg-slate-200" />
                     {dropdown.groups ? (
                       <div className="grid gap-3">
@@ -96,13 +129,14 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                             </p>
                             <div className="grid gap-1">
                               {group.items.map((dropdownItem) => (
-                                <Link
+                                <ActiveNavLink
                                   key={dropdownItem.href}
                                   href={localizeHref(locale, dropdownItem.href)}
                                   className="block rounded-xl px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
+                                  activeClassName="bg-cyan-50 text-cyan-800"
                                 >
                                   {dropdownItem.label}
-                                </Link>
+                                </ActiveNavLink>
                               ))}
                             </div>
                           </div>
@@ -110,38 +144,44 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                       </div>
                     ) : (
                       dropdown.items?.map((dropdownItem) => (
-                        <Link
+                        <ActiveNavLink
                           key={dropdownItem.href}
                           href={localizeHref(locale, dropdownItem.href)}
                           className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
+                          activeClassName="bg-cyan-50 text-cyan-800"
                         >
                           {dropdownItem.label}
-                        </Link>
+                        </ActiveNavLink>
                       ))
                     )}
                   </div>
                 </div>
               </div>
             ) : (
-              <Link
+              <ActiveNavLink
                 key={item.href}
                 href={localizeHref(locale, item.href)}
-                className="whitespace-nowrap text-sm font-medium text-slate-700 transition-colors hover:text-cyan-700"
+                className={topLinkClassName}
+                activeClassName={topActiveClassName}
               >
                 {item.label}
-              </Link>
+              </ActiveNavLink>
             );
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 xl:flex">
+        <div className="site-header-language-kacheln hidden items-center">
+          <LanguageSwitcher locale={locale} />
+        </div>
+
+        <div className="site-header-actions hidden items-center gap-3 xl:flex">
           <Link
             href={localizeHref(locale, "/kontakt")}
-            className="whitespace-nowrap rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-cyan-800"
+            className="site-header-cta whitespace-nowrap rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-cyan-800"
           >
             {navigation.inquiry}
           </Link>
-          <div className="ml-1 border-l border-slate-200 pl-4">
+          <div className="site-header-language ml-1 border-l border-slate-200 pl-4">
             <LanguageSwitcher locale={locale} />
           </div>
         </div>
@@ -156,15 +196,26 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             </div>
             {navigation.items.map((item) => {
               const dropdown = dropdowns[item.href];
+              const dropdownItems =
+                item.href === "/expertise"
+                  ? dropdown?.items?.map((dropdownItem) =>
+                      removeHash(dropdownItem.href),
+                    ) ?? []
+                  : [];
+              const activeHrefs = uniqueItems([item.href, ...dropdownItems]).map(
+                (href) => localizeHref(locale, href),
+              );
 
               return dropdown ? (
                 <div key={item.href} className="rounded-xl px-2 py-2">
-                  <Link
+                  <ActiveNavLink
                     href={localizeHref(locale, item.href)}
                     className="block rounded-xl px-2 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50 hover:text-cyan-700"
+                    activeHrefs={activeHrefs}
+                    activeClassName="bg-cyan-50 text-cyan-800 ring-1 ring-cyan-100"
                   >
                     {dropdown.overview}
-                  </Link>
+                  </ActiveNavLink>
                   <div className="mt-1 grid gap-1">
                     {dropdown.groups ? (
                       dropdown.groups.map((group) => (
@@ -174,38 +225,41 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                           </p>
                           <div className="grid gap-1">
                             {group.items.map((dropdownItem) => (
-                              <Link
+                              <ActiveNavLink
                                 key={dropdownItem.href}
                                 href={localizeHref(locale, dropdownItem.href)}
                                 className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
+                                activeClassName="bg-cyan-50 text-cyan-800"
                               >
                                 {dropdownItem.label}
-                              </Link>
+                              </ActiveNavLink>
                             ))}
                           </div>
                         </div>
                       ))
                     ) : (
                       dropdown.items?.map((dropdownItem) => (
-                        <Link
+                        <ActiveNavLink
                           key={dropdownItem.href}
                           href={localizeHref(locale, dropdownItem.href)}
                           className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
+                          activeClassName="bg-cyan-50 text-cyan-800"
                         >
                           {dropdownItem.label}
-                        </Link>
+                        </ActiveNavLink>
                       ))
                     )}
                   </div>
                 </div>
               ) : (
-                <Link
+                <ActiveNavLink
                   key={item.href}
                   href={localizeHref(locale, item.href)}
                   className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
+                  activeClassName="bg-cyan-50 font-semibold text-cyan-800 ring-1 ring-cyan-100"
                 >
                   {item.label}
-                </Link>
+                </ActiveNavLink>
               );
             })}
             <Link
@@ -219,5 +273,6 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       </div>
       <SiteExplorerBand locale={locale} />
     </header>
+    </>
   );
 }

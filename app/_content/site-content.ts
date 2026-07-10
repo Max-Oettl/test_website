@@ -156,14 +156,13 @@ const content = {
       inquiry: "Anfrage starten",
       servicesOverview: "Leistungen im Überblick",
       knowledgeOverview: "Wissen im Überblick",
+      expertiseOverview: "Expertise im Überblick",
       items: [
         { label: "Leistungen", href: "/leistungen" },
         { label: "Weiterbildung", href: "/weiterbildung" },
         { label: "Wissen", href: "/wissen" },
-        { label: "Literatur", href: "/literatur" },
-        { label: "Referenzen", href: "/referenzen" },
-        { label: "Über uns", href: "/ueber-uns" },
-        { label: "Kontakt", href: "/kontakt" },
+        { label: "Expertise", href: "/expertise" },
+        { label: "Wir sind RelTest", href: "/ueber-uns" },
       ],
       serviceItems: [
         {
@@ -246,6 +245,12 @@ const content = {
         { label: "Design of Experiments", href: "/wissen/design-of-experiments" },
         { label: "Risikomanagement", href: "/wissen/risikomanagement" },
       ],
+      expertiseItems: [
+        { label: "Referenzen & Branchenvertrauen", href: "/referenzen" },
+        { label: "Fachbücher & Veröffentlichungen", href: "/literatur" },
+        { label: "Podcast mit Kevin Lucan", href: "/expertise#podcast" },
+        { label: "Branchen", href: "/branchen" },
+      ],
     },
     footer: {
       description:
@@ -257,10 +262,11 @@ const content = {
         { label: "Leistungen", href: "/leistungen" },
         { label: "Weiterbildung", href: "/weiterbildung" },
         { label: "Wissen", href: "/wissen" },
+        { label: "Expertise", href: "/expertise" },
         { label: "Literatur", href: "/literatur" },
         { label: "Referenzen", href: "/referenzen" },
         { label: "Branchen", href: "/branchen" },
-        { label: "Über uns", href: "/ueber-uns" },
+        { label: "Wir sind RelTest", href: "/ueber-uns" },
         { label: "Aktuelles", href: "/aktuelles" },
         { label: "Glossar", href: "/glossar" },
         { label: "Kontakt", href: "/kontakt" },
@@ -436,6 +442,8 @@ const content = {
       "Automotive",
       "Maschinenbau",
       "Elektronische Produkte",
+      "Halbleiterindustrie",
+      "Consumer-Technik",
       "Erneuerbare Energien",
       "Medizintechnik",
       "Luft- und Raumfahrt",
@@ -497,9 +505,9 @@ const content = {
       serviceIntro: {
         eyebrow: "Leistungen",
         title:
-          "Ein Angebot, das nicht nur Methoden zeigt, sondern echten Projekterfolg ermöglicht",
+          "Wobei RelTest Sie konkret unterstützt",
         description:
-          "Besucher verstehen sofort, wobei RelTest konkret unterstützt, welchen Nutzen die Zusammenarbeit bringt und warum sich die Beauftragung für technische Produkte mit hohen Anforderungen lohnt.",
+          "Ob akutes Zuverlässigkeitsthema, methodische Absicherung, Kompetenzaufbau oder langfristige Projektbegleitung: RelTest bietet vier klare Einstiege für technische Entwicklungs- und Qualitätsaufgaben.",
       },
       educationIntro: {
         eyebrow: "Weiterbildung",
@@ -773,14 +781,13 @@ const content = {
       inquiry: "Start an inquiry",
       servicesOverview: "Services overview",
       knowledgeOverview: "Knowledge overview",
+      expertiseOverview: "Expertise overview",
       items: [
         { label: "Services", href: "/leistungen" },
         { label: "Training", href: "/weiterbildung" },
         { label: "Knowledge", href: "/wissen" },
-        { label: "Literature", href: "/literatur" },
-        { label: "References", href: "/referenzen" },
-        { label: "About us", href: "/ueber-uns" },
-        { label: "Contact", href: "/kontakt" },
+        { label: "Expertise", href: "/expertise" },
+        { label: "About RelTest", href: "/ueber-uns" },
       ],
       serviceItems: [
         {
@@ -860,6 +867,12 @@ const content = {
         { label: "Design of Experiments", href: "/wissen/design-of-experiments" },
         { label: "Risk management", href: "/wissen/risikomanagement" },
       ],
+      expertiseItems: [
+        { label: "References & industry trust", href: "/referenzen" },
+        { label: "Books & publications", href: "/literatur" },
+        { label: "Podcast with Kevin Lucan", href: "/expertise#podcast" },
+        { label: "Industries", href: "/branchen" },
+      ],
     },
     footer: {
       description:
@@ -871,10 +884,11 @@ const content = {
         { label: "Services", href: "/leistungen" },
         { label: "Training", href: "/weiterbildung" },
         { label: "Knowledge", href: "/wissen" },
+        { label: "Expertise", href: "/expertise" },
         { label: "Literature", href: "/literatur" },
         { label: "References", href: "/referenzen" },
         { label: "Industries", href: "/branchen" },
-        { label: "About us", href: "/ueber-uns" },
+        { label: "About RelTest", href: "/ueber-uns" },
         { label: "News", href: "/aktuelles" },
         { label: "Glossary", href: "/glossar" },
         { label: "Contact", href: "/kontakt" },
@@ -1050,6 +1064,8 @@ const content = {
       "Automotive",
       "Mechanical engineering",
       "Electronic products",
+      "Semiconductor industry",
+      "Consumer technology",
       "Renewable energy",
       "Medical technology",
       "Aerospace",
@@ -1110,9 +1126,9 @@ const content = {
       serviceIntro: {
         eyebrow: "Services",
         title:
-          "An offering that goes beyond methods and creates tangible project value",
+          "Where RelTest supports your engineering teams",
         description:
-          "Visitors immediately understand where RelTest provides support, how the collaboration adds value and why it matters for technical products with demanding requirements.",
+          "Whether you need support with an acute reliability issue, methodological validation, capability building or long-term project support, RelTest offers four clear entry points for development and quality challenges.",
       },
       educationIntro: {
         eyebrow: "Professional development",

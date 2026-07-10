@@ -24,7 +24,11 @@ export function LanguageSwitcher({
 
     const segments = pathname.split("/");
     segments[1] = nextLocale;
-    const nextPath = segments.join("/") || `/${nextLocale}`;
+    const nextPathname = segments.join("/") || `/${nextLocale}`;
+    const nextPath =
+      typeof window === "undefined"
+        ? nextPathname
+        : `${nextPathname}${window.location.search}${window.location.hash}`;
 
     await fetch("/api/locale", {
       method: "POST",

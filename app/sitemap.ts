@@ -9,6 +9,7 @@ const staticPaths = [
   "/leistungen",
   "/weiterbildung",
   "/wissen",
+  "/expertise",
   "/prozess",
   "/literatur",
   "/referenzen",

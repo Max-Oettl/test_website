@@ -2191,6 +2191,46 @@ export const detailPageCollections: Record<
         primaryCta: contactLink,
       },
       {
+        slug: "halbleiterindustrie",
+        eyebrow: "Branche",
+        title: "Zuverlässigkeit für die Halbleiterindustrie",
+        description:
+          "Halbleiternahe Produkte und Prozesse erfordern stabile Qualität, belastbare Datenbewertung und eine saubere methodische Absicherung.",
+        metaTitle: "Zuverlässigkeit Halbleiterindustrie | RelTest Solutions",
+        metaDescription:
+          "Reliability Engineering für die Halbleiterindustrie: Prozessstabilität, Ausfallmechanismen, Prüfstrategie, Datenanalyse und Nachweisführung.",
+        lead:
+          "In der Halbleiterindustrie treffen hohe Qualitätsanforderungen, enge Prozessfenster und datenintensive Entscheidungen aufeinander.",
+        visual: {
+          src: "/expertise/decision-dashboard.png",
+          alt: "Technisches Meeting mit Zuverlässigkeitsdaten, Risikomatrix und Projektplanung",
+          caption:
+            "Halbleiternahe Projekte profitieren von klarer Testplanung, strukturierter Datenbewertung und nachvollziehbarer technischer Argumentation.",
+        },
+        sections: [
+          {
+            title: "Prozess- und Produktstreuung einordnen",
+            body: "RelTest unterstützt dabei, Streuung, Einflussgrößen und Ausfallmechanismen methodisch zu betrachten und daraus belastbare nächste Schritte abzuleiten.",
+          },
+          {
+            title: "Tests und Daten entscheidbar machen",
+            body: "Prüfstrategien, DoE, Lebensdauerbewertung und Datenanalyse werden so kombiniert, dass technische Entscheidungen nachvollziehbar und wirtschaftlich bleiben.",
+          },
+        ],
+        proofPointsTitle: "Relevante Themen",
+        proofPoints: [
+          "DoE und Einflussgrößenanalyse",
+          "Datenanalyse und Prozessverständnis",
+          "Ausfallmechanismen und Risikobewertung",
+          "technische Nachweisführung",
+        ],
+        ctaTitle: "Halbleiter-Projekt einordnen",
+        ctaText:
+          "Wir klären, welche Zuverlässigkeitsfragen, Daten und Nachweise für Ihr Projekt entscheidend sind.",
+        primaryCta: contactLink,
+        secondaryCta: { label: "Leistungen ansehen", href: "/leistungen" },
+      },
+      {
         slug: "erneuerbare-energien",
         eyebrow: "Branche",
         title: "Zuverlässigkeit für erneuerbare Energien",
@@ -2686,19 +2726,28 @@ detailPageCollections.industries.en = detailPageCollections.industries.de.map(
   (page) => ({
     ...page,
     eyebrow: "Industry",
-    title: page.title
-      .replace("Zuverlässigkeit für", "Reliability for")
-      .replace("Zuverlässigkeit im", "Reliability in")
-      .replace("Zuverlässigkeit elektronischer Produkte", "Reliability for electronic products")
-      .replace("erneuerbare Energien", "renewable energy")
-      .replace("Konsumgüter", "consumer goods")
-      .replace("Luft- und Raumfahrt", "aerospace")
-      .replace("Medizintechnik", "medical technology")
-      .replace("Produktionstechnik", "production technology")
-      .replace("Maschinenbau", "mechanical engineering"),
+    title:
+      page.slug === "halbleiterindustrie"
+        ? "Reliability for the semiconductor industry"
+        : page.title
+            .replace("Zuverlässigkeit für", "Reliability for")
+            .replace("Zuverlässigkeit im", "Reliability in")
+            .replace(
+              "Zuverlässigkeit elektronischer Produkte",
+              "Reliability for electronic products",
+            )
+            .replace("erneuerbare Energien", "renewable energy")
+            .replace("Konsumgüter", "consumer goods")
+            .replace("Luft- und Raumfahrt", "aerospace")
+            .replace("Medizintechnik", "medical technology")
+            .replace("Produktionstechnik", "production technology")
+            .replace("Maschinenbau", "mechanical engineering"),
     description:
       "Industry-specific reliability engineering for demanding technical products, adapted to risk, operating conditions and validation requirements.",
-    metaTitle: `${page.title.replace("Zuverlässigkeit", "Reliability")} | RelTest Solutions`,
+    metaTitle:
+      page.slug === "halbleiterindustrie"
+        ? "Reliability for the semiconductor industry | RelTest Solutions"
+        : `${page.title.replace("Zuverlässigkeit", "Reliability")} | RelTest Solutions`,
     metaDescription:
       "Industry-specific reliability engineering, testing, data analysis and validation support by RelTest Solutions.",
     lead:
@@ -2724,6 +2773,9 @@ detailPageCollections.industries.en = detailPageCollections.industries.de.map(
     ctaText:
       "We clarify which reliability questions are most relevant for your product and market.",
     primaryCta: contactLinkEn,
+    secondaryCta: page.secondaryCta
+      ? { label: "View services", href: page.secondaryCta.href }
+      : undefined,
   }),
 );
 

@@ -81,6 +81,34 @@ npm run start
 - `public/`: Logos, Fotos, Grafiken, Piktogramme und Referenzlogos
 - `proxy.ts`: Spracherkennung und Weiterleitung auf `/de` oder `/en`
 
+## Design-System und Farben
+
+Das Projekt nutzt Tailwind CSS 4. Der aktuelle Ansatz ist CSS-first:
+
+- zentrale Design-Tokens liegen in `app/globals.css`
+- es gibt bewusst keine klassische `tailwind.config.js`
+- Farben, Fonts, Radien und Schatten werden über `@theme inline` für Tailwind verfügbar gemacht
+
+Wichtige Tokens:
+
+- `brand-ink`, `brand-navy`, `brand-blue`, `brand-cyan`: Kernfarben der Marke
+- `surface-canvas`, `surface-muted`, `surface-card`: Flächen und Hintergründe
+- `line-soft`: dezente Rahmen und Trennlinien
+- `copy-muted`, `copy-soft`: ruhigere Textfarben
+- `signal-risk`, `signal-warning`, `signal-success`: fachliche Signal-/Statusfarben
+
+Beispiele für die Nutzung in Komponenten:
+
+```tsx
+className="bg-brand-ink text-white"
+className="border-line-soft bg-surface-card"
+className="rounded-panel shadow-panel"
+```
+
+Neue globale Farben sollten zuerst in `app/globals.css` als Token angelegt werden.
+Direkte Einzelwerte wie `#075985` oder viele neue zufällige Farbklassen sollten nur
+verwendet werden, wenn es dafür einen guten Grund gibt.
+
 ## Mehrsprachigkeit
 
 Die Website unterstützt Deutsch und Englisch. Jede Seite liegt unter einem Sprachpräfix:
@@ -149,9 +177,8 @@ Die Reihenfolge wird in `app/[lang]/page.tsx` festgelegt:
 4. Weiterbildung
 5. Warum RelTest
 6. Podcast
-7. Fachbuch
-8. Branchenreferenzen
-9. Kontakt-CTA
+7. Branchenreferenzen
+8. Kontakt-CTA
 
 Ganze `<section>`-Blöcke können dort verschoben werden, um die Reihenfolge zu ändern.
 
@@ -163,6 +190,7 @@ Statische Dateien liegen unter `public/` und werden mit Pfaden wie `/team/img-01
 - `public/graphics`: Badewannenkurve und Prozessgrafik
 - `public/hero-pictograms`: Piktogramme des Hero-Visuals
 - `public/icons`: Service-Icons
+- `public/industries`: Branchenbilder fÃ¼r die Startseiten-Karten
 - `public/podcast`: Podcast-Hintergrund
 - `public/references`: Kundenlogos
 - `public/team`: Mitarbeiter- und Academy-Bilder

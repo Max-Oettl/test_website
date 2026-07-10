@@ -1,0 +1,1625 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RelTest Landingpage-Konzepte mit Leistungsfokus</title>
+    <style>
+      :root {
+        --ink: #06111f;
+        --navy: #07182d;
+        --muted: #627287;
+        --muted-strong: #405169;
+        --line: #d8e3eb;
+        --line-strong: #bacbd8;
+        --paper: #f7fbfd;
+        --paper-2: #edf4f7;
+        --white: #ffffff;
+        --cyan: #007fa3;
+        --cyan-dark: #00637d;
+        --cyan-soft: #e0f5f8;
+        --teal: #1b9078;
+        --amber: #c89124;
+        --red: #b94a48;
+        --shadow: 0 28px 80px rgba(7, 24, 45, 0.12);
+        --shadow-soft: 0 18px 50px rgba(7, 24, 45, 0.08);
+        --radius-xl: 32px;
+        --radius-lg: 24px;
+        --radius-md: 18px;
+        --max: 1220px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 90% 6%, rgba(0, 127, 163, 0.1), transparent 31rem),
+          linear-gradient(180deg, #fbfdfe 0%, #edf4f7 46%, #fbfdfe 100%);
+        font-family:
+          "Aptos",
+          "Bahnschrift",
+          "Segoe UI",
+          sans-serif;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        content: "";
+        background-image:
+          linear-gradient(rgba(7, 24, 45, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(7, 24, 45, 0.045) 1px, transparent 1px);
+        background-size: 48px 48px;
+        mask-image: linear-gradient(180deg, #000, transparent 78%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .page-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(216, 227, 235, 0.75);
+        background: rgba(251, 253, 254, 0.82);
+        backdrop-filter: blur(18px);
+      }
+
+      .page-header-inner {
+        display: flex;
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 148px;
+        height: auto;
+      }
+
+      .brand span {
+        border-left: 1px solid var(--line);
+        padding-left: 18px;
+        color: var(--muted);
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .jump-nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .jump-nav a {
+        flex: 0 0 auto;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.74);
+        padding: 10px 13px;
+        color: var(--muted-strong);
+        font-size: 0.78rem;
+        font-weight: 850;
+        transition:
+          border-color 160ms ease,
+          color 160ms ease,
+          background 160ms ease;
+      }
+
+      .jump-nav a:hover {
+        border-color: rgba(0, 127, 163, 0.35);
+        background: #fff;
+        color: var(--cyan-dark);
+      }
+
+      .intro {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+        padding: 74px 0 56px;
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.7fr);
+        gap: clamp(32px, 6vw, 82px);
+        align-items: end;
+      }
+
+      .intro h1 {
+        max-width: 980px;
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(3rem, 7vw, 6.9rem);
+        font-weight: 760;
+        line-height: 0.9;
+        letter-spacing: -0.082em;
+      }
+
+      .intro p {
+        margin: 22px 0 0;
+        max-width: 760px;
+        color: var(--muted-strong);
+        font-size: 1.13rem;
+        font-weight: 520;
+        line-height: 1.75;
+      }
+
+      .brief-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-xl);
+        background: rgba(255, 255, 255, 0.78);
+        padding: 28px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .brief-card strong {
+        display: block;
+        color: var(--cyan-dark);
+        font-size: 0.78rem;
+        font-weight: 950;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .brief-card ul {
+        display: grid;
+        gap: 14px;
+        margin: 22px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .brief-card li {
+        display: grid;
+        grid-template-columns: 10px 1fr;
+        gap: 13px;
+        color: var(--muted-strong);
+        font-size: 0.95rem;
+        font-weight: 720;
+        line-height: 1.55;
+      }
+
+      .brief-card li::before {
+        width: 10px;
+        height: 10px;
+        margin-top: 6px;
+        border-radius: 999px;
+        background: var(--cyan);
+        content: "";
+      }
+
+      .concept {
+        width: min(1440px, calc(100% - 28px));
+        margin: 0 auto 72px;
+        overflow: hidden;
+        border: 1px solid rgba(186, 203, 216, 0.8);
+        border-radius: 38px;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: var(--shadow);
+      }
+
+      .concept-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.72);
+        padding: 18px 24px;
+      }
+
+      .concept-meta p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-weight: 820;
+      }
+
+      .concept-meta strong {
+        color: var(--ink);
+        font-size: 0.92rem;
+        letter-spacing: -0.01em;
+      }
+
+      .fit {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 999px;
+        background: var(--cyan-soft);
+        padding: 9px 13px;
+        color: var(--cyan-dark);
+        font-size: 0.75rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .screen {
+        position: relative;
+        min-height: 820px;
+        overflow: hidden;
+        padding: 26px clamp(28px, 5vw, 74px) 58px;
+        background:
+          radial-gradient(circle at 86% 14%, rgba(0, 127, 163, 0.1), transparent 24rem),
+          linear-gradient(180deg, #fbfdfe 0%, #edf4f7 100%);
+      }
+
+      .screen.dark {
+        color: #fff;
+        background:
+          radial-gradient(circle at 82% 12%, rgba(64, 196, 211, 0.16), transparent 25rem),
+          linear-gradient(135deg, #06111f 0%, #0b2035 62%, #0e3440 100%);
+      }
+
+      .screen::before {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        background-image:
+          linear-gradient(rgba(7, 24, 45, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(7, 24, 45, 0.04) 1px, transparent 1px);
+        background-size: 54px 54px;
+        mask-image: linear-gradient(180deg, #000, transparent 88%);
+      }
+
+      .screen.dark::before {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+      }
+
+      .mock-header {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        min-height: 64px;
+        margin: 0 auto;
+        border: 1px solid rgba(186, 203, 216, 0.72);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.84);
+        padding: 10px 14px 10px 20px;
+        box-shadow: 0 18px 52px rgba(7, 24, 45, 0.07);
+        backdrop-filter: blur(18px);
+      }
+
+      .screen.dark .mock-header {
+        border-color: rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .mock-brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        min-width: 0;
+      }
+
+      .mock-brand img {
+        width: 138px;
+      }
+
+      .screen.dark .mock-brand img {
+        border-radius: 8px;
+        background: #fff;
+        padding: 4px 6px;
+      }
+
+      .mock-brand span {
+        border-left: 1px solid var(--line);
+        padding-left: 16px;
+        color: var(--muted);
+        font-size: 0.66rem;
+        font-weight: 950;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .screen.dark .mock-brand span {
+        border-color: rgba(255, 255, 255, 0.18);
+        color: rgba(255, 255, 255, 0.64);
+      }
+
+      .mock-nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: var(--muted-strong);
+        font-size: 0.86rem;
+        font-weight: 850;
+      }
+
+      .screen.dark .mock-nav {
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .mock-nav .button {
+        border-radius: 999px;
+        background: var(--ink);
+        color: #fff;
+        padding: 12px 18px;
+      }
+
+      .screen.dark .mock-nav .button {
+        background: #fff;
+        color: var(--ink);
+      }
+
+      .hero-layout {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: minmax(0, 0.94fr) minmax(360px, 0.72fr);
+        gap: clamp(36px, 5vw, 76px);
+        align-items: center;
+        padding-top: clamp(58px, 7vw, 96px);
+      }
+
+      .hero-layout.wide-copy {
+        grid-template-columns: minmax(0, 0.86fr) minmax(400px, 0.86fr);
+      }
+
+      .hero-layout.service-first {
+        grid-template-columns: minmax(0, 0.74fr) minmax(500px, 1fr);
+      }
+
+      .kicker {
+        margin: 0 0 18px;
+        color: var(--cyan-dark);
+        font-size: 0.78rem;
+        font-weight: 950;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .screen.dark .kicker {
+        color: #70d6e3;
+      }
+
+      h2 {
+        margin: 0;
+        color: inherit;
+        font-size: clamp(3.4rem, 6.8vw, 6.7rem);
+        font-weight: 780;
+        line-height: 0.92;
+        letter-spacing: -0.08em;
+      }
+
+      .h2-tight {
+        font-size: clamp(3rem, 5.6vw, 5.5rem);
+      }
+
+      .lead {
+        max-width: 760px;
+        margin: 28px 0 0;
+        border-left: 4px solid var(--cyan);
+        padding-left: 24px;
+        color: var(--muted-strong);
+        font-size: 1.12rem;
+        font-weight: 620;
+        line-height: 1.8;
+      }
+
+      .screen.dark .lead {
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .primary,
+      .secondary,
+      .text-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        font-weight: 920;
+      }
+
+      .primary {
+        background: var(--ink);
+        color: #fff;
+        padding: 0 24px;
+        box-shadow: 0 20px 42px rgba(7, 24, 45, 0.16);
+      }
+
+      .screen.dark .primary {
+        background: #fff;
+        color: var(--ink);
+      }
+
+      .secondary {
+        border: 1px solid var(--line-strong);
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--ink);
+        padding: 0 24px;
+      }
+
+      .screen.dark .secondary {
+        border-color: rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+      }
+
+      .text-link {
+        color: var(--cyan-dark);
+        padding: 0 4px;
+      }
+
+      .screen.dark .text-link {
+        color: #9be9f1;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .service-card,
+      .need-card,
+      .role-card,
+      .phase-card {
+        border: 1px solid rgba(186, 203, 216, 0.82);
+        border-radius: var(--radius-lg);
+        background: rgba(255, 255, 255, 0.78);
+        padding: 22px;
+        box-shadow: 0 16px 40px rgba(7, 24, 45, 0.07);
+        backdrop-filter: blur(16px);
+      }
+
+      .screen.dark .service-card,
+      .screen.dark .need-card,
+      .screen.dark .role-card,
+      .screen.dark .phase-card {
+        border-color: rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .service-card strong,
+      .need-card strong,
+      .role-card strong,
+      .phase-card strong {
+        display: block;
+        color: var(--ink);
+        font-size: 1.1rem;
+        font-weight: 850;
+        letter-spacing: -0.03em;
+      }
+
+      .screen.dark .service-card strong,
+      .screen.dark .need-card strong,
+      .screen.dark .role-card strong,
+      .screen.dark .phase-card strong {
+        color: #fff;
+      }
+
+      .service-card p,
+      .need-card p,
+      .role-card p,
+      .phase-card p {
+        margin: 10px 0 0;
+        color: var(--muted-strong);
+        font-size: 0.92rem;
+        font-weight: 620;
+        line-height: 1.65;
+      }
+
+      .screen.dark .service-card p,
+      .screen.dark .need-card p,
+      .screen.dark .role-card p,
+      .screen.dark .phase-card p {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .service-card small,
+      .need-card small,
+      .role-card small,
+      .phase-card small {
+        display: inline-flex;
+        margin-top: 18px;
+        color: var(--cyan-dark);
+        font-size: 0.72rem;
+        font-weight: 950;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .screen.dark small {
+        color: #9be9f1;
+      }
+
+      .photo-panel {
+        position: relative;
+        min-height: 500px;
+        overflow: hidden;
+        border: 1px solid rgba(186, 203, 216, 0.82);
+        border-radius: 34px;
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .photo-panel img {
+        width: 100%;
+        height: 100%;
+        min-height: 500px;
+        object-fit: cover;
+      }
+
+      .photo-panel::after {
+        position: absolute;
+        inset: auto 0 0;
+        height: 46%;
+        content: "";
+        background: linear-gradient(180deg, transparent, rgba(6, 17, 31, 0.82));
+      }
+
+      .photo-caption {
+        position: absolute;
+        right: 22px;
+        bottom: 22px;
+        left: 22px;
+        z-index: 2;
+        display: grid;
+        gap: 12px;
+      }
+
+      .photo-caption-row {
+        display: grid;
+        grid-template-columns: 11px 1fr;
+        gap: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 14px;
+        color: var(--ink);
+        font-size: 0.82rem;
+        font-weight: 800;
+        line-height: 1.42;
+      }
+
+      .photo-caption-row::before {
+        width: 9px;
+        height: 9px;
+        margin-top: 5px;
+        border-radius: 50%;
+        background: var(--cyan);
+        content: "";
+      }
+
+      .mapping-table {
+        display: grid;
+        gap: 12px;
+      }
+
+      .map-row {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) 36px minmax(0, 1fr);
+        gap: 14px;
+        align-items: stretch;
+      }
+
+      .map-cell,
+      .map-result {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.78);
+        padding: 18px;
+        box-shadow: 0 14px 36px rgba(7, 24, 45, 0.06);
+      }
+
+      .map-cell span,
+      .map-result span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 950;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .map-cell strong,
+      .map-result strong {
+        display: block;
+        margin-top: 8px;
+        color: var(--ink);
+        font-size: 1rem;
+        font-weight: 850;
+        line-height: 1.35;
+      }
+
+      .arrow-dot {
+        display: grid;
+        place-items: center;
+        color: var(--cyan-dark);
+        font-size: 1.25rem;
+        font-weight: 900;
+      }
+
+      .topic-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .topic-strip span {
+        border: 1px solid rgba(0, 127, 163, 0.22);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 9px 12px;
+        color: var(--cyan-dark);
+        font-size: 0.76rem;
+        font-weight: 920;
+      }
+
+      .big-service-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .big-service-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 236px;
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        background: #fff;
+        padding: 26px;
+        box-shadow: 0 18px 46px rgba(7, 24, 45, 0.07);
+      }
+
+      .big-service-card::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 5px;
+        content: "";
+        background: linear-gradient(90deg, var(--cyan), var(--teal));
+      }
+
+      .big-service-card:nth-child(2)::before {
+        background: linear-gradient(90deg, var(--navy), var(--cyan));
+      }
+
+      .big-service-card:nth-child(3)::before {
+        background: linear-gradient(90deg, var(--amber), var(--cyan));
+      }
+
+      .big-service-card:nth-child(4)::before {
+        background: linear-gradient(90deg, var(--teal), var(--navy));
+      }
+
+      .big-service-card strong {
+        color: var(--ink);
+        font-size: 1.44rem;
+        font-weight: 850;
+        letter-spacing: -0.04em;
+      }
+
+      .big-service-card p {
+        margin: 14px 0 0;
+        color: var(--muted-strong);
+        font-size: 0.98rem;
+        font-weight: 600;
+        line-height: 1.65;
+      }
+
+      .big-service-card ul {
+        display: grid;
+        gap: 8px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .big-service-card li {
+        color: var(--muted-strong);
+        font-size: 0.83rem;
+        font-weight: 780;
+      }
+
+      .big-service-card li::before {
+        color: var(--cyan-dark);
+        content: "-  ";
+      }
+
+      .process-band {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 36px;
+      }
+
+      .process-band::before {
+        position: absolute;
+        top: 36px;
+        right: 8%;
+        left: 8%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+        content: "";
+      }
+
+      .process-step {
+        position: relative;
+        z-index: 1;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 18px;
+      }
+
+      .process-step span {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: #9be9f1;
+        font-size: 0.78rem;
+        font-weight: 950;
+      }
+
+      .process-step strong {
+        display: block;
+        margin-top: 32px;
+        color: #fff;
+        font-size: 0.98rem;
+        font-weight: 850;
+      }
+
+      .process-step p {
+        margin: 9px 0 0;
+        color: rgba(255, 255, 255, 0.66);
+        font-size: 0.8rem;
+        font-weight: 650;
+        line-height: 1.55;
+      }
+
+      .role-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .role-card {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 18px;
+        align-items: start;
+      }
+
+      .role-card span {
+        display: inline-flex;
+        border-radius: 999px;
+        background: var(--cyan-soft);
+        padding: 9px 12px;
+        color: var(--cyan-dark);
+        font-size: 0.72rem;
+        font-weight: 950;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .need-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 34px;
+      }
+
+      .need-card {
+        min-height: 270px;
+      }
+
+      .need-card .count {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        margin-bottom: 24px;
+        place-items: center;
+        border-radius: 999px;
+        background: var(--ink);
+        color: #fff;
+        font-size: 0.82rem;
+        font-weight: 950;
+      }
+
+      .screen.dark .need-card .count {
+        background: #fff;
+        color: var(--ink);
+      }
+
+      .next-preview {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 16px;
+        margin-top: 52px;
+        border-top: 1px solid rgba(186, 203, 216, 0.6);
+        padding-top: 20px;
+      }
+
+      .screen.dark .next-preview {
+        border-color: rgba(255, 255, 255, 0.14);
+      }
+
+      .next-preview strong {
+        color: var(--ink);
+        font-size: 0.84rem;
+        font-weight: 950;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .screen.dark .next-preview strong {
+        color: #9be9f1;
+      }
+
+      .next-preview p {
+        margin: 0;
+        color: var(--muted-strong);
+        font-size: 0.95rem;
+        font-weight: 680;
+        line-height: 1.6;
+      }
+
+      .screen.dark .next-preview p {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .comparison {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto 84px;
+        border: 1px solid var(--line);
+        border-radius: 34px;
+        background: rgba(255, 255, 255, 0.86);
+        padding: clamp(26px, 4vw, 44px);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .comparison h2 {
+        max-width: 780px;
+        font-size: clamp(2.4rem, 4vw, 4.2rem);
+      }
+
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 30px;
+      }
+
+      .comparison-card {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--paper);
+        padding: 22px;
+      }
+
+      .comparison-card strong {
+        display: block;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+
+      .comparison-card p {
+        margin: 10px 0 0;
+        color: var(--muted-strong);
+        font-size: 0.9rem;
+        font-weight: 650;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 1120px) {
+        .page-header-inner,
+        .intro {
+          width: min(100% - 28px, var(--max));
+        }
+
+        .page-header-inner,
+        .mock-header {
+          align-items: flex-start;
+          border-radius: 28px;
+          flex-direction: column;
+        }
+
+        .mock-nav,
+        .jump-nav {
+          width: 100%;
+        }
+
+        .intro-grid,
+        .hero-layout,
+        .hero-layout.wide-copy,
+        .hero-layout.service-first,
+        .next-preview {
+          grid-template-columns: 1fr;
+        }
+
+        .photo-panel {
+          min-height: 380px;
+        }
+
+        .photo-panel img {
+          min-height: 380px;
+        }
+
+        .process-band,
+        .need-grid,
+        .comparison-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .process-band::before {
+          display: none;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .concept {
+          width: min(100% - 16px, 1440px);
+          border-radius: 26px;
+        }
+
+        .screen {
+          min-height: auto;
+          padding: 20px 16px 42px;
+        }
+
+        .concept-meta {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .mock-brand {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .mock-brand span,
+        .brand span {
+          border-left: 0;
+          padding-left: 0;
+        }
+
+        .mock-nav {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .service-grid,
+        .big-service-grid,
+        .map-row,
+        .role-card {
+          grid-template-columns: 1fr;
+        }
+
+        .arrow-dot {
+          display: none;
+        }
+
+        .intro h1,
+        h2 {
+          letter-spacing: -0.065em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="page-header-inner">
+        <a class="brand" href="#top" aria-label="Zum Anfang">
+          <img src="../../public/reltest-solutions-logo.png" alt="RelTest Solutions" />
+          <span>Landingpage-Konzepte</span>
+        </a>
+        <nav class="jump-nav" aria-label="Konzeptnavigation">
+          <a href="#konzept-1">1 Leistungsversprechen</a>
+          <a href="#konzept-2">2 Problem zu Leistung</a>
+          <a href="#konzept-3">3 Vier Wege</a>
+          <a href="#konzept-4">4 Produktprozess</a>
+          <a href="#konzept-5">5 Zielgruppen</a>
+          <a href="#konzept-6">6 Leistungsfinder</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="intro">
+        <div class="intro-grid">
+          <div>
+            <h1>Erste Screens, die sofort sagen, wobei RelTest hilft.</h1>
+            <p>
+              Dieses Board zeigt sechs alternative Einstiege für die Startseite. Alle Varianten
+              priorisieren Leistungs- und Nutzenklarheit vor dekorativer Technikgrafik. Die
+              Vertrauensargumente wie Referenzen, Literatur und Podcast können danach folgen.
+            </p>
+          </div>
+          <aside class="brief-card">
+            <strong>Ziel für den Termin</strong>
+            <ul>
+              <li>In 5 Sekunden muss klar sein, ob RelTest für die Aufgabe relevant ist.</li>
+              <li>Beratung, langfristige Kooperation, Seminare und Academy sollen sichtbar sein.</li>
+              <li>Der Einstieg soll hochwertig, ruhig und B2B-tauglich wirken.</li>
+              <li>Die Website soll erst Interesse schaffen und danach Vertrauen vertiefen.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <article class="concept" id="konzept-1">
+        <div class="concept-meta">
+          <p><strong>Konzept 1:</strong> Leistungsversprechen zuerst</p>
+          <span class="fit">Stärke: klare Positionierung</span>
+        </div>
+        <section class="screen">
+          <header class="mock-header">
+            <a class="mock-brand" href="#">
+              <img src="../../public/reltest-solutions-logo.png" alt="RelTest Solutions" />
+              <span>Advanced Reliability Engineering Partner</span>
+            </a>
+            <nav class="mock-nav" aria-label="Beispielnavigation">
+              <a href="#">Leistungen</a>
+              <a href="#">Weiterbildung</a>
+              <a href="#">Wissen</a>
+              <a href="#">Referenzen</a>
+              <a class="button" href="#">Projekt besprechen</a>
+            </nav>
+          </header>
+
+          <div class="hero-layout">
+            <div>
+              <p class="kicker">Für technische Produkte mit hohen Anforderungen</p>
+              <h2>Zuverlässigkeit in belastbare Projektentscheidungen übersetzen.</h2>
+              <p class="lead">
+                RelTest unterstützt Unternehmen, wenn Ausfälle, Streuung, unsichere
+                Lebensdauerprognosen oder Nachweisfragen zu Projekt-, Kosten- oder
+                Haftungsrisiken werden.
+              </p>
+              <div class="actions">
+                <a class="primary" href="#">Leistungen ansehen</a>
+                <a class="secondary" href="#">Projekt besprechen</a>
+                <a class="text-link" href="#">Fachthemen einordnen &rarr;</a>
+              </div>
+            </div>
+
+            <div class="service-grid" aria-label="Leistungsübersicht">
+              <a class="service-card" href="#">
+                <strong>Beratung</strong>
+                <p>Zuverlässigkeit, DoE, Testplanung, Risikoanalyse und Datenbewertung.</p>
+                <small>Mehr erfahren</small>
+              </a>
+              <a class="service-card" href="#">
+                <strong>Langfristige Kooperation</strong>
+                <p>Methoden, Reviews, Dokumentation und Absicherung nach Stand der Technik.</p>
+                <small>Mehr erfahren</small>
+              </a>
+              <a class="service-card" href="#">
+                <strong>Schulungen vor Ort</strong>
+                <p>Praxisnahe Seminare für Entwicklungs-, Erprobungs- und Qualitätsteams.</p>
+                <small>Mehr erfahren</small>
+              </a>
+              <a class="service-card" href="#">
+                <strong>RelTest Academy</strong>
+                <p>Strukturiertes E-Learning für Ingenieurinnen und Ingenieure.</p>
+                <small>Mehr erfahren</small>
+              </a>
+            </div>
+          </div>
+
+          <div class="next-preview">
+            <strong>Nächster Abschnitt</strong>
+            <p>
+              Direkt danach können Referenzen, Fachbuch und ein kurzer Methoden-Einstieg
+              erklären, warum RelTest für diese Leistungen der passende Partner ist.
+            </p>
+          </div>
+        </section>
+      </article>
+
+      <article class="concept" id="konzept-2">
+        <div class="concept-meta">
+          <p><strong>Konzept 2:</strong> Vom Kundenproblem zur passenden Leistung</p>
+          <span class="fit">Stärke: konkrete Bedarfserkennung</span>
+        </div>
+        <section class="screen">
+          <header class="mock-header">
+            <a class="mock-brand" href="#">
+              <img src="../../public/reltest-solutions-logo.png" alt="RelTest Solutions" />
+              <span>Reliability Engineering für reale Projektrisiken</span>
+            </a>
+            <nav class="mock-nav" aria-label="Beispielnavigation">
+              <a href="#">Leistungen</a>
+              <a href="#">Wissen</a>
+              <a href="#">Literatur</a>
+              <a class="button" href="#">Anfrage starten</a>
+            </nav>
+          </header>
+
+          <div class="hero-layout wide-copy">
+            <div>
+              <p class="kicker">Wenn technische Unsicherheit Entscheidungen bremst</p>
+              <h2 class="h2-tight">Aus Problemfeldern werden klare Engineering-Aufgaben.</h2>
+              <p class="lead">
+                RelTest ordnet Ausfälle, Streuung, Testdaten und Risiken methodisch ein und
+                leitet daraus belastbare Schritte für Entwicklung, Absicherung und Freigabe ab.
+              </p>
+              <div class="topic-strip">
+                <span>Zuverlässigkeitstechnik</span>
+                <span>DoE und Versuchsplanung</span>
+                <span>Datenanalyse</span>
+                <span>Risikomanagement</span>
+                <span>Prognostik</span>
+              </div>
+            </div>
+
+            <div class="mapping-table">
+              <div class="map-row">
+                <div class="map-cell">
+                  <span>Kundensituation</span>
+                  <strong>Feldausfaelle oder unklare Ausfallursachen</strong>
+                </div>
+                <div class="arrow-dot">&rarr;</div>
+                <div class="map-result">
+                  <span>Passende Unterstützung</span>
+                  <strong>Beratung, Datenanalyse und Schwachstellenanalyse</strong>
+                </div>
+              </div>
+              <div class="map-row">
+                <div class="map-cell">
+                  <span>Kundensituation</span>
+                  <strong>Zu viele Tests, aber trotzdem unsichere Aussage</strong>
+                </div>
+                <div class="arrow-dot">&rarr;</div>
+                <div class="map-result">
+                  <span>Passende Unterstützung</span>
+                  <strong>DoE, Testplanung und Erprobungsstrategie</strong>
+                </div>
+              </div>
+              <div class="map-row">
+                <div class="map-cell">
+                  <span>Kundensituation</span>
+                  <strong>Team braucht gemeinsame Methodenbasis</strong>
+                </div>
+                <div class="arrow-dot">&rarr;</div>
+                <div class="map-result">
+                  <span>Passende Unterstützung</span>
+                  <strong>Inhouse-Seminare oder RelTest Academy</strong>
+                </div>
+              </div>
+              <div class="map-row">
+                <div class="map-cell">
+                  <span>Kundensituation</span>
+                  <strong>Nachweise müssen über Projektphasen halten</strong>
+                </div>
+                <div class="arrow-dot">&rarr;</div>
+                <div class="map-result">
+                  <span>Passende Unterstützung</span>
+                  <strong>Langfristige Kooperation und Dokumentation</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="next-preview">
+            <strong>Nächster Abschnitt</strong>
+            <p>
+              Eine vertiefende Leistungsübersicht kann die vier Angebote zeigen und die
+              Fachthemen sauber unter Beratung und Kooperation einordnen.
+            </p>
+          </div>
+        </section>
+      </article>
+
+      <article class="concept" id="konzept-3">
+        <div class="concept-meta">
+          <p><strong>Konzept 3:</strong> Vier buchbare Wege in den Mittelpunkt</p>
+          <span class="fit">Stärke: maximale Angebotsklarheit</span>
+        </div>
+        <section class="screen">
+          <header class="mock-header">
+            <a class="mock-brand" href="#">
+              <img src="../../public/reltest-solutions-logo.png" alt="RelTest Solutions" />
+              <span>Engineering-Beratung, Weiterbildung und Kooperation</span>
+            </a>
+            <nav class="mock-nav" aria-label="Beispielnavigation">
+              <a href="#">Leistungen</a>
+              <a href="#">Weiterbildung</a>
+              <a href="#">Referenzen</a>
+              <a class="button" href="#">Kontakt</a>
+            </nav>
+          </header>
+
+          <div class="hero-layout service-first">
+            <div>
+              <p class="kicker">Was Sie bei RelTest konkret anfragen können</p>
+              <h2 class="h2-tight">Vier Wege, technische Zuverlässigkeit aufzubauen.</h2>
+              <p class="lead">
+                Je nach Projektstand unterstützt RelTest als beratender Spezialist, als
+                langfristiger Entwicklungspartner oder als Weiterbildungsanbieter für Teams
+                und einzelne Ingenieurinnen und Ingenieure.
+              </p>
+              <div class="actions">
+                <a class="primary" href="#">Passende Leistung finden</a>
+                <a class="secondary" href="#">Erstgespräch vereinbaren</a>
+              </div>
+            </div>
+
+            <div class="big-service-grid">
+              <a class="big-service-card" href="#">
+                <strong>Beratung</strong>
+                <p>Fachliche Unterstützung für konkrete Entwicklungs- und Absicherungsfragen.</p>
+                <ul>
+                  <li>Zuverlässigkeitstechnik</li>
+                  <li>DoE und Testplanung</li>
+                  <li>Datenanalyse und Risiko</li>
+                </ul>
+              </a>
+              <a class="big-service-card" href="#">
+                <strong>Langfristige Kooperation</strong>
+                <p>Begleitung über Projektphasen hinweg, inklusive Reviews und Dokumentation.</p>
+                <ul>
+                  <li>Stand der Technik</li>
+                  <li>Nachweislogik</li>
+                  <li>Methodenverankerung</li>
+                </ul>
+              </a>
+              <a class="big-service-card" href="#">
+                <strong>Schulungen vor Ort</strong>
+                <p>Praxisnahe Seminare mit direkter Diskussion an realen Projektfragen.</p>
+                <ul>
+                  <li>Teamweiterbildung</li>
+                  <li>Methodensicherheit</li>
+                  <li>Praxisbeispiele</li>
+                </ul>
+              </a>
+              <a class="big-service-card" href="#">
+                <strong>RelTest Academy</strong>
+                <p>Digitales Lernprogramm für strukturierten Kompetenzaufbau im eigenen Tempo.</p>
+                <ul>
+                  <li>E-Learning</li>
+                  <li>Grundlagenvermittlung</li>
+                  <li>Skalierbar im Unternehmen</li>
+                </ul>
+              </a>
+            </div>
+          </div>
+
+          <div class="next-preview">
+            <strong>Nächster Abschnitt</strong>
+            <p>
+              Danach können typische Fachthemen wie Erprobung, Modellbildung, Datenanalyse,
+              Prognostik und Risikomanagement als Inhalte der Beratung erklärt werden.
+            </p>
+          </div>
+        </section>
+      </article>
+
+      <article class="concept" id="konzept-4">
+        <div class="concept-meta">
+          <p><strong>Konzept 4:</strong> Unterstützung entlang des Produktprozesses</p>
+          <span class="fit">Stärke: Entwicklungspartner statt Einzelanalyse</span>
+        </div>
+        <section class="screen dark">
+          <header class="mock-header">
+            <a class="mock-brand" href="#">
+              <img src="../../public/reltest-solutions-logo.png" alt="RelTest Solutions" />
+              <span>Reliability als Teil des Produktprozesses</span>
+            </a>
+            <nav class="mock-nav" aria-label="Beispielnavigation">
+              <a href="#">Leistungen</a>
+              <a href="#">Wissen</a>
+              <a href="#">Referenzen</a>
+              <a class="button" href="#">Projekt besprechen</a>
+            </nav>
+          </header>
+
+          <div class="hero-layout wide-copy">
+            <div>
+              <p class="kicker">Von Anforderung bis Serie</p>
+              <h2 class="h2-tight">Zuverlässigkeit entsteht nicht am Ende des Projekts.</h2>
+              <p class="lead">
+                RelTest unterstützt dort, wo Zuverlässigkeit geplant, erprobt, bewertet,
+                dokumentiert und in Entscheidungen übersetzt werden muss.
+              </p>
+              <div class="actions">
+                <a class="primary" href="#">Leistungen im Prozess ansehen</a>
+                <a class="secondary" href="#">Langfristige Kooperation prüfen</a>
+              </div>
+            </div>
+
+            <div>
+              <div class="process-band" aria-label="Produktprozess">
+                <div class="process-step">
+                  <span>A</span>
+                  <strong>Anforderungen</strong>
+                  <p>Ziele, Risiken und Nachweislogik früh klären.</p>
+                </div>
+                <div class="process-step">
+                  <span>E</span>
+                  <strong>Erprobung</strong>
+                  <p>Tests methodisch planen und wirtschaftlich aufbauen.</p>
+                </div>
+                <div class="process-step">
+                  <span>D</span>
+                  <strong>Daten</strong>
+                  <p>Aus Versuch und Feld belastbare Aussagen gewinnen.</p>
+                </div>
+                <div class="process-step">
+                  <span>N</span>
+                  <strong>Nachweis</strong>
+                  <p>Entscheidungen dokumentiert und nachvollziehbar machen.</p>
+                </div>
+                <div class="process-step">
+                  <span>S</span>
+                  <strong>Serie</strong>
+                  <p>Monitoring, Prognosen und Lessons Learned nutzen.</p>
+                </div>
+              </div>
+
+              <div class="service-grid" style="margin-top: 18px">
+                <a class="service-card" href="#">
+                  <strong>Beratung</strong>
+                  <p>Gezielte Expertise für aktuelle Projektfragen.</p>
+                  <small>Direkt einsteigen</small>
+                </a>
+                <a class="service-card" href="#">
+                  <strong>Langfristige Kooperation</strong>
+                  <p>Kontinuierliche Begleitung über mehrere Phasen.</p>
+                  <small>Mehr erfahren</small>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="next-preview">
+            <strong>Nächster Abschnitt</strong>
+            <p>
+              Im Seitenverlauf können Fachthemen wie DoE, Risikomanagement und Datenanalyse
+              den Prozess fachlich belegen.
+            </p>
+          </div>
+        </section>
+      </article>
+
+      <article class="concept" id="konzept-5">
+        <div class="concept-meta">
+          <p><strong>Konzept 5:</strong> Einstieg nach Zielgruppe und Entscheidungssituation</p>
+          <span class="fit">Stärke: unterschiedliche Besucher abholen</span>
+        </div>
+        <section class="screen">
+          <header class="mock-header">
+            <a class="mock-brand" href="#">
+              <img src="../../public/reltest-solutions-logo.png" alt="RelTest Solutions" />
+              <span>Fachliche Orientierung für Entscheider</span>
+            </a>
+            <nav class="mock-nav" aria-label="Beispielnavigation">
+              <a href="#">Leistungen</a>
+              <a href="#">Weiterbildung</a>
+              <a href="#">Literatur</a>
+              <a class="button" href="#">Anfrage starten</a>
+            </nav>
+          </header>
+
+          <div class="hero-layout">
+            <div>
+              <p class="kicker">Je nach Rolle zaehlt eine andere Frage</p>
+              <h2 class="h2-tight">Technische Zuverlässigkeit so aufbereiten, dass Entscheidungen möglich werden.</h2>
+              <p class="lead">
+                RelTest verbindet Zuverlässigkeitstechnik, Versuchsmethodik, Datenanalyse und
+                Weiterbildung so, dass Entwicklung, Projektleitung, Einkauf und Management
+                belastbar handeln können.
+              </p>
+              <div class="actions">
+                <a class="primary" href="#">Richtigen Einstieg wählen</a>
+                <a class="secondary" href="#">Kontakt aufnehmen</a>
+              </div>
+            </div>
+
+            <div class="role-grid">
+              <a class="role-card" href="#">
+                <span>Projektleitung</span>
+                <div>
+                  <strong>Was ist entscheidungsreif?</strong>
+                  <p>Risiken, Teststatus und Nachweise werden in klare Handlungsoptionen übersetzt.</p>
+                </div>
+              </a>
+              <a class="role-card" href="#">
+                <span>Entwicklung</span>
+                <div>
+                  <strong>Welche Ursache, welcher Test, welche Daten?</strong>
+                  <p>Methoden helfen, technische Streuung und Ausfallmechanismen belastbar einzuordnen.</p>
+                </div>
+              </a>
+              <a class="role-card" href="#">
+                <span>Einkauf / GF</span>
+                <div>
+                  <strong>Was ist das Risiko und welcher Aufwand ist sinnvoll?</strong>
+                  <p>RelTest macht technische Unsicherheit nachvollziehbar und beschaffbar.</p>
+                </div>
+              </a>
+              <a class="role-card" href="#">
+                <span>Teams</span>
+                <div>
+                  <strong>Wie wird Methodenwissen intern aufgebaut?</strong>
+                  <p>Seminare und Academy trennen Teamtraining und individuelles Lernen sauber.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="next-preview">
+            <strong>Nächster Abschnitt</strong>
+            <p>
+              Danach sollten die vier Leistungen folgen, damit aus der Rolle schnell ein
+              konkreter naechster Schritt wird.
+            </p>
+          </div>
+        </section>
+      </article>
+
+      <article class="concept" id="konzept-6">
+        <div class="concept-meta">
+          <p><strong>Konzept 6:</strong> Leistungsfinder nach Bedarf</p>
+          <span class="fit">Stärke: handlungsorientiert</span>
+        </div>
+        <section class="screen">
+          <header class="mock-header">
+            <a class="mock-brand" href="#">
+              <img src="../../public/reltest-solutions-logo.png" alt="RelTest Solutions" />
+              <span>Von der Fragestellung zum passenden Angebot</span>
+            </a>
+            <nav class="mock-nav" aria-label="Beispielnavigation">
+              <a href="#">Leistungen</a>
+              <a href="#">Weiterbildung</a>
+              <a href="#">Wissen</a>
+              <a class="button" href="#">Projekt besprechen</a>
+            </nav>
+          </header>
+
+          <div class="hero-layout wide-copy">
+            <div>
+              <p class="kicker">Wobei brauchen Sie Unterstützung?</p>
+              <h2 class="h2-tight">Drei typische Einstiege in die Zusammenarbeit mit RelTest.</h2>
+              <p class="lead">
+                Nicht jedes Unternehmen sucht dasselbe. Manche brauchen schnelle fachliche
+                Einordnung, andere strukturierten Kompetenzaufbau oder langfristige
+                methodische Verantwortung im Projekt.
+              </p>
+              <div class="actions">
+                <a class="primary" href="#">Leistung auswählen</a>
+                <a class="secondary" href="#">Unverbindlich klären</a>
+              </div>
+            </div>
+
+            <div class="photo-panel">
+              <img
+                src="../../public/team/home-engineering-consulting.png"
+                alt="Beratungssituation mit technischer Analyse"
+              />
+              <div class="photo-caption">
+                <div class="photo-caption-row">
+                  Aus technischen Fragen werden methodisch belastbare Entscheidungen.
+                </div>
+                <div class="photo-caption-row">
+                  Beratung, Weiterbildung und Kooperation werden nach Bedarf kombiniert.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="need-grid">
+            <a class="need-card" href="#">
+              <span class="count">A</span>
+              <strong>Akutes technisches Problem klären</strong>
+              <p>
+                Ausfälle, Streuung, unklare Daten oder offene Nachweisfragen fachlich
+                einordnen.
+              </p>
+              <small>Beratung ansehen</small>
+            </a>
+            <a class="need-card" href="#">
+              <span class="count">B</span>
+              <strong>Kompetenz im Team aufbauen</strong>
+              <p>
+                Grundlagen und Anwendungssicherheit in Zuverlässigkeit, Erprobung und DoE
+                vermitteln.
+              </p>
+              <small>Seminare und Academy</small>
+            </a>
+            <a class="need-card" href="#">
+              <span class="count">C</span>
+              <strong>Langfristig absichern</strong>
+              <p>
+                Methoden, Reviews, Dokumentation und Stand der Technik über Projektphasen
+                hinweg verankern.
+              </p>
+              <small>Kooperation prüfen</small>
+            </a>
+          </div>
+        </section>
+      </article>
+
+      <section class="comparison">
+        <h2>Wie ihr die Varianten im Termin schnell vergleichen könnt.</h2>
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <strong>Verstaendlichkeit</strong>
+            <p>Ist innerhalb weniger Sekunden klar, was RelTest anbietet und für welche Aufgabe?</p>
+          </div>
+          <div class="comparison-card">
+            <strong>Passung zur Zielgruppe</strong>
+            <p>Spricht der Einstieg technische Entscheider, Projektleitung, Einkauf und Management an?</p>
+          </div>
+          <div class="comparison-card">
+            <strong>Leistungsklarheit</strong>
+            <p>Werden Beratung, Kooperation, Seminare und Academy sichtbar und sauber getrennt?</p>
+          </div>
+          <div class="comparison-card">
+            <strong>Fachliche Seriositaet</strong>
+            <p>Wirkt die Darstellung technisch glaubwürdig statt wie eine allgemeine Beratungsseite?</p>
+          </div>
+          <div class="comparison-card">
+            <strong>Weiterfuehrung</strong>
+            <p>Ist klar, warum man danach Leistungen, Referenzen, Fachbuch oder Wissen ansehen sollte?</p>
+          </div>
+          <div class="comparison-card">
+            <strong>Umsetzbarkeit</strong>
+            <p>Kann die Variante mit vorhandenen Bildern, Texten und Seitenstruktur sauber umgesetzt werden?</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
