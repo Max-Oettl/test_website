@@ -6,7 +6,14 @@ import { HomeHero } from "../_components/home-hero";
 import { IndustryCarousel } from "../_components/industry-carousel";
 import { LandingConceptComparison } from "../_components/landing-concept-comparison";
 import { LandingConceptIcebergHero } from "../_components/landing-concept-iceberg-hero";
+import { LandingConceptKacheln2Hero } from "../_components/landing-concept-kacheln-2-hero";
+import { LandingConceptKacheln2Tail } from "../_components/landing-concept-kacheln-2-tail";
+import { LandingConceptKacheln3Hero } from "../_components/landing-concept-kacheln-3-hero";
 import { LandingConceptKachelnHero } from "../_components/landing-concept-kacheln-hero";
+import { LandingConceptKachelnTail } from "../_components/landing-concept-kacheln-tail";
+import { LandingConceptVisibility } from "../_components/landing-concept-visibility";
+import { LandingConceptWinnsteinHero } from "../_components/landing-concept-winnstein-hero";
+import { LandingConceptWinnsteinTail } from "../_components/landing-concept-winnstein-tail";
 import { SectionHeading } from "../_components/section-heading";
 import { ServiceCard } from "../_components/service-card";
 import { serviceCardImages } from "../_content/service-card-assets";
@@ -16,6 +23,14 @@ import { buildLocalizedMetadata } from "../_seo/metadata";
 
 const podcastHref =
   "https://ingenieurshelden.de/podcast-fuer-ingenieure-und-ingenieurinnen/kevin-lucan";
+
+const compactLandingConcepts = [
+  "kacheln",
+  "kacheln2",
+  "kacheln3",
+  "kacheln31",
+  "winnstein",
+] as const;
 
 const industryVisuals: Record<
   Locale,
@@ -147,6 +162,15 @@ export default async function HomePage({ params }: Props) {
       },
     ];
   });
+  const industryCarouselProps = {
+    items: industryItems,
+    ctaLabel: industryCtaLabel,
+    eyebrowLabel: industryCarouselEyebrow,
+    navigationLabel: industryCarouselNavigationLabel,
+    nextLabel: industryCarouselNextLabel,
+    previousLabel: industryCarouselPreviousLabel,
+    slideLabel: industryCarouselSlideLabel,
+  };
   const homeServiceHrefs = [
     "/leistungen/beratung",
     "/leistungen/langfristige-kooperation",
@@ -178,10 +202,44 @@ export default async function HomePage({ params }: Props) {
       <LandingConceptComparison
         current={<HomeHero locale={locale} />}
         kacheln={<LandingConceptKachelnHero locale={locale} />}
+        kacheln2={<LandingConceptKacheln2Hero locale={locale} />}
+        kacheln3={<LandingConceptKacheln3Hero locale={locale} />}
+        kacheln31={
+          <LandingConceptKacheln3Hero
+            heroImage="/concepts/landingpage-kacheln-3-1/hero-reliability-process.png"
+            heroImageFraming="process"
+            locale={locale}
+          />
+        }
+        winnstein={<LandingConceptWinnsteinHero locale={locale} />}
         iceberg={<LandingConceptIcebergHero locale={locale} />}
       />
 
-      <div className="home-page-tail">
+      <LandingConceptVisibility visibleFor="kacheln">
+        <LandingConceptKachelnTail
+          locale={locale}
+          industries={industryCarouselProps}
+        />
+      </LandingConceptVisibility>
+
+      <LandingConceptVisibility
+        visibleFor={["kacheln2", "kacheln3", "kacheln31"]}
+      >
+        <LandingConceptKacheln2Tail
+          locale={locale}
+          industries={industryCarouselProps}
+        />
+      </LandingConceptVisibility>
+
+      <LandingConceptVisibility visibleFor="winnstein">
+        <LandingConceptWinnsteinTail
+          locale={locale}
+          industries={industryCarouselProps}
+        />
+      </LandingConceptVisibility>
+
+      <LandingConceptVisibility hiddenFor={compactLandingConcepts}>
+        <div className="home-page-tail">
       <section className="home-section home-services-section mx-auto max-w-7xl px-5 py-20 sm:px-6 lg:px-8">
         <SectionHeading {...home.serviceIntro} />
         <div className="home-service-grid mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -549,7 +607,8 @@ export default async function HomePage({ params }: Props) {
           </div>
         </div>
       </section>
-      </div>
+        </div>
+      </LandingConceptVisibility>
     </>
   );
 }

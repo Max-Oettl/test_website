@@ -13,7 +13,7 @@ type IndustryCarouselItem = {
 type IndustryCarouselProps = {
   items: readonly IndustryCarouselItem[];
   ctaLabel: string;
-  eyebrowLabel: string;
+  eyebrowLabel?: string;
   navigationLabel: string;
   nextLabel: string;
   previousLabel: string;
@@ -88,9 +88,11 @@ export function IndustryCarousel({
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,0.82)_0%,rgba(2,6,23,0.48)_42%,rgba(2,6,23,0.18)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-brand-ink/84 via-brand-ink/28 to-transparent" />
         <div className="relative flex min-h-[24rem] max-w-2xl flex-col justify-end">
-          <p className="text-sm font-semibold tracking-[-0.02em] text-cyan-100/90">
-            {eyebrowLabel}
-          </p>
+          {eyebrowLabel ? (
+            <p className="text-sm font-semibold tracking-[-0.02em] text-cyan-100/90">
+              {eyebrowLabel}
+            </p>
+          ) : null}
           <h3 className="mt-3 text-4xl font-semibold leading-none tracking-[-0.065em] text-white sm:text-5xl">
             {activeItem.name}
           </h3>

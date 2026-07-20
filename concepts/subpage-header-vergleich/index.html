@@ -1,0 +1,1327 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Fünf hochwertige Header-Stile für die Unterseiten der RelTest-Website im direkten Vergleich."
+    />
+    <title>RelTest | Vergleich der Unterseiten-Header</title>
+    <style>
+      :root {
+        --ink: #020817;
+        --navy: #071430;
+        --blue: #005783;
+        --cyan: #0899c5;
+        --cyan-light: #dff7fc;
+        --paper: #f3f7fa;
+        --surface: #ffffff;
+        --line: #dbe6ed;
+        --muted: #52657a;
+        --soft: #748397;
+        --shadow: 0 30px 80px -48px rgba(8, 25, 48, 0.48);
+        --radius: 24px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 106px;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 8% 4%, rgba(8, 153, 197, 0.09), transparent 25rem),
+          linear-gradient(180deg, #f8fbfd 0%, #eef4f7 100%);
+        font-family: "Aptos", "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .comparison-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(219, 230, 237, 0.92);
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 10px 42px rgba(20, 45, 66, 0.06);
+        backdrop-filter: blur(18px);
+      }
+
+      .comparison-header__inner {
+        display: grid;
+        width: min(1540px, calc(100% - 48px));
+        min-height: 82px;
+        margin: 0 auto;
+        grid-template-columns: 220px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .brand img {
+        width: 128px;
+        height: auto;
+      }
+
+      .brand span {
+        padding-left: 15px;
+        border-left: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        line-height: 1.3;
+        text-transform: uppercase;
+      }
+
+      .concept-nav {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+      }
+
+      .concept-nav a {
+        display: inline-flex;
+        min-height: 40px;
+        align-items: center;
+        gap: 8px;
+        padding: 0 14px;
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 750;
+        transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+      }
+
+      .concept-nav a:hover,
+      .concept-nav a.is-active {
+        color: #005878;
+        background: #e7f7fb;
+      }
+
+      .concept-nav a:hover {
+        transform: translateY(-1px);
+      }
+
+      .concept-nav b {
+        color: var(--cyan);
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+      }
+
+      .count {
+        display: inline-flex;
+        min-height: 38px;
+        align-items: center;
+        padding: 0 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        background: #fff;
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .intro {
+        width: min(1220px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 86px 0 68px;
+      }
+
+      .intro__index {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--blue);
+        font-size: 0.76rem;
+        font-weight: 850;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .intro__index::before {
+        width: 52px;
+        height: 2px;
+        content: "";
+        background: var(--cyan);
+      }
+
+      .intro h1 {
+        max-width: 930px;
+        margin: 22px 0 0;
+        font-size: clamp(3.1rem, 6.4vw, 6.7rem);
+        font-weight: 670;
+        letter-spacing: -0.075em;
+        line-height: 0.94;
+      }
+
+      .intro__copy {
+        display: grid;
+        margin-top: 34px;
+        grid-template-columns: minmax(0, 1fr) 340px;
+        align-items: end;
+        gap: 56px;
+      }
+
+      .intro__copy p {
+        max-width: 760px;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.35vw, 1.24rem);
+        line-height: 1.75;
+      }
+
+      .intro__note {
+        padding: 18px 0 3px 24px;
+        border-left: 2px solid var(--cyan);
+        color: var(--ink);
+        font-size: 0.88rem;
+        font-weight: 720;
+        line-height: 1.6;
+      }
+
+      main {
+        padding-bottom: 110px;
+      }
+
+      .concept {
+        width: min(1540px, calc(100% - 48px));
+        margin: 0 auto 86px;
+      }
+
+      .concept__meta {
+        display: grid;
+        margin-bottom: 20px;
+        grid-template-columns: 88px minmax(0, 1fr) minmax(280px, 0.65fr);
+        align-items: end;
+        gap: 24px;
+      }
+
+      .concept__number {
+        color: var(--cyan);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+      }
+
+      .concept__meta h2 {
+        margin: 0;
+        font-size: clamp(1.65rem, 2.7vw, 2.65rem);
+        font-weight: 680;
+        letter-spacing: -0.055em;
+        line-height: 1;
+      }
+
+      .concept__meta p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .preview {
+        overflow: hidden;
+        border: 1px solid rgba(208, 221, 230, 0.95);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+        transform: translateZ(0);
+      }
+
+      .preview__route {
+        display: flex;
+        min-height: 44px;
+        align-items: center;
+        padding: 0 42px;
+        border-bottom: 1px solid var(--line);
+        color: var(--soft);
+        background: rgba(248, 251, 253, 0.96);
+        font-size: 0.75rem;
+        font-weight: 720;
+      }
+
+      .preview__route span {
+        margin: 0 8px;
+        color: #a8b4bf;
+      }
+
+      .preview__continuation {
+        display: grid;
+        min-height: 82px;
+        padding: 20px 42px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: center;
+        gap: 30px;
+        border-top: 1px solid var(--line);
+        color: #63758a;
+        background: #fff;
+        font-size: 0.73rem;
+        font-weight: 760;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .preview__continuation span {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .preview__continuation span::before {
+        width: 26px;
+        height: 1px;
+        content: "";
+        background: #b9c9d4;
+      }
+
+      .mock-button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        padding: 0 22px;
+        border-radius: 999px;
+        color: #fff;
+        background: var(--navy);
+        font-size: 0.82rem;
+        font-weight: 800;
+        box-shadow: 0 14px 26px -18px rgba(2, 8, 23, 0.65);
+      }
+
+      .mock-button svg {
+        width: 16px;
+        height: 16px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.8;
+      }
+
+      /* Variante 1: editorial */
+      .editorial {
+        position: relative;
+        display: grid;
+        min-height: 510px;
+        padding: 68px 72px;
+        grid-template-columns: minmax(0, 0.95fr) minmax(480px, 1.05fr);
+        align-items: center;
+        gap: 74px;
+        background:
+          linear-gradient(rgba(31, 61, 84, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(31, 61, 84, 0.045) 1px, transparent 1px),
+          linear-gradient(140deg, #ffffff 0%, #f3f8fb 100%);
+        background-size: 48px 48px, 48px 48px, auto;
+      }
+
+      .editorial::after {
+        position: absolute;
+        right: 28%;
+        bottom: -100px;
+        width: 340px;
+        height: 240px;
+        content: "";
+        background: rgba(22, 163, 207, 0.13);
+        filter: blur(70px);
+      }
+
+      .editorial__copy {
+        position: relative;
+        z-index: 2;
+      }
+
+      .editorial h3,
+      .image-led h3,
+      .technical h3,
+      .minimal h3,
+      .dark h3 {
+        margin: 0;
+        font-size: clamp(2.7rem, 5vw, 5.8rem);
+        font-weight: 660;
+        letter-spacing: -0.075em;
+        line-height: 0.95;
+      }
+
+      .editorial__copy > p,
+      .image-led__copy > p,
+      .technical__copy > p,
+      .minimal__copy > p,
+      .dark__copy > p {
+        max-width: 660px;
+        margin: 25px 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.2vw, 1.18rem);
+        line-height: 1.72;
+      }
+
+      .editorial__line {
+        display: flex;
+        margin-top: 34px;
+        align-items: center;
+        gap: 17px;
+        color: var(--blue);
+        font-size: 0.78rem;
+        font-weight: 830;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .editorial__line::before {
+        width: 54px;
+        height: 2px;
+        content: "";
+        background: var(--cyan);
+      }
+
+      .editorial__visual {
+        position: relative;
+        z-index: 1;
+        min-height: 370px;
+      }
+
+      .editorial__visual::before {
+        position: absolute;
+        inset: 4px 4px 4px 18%;
+        border: 1px solid #c8d9e3;
+        border-radius: 180px 14px 14px 180px;
+        content: "";
+      }
+
+      .editorial__visual img {
+        position: absolute;
+        inset: 24px 0 24px 8%;
+        width: 92%;
+        height: calc(100% - 48px);
+        border-radius: 160px 10px 10px 160px;
+        object-fit: cover;
+        object-position: 52% 48%;
+        box-shadow: 0 28px 60px -34px rgba(6, 25, 47, 0.55);
+      }
+
+      .editorial__visual::after {
+        position: absolute;
+        top: 24px;
+        bottom: 24px;
+        left: 8%;
+        width: 26%;
+        border-radius: 160px 0 0 160px;
+        content: "";
+        background: linear-gradient(90deg, rgba(243, 248, 251, 0.65), transparent);
+      }
+
+      /* Variante 2: bildgeführt */
+      .image-led {
+        position: relative;
+        display: grid;
+        min-height: 520px;
+        grid-template-columns: minmax(0, 0.9fr) minmax(520px, 1.1fr);
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .image-led__copy {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        padding: 68px 18px 68px 72px;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .image-led__copy::after {
+        position: absolute;
+        top: 0;
+        right: -190px;
+        bottom: 0;
+        z-index: -1;
+        width: 300px;
+        content: "";
+        background: linear-gradient(90deg, #fff 18%, rgba(255, 255, 255, 0));
+      }
+
+      .image-led__copy .mock-button {
+        align-self: flex-start;
+        margin-top: 32px;
+      }
+
+      .image-led__media {
+        position: relative;
+        min-height: 520px;
+      }
+
+      .image-led__media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 52% 50%;
+      }
+
+      .image-led__media::after {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 22%;
+        content: "";
+        background: linear-gradient(90deg, #fff, transparent);
+      }
+
+      .image-led__caption {
+        position: absolute;
+        right: 30px;
+        bottom: 28px;
+        z-index: 2;
+        max-width: 270px;
+        padding: 16px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 12px;
+        color: #fff;
+        background: rgba(5, 20, 43, 0.72);
+        box-shadow: 0 18px 34px -24px rgba(2, 8, 23, 0.7);
+        font-size: 0.78rem;
+        font-weight: 720;
+        line-height: 1.5;
+        backdrop-filter: blur(12px);
+      }
+
+      /* Variante 3: fachlich */
+      .technical {
+        position: relative;
+        display: grid;
+        min-height: 525px;
+        padding: 62px 64px 62px 72px;
+        grid-template-columns: minmax(0, 0.86fr) minmax(560px, 1.14fr);
+        align-items: center;
+        gap: 54px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 72% 42%, rgba(8, 153, 197, 0.11), transparent 29rem),
+          #f5f9fc;
+      }
+
+      .technical::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        opacity: 0.55;
+        background-image:
+          linear-gradient(rgba(58, 90, 112, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(58, 90, 112, 0.07) 1px, transparent 1px);
+        background-size: 52px 52px;
+        mask-image: linear-gradient(90deg, transparent, #000 40%, #000);
+      }
+
+      .technical__copy,
+      .technical__visual {
+        position: relative;
+        z-index: 1;
+      }
+
+      .technical__copy .mock-button {
+        margin-top: 32px;
+      }
+
+      .technical__visual {
+        overflow: hidden;
+        padding: 30px 30px 24px;
+        border: 1px solid #d1e0e9;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 28px 58px -38px rgba(14, 44, 67, 0.52);
+      }
+
+      .technical__visual::before {
+        display: block;
+        margin-bottom: 18px;
+        color: var(--blue);
+        content: "Ausfallrate über der Nutzungsdauer";
+        font-size: 0.76rem;
+        font-weight: 850;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .technical__visual img {
+        width: 100%;
+        max-height: 310px;
+        object-fit: contain;
+      }
+
+      .technical__legend {
+        display: flex;
+        margin-top: 14px;
+        justify-content: space-between;
+        gap: 16px;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 720;
+      }
+
+      .technical__legend span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .technical__legend i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--cyan);
+      }
+
+      .technical__legend span:last-child i {
+        background: #ef5b4d;
+      }
+
+      /* Variante 4: minimal */
+      .minimal {
+        position: relative;
+        display: grid;
+        min-height: 340px;
+        padding: 56px 72px;
+        grid-template-columns: 12px minmax(0, 1fr) 270px;
+        align-items: center;
+        gap: 36px;
+        background: #fff;
+      }
+
+      .minimal__marker {
+        width: 3px;
+        height: 122px;
+        justify-self: center;
+        background: var(--cyan);
+      }
+
+      .minimal h3 {
+        max-width: 980px;
+        font-size: clamp(2.6rem, 4.5vw, 5.2rem);
+      }
+
+      .minimal__copy > p {
+        max-width: 780px;
+      }
+
+      .minimal__aside {
+        align-self: stretch;
+        display: flex;
+        padding-left: 32px;
+        border-left: 1px solid var(--line);
+        flex-direction: column;
+        justify-content: center;
+        color: var(--muted);
+        font-size: 0.77rem;
+        line-height: 1.65;
+      }
+
+      .minimal__aside strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--ink);
+        font-size: 0.86rem;
+      }
+
+      /* Variante 5: dunkel */
+      .dark {
+        position: relative;
+        display: grid;
+        min-height: 520px;
+        padding: 68px 72px;
+        grid-template-columns: minmax(0, 0.95fr) minmax(520px, 1.05fr);
+        align-items: center;
+        gap: 62px;
+        overflow: hidden;
+        color: #fff;
+        background: #061327;
+      }
+
+      .dark::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          radial-gradient(circle at 16% 20%, rgba(20, 180, 219, 0.2), transparent 23rem),
+          linear-gradient(115deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+        background-size: auto, 90px 90px;
+      }
+
+      .dark__copy,
+      .dark__media {
+        position: relative;
+        z-index: 1;
+      }
+
+      .dark__copy > p {
+        color: #b9c9d7;
+      }
+
+      .dark__proof {
+        display: grid;
+        margin-top: 34px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+        border-top: 1px solid rgba(191, 223, 235, 0.22);
+      }
+
+      .dark__proof span {
+        padding: 18px 14px 0 0;
+        color: #bfeaf4;
+        font-size: 0.73rem;
+        font-weight: 760;
+        line-height: 1.45;
+      }
+
+      .dark__media {
+        min-height: 380px;
+      }
+
+      .dark__media img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(0.82) contrast(1.04);
+      }
+
+      .dark__media::before {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        border: 1px solid rgba(201, 235, 244, 0.18);
+        border-radius: 12px;
+        content: "";
+        background: linear-gradient(90deg, #061327 0%, transparent 28%, transparent 100%);
+      }
+
+      .dark__media::after {
+        position: absolute;
+        right: -18px;
+        bottom: -18px;
+        z-index: -1;
+        width: 72%;
+        height: 72%;
+        border-right: 1px solid rgba(70, 200, 229, 0.28);
+        border-bottom: 1px solid rgba(70, 200, 229, 0.28);
+        border-radius: 0 0 28px 0;
+        content: "";
+      }
+
+      .dark-preview .preview__route {
+        border-color: rgba(182, 211, 224, 0.14);
+        color: #90a6b8;
+        background: #07172c;
+      }
+
+      .dark-preview .preview__continuation {
+        border-color: rgba(182, 211, 224, 0.16);
+        color: #a9bdca;
+        background: #0b1a2e;
+      }
+
+      .dark-preview .preview__continuation span::before {
+        background: #2d7996;
+      }
+
+      .decision {
+        display: grid;
+        width: min(1220px, calc(100% - 48px));
+        margin: 18px auto 0;
+        padding: 48px 0 0;
+        grid-template-columns: minmax(0, 1fr) minmax(340px, 0.65fr);
+        gap: 70px;
+        border-top: 1px solid #cedce5;
+      }
+
+      .decision h2 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 4rem);
+        font-weight: 670;
+        letter-spacing: -0.065em;
+        line-height: 1;
+      }
+
+      .decision p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.72;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 560ms ease, transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 1180px) {
+        .comparison-header__inner {
+          grid-template-columns: 180px minmax(0, 1fr);
+        }
+
+        .count {
+          display: none;
+        }
+
+        .concept-nav a {
+          padding-inline: 10px;
+        }
+
+        .editorial,
+        .image-led,
+        .technical,
+        .dark {
+          grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+          gap: 40px;
+        }
+
+        .editorial,
+        .technical,
+        .dark {
+          padding: 54px;
+        }
+
+        .image-led__copy {
+          padding-left: 54px;
+        }
+      }
+
+      @media (max-width: 920px) {
+        .comparison-header__inner {
+          display: flex;
+          width: min(100% - 32px, 760px);
+          min-height: 74px;
+          justify-content: space-between;
+        }
+
+        .brand span {
+          display: none;
+        }
+
+        .concept-nav {
+          overflow-x: auto;
+          justify-content: flex-start;
+        }
+
+        .concept-nav a span {
+          display: none;
+        }
+
+        .concept-nav a {
+          min-width: 38px;
+          justify-content: center;
+          padding-inline: 10px;
+        }
+
+        .intro__copy,
+        .concept__meta,
+        .decision {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .intro__note {
+          max-width: 560px;
+        }
+
+        .concept__number {
+          margin-bottom: -8px;
+        }
+
+        .editorial,
+        .image-led,
+        .technical,
+        .dark {
+          grid-template-columns: 1fr;
+        }
+
+        .editorial,
+        .technical,
+        .dark {
+          padding: 48px 40px;
+        }
+
+        .editorial__visual,
+        .dark__media {
+          min-height: 330px;
+        }
+
+        .image-led__copy {
+          padding: 48px 40px 28px;
+        }
+
+        .image-led__copy::after {
+          display: none;
+        }
+
+        .image-led__media {
+          min-height: 420px;
+        }
+
+        .image-led__media::after {
+          inset: 0 0 auto;
+          width: auto;
+          height: 18%;
+          background: linear-gradient(180deg, #fff, transparent);
+        }
+
+        .technical {
+          gap: 38px;
+        }
+
+        .minimal {
+          grid-template-columns: 8px minmax(0, 1fr);
+          padding: 48px 40px;
+        }
+
+        .minimal__aside {
+          grid-column: 2;
+          padding: 22px 0 0;
+          border-top: 1px solid var(--line);
+          border-left: 0;
+        }
+      }
+
+      @media (max-width: 620px) {
+        html {
+          scroll-padding-top: 78px;
+        }
+
+        .comparison-header__inner,
+        .intro,
+        .concept,
+        .decision {
+          width: min(100% - 28px, 560px);
+        }
+
+        .brand img {
+          width: 104px;
+        }
+
+        .concept-nav {
+          max-width: 210px;
+        }
+
+        .intro {
+          padding: 58px 0 48px;
+        }
+
+        .intro h1 {
+          font-size: clamp(2.9rem, 15vw, 4.3rem);
+        }
+
+        .intro__copy {
+          margin-top: 26px;
+        }
+
+        .concept {
+          margin-bottom: 60px;
+        }
+
+        .concept__meta p {
+          font-size: 0.84rem;
+        }
+
+        .preview {
+          border-radius: 16px;
+        }
+
+        .preview__route {
+          min-height: 40px;
+          padding-inline: 22px;
+          font-size: 0.67rem;
+        }
+
+        .preview__continuation {
+          min-height: 72px;
+          padding: 17px 22px;
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .preview__continuation span:nth-child(n + 2) {
+          display: none;
+        }
+
+        .editorial,
+        .technical,
+        .dark {
+          padding: 38px 24px;
+        }
+
+        .editorial h3,
+        .image-led h3,
+        .technical h3,
+        .minimal h3,
+        .dark h3 {
+          font-size: clamp(2.55rem, 13.5vw, 4rem);
+        }
+
+        .editorial__visual {
+          min-height: 250px;
+        }
+
+        .editorial__visual::before {
+          left: 8%;
+        }
+
+        .image-led__copy {
+          padding: 38px 24px 22px;
+        }
+
+        .image-led__media {
+          min-height: 320px;
+        }
+
+        .image-led__caption {
+          right: 18px;
+          bottom: 18px;
+          left: 18px;
+          max-width: none;
+        }
+
+        .technical__visual {
+          padding: 20px 16px 18px;
+        }
+
+        .technical__legend {
+          display: grid;
+        }
+
+        .minimal {
+          min-height: 380px;
+          padding: 38px 24px;
+          grid-template-columns: 4px minmax(0, 1fr);
+          gap: 20px;
+        }
+
+        .minimal__aside {
+          grid-column: 2;
+        }
+
+        .dark__proof {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .dark__media {
+          min-height: 260px;
+        }
+
+        .decision {
+          padding-top: 38px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="comparison-header">
+      <div class="comparison-header__inner">
+        <a class="brand" href="#top" aria-label="Zum Seitenanfang">
+          <img src="../../public/reltest-solutions-logo.png" alt="RelTest Solutions" />
+          <span>Header<br />Vergleich</span>
+        </a>
+        <nav class="concept-nav" aria-label="Zu den Header-Varianten">
+          <a class="is-active" href="#editorial"><b>01</b><span>Editorial</span></a>
+          <a href="#bild"><b>02</b><span>Projektbild</span></a>
+          <a href="#fachlich"><b>03</b><span>Fachvisual</span></a>
+          <a href="#minimal"><b>04</b><span>Minimal</span></a>
+          <a href="#dunkel"><b>05</b><span>Dunkel</span></a>
+        </nav>
+        <span class="count">5 Varianten</span>
+      </div>
+    </header>
+
+    <div id="top" class="intro reveal">
+      <span class="intro__index">Unterseiten neu gedacht</span>
+      <h1>Fünf Einstiege. Ein gemeinsamer RelTest-Charakter.</h1>
+      <div class="intro__copy">
+        <p>
+          Der Vergleich zeigt fünf mögliche Header-Systeme für die Unterseiten. Sie teilen
+          Typografie, Farben und Präzision, unterscheiden sich aber bewusst in Bildanteil,
+          Informationsdichte und fachlicher Wirkung.
+        </p>
+        <div class="intro__note">
+          Empfehlung: kein einziger Stil für jede Seite, sondern ein kleines System aus
+          Standard-, Bild-, Fach- und Utility-Header.
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section id="editorial" class="concept reveal">
+        <div class="concept__meta">
+          <span class="concept__number">01 / 05</span>
+          <h2>Editorialer Technik-Einstieg</h2>
+          <p>Empfohlen als ruhiger Standard für Leistungsübersichten, Branchen und zentrale Fachseiten.</p>
+        </div>
+        <article class="preview">
+          <div class="preview__route">Leistungen <span>›</span> Beratung</div>
+          <div class="editorial">
+            <div class="editorial__copy">
+              <h3>Zuverlässigkeit planbar machen.</h3>
+              <p>
+                Methodisch fundierte Beratung für Entwicklung, Erprobung und Qualität – von
+                der ersten Fragestellung bis zur belastbaren technischen Entscheidung.
+              </p>
+              <div class="editorial__line">Advanced Reliability Engineering</div>
+            </div>
+            <div class="editorial__visual" aria-hidden="true">
+              <img src="../../public/about/testbench-data-review.png" alt="" />
+            </div>
+          </div>
+          <div class="preview__continuation">
+            <span>Ausgangslage verstehen</span>
+            <span>Methodik auswählen</span>
+            <span>Entscheidungen absichern</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="bild" class="concept reveal">
+        <div class="concept__meta">
+          <span class="concept__number">02 / 05</span>
+          <h2>Projektbild als Seitenauftakt</h2>
+          <p>Für persönliche und vertrauensbasierte Seiten wie „Wir sind RelTest“, Weiterbildung oder Expertise.</p>
+        </div>
+        <article class="preview">
+          <div class="preview__route">Unternehmen <span>›</span> Wir sind RelTest</div>
+          <div class="image-led">
+            <div class="image-led__copy">
+              <h3>Technische Tiefe. Persönliche Zusammenarbeit.</h3>
+              <p>
+                RelTest verbindet jahrzehntelange Erfahrung in der Zuverlässigkeitstechnik
+                mit direkter, lösungsorientierter Zusammenarbeit im Projekt.
+              </p>
+              <a class="mock-button" href="#bild">
+                Unsere Arbeitsweise
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+            <div class="image-led__media">
+              <img
+                src="../../public/team/home-reliability-planning.png"
+                alt="Beratungsgespräch zur technischen Zuverlässigkeit"
+              />
+              <div class="image-led__caption">
+                Fachliche Diskussion auf Augenhöhe – mit direktem Bezug zu Produkt,
+                Datenlage und Entwicklungsentscheidung.
+              </div>
+            </div>
+          </div>
+          <div class="preview__continuation">
+            <span>Erfahrung</span>
+            <span>Arbeitsweise</span>
+            <span>Verantwortung</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="fachlich" class="concept reveal">
+        <div class="concept__meta">
+          <span class="concept__number">03 / 05</span>
+          <h2>Fachlicher Kontext-Header</h2>
+          <p>Ideal für Wissen und Leistungsdetails, wenn eine technische Grafik das Thema bereits im Einstieg erklärt.</p>
+        </div>
+        <article class="preview">
+          <div class="preview__route">Wissen <span>›</span> Lebensdauer und Ausfallverhalten</div>
+          <div class="technical">
+            <div class="technical__copy">
+              <h3>Warum Produkte über ihre Lebensdauer ausfallen.</h3>
+              <p>
+                Die Badewannenkurve ordnet Frühausfälle, Zufallsausfälle und Verschleiß ein –
+                und zeigt, an welchen Stellen technische Maßnahmen wirksam werden.
+              </p>
+              <a class="mock-button" href="#fachlich">
+                Thema fachlich einordnen
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M14 7l5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+            <figure class="technical__visual">
+              <img
+                src="../../public/graphics/analyse-badewannenkurve.png"
+                alt="Badewannenkurve mit reduzierter Ausfallrate nach technischen Maßnahmen"
+              />
+              <figcaption class="technical__legend">
+                <span><i></i>Nach Maßnahmen</span>
+                <span><i></i>Ausgangsniveau</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="preview__continuation">
+            <span>Technische Einordnung</span>
+            <span>Praxisrelevanz</span>
+            <span>Passende Leistung</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="minimal" class="concept reveal">
+        <div class="concept__meta">
+          <span class="concept__number">04 / 05</span>
+          <h2>Minimaler Titelstreifen</h2>
+          <p>Eine bewusst kompakte Lösung für Glossar, Aktuelles, Karriere sowie rechtliche und funktionale Seiten.</p>
+        </div>
+        <article class="preview">
+          <div class="preview__route">Wissen <span>›</span> Glossar</div>
+          <div class="minimal">
+            <span class="minimal__marker" aria-hidden="true"></span>
+            <div class="minimal__copy">
+              <h3>Glossar der Zuverlässigkeitstechnik.</h3>
+              <p>
+                Fachbegriffe aus Zuverlässigkeit, Statistik, Erprobung und Risikomanagement
+                verständlich und präzise erklärt.
+              </p>
+            </div>
+            <aside class="minimal__aside">
+              <strong>Schneller Facheinstieg</strong>
+              Begriffe alphabetisch finden, einordnen und über passende Wissensseiten vertiefen.
+            </aside>
+          </div>
+          <div class="preview__continuation">
+            <span>Begriffe von A bis Z</span>
+            <span>Fachliche Vertiefung</span>
+            <span>Verwandte Themen</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="dunkel" class="concept reveal">
+        <div class="concept__meta">
+          <span class="concept__number">05 / 05</span>
+          <h2>Dunkler Header als bewusste Ausnahme</h2>
+          <p>Für verbindliche, entscheidungsnahe Themen wie langfristige Kooperation, Kontakt oder zentrale CTAs.</p>
+        </div>
+        <article class="preview dark-preview">
+          <div class="preview__route">Leistungen <span>›</span> Langfristige Kooperation</div>
+          <div class="dark">
+            <div class="dark__copy">
+              <h3>Verantwortung über einzelne Analysen hinaus.</h3>
+              <p>
+                RelTest begleitet Entwicklungsprojekte langfristig und sorgt dafür, dass
+                Methoden, Reviews und Dokumentation nachvollziehbar zusammengeführt werden.
+              </p>
+              <div class="dark__proof">
+                <span>Methodische Führung</span>
+                <span>Reviews und Sparring</span>
+                <span>Dokumentation nach Stand der Technik</span>
+              </div>
+            </div>
+            <div class="dark__media" aria-hidden="true">
+              <img src="../../public/about/component-review.png" alt="" />
+            </div>
+          </div>
+          <div class="preview__continuation">
+            <span>Zusammenarbeit klären</span>
+            <span>Verantwortungsumfang</span>
+            <span>Projekt besprechen</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="decision reveal">
+        <h2>Ein System ist stärker als fünf Einzellösungen.</h2>
+        <p>
+          Für die reale Website würde ich Variante 01 als Standard nutzen, Variante 02 und 03
+          für bild- beziehungsweise fachgetriebene Seiten ergänzen und Variante 04 für kleine
+          Utility-Seiten vorsehen. Variante 05 bleibt ein gezielter Akzent und verliert dadurch
+          ihre heutige Wiederholungswirkung.
+        </p>
+      </section>
+    </main>
+
+    <script>
+      const revealItems = document.querySelectorAll(".reveal");
+      const navItems = [...document.querySelectorAll(".concept-nav a")];
+      const sections = [...document.querySelectorAll(".concept[id]")];
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (!visible) return;
+
+          navItems.forEach((item) => {
+            item.classList.toggle("is-active", item.hash === `#${visible.target.id}`);
+          });
+        },
+        { rootMargin: "-18% 0px -58% 0px", threshold: [0.1, 0.35, 0.6] },
+      );
+
+      sections.forEach((section) => sectionObserver.observe(section));
+    </script>
+  </body>
+</html>

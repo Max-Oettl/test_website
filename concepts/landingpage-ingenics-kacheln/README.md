@@ -1,5 +1,9 @@
 # Landingpage-Konzept: Helle Leistungs-Kacheln
 
+Die textreduzierte Weiterentwicklung wird separat als
+`Leistungskacheln 2.0` geführt. Diese Datei beschreibt weiterhin die
+ursprüngliche Leistungskachel-Variante.
+
 Dieses Konzept baut auf dem generierten Mockup auf, das eine helle, ruhige
 Beratungs-Startseite mit vier grossen Leistungsmodulen zeigt. Es ist inspiriert
 vom Prinzip hochwertiger Beratungs-Websites, bei denen die Leistungsangebote
@@ -14,6 +18,23 @@ Design.
 - klare Trennung der vier Hauptangebote:
   Beratung, langfristige Kooperation, Vor-Ort-Schulungen und Academy
 - darunter ein schneller Einstieg in typische Kundenprobleme
+
+## Aktueller Seitenaufbau
+
+Das Leistungskachel-Konzept wird bewusst als kompakte Startseite weitergeführt:
+
+1. unveränderter Hero mit vier großen Leistungskacheln und Aufgabenband
+2. vertiefende, aber kompakte Leistungsübersicht
+3. vorbereitete Projektbeispiele, die später durch freigegebene reale Fälle
+   und belegbare Ergebnisse ersetzt werden
+4. fachliche Vertrauenssektion mit Springer-Fachbüchern, Podcast, belegbaren
+   Kennzahlen und ausgewählten Unternehmensreferenzen
+5. kompakte, zweispaltige Branchenliste mit den vorhandenen Branchenbildern als
+   Hintergrund und direkter Verlinkung auf die einzelnen Branchenseiten
+
+Längere Erklärabschnitte, FAQ, Badewannenkurve, Weiterbildungskarten,
+Vorteilskarten und zusätzliche Kontaktsektion gehören derzeit nicht zu dieser
+Variante.
 
 ## Design-Idee
 

@@ -9,6 +9,7 @@ import {
 
 import {
   getLandingConceptFromUrl,
+  getServerLandingConcept,
   isLandingConcept,
   landingConceptOptions,
   subscribeToLandingConceptChanges,
@@ -18,19 +19,27 @@ import {
 type LandingConceptComparisonProps = {
   current: ReactNode;
   kacheln: ReactNode;
+  kacheln2: ReactNode;
+  kacheln3: ReactNode;
+  kacheln31: ReactNode;
+  winnstein: ReactNode;
   iceberg: ReactNode;
 };
 
 export function LandingConceptComparison({
   current,
   kacheln,
+  kacheln2,
+  kacheln3,
+  kacheln31,
+  winnstein,
   iceberg,
 }: LandingConceptComparisonProps) {
   const selectId = useId();
   const concept = useSyncExternalStore(
     subscribeToLandingConceptChanges,
     getLandingConceptFromUrl,
-    () => "current",
+    getServerLandingConcept,
   );
 
   function handleConceptChange(event: ChangeEvent<HTMLSelectElement>) {
@@ -45,7 +54,7 @@ export function LandingConceptComparison({
 
   return (
     <>
-      <div className="fixed left-4 top-24 z-[80] rounded-2xl border border-slate-200/80 bg-white/90 p-2 shadow-xl shadow-slate-300/40 backdrop-blur md:left-6">
+      <div className="relative z-[80] mt-4 ml-4 w-fit rounded-2xl border border-slate-200/80 bg-white/90 p-2 shadow-xl shadow-slate-300/40 backdrop-blur md:fixed md:top-24 md:left-6 md:mt-0 md:ml-0">
         <label
           htmlFor={selectId}
           className="block px-2 pb-1 text-[0.64rem] font-bold uppercase tracking-[0.18em] text-cyan-800"
@@ -56,7 +65,7 @@ export function LandingConceptComparison({
           id={selectId}
           value={concept}
           onChange={handleConceptChange}
-          className="w-44 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-950 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-100"
+          className="w-52 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-950 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-100"
           aria-label="Landingpage-Konzept auswählen"
         >
           {landingConceptOptions.map((option) => (
@@ -69,9 +78,17 @@ export function LandingConceptComparison({
 
       {concept === "kacheln"
         ? kacheln
-        : concept === "iceberg"
-          ? iceberg
-          : current}
+        : concept === "kacheln2"
+          ? kacheln2
+          : concept === "kacheln3"
+            ? kacheln3
+            : concept === "kacheln31"
+              ? kacheln31
+              : concept === "winnstein"
+                ? winnstein
+                : concept === "iceberg"
+                  ? iceberg
+                  : current}
     </>
   );
 }

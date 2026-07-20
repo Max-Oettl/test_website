@@ -1,20 +1,39 @@
 "use client";
 
-export type LandingConcept = "current" | "kacheln" | "iceberg";
+export type LandingConcept =
+  | "current"
+  | "kacheln"
+  | "kacheln2"
+  | "kacheln3"
+  | "kacheln31"
+  | "winnstein"
+  | "iceberg";
 
 export const landingConceptOptions: Array<{
   value: LandingConcept;
   label: string;
 }> = [
-  { value: "current", label: "Aktueller Stand" },
-  { value: "kacheln", label: "Kachel-Konzept" },
-  { value: "iceberg", label: "Eisberg-Konzept" },
+  { value: "current", label: "Problemfragen" },
+  { value: "kacheln", label: "Leistungskacheln" },
+  { value: "kacheln2", label: "Leistungskacheln 2.0" },
+  { value: "kacheln3", label: "Leistungskacheln 3.0" },
+  { value: "kacheln31", label: "Leistungskacheln 3.1" },
+  { value: "winnstein", label: "Winnstein-Konzept" },
+  { value: "iceberg", label: "Eisbergdiagnose" },
 ];
 
 const conceptChangeEvent = "reltest-landing-concept-change";
 
 export function isLandingConcept(value: string): value is LandingConcept {
-  return value === "current" || value === "kacheln" || value === "iceberg";
+  return (
+    value === "current" ||
+    value === "kacheln" ||
+    value === "kacheln2" ||
+    value === "kacheln3" ||
+    value === "kacheln31" ||
+    value === "winnstein" ||
+    value === "iceberg"
+  );
 }
 
 export function getLandingConceptFromUrl(): LandingConcept {
@@ -29,6 +48,10 @@ export function getLandingConceptFromUrl(): LandingConcept {
   return selectedConcept && isLandingConcept(selectedConcept)
     ? selectedConcept
     : "current";
+}
+
+export function getServerLandingConcept(): LandingConcept {
+  return "current";
 }
 
 export function subscribeToLandingConceptChanges(onStoreChange: () => void) {

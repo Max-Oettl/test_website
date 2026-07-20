@@ -36,7 +36,11 @@ function ArrowIcon() {
 
 const conceptContent = {
   de: {
-    title: ["Wenn", "Produktzuverlässigkeit", "entscheidend wird."],
+    title: [
+      "Zuverlässigkeit verstehen.",
+      "Risiken beherrschen.",
+      "Entscheidungen absichern.",
+    ],
     description:
       "RelTest unterstützt Entwicklung, Erprobung und Qualität mit Beratung, DoE, Datenanalyse, Weiterbildung und langfristiger Projektbegleitung.",
     primaryCta: "Projekt besprechen",
@@ -105,7 +109,11 @@ const conceptContent = {
     ],
   },
   en: {
-    title: ["When", "product reliability", "becomes decisive."],
+    title: [
+      "Understand reliability.",
+      "Manage risks.",
+      "Safeguard decisions.",
+    ],
     description:
       "RelTest supports development, testing and quality teams with consulting, DoE, data analysis, training and long-term project support.",
     primaryCta: "Discuss project",
@@ -187,9 +195,9 @@ export function LandingConceptKachelnHero({
 
       <div className="relative mx-auto grid max-w-[120rem] gap-14 px-5 pt-20 pb-0 sm:px-6 lg:grid-cols-[minmax(0,0.82fr)_minmax(40rem,1fr)] lg:gap-24 lg:px-12 lg:pt-24 xl:gap-28 xl:px-16">
         <div className="relative z-10 flex min-w-0 flex-col justify-center pb-0">
-          <h1 className="max-w-[47rem] text-[clamp(3.35rem,4vw,5.05rem)] leading-[0.98] font-semibold tracking-[-0.068em] text-slate-950">
+          <h1 className="max-w-[47rem] text-[clamp(1.45rem,7.7vw,3.2rem)] leading-[1.12] font-semibold tracking-[-0.065em] text-slate-950 lg:text-[clamp(2.65rem,3vw,4rem)]">
             {content.title.map((line) => (
-              <span key={line} className="block">
+              <span key={line} className="block whitespace-nowrap">
                 {line.endsWith(".") ? (
                   <>
                     {line.slice(0, -1)}

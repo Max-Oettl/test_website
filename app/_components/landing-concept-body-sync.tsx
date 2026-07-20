@@ -4,6 +4,7 @@ import { useEffect, useSyncExternalStore } from "react";
 
 import {
   getLandingConceptFromUrl,
+  getServerLandingConcept,
   subscribeToLandingConceptChanges,
 } from "./landing-concept-store";
 
@@ -11,14 +12,24 @@ export function LandingConceptBodySync() {
   const concept = useSyncExternalStore(
     subscribeToLandingConceptChanges,
     getLandingConceptFromUrl,
-    () => "current",
+    getServerLandingConcept,
   );
 
   useEffect(() => {
-    document.body.dataset.landingConcept = concept;
+    const visualConcept =
+      concept === "kacheln2" ||
+      concept === "kacheln3" ||
+      concept === "kacheln31" ||
+      concept === "winnstein"
+        ? "kacheln"
+        : concept;
+
+    document.body.dataset.landingConcept = visualConcept;
+    document.body.dataset.landingConceptVariant = concept;
 
     return () => {
       document.body.dataset.landingConcept = "current";
+      document.body.dataset.landingConceptVariant = "current";
     };
   }, [concept]);
 
