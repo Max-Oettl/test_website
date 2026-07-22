@@ -313,7 +313,9 @@ export function LandingConceptWinnsteinHero({
       <div className="mx-auto flex max-w-[120rem] justify-end px-5 pt-6 sm:px-6 lg:px-12 xl:px-16">
         <div className="border border-line-soft bg-[#f7fafc] shadow-[0_8px_26px_rgba(23,52,76,0.06)]">
           <Link
-            href={localizeHref(locale, "/weiterbildung/academy")}
+            href="https://reltest-academy.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex min-h-16 items-center gap-5 px-5 py-2 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset sm:px-6"
           >
             <span className="flex min-w-0 items-center gap-4 sm:gap-5">

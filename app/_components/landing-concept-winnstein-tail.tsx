@@ -18,6 +18,30 @@ type LandingConceptWinnsteinTailProps = {
 };
 
 const assetBase = "/concepts/landingpage-ingenics-kacheln";
+const milestoneIconSprite = `${assetBase}/project-milestone-icons-v1.png`;
+const milestoneIconOffsets = [
+  [
+    [7, 8],
+    [47, 8],
+    [88, 9],
+    [131, 10],
+    [173, 9],
+  ],
+  [
+    [6, 56],
+    [46, 51],
+    [86, 50],
+    [127, 49],
+    [171, 55],
+  ],
+  [
+    [4, 91],
+    [46, 90],
+    [87, 90],
+    [128, 91],
+    [170, 91],
+  ],
+] as const;
 
 const featuredReferenceNames = new Set([
   "Aesculap",
@@ -81,84 +105,109 @@ const contentByLocale = {
     projectsCta: "Eigenes Projekt einordnen",
     projects: [
       {
-        title: "Neue Produktgeneration bis zur Freigabe absichern",
-        role: "Methodische Projektleitung",
-        image: "/projects/new-product-generation.png",
-        imageAlt: "Technische Produktentwicklung vom Entwurf bis zum ausgearbeiteten Bauteil",
+        title: "Zuverlässigkeitsprozess maßgeschneidert entwickeln und integrieren",
+        role: "Prozessentwicklung und Implementierungsbegleitung",
+        image: "/projects/reliability-process-integration-natural.png",
+        imageAlt: "Engineering-Team bei der Entwicklung eines Zuverlässigkeitsprozesses",
         milestones: [
           {
-            phase: "Projektstart",
-            title: "Ziele und Verantwortung",
-            contribution: "Anforderungen, Rollen und Gate-Kriterien klären.",
-            icon: "icon-target.svg",
+            title: "Status quo erfassen",
+            contribution: "Prozessreife, Rollen und bestehende Methoden transparent machen.",
+            icon: "icon-current-state.svg",
           },
           {
-            phase: "Konzept",
-            title: "Risiken priorisieren",
-            contribution: "Kritische Funktionen und Ausfallfolgen bewerten.",
-            icon: "icon-shield.svg",
+            title: "Schnittstellen priorisieren",
+            contribution: "Lücken, Optimierungspotenziale und Übergaben identifizieren.",
+            icon: "icon-interfaces.svg",
           },
           {
-            phase: "Entwicklung",
-            title: "Nachweisstrategie planen",
-            contribution: "Prüfplan, DoE und Datenbedarf verbinden.",
-            icon: "icon-chart.svg",
+            title: "Zielprozess prüfen",
+            contribution: "Konzept ausarbeiten und im Dry Run auf Praxistauglichkeit testen.",
+            icon: "icon-process-design.svg",
           },
           {
-            phase: "Erprobung",
-            title: "Versuche steuern",
-            contribution: "Ergebnisse bewerten und Abweichungen steuern.",
-            icon: "icon-seminar.svg",
+            title: "Konzept optimieren",
+            contribution: "Im Pilotprojekt anwenden, bewerten und gezielt nachschärfen.",
+            icon: "icon-pilot.svg",
           },
           {
-            phase: "Freigabe",
-            title: "Entscheidung absichern",
-            contribution: "Nachweise und Rest-Risiken dokumentieren.",
-            icon: "icon-handshake.svg",
+            title: "Prozess freigeben",
+            contribution: "Verantwortlichkeiten verankern und den Prozess verbindlich einführen.",
+            icon: "icon-process-approval.svg",
           },
         ],
         result:
-          "Nachvollziehbare Freigabe mit abgestimmten Kriterien und Prüfumfang.",
+          "Ein abgestimmter Zuverlässigkeitsprozess, der im Entwicklungsalltag verbindlich funktioniert.",
       },
       {
-        title: "Feldausfälle verstehen und Maßnahmen absichern",
-        role: "Analyseleitung und Maßnahmen-Tracking",
-        image: "/projects/field-failure-fracture.png",
-        imageAlt: "Ingenieursteam bei der Analyse von Prüf- und Messdaten am Versuchsstand",
+        title: "Risikobasierte Absicherungsstrategie entwickeln",
+        role: "Risikoanalyse und strategische Absicherungsplanung",
+        image: "/projects/risk-based-assurance-teams-meeting.png",
+        imageAlt: "Ingenieursteam in einer hybriden Besprechung mit geteilter Risikomatrix",
         milestones: [
           {
-            phase: "Auftragsklärung",
-            title: "Problem abgrenzen",
-            contribution: "Ausfallbilder und Einsatzbedingungen strukturieren.",
-            icon: "icon-target.svg",
+            title: "Risiken identifizieren",
+            contribution: "Kritische Funktionen, Ausfallarten und Ursachen systematisch erfassen.",
+            icon: "icon-risk-identification.svg",
           },
           {
-            phase: "Datenbasis",
-            title: "Informationen verbinden",
-            contribution: "Feld-, Prüf- und Produktdaten vergleichbar machen.",
-            icon: "icon-database.svg",
+            title: "Risiken priorisieren",
+            contribution: "Eintritt, Auswirkung und Nachweisbedarf nachvollziehbar bewerten.",
+            icon: "icon-risk-matrix.svg",
           },
           {
-            phase: "Analyse",
-            title: "Ursachen bewerten",
-            contribution: "Hypothesen mit Statistik und Modellen prüfen.",
-            icon: "icon-chart.svg",
+            title: "Maßnahmen definieren",
+            contribution: "Reviews, Analysen und präventive Methoden zielgerichtet festlegen.",
+            icon: "icon-measures.svg",
           },
           {
-            phase: "Absicherung",
-            title: "Maßnahmen verifizieren",
-            contribution: "Wirksamkeit mit fokussierten Versuchen nachweisen.",
-            icon: "icon-shield.svg",
+            title: "Nachweise planen",
+            contribution: "Prüfumfang, Stichproben und Zuverlässigkeitsziele dimensionieren.",
+            icon: "icon-evidence-plan.svg",
           },
           {
-            phase: "Transfer",
-            title: "Erkenntnisse verankern",
-            contribution: "Monitoring und Lessons Learned im Prozess verankern.",
-            icon: "icon-team.svg",
+            title: "Kosten und Termine verbinden",
+            contribution: "Absicherungsplan budgetieren, terminieren und gemeinsam freigeben.",
+            icon: "icon-budget-schedule.svg",
           },
         ],
         result:
-          "Priorisierte Ursachen und nachweislich wirksame Maßnahmen.",
+          "Eine priorisierte, budgetierte und terminierte Absicherungsstrategie für belastbare Freigaben.",
+      },
+      {
+        title: "Design of Experiments (DoE) effizient einsetzen und technische Systeme optimieren",
+        role: "Versuchsplanung, statistische Analyse und Modellbildung",
+        image: "/projects/design-of-experiments-lab-team.png",
+        imageAlt: "Zwei Ingenieurinnen bei einem Design-of-Experiments-Versuch im Prüflabor",
+        milestones: [
+          {
+            title: "Zielgröße festlegen",
+            contribution: "Fragestellung, Zielsetzung und Bewertungskriterien präzisieren.",
+            icon: "icon-target.svg",
+          },
+          {
+            title: "Faktoren und Stufen",
+            contribution: "Einflussgrößen, Faktorstufen und Randbedingungen festlegen.",
+            icon: "icon-factors.svg",
+          },
+          {
+            title: "Signifikante Faktoren",
+            contribution: "Effizienten Versuchsplan durchführen und relevante Einflüsse erkennen.",
+            icon: "icon-significant-factors.svg",
+          },
+          {
+            title: "Zusammenhänge quantifizieren",
+            contribution: "Haupt- und Wechselwirkungen statistisch beschreiben.",
+            icon: "icon-model.svg",
+          },
+          {
+            title: "Optimale Faktorwerte",
+            contribution: "Robustes Optimum ableiten und im Bestätigungsversuch absichern.",
+            icon: "icon-optimum.svg",
+          },
+        ],
+        result:
+          "Ein belastbares Prozessfenster und optimale Faktorwerte bei reduziertem Versuchsaufwand.",
       },
     ],
     trustTitle: "Fachliche Tiefe, die sichtbar wird.",
@@ -228,84 +277,109 @@ const contentByLocale = {
     projectsCta: "Discuss your own project",
     projects: [
       {
-        title: "Safeguard a new product generation through to release",
-        role: "Methodological project leadership",
-        image: "/projects/new-product-generation.png",
-        imageAlt: "Engineering development from an early design to a detailed component",
+        title: "Develop and integrate a tailored reliability process",
+        role: "Process development and implementation support",
+        image: "/projects/reliability-process-integration-natural.png",
+        imageAlt: "Engineering team developing an integrated reliability process",
         milestones: [
           {
-            phase: "Project start",
-            title: "Targets and ownership",
-            contribution: "Clarify requirements, responsibilities and gate criteria.",
-            icon: "icon-target.svg",
+            title: "Assess the status quo",
+            contribution: "Make process maturity, roles and existing methods transparent.",
+            icon: "icon-current-state.svg",
           },
           {
-            phase: "Concept",
-            title: "Prioritise risks",
-            contribution: "Assess critical functions and failure effects.",
-            icon: "icon-shield.svg",
+            title: "Prioritise interfaces",
+            contribution: "Identify gaps, improvement potential and handovers.",
+            icon: "icon-interfaces.svg",
           },
           {
-            phase: "Development",
-            title: "Plan the evidence",
-            contribution: "Connect the test plan, DoE and required data.",
-            icon: "icon-chart.svg",
+            title: "Validate the target process",
+            contribution: "Develop the concept and test practicality in a dry run.",
+            icon: "icon-process-design.svg",
           },
           {
-            phase: "Testing",
-            title: "Steer experiments",
-            contribution: "Evaluate results and manage deviations.",
-            icon: "icon-seminar.svg",
+            title: "Refine the concept",
+            contribution: "Apply it in a pilot project, evaluate and improve it.",
+            icon: "icon-pilot.svg",
           },
           {
-            phase: "Release",
-            title: "Support the decision",
-            contribution: "Document evidence and residual risks.",
-            icon: "icon-handshake.svg",
+            title: "Approve the process",
+            contribution: "Embed responsibilities and introduce the process as binding practice.",
+            icon: "icon-process-approval.svg",
           },
         ],
         result:
-          "A traceable release with aligned criteria and test scope.",
+          "An aligned reliability process that works consistently in day-to-day development.",
       },
       {
-        title: "Understand field failures and validate corrective actions",
-        role: "Analysis leadership and action tracking",
-        image: "/projects/field-failure-fracture.png",
-        imageAlt: "Engineering team reviewing test and measurement data at a test bench",
+        title: "Develop a risk-based assurance strategy",
+        role: "Risk analysis and strategic assurance planning",
+        image: "/projects/risk-based-assurance-teams-meeting.png",
+        imageAlt: "Engineering team in a hybrid meeting reviewing a shared risk matrix",
         milestones: [
           {
-            phase: "Scoping",
-            title: "Frame the problem",
-            contribution: "Structure failure patterns and operating conditions.",
-            icon: "icon-target.svg",
+            title: "Identify risks",
+            contribution: "Capture critical functions, failure modes and causes systematically.",
+            icon: "icon-risk-identification.svg",
           },
           {
-            phase: "Data basis",
-            title: "Connect information",
-            contribution: "Align field, test and product data for comparison.",
-            icon: "icon-database.svg",
+            title: "Prioritise risks",
+            contribution: "Evaluate likelihood, impact and evidence needs transparently.",
+            icon: "icon-risk-matrix.svg",
           },
           {
-            phase: "Analysis",
-            title: "Evaluate causes",
-            contribution: "Test hypotheses using statistics and models.",
-            icon: "icon-chart.svg",
+            title: "Define measures",
+            contribution: "Select reviews, analyses and preventive methods.",
+            icon: "icon-measures.svg",
           },
           {
-            phase: "Validation",
-            title: "Verify measures",
-            contribution: "Demonstrate effectiveness with focused tests.",
-            icon: "icon-shield.svg",
+            title: "Plan evidence",
+            contribution: "Dimension test scope, sample sizes and reliability targets.",
+            icon: "icon-evidence-plan.svg",
           },
           {
-            phase: "Transfer",
-            title: "Embed the findings",
-            contribution: "Embed monitoring and lessons learned in the process.",
-            icon: "icon-team.svg",
+            title: "Align cost and schedule",
+            contribution: "Budget, schedule and jointly approve the assurance plan.",
+            icon: "icon-budget-schedule.svg",
           },
         ],
         result:
-          "Prioritised causes and demonstrably effective measures.",
+          "A prioritised, budgeted and scheduled assurance strategy for robust release decisions.",
+      },
+      {
+        title: "Use Design of Experiments (DoE) efficiently to optimise technical systems",
+        role: "Experimental design, statistical analysis and modelling",
+        image: "/projects/design-of-experiments-lab-team.png",
+        imageAlt: "Two engineers running a Design of Experiments test in an industrial laboratory",
+        milestones: [
+          {
+            title: "Define the response",
+            contribution: "Clarify the question, objective and evaluation criteria.",
+            icon: "icon-target.svg",
+          },
+          {
+            title: "Set factors and levels",
+            contribution: "Define influencing factors, levels and boundary conditions.",
+            icon: "icon-factors.svg",
+          },
+          {
+            title: "Identify significant factors",
+            contribution: "Run an efficient design and identify relevant effects.",
+            icon: "icon-significant-factors.svg",
+          },
+          {
+            title: "Quantify relationships",
+            contribution: "Describe main effects and interactions statistically.",
+            icon: "icon-model.svg",
+          },
+          {
+            title: "Determine optimal settings",
+            contribution: "Derive a robust optimum and confirm it experimentally.",
+            icon: "icon-optimum.svg",
+          },
+        ],
+        result:
+          "A robust process window and optimal factor settings with reduced experimental effort.",
       },
     ],
     trustTitle: "Technical depth made visible.",
@@ -421,7 +495,7 @@ export function LandingConceptWinnsteinTail({
           </h2>
 
           <div className="mt-12 space-y-6">
-            {content.projects.map((project) => (
+            {content.projects.map((project, projectIndex) => (
               <details
                 key={project.title}
                 name="winnstein-projects"
@@ -469,23 +543,29 @@ export function LandingConceptWinnsteinTail({
                   <ol className="relative grid min-w-[68rem] grid-cols-5 gap-0 before:absolute before:top-7 before:right-[10%] before:left-[10%] before:h-px before:bg-cyan-200 before:content-['']">
                     {project.milestones.map((milestone, milestoneIndex) => (
                       <li
-                        key={`${project.title}-${milestone.phase}`}
+                        key={`${project.title}-${milestone.title}`}
                         className="relative px-4 first:pl-0 last:pr-0"
                       >
                         <span className="relative z-10 mx-auto grid size-14 place-items-center rounded-full border border-cyan-100 bg-[#f2fbfe] shadow-[0_8px_22px_rgba(18,85,112,0.12)]">
-                          <Image
-                            src={`${assetBase}/${milestone.icon}`}
-                            alt=""
+                          <span
+                            className="relative block size-11 overflow-hidden"
                             aria-hidden="true"
-                            width={40}
-                            height={40}
-                            className="h-9 w-9"
-                          />
+                          >
+                            <Image
+                              src={milestoneIconSprite}
+                              alt=""
+                              width={220}
+                              height={147}
+                              sizes="220px"
+                              className="pointer-events-none absolute max-w-none select-none"
+                              style={{
+                                left: -(milestoneIconOffsets[projectIndex]?.[milestoneIndex]?.[0] ?? 0),
+                                top: -(milestoneIconOffsets[projectIndex]?.[milestoneIndex]?.[1] ?? 0),
+                              }}
+                            />
+                          </span>
                         </span>
-                        <p className="mt-4 text-center text-xs font-bold tracking-[0.12em] text-brand-cyan uppercase">
-                          {milestone.phase}
-                        </p>
-                        <h4 className="mt-2 text-center text-lg leading-tight font-semibold tracking-[-0.03em] text-brand-ink">
+                        <h4 className="mt-5 text-center text-lg leading-tight font-semibold tracking-[-0.03em] text-brand-ink">
                           {milestone.title}
                         </h4>
                         <p className="mx-auto mt-3 max-w-[13.5rem] text-center text-sm leading-6 font-medium text-slate-600">
