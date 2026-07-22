@@ -42,6 +42,19 @@ const milestoneIconOffsets = [
     [170, 91],
   ],
 ] as const;
+const milestoneIconCells = [
+  [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4]],
+  [[1, 0], [1, 1], [1, 2], [1, 3], [1, 4]],
+  [[2, 0], [2, 1], [2, 2], [2, 3], [2, 4]],
+  [[2, 0], [1, 0], [1, 3], [0, 3], [0, 4]],
+  [[1, 0], [0, 1], [2, 2], [1, 2], [0, 4]],
+] as const;
+
+function getMilestoneIconOffset(projectIndex: number, milestoneIndex: number) {
+  const [row, column] = milestoneIconCells[projectIndex]?.[milestoneIndex] ?? [0, 0];
+
+  return milestoneIconOffsets[row]?.[column] ?? [0, 0];
+}
 
 const featuredReferenceNames = new Set([
   "Aesculap",
@@ -208,6 +221,76 @@ const contentByLocale = {
         ],
         result:
           "Ein belastbares Prozessfenster und optimale Faktorwerte bei reduziertem Versuchsaufwand.",
+      },
+      {
+        title: "Neue Produktgeneration bis zur Freigabe absichern",
+        role: "Methodische Projektleitung",
+        image: "/projects/new-product-generation.png",
+        imageAlt: "Bauteile einer neuen Produktgeneration zwischen Entwicklung und Erprobung",
+        milestones: [
+          {
+            title: "Ziele und Verantwortung klären",
+            contribution: "Anforderungen, Rollen und Gate-Kriterien gemeinsam festlegen.",
+            icon: "icon-target.svg",
+          },
+          {
+            title: "Risiken priorisieren",
+            contribution: "Kritische Funktionen und mögliche Ausfallfolgen bewerten.",
+            icon: "icon-shield.svg",
+          },
+          {
+            title: "Nachweisstrategie planen",
+            contribution: "Prüfplan, DoE und erforderliche Daten sinnvoll verbinden.",
+            icon: "icon-chart.svg",
+          },
+          {
+            title: "Versuche steuern",
+            contribution: "Ergebnisse einordnen und Abweichungen gezielt bearbeiten.",
+            icon: "icon-seminar.svg",
+          },
+          {
+            title: "Freigabe absichern",
+            contribution: "Nachweise, Entscheidungen und verbleibende Risiken dokumentieren.",
+            icon: "icon-handshake.svg",
+          },
+        ],
+        result:
+          "Eine nachvollziehbare Freigabe mit abgestimmten Kriterien und passendem Prüfumfang.",
+      },
+      {
+        title: "Feldausfälle verstehen und wirksame Maßnahmen absichern",
+        role: "Analyseleitung und Maßnahmen-Tracking",
+        image: "/projects/field-failure-fracture.png",
+        imageAlt: "Gebrochene Antriebswelle bei der technischen Feldausfallanalyse",
+        milestones: [
+          {
+            title: "Problem abgrenzen",
+            contribution: "Ausfallbilder und reale Einsatzbedingungen strukturiert erfassen.",
+            icon: "icon-target.svg",
+          },
+          {
+            title: "Informationen verbinden",
+            contribution: "Feld-, Prüf- und Produktdaten vergleichbar zusammenführen.",
+            icon: "icon-database.svg",
+          },
+          {
+            title: "Ursachen bewerten",
+            contribution: "Hypothesen mit Statistik, Modellen und Befunden überprüfen.",
+            icon: "icon-chart.svg",
+          },
+          {
+            title: "Maßnahmen verifizieren",
+            contribution: "Die Wirksamkeit mit fokussierten Versuchen nachweisen.",
+            icon: "icon-shield.svg",
+          },
+          {
+            title: "Erkenntnisse verankern",
+            contribution: "Monitoring und Lessons Learned dauerhaft in den Prozess überführen.",
+            icon: "icon-team.svg",
+          },
+        ],
+        result:
+          "Priorisierte Ursachen und nachweislich wirksame Maßnahmen gegen wiederkehrende Ausfälle.",
       },
     ],
     trustTitle: "Fachliche Tiefe, die sichtbar wird.",
@@ -380,6 +463,76 @@ const contentByLocale = {
         ],
         result:
           "A robust process window and optimal factor settings with reduced experimental effort.",
+      },
+      {
+        title: "Safeguard a new product generation through to release",
+        role: "Methodological project leadership",
+        image: "/projects/new-product-generation.png",
+        imageAlt: "Components of a new product generation between development and testing",
+        milestones: [
+          {
+            title: "Clarify targets and ownership",
+            contribution: "Align requirements, responsibilities and gate criteria.",
+            icon: "icon-target.svg",
+          },
+          {
+            title: "Prioritise risks",
+            contribution: "Assess critical functions and potential failure effects.",
+            icon: "icon-shield.svg",
+          },
+          {
+            title: "Plan the evidence strategy",
+            contribution: "Connect the test plan, DoE and required data coherently.",
+            icon: "icon-chart.svg",
+          },
+          {
+            title: "Steer experiments",
+            contribution: "Interpret results and address deviations systematically.",
+            icon: "icon-seminar.svg",
+          },
+          {
+            title: "Support release",
+            contribution: "Document evidence, decisions and remaining risks.",
+            icon: "icon-handshake.svg",
+          },
+        ],
+        result:
+          "A traceable release with aligned criteria and an appropriate test scope.",
+      },
+      {
+        title: "Understand field failures and validate effective measures",
+        role: "Analysis leadership and action tracking",
+        image: "/projects/field-failure-fracture.png",
+        imageAlt: "Fractured drive shaft during a technical field failure analysis",
+        milestones: [
+          {
+            title: "Frame the problem",
+            contribution: "Structure failure patterns and real operating conditions.",
+            icon: "icon-target.svg",
+          },
+          {
+            title: "Connect information",
+            contribution: "Combine field, test and product data for comparison.",
+            icon: "icon-database.svg",
+          },
+          {
+            title: "Evaluate causes",
+            contribution: "Test hypotheses using statistics, models and physical findings.",
+            icon: "icon-chart.svg",
+          },
+          {
+            title: "Verify measures",
+            contribution: "Demonstrate effectiveness with focused experiments.",
+            icon: "icon-shield.svg",
+          },
+          {
+            title: "Embed the findings",
+            contribution: "Transfer monitoring and lessons learned into the process.",
+            icon: "icon-team.svg",
+          },
+        ],
+        result:
+          "Prioritised causes and demonstrably effective measures against recurring failures.",
       },
     ],
     trustTitle: "Technical depth made visible.",
@@ -559,8 +712,8 @@ export function LandingConceptWinnsteinTail({
                               sizes="220px"
                               className="pointer-events-none absolute max-w-none select-none"
                               style={{
-                                left: -(milestoneIconOffsets[projectIndex]?.[milestoneIndex]?.[0] ?? 0),
-                                top: -(milestoneIconOffsets[projectIndex]?.[milestoneIndex]?.[1] ?? 0),
+                                left: -getMilestoneIconOffset(projectIndex, milestoneIndex)[0],
+                                top: -getMilestoneIconOffset(projectIndex, milestoneIndex)[1],
                               }}
                             />
                           </span>
