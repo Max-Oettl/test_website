@@ -20,7 +20,8 @@ export function LandingConceptBodySync() {
       concept === "kacheln2" ||
       concept === "kacheln3" ||
       concept === "kacheln31" ||
-      concept === "winnstein"
+      concept === "winnstein" ||
+      concept === "winnsteinLogo"
         ? "kacheln"
         : concept;
 

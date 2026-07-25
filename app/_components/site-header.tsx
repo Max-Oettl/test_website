@@ -66,8 +66,17 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
               alt="RelTest Solutions"
               fill
               priority
-              className="object-contain object-left"
+              className="site-header-logo-default object-contain object-left"
               sizes="(min-width: 640px) 176px, 144px"
+            />
+            <Image
+              src="/reltest-reliability-engineering-logo.png"
+              alt=""
+              aria-hidden="true"
+              width={1164}
+              height={1351}
+              priority
+              className="site-header-logo-reliability pointer-events-none absolute -top-[14px] left-0 h-[114px] w-[98px] max-w-none"
             />
           </span>
           <span className="site-header-claim hidden text-xs font-medium uppercase tracking-[0.22em] text-cyan-700 2xl:block">

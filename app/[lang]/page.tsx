@@ -30,6 +30,7 @@ const compactLandingConcepts = [
   "kacheln3",
   "kacheln31",
   "winnstein",
+  "winnsteinLogo",
 ] as const;
 
 const industryVisuals: Record<
@@ -212,6 +213,7 @@ export default async function HomePage({ params }: Props) {
           />
         }
         winnstein={<LandingConceptWinnsteinHero locale={locale} />}
+        winnsteinLogo={<LandingConceptWinnsteinHero locale={locale} />}
         iceberg={<LandingConceptIcebergHero locale={locale} />}
       />
 
@@ -231,7 +233,7 @@ export default async function HomePage({ params }: Props) {
         />
       </LandingConceptVisibility>
 
-      <LandingConceptVisibility visibleFor="winnstein">
+      <LandingConceptVisibility visibleFor={["winnstein", "winnsteinLogo"]}>
         <LandingConceptWinnsteinTail
           locale={locale}
           industries={industryCarouselProps}

@@ -72,6 +72,29 @@ body[data-landing-concept="kacheln"] .site-header-logo-mark {
   height: 3.5rem;
 }
 
+.site-header-logo-reliability {
+  display: none;
+}
+
+body[data-landing-concept-variant="winnsteinLogo"] .site-header-logo-default {
+  display: none;
+}
+
+body[data-landing-concept-variant="winnsteinLogo"]
+  .site-header-logo-reliability {
+  display: block;
+}
+
+body[data-landing-concept-variant="winnsteinLogo"] .site-header-logo-mark {
+  width: 6.25rem;
+  height: 4.5rem;
+  overflow: hidden;
+}
+
+body[data-landing-concept-variant="winnsteinLogo"] .site-header-inner {
+  min-height: 104px;
+}
+
 body[data-landing-concept="kacheln"] .site-header-claim {
   display: none;
 }
@@ -1548,4 +1571,50 @@ body[data-landing-concept-variant="winnstein"] .kacheln2-projects-title {
   font-size: clamp(1.6rem, 1.7vw, 2.05rem);
   line-height: 1.14;
   letter-spacing: -0.03em;
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-header-language-kacheln
+  .language-switcher,
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .language-switcher {
+  min-height: 40px;
+  gap: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .language-switcher-standard {
+  display: none;
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .language-switcher-winnstein {
+  display: block;
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .language-switcher-winnstein
+  svg {
+  color: #071430;
 }

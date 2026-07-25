@@ -125,7 +125,7 @@ const shared = {
     },
     {
       name: "ZEISS",
-      src: "/references/zeiss.svg",
+      src: "/references/zeiss.png",
       href: "https://www.zeiss.com/",
     },
     { name: "ZF", src: "/references/zf.jpg", href: "https://www.zf.com/" },

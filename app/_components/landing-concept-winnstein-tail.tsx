@@ -295,22 +295,35 @@ const contentByLocale = {
     ],
     trustTitle: "Fachliche Tiefe, die sichtbar wird.",
     trustText:
-      "Zwei Springer-Fachbücher, langjährige Industrieerfahrung und reale Referenzen machen die fachliche Basis von RelTest nachvollziehbar.",
+      "RelTest verbindet wissenschaftliche Fundierung, publizierte Fachliteratur und Erfahrung aus anspruchsvollen Industrieprojekten.",
     metrics: [
       { value: "Seit 2016", label: "Industrieberatung" },
+      { value: "SFZ", label: "Forschung an der Universität Stuttgart" },
       { value: "2", label: "Springer-Fachbücher" },
-      { value: String(referenceLogos.length), label: "Referenzen" },
+      { value: String(referenceLogos.length), label: "Unternehmensreferenzen" },
     ],
-    booksTitle: "Wissen, das in der Fachliteratur Bestand hat.",
+    universityLabel: "Stuttgarter Forschungszentrum Zuverlässigkeitstechnik (SFZ)",
+    universityAffiliation: "Universität Stuttgart",
+    universityTitle: "Aus Forschung wird belastbare Ingenieurpraxis.",
+    universityText:
+      "Unsere Mitarbeiter haben an der Universität Stuttgart promoviert und waren im Umfeld des SFZ wissenschaftlich tätig. Die enge Zusammenarbeit sowie der Austausch über Forschung, Konferenzen und fachliche Fragestellungen halten unsere Methoden am aktuellen Stand der Technik.",
+    universitySignals: [
+      "Promotion und wissenschaftliche Tätigkeit im SFZ-Umfeld",
+      "Austausch über Forschung und Konferenzen",
+      "Transfer aktueller Erkenntnisse in Industrieprojekte",
+    ],
+    booksTitle: "Publizierte Expertise statt bloßer Behauptung.",
     booksText:
-      "Die beiden Springer-Fachbücher dokumentieren methodische Grundlagen, Prüfstrategien und die praktische Absicherung technischer Produkte.",
+      "Zwei Springer-Fachbücher dokumentieren methodische Grundlagen, Prüfstrategien und die praktische Absicherung technischer Produkte.",
     booksCta: "Fachbücher ansehen",
     bookTitles: [
       "Zuverlässigkeitstests für eine effiziente Absicherung",
       "Zuverlässigkeit im Fahrzeug- und Maschinenbau",
     ],
-    referencesTitle: "Ausgewählte Unternehmen aus unserer Zusammenarbeit",
-    referencesCta: "Alle Referenzen",
+    referencesTitle: "Industrieerfahrung, die sich belegen lässt.",
+    referencesText:
+      "Ein ausgewählter Ausschnitt aus 27 Unternehmen, mit denen RelTest bereits zusammengearbeitet hat.",
+    referencesCta: "Alle Referenzen ansehen",
     industriesTitle: "Zuverlässigkeit kennt keine Branchengrenzen",
     industryCta: "Branche ansehen",
   },
@@ -537,22 +550,35 @@ const contentByLocale = {
     ],
     trustTitle: "Technical depth made visible.",
     trustText:
-      "Two Springer engineering books, long-standing industry experience and real references make RelTest's technical foundation transparent.",
+      "RelTest combines scientific foundations, published engineering literature and experience from demanding industrial projects.",
     metrics: [
       { value: "Since 2016", label: "industrial consulting" },
+      { value: "SFZ", label: "research at the University of Stuttgart" },
       { value: "2", label: "Springer engineering books" },
-      { value: String(referenceLogos.length), label: "references" },
+      { value: String(referenceLogos.length), label: "company references" },
     ],
-    booksTitle: "Expertise established in engineering literature.",
+    universityLabel: "Stuttgart Research Center for Reliability Engineering (SFZ)",
+    universityAffiliation: "University of Stuttgart",
+    universityTitle: "Turning research into robust engineering practice.",
+    universityText:
+      "Our employees earned their doctorates at the University of Stuttgart and worked in the SFZ research environment. Close collaboration and continuous exchange through research, conferences and technical discussions keep our methods aligned with the current state of the art.",
+    universitySignals: [
+      "Doctorates and academic work in the SFZ environment",
+      "Exchange through research and conferences",
+      "Transfer of current findings into industrial projects",
+    ],
+    booksTitle: "Published expertise, not an unsupported claim.",
     booksText:
-      "The two Springer engineering books document methodological foundations, test strategies and the practical validation of technical products.",
+      "Two Springer engineering books document methodological foundations, test strategies and the practical validation of technical products.",
     booksCta: "View engineering books",
     bookTitles: [
       "Reliability testing for efficient validation",
       "Reliability in automotive and mechanical engineering",
     ],
-    referencesTitle: "Selected companies we have worked with",
-    referencesCta: "All references",
+    referencesTitle: "Industrial experience backed by evidence.",
+    referencesText:
+      "A selected cross-section of 27 companies RelTest has already worked with.",
+    referencesCta: "View all references",
     industriesTitle: "Reliability knows no industry boundaries",
     industryCta: "Explore industry",
   },
@@ -579,6 +605,10 @@ export function LandingConceptWinnsteinTail({
 }: LandingConceptWinnsteinTailProps) {
   const content = contentByLocale[locale];
   const siteContent = getSiteContent(locale);
+  const sfzHref =
+    locale === "de"
+      ? "https://www.ima.uni-stuttgart.de/forschung/sfz/"
+      : "https://www.ima.uni-stuttgart.de/en/research/sfz/";
 
   return (
     <div className="winnstein-page-tail bg-white">
@@ -771,16 +801,16 @@ export function LandingConceptWinnsteinTail({
               </p>
             </div>
 
-            <dl className="grid grid-cols-3 border-t border-l border-white/15 bg-white/[0.035]">
+            <dl className="grid grid-cols-2 border-t border-l border-white/15 bg-white/[0.035] lg:grid-cols-4">
               {content.metrics.map((metric) => (
                 <div
                   key={metric.label}
-                  className="flex min-h-32 flex-col justify-center border-r border-b border-white/15 px-4 py-6 sm:min-h-40 sm:px-7"
+                  className="flex min-h-32 flex-col justify-center border-r border-b border-white/15 px-4 py-6 sm:min-h-40 sm:px-6"
                 >
                   <dt className="mt-3 text-xs leading-5 font-semibold text-slate-400 sm:text-sm">
                     {metric.label}
                   </dt>
-                  <dd className="order-first text-2xl font-semibold tracking-[-0.055em] text-white sm:text-4xl">
+                  <dd className="order-first text-xl leading-tight font-semibold tracking-[-0.045em] text-white sm:text-2xl xl:text-3xl">
                     {metric.value}
                   </dd>
                 </div>
@@ -788,64 +818,127 @@ export function LandingConceptWinnsteinTail({
             </dl>
           </div>
 
-          <div className="mt-12 grid border border-white/15 bg-white text-brand-ink lg:grid-cols-[minmax(20rem,0.62fr)_minmax(0,1.38fr)]">
-            <div className="flex flex-col justify-center border-b border-line-soft p-7 sm:p-9 lg:border-r lg:border-b-0 lg:p-10">
-              <h3 className="max-w-xl text-3xl leading-[1.06] font-semibold tracking-[-0.052em] text-brand-ink sm:text-[2.25rem]">
-                {content.booksTitle}
-              </h3>
-              <p className="mt-5 max-w-xl text-sm leading-7 font-medium text-slate-600">
-                {content.booksText}
-              </p>
-              <Link
-                href={localizeHref(locale, "/literatur")}
-                className="group mt-8 inline-flex w-fit items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4"
+          <div className="mt-12 grid gap-px border border-white/15 bg-white/15 lg:grid-cols-[minmax(20rem,0.82fr)_minmax(0,1.18fr)]">
+            <article className="relative overflow-hidden bg-[#0a1732] p-7 sm:p-10 lg:p-12">
+              <div
+                aria-hidden="true"
+                className="absolute top-0 right-0 h-64 w-64 translate-x-1/3 -translate-y-1/3 rounded-full border border-brand-cyan/25"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute top-0 right-0 h-40 w-40 translate-x-1/3 -translate-y-1/3 rounded-full border border-brand-cyan/20"
+              />
+              <a
+                href={sfzHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={content.universityLabel}
+                className="group/sfz relative block w-full max-w-xl overflow-hidden bg-white shadow-[0_18px_44px_rgba(0,0,0,0.18)] transition-transform duration-200 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan-bright focus-visible:ring-offset-4 focus-visible:ring-offset-[#0a1732]"
               >
-                {content.booksCta}
-                <span className="transition-transform group-hover:translate-x-1">
-                  <ArrowIcon />
+                <span className="flex min-h-36 items-center px-6 py-2 sm:px-8">
+                  <span className="relative block h-32 w-80 max-w-full overflow-hidden">
+                    <Image
+                      src="/partners/sfz-logo.svg"
+                      alt={content.universityLabel}
+                      fill
+                      className="object-cover object-center"
+                      sizes="320px"
+                    />
+                  </span>
                 </span>
-              </Link>
-            </div>
+                <span className="flex items-center justify-between gap-5 border-t border-slate-200 bg-[#f4f8fa] px-6 py-4 sm:px-8">
+                  <span>
+                    <span className="block text-[0.65rem] leading-4 font-bold tracking-[0.18em] text-brand-cyan uppercase">
+                      {content.universityAffiliation}
+                    </span>
+                    <span className="mt-1 block max-w-md text-sm leading-5 font-semibold text-[#263243] sm:text-[0.95rem]">
+                      {content.universityLabel}
+                    </span>
+                  </span>
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-brand-cyan transition-transform group-hover/sfz:translate-x-1">
+                    <ArrowIcon />
+                  </span>
+                </span>
+              </a>
+              <h3 className="relative mt-7 max-w-2xl text-[clamp(1.85rem,2.15vw,2.35rem)] leading-[1.06] font-semibold tracking-[-0.052em] text-white">
+                {content.universityTitle}
+              </h3>
+              <p className="relative mt-6 max-w-2xl text-base leading-8 font-medium text-slate-300">
+                {content.universityText}
+              </p>
+              <ul className="relative mt-8 grid gap-3 border-t border-white/15 pt-6">
+                {content.universitySignals.map((signal) => (
+                  <li
+                    key={signal}
+                    className="flex items-start gap-4 text-base leading-7 font-semibold text-slate-100"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="mt-2 h-2 w-2 shrink-0 bg-brand-cyan-bright"
+                    />
+                    {signal}
+                  </li>
+                ))}
+              </ul>
+            </article>
 
-            <div className="grid bg-[#edf5f8] sm:grid-cols-2">
-              {siteContent.books.slice(0, 2).map((book, index) => (
-                <a
-                  key={book.href}
-                  href={book.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/book grid min-h-[23rem] grid-rows-[minmax(0,1fr)_auto] border-b border-line-soft transition-colors hover:bg-[#e5f1f5] focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset sm:border-r sm:border-b-0 sm:last:border-r-0"
+            <div className="flex h-full flex-col bg-white text-brand-ink">
+              <div className="flex flex-col gap-6 border-b border-line-soft p-7 sm:flex-row sm:items-end sm:justify-between sm:p-9">
+                <div>
+                  <h3 className="max-w-2xl text-[clamp(1.85rem,2.15vw,2.35rem)] leading-[1.06] font-semibold tracking-[-0.052em] text-brand-ink">
+                    {content.booksTitle}
+                  </h3>
+                  <p className="mt-4 max-w-2xl text-base leading-8 font-medium text-slate-600">
+                    {content.booksText}
+                  </p>
+                </div>
+                <Link
+                  href={localizeHref(locale, "/literatur")}
+                  className="group inline-flex w-fit shrink-0 items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4"
                 >
-                  <span className="flex items-end justify-center px-5 pt-6 sm:px-7 sm:pt-7">
+                  {content.booksCta}
+                  <span className="transition-transform group-hover:translate-x-1">
+                    <ArrowIcon />
+                  </span>
+                </Link>
+              </div>
+
+              <div className="grid flex-1 bg-[#edf5f8] sm:grid-cols-2">
+                {siteContent.books.slice(0, 2).map((book, index) => (
+                  <a
+                    key={book.href}
+                    href={book.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={content.bookTitles[index]}
+                    className="group/book flex min-h-[23rem] items-center justify-center border-b border-line-soft p-5 transition-colors hover:bg-[#e5f1f5] focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset sm:border-r sm:border-b-0 sm:last:border-r-0"
+                  >
                     <Image
                       src={book.cover}
                       alt={content.bookTitles[index]}
-                      width={210}
-                      height={310}
-                      className="h-[16rem] w-auto max-w-full object-contain shadow-[0_18px_36px_rgba(7,20,48,0.18)] transition-transform duration-300 group-hover/book:-translate-y-1.5"
+                      width={196}
+                      height={290}
+                      className="h-[clamp(22rem,31vw,30rem)] w-auto max-w-full object-contain shadow-[0_18px_34px_rgba(7,20,48,0.18)] transition-transform duration-300 group-hover/book:-translate-y-1.5 group-hover/book:shadow-[0_24px_42px_rgba(7,20,48,0.22)]"
                     />
-                  </span>
-                  <span className="flex min-h-20 items-center justify-between gap-4 bg-white px-5 py-3 sm:px-6">
-                    <span className="text-sm leading-5 font-semibold text-brand-ink">
-                      {content.bookTitles[index]}
-                    </span>
-                    <span className="shrink-0 text-brand-cyan transition-transform group-hover/book:translate-x-1">
-                      <ArrowIcon />
-                    </span>
-                  </span>
-                </a>
-              ))}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="border-x border-b border-white/15 bg-white text-brand-ink">
-            <div className="flex flex-col gap-5 border-b border-line-soft px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-              <h3 className="text-xl leading-tight font-semibold tracking-[-0.035em] text-brand-ink sm:text-2xl">
-                {content.referencesTitle}
-              </h3>
+          <div className="mt-6 border border-white/15 bg-white text-brand-ink">
+            <div className="grid gap-6 border-b border-line-soft px-6 py-7 sm:px-9 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.48fr)] lg:items-end lg:px-10 lg:py-9">
+              <div>
+                <h3 className="text-[clamp(1.85rem,2.15vw,2.35rem)] leading-[1.06] font-semibold tracking-[-0.052em] text-brand-ink">
+                  {content.referencesTitle}
+                </h3>
+                <p className="mt-3 max-w-3xl text-base leading-8 font-medium text-slate-600">
+                  {content.referencesText}
+                </p>
+              </div>
               <Link
                 href={localizeHref(locale, "/referenzen")}
-                className="group inline-flex w-fit items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4"
+                className="group inline-flex w-fit items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 lg:justify-self-end"
               >
                 {content.referencesCta}
                 <span className="transition-transform group-hover:translate-x-1">
@@ -853,17 +946,28 @@ export function LandingConceptWinnsteinTail({
                 </span>
               </Link>
             </div>
-            <div className="grid grid-cols-2 items-center gap-x-8 gap-y-7 px-6 py-8 sm:grid-cols-4 sm:px-8 lg:grid-cols-8 lg:px-10 lg:py-10">
+            <div className="grid grid-cols-2 gap-px bg-line-soft sm:grid-cols-4 lg:grid-cols-8">
               {featuredReferences.map((reference) => (
-                <div key={reference.name} className="flex h-12 items-center justify-center">
+                <a
+                  key={reference.name}
+                  href={reference.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/logo flex min-h-28 items-center justify-center bg-white px-5 py-6 transition-colors hover:bg-[#f1f8fa] focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset"
+                  aria-label={`${reference.name} - Website`}
+                >
                   <Image
                     src={reference.src}
                     alt={reference.name}
-                    width={128}
-                    height={52}
-                    className="max-h-9 w-auto max-w-full object-contain grayscale opacity-65"
+                    width={150}
+                    height={64}
+                    className={
+                      reference.name === "ZEISS"
+                        ? "h-16 w-16 object-contain opacity-100 transition duration-200 group-hover/logo:scale-105"
+                        : "max-h-12 w-auto max-w-full object-contain opacity-90 transition duration-200 group-hover/logo:scale-105 group-hover/logo:opacity-100"
+                    }
                   />
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -872,19 +976,10 @@ export function LandingConceptWinnsteinTail({
 
       <section className="border-b border-line-soft bg-white">
         <div className="mx-auto max-w-[120rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
-          <div className="grid gap-7 lg:grid-cols-[minmax(0,0.85fr)_minmax(24rem,0.55fr)] lg:items-end">
+          <div>
             <h2 className="max-w-4xl text-[clamp(2.1rem,2.8vw,3.35rem)] leading-[1.04] font-semibold tracking-[-0.058em] text-brand-ink">
               {content.industriesTitle}
             </h2>
-            <Link
-              href={localizeHref(locale, "/referenzen")}
-              className="group inline-flex w-fit items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 lg:justify-self-end"
-            >
-              {content.referencesCta}
-              <span className="transition-transform group-hover:translate-x-1">
-                <ArrowIcon />
-              </span>
-            </Link>
           </div>
 
           <div className="mt-12 grid border-t border-l border-line-soft lg:grid-cols-2">

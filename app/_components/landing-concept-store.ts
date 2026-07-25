@@ -7,6 +7,7 @@ export type LandingConcept =
   | "kacheln3"
   | "kacheln31"
   | "winnstein"
+  | "winnsteinLogo"
   | "iceberg";
 
 export const landingConceptOptions: Array<{
@@ -19,6 +20,7 @@ export const landingConceptOptions: Array<{
   { value: "kacheln3", label: "Leistungskacheln 3.0" },
   { value: "kacheln31", label: "Leistungskacheln 3.1" },
   { value: "winnstein", label: "Winnstein-Konzept" },
+  { value: "winnsteinLogo", label: "Winnstein - neues Logo" },
   { value: "iceberg", label: "Eisbergdiagnose" },
 ];
 
@@ -32,6 +34,7 @@ export function isLandingConcept(value: string): value is LandingConcept {
     value === "kacheln3" ||
     value === "kacheln31" ||
     value === "winnstein" ||
+    value === "winnsteinLogo" ||
     value === "iceberg"
   );
 }

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="flag-circle">
+      <circle cx="12" cy="12" r="11" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#flag-circle)">
+    <rect width="24" height="8" fill="#171717" />
+    <rect y="8" width="24" height="8" fill="#dd1d2f" />
+    <rect y="16" width="24" height="8" fill="#f6c744" />
+  </g>
+  <circle cx="12" cy="12" r="10.5" fill="none" stroke="#071430" stroke-opacity=".16" />
+</svg>

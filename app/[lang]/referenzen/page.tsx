@@ -47,7 +47,11 @@ export default async function ReferencesPage({ params }: Props) {
                 alt={reference.name}
                 width={220}
                 height={110}
-                className="h-auto max-h-16 w-auto max-w-full object-contain"
+                className={
+                  reference.name === "ZEISS"
+                    ? "h-20 w-20 object-contain"
+                    : "h-auto max-h-16 w-auto max-w-full object-contain"
+                }
               />
             </a>
           ))}

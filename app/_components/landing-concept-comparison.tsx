@@ -23,6 +23,7 @@ type LandingConceptComparisonProps = {
   kacheln3: ReactNode;
   kacheln31: ReactNode;
   winnstein: ReactNode;
+  winnsteinLogo: ReactNode;
   iceberg: ReactNode;
 };
 
@@ -33,6 +34,7 @@ export function LandingConceptComparison({
   kacheln3,
   kacheln31,
   winnstein,
+  winnsteinLogo,
   iceberg,
 }: LandingConceptComparisonProps) {
   const selectId = useId();
@@ -86,9 +88,11 @@ export function LandingConceptComparison({
               ? kacheln31
               : concept === "winnstein"
                 ? winnstein
-                : concept === "iceberg"
-                  ? iceberg
-                  : current}
+                : concept === "winnsteinLogo"
+                  ? winnsteinLogo
+                  : concept === "iceberg"
+                    ? iceberg
+                    : current}
     </>
   );
 }
