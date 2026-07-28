@@ -198,7 +198,7 @@ const content = {
               href: "/weiterbildung/seminare",
             },
             {
-              label: "RelTest Academy",
+              label: "RelTest Education",
               href: "/weiterbildung/academy",
             },
             {
@@ -334,13 +334,13 @@ const content = {
         meta: "Weiterbildung",
       },
       {
-        title: "RelTest Academy",
+        title: "RelTest Education",
         description:
           "Digitales E-Learning für Ingenieurinnen und Ingenieure, die Reliability Engineering und DoE flexibel und strukturiert aufbauen wollen.",
         highlight: "Skalierbar, ortsunabhängig und sofort nutzbar",
         href: "/weiterbildung/academy",
-        icon: "/icons/service-academy.svg",
-        meta: "Academy",
+        icon: "/branding/reltest-education-horizontal-positive.svg",
+        meta: "Education",
       },
       {
         title: "Langfristige Kooperation",
@@ -407,7 +407,7 @@ const content = {
       {
         title: "Individuelle Lösungen",
         description:
-          "Beratung, Training, Academy oder komplette Arbeitspakete werden passend zu Projektstand und Risiko aufgebaut.",
+          "Beratung, Training, RelTest Education oder komplette Arbeitspakete werden passend zu Projektstand und Risiko aufgebaut.",
       },
     ],
     educationFormats: [
@@ -425,7 +425,7 @@ const content = {
         icon: "/icons/service-training.svg",
       },
       {
-        title: "RelTest Academy",
+        title: "RelTest Education",
         description:
           "Ideal für Einzelpersonen oder verteilte Teams, die Wissen flexibel, modular und ohne Terminabhängigkeit aufbauen und vertiefen wollen.",
         bullets: [
@@ -433,9 +433,9 @@ const content = {
           "Strukturiert für nachhaltigen Wissensaufbau in Reliability Engineering und DoE",
           "Ideal als Ergänzung zu Inhouse-Schulungen, Projektarbeit oder individueller Weiterbildung",
         ],
-        ctaLabel: "Academy entdecken",
+        ctaLabel: "RelTest Education entdecken",
         ctaHref: "/weiterbildung/academy",
-        icon: "/icons/service-academy.svg",
+        icon: "/branding/reltest-education-horizontal-positive.svg",
       },
     ],
     industryReferences: [
@@ -513,9 +513,9 @@ const content = {
         eyebrow: "Weiterbildung",
         title: "Zwei Weiterbildungswege mit sehr unterschiedlichem Nutzen",
         description:
-          "Academy und Vor-Ort-Schulungen gehören beide zur Weiterbildung, lösen aber unterschiedliche Aufgaben. Genau diese Unterscheidung macht die Positionierung stärker und glaubwürdiger.",
+          "RelTest Education und Vor-Ort-Schulungen gehören beide zur Weiterbildung, lösen aber unterschiedliche Aufgaben. Genau diese Unterscheidung macht die Positionierung stärker und glaubwürdiger.",
         seminarAlt: "RelTest Seminar vor Ort",
-        academyAlt: "Digitale RelTest Academy Schulung an einem Bildschirm",
+        academyAlt: "Digitales Lernangebot von RelTest Education an einem Bildschirm",
       },
       benefitsIntro: {
         eyebrow: "Warum RelTest",
@@ -575,7 +575,7 @@ const content = {
           eyebrow: "Überblick",
           title: "Leistungen im Überblick",
           description:
-            "Vier zentrale Angebote zeigen, wie RelTest unterstützt: Beratung, Weiterbildung vor Ort, Academy und langfristige Kooperation. Fachthemen wie DoE, Datenanalyse, Risikomanagement und Zuverlässigkeitstechnik werden je nach Projektziel gezielt in Beratung und Kooperation eingebracht.",
+            "Vier zentrale Angebote zeigen, wie RelTest unterstützt: Beratung, Weiterbildung vor Ort, RelTest Education und langfristige Kooperation. Fachthemen wie DoE, Datenanalyse, Risikomanagement und Zuverlässigkeitstechnik werden je nach Projektziel gezielt in Beratung und Kooperation eingebracht.",
         },
       },
       education: {
@@ -584,7 +584,7 @@ const content = {
           title:
             "Weiterbildung, die sich an Ihrem Ziel und nicht an einem Standardformat orientiert",
           description:
-            "RelTest bietet Weiterbildung in zwei klar unterschiedlichen Formen: persönliche Inhouse-Schulungen für Teams und die RelTest Academy für flexibles, digitales Lernen.",
+            "RelTest bietet Weiterbildung in zwei klar unterschiedlichen Formen: persönliche Inhouse-Schulungen für Teams und RelTest Education für flexibles, digitales Lernen.",
         },
         visualAlt:
           "RelTest Experten erklären Zuverlässigkeitsanforderungen in einer Schulung",
@@ -596,9 +596,9 @@ const content = {
         formatIntro: {
           eyebrow: "Zwei Weiterbildungswege",
           title:
-            "Seminar und Academy lösen unterschiedliche Aufgaben im Kompetenzaufbau.",
+            "Seminare und RelTest Education lösen unterschiedliche Aufgaben im Kompetenzaufbau.",
           description:
-            "Vor-Ort-Schulungen schaffen ein gemeinsames Methodenverständnis im Team. Die Academy macht Grundlagen und Vertiefung flexibel verfügbar, wenn Wissen skalierbar aufgebaut werden soll.",
+            "Vor-Ort-Schulungen schaffen ein gemeinsames Methodenverständnis im Team. RelTest Education macht Grundlagen und Vertiefung flexibel verfügbar, wenn Wissen skalierbar aufgebaut werden soll.",
         },
         cardImages: [
           {
@@ -609,7 +609,7 @@ const content = {
           {
             label: "Flexibel digital",
             src: "/team/academy-e-learning.png",
-            alt: "Digitale RelTest Academy Schulung zur Lebensdatenanalyse",
+            alt: "Digitales Lernangebot von RelTest Education zur Lebensdatenanalyse",
           },
         ],
         decisionTitle: "Welches Format passt zu Ihrem Ziel?",
@@ -622,7 +622,7 @@ const content = {
               "Wenn konkrete Projektfragen, Diskussionen und ein gemeinsamer Methodenstandard im Team im Vordergrund stehen.",
           },
           {
-            title: "RelTest Academy",
+            title: "RelTest Education",
             description:
               "Wenn Mitarbeitende Grundlagen und Vertiefungen zeitlich unabhängig, strukturiert und wiederholbar lernen sollen.",
           },
@@ -762,7 +762,7 @@ const content = {
         reasons: [
           "Zuverlässigkeitsziele für neue Produkte festlegen",
           "Versuchsplanung oder DoE absichern",
-          "Teams durch Schulungen oder Academy weiterentwickeln",
+          "Teams durch Schulungen oder RelTest Education weiterentwickeln",
           "Langfristige Unterstützung im Projekt aufsetzen",
         ],
       },
@@ -823,7 +823,7 @@ const content = {
               href: "/weiterbildung/seminare",
             },
             {
-              label: "RelTest Academy",
+              label: "RelTest Education",
               href: "/weiterbildung/academy",
             },
             {
@@ -956,13 +956,13 @@ const content = {
         meta: "Training",
       },
       {
-        title: "RelTest Academy",
+        title: "RelTest Education",
         description:
           "Digital learning for engineers who want to build their reliability engineering and DoE expertise flexibly and systematically.",
         highlight: "Scalable, location-independent and ready to use",
         href: "/weiterbildung/academy",
-        icon: "/icons/service-academy.svg",
-        meta: "Academy",
+        icon: "/branding/reltest-education-horizontal-positive.svg",
+        meta: "Education",
       },
       {
         title: "Long-term partnership",
@@ -1029,7 +1029,7 @@ const content = {
       {
         title: "Tailored solutions",
         description:
-          "Consulting, training, Academy programmes or complete work packages are tailored to the project stage and risk profile.",
+          "Consulting, training, RelTest Education programmes or complete work packages are tailored to the project stage and risk profile.",
       },
     ],
     educationFormats: [
@@ -1047,7 +1047,7 @@ const content = {
         icon: "/icons/service-training.svg",
       },
       {
-        title: "RelTest Academy",
+        title: "RelTest Education",
         description:
           "Ideal for individuals or distributed teams who want to develop and deepen their knowledge flexibly, modularly and without fixed dates.",
         bullets: [
@@ -1055,9 +1055,9 @@ const content = {
           "Structured for sustainable learning in reliability engineering and DoE",
           "Ideal as a complement to in-house training, project work or individual development",
         ],
-        ctaLabel: "Explore the Academy",
+        ctaLabel: "Explore RelTest Education",
         ctaHref: "/weiterbildung/academy",
-        icon: "/icons/service-academy.svg",
+        icon: "/branding/reltest-education-horizontal-positive.svg",
       },
     ],
     industryReferences: [
@@ -1134,9 +1134,9 @@ const content = {
         eyebrow: "Professional development",
         title: "Two learning paths with distinctly different benefits",
         description:
-          "The Academy and on-site training are both forms of professional development, but they solve different challenges. This distinction makes the offering clearer and more credible.",
+          "RelTest Education and on-site training are both forms of professional development, but they solve different challenges. This distinction makes the offering clearer and more credible.",
         seminarAlt: "RelTest on-site seminar",
-        academyAlt: "Digital RelTest Academy course displayed on a computer",
+        academyAlt: "RelTest Education digital learning course displayed on a computer",
       },
       benefitsIntro: {
         eyebrow: "Why RelTest",
@@ -1194,7 +1194,7 @@ const content = {
           eyebrow: "Overview",
           title: "Services at a glance",
           description:
-            "Four core offers show how RelTest supports customers: consulting, on-site training, the Academy and long-term partnership. Technical topics such as DoE, data analysis, risk management and reliability engineering are applied within consulting and collaboration according to the project objective.",
+            "Four core offers show how RelTest supports customers: consulting, on-site training, RelTest Education and long-term partnership. Technical topics such as DoE, data analysis, risk management and reliability engineering are applied within consulting and collaboration according to the project objective.",
         },
       },
       education: {
@@ -1203,7 +1203,7 @@ const content = {
           title:
             "Training shaped around your objective, not a standard format",
           description:
-            "RelTest offers two clearly differentiated formats: personal in-house training for teams and the RelTest Academy for flexible digital learning.",
+            "RelTest offers two clearly differentiated formats: personal in-house training for teams and RelTest Education for flexible digital learning.",
         },
         visualAlt:
           "RelTest experts explaining reliability requirements in a training session",
@@ -1215,9 +1215,9 @@ const content = {
         formatIntro: {
           eyebrow: "Two learning paths",
           title:
-            "Seminars and Academy solve different challenges in capability building.",
+            "Seminars and RelTest Education solve different challenges in capability building.",
           description:
-            "On-site training creates a shared methodological foundation within a team. The Academy makes fundamentals and in-depth content available flexibly when knowledge needs to scale.",
+            "On-site training creates a shared methodological foundation within a team. RelTest Education makes fundamentals and in-depth content available flexibly when knowledge needs to scale.",
         },
         cardImages: [
           {
@@ -1228,7 +1228,7 @@ const content = {
           {
             label: "Flexible digital learning",
             src: "/team/academy-e-learning.png",
-            alt: "Digital RelTest Academy training on life data analysis",
+            alt: "RelTest Education digital training on life data analysis",
           },
         ],
         decisionTitle: "Which format fits your objective?",
@@ -1241,7 +1241,7 @@ const content = {
               "When concrete project questions, discussion and a shared team methodology are the priority.",
           },
           {
-            title: "RelTest Academy",
+            title: "RelTest Education",
             description:
               "When employees should learn fundamentals and advanced topics independently, systematically and repeatedly.",
           },
@@ -1380,7 +1380,7 @@ const content = {
         reasons: [
           "Define reliability targets for new products",
           "Validate test planning or Design of Experiments",
-          "Develop teams through training or the Academy",
+          "Develop teams through training or RelTest Education",
           "Establish long-term support within a project",
         ],
       },

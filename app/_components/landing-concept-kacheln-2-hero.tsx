@@ -56,7 +56,7 @@ const conceptContent = {
         imageClass: "right-0 bottom-0 h-[76%] w-[68%] opacity-34",
       },
       {
-        title: "RelTest Academy",
+        title: "RelTest Education",
         description:
           "Strukturiertes E-Learning für flexible technische Weiterbildung.",
         href: "/weiterbildung/academy",
@@ -90,7 +90,7 @@ const conceptContent = {
     ],
     academyPrompt: {
       title: "Weiterbildung gesucht?",
-      cta: "Zur Academy",
+      cta: "Zu RelTest Education",
     },
     tasks: [
       {
@@ -158,7 +158,7 @@ const conceptContent = {
         imageClass: "right-0 bottom-0 h-[76%] w-[68%] opacity-34",
       },
       {
-        title: "RelTest Academy",
+        title: "RelTest Education",
         description:
           "Structured e-learning for flexible technical development.",
         href: "/weiterbildung/academy",
@@ -192,7 +192,7 @@ const conceptContent = {
     ],
     academyPrompt: {
       title: "Looking for professional development?",
-      cta: "Explore the Academy",
+      cta: "Explore RelTest Education",
     },
     tasks: [
       {
@@ -353,12 +353,12 @@ export function LandingConceptKacheln2Hero({
             >
               <span className="flex min-w-0 items-center gap-4">
                 <Image
-                  src="/academy/reltest-academy-logo.webp"
+                  src="/branding/reltest-education-horizontal-positive.svg"
                   alt=""
                   aria-hidden="true"
-                  width={820}
-                  height={406}
-                  className="h-12 w-auto shrink-0 object-contain"
+                  width={466}
+                  height={226}
+                  className="h-14 w-28 shrink-0 object-contain sm:h-16 sm:w-32"
                 />
                 <span className="block text-base font-semibold tracking-[-0.02em]">
                   {content.academyPrompt.title}

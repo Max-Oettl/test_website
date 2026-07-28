@@ -50,7 +50,7 @@ Geprüft werden:
 - Sprachumschaltung
 - Hero-Bereich
 - Leistungskarten
-- Weiterbildung und Academy
+- Weiterbildung und RelTest Education
 - Fachbuch und Podcast
 - Referenzen
 - Kontakt-CTA

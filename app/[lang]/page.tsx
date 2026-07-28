@@ -373,23 +373,33 @@ export default async function HomePage({ params }: Props) {
                   </div>
                   <div className="home-education-body flex h-full flex-col p-8">
                     <div className="flex items-start gap-5">
-                      <div className="home-education-icon flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white ring-1 ring-slate-200">
+                      <div
+                        className={`home-education-icon flex h-20 shrink-0 items-center justify-center rounded-2xl bg-white ring-1 ring-slate-200 ${
+                          format.title === "RelTest Education"
+                            ? "w-36 px-3"
+                            : "w-20"
+                        }`}
+                      >
                         <Image
                           src={
-                            format.title === "RelTest Academy"
-                              ? "/academy/reltest-academy-logo.webp"
+                            format.title === "RelTest Education"
+                              ? "/branding/reltest-education-horizontal-positive.svg"
                               : format.icon
                           }
                           alt={
-                            format.title === "RelTest Academy"
-                              ? "RelTest Academy"
+                            format.title === "RelTest Education"
+                              ? "RelTest Education"
                               : ""
                           }
-                          width={56}
-                          height={56}
+                          width={
+                            format.title === "RelTest Education" ? 466 : 56
+                          }
+                          height={
+                            format.title === "RelTest Education" ? 226 : 56
+                          }
                           className={
-                            format.title === "RelTest Academy"
-                              ? "h-12 w-12 object-contain"
+                            format.title === "RelTest Education"
+                              ? "h-16 w-full object-contain"
                               : "h-14 w-14"
                           }
                         />

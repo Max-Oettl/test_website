@@ -571,7 +571,7 @@ wertvolle Anknüpfungspunkte:
 - Kunden- und Partnerbeziehungen
 - persönliche und geschäftliche LinkedIn-Profile
 - Hochschul- und Fachnetzwerke
-- RelTest Academy
+- RelTest Education
 
 Sinnvolle Maßnahmen:
 

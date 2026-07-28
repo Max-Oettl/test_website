@@ -71,7 +71,7 @@ referenziert:
 | Analytics | Matomo, Google Tag Manager, `gtag` | Tracking-Konzept klaeren und datenschutzkonform migrieren |
 | Videos | YouTube, Vimeo | Nur consent-freundlich einbinden oder als externe Links nutzen |
 | Social | LinkedIn, Xing | Links uebernehmen; Widgets nur wenn wirklich noetig |
-| Externe Links | RelTest Academy, Uni Stuttgart, Springer, Podcast | Pruefen und in Inhaltsstruktur uebernehmen |
+| Externe Links | RelTest Education, Uni Stuttgart, Springer, Podcast | Pruefen und in Inhaltsstruktur uebernehmen |
 | WordPress-Funktionen | API, Theme, Plugins, Membership Login | Entscheiden, was entfaellt und was ersetzt wird |
 
 ### 2.4 Performance- und Technikhinweise der alten Website
@@ -224,7 +224,7 @@ Muss vor Go-live:
 
 - zentrale Leistungsinhalte migrieren und verbessern
 - DoE sichtbar und fachlich korrekt integrieren
-- Weiterbildung sauber trennen in Seminare und Academy
+- Weiterbildung sauber trennen in Seminare und RelTest Education
 - Fachbuch sichtbar einbinden
 - Podcast sichtbar einbinden
 - Referenzen und Logos uebernehmen
@@ -353,7 +353,7 @@ Muss vor Go-live:
 - dekorative Bilder mit leerem Alt-Text kennzeichnen
 - Bildgroessen optimieren
 - Referenzlogos uebernehmen
-- RelTest-Logo und Academy-Logo korrekt einsetzen
+- RelTest-Solutions- und RelTest-Education-Logo korrekt einsetzen
 - Buchcover lokal und sauber verwenden
 - Podcast-/Personenbild rechtlich klaeren
 - alte Downloads und PDFs bewerten
@@ -370,7 +370,7 @@ Behalten oder sauber neu einbinden:
 
 - Springer-Fachbuch
 - Podcast mit Kevin Lucan
-- RelTest Academy
+- RelTest Education
 - Referenzkunden
 - reale Mitarbeiterbilder
 - ggf. Uni-Stuttgart-/Fachbezug

@@ -17,7 +17,7 @@ const servicePageEnhancements = {
     structureLabel: "Portfolio-Logik",
     structureTitle: "Vier Angebote, ein fachlicher Kern.",
     structureDescription:
-      "Die Leistungsformen unterscheiden sich bewusst: Beratung, Weiterbildung, digitale Academy und langfristige Kooperation. Die technischen Methoden werden je nach Zielsetzung gezielt darin eingesetzt.",
+      "Die Leistungsformen unterscheiden sich bewusst: Beratung, Weiterbildung, RelTest Education und langfristige Kooperation. Die technischen Methoden werden je nach Zielsetzung gezielt darin eingesetzt.",
     structureItems: [
       "passende Leistungsform wählen",
       "technische Fragestellung einordnen",
@@ -34,7 +34,7 @@ const servicePageEnhancements = {
     structureLabel: "Portfolio logic",
     structureTitle: "Four offers, one technical core.",
     structureDescription:
-      "The service formats are intentionally different: consulting, professional training, digital Academy and long-term partnership. The technical methods are applied where they create the strongest project value.",
+      "The service formats are intentionally different: consulting, professional training, RelTest Education and long-term partnership. The technical methods are applied where they create the strongest project value.",
     structureItems: [
       "select the right service format",
       "classify the technical question",

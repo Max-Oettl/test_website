@@ -7,7 +7,7 @@ Die Website sollte nicht wie eine generische Beratungsseite wirken. Bilder sollt
 - technische Diagramme und Kurven
 - reduzierte Piktogramme
 - reale Schulungs- oder Workshop-Situationen
-- Buch- und Academy-bezogene Visuals
+- Buch- und Education-bezogene Visuals
 - kontrolliert eingesetzte Industrie- oder Laborbilder
 
 Weniger geeignet sind austauschbare Stock-Motive wie Haendeschuetteln, reine Meeting-Fotos ohne technischen Bezug oder beliebige "Future Tech"-Renderings.
@@ -34,7 +34,7 @@ Weniger geeignet sind austauschbare Stock-Motive wie Haendeschuetteln, reine Mee
 - Vorschlaege:
 - Beratung fuer Unternehmen: Netzwerkdiagramm, Zahnradsystem oder Systemarchitektur
 - Schulungen und Seminare: Whiteboard, Seminarraum, Methodik-Sheets
-- RelTest Academy: Screenshot einer Lernplattform oder stilisierte Moduluebersicht
+- RelTest Education: Screenshot einer Lernplattform oder stilisierte Moduluebersicht
 - Langfristige Kooperation: technische Dokumentation, Checklisten, Freigabeprozess
 - Stil: monochrom oder zweifarbig, eher technisch als verspielt
 
@@ -80,7 +80,7 @@ Weniger geeignet sind austauschbare Stock-Motive wie Haendeschuetteln, reine Mee
 - Echte Bilder aus Workshops, Vortraegen oder Schulungssituationen sind hier ideal.
 - Wichtig: lieber authentisch und fachlich als generisch und zu glatt.
 
-### Academy
+### RelTest Education
 
 - Screenshots echter Kursmodule, Lernpfade oder Videolektionen.
 - Optional: Laptop-Mockups oder UI-Ausschnitte der Lernplattform.
@@ -110,7 +110,7 @@ Weniger geeignet sind austauschbare Stock-Motive wie Haendeschuetteln, reine Mee
 2. Piktogramme fuer die vier Leistungsangebote
 3. Prozessgrafik fuer den Zuverlaessigkeitsprozess
 4. Ein technisch-anmutendes Hero-Visual mit Kurven/Diagrammen
-5. Academy-Screenshot oder Academy-Visual
+5. Education-Screenshot oder Education-Visual
 
 ## Konkrete Empfehlung
 

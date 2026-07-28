@@ -66,8 +66,8 @@ export default async function PrivacyPage({ params }: Props) {
             [
               isGerman ? "Drittanbieter und Medien" : "Third-party services and media",
               isGerman
-                ? "Externe Dienste wie Videos, Podcast-Links, Academy, Springer und Social-Profile müssen in der finalen Datenschutzerklärung berücksichtigt werden."
-                : "External services such as videos, podcast links, Academy, Springer and social profiles must be covered in the final privacy policy.",
+                ? "Externe Dienste wie Videos, Podcast-Links, RelTest Education, Springer und Social-Profile müssen in der finalen Datenschutzerklärung berücksichtigt werden."
+                : "External services such as videos, podcast links, RelTest Education, Springer and social profiles must be covered in the final privacy policy.",
             ],
           ].map(([title, body]) => (
             <article

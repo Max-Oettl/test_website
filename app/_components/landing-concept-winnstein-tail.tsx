@@ -18,43 +18,6 @@ type LandingConceptWinnsteinTailProps = {
 };
 
 const assetBase = "/concepts/landingpage-ingenics-kacheln";
-const milestoneIconSprite = `${assetBase}/project-milestone-icons-v1.png`;
-const milestoneIconOffsets = [
-  [
-    [7, 8],
-    [47, 8],
-    [88, 9],
-    [131, 10],
-    [173, 9],
-  ],
-  [
-    [6, 56],
-    [46, 51],
-    [86, 50],
-    [127, 49],
-    [171, 55],
-  ],
-  [
-    [4, 91],
-    [46, 90],
-    [87, 90],
-    [128, 91],
-    [170, 91],
-  ],
-] as const;
-const milestoneIconCells = [
-  [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4]],
-  [[1, 0], [1, 1], [1, 2], [1, 3], [1, 4]],
-  [[2, 0], [2, 1], [2, 2], [2, 3], [2, 4]],
-  [[2, 0], [1, 0], [1, 3], [0, 3], [0, 4]],
-  [[1, 0], [0, 1], [2, 2], [1, 2], [0, 4]],
-] as const;
-
-function getMilestoneIconOffset(projectIndex: number, milestoneIndex: number) {
-  const [row, column] = milestoneIconCells[projectIndex]?.[milestoneIndex] ?? [0, 0];
-
-  return milestoneIconOffsets[row]?.[column] ?? [0, 0];
-}
 
 const featuredReferenceNames = new Set([
   "Aesculap",
@@ -615,7 +578,7 @@ export function LandingConceptWinnsteinTail({
       <section className="border-b border-line-soft bg-white">
         <div className="mx-auto max-w-[120rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
           <div className="grid overflow-hidden border border-line-soft lg:grid-cols-[minmax(20rem,0.72fr)_minmax(0,1.28fr)]">
-            <div className="flex flex-col justify-between bg-[#edf5f8] p-7 sm:p-10 lg:p-12 xl:p-14">
+            <div className="flex flex-col justify-between bg-brand-steel-cyan-10 p-7 sm:p-10 lg:p-12 xl:p-14">
               <div>
                 <span aria-hidden="true" className="block h-1 w-20 bg-brand-cyan" />
                 <h2 className="mt-8 max-w-xl text-[clamp(2.25rem,3vw,3.65rem)] leading-[1.02] font-semibold tracking-[-0.06em] text-brand-ink">
@@ -641,9 +604,9 @@ export function LandingConceptWinnsteinTail({
                 <Link
                   key={item.href}
                   href={localizeHref(locale, item.href)}
-                  className="group grid min-h-28 grid-cols-[3.5rem_minmax(0,1fr)_2rem] items-center gap-5 border-b border-line-soft px-5 py-5 transition-colors last:border-b-0 hover:bg-[#f3fbfe] focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset sm:grid-cols-[4rem_minmax(0,1fr)_2.5rem] sm:gap-7 sm:px-8 lg:min-h-32 lg:border-l"
+                  className="group grid min-h-28 grid-cols-[3.5rem_minmax(0,1fr)_2rem] items-center gap-5 border-b border-line-soft px-5 py-5 transition-colors last:border-b-0 hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:grid-cols-[4rem_minmax(0,1fr)_2.5rem] sm:gap-7 sm:px-8 lg:min-h-32 lg:border-l"
                 >
-                  <span className="grid size-14 place-items-center bg-cyan-50 ring-1 ring-cyan-100 transition-colors group-hover:bg-white sm:size-16">
+                  <span className="grid size-14 place-items-center bg-brand-steel-cyan-10 ring-1 ring-brand-steel-cyan/15 transition-colors group-hover:bg-white sm:size-16">
                     <Image
                       src={`${assetBase}/${item.icon}`}
                       alt=""
@@ -671,14 +634,14 @@ export function LandingConceptWinnsteinTail({
         </div>
       </section>
 
-      <section className="border-b border-line-soft bg-[#f7fafc] text-brand-ink">
+      <section className="border-b border-line-soft bg-brand-marine-10/35 text-brand-ink">
         <div className="mx-auto max-w-[120rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
           <h2 className="max-w-3xl text-[clamp(2.1rem,2.8vw,3.35rem)] leading-[1.04] font-semibold tracking-[-0.058em] text-brand-ink">
             {content.projectsTitle}
           </h2>
 
           <div className="mt-12 space-y-6">
-            {content.projects.map((project, projectIndex) => (
+            {content.projects.map((project) => (
               <details
                 key={project.title}
                 name="winnstein-projects"
@@ -690,7 +653,7 @@ export function LandingConceptWinnsteinTail({
                       {project.title}
                     </h3>
                     <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
-                      <span className="flex w-fit flex-wrap items-center gap-x-3 gap-y-1 bg-[#edf5f8] px-4 py-2.5 sm:px-5">
+                      <span className="flex w-fit flex-wrap items-center gap-x-3 gap-y-1 bg-brand-steel-cyan-10 px-4 py-2.5 sm:px-5">
                         <span className="text-xs font-bold tracking-[0.12em] text-brand-cyan uppercase">
                           {content.roleLabel}:
                         </span>
@@ -710,7 +673,7 @@ export function LandingConceptWinnsteinTail({
                     </div>
                   </div>
 
-                  <div className="relative min-h-40 overflow-hidden border-t border-line-soft bg-[#edf5f8] lg:min-h-full lg:border-t-0 lg:border-l">
+                  <div className="relative min-h-40 overflow-hidden border-t border-line-soft bg-brand-steel-cyan-10 lg:min-h-full lg:border-t-0 lg:border-l">
                     <Image
                       src={project.image}
                       alt={project.imageAlt}
@@ -729,24 +692,15 @@ export function LandingConceptWinnsteinTail({
                         key={`${project.title}-${milestone.title}`}
                         className="relative px-4 first:pl-0 last:pr-0"
                       >
-                        <span className="relative z-10 mx-auto grid size-14 place-items-center rounded-full border border-cyan-100 bg-[#f2fbfe] shadow-[0_8px_22px_rgba(18,85,112,0.12)]">
-                          <span
-                            className="relative block size-11 overflow-hidden"
+                        <span className="relative z-10 mx-auto grid size-14 place-items-center rounded-full border border-brand-steel-cyan/20 bg-brand-steel-cyan-10 shadow-[0_8px_22px_rgba(12,132,180,0.12)]">
+                          <Image
+                            src={`${assetBase}/${milestone.icon}`}
+                            alt=""
+                            width={40}
+                            height={40}
+                            className="pointer-events-none size-10 select-none"
                             aria-hidden="true"
-                          >
-                            <Image
-                              src={milestoneIconSprite}
-                              alt=""
-                              width={220}
-                              height={147}
-                              sizes="220px"
-                              className="pointer-events-none absolute max-w-none select-none"
-                              style={{
-                                left: -getMilestoneIconOffset(projectIndex, milestoneIndex)[0],
-                                top: -getMilestoneIconOffset(projectIndex, milestoneIndex)[1],
-                              }}
-                            />
-                          </span>
+                          />
                         </span>
                         <h4 className="mt-5 text-center text-lg leading-tight font-semibold tracking-[-0.03em] text-brand-ink">
                           {milestone.title}
@@ -762,7 +716,7 @@ export function LandingConceptWinnsteinTail({
                   </ol>
                 </div>
 
-                <div className="grid border-t border-line-soft bg-[#fbfdfe] sm:grid-cols-[auto_minmax(0,1fr)] sm:items-center">
+                <div className="grid border-t border-line-soft bg-brand-marine-10/25 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-center">
                   <p className="bg-brand-ink px-6 py-4 text-sm font-bold text-white sm:self-stretch sm:px-8 sm:py-5">
                     {content.resultLabel}
                   </p>
@@ -819,7 +773,7 @@ export function LandingConceptWinnsteinTail({
           </div>
 
           <div className="mt-12 grid gap-px border border-white/15 bg-white/15 lg:grid-cols-[minmax(20rem,0.82fr)_minmax(0,1.18fr)]">
-            <article className="relative overflow-hidden bg-[#0a1732] p-7 sm:p-10 lg:p-12">
+            <article className="relative overflow-hidden bg-brand-marine-80 p-7 sm:p-10 lg:p-12">
               <div
                 aria-hidden="true"
                 className="absolute top-0 right-0 h-64 w-64 translate-x-1/3 -translate-y-1/3 rounded-full border border-brand-cyan/25"
@@ -833,7 +787,7 @@ export function LandingConceptWinnsteinTail({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={content.universityLabel}
-                className="group/sfz relative block w-full max-w-xl overflow-hidden bg-white shadow-[0_18px_44px_rgba(0,0,0,0.18)] transition-transform duration-200 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan-bright focus-visible:ring-offset-4 focus-visible:ring-offset-[#0a1732]"
+                className="group/sfz relative block w-full max-w-xl overflow-hidden bg-white shadow-[0_18px_44px_rgba(0,0,0,0.18)] transition-transform duration-200 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-brand-marine-80"
               >
                 <span className="flex min-h-36 items-center px-6 py-2 sm:px-8">
                   <span className="relative block h-32 w-80 max-w-full overflow-hidden">
@@ -846,12 +800,12 @@ export function LandingConceptWinnsteinTail({
                     />
                   </span>
                 </span>
-                <span className="flex items-center justify-between gap-5 border-t border-slate-200 bg-[#f4f8fa] px-6 py-4 sm:px-8">
+                <span className="flex items-center justify-between gap-5 border-t border-slate-200 bg-brand-steel-cyan-10 px-6 py-4 sm:px-8">
                   <span>
                     <span className="block text-[0.65rem] leading-4 font-bold tracking-[0.18em] text-brand-cyan uppercase">
                       {content.universityAffiliation}
                     </span>
-                    <span className="mt-1 block max-w-md text-sm leading-5 font-semibold text-[#263243] sm:text-[0.95rem]">
+                    <span className="mt-1 block max-w-md text-sm leading-5 font-semibold text-brand-marine-80 sm:text-[0.95rem]">
                       {content.universityLabel}
                     </span>
                   </span>
@@ -874,7 +828,7 @@ export function LandingConceptWinnsteinTail({
                   >
                     <span
                       aria-hidden="true"
-                      className="mt-2 h-2 w-2 shrink-0 bg-brand-cyan-bright"
+                      className="mt-2 h-2 w-2 shrink-0 bg-brand-gold"
                     />
                     {signal}
                   </li>
@@ -903,7 +857,7 @@ export function LandingConceptWinnsteinTail({
                 </Link>
               </div>
 
-              <div className="grid flex-1 bg-[#edf5f8] sm:grid-cols-2">
+              <div className="grid flex-1 bg-brand-steel-cyan-10 sm:grid-cols-2">
                 {siteContent.books.slice(0, 2).map((book, index) => (
                   <a
                     key={book.href}
@@ -911,7 +865,7 @@ export function LandingConceptWinnsteinTail({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={content.bookTitles[index]}
-                    className="group/book flex min-h-[23rem] items-center justify-center border-b border-line-soft p-5 transition-colors hover:bg-[#e5f1f5] focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset sm:border-r sm:border-b-0 sm:last:border-r-0"
+                    className="group/book flex min-h-[23rem] items-center justify-center border-b border-line-soft p-5 transition-colors hover:bg-brand-steel-cyan-20 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:border-r sm:border-b-0 sm:last:border-r-0"
                   >
                     <Image
                       src={book.cover}
@@ -953,7 +907,7 @@ export function LandingConceptWinnsteinTail({
                   href={reference.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/logo flex min-h-28 items-center justify-center bg-white px-5 py-6 transition-colors hover:bg-[#f1f8fa] focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset"
+                  className="group/logo flex min-h-28 items-center justify-center bg-white px-5 py-6 transition-colors hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset"
                   aria-label={`${reference.name} - Website`}
                 >
                   <Image
@@ -987,7 +941,7 @@ export function LandingConceptWinnsteinTail({
               <Link
                 key={industry.href}
                 href={industry.href}
-                className="group relative isolate flex min-h-32 items-center justify-between gap-7 overflow-hidden border-r border-b border-line-soft px-6 py-7 transition-colors hover:bg-[#f3fbfe] focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset sm:px-9"
+                className="group relative isolate flex min-h-32 items-center justify-between gap-7 overflow-hidden border-r border-b border-line-soft px-6 py-7 transition-colors hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:px-9"
               >
                 <Image
                   src={industry.image}

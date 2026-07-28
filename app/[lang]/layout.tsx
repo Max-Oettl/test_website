@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Sora } from "next/font/google";
+import { Archivo, IBM_Plex_Sans, Oxanium, Sora } from "next/font/google";
 
 import { SiteFooter } from "../_components/site-footer";
 import { SiteHeader } from "../_components/site-header";
@@ -17,6 +17,20 @@ const plexSans = IBM_Plex_Sans({
 const sora = Sora({
   variable: "--font-sora",
   subsets: ["latin"],
+});
+
+const archivo = Archivo({
+  variable: "--font-archivo",
+  subsets: ["latin"],
+  weight: "variable",
+  fallback: ["Arial", "Helvetica"],
+});
+
+const oxanium = Oxanium({
+  variable: "--font-oxanium",
+  subsets: ["latin"],
+  weight: "variable",
+  fallback: ["Arial", "Helvetica"],
 });
 
 export function generateStaticParams() {
@@ -79,7 +93,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${plexSans.variable} ${sora.variable} h-full scroll-smooth antialiased`}
+      className={`${plexSans.variable} ${sora.variable} ${archivo.variable} ${oxanium.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full">
         <div className="min-h-screen bg-slate-50 text-slate-950">

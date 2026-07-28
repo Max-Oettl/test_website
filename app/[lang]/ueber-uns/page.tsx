@@ -193,7 +193,7 @@ const aboutContent: Record<
         {
           title: "Weiterbildung",
           description:
-            "Seminare und Academy machen Methodenwissen nicht nur verfügbar, sondern im Unternehmen anwendbar.",
+            "Seminare und RelTest Education machen Methodenwissen nicht nur verfügbar, sondern im Unternehmen anwendbar.",
           href: "/weiterbildung",
           label: "Weiterbildung ansehen",
         },
@@ -355,7 +355,7 @@ const aboutContent: Record<
         {
           title: "Training",
           description:
-            "Seminars and the Academy make methodological knowledge available and applicable inside the organisation.",
+            "Seminars and RelTest Education make methodological knowledge available and applicable inside the organisation.",
           href: "/weiterbildung",
           label: "View training",
         },

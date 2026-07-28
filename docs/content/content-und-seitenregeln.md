@@ -105,7 +105,7 @@ Zentrale Leistungsbereiche:
 - Risikomanagement
 - langfristige Projektbegleitung
 - Seminare und Schulungen
-- RelTest Academy
+- RelTest Education
 
 ## 6. Beratung und langfristige Unterstützung
 
@@ -157,9 +157,9 @@ Typische Nutzenargumente:
 - gemeinsames Verständnis im Team
 - schneller Wissenstransfer
 
-### 7.2 RelTest Academy
+### 7.2 RelTest Education
 
-Die Academy ist:
+RelTest Education ist:
 
 - digital
 - flexibel
@@ -177,7 +177,7 @@ Typische Nutzenargumente:
 
 Arbeitsregel:
 
-Seminare und Academy gehören unter Weiterbildung zusammen, müssen aber als zwei
+Seminare und RelTest Education gehören unter Weiterbildung zusammen, müssen aber als zwei
 verschiedene Wege erklärt werden.
 
 ## 8. DoE richtig einordnen

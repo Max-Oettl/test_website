@@ -885,7 +885,7 @@ werden.
 
 - Springer-Fachbuch
 - Podcast
-- Academy
+- RelTest Education
 - Kooperationen
 - Hochschulbezug
 - Referenzunternehmen
@@ -991,7 +991,7 @@ Empfohlene zentrale Hubs und Zielseiten:
 - Prognostik und Health Monitoring
 - Risikomanagement
 - Seminare und Inhouse-Weiterbildung
-- RelTest Academy
+- RelTest Education
 - Wissensbereiche
 - Branchen und Anwendungsfelder
 - Team und fachliche Verantwortliche
@@ -1058,7 +1058,7 @@ Die neue Website soll vorhandene Nachweise stärker verbinden:
 
 - Springer-Fachbuch
 - Podcast mit Kevin Lucan
-- RelTest Academy
+- RelTest Education
 - Referenzunternehmen
 - Mitarbeiter- und Expertenprofile
 - wissenschaftliche und industrielle Erfahrung
@@ -1104,7 +1104,7 @@ Jeder Beitrag benötigt:
 Nach dem Go-live:
 
 - wichtige externe Links auf neue Zielseiten aktualisieren lassen
-- Springer-, Podcast-, Academy-, Partner- und Hochschulverweise prüfen
+- Springer-, Podcast-, Education-, Partner- und Hochschulverweise prüfen
 - Unternehmensprofile konsistent aktualisieren
 - fachliche Beiträge und Kooperationen gezielt als Link- und Vertrauenssignale
   nutzen
@@ -1179,7 +1179,7 @@ Die Website darf aus SEO-Sicht erst live gehen, wenn:
 - mehr qualifizierte Projektanfragen
 - bessere Zuordnung der Anfragen zu Leistungen
 - stärkere Wahrnehmung als Advanced Reliability Engineering Partner
-- messbare Nutzung von Academy-, Seminar- und Kontaktangeboten
+- messbare Nutzung von Education-, Seminar- und Kontaktangeboten
 
 ## 21. Warum SEO mit der neuen Website besser werden kann
 

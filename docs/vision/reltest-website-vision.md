@@ -144,7 +144,7 @@ Diese Leistungen sind zentral und müssen klar sichtbar sein:
 - Zuverlässigkeitstechnik und methodische Absicherung
 - Design of Experiments
 - Schulungen und Seminare vor Ort
-- RelTest Academy als E-Learning-Angebot
+- RelTest Education als digitales E-Learning-Angebot
 - langfristige Projektbegleitung und verantwortliche Entwicklungsunterstützung
 - Risikomanagement
 - Datenanalyse, Modellbildung, Prognostik und Health Monitoring
@@ -153,7 +153,7 @@ Wichtig:
 
 - DoE ist fachlich nicht als isolierter Fremdkörper zu behandeln
 - DoE gehört eng zum Themenbereich Erprobung und Versuchsplanung
-- Weiterbildung und Academy gehören zusammen, sind aber zwei klar
+- Weiterbildung und RelTest Education gehören zusammen, sind aber zwei klar
   unterschiedliche Angebotsformen
 
 ## 9. Weiterbildung: zwei getrennte Formate
@@ -171,9 +171,9 @@ Diese sollen als:
 
 positioniert werden.
 
-### 9.2 RelTest Academy
+### 9.2 RelTest Education
 
-Die Academy soll als:
+RelTest Education soll als:
 
 - digitales E-Learning
 - flexibel
@@ -302,7 +302,7 @@ Es soll:
 - klar als Absender funktionieren,
 - nicht gequetscht oder an dunklen Hintergründen unruhig angeschnitten werden.
 
-Auch das RelTest-Academy-Logo soll an passenden Stellen sichtbar eingebunden
+Auch das RelTest-Education-Logo soll an passenden Stellen sichtbar eingebunden
 werden.
 
 ## 15. Seitenstruktur und Navigation
@@ -409,11 +409,10 @@ Bei jeder inhaltlichen oder gestalterischen Änderung soll geprüft werden:
 2. Werden die Leistungen verständlicher oder diffuser?
 3. Wirkt die Seite professioneller oder generischer?
 4. Unterstützt das Design Vertrauen und technische Kompetenz?
-5. Bleiben Academy, Seminare, Beratung und Fachwissen sauber voneinander
+5. Bleiben RelTest Education, Seminare, Beratung und Fachwissen sauber voneinander
    getrennt?
 6. Unterstützt das Element die Zielgruppe bei einer schnellen Entscheidung?
 7. Passt die Lösung zur hochwertigen und seriösen Markenwirkung?
 
 Wenn diese Fragen nicht sauber mit `ja` beantwortet werden können, sollte die
 Lösung überarbeitet werden.
-

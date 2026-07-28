@@ -630,7 +630,7 @@ Open Graph und Twitter Card fehlen.
 Mehrere Quelldateien sind sehr groß:
 
 - Teamfotos: ca. 1,7 bis 5,1 MB
-- Academy-Bild: ca. 1,9 MB
+- Education-Bild: ca. 1,9 MB
 - Podcast-Hintergrund: ca. 1,45 MB
 - fünf Hero-Piktogramme: jeweils ca. 1,39 bis 1,43 MB
 - Startseite: 27 gerenderte Bild-Elemente
@@ -745,7 +745,7 @@ Im Repository ist keine Mess- oder Search-Console-Integration erkennbar.
 - [ ] Bing Webmaster Tools einrichten.
 - [ ] Datenschutzkonforme Analytics-Lösung auswählen.
 - [ ] Consent-Anforderungen rechtlich prüfen.
-- [ ] Conversions definieren: E-Mail, Telefon, Kontaktanfrage, Academy-Klick, Podcast-Klick, Buch-Klick.
+- [ ] Conversions definieren: E-Mail, Telefon, Kontaktanfrage, Education-Klick, Podcast-Klick, Buch-Klick.
 - [ ] Sprachversion und Landingpage als Dimensionen erfassen.
 - [ ] Vor Relaunch aktuelle GSC-Daten exportieren: Klicks, Impressionen, Rankings, Seiten und Backlinks.
 
@@ -803,7 +803,7 @@ Eine öffentliche Suche kann kein vollständiges Backlink-Tool ersetzen. Für ei
 - Springer-Fachbuch
 - Universität-Stuttgart-Bezug und RAMS-Award
 - fachliche Instituts- und Personenprofile
-- separate RelTest Academy
+- separates Angebot RelTest Education
 
 **Aufgabe**
 
@@ -845,19 +845,19 @@ Die neue Website nennt:
 
 - Name, Address, Phone und Unternehmenshistorie sind auf allen wichtigen Plattformen konsistent.
 
-### P1.21 RelTest Academy und RelTest Solutions als zusammengehörige Marken verknüpfen
+### P1.21 RelTest Education und RelTest Solutions als zusammengehörige Marken verknüpfen
 
 **Aufgabe**
 
-- [ ] Von RelTest Solutions kontextuell zur Academy verlinken.
-- [ ] Von der Academy zurück zu RelTest Solutions und den Beratungsleistungen verlinken.
+- [ ] Von RelTest Solutions kontextuell zu RelTest Education verlinken.
+- [ ] Von RelTest Education zurück zu RelTest Solutions und den Beratungsleistungen verlinken.
 - [ ] Markenbeziehung textlich erklären.
 - [ ] Unternehmens- und Markenschema konsistent modellieren.
 - [ ] Keine künstlichen, sitewide keywordlastigen Links verwenden.
 
 **Abnahmekriterium**
 
-- Nutzer und Suchmaschinen erkennen eindeutig, wie Beratung und Academy zusammengehören.
+- Nutzer und Suchmaschinen erkennen eindeutig, wie Beratung und RelTest Education zusammengehören.
 
 ### P1.22 Bestehende Autorität aus Buch, Podcast und Hochschule stärker nutzen
 
@@ -986,7 +986,7 @@ Die englische Struktur sollte semantisch äquivalent aufgebaut werden. Alte URLs
 - [ ] Case Studies veröffentlichen.
 - [ ] Backlinks aktualisieren und zurückgewinnen.
 - [ ] externe Profile vereinheitlichen.
-- [ ] Academy, Podcast, Buch und Hochschulbezug stärker verbinden.
+- [ ] RelTest Education, Podcast, Buch und Hochschulbezug stärker verbinden.
 - [ ] Fachpublikations- und Digital-PR-Prozess etablieren.
 
 ## 10. Monitoring nach dem Go-live

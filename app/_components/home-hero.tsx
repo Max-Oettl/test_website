@@ -34,7 +34,7 @@ const heroContent = {
         href: "/weiterbildung/seminare",
       },
       {
-        title: "RelTest Academy",
+        title: "RelTest Education",
         description: "Strukturiertes E-Learning für Ingenieurinnen und Ingenieure.",
         href: "/weiterbildung/academy",
       },
@@ -68,7 +68,7 @@ const heroContent = {
         href: "/weiterbildung/seminare",
       },
       {
-        title: "RelTest Academy",
+        title: "RelTest Education",
         description: "Structured e-learning for engineers.",
         href: "/weiterbildung/academy",
       },

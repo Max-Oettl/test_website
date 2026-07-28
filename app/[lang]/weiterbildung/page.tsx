@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props) {
     path: "/weiterbildung",
     title:
       locale === "de"
-        ? "Weiterbildung, Seminare und Academy | RelTest"
-        : "Training, Seminars and Academy | RelTest",
+        ? "Weiterbildung, Seminare und RelTest Education | RelTest"
+        : "Training, Seminars and RelTest Education | RelTest",
     description: content.pages.education.intro.description,
   });
 }
@@ -141,19 +141,23 @@ export default async function TrainingPage({ params }: Props) {
 
                   <div className="flex flex-1 flex-col p-7 sm:p-8">
                     <div className="flex items-start gap-5">
-                      <div className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200">
+                      <div
+                        className={`flex h-[4.5rem] shrink-0 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200 ${
+                          isAcademy ? "w-36 px-3" : "w-[4.5rem]"
+                        }`}
+                      >
                         <Image
                           src={
                             isAcademy
-                              ? "/academy/reltest-academy-logo.webp"
+                              ? "/branding/reltest-education-horizontal-positive.svg"
                               : format.icon
                           }
-                          alt={isAcademy ? "RelTest Academy" : ""}
-                          width={58}
-                          height={58}
+                          alt={isAcademy ? "RelTest Education" : ""}
+                          width={isAcademy ? 466 : 58}
+                          height={isAcademy ? 226 : 58}
                           className={
                             isAcademy
-                              ? "h-14 w-14 object-contain"
+                              ? "h-16 w-full object-contain"
                               : "h-14 w-14"
                           }
                         />

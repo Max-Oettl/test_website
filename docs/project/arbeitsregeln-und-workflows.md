@@ -376,7 +376,7 @@ Besser:
 
 - starke Startseite
 - klare Leistungsseiten
-- Weiterbildung sauber getrennt in Seminare und Academy
+- Weiterbildung sauber getrennt in Seminare und RelTest Education
 - Fachbuch und Podcast als Vertrauenssignale
 - echte Mitarbeiterbilder
 - Referenzen

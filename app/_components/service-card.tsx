@@ -31,6 +31,7 @@ export function ServiceCard({
   variant = "default",
 }: ServiceCardProps) {
   const isHomeVariant = variant === "home";
+  const isEducationLogo = icon.includes("reltest-education-horizontal");
 
   if (image) {
     return (
@@ -52,13 +53,21 @@ export function ServiceCard({
         </div>
         <div className="service-card-body flex flex-1 flex-col p-7">
           <div className={isHomeVariant ? "flex" : "flex items-center gap-4"}>
-            <div className="service-card-icon flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200">
+            <div
+              className={`service-card-icon flex h-14 shrink-0 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200 ${
+                isEducationLogo ? "w-28 px-2" : "w-14"
+              }`}
+            >
               <Image
                 src={icon}
-                alt=""
-                width={44}
-                height={44}
-                className="h-10 w-10"
+                alt={isEducationLogo ? "RelTest Education" : ""}
+                width={isEducationLogo ? 466 : 44}
+                height={isEducationLogo ? 226 : 44}
+                className={
+                  isEducationLogo
+                    ? "h-12 w-full object-contain"
+                    : "h-10 w-10"
+                }
               />
             </div>
             {!isHomeVariant ? (
@@ -106,8 +115,20 @@ export function ServiceCard({
   return (
     <article className="service-card group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/70 transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-950/10">
       <div className="service-card-rule absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-cyan-500 via-sky-500 to-slate-900" />
-      <div className="service-card-icon mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200">
-        <Image src={icon} alt="" width={52} height={52} className="h-12 w-12" />
+      <div
+        className={`service-card-icon mb-6 flex h-16 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200 ${
+          isEducationLogo ? "w-32 px-2" : "w-16"
+        }`}
+      >
+        <Image
+          src={icon}
+          alt={isEducationLogo ? "RelTest Education" : ""}
+          width={isEducationLogo ? 466 : 52}
+          height={isEducationLogo ? 226 : 52}
+          className={
+            isEducationLogo ? "h-14 w-full object-contain" : "h-12 w-12"
+          }
+        />
       </div>
       {!isHomeVariant ? (
         <p className="service-card-meta text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">

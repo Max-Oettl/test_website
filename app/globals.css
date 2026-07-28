@@ -18,6 +18,15 @@
   --signal-risk: #e11d48;
   --signal-warning: #d97706;
   --signal-success: #059669;
+  --solution-marine: #031334;
+  --solution-steel-cyan: #0c84b4;
+  --education-signal-green: #00a754;
+  --solution-gold: #c29914;
+  --solution-marine-80: #35425d;
+  --solution-marine-20: #cdd0d6;
+  --solution-marine-10: #e6e8eb;
+  --solution-steel-cyan-20: #cfe6f0;
+  --solution-steel-cyan-10: #e7f3f8;
 }
 
 @theme inline {
@@ -38,8 +47,19 @@
   --color-signal-risk: var(--signal-risk);
   --color-signal-warning: var(--signal-warning);
   --color-signal-success: var(--signal-success);
+  --color-brand-marine: var(--solution-marine);
+  --color-brand-steel-cyan: var(--solution-steel-cyan);
+  --color-brand-education: var(--education-signal-green);
+  --color-brand-gold: var(--solution-gold);
+  --color-brand-marine-80: var(--solution-marine-80);
+  --color-brand-marine-20: var(--solution-marine-20);
+  --color-brand-marine-10: var(--solution-marine-10);
+  --color-brand-steel-cyan-20: var(--solution-steel-cyan-20);
+  --color-brand-steel-cyan-10: var(--solution-steel-cyan-10);
   --font-sans: var(--font-plex-sans);
   --font-display: var(--font-sora);
+  --font-winnstein-body: var(--font-archivo);
+  --font-winnstein-display: var(--font-oxanium);
   --radius-card: 1.5rem;
   --radius-panel: 2rem;
   --radius-shell: 2.4rem;
@@ -52,6 +72,58 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-plex-sans), sans-serif;
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  ) {
+  --background: #ffffff;
+  --foreground: var(--solution-marine);
+  --brand-ink: var(--solution-marine);
+  --brand-navy: var(--solution-marine);
+  --brand-blue: var(--solution-steel-cyan);
+  --brand-cyan: var(--solution-steel-cyan);
+  --brand-cyan-bright: var(--solution-steel-cyan);
+  --brand-cyan-soft: var(--solution-steel-cyan-10);
+  --surface-canvas: #ffffff;
+  --surface-muted: var(--solution-steel-cyan-10);
+  --surface-card: #ffffff;
+  --line-soft: #d7e4ea;
+  --copy-muted: #40506a;
+  --copy-soft: #647086;
+  --signal-success: var(--education-signal-green);
+  font-family: var(--font-archivo), Arial, Helvetica, sans-serif;
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  :where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-oxanium), var(--font-archivo), Arial, Helvetica,
+    sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  :where(
+    .site-header-shell a,
+    .site-header-shell button,
+    .site-header-shell summary,
+    .winnstein-hero a,
+    .winnstein-page-tail a,
+    .winnstein-page-tail button,
+    .winnstein-page-tail summary,
+    .winnstein-page-tail dt,
+    .winnstein-page-tail dd
+  ) {
+  font-family: var(--font-oxanium), var(--font-archivo), Arial, Helvetica,
+    sans-serif;
 }
 
 body[data-landing-concept="kacheln"] .site-header-shell {
@@ -72,27 +144,49 @@ body[data-landing-concept="kacheln"] .site-header-logo-mark {
   height: 3.5rem;
 }
 
-.site-header-logo-reliability {
-  display: none;
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-header-logo-mark {
+  width: 13rem;
+  height: 5.5rem;
+  overflow: visible;
 }
 
-body[data-landing-concept-variant="winnsteinLogo"] .site-header-logo-default {
-  display: none;
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-header-inner {
+  min-height: 112px;
 }
 
-body[data-landing-concept-variant="winnsteinLogo"]
-  .site-header-logo-reliability {
-  display: block;
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-header-brand {
+  margin-left: clamp(0.75rem, 1.5vw, 1.5rem);
 }
 
-body[data-landing-concept-variant="winnsteinLogo"] .site-header-logo-mark {
-  width: 6.25rem;
-  height: 4.5rem;
-  overflow: hidden;
-}
+@media (max-width: 639px) {
+  body:is(
+      [data-landing-concept-variant="winnstein"],
+      [data-landing-concept-variant="winnsteinLogo"]
+    )
+    .site-header-logo-mark {
+    width: 10.5rem;
+    height: 4.5rem;
+  }
 
-body[data-landing-concept-variant="winnsteinLogo"] .site-header-inner {
-  min-height: 104px;
+  body:is(
+      [data-landing-concept-variant="winnstein"],
+      [data-landing-concept-variant="winnsteinLogo"]
+    )
+    .site-header-brand {
+    margin-left: 0;
+  }
 }
 
 body[data-landing-concept="kacheln"] .site-header-claim {
@@ -1616,5 +1710,95 @@ body:is(
   )
   .language-switcher-winnstein
   svg {
-  color: #071430;
+  color: var(--solution-marine);
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  > div {
+  background: #ffffff;
+  color: var(--solution-marine);
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-header-shell {
+  border-bottom-color: var(--solution-steel-cyan-20);
+  background: rgba(255, 255, 255, 0.97);
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-nav-link,
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-nav-link-active {
+  color: var(--solution-marine) !important;
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-nav-link:hover {
+  color: var(--solution-steel-cyan) !important;
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-nav-link::after {
+  background: var(--solution-steel-cyan);
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-header-cta {
+  background: var(--solution-marine);
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-header-cta:hover {
+  background: var(--solution-steel-cyan);
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-footer-shell {
+  border-color: color-mix(in srgb, var(--solution-steel-cyan) 28%, transparent);
+  background: var(--solution-marine);
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-footer-shell
+  .text-cyan-300 {
+  color: var(--solution-steel-cyan-20);
+}
+
+body:is(
+    [data-landing-concept-variant="winnstein"],
+    [data-landing-concept-variant="winnsteinLogo"]
+  )
+  .site-footer-shell
+  .text-slate-300 {
+  color: var(--solution-marine-10);
 }

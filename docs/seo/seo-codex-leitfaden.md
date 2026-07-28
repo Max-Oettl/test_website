@@ -41,7 +41,7 @@ RelTest Solutions ist eine technische B2B-Beratung mit Fokus auf:
 - Datenanalyse
 - Prognostik und Health Monitoring
 - Risikomanagement
-- Weiterbildung, Seminare und Academy
+- Weiterbildung, Seminare und RelTest Education
 
 ### 2.2 Zielgruppen
 
@@ -170,7 +170,7 @@ Codex prüft:
 
 - ob bestehende Backlink-Ziele erhalten bleiben,
 - ob alte URLs korrekt migriert werden,
-- ob Fachbuch, Podcast, Academy und Profile sauber eingebunden sind,
+- ob Fachbuch, Podcast, RelTest Education und Profile sauber eingebunden sind,
 - ob die neue Website bestehende externe Signale stützt statt entwertet.
 
 ## 5. Nicht verhandelbare SEO-Regeln
@@ -625,7 +625,7 @@ Codex soll prüfen, ob die Website diese Nachweise sichtbar nutzt:
 
 - Fachbuch
 - Podcast
-- Academy
+- RelTest Education
 - Referenzen
 - Team und Autoren
 - Hochschul- und Award-Bezüge

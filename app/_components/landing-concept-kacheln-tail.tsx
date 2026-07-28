@@ -286,14 +286,36 @@ export function LandingConceptKachelnTail({
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="relative flex h-13 w-13 items-center justify-center rounded-full bg-cyan-50 text-brand-blue ring-1 ring-cyan-100">
+                <span
+                  className={`relative flex h-13 items-center justify-center bg-cyan-50 text-brand-blue ring-1 ring-cyan-100 ${
+                    service.href === "/weiterbildung/academy"
+                      ? "w-28 px-2"
+                      : "w-13 rounded-full"
+                  }`}
+                >
                   <Image
                     src={service.icon}
-                    alt=""
-                    aria-hidden="true"
-                    width={30}
-                    height={30}
-                    className="h-7 w-7"
+                    alt={
+                      service.href === "/weiterbildung/academy"
+                        ? "RelTest Education"
+                        : ""
+                    }
+                    aria-hidden={
+                      service.href === "/weiterbildung/academy"
+                        ? undefined
+                        : "true"
+                    }
+                    width={
+                      service.href === "/weiterbildung/academy" ? 466 : 30
+                    }
+                    height={
+                      service.href === "/weiterbildung/academy" ? 226 : 30
+                    }
+                    className={
+                      service.href === "/weiterbildung/academy"
+                        ? "h-11 w-full object-contain"
+                        : "h-7 w-7"
+                    }
                   />
                 </span>
                 <span className="relative mt-7 text-[0.69rem] font-bold uppercase tracking-[0.2em] text-brand-cyan">

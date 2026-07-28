@@ -186,14 +186,15 @@ Ganze `<section>`-Blöcke können dort verschoben werden, um die Reihenfolge zu 
 
 Statische Dateien liegen unter `public/` und werden mit Pfaden wie `/team/img-0107.jpg` eingebunden.
 
-- `public/academy`: Academy-Logo
+- `public/academy`: bestehende Legacy-Assets und Lernvisuals für RelTest Education
+- `public/branding`: aktuelle RelTest-Solutions- und RelTest-Education-Logos
 - `public/graphics`: Badewannenkurve und Prozessgrafik
 - `public/hero-pictograms`: Piktogramme des Hero-Visuals
 - `public/icons`: Service-Icons
 - `public/industries`: Branchenbilder fÃ¼r die Startseiten-Karten
 - `public/podcast`: Podcast-Hintergrund
 - `public/references`: Kundenlogos
-- `public/team`: Mitarbeiter- und Academy-Bilder
+- `public/team`: Mitarbeiter- und Education-Bilder
 
 Die derzeit deutsch beschrifteten Grafiken werden auch in der englischen Website verwendet. Englische Grafikvarianten können später separat ergänzt und in den sprachabhängigen Seiten ausgewählt werden.
 

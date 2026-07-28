@@ -20,7 +20,7 @@ export const serviceCardImages = {
     },
     "/weiterbildung/academy": {
       src: "/team/academy-e-learning.png",
-      alt: "Digitale RelTest Academy Schulung zur Lebensdatenanalyse am Bildschirm",
+      alt: "Digitales Lernangebot von RelTest Education zur Lebensdatenanalyse am Bildschirm",
       label: "Digital lernen",
     },
     "/leistungen/langfristige-kooperation": {
@@ -42,7 +42,7 @@ export const serviceCardImages = {
     },
     "/weiterbildung/academy": {
       src: "/team/academy-e-learning.png",
-      alt: "Digital RelTest Academy training on life data analysis displayed on a screen",
+      alt: "RelTest Education digital training on life data analysis displayed on a screen",
       label: "Digital learning",
     },
     "/leistungen/langfristige-kooperation": {

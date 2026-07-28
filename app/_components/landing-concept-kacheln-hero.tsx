@@ -79,7 +79,7 @@ const conceptContent = {
         imageClass: "right-0 bottom-0 h-[70%] w-[62%] opacity-35",
       },
       {
-        title: "RelTest Academy",
+        title: "RelTest Education",
         description:
           "Digitales E-Learning für Ingenieurinnen und Ingenieure, flexibel, skalierbar und sofort einsetzbar.",
         href: "/weiterbildung/academy",
@@ -152,7 +152,7 @@ const conceptContent = {
         imageClass: "right-0 bottom-0 h-[70%] w-[62%] opacity-35",
       },
       {
-        title: "RelTest Academy",
+        title: "RelTest Education",
         description:
           "Digital e-learning for engineers: flexible, scalable and ready to use.",
         href: "/weiterbildung/academy",

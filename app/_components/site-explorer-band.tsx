@@ -50,7 +50,7 @@ const sectionLabels: Record<Locale, Record<string, string>> = {
 const detailLabels: Record<Locale, Record<string, string>> = {
   de: {
     absicherung: "Absicherung",
-    academy: "Academy",
+    academy: "RelTest Education",
     automotive: "Automotive",
     beratung: "Beratung",
     "bernd-bertsche": "Prof. Dr.-Ing. Bernd Bertsche",
@@ -93,7 +93,7 @@ const detailLabels: Record<Locale, Record<string, string>> = {
   },
   en: {
     absicherung: "Validation",
-    academy: "Academy",
+    academy: "RelTest Education",
     automotive: "Automotive",
     beratung: "Consulting",
     "bernd-bertsche": "Prof. Dr.-Ing. Bernd Bertsche",

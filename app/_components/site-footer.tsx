@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { getSiteContent } from "../_content/site-content";
 import { localizeHref, type Locale } from "../_i18n/config";
+import { ConceptBrandLogo } from "./concept-brand-logo";
 
 type SiteFooterProps = {
   locale: Locale;
@@ -12,18 +12,10 @@ export function SiteFooter({ locale }: SiteFooterProps) {
   const { footer } = getSiteContent(locale);
 
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 text-white">
+    <footer className="site-footer-shell border-t border-slate-800 bg-slate-950 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.3fr_0.8fr_0.8fr] lg:px-8">
         <div>
-          <div className="flex h-20 w-64 items-center rounded-2xl bg-white px-6">
-            <Image
-              src="/reltest-solutions-logo.png"
-              alt="RelTest Solutions GmbH"
-              width={220}
-              height={82}
-              className="h-auto w-full object-contain"
-            />
-          </div>
+          <ConceptBrandLogo placement="footer" />
           <p className="mt-4 max-w-md text-sm leading-7 text-slate-300">
             {footer.description}
           </p>

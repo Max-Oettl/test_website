@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { getSiteContent } from "../_content/site-content";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { ActiveNavLink } from "./active-nav-link";
+import { ConceptBrandLogo } from "./concept-brand-logo";
 import { LanguageSwitcher } from "./language-switcher";
 import { LandingConceptBodySync } from "./landing-concept-body-sync";
 import { SiteExplorerBand } from "./site-explorer-band";
@@ -57,27 +57,11 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       <div className="site-header-inner mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-6 lg:px-8">
         <Link
           href={localizeHref(locale, "/")}
-          className="flex items-center gap-3"
+          className="site-header-brand flex items-center gap-3"
           aria-label={navigation.homeLabel}
         >
           <span className="site-header-logo-mark relative block h-11 w-36 sm:w-44">
-            <Image
-              src="/reltest-solutions-logo.png"
-              alt="RelTest Solutions"
-              fill
-              priority
-              className="site-header-logo-default object-contain object-left"
-              sizes="(min-width: 640px) 176px, 144px"
-            />
-            <Image
-              src="/reltest-reliability-engineering-logo.png"
-              alt=""
-              aria-hidden="true"
-              width={1164}
-              height={1351}
-              priority
-              className="site-header-logo-reliability pointer-events-none absolute -top-[14px] left-0 h-[114px] w-[98px] max-w-none"
-            />
+            <ConceptBrandLogo placement="header" />
           </span>
           <span className="site-header-claim hidden text-xs font-medium uppercase tracking-[0.22em] text-cyan-700 2xl:block">
             Reliability & Testing

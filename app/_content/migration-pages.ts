@@ -1732,19 +1732,19 @@ export const detailPageCollections: Record<
         ctaText:
           "Wir stimmen Inhalt, Dauer und Praxisbezug passend zu Ihrem Team ab.",
         primaryCta: contactLink,
-        secondaryCta: { label: "Academy ansehen", href: "/weiterbildung/academy" },
+        secondaryCta: { label: "RelTest Education ansehen", href: "/weiterbildung/academy" },
       },
       {
         slug: "academy",
         eyebrow: "Weiterbildung",
-        title: "RelTest Academy für digitales E-Learning",
+        title: "RelTest Education für digitales E-Learning",
         description:
           "Ein speziell für Ingenieurinnen und Ingenieure entwickeltes E-Learning-Angebot für Reliability Engineering und DoE.",
-        metaTitle: "RelTest Academy | E-Learning für Reliability Engineering",
+        metaTitle: "RelTest Education | E-Learning für Reliability Engineering",
         metaDescription:
-          "RelTest Academy: digitales E-Learning zu Zuverlässigkeitstechnik, DoE und Lebensdatenanalyse für Ingenieurinnen und Ingenieure.",
+          "RelTest Education: digitales E-Learning zu Zuverlässigkeitstechnik, DoE und Lebensdatenanalyse für Ingenieurinnen und Ingenieure.",
         lead:
-          "Die Academy eignet sich für Einzelpersonen und verteilte Teams, die Wissen flexibel, modular und wiederholbar aufbauen möchten.",
+          "RelTest Education eignet sich für Einzelpersonen und verteilte Teams, die Wissen flexibel, modular und wiederholbar aufbauen möchten.",
         sections: [
           {
             title: "Flexibel lernen",
@@ -1756,7 +1756,7 @@ export const detailPageCollections: Record<
           },
           {
             title: "Ergänzung zu Seminaren",
-            body: "Die Academy kann als Einstieg, Vertiefung oder Begleitung zu Inhouse-Schulungen eingesetzt werden.",
+            body: "RelTest Education kann als Einstieg, Vertiefung oder Begleitung zu Inhouse-Schulungen eingesetzt werden.",
           },
         ],
         proofPointsTitle: "Geeignet für",
@@ -1766,11 +1766,11 @@ export const detailPageCollections: Record<
           "methodische Grundlagen vor Projektworkshops",
           "kontinuierlichen Wissensaufbau",
         ],
-        ctaTitle: "Academy kennenlernen",
+        ctaTitle: "RelTest Education kennenlernen",
         ctaText:
-          "Die externe Academy-Seite bietet den direkten Einstieg in das digitale Lernangebot.",
+          "Die externe Education-Seite bietet den direkten Einstieg in das digitale Lernangebot.",
         primaryCta: {
-          label: "Zur RelTest Academy",
+          label: "Zu RelTest Education",
           href: "https://reltest-academy.com/",
           external: true,
         },
@@ -1928,19 +1928,19 @@ export const detailPageCollections: Record<
         ctaText:
           "We align content, duration and practical focus with your team.",
         primaryCta: contactLinkEn,
-        secondaryCta: { label: "View Academy", href: "/weiterbildung/academy" },
+        secondaryCta: { label: "View RelTest Education", href: "/weiterbildung/academy" },
       },
       {
         slug: "academy",
         eyebrow: "Training",
-        title: "RelTest Academy for digital learning",
+        title: "RelTest Education for digital learning",
         description:
           "A digital learning programme developed specifically for engineers in reliability engineering and DoE.",
-        metaTitle: "RelTest Academy | E-Learning for Reliability Engineering",
+        metaTitle: "RelTest Education | E-Learning for Reliability Engineering",
         metaDescription:
-          "RelTest Academy: digital learning on reliability engineering, DoE and life data analysis for engineers.",
+          "RelTest Education: digital learning on reliability engineering, DoE and life data analysis for engineers.",
         lead:
-          "The Academy is suitable for individuals and distributed teams who want to build knowledge flexibly and repeatedly.",
+          "RelTest Education is suitable for individuals and distributed teams who want to build knowledge flexibly and repeatedly.",
         sections: [
           {
             title: "Flexible learning",
@@ -1952,7 +1952,7 @@ export const detailPageCollections: Record<
           },
           {
             title: "Complement to seminars",
-            body: "The Academy can be used as an introduction, deepening path or companion to in-house training.",
+            body: "RelTest Education can be used as an introduction, deepening path or companion to in-house training.",
           },
         ],
         proofPointsTitle: "Suitable for",
@@ -1962,11 +1962,11 @@ export const detailPageCollections: Record<
           "method foundations before project workshops",
           "continuous knowledge development",
         ],
-        ctaTitle: "Explore the Academy",
+        ctaTitle: "Explore RelTest Education",
         ctaText:
-          "The external Academy website provides direct access to the digital learning offer.",
+          "The external Education website provides direct access to the digital learning offer.",
         primaryCta: {
-          label: "Open RelTest Academy",
+          label: "Open RelTest Education",
           href: "https://reltest-academy.com/",
           external: true,
         },

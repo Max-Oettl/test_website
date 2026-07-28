@@ -18,7 +18,7 @@ const conceptContent = {
     slideLabel: "Hero-Thema auswählen",
     contactTitle: "Projekt besprechen",
     academyPrompt: "Weiterbildung gesucht?",
-    academyCta: "RelTest Academy entdecken",
+    academyCta: "RelTest Education entdecken",
     slides: [
       {
         title: "Zuverlässigkeit verstehen. Entscheidungen absichern.",
@@ -76,7 +76,7 @@ const conceptContent = {
     slideLabel: "Select hero topic",
     contactTitle: "Discuss a project",
     academyPrompt: "Looking for professional training?",
-    academyCta: "Explore the RelTest Academy",
+    academyCta: "Explore RelTest Education",
     slides: [
       {
         title: "Understand reliability. Safeguard decisions.",
@@ -173,9 +173,9 @@ export function LandingConceptWinnsteinHero({
   }, [content.slides.length, isPaused]);
 
   return (
-    <section className="border-t border-line-soft bg-white">
+    <section className="winnstein-hero border-t border-line-soft bg-white">
       <div
-        className="relative mx-auto max-w-[120rem] px-5 pt-8 sm:px-6 sm:pt-10 lg:px-12 xl:px-16"
+        className="relative mx-auto max-w-[120rem] px-5 pt-12 sm:px-6 sm:pt-14 lg:px-12 lg:pt-16 xl:px-16"
         role="region"
         aria-roledescription="carousel"
         aria-label={content.carouselLabel}
@@ -184,7 +184,7 @@ export function LandingConceptWinnsteinHero({
         onFocusCapture={() => setIsPaused(true)}
         onBlurCapture={() => setIsPaused(false)}
       >
-        <div className="relative min-h-[35rem] overflow-hidden border border-line-soft bg-[#edf5f8] shadow-[0_28px_80px_rgba(23,52,76,0.12)] sm:min-h-[38rem] lg:min-h-[40rem]">
+        <div className="relative min-h-[35rem] overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[38rem] lg:min-h-[40rem]">
           {content.slides.map((slide, index) => {
             const isActive = index === activeIndex;
 
@@ -221,14 +221,14 @@ export function LandingConceptWinnsteinHero({
                     <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
                       <Link
                         href={localizeHref(locale, slide.href)}
-                        className="inline-flex min-h-12 items-center justify-center gap-4 bg-brand-ink px-7 text-sm font-bold text-white shadow-[0_14px_30px_rgba(7,20,48,0.16)] transition hover:bg-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4"
+                        className="inline-flex min-h-12 items-center justify-center gap-4 bg-brand-marine px-7 text-sm font-bold text-white shadow-[0_14px_30px_rgba(3,19,52,0.16)] transition hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
                       >
                         {slide.cta}
                         <ArrowIcon />
                       </Link>
                       <Link
                         href={localizeHref(locale, "/kontakt")}
-                        className="inline-flex min-h-12 items-center justify-center gap-3 border-b-2 border-brand-cyan px-1 text-sm font-bold text-brand-ink transition hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4"
+                        className="inline-flex min-h-12 items-center justify-center gap-3 border-b-2 border-brand-steel-cyan px-1 text-sm font-bold text-brand-marine transition hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
                       >
                         {content.contactTitle}
                         <ArrowIcon />
@@ -256,8 +256,8 @@ export function LandingConceptWinnsteinHero({
                   }}
                   className={
                     isActive
-                      ? "h-2.5 w-10 bg-brand-cyan transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4"
-                      : "h-2.5 w-2.5 bg-slate-400/65 transition-all duration-300 hover:bg-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4"
+                      ? "h-2.5 w-10 bg-brand-gold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
+                      : "h-2.5 w-2.5 bg-brand-marine/35 transition-all duration-300 hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
                   }
                   aria-label={`${index + 1}: ${slide.title}`}
                   aria-current={isActive ? "true" : undefined}
@@ -275,9 +275,9 @@ export function LandingConceptWinnsteinHero({
             <Link
               key={service.href}
               href={localizeHref(locale, service.href)}
-              className="group flex min-h-28 items-center gap-5 border-r border-b border-line-soft px-5 py-5 transition hover:z-10 hover:bg-[#f3fbfe] focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset sm:min-h-32 sm:px-6 lg:border-b-0"
+              className="group flex min-h-28 items-center gap-5 border-r border-b border-line-soft px-5 py-5 transition hover:z-10 hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:min-h-32 sm:px-6 lg:border-b-0"
             >
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center bg-cyan-50 ring-1 ring-cyan-100 transition group-hover:bg-white">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center bg-brand-steel-cyan-10 ring-1 ring-brand-steel-cyan/15 transition group-hover:bg-white">
                 <Image
                   src={`${iconBase}/${service.icon}`}
                   alt=""
@@ -297,12 +297,12 @@ export function LandingConceptWinnsteinHero({
 
           <Link
             href={localizeHref(locale, "/kontakt")}
-            className="group flex min-h-28 items-center justify-between gap-5 bg-brand-ink px-6 py-5 text-white transition hover:bg-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset sm:col-span-2 sm:min-h-32 lg:col-span-1"
+            className="group flex min-h-28 items-center justify-between gap-5 bg-brand-marine px-6 py-5 text-white transition hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:col-span-2 sm:min-h-32 lg:col-span-1"
           >
             <span className="text-xl font-semibold tracking-[-0.035em]">
               {content.contactTitle}
             </span>
-            <span className="shrink-0 text-cyan-100 transition-transform duration-200 group-hover:translate-x-1">
+            <span className="shrink-0 text-white transition-transform duration-200 group-hover:translate-x-1">
               <ArrowIcon />
             </span>
           </Link>
@@ -311,30 +311,29 @@ export function LandingConceptWinnsteinHero({
       </div>
 
       <div className="mx-auto flex max-w-[120rem] justify-end px-5 pt-6 sm:px-6 lg:px-12 xl:px-16">
-        <div className="border border-line-soft bg-[#f7fafc] shadow-[0_8px_26px_rgba(23,52,76,0.06)]">
+        <div className="border border-brand-education/25 bg-white shadow-[0_8px_26px_rgba(3,19,52,0.06)]">
           <Link
             href="https://reltest-academy.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex min-h-16 items-center gap-5 px-5 py-2 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset sm:px-6"
+            className="group inline-flex min-h-16 items-center gap-5 px-5 py-2 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-education focus-visible:ring-inset sm:px-6"
           >
             <span className="flex min-w-0 items-center gap-4 sm:gap-5">
               <Image
-                src="/academy/reltest-academy-logo.webp"
-                alt=""
-                aria-hidden="true"
-                width={820}
-                height={406}
-                className="h-11 w-auto shrink-0 object-contain sm:h-12"
+                src="/branding/reltest-education-horizontal-positive.svg"
+                alt="RelTest Education"
+                width={466}
+                height={226}
+                className="h-16 w-32 shrink-0 object-contain sm:h-20 sm:w-40 lg:h-24 lg:w-48"
               />
               <span className="min-w-0 text-slate-500">
                 {content.academyPrompt}{" "}
-                <span className="font-semibold text-brand-ink transition-colors group-hover:text-brand-cyan">
+                <span className="font-semibold text-brand-marine transition-colors group-hover:text-brand-education">
                   {content.academyCta}
                 </span>
               </span>
             </span>
-            <span className="shrink-0 text-brand-cyan transition-transform duration-200 group-hover:translate-x-1">
+            <span className="shrink-0 text-brand-education transition-transform duration-200 group-hover:translate-x-1">
               <ArrowIcon />
             </span>
           </Link>
