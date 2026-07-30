@@ -8,6 +8,21 @@ export type ServiceCardImage = {
 
 export const serviceCardImages = {
   de: {
+    "/leistungen/zuverlaessigkeitstechnik": {
+      src: "/team/img-0112.jpg",
+      alt: "RelTest Experten analysieren ein technisches Bauteil und Ausfallmechanismen",
+      label: "Zuverlässigkeitstechnik",
+    },
+    "/leistungen/risikomanagement": {
+      src: "/expertise/lab-review.png",
+      alt: "Technisches Team bewertet Risiken und Absicherungsmaßnahmen",
+      label: "Risiko und Absicherung",
+    },
+    "/leistungen/datenanalyse-prognostik": {
+      src: "/team/home-testbench-review.png",
+      alt: "RelTest Experten bewerten Versuchsdaten an einem technischen Prüfstand",
+      label: "Test und Datenanalyse",
+    },
     "/leistungen/beratung": {
       src: "/team/img-0112.jpg",
       alt: "RelTest Experten analysieren ein technisches Bauteil und Ausfallmechanismen",
@@ -30,6 +45,21 @@ export const serviceCardImages = {
     },
   },
   en: {
+    "/leistungen/zuverlaessigkeitstechnik": {
+      src: "/team/img-0112.jpg",
+      alt: "RelTest experts analysing a technical component and failure mechanisms",
+      label: "Reliability engineering",
+    },
+    "/leistungen/risikomanagement": {
+      src: "/expertise/lab-review.png",
+      alt: "Technical team assessing risks and validation measures",
+      label: "Risk and validation",
+    },
+    "/leistungen/datenanalyse-prognostik": {
+      src: "/team/home-testbench-review.png",
+      alt: "RelTest experts evaluating test data at a technical test bench",
+      label: "Testing and data analysis",
+    },
     "/leistungen/beratung": {
       src: "/team/img-0112.jpg",
       alt: "RelTest experts analysing a technical component and failure mechanisms",

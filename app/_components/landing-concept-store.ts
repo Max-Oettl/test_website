@@ -25,6 +25,8 @@ export const landingConceptOptions: Array<{
 ];
 
 const conceptChangeEvent = "reltest-landing-concept-change";
+// Alternative concepts remain archived in the repository, but are not public UI options.
+const activeLandingConcept: LandingConcept = "winnstein";
 
 export function isLandingConcept(value: string): value is LandingConcept {
   return (
@@ -40,21 +42,11 @@ export function isLandingConcept(value: string): value is LandingConcept {
 }
 
 export function getLandingConceptFromUrl(): LandingConcept {
-  if (typeof window === "undefined") {
-    return "current";
-  }
-
-  const selectedConcept = new URLSearchParams(window.location.search).get(
-    "landing",
-  );
-
-  return selectedConcept && isLandingConcept(selectedConcept)
-    ? selectedConcept
-    : "current";
+  return activeLandingConcept;
 }
 
 export function getServerLandingConcept(): LandingConcept {
-  return "current";
+  return activeLandingConcept;
 }
 
 export function subscribeToLandingConceptChanges(onStoreChange: () => void) {
@@ -68,13 +60,10 @@ export function subscribeToLandingConceptChanges(onStoreChange: () => void) {
 }
 
 export function updateLandingConceptUrl(concept: LandingConcept) {
-  const url = new URL(window.location.href);
+  void concept;
 
-  if (concept === "current") {
-    url.searchParams.delete("landing");
-  } else {
-    url.searchParams.set("landing", concept);
-  }
+  const url = new URL(window.location.href);
+  url.searchParams.delete("landing");
 
   window.history.replaceState(null, "", url);
   window.dispatchEvent(new Event(conceptChangeEvent));

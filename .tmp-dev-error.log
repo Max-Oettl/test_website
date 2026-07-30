@@ -1,0 +1,9 @@
+⚠ Port 3000 is in use by an unknown process, using available port 3002 instead.
+⨯ Another next dev server is already running.
+
+- Local:        http://localhost:3001
+- PID:          18848
+- Dir:          C:\Users\MaximilianÖttl\Documents\test_website
+- Log:          .next\dev\logs\next-development.log
+
+Run taskkill /PID 18848 /F to stop it.

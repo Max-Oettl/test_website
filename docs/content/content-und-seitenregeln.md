@@ -94,20 +94,19 @@ Für jede Leistung muss beantwortet werden:
 - Warum ist RelTest dafür geeignet?
 - Was ist der nächste Schritt?
 
-Zentrale Leistungsbereiche:
+Zentrale Leistungsbereiche von RelTest Solutions:
 
-- Beratung entlang des Produktprozesses
 - Zuverlässigkeitstechnik
-- Erprobung und Versuchsplanung
-- Design of Experiments
-- Datenanalyse
-- Prognostik und Health Monitoring
-- Risikomanagement
-- langfristige Projektbegleitung
-- Seminare und Schulungen
-- RelTest Education
+- Risiko und Absicherung
+- Test und Datenanalyse
+- Projektpartnerschaft
 
-## 6. Beratung und langfristige Unterstützung
+Methoden wie DoE, Lebensdauererprobung, FMEA, FTA, Feldanalyse, Prognostik und
+Health Monitoring werden innerhalb dieser Leistungsfelder passend zur
+Fragestellung eingesetzt. RelTest Education wird als eigener Bereich geführt
+und nicht mit dem Solutions-Leistungsportfolio vermischt.
+
+## 6. Beratung und Projektpartnerschaft
 
 Beratung soll nicht als abstrakte Dienstleistung klingen.
 
@@ -121,6 +120,12 @@ Wichtig sind:
 - belastbare Entscheidungen
 - Absicherung bei potenziellen Haftungsfragen
 
+Die Projektpartnerschaft geht über punktuelle Beratung hinaus. Dabei können
+klar definierte Engineering-Arbeitspakete mit konkreten Ergebnissen,
+Schnittstellen, Abnahmekriterien und Dokumentationspflichten vereinbart werden.
+Innerhalb dieses vertraglich definierten Rahmens kann RelTest Verantwortung und
+Haftung für die eigenen Arbeitsergebnisse übernehmen.
+
 Formulierungen sollen seriös bleiben. Keine juristischen Versprechen, die
 fachlich oder rechtlich zu stark sind.
 
@@ -128,6 +133,10 @@ Gute Richtung:
 
 > RelTest unterstützt Unternehmen dabei, Entwicklungs- und Absicherungsprozesse
 > nachvollziehbar, methodisch fundiert und nach Stand der Technik aufzubauen.
+
+> Leistungsumfang, Abnahme und Haftungsrahmen werden vor Projektbeginn eindeutig
+> vereinbart. Innerhalb dieses Rahmens steht RelTest für die eigenen
+> Engineering-Ergebnisse ein.
 
 Nicht gut:
 

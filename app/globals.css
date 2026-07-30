@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source not "../TEMP";
 
 :root {
   --background: #f8fafc;

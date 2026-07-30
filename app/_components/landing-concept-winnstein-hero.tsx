@@ -23,7 +23,7 @@ const conceptContent = {
       {
         title: "Zuverlässigkeit verstehen. Entscheidungen absichern.",
         description:
-          "Ingenieursberatung für Zuverlässigkeitstechnik und Risikomanagement von der Entwicklung bis zur Freigabe.",
+          "RelTest steht für Ingenieursberatung in Zuverlässigkeitstechnik und Risikomanagement – von der Entwicklung bis zur Freigabe.",
         cta: "Zuverlässigkeitstechnik ansehen",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.png",
@@ -81,7 +81,7 @@ const conceptContent = {
       {
         title: "Understand reliability. Safeguard decisions.",
         description:
-          "Engineering consulting for reliability and risk management from development through release.",
+          "RelTest provides engineering consulting in reliability and risk management – from development through release.",
         cta: "Explore reliability engineering",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.png",
@@ -215,7 +215,7 @@ export function LandingConceptWinnsteinHero({
                     <h1 className="max-w-[47rem] text-[clamp(2.65rem,4.3vw,5.25rem)] leading-[0.96] font-semibold tracking-[-0.068em] text-brand-ink">
                       {slide.title}
                     </h1>
-                    <p className="mt-7 max-w-2xl text-base leading-7 font-medium text-slate-600 sm:text-lg sm:leading-8">
+                    <p className="mt-8 max-w-[46rem] text-[clamp(1.15rem,1.35vw,1.45rem)] leading-[1.45] font-semibold tracking-[-0.015em] text-brand-marine/82">
                       {slide.description}
                     </p>
                     <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">

@@ -49,7 +49,7 @@ const conceptContent = {
         title: "Seminare vor Ort",
         description:
           "Praxiswissen für Teams, direkt an Ihren Fragestellungen.",
-        href: "/weiterbildung/seminare",
+        href: "/education#vor-ort-schulung",
         icon: "icon-seminar.svg",
         image: "seminar-audience.png",
         imageFit: "object-cover",
@@ -59,7 +59,7 @@ const conceptContent = {
         title: "RelTest Education",
         description:
           "Strukturiertes E-Learning für flexible technische Weiterbildung.",
-        href: "/weiterbildung/academy",
+        href: "/education#e-learning",
         icon: "icon-academy.svg",
         image: "academy-laptop.png",
         imageFit: "object-cover",
@@ -151,7 +151,7 @@ const conceptContent = {
         title: "On-site seminars",
         description:
           "Practical knowledge for teams, applied to their actual challenges.",
-        href: "/weiterbildung/seminare",
+        href: "/education#on-site-training",
         icon: "icon-seminar.svg",
         image: "seminar-audience.png",
         imageFit: "object-cover",
@@ -161,7 +161,7 @@ const conceptContent = {
         title: "RelTest Education",
         description:
           "Structured e-learning for flexible technical development.",
-        href: "/weiterbildung/academy",
+        href: "/education#e-learning",
         icon: "icon-academy.svg",
         image: "academy-laptop.png",
         imageFit: "object-cover",
@@ -348,7 +348,7 @@ export function LandingConceptKacheln2Hero({
             ))}
 
             <Link
-              href={localizeHref(locale, "/weiterbildung/academy")}
+              href={localizeHref(locale, "/education#e-learning")}
               className="group mt-1 flex min-h-20 flex-col justify-between gap-4 border border-cyan-100 bg-[#f2fbfe] px-5 py-3 text-brand-ink transition hover:border-brand-cyan hover:bg-[#eaf9fd] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan sm:flex-row sm:items-center sm:px-6"
             >
               <span className="flex min-w-0 items-center gap-4">

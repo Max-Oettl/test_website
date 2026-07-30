@@ -74,7 +74,9 @@ export default async function LocaleLayout({
     "@type": "Organization",
     name: "RelTest Solutions GmbH",
     url: siteUrl,
-    logo: absoluteUrl("/reltest-solutions-logo.png"),
+    logo: absoluteUrl(
+      "/branding/reltest-solutions-horizontal-positive.svg",
+    ),
     email: "info@reltest-solutions.com",
     telephone: "+49 711 25253531",
     address: {
@@ -85,8 +87,10 @@ export default async function LocaleLayout({
       addressCountry: "DE",
     },
     sameAs: [
+      "https://www.linkedin.com/company/reltest-solutions",
       "https://reltest-academy.com/",
       "https://link.springer.com/book/10.1007/978-3-662-65024-0",
+      "https://link.springer.com/book/9783662729663",
     ],
   };
 
@@ -95,7 +99,11 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${plexSans.variable} ${sora.variable} ${archivo.variable} ${oxanium.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full">
+      <body
+        className="min-h-full"
+        data-landing-concept="kacheln"
+        data-landing-concept-variant="winnstein"
+      >
         <div className="min-h-screen bg-slate-50 text-slate-950">
           <SiteHeader locale={locale} />
           <main>{children}</main>

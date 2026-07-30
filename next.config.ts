@@ -4,6 +4,12 @@ const isVercelPreviewDeployment = process.env.VERCEL_ENV === "preview";
 
 const legacyRedirectPairs = [
   ["/", "/de"],
+  ["/de/weiterbildung", "/de/education"],
+  ["/en/weiterbildung", "/en/education"],
+  ["/de/weiterbildung/seminare", "/de/education#vor-ort-schulung"],
+  ["/en/weiterbildung/seminare", "/en/education#on-site-training"],
+  ["/de/weiterbildung/academy", "/de/education#e-learning"],
+  ["/en/weiterbildung/academy", "/en/education#e-learning"],
   ["/zuverlaessigkeitstechnik", "/de/leistungen/zuverlaessigkeitstechnik"],
   ["/zuverlaessigkeitstechnik/planung", "/de/wissen/planung"],
   ["/zuverlaessigkeitstechnik/absicherung", "/de/wissen/absicherung"],
@@ -19,8 +25,14 @@ const legacyRedirectPairs = [
   ],
   ["/zuverlaessigkeitsmanagement/consulting", "/de/leistungen/beratung"],
   ["/zuverlaessigkeitsmanagement/coaching", "/de/leistungen/coaching"],
-  ["/zuverlaessigkeitsmanagement/training", "/de/weiterbildung/seminare"],
-  ["/zuverlaessigkeitsmanagement/seminare", "/de/weiterbildung/seminare"],
+  [
+    "/zuverlaessigkeitsmanagement/training",
+    "/de/education#vor-ort-schulung",
+  ],
+  [
+    "/zuverlaessigkeitsmanagement/seminare",
+    "/de/education#vor-ort-schulung",
+  ],
   [
     "/zuverlaessigkeitsmanagement/seminare/doe-praxisorientierte-statistische-versuchsplanung",
     "/de/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung",
@@ -114,8 +126,8 @@ const legacyRedirectPairs = [
   ],
   ["/en/reliability-management/consulting", "/en/leistungen/beratung"],
   ["/en/reliability-management/coaching", "/en/leistungen/coaching"],
-  ["/en/reliability-management/training", "/en/weiterbildung/seminare"],
-  ["/en/reliability-management/seminars", "/en/weiterbildung/seminare"],
+  ["/en/reliability-management/training", "/en/education#on-site-training"],
+  ["/en/reliability-management/seminars", "/en/education#on-site-training"],
   ["/en/industries", "/en/branchen"],
   ["/en/reliability-management/automotive", "/en/branchen/automotive"],
   [

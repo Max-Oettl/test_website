@@ -109,6 +109,18 @@ Besonders wichtig:
 - gute Scannbarkeit für Entscheider
 - keine überladenen Hero-Bereiche
 
+### 5.4 Verbindliches Website-Konzept
+
+Das Winnstein-Konzept ist die alleinige aktive Gestaltungsgrundlage der
+öffentlichen Website. Startseite, Navigation, Footer und Unterseiten werden
+darauf abgestimmt; eine öffentliche Konzeptauswahl oder eine Umschaltung per
+URL-Parameter ist nicht vorgesehen.
+
+Frühere Konzeptvarianten bleiben vorerst als interne Entwürfe im Repository
+erhalten. Sie dürfen jedoch nicht in der Website auswählbar oder über alte
+Vergleichslinks aktivierbar sein, solange ihre Reaktivierung nicht ausdrücklich
+beschlossen wird.
+
 ## 6. Positionierung von RelTest
 
 RelTest soll nicht über einen Slogan wie `Reliability Made in Germany`
@@ -138,23 +150,27 @@ Besonders wichtig ist, dass potenzielle Kunden schnell verstehen:
 
 ## 8. Wichtige Leistungsbereiche
 
-Diese Leistungen sind zentral und müssen klar sichtbar sein:
+RelTest Solutions wird über vier klar unterscheidbare Leistungsfelder positioniert:
 
-- Beratung für Unternehmen entlang des gesamten Produktprozesses
-- Zuverlässigkeitstechnik und methodische Absicherung
-- Design of Experiments
-- Schulungen und Seminare vor Ort
-- RelTest Education als digitales E-Learning-Angebot
-- langfristige Projektbegleitung und verantwortliche Entwicklungsunterstützung
-- Risikomanagement
-- Datenanalyse, Modellbildung, Prognostik und Health Monitoring
+- Zuverlässigkeitstechnik
+- Risiko und Absicherung
+- Test und Datenanalyse
+- Projektpartnerschaft
+
+Die Projektpartnerschaft ist ein strategisch wichtiges Zukunftsangebot. RelTest
+kann darin klar definierte Engineering-Arbeitspakete übernehmen, prüfbare
+Ergebnisse liefern und innerhalb eines vorab vereinbarten vertraglichen Rahmens
+für die eigenen Arbeitsergebnisse einstehen.
+
+RelTest Education ist ein eigener Website-Bereich und kein fünftes
+Solutions-Leistungsfeld. Er umfasst Vor-Ort-Schulungen und digitales E-Learning.
 
 Wichtig:
 
 - DoE ist fachlich nicht als isolierter Fremdkörper zu behandeln
 - DoE gehört eng zum Themenbereich Erprobung und Versuchsplanung
-- Weiterbildung und RelTest Education gehören zusammen, sind aber zwei klar
-  unterschiedliche Angebotsformen
+- Vor-Ort-Schulung und E-Learning gehören unter RelTest Education zusammen,
+  sind aber zwei klar unterschiedliche Angebotsformen
 
 ## 9. Weiterbildung: zwei getrennte Formate
 

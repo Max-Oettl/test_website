@@ -6,7 +6,6 @@ import { ActiveNavLink } from "./active-nav-link";
 import { ConceptBrandLogo } from "./concept-brand-logo";
 import { LanguageSwitcher } from "./language-switcher";
 import { LandingConceptBodySync } from "./landing-concept-body-sync";
-import { SiteExplorerBand } from "./site-explorer-band";
 
 type SiteHeaderProps = {
   locale: Locale;
@@ -35,8 +34,13 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   const dropdowns: Record<string, NavigationDropdown> = {
     "/leistungen": {
       overview: navigation.servicesOverview,
-      groups: navigation.serviceGroups,
-      width: "wide",
+      items: navigation.serviceItems,
+      width: "default",
+    },
+    "/education": {
+      overview: navigation.educationOverview,
+      items: navigation.educationItems,
+      width: "default",
     },
     "/wissen": {
       overview: navigation.knowledgeOverview,
@@ -75,11 +79,9 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           {navigation.items.map((item) => {
             const dropdown = dropdowns[item.href];
             const dropdownItems =
-              item.href === "/expertise"
-                ? dropdown?.items?.map((dropdownItem) =>
-                    removeHash(dropdownItem.href),
-                  ) ?? []
-                : [];
+              dropdown?.items?.map((dropdownItem) =>
+                removeHash(dropdownItem.href),
+              ) ?? [];
             const activeHrefs = uniqueItems([item.href, ...dropdownItems]).map(
               (href) => localizeHref(locale, href),
             );
@@ -136,16 +138,26 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                         ))}
                       </div>
                     ) : (
-                      dropdown.items?.map((dropdownItem) => (
-                        <ActiveNavLink
-                          key={dropdownItem.href}
-                          href={localizeHref(locale, dropdownItem.href)}
-                          className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
-                          activeClassName="bg-cyan-50 text-cyan-800"
-                        >
-                          {dropdownItem.label}
-                        </ActiveNavLink>
-                      ))
+                      dropdown.items?.map((dropdownItem) =>
+                        dropdownItem.href.includes("#") ? (
+                          <Link
+                            key={dropdownItem.href}
+                            href={localizeHref(locale, dropdownItem.href)}
+                            className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        ) : (
+                          <ActiveNavLink
+                            key={dropdownItem.href}
+                            href={localizeHref(locale, dropdownItem.href)}
+                            className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
+                            activeClassName="bg-cyan-50 text-cyan-800"
+                          >
+                            {dropdownItem.label}
+                          </ActiveNavLink>
+                        ),
+                      )
                     )}
                   </div>
                 </div>
@@ -190,11 +202,9 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             {navigation.items.map((item) => {
               const dropdown = dropdowns[item.href];
               const dropdownItems =
-                item.href === "/expertise"
-                  ? dropdown?.items?.map((dropdownItem) =>
-                      removeHash(dropdownItem.href),
-                    ) ?? []
-                  : [];
+                dropdown?.items?.map((dropdownItem) =>
+                  removeHash(dropdownItem.href),
+                ) ?? [];
               const activeHrefs = uniqueItems([item.href, ...dropdownItems]).map(
                 (href) => localizeHref(locale, href),
               );
@@ -231,16 +241,26 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                         </div>
                       ))
                     ) : (
-                      dropdown.items?.map((dropdownItem) => (
-                        <ActiveNavLink
-                          key={dropdownItem.href}
-                          href={localizeHref(locale, dropdownItem.href)}
-                          className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
-                          activeClassName="bg-cyan-50 text-cyan-800"
-                        >
-                          {dropdownItem.label}
-                        </ActiveNavLink>
-                      ))
+                      dropdown.items?.map((dropdownItem) =>
+                        dropdownItem.href.includes("#") ? (
+                          <Link
+                            key={dropdownItem.href}
+                            href={localizeHref(locale, dropdownItem.href)}
+                            className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        ) : (
+                          <ActiveNavLink
+                            key={dropdownItem.href}
+                            href={localizeHref(locale, dropdownItem.href)}
+                            className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
+                            activeClassName="bg-cyan-50 text-cyan-800"
+                          >
+                            {dropdownItem.label}
+                          </ActiveNavLink>
+                        ),
+                      )
                     )}
                   </div>
                 </div>
@@ -264,7 +284,6 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           </div>
         </details>
       </div>
-      <SiteExplorerBand locale={locale} />
     </header>
     </>
   );

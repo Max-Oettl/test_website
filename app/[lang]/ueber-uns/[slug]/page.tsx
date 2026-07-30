@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { DetailPageTemplate } from "../../../_components/detail-page-template";
+import { PersonProfilePage } from "../../../_components/person-profile-page";
 import { getDetailPage, getDetailPages } from "../../../_content/migration-pages";
 import { locales, resolveLocale } from "../../../_i18n/config";
 import { buildLocalizedMetadata } from "../../../_seo/metadata";
@@ -44,5 +44,5 @@ export default async function PersonDetailPage({ params }: Props) {
     notFound();
   }
 
-  return <DetailPageTemplate locale={locale} page={page} />;
+  return <PersonProfilePage locale={locale} page={page} />;
 }

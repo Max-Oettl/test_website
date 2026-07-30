@@ -1,8 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
 
-import { PageIntro } from "../../_components/page-intro";
-import { SectionHeading } from "../../_components/section-heading";
-import { ServiceCard } from "../../_components/service-card";
 import { serviceCardImages } from "../../_content/service-card-assets";
 import { getSiteContent } from "../../_content/site-content";
 import { localizeHref, resolveLocale, type Locale } from "../../_i18n/config";
@@ -12,164 +10,383 @@ type Props = {
   params: Promise<{ lang: string }>;
 };
 
-const servicePageEnhancements = {
+const servicesCopy = {
   de: {
-    structureLabel: "Portfolio-Logik",
-    structureTitle: "Vier Angebote, ein fachlicher Kern.",
-    structureDescription:
-      "Die Leistungsformen unterscheiden sich bewusst: Beratung, Weiterbildung, RelTest Education und langfristige Kooperation. Die technischen Methoden werden je nach Zielsetzung gezielt darin eingesetzt.",
-    structureItems: [
-      "passende Leistungsform wählen",
-      "technische Fragestellung einordnen",
-      "Nachweise und Umsetzung absichern",
-    ],
-    methodLabel: "Fachthemen",
-    methodTitle: "Methoden sind kein Zusatzpaket, sondern Teil der Lösung.",
-    methodDescription:
-      "DoE, Datenanalyse, Risikomanagement und Zuverlässigkeitsmethoden werden nicht isoliert verkauft. Sie werden dort eingesetzt, wo sie im Projekt die belastbarste Aussage liefern.",
-    methodVisualAlt:
-      "Technische Grafik eines Reliability-Engineering-Zyklus mit Analyse, Erprobung und Absicherung",
+    hero: {
+      title: "Engineering für belastbare Produkt\u00adentscheidungen.",
+      description:
+        "RelTest unterstützt Unternehmen bei Zuverlässigkeit, technischer Absicherung und datenbasierten Entscheidungen: punktuell in einer Fachfrage oder dauerhaft als verantwortlicher Engineering Partner.",
+      primaryCta: "Projekt besprechen",
+      secondaryCta: "Leistungsfelder ansehen",
+      imageAlt:
+        "RelTest Ingenieure besprechen Zuverlässigkeit, Risiken und technische Absicherung",
+    },
+    overview: {
+      title: "Wobei RelTest konkret unterstützt",
+      description:
+        "Drei fachliche Leistungsfelder schaffen Klarheit über Zuverlässigkeit, Risiken und Daten. Wenn eine dauerhafte Einbindung sinnvoll ist, übernimmt RelTest definierte Engineering-Arbeitspakete im Projekt.",
+      cta: "Leistung im Detail",
+    },
+    partnership: {
+      title: "Ein Engineering Partner, der für Ergebnisse einsteht.",
+      description:
+        "RelTest kann mehr übernehmen als Beratung und einzelne Analysen. Als fester Engineering Partner bearbeiten wir klar abgegrenzte Arbeitspakete, liefern prüfbare Ergebnisse und führen die zugehörige technische Dokumentation.",
+      responsibility:
+        "Leistungsumfang, Schnittstellen, Abnahme und Haftung werden vor Projektbeginn eindeutig vereinbart. Innerhalb dieses vertraglich definierten Rahmens übernimmt RelTest Verantwortung für die eigenen Arbeitsergebnisse.",
+      points: [
+        "klar definierte Engineering-Arbeitspakete",
+        "prüfbare Ergebnisse und geregelte Abnahme",
+        "nachvollziehbare Berechnungen und Dokumentation",
+        "vertraglich festgelegter Verantwortungs- und Haftungsumfang",
+      ],
+      cta: "Projektpartnerschaft ansehen",
+      imageAlt:
+        "Systemgrafik einer Engineering-Partnerschaft mit Zuverlässigkeitstechnik, Risikomanagement, Test, Datenanalyse, Dokumentation und Rechtssicherheit",
+    },
+    methods: {
+      title: "Methoden passend zur technischen Entscheidung",
+      description:
+        "DoE, FMEA, Lebensdatenanalyse oder Zuverlässigkeitsnachweise sind keine isolierten Pakete. Wir setzen die Methode ein, die zur Fragestellung, Datenlage und Projektphase passt.",
+    },
+    contact: {
+      title: "Welche Unterstützung braucht Ihr Projekt?",
+      description:
+        "In einem ersten Gespräch klären wir die technische Fragestellung, den sinnvollen Leistungsumfang und ob eine punktuelle Beratung oder eine feste Projektpartnerschaft besser passt.",
+      cta: "Anfrage starten",
+    },
   },
   en: {
-    structureLabel: "Portfolio logic",
-    structureTitle: "Four offers, one technical core.",
-    structureDescription:
-      "The service formats are intentionally different: consulting, professional training, RelTest Education and long-term partnership. The technical methods are applied where they create the strongest project value.",
-    structureItems: [
-      "select the right service format",
-      "classify the technical question",
-      "secure evidence and implementation",
-    ],
-    methodLabel: "Technical methods",
-    methodTitle: "Methods are not add-ons. They are part of the solution.",
-    methodDescription:
-      "DoE, data analysis, risk management and reliability methods are not sold as isolated modules. They are used where they produce the most robust project evidence.",
-    methodVisualAlt:
-      "Technical Reliability Engineering cycle graphic with analysis, testing and validation",
+    hero: {
+      title: "Engineering for robust product decisions.",
+      description:
+        "RelTest supports companies with reliability, technical assurance and data-based decisions: for a specific technical question or continuously as an accountable engineering partner.",
+      primaryCta: "Discuss a project",
+      secondaryCta: "Explore service areas",
+      imageAlt:
+        "RelTest engineers discussing reliability, risks and technical assurance",
+    },
+    overview: {
+      title: "Where RelTest provides concrete support",
+      description:
+        "Three technical service areas create clarity around reliability, risks and data. When continuous involvement is the better fit, RelTest takes ownership of defined engineering work packages.",
+      cta: "Explore this service",
+    },
+    partnership: {
+      title: "An engineering partner that stands behind its results.",
+      description:
+        "RelTest can take on more than consulting and individual analyses. As a dedicated engineering partner, we deliver clearly defined work packages, verifiable results and the associated technical documentation.",
+      responsibility:
+        "Scope, interfaces, acceptance and liability are agreed before the project begins. Within this contractually defined framework, RelTest assumes responsibility for its own engineering deliverables.",
+      points: [
+        "clearly defined engineering work packages",
+        "verifiable results and agreed acceptance",
+        "traceable calculations and documentation",
+        "contractually defined responsibility and liability",
+      ],
+      cta: "Explore project partnership",
+      imageAlt:
+        "System diagram of an engineering partnership covering reliability, risk management, testing, data analysis, documentation and legal certainty",
+    },
+    methods: {
+      title: "Methods selected for the technical decision",
+      description:
+        "DoE, FMEA, life data analysis and reliability evidence are not isolated packages. We use the method that fits the question, available data and project phase.",
+    },
+    contact: {
+      title: "What kind of support does your project need?",
+      description:
+        "In an initial conversation, we clarify the technical question, a suitable scope and whether focused consulting or a long-term project partnership is the better fit.",
+      cta: "Start an inquiry",
+    },
   },
-} as const satisfies Record<
-  Locale,
-  {
-    structureLabel: string;
-    structureTitle: string;
-    structureDescription: string;
-    structureItems: readonly string[];
-    methodLabel: string;
-    methodTitle: string;
-    methodDescription: string;
-    methodVisualAlt: string;
-  }
->;
+} as const satisfies Record<Locale, object>;
+
+const serviceIcons: Record<string, string> = {
+  "/leistungen/zuverlaessigkeitstechnik":
+    "/concepts/landingpage-ingenics-kacheln/icon-target.svg",
+  "/leistungen/risikomanagement":
+    "/concepts/landingpage-ingenics-kacheln/icon-shield.svg",
+  "/leistungen/datenanalyse-prognostik":
+    "/concepts/landingpage-ingenics-kacheln/icon-database.svg",
+};
+
+function ArrowIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+      className="h-4 w-4"
+      fill="none"
+    >
+      <path
+        d="M4 10h11m-4-4 4 4-4 4"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export async function generateMetadata({ params }: Props) {
   const locale = await resolveLocale(params);
-  const page = getSiteContent(locale).pages.services;
 
   return buildLocalizedMetadata({
     locale,
     path: "/leistungen",
     title:
       locale === "de"
-        ? "Leistungen für Zuverlässigkeitstechnik | RelTest"
-        : "Reliability Engineering Services | RelTest",
-    description: page.intro.description,
+        ? "Engineering-Leistungen & Projektpartnerschaft | RelTest"
+        : "Engineering Services & Project Partnership | RelTest",
+    description:
+      locale === "de"
+        ? "Zuverlässigkeitstechnik, Risikomanagement, Test und Datenanalyse sowie verantwortliche Engineering-Projektpartnerschaft für technische Produkte."
+        : "Reliability engineering, risk management, testing and data analysis, plus accountable engineering project partnership for technical products.",
   });
 }
 
 export default async function ServicesPage({ params }: Props) {
   const locale = await resolveLocale(params);
   const content = getSiteContent(locale);
-  const page = content.pages.services;
-  const enhancements = servicePageEnhancements[locale];
+  const copy = servicesCopy[locale];
   const serviceImages = serviceCardImages[locale];
+  const technicalServices = content.services.slice(0, 3);
 
   return (
-    <>
-      <PageIntro {...page.intro} />
-      <section className="relative overflow-hidden bg-slate-50 px-5 py-20 sm:px-6 lg:px-8">
-        <div className="hero-editorial-grid absolute inset-0 opacity-80" />
-        <div className="absolute -left-28 top-20 h-72 w-72 rounded-full bg-cyan-200/35 blur-3xl" />
-        <div className="absolute -right-28 bottom-24 h-72 w-72 rounded-full bg-slate-300/45 blur-3xl" />
+    <main className="font-winnstein-body text-brand-marine">
+      <section className="relative overflow-hidden bg-brand-marine text-white">
+        <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:64px_64px]" />
+        <div className="absolute -left-24 bottom-0 h-72 w-72 rounded-full border border-brand-steel-cyan/20" />
+        <div className="absolute -left-8 bottom-16 h-48 w-48 rounded-full border border-brand-steel-cyan/15" />
 
-        <div className="relative mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(21rem,0.52fr)] lg:items-end">
-            <SectionHeading {...page.overview} />
-            <aside className="overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-950 p-6 text-white shadow-2xl shadow-slate-950/20">
-              <p className="text-xs font-bold uppercase tracking-[0.26em] text-cyan-300">
-                {enhancements.structureLabel}
-              </p>
-              <h2 className="mt-4 text-2xl font-semibold tracking-[-0.04em]">
-                {enhancements.structureTitle}
-              </h2>
-              <p className="mt-4 text-sm leading-6 text-slate-300">
-                {enhancements.structureDescription}
-              </p>
-              <div className="mt-6 space-y-3">
-                {enhancements.structureItems.map((item, index) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3"
-                  >
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-300 text-xs font-bold text-slate-950">
-                      {index + 1}
-                    </span>
-                    <span className="text-sm font-semibold text-slate-100">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </aside>
+        <div className="relative mx-auto grid max-w-7xl xl:grid-cols-[58%_42%]">
+          <div className="flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
+            <h1 className="max-w-4xl font-winnstein-display text-4xl leading-[1.06] font-bold tracking-[-0.035em] hyphens-manual sm:text-5xl lg:text-[3.2rem] xl:text-[3.4rem]">
+              {copy.hero.title}
+            </h1>
+            <p className="mt-7 max-w-2xl break-words text-lg leading-8 text-white/78">
+              {copy.hero.description}
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href={localizeHref(locale, "/kontakt")}
+                className="inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
+              >
+                {copy.hero.primaryCta}
+                <ArrowIcon />
+              </Link>
+              <Link
+                href="#leistungsfelder"
+                className="inline-flex min-h-14 items-center justify-between gap-5 border border-white/35 px-6 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
+              >
+                {copy.hero.secondaryCta}
+                <ArrowIcon />
+              </Link>
+            </div>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {content.services.map((service) => (
-              <ServiceCard
-                key={service.title}
-                {...service}
-                image={serviceImages[service.href]}
-                href={localizeHref(locale, service.href)}
-                ctaLabel={content.common.learnMore}
-              />
-            ))}
+          <div className="relative min-h-[25rem] border-t border-white/15 xl:min-h-[42rem] xl:border-t-0 xl:border-l">
+            <Image
+              src="/team/home-engineering-consulting.png"
+              alt={copy.hero.imageAlt}
+              fill
+              priority
+              sizes="(min-width: 1280px) 42vw, 100vw"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.34),transparent_50%),linear-gradient(0deg,rgba(3,19,52,.35),transparent_48%)]" />
+          </div>
+        </div>
+        <div className="h-2 bg-brand-steel-cyan" />
+      </section>
+
+      <section
+        id="leistungsfelder"
+        className="scroll-mt-28 bg-white px-5 py-20 sm:px-6 lg:px-8 lg:py-28"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-7 border-b border-brand-marine/15 pb-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+            <h2 className="max-w-3xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+              {copy.overview.title}
+            </h2>
+            <p className="max-w-3xl text-lg leading-8 text-brand-marine/72 lg:justify-self-end">
+              {copy.overview.description}
+            </p>
           </div>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70">
-              <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-cyan-100 blur-3xl" />
-              <Image
-                src="/graphics/reliability-engineering-cycle.svg"
-                alt={enhancements.methodVisualAlt}
-                width={520}
-                height={360}
-                className="relative h-auto w-full"
-              />
-            </div>
+          <div className="grid border-l border-brand-marine/15 md:grid-cols-3">
+            {technicalServices.map((service) => {
+              const visual = serviceImages[service.href];
+              const icon = serviceIcons[service.href];
 
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/70">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">
-                {enhancements.methodLabel}
-              </p>
-              <h2 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-3xl">
-                {enhancements.methodTitle}
-              </h2>
-              <p className="mt-4 text-base leading-8 text-slate-600">
-                {enhancements.methodDescription}
-              </p>
-              <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                {content.methodHighlights.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-800"
-                  >
-                    {item}
+              return (
+                <article
+                  key={service.href}
+                  className="group flex min-h-full flex-col border-r border-b border-brand-marine/15 bg-white"
+                >
+                  {visual ? (
+                    <div className="relative h-60 overflow-hidden">
+                      <Image
+                        src={visual.src}
+                        alt={visual.alt}
+                        fill
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                        className="object-cover transition duration-500 group-hover:scale-[1.02]"
+                      />
+                      <div className="absolute inset-0 bg-brand-marine/18" />
+                    </div>
+                  ) : null}
+                  <div className="flex flex-1 flex-col p-7 lg:p-8">
+                    <div className="flex h-14 w-14 items-center justify-center bg-brand-steel-cyan-10">
+                      {icon ? (
+                        <Image
+                          src={icon}
+                          alt=""
+                          width={30}
+                          height={30}
+                          className="h-8 w-8"
+                        />
+                      ) : null}
+                    </div>
+                    <h2 className="mt-7 font-winnstein-display text-2xl leading-tight font-bold tracking-[-0.025em] sm:text-3xl md:min-h-20 xl:min-h-0">
+                      {service.title}
+                    </h2>
+                    <p className="mt-5 text-base leading-8 text-brand-marine/72 md:min-h-48 lg:min-h-40 xl:min-h-32">
+                      {service.description}
+                    </p>
+                    <ul className="mt-7 divide-y divide-brand-marine/15 border-y border-brand-marine/15">
+                      {service.topics.map((topic) => (
+                        <li
+                          key={topic}
+                          className="py-3 text-sm leading-6 font-semibold md:flex md:min-h-13 md:items-center"
+                        >
+                          {topic}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href={localizeHref(locale, service.href)}
+                      className="mt-auto inline-flex w-fit items-center gap-5 border-b-2 border-brand-steel-cyan pt-8 pb-2 font-winnstein-display text-sm font-bold"
+                    >
+                      {copy.overview.cta}
+                      <ArrowIcon />
+                    </Link>
                   </div>
-                ))}
-              </div>
-            </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
-    </>
+
+      <section className="bg-brand-steel-cyan-10 px-5 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-7xl border border-brand-marine/15 bg-white lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="relative aspect-[2/3] bg-white lg:aspect-auto lg:min-h-[46rem]">
+            <Image
+              src="/services/engineering-partnership-pictogram.png"
+              alt={copy.partnership.imageAlt}
+              fill
+              sizes="(min-width: 1024px) 46vw, 100vw"
+              className="object-contain object-center p-3 sm:p-5"
+            />
+          </div>
+          <div className="relative flex flex-col justify-center bg-brand-marine p-7 text-white sm:p-10 lg:p-14">
+            <span className="absolute left-0 top-0 h-full w-1.5 bg-brand-gold" />
+            <h2 className="font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+              {copy.partnership.title}
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-white/82">
+              {copy.partnership.description}
+            </p>
+            <ul className="mt-9 grid gap-3 sm:grid-cols-2">
+              {copy.partnership.points.map((point, index) => (
+                <li
+                  key={point}
+                  className="flex min-h-24 items-start gap-4 border border-white/15 bg-white/[0.055] p-5 font-winnstein-display text-base leading-6 font-bold text-white"
+                >
+                  <span
+                    className={`mt-1 flex h-7 w-7 shrink-0 items-center justify-center text-brand-marine ${
+                      index === 3 ? "bg-brand-gold" : "bg-brand-steel-cyan"
+                    }`}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 20 20"
+                      className="h-4 w-4"
+                      fill="none"
+                    >
+                      <path
+                        d="m5 10.5 3 3 7-7"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href={localizeHref(
+                locale,
+                "/leistungen/langfristige-kooperation",
+              )}
+              className="mt-9 inline-flex min-h-14 w-full items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d] sm:w-fit"
+            >
+              {copy.partnership.cta}
+              <ArrowIcon />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-18 sm:px-6 lg:px-8 lg:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <div>
+            <h2 className="font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
+              {copy.methods.title}
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-8 text-brand-marine/72">
+              {copy.methods.description}
+            </p>
+          </div>
+          <ul className="grid border-t border-brand-marine/20 sm:grid-cols-2">
+            {content.methodHighlights.map((method, index) => (
+              <li
+                key={method}
+                className={`border-b border-brand-marine/20 py-5 text-base font-semibold ${
+                  index % 2 === 0 ? "sm:pr-8" : "sm:border-l sm:pl-8"
+                }`}
+              >
+                {method}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-brand-marine px-5 py-16 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-7 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <h2 className="font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em]">
+              {copy.contact.title}
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-white/72">
+              {copy.contact.description}
+            </p>
+          </div>
+          <Link
+            href={localizeHref(locale, "/kontakt")}
+            className="inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
+          >
+            {copy.contact.cta}
+            <ArrowIcon />
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }

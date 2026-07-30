@@ -155,11 +155,12 @@ const content = {
       menu: "Menü",
       inquiry: "Anfrage starten",
       servicesOverview: "Leistungen im Überblick",
+      educationOverview: "Education im Überblick",
       knowledgeOverview: "Wissen im Überblick",
       expertiseOverview: "Expertise im Überblick",
       items: [
         { label: "Leistungen", href: "/leistungen" },
-        { label: "Weiterbildung", href: "/weiterbildung" },
+        { label: "Education", href: "/education" },
         { label: "Wissen", href: "/wissen" },
         { label: "Expertise", href: "/expertise" },
         { label: "Wir sind RelTest", href: "/ueber-uns" },
@@ -170,68 +171,21 @@ const content = {
           href: "/leistungen/zuverlaessigkeitstechnik",
         },
         {
-          label: "Zuverlässigkeitsmanagement",
-          href: "/leistungen/zuverlaessigkeitsmanagement",
-        },
-        { label: "Beratung", href: "/leistungen/beratung" },
-        {
-          label: "Design of Experiments",
-          href: "/leistungen/design-of-experiments",
+          label: "Risiko & Absicherung",
+          href: "/leistungen/risikomanagement",
         },
         {
-          label: "Datenanalyse & Prognostik",
+          label: "Test & Datenanalyse",
           href: "/leistungen/datenanalyse-prognostik",
         },
-        { label: "Risikomanagement", href: "/leistungen/risikomanagement" },
         {
-          label: "Langfristige Kooperation",
+          label: "Projektpartnerschaft",
           href: "/leistungen/langfristige-kooperation",
         },
       ],
-      serviceGroups: [
-        {
-          title: "Leistungspakete",
-          items: [
-            { label: "Beratung", href: "/leistungen/beratung" },
-            {
-              label: "Schulungen und Seminare",
-              href: "/weiterbildung/seminare",
-            },
-            {
-              label: "RelTest Education",
-              href: "/weiterbildung/academy",
-            },
-            {
-              label: "Langfristige Kooperation",
-              href: "/leistungen/langfristige-kooperation",
-            },
-          ],
-        },
-        {
-          title: "Fachthemen in Beratung & Kooperation",
-          items: [
-            {
-              label: "Zuverlässigkeitstechnik",
-              href: "/leistungen/zuverlaessigkeitstechnik",
-            },
-            {
-              label: "Zuverlässigkeitsmanagement",
-              href: "/leistungen/zuverlaessigkeitsmanagement",
-            },
-            {
-              label: "Design of Experiments",
-              href: "/leistungen/design-of-experiments",
-            },
-            {
-              label: "Datenanalyse & Prognostik",
-              href: "/leistungen/datenanalyse-prognostik",
-            },
-            {
-              label: "Risikomanagement",
-              href: "/leistungen/risikomanagement",
-            },
-          ],
-        },
+      educationItems: [
+        { label: "Vor-Ort-Schulung", href: "/education#vor-ort-schulung" },
+        { label: "E-Learning", href: "/education#e-learning" },
       ],
       knowledgeItems: [
         { label: "Planung", href: "/wissen/planung" },
@@ -246,10 +200,16 @@ const content = {
         { label: "Risikomanagement", href: "/wissen/risikomanagement" },
       ],
       expertiseItems: [
-        { label: "Referenzen & Branchenvertrauen", href: "/referenzen" },
-        { label: "Fachbücher & Veröffentlichungen", href: "/literatur" },
+        {
+          label: "Referenzen & Branchenvertrauen",
+          href: "/expertise#referenzen",
+        },
+        {
+          label: "Fachbücher & Veröffentlichungen",
+          href: "/expertise#fachbuecher",
+        },
         { label: "Podcast mit Kevin Lucan", href: "/expertise#podcast" },
-        { label: "Branchen", href: "/branchen" },
+        { label: "Branchen", href: "/expertise#branchen" },
       ],
     },
     footer: {
@@ -260,7 +220,7 @@ const content = {
       copyright: "© 2026 RelTest Solutions. Alle Rechte vorbehalten.",
       links: [
         { label: "Leistungen", href: "/leistungen" },
-        { label: "Weiterbildung", href: "/weiterbildung" },
+        { label: "Education", href: "/education" },
         { label: "Wissen", href: "/wissen" },
         { label: "Expertise", href: "/expertise" },
         { label: "Literatur", href: "/literatur" },
@@ -310,51 +270,64 @@ const content = {
     },
     services: [
       {
-        title: "Beratung für Unternehmen",
+        title: "Zuverlässigkeitstechnik",
         description:
-          "Strategische und operative Begleitung entlang des gesamten Produktprozesses. Je nach Projekt bringen wir gezielt Fachthemen wie Zuverlässigkeitstechnik, DoE, Datenanalyse und Risikomanagement ein.",
-        highlight: "Fachliche Orientierung und methodische Absicherung",
-        href: "/leistungen/beratung",
+          "Zuverlässigkeitsziele, Ausfallmechanismen und Nachweiskonzepte werden über den Produktlebenszyklus methodisch zusammengeführt.",
+        highlight: "Belastbare Produktentscheidungen statt später Überraschungen",
+        href: "/leistungen/zuverlaessigkeitstechnik",
         icon: "/icons/service-consulting.svg",
-        meta: "Consulting",
+        meta: "Reliability Engineering",
         topics: [
-          "Zuverlässigkeitstechnik",
-          "DoE & Versuchsplanung",
-          "Datenanalyse & Prognostik",
-          "Risikomanagement",
+          "Zuverlässigkeitsplanung",
+          "Lebensdauerbewertung",
+          "Zuverlässigkeitsnachweise",
+          "Methodische Beratung",
         ],
       },
       {
-        title: "Vor-Ort-Schulungen und Seminare",
+        title: "Risiko & Absicherung",
         description:
-          "Praxisnahe Weiterbildung für Teams direkt im Unternehmen, abgestimmt auf Produkte, Entwicklungsstand und methodische Reife.",
-        highlight: "Inhouse, interaktiv und projektbezogen",
-        href: "/weiterbildung/seminare",
+          "Risiken und Schwachstellen werden systematisch priorisiert und in eine nachvollziehbare Absicherungsstrategie überführt.",
+        highlight: "Technische Risiken früh erkennen und gezielt beherrschen",
+        href: "/leistungen/risikomanagement",
+        icon: "/icons/service-cooperation.svg",
+        meta: "Risikomanagement",
+        topics: [
+          "FMEA & FTA",
+          "Risikobewertung",
+          "Absicherungsstrategie",
+          "Stand der Technik",
+        ],
+      },
+      {
+        title: "Test & Datenanalyse",
+        description:
+          "Versuche, Felddaten und statistische Modelle werden so geplant und ausgewertet, dass daraus belastbare Aussagen entstehen.",
+        highlight: "Aus Daten werden nachvollziehbare Entscheidungen",
+        href: "/leistungen/datenanalyse-prognostik",
         icon: "/icons/service-training.svg",
-        meta: "Weiterbildung",
+        meta: "Testing & Analytics",
+        topics: [
+          "Design of Experiments",
+          "Lebensdauererprobung",
+          "Felddatenanalyse",
+          "Prognostik",
+        ],
       },
       {
-        title: "RelTest Education",
+        title: "Projektpartnerschaft",
         description:
-          "Digitales E-Learning für Ingenieurinnen und Ingenieure, die Reliability Engineering und DoE flexibel und strukturiert aufbauen wollen.",
-        highlight: "Skalierbar, ortsunabhängig und sofort nutzbar",
-        href: "/weiterbildung/academy",
-        icon: "/branding/reltest-education-horizontal-positive.svg",
-        meta: "Education",
-      },
-      {
-        title: "Langfristige Kooperation",
-        description:
-          "Dauerhafte Unterstützung in Entwicklungsprojekten, wenn Zuverlässigkeit, Absicherung und Dokumentation über längere Zeit strukturiert mitgeführt werden sollen.",
-        highlight: "Verantwortung über einzelne Analysen hinaus",
+          "RelTest übernimmt klar definierte Engineering-Arbeitspakete und steht für die vereinbarten Ergebnisse ein. Leistungsumfang, Abnahme, Dokumentation und Haftung werden vor Projektstart vertraglich geregelt.",
+        highlight:
+          "Engineering-Verantwortung mit klar geregeltem Haftungsumfang",
         href: "/leistungen/langfristige-kooperation",
         icon: "/icons/service-cooperation.svg",
         meta: "Dienstleistung",
         topics: [
-          "Zuverlässigkeitsmanagement",
+          "Definierte Engineering-Arbeitspakete",
           "Absicherung nach Stand der Technik",
-          "Technische Dokumentation",
-          "Review- und Sparring-Termine",
+          "Prüfbare Ergebnisdokumentation",
+          "Verantwortung & Haftungsrahmen",
         ],
       },
     ],
@@ -412,7 +385,7 @@ const content = {
     ],
     educationFormats: [
       {
-        title: "Inhouse-Schulungen und Seminare",
+        title: "Vor-Ort-Schulung",
         description:
           "Ideal für Teams, die Methoden gemeinsam verankern, offene Projektfragen direkt einbringen und in kurzer Zeit konkrete Anwendungssicherheit aufbauen wollen.",
         bullets: [
@@ -421,11 +394,11 @@ const content = {
           "Intensiver fachlicher Austausch mit unmittelbarem Praxisbezug für Ihr Team",
         ],
         ctaLabel: "Schulung anfragen",
-        ctaHref: "/weiterbildung/seminare",
+        ctaHref: "/kontakt",
         icon: "/icons/service-training.svg",
       },
       {
-        title: "RelTest Education",
+        title: "E-Learning",
         description:
           "Ideal für Einzelpersonen oder verteilte Teams, die Wissen flexibel, modular und ohne Terminabhängigkeit aufbauen und vertiefen wollen.",
         bullets: [
@@ -434,7 +407,8 @@ const content = {
           "Ideal als Ergänzung zu Inhouse-Schulungen, Projektarbeit oder individueller Weiterbildung",
         ],
         ctaLabel: "RelTest Education entdecken",
-        ctaHref: "/weiterbildung/academy",
+        ctaHref: "https://reltest-academy.com/",
+        external: true,
         icon: "/branding/reltest-education-horizontal-positive.svg",
       },
     ],
@@ -507,10 +481,10 @@ const content = {
         title:
           "Wobei RelTest Sie konkret unterstützt",
         description:
-          "Ob akutes Zuverlässigkeitsthema, methodische Absicherung, Kompetenzaufbau oder langfristige Projektbegleitung: RelTest bietet vier klare Einstiege für technische Entwicklungs- und Qualitätsaufgaben.",
+          "Von Zuverlässigkeitstechnik über Risiko und Absicherung bis zu Test, Datenanalyse und langfristiger Projektpartnerschaft: RelTest bietet vier klare Einstiege für technische Entwicklungs- und Qualitätsaufgaben.",
       },
       educationIntro: {
-        eyebrow: "Weiterbildung",
+        eyebrow: "Education",
         title: "Zwei Weiterbildungswege mit sehr unterschiedlichem Nutzen",
         description:
           "RelTest Education und Vor-Ort-Schulungen gehören beide zur Weiterbildung, lösen aber unterschiedliche Aufgaben. Genau diese Unterscheidung macht die Positionierung stärker und glaubwürdiger.",
@@ -567,24 +541,24 @@ const content = {
       services: {
         intro: {
           eyebrow: "Leistungen",
-          title: "Ein Leistungsportfolio für anspruchsvolle technische Produkte",
+          title: "Solutions für anspruchsvolle technische Produkte",
           description:
-            "RelTest Solutions verbindet Beratung, methodische Absicherung, Weiterbildung und langfristige operative Unterstützung zu einem Angebot, das sich an realen Entwicklungs- und Qualitätsherausforderungen orientiert.",
+            "RelTest Solutions verbindet Zuverlässigkeitstechnik, Risikomanagement, Test- und Datenanalyse sowie langfristige Projektpartnerschaft zu einer belastbaren technischen Unterstützung.",
         },
         overview: {
           eyebrow: "Überblick",
           title: "Leistungen im Überblick",
           description:
-            "Vier zentrale Angebote zeigen, wie RelTest unterstützt: Beratung, Weiterbildung vor Ort, RelTest Education und langfristige Kooperation. Fachthemen wie DoE, Datenanalyse, Risikomanagement und Zuverlässigkeitstechnik werden je nach Projektziel gezielt in Beratung und Kooperation eingebracht.",
+            "Vier Solutions-Felder zeigen, wobei RelTest technische Entwicklungs- und Qualitätsprojekte unterstützt. Education ist bewusst als eigener Bereich für Vor-Ort-Schulungen und E-Learning organisiert.",
         },
       },
       education: {
         intro: {
-          eyebrow: "Weiterbildung",
+          eyebrow: "Education",
           title:
-            "Weiterbildung, die sich an Ihrem Ziel und nicht an einem Standardformat orientiert",
+            "Zuverlässigkeit lernen. Im Projekt anwenden.",
           description:
-            "RelTest bietet Weiterbildung in zwei klar unterschiedlichen Formen: persönliche Inhouse-Schulungen für Teams und RelTest Education für flexibles, digitales Lernen.",
+            "Vor-Ort-Schulungen für technische Teams und digitales E-Learning für Reliability Engineering, Erprobung und Design of Experiments.",
         },
         visualAlt:
           "RelTest Experten erklären Zuverlässigkeitsanforderungen in einer Schulung",
@@ -594,9 +568,9 @@ const content = {
         supportImageAlt:
           "RelTest Experten diskutieren technische Zusammenhänge an einem Bauteil",
         formatIntro: {
-          eyebrow: "Zwei Weiterbildungswege",
+          eyebrow: "Zwei Education-Formate",
           title:
-            "Seminare und RelTest Education lösen unterschiedliche Aufgaben im Kompetenzaufbau.",
+            "Vor-Ort-Schulung und E-Learning lösen unterschiedliche Aufgaben im Kompetenzaufbau.",
           description:
             "Vor-Ort-Schulungen schaffen ein gemeinsames Methodenverständnis im Team. RelTest Education macht Grundlagen und Vertiefung flexibel verfügbar, wenn Wissen skalierbar aufgebaut werden soll.",
         },
@@ -617,12 +591,12 @@ const content = {
           "Beide Formate können einzeln genutzt oder kombiniert werden. Entscheidend ist, ob Sie ein gemeinsames Teamverständnis im direkten Austausch aufbauen oder Wissen flexibel und wiederholbar verfügbar machen möchten.",
         decisionItems: [
           {
-            title: "Inhouse-Seminar",
+            title: "Vor-Ort-Schulung",
             description:
               "Wenn konkrete Projektfragen, Diskussionen und ein gemeinsamer Methodenstandard im Team im Vordergrund stehen.",
           },
           {
-            title: "RelTest Education",
+            title: "E-Learning",
             description:
               "Wenn Mitarbeitende Grundlagen und Vertiefungen zeitlich unabhängig, strukturiert und wiederholbar lernen sollen.",
           },
@@ -780,11 +754,12 @@ const content = {
       menu: "Menu",
       inquiry: "Start an inquiry",
       servicesOverview: "Services overview",
+      educationOverview: "Education overview",
       knowledgeOverview: "Knowledge overview",
       expertiseOverview: "Expertise overview",
       items: [
         { label: "Services", href: "/leistungen" },
-        { label: "Training", href: "/weiterbildung" },
+        { label: "Education", href: "/education" },
         { label: "Knowledge", href: "/wissen" },
         { label: "Expertise", href: "/expertise" },
         { label: "About RelTest", href: "/ueber-uns" },
@@ -795,65 +770,21 @@ const content = {
           href: "/leistungen/zuverlaessigkeitstechnik",
         },
         {
-          label: "Reliability management",
-          href: "/leistungen/zuverlaessigkeitsmanagement",
-        },
-        { label: "Consulting", href: "/leistungen/beratung" },
-        {
-          label: "Design of Experiments",
-          href: "/leistungen/design-of-experiments",
+          label: "Risk & assurance",
+          href: "/leistungen/risikomanagement",
         },
         {
-          label: "Data analysis & prognostics",
+          label: "Testing & data analysis",
           href: "/leistungen/datenanalyse-prognostik",
         },
-        { label: "Risk management", href: "/leistungen/risikomanagement" },
         {
-          label: "Long-term partnership",
+          label: "Project partnership",
           href: "/leistungen/langfristige-kooperation",
         },
       ],
-      serviceGroups: [
-        {
-          title: "Service offers",
-          items: [
-            { label: "Consulting", href: "/leistungen/beratung" },
-            {
-              label: "Training and seminars",
-              href: "/weiterbildung/seminare",
-            },
-            {
-              label: "RelTest Education",
-              href: "/weiterbildung/academy",
-            },
-            {
-              label: "Long-term partnership",
-              href: "/leistungen/langfristige-kooperation",
-            },
-          ],
-        },
-        {
-          title: "Technical fields within consulting & partnership",
-          items: [
-            {
-              label: "Reliability engineering",
-              href: "/leistungen/zuverlaessigkeitstechnik",
-            },
-            {
-              label: "Reliability management",
-              href: "/leistungen/zuverlaessigkeitsmanagement",
-            },
-            {
-              label: "Design of Experiments",
-              href: "/leistungen/design-of-experiments",
-            },
-            {
-              label: "Data analysis & prognostics",
-              href: "/leistungen/datenanalyse-prognostik",
-            },
-            { label: "Risk management", href: "/leistungen/risikomanagement" },
-          ],
-        },
+      educationItems: [
+        { label: "On-site training", href: "/education#on-site-training" },
+        { label: "E-learning", href: "/education#e-learning" },
       ],
       knowledgeItems: [
         { label: "Planning", href: "/wissen/planung" },
@@ -868,10 +799,13 @@ const content = {
         { label: "Risk management", href: "/wissen/risikomanagement" },
       ],
       expertiseItems: [
-        { label: "References & industry trust", href: "/referenzen" },
-        { label: "Books & publications", href: "/literatur" },
+        {
+          label: "References & industry trust",
+          href: "/expertise#references",
+        },
+        { label: "Books & publications", href: "/expertise#books" },
         { label: "Podcast with Kevin Lucan", href: "/expertise#podcast" },
-        { label: "Industries", href: "/branchen" },
+        { label: "Industries", href: "/expertise#industries" },
       ],
     },
     footer: {
@@ -882,7 +816,7 @@ const content = {
       copyright: "© 2026 RelTest Solutions. All rights reserved.",
       links: [
         { label: "Services", href: "/leistungen" },
-        { label: "Training", href: "/weiterbildung" },
+        { label: "Education", href: "/education" },
         { label: "Knowledge", href: "/wissen" },
         { label: "Expertise", href: "/expertise" },
         { label: "Literature", href: "/literatur" },
@@ -932,51 +866,64 @@ const content = {
     },
     services: [
       {
-        title: "Consulting for companies",
+        title: "Reliability engineering",
         description:
-          "Strategic and operational support throughout the product process. Depending on the project, we bring in specific expertise in reliability engineering, DoE, data analysis and risk management.",
-        highlight: "Technical direction and methodological validation",
-        href: "/leistungen/beratung",
+          "Reliability targets, failure mechanisms and verification concepts are integrated methodically across the product lifecycle.",
+        highlight: "Robust product decisions instead of late surprises",
+        href: "/leistungen/zuverlaessigkeitstechnik",
         icon: "/icons/service-consulting.svg",
-        meta: "Consulting",
+        meta: "Reliability Engineering",
         topics: [
-          "Reliability engineering",
-          "DoE & test planning",
-          "Data analysis & prognostics",
-          "Risk management",
+          "Reliability planning",
+          "Lifetime assessment",
+          "Reliability verification",
+          "Methodological consulting",
         ],
       },
       {
-        title: "On-site training and seminars",
+        title: "Risk & validation",
         description:
-          "Practical training for teams at your premises, tailored to your products, development status and methodological maturity.",
-        highlight: "In-house, interactive and project-focused",
-        href: "/weiterbildung/seminare",
+          "Risks and weak points are prioritised systematically and translated into a traceable validation strategy.",
+        highlight: "Identify technical risks early and manage them purposefully",
+        href: "/leistungen/risikomanagement",
+        icon: "/icons/service-cooperation.svg",
+        meta: "Risk Management",
+        topics: [
+          "FMEA & FTA",
+          "Risk assessment",
+          "Validation strategy",
+          "State of the art",
+        ],
+      },
+      {
+        title: "Testing & data analysis",
+        description:
+          "Tests, field data and statistical models are planned and evaluated to produce robust technical evidence.",
+        highlight: "Turn data into traceable decisions",
+        href: "/leistungen/datenanalyse-prognostik",
         icon: "/icons/service-training.svg",
-        meta: "Training",
+        meta: "Testing & Analytics",
+        topics: [
+          "Design of Experiments",
+          "Service-life testing",
+          "Field-data analysis",
+          "Prognostics",
+        ],
       },
       {
-        title: "RelTest Education",
+        title: "Project partnership",
         description:
-          "Digital learning for engineers who want to build their reliability engineering and DoE expertise flexibly and systematically.",
-        highlight: "Scalable, location-independent and ready to use",
-        href: "/weiterbildung/academy",
-        icon: "/branding/reltest-education-horizontal-positive.svg",
-        meta: "Education",
-      },
-      {
-        title: "Long-term partnership",
-        description:
-          "Continuous support in development projects when reliability, validation and documentation need to be managed over a longer period of time.",
-        highlight: "Ownership beyond individual analyses",
+          "RelTest takes ownership of clearly defined engineering work packages and stands behind the agreed deliverables. Scope, acceptance, documentation and liability are contractually defined before the project starts.",
+        highlight:
+          "Engineering ownership with a clearly defined liability framework",
         href: "/leistungen/langfristige-kooperation",
         icon: "/icons/service-cooperation.svg",
         meta: "Engineering services",
         topics: [
-          "Reliability management",
+          "Defined engineering work packages",
           "State-of-the-art validation",
-          "Technical documentation",
-          "Review and sparring sessions",
+          "Verifiable result documentation",
+          "Responsibility & liability framework",
         ],
       },
     ],
@@ -1034,7 +981,7 @@ const content = {
     ],
     educationFormats: [
       {
-        title: "In-house training and seminars",
+        title: "On-site training",
         description:
           "Ideal for teams that want to establish methods together, address current project questions directly and quickly build practical confidence.",
         bullets: [
@@ -1043,11 +990,11 @@ const content = {
           "Intensive expert exchange with immediate practical value for your team",
         ],
         ctaLabel: "Request training",
-        ctaHref: "/weiterbildung/seminare",
+        ctaHref: "/kontakt",
         icon: "/icons/service-training.svg",
       },
       {
-        title: "RelTest Education",
+        title: "E-learning",
         description:
           "Ideal for individuals or distributed teams who want to develop and deepen their knowledge flexibly, modularly and without fixed dates.",
         bullets: [
@@ -1056,7 +1003,8 @@ const content = {
           "Ideal as a complement to in-house training, project work or individual development",
         ],
         ctaLabel: "Explore RelTest Education",
-        ctaHref: "/weiterbildung/academy",
+        ctaHref: "https://reltest-academy.com/",
+        external: true,
         icon: "/branding/reltest-education-horizontal-positive.svg",
       },
     ],
@@ -1128,10 +1076,10 @@ const content = {
         title:
           "Where RelTest supports your engineering teams",
         description:
-          "Whether you need support with an acute reliability issue, methodological validation, capability building or long-term project support, RelTest offers four clear entry points for development and quality challenges.",
+          "From reliability engineering and risk management to testing, data analysis and long-term project partnership, RelTest offers four clear entry points for development and quality challenges.",
       },
       educationIntro: {
-        eyebrow: "Professional development",
+        eyebrow: "Education",
         title: "Two learning paths with distinctly different benefits",
         description:
           "RelTest Education and on-site training are both forms of professional development, but they solve different challenges. This distinction makes the offering clearer and more credible.",
@@ -1186,24 +1134,24 @@ const content = {
       services: {
         intro: {
           eyebrow: "Services",
-          title: "A service portfolio for demanding technical products",
+          title: "Solutions for demanding technical products",
           description:
-            "RelTest Solutions combines consulting, methodological validation, professional training and long-term operational support in an offering aligned with real development and quality challenges.",
+            "RelTest Solutions combines reliability engineering, risk management, testing and data analysis with long-term project partnership.",
         },
         overview: {
           eyebrow: "Overview",
           title: "Services at a glance",
           description:
-            "Four core offers show how RelTest supports customers: consulting, on-site training, RelTest Education and long-term partnership. Technical topics such as DoE, data analysis, risk management and reliability engineering are applied within consulting and collaboration according to the project objective.",
+            "Four Solutions fields show how RelTest supports technical development and quality projects. Education is deliberately organised as a separate area for on-site training and e-learning.",
         },
       },
       education: {
         intro: {
-          eyebrow: "Professional development",
+          eyebrow: "Education",
           title:
-            "Training shaped around your objective, not a standard format",
+            "Learn reliability. Apply it in your project.",
           description:
-            "RelTest offers two clearly differentiated formats: personal in-house training for teams and RelTest Education for flexible digital learning.",
+            "On-site training for technical teams and digital learning for reliability engineering, testing and Design of Experiments.",
         },
         visualAlt:
           "RelTest experts explaining reliability requirements in a training session",
@@ -1213,9 +1161,9 @@ const content = {
         supportImageAlt:
           "RelTest experts discussing technical relationships at a component",
         formatIntro: {
-          eyebrow: "Two learning paths",
+          eyebrow: "Two Education formats",
           title:
-            "Seminars and RelTest Education solve different challenges in capability building.",
+            "On-site training and e-learning solve different capability-building challenges.",
           description:
             "On-site training creates a shared methodological foundation within a team. RelTest Education makes fundamentals and in-depth content available flexibly when knowledge needs to scale.",
         },
@@ -1236,12 +1184,12 @@ const content = {
           "Both formats can be used individually or combined. The key question is whether you need shared team alignment through direct exchange or flexible, repeatable access to structured expertise.",
         decisionItems: [
           {
-            title: "In-house seminar",
+            title: "On-site training",
             description:
               "When concrete project questions, discussion and a shared team methodology are the priority.",
           },
           {
-            title: "RelTest Education",
+            title: "E-learning",
             description:
               "When employees should learn fundamentals and advanced topics independently, systematically and repeatedly.",
           },

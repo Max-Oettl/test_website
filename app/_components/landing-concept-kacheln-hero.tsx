@@ -72,7 +72,7 @@ const conceptContent = {
         title: "Seminare vor Ort",
         description:
           "Praxisnahe Schulungen und Workshops für Entwicklungsteams, individuell auf Ihre Themen zugeschnitten.",
-        href: "/weiterbildung/seminare",
+        href: "/education#vor-ort-schulung",
         icon: "icon-seminar.svg",
         image: "seminar-audience.png",
         imageFit: "object-cover",
@@ -82,7 +82,7 @@ const conceptContent = {
         title: "RelTest Education",
         description:
           "Digitales E-Learning für Ingenieurinnen und Ingenieure, flexibel, skalierbar und sofort einsetzbar.",
-        href: "/weiterbildung/academy",
+        href: "/education#e-learning",
         icon: "icon-academy.svg",
         image: "academy-laptop.png",
         imageFit: "object-cover",
@@ -145,7 +145,7 @@ const conceptContent = {
         title: "On-site seminars",
         description:
           "Practical training and workshops for development teams, tailored to your technical topics.",
-        href: "/weiterbildung/seminare",
+        href: "/education#on-site-training",
         icon: "icon-seminar.svg",
         image: "seminar-audience.png",
         imageFit: "object-cover",
@@ -155,7 +155,7 @@ const conceptContent = {
         title: "RelTest Education",
         description:
           "Digital e-learning for engineers: flexible, scalable and ready to use.",
-        href: "/weiterbildung/academy",
+        href: "/education#e-learning",
         icon: "icon-academy.svg",
         image: "academy-laptop.png",
         imageFit: "object-cover",

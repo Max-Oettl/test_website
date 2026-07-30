@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { CollapsibleProjectList } from "./collapsible-project-list";
 import { getSiteContent, referenceLogos } from "../_content/site-content";
 import { localizeHref, type Locale } from "../_i18n/config";
 
@@ -79,6 +80,8 @@ const contentByLocale = {
     collapseLabel: "Verlauf schließen",
     resultLabel: "Projektergebnis",
     projectsCta: "Eigenes Projekt einordnen",
+    showMoreProjectsLabel: "Weitere Projektverläufe anzeigen",
+    showFewerProjectsLabel: "Weitere Projektverläufe einklappen",
     projects: [
       {
         title: "Zuverlässigkeitsprozess maßgeschneidert entwickeln und integrieren",
@@ -334,6 +337,8 @@ const contentByLocale = {
     collapseLabel: "Close journey",
     resultLabel: "Project result",
     projectsCta: "Discuss your own project",
+    showMoreProjectsLabel: "Show more project journeys",
+    showFewerProjectsLabel: "Collapse additional project journeys",
     projects: [
       {
         title: "Develop and integrate a tailored reliability process",
@@ -640,7 +645,21 @@ export function LandingConceptWinnsteinTail({
             {content.projectsTitle}
           </h2>
 
-          <div className="mt-12 space-y-6">
+          <CollapsibleProjectList
+            expandLabel={content.showMoreProjectsLabel}
+            collapseLabel={content.showFewerProjectsLabel}
+            action={
+              <Link
+                href={localizeHref(locale, "/kontakt")}
+                className="group inline-flex min-h-12 items-center justify-center gap-4 bg-brand-ink px-7 text-sm font-bold text-white transition-colors hover:bg-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-[#f7fafc]"
+              >
+                {content.projectsCta}
+                <span className="text-brand-cyan transition-transform group-hover:translate-x-1">
+                  <ArrowIcon />
+                </span>
+              </Link>
+            }
+          >
             {content.projects.map((project) => (
               <details
                 key={project.title}
@@ -726,19 +745,7 @@ export function LandingConceptWinnsteinTail({
                 </div>
               </details>
             ))}
-          </div>
-
-          <div className="mt-9 flex justify-end">
-            <Link
-              href={localizeHref(locale, "/kontakt")}
-              className="group inline-flex min-h-12 items-center gap-4 bg-brand-ink px-7 text-sm font-bold text-white transition-colors hover:bg-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-[#f7fafc]"
-            >
-              {content.projectsCta}
-              <span className="text-brand-cyan transition-transform group-hover:translate-x-1">
-                <ArrowIcon />
-              </span>
-            </Link>
-          </div>
+          </CollapsibleProjectList>
         </div>
       </section>
 

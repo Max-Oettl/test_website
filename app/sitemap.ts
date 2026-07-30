@@ -7,7 +7,7 @@ import { absoluteUrl } from "./_seo/metadata";
 const staticPaths = [
   "",
   "/leistungen",
-  "/weiterbildung",
+  "/education",
   "/wissen",
   "/expertise",
   "/prozess",

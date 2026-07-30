@@ -382,43 +382,43 @@ export const detailPageCollections: Record<
         ctaText:
           "Wir klären gemeinsam, ob ein Workshop, regelmäßiges Sparring oder eine operative Projektbegleitung sinnvoll ist.",
         primaryCta: contactLink,
-        secondaryCta: { label: "Weiterbildung ansehen", href: "/weiterbildung" },
+        secondaryCta: { label: "Education ansehen", href: "/education" },
       },
       {
         slug: "langfristige-kooperation",
         eyebrow: "Leistung",
-        title: "Langfristige Kooperation und Entwicklungsunterstützung",
+        title: "Projektpartnerschaft mit klarer Engineering-Verantwortung",
         description:
-          "RelTest übernimmt langfristig Verantwortung für methodische Absicherung, Dokumentation und technische Nachweisführung im Entwicklungsprozess.",
-        metaTitle: "Langfristige Reliability Engineering Kooperation | RelTest",
+          "RelTest übernimmt definierte Engineering-Arbeitspakete, liefert prüfbare Ergebnisse und steht im vereinbarten vertraglichen Rahmen für die eigene Leistung ein.",
+        metaTitle: "Engineering-Projektpartnerschaft & Haftung | RelTest",
         metaDescription:
-          "Langfristige Unterstützung für technische Entwicklungsprojekte: Zuverlässigkeit, Dokumentation, Stand der Technik und belastbare Nachweise.",
+          "Feste Engineering-Partnerschaft für Zuverlässigkeit: definierte Arbeitspakete, prüfbare Ergebnisse, Dokumentation und vertraglich geregelte Haftung.",
         lead:
-          "Manche Projekte brauchen mehr als einen Workshop. RelTest kann dauerhaft unterstützen und sicherstellen, dass Zuverlässigkeit nach Stand der Technik entwickelt, bewertet und dokumentiert wird.",
+          "Wenn Zuverlässigkeit dauerhaft mitgeführt werden muss, kann RelTest als fester Engineering Partner einsteigen. Vor Projektbeginn werden Leistungsumfang, Schnittstellen, Abnahme und Haftungsrahmen eindeutig vereinbart.",
         sections: [
           {
-            title: "Verantwortung über einzelne Analysen hinaus",
-            body: "Wir begleiten Entscheidungen, halten Methoden konsistent und helfen, Nachweise über den Projektverlauf hinweg nachvollziehbar aufzubauen.",
+            title: "Ein klar abgegrenztes Leistungspaket",
+            body: "RelTest übernimmt vereinbarte Analysen, Bewertungen oder Absicherungspakete nicht nur beratend, sondern mit definierten Ergebnissen, Terminen und Abnahmekriterien.",
           },
           {
-            title: "Dokumentation als technischer Schutz",
-            body: "Eine saubere Entwicklungs- und Nachweisdokumentation hilft nicht nur intern, sondern kann auch in späteren Haftungs- oder Eskalationsfragen wichtig sein.",
+            title: "Nachweise, die Entscheidungen tragen",
+            body: "Berechnungen, Annahmen, Bewertungen und Freigabegrundlagen werden so dokumentiert, dass der technische Entscheidungsweg auch später nachvollziehbar bleibt.",
           },
           {
-            title: "Entlastung für Organisationen",
-            body: "Gerade kleinere oder stark ausgelastete Teams profitieren davon, wenn methodische Tiefe zuverlässig extern mitgeführt wird.",
+            title: "Verantwortung vertraglich geregelt",
+            body: "Innerhalb des vereinbarten Leistungsumfangs steht RelTest für die eigenen Arbeitsergebnisse ein. Welche Verantwortung intern bleibt und welchen Haftungsumfang RelTest übernimmt, wird vor Projektstart festgelegt.",
           },
         ],
-        proofPointsTitle: "Mögliche Arbeitspakete",
+        proofPointsTitle: "Typische Bestandteile der Partnerschaft",
         proofPoints: [
-          "laufende Review- und Sparring-Termine",
-          "Methodenverantwortung für Zuverlässigkeitsnachweise",
-          "Erprobungs- und Datenanalysepakete",
-          "technische Dokumentation und Entscheidungsgrundlagen",
+          "klar definierte Engineering-Arbeitspakete",
+          "geregelte Schnittstellen und Abnahmekriterien",
+          "prüfbare Nachweise und Ergebnisdokumentation",
+          "vertraglich vereinbarter Verantwortungs- und Haftungsrahmen",
         ],
-        ctaTitle: "Langfristige Unterstützung planen",
+        ctaTitle: "Projektpartnerschaft konkret abgrenzen",
         ctaText:
-          "Wir besprechen, welche Verantwortung intern bleiben soll und wo RelTest dauerhaft entlasten kann.",
+          "Im Erstgespräch klären wir Aufgabe, Ergebnisverantwortung, Schnittstellen und den passenden vertraglichen Rahmen.",
         primaryCta: contactLink,
         secondaryCta: { label: "Kontakt aufnehmen", href: "/kontakt" },
       },
@@ -831,43 +831,43 @@ export const detailPageCollections: Record<
         ctaText:
           "We clarify whether a workshop, regular sparring or operational project support is the right format.",
         primaryCta: contactLinkEn,
-        secondaryCta: { label: "View training", href: "/weiterbildung" },
+        secondaryCta: { label: "View Education", href: "/education" },
       },
       {
         slug: "langfristige-kooperation",
         eyebrow: "Service",
-        title: "Long-term cooperation and development support",
+        title: "Project partnership with clear engineering responsibility",
         description:
-          "RelTest takes long-term responsibility for methodological validation, documentation and technical evidence in development projects.",
-        metaTitle: "Long-term Reliability Engineering Support | RelTest",
+          "RelTest takes ownership of defined engineering work packages, delivers verifiable results and stands behind its work within the agreed contractual framework.",
+        metaTitle: "Engineering Project Partnership & Liability | RelTest",
         metaDescription:
-          "Long-term support for technical development projects: reliability, documentation, state of the art and robust evidence.",
+          "A fixed engineering partnership for reliability: defined work packages, verifiable results, documentation and contractually agreed liability.",
         lead:
-          "Some projects need more than a workshop. RelTest can provide ongoing support and ensure that reliability is developed, evaluated and documented according to the state of the art.",
+          "When reliability must be managed continuously, RelTest can join as a fixed engineering partner. Scope, interfaces, acceptance and the liability framework are agreed before the project starts.",
         sections: [
           {
-            title: "Responsibility beyond individual analyses",
-            body: "We accompany decisions, keep methods consistent and help build traceable evidence over the course of the project.",
+            title: "A clearly defined scope of work",
+            body: "RelTest takes on agreed analyses, assessments or assurance packages with defined deliverables, schedules and acceptance criteria.",
           },
           {
-            title: "Documentation as technical protection",
-            body: "Clean development and validation documentation supports internal decisions and can matter in later escalation or liability questions.",
+            title: "Evidence that supports decisions",
+            body: "Calculations, assumptions, assessments and release evidence are documented so that the technical decision path remains traceable.",
           },
           {
-            title: "Relief for organisations",
-            body: "Smaller or heavily loaded teams benefit when methodological depth is reliably provided externally.",
+            title: "Contractually defined responsibility",
+            body: "RelTest stands behind its work within the agreed scope. The responsibilities retained by the customer and the liability assumed by RelTest are defined before the project begins.",
           },
         ],
-        proofPointsTitle: "Possible work packages",
+        proofPointsTitle: "Typical elements of the partnership",
         proofPoints: [
-          "regular review and sparring sessions",
-          "method ownership for reliability evidence",
-          "testing and data-analysis packages",
-          "technical documentation and decision material",
+          "clearly defined engineering work packages",
+          "agreed interfaces and acceptance criteria",
+          "verifiable evidence and result documentation",
+          "contractually agreed responsibility and liability framework",
         ],
-        ctaTitle: "Plan long-term support",
+        ctaTitle: "Define the project partnership",
         ctaText:
-          "We discuss which responsibility should remain internal and where RelTest can provide sustained relief.",
+          "In an initial discussion, we clarify the task, result ownership, interfaces and the appropriate contractual framework.",
         primaryCta: contactLinkEn,
       },
       {
@@ -1732,7 +1732,7 @@ export const detailPageCollections: Record<
         ctaText:
           "Wir stimmen Inhalt, Dauer und Praxisbezug passend zu Ihrem Team ab.",
         primaryCta: contactLink,
-        secondaryCta: { label: "RelTest Education ansehen", href: "/weiterbildung/academy" },
+        secondaryCta: { label: "RelTest Education ansehen", href: "/education#e-learning" },
       },
       {
         slug: "academy",
@@ -1779,26 +1779,26 @@ export const detailPageCollections: Record<
       {
         slug: "doe-praxisorientierte-statistische-versuchsplanung",
         eyebrow: "Seminar",
-        title: "DoE: praxisorientierte statistische Versuchsplanung",
+        title: "Design of Experiments (DoE) in der technischen Praxis",
         description:
-          "Seminar für technische Teams, die Versuche effizienter planen und statistisch belastbar auswerten wollen.",
+          "Für technische Teams, die mit weniger Versuchen mehr über Produkt, Prozess und relevante Einflussgrößen erfahren wollen.",
         metaTitle: "DoE Seminar | Praxisorientierte statistische Versuchsplanung",
         metaDescription:
           "DoE-Seminar für Ingenieure: Faktoren, Versuchsdesigns, Wechselwirkungen, Auswertung und technische Interpretation.",
         lead:
-          "Das Seminar verbindet die Grundlagen statistischer Versuchsplanung mit praktischen Entscheidungen in Entwicklung und Erprobung.",
+          "DoE wird dann wertvoll, wenn aus einer technischen Frage ein sinnvoller Versuchsplan und aus den Ergebnissen eine belastbare Entscheidung entsteht.",
         sections: [
           {
-            title: "Versuchsplanung verstehen",
-            body: "Teilnehmende lernen, Faktoren, Zielgrößen und Designs passend zur technischen Frage auszuwählen.",
+            title: "Von der technischen Frage zum Versuchsplan",
+            body: "Wir klären Zielgrößen, Faktoren und Randbedingungen und wählen daraus ein Versuchsdesign, das zur Aufgabe und zu den verfügbaren Ressourcen passt.",
           },
           {
-            title: "Ergebnisse interpretieren",
-            body: "Der Schwerpunkt liegt nicht nur auf Berechnung, sondern auf der technischen Bedeutung der Ergebnisse.",
+            title: "Effekte sicher voneinander trennen",
+            body: "Haupteffekte, Wechselwirkungen und Streuung werden so ausgewertet, dass statistische Ergebnisse technisch verständlich bleiben.",
           },
           {
-            title: "Direkt anwendbar",
-            body: "Praxisbeispiele und Diskussionen sorgen dafür, dass DoE im Arbeitsalltag nutzbar wird.",
+            title: "Ergebnisse in Entscheidungen übersetzen",
+            body: "An Beispielen aus Entwicklung und Erprobung übt das Team, wie aus Daten robuste Einstellungen, nächste Versuche oder konkrete Maßnahmen abgeleitet werden.",
           },
         ],
         proofPointsTitle: "Seminarinhalte",
@@ -1824,19 +1824,19 @@ export const detailPageCollections: Record<
         metaDescription:
           "Praxis-Seminar zu Zuverlässigkeit, Lebensdauererprobung, Weibull, Ausfallwahrscheinlichkeit und Testplanung.",
         lead:
-          "Das Seminar schlägt die Brücke zwischen Grundlagen der Zuverlässigkeit und konkreten Entscheidungen im Entwicklungsprojekt.",
+          "Das Seminar zeigt, wie aus Zuverlässigkeitszielen passende Prüfungen entstehen und wie Prüf- und Ausfalldaten für Freigabeentscheidungen genutzt werden.",
         sections: [
           {
-            title: "Grundlagen greifbar machen",
-            body: "Begriffe wie B10, Ausfallrate, Lebensdauer und Vertrauensbereich werden technisch verständlich eingeordnet.",
+            title: "Anforderungen in prüfbare Größen übersetzen",
+            body: "B10, Ausfallrate, Lebensdauer und Vertrauensbereich werden nicht isoliert erklärt, sondern an ihrer Bedeutung für reale Produkte eingeordnet.",
           },
           {
-            title: "Erprobung richtig planen",
-            body: "Teilnehmende lernen, wie Tests aus Anforderungen und Ausfallmechanismen abgeleitet werden.",
+            title: "Prüfungen aus Ausfallmechanismen ableiten",
+            body: "Das Team erarbeitet, welche Belastungen, Stichproben und Laufzeiten notwendig sind, damit eine Prüfung die relevante technische Frage beantwortet.",
           },
           {
-            title: "Daten bewerten",
-            body: "Prüf- und Ausfalldaten werden so interpretiert, dass sie eine Entscheidung unterstützen.",
+            title: "Aus Daten eine belastbare Aussage machen",
+            body: "Prüf- und Ausfalldaten werden ausgewertet, Unsicherheiten benannt und Ergebnisse so formuliert, dass sie eine Entscheidung tatsächlich unterstützen.",
           },
         ],
         proofPointsTitle: "Seminarinhalte",
@@ -1862,19 +1862,19 @@ export const detailPageCollections: Record<
         metaDescription:
           "Seminar zur Absicherung elektronischer Komponenten: Anforderungen, Ausfallmechanismen, Erprobung, Datenanalyse und Nachweise.",
         lead:
-          "Elektronische Komponenten stellen besondere Anforderungen an Ausfallmechanismen, Erprobung und Nachweisführung.",
+          "Bei elektronischen Komponenten müssen Umwelt, Nutzung, Alterung und mögliche Ausfallmechanismen gemeinsam betrachtet werden. Genau an dieser Verbindung setzt das Seminar an.",
         sections: [
           {
-            title: "Spezifische Risiken verstehen",
-            body: "Elektronik erfordert einen genauen Blick auf Lasten, Umgebungsbedingungen, Alterung und Nutzungsprofile.",
+            title: "Belastungen und Alterung zusammen betrachten",
+            body: "Temperatur, Feuchte, elektrische Lasten und Nutzungsprofile werden mit den relevanten Ausfallmechanismen der Komponente verknüpft.",
           },
           {
-            title: "Absicherung systematisch planen",
-            body: "Das Seminar zeigt, wie Anforderungen, Tests und Datenanalyse verbunden werden.",
+            title: "Aus Risiken eine Prüfstrategie ableiten",
+            body: "Das Team lernt, welche Prüfungen welche Aussage liefern und wie Anforderungen, Tests und Datenanalyse sinnvoll zusammenspielen.",
           },
           {
-            title: "Praxisnah für Entwicklungsteams",
-            body: "Die Inhalte werden an typische Fragestellungen aus Entwicklung und Qualitätssicherung angelehnt.",
+            title: "Nachweise nachvollziehbar dokumentieren",
+            body: "Ergebnisse und verbleibende Unsicherheiten werden so festgehalten, dass Entwicklung, Qualität und Freigabe auf derselben fachlichen Grundlage arbeiten.",
           },
         ],
         proofPointsTitle: "Fokus",
@@ -1928,7 +1928,7 @@ export const detailPageCollections: Record<
         ctaText:
           "We align content, duration and practical focus with your team.",
         primaryCta: contactLinkEn,
-        secondaryCta: { label: "View RelTest Education", href: "/weiterbildung/academy" },
+        secondaryCta: { label: "View RelTest Education", href: "/education#e-learning" },
       },
       {
         slug: "academy",
@@ -1975,26 +1975,26 @@ export const detailPageCollections: Record<
       {
         slug: "doe-praxisorientierte-statistische-versuchsplanung",
         eyebrow: "Seminar",
-        title: "DoE: practical statistical experimental design",
+        title: "Design of Experiments (DoE) in engineering practice",
         description:
-          "Seminar for technical teams that want to plan experiments more efficiently and evaluate them robustly.",
+          "For technical teams that want to learn more about their product, process and relevant factors with fewer experiments.",
         metaTitle: "DoE Seminar | Practical Statistical Experimental Design",
         metaDescription:
           "DoE seminar for engineers: factors, experimental designs, interactions, evaluation and technical interpretation.",
         lead:
-          "The seminar connects the foundations of statistical experimental design with practical decisions in development and testing.",
+          "DoE creates value when a technical question becomes a sensible experimental plan and the results lead to a robust decision.",
         sections: [
           {
-            title: "Understand experimental design",
-            body: "Participants learn to select factors, responses and designs that fit the technical question.",
+            title: "From technical question to experimental plan",
+            body: "We define responses, factors and constraints, then choose a design that fits both the engineering task and the available resources.",
           },
           {
-            title: "Interpret results",
-            body: "The focus is not only on calculation, but on the technical meaning of the results.",
+            title: "Separate relevant effects",
+            body: "Main effects, interactions and variation are evaluated without losing sight of their technical meaning.",
           },
           {
-            title: "Directly applicable",
-            body: "Practical examples and discussions make DoE usable in daily engineering work.",
+            title: "Turn results into decisions",
+            body: "Using development and testing examples, the team learns how data lead to robust settings, follow-up experiments or concrete actions.",
           },
         ],
         proofPointsTitle: "Seminar content",
@@ -2020,19 +2020,19 @@ export const detailPageCollections: Record<
         metaDescription:
           "Practical seminar on reliability, lifetime testing, Weibull, failure probability and test planning.",
         lead:
-          "The seminar bridges reliability fundamentals and concrete decisions in development projects.",
+          "The seminar shows how reliability targets become suitable tests and how test and failure data support release decisions.",
         sections: [
           {
-            title: "Make fundamentals tangible",
-            body: "Terms such as B10, failure rate, lifetime and confidence interval are placed into technical context.",
+            title: "Translate requirements into testable quantities",
+            body: "B10, failure rate, lifetime and confidence intervals are explained through their relevance to real products rather than as isolated terms.",
           },
           {
-            title: "Plan testing correctly",
-            body: "Participants learn how tests are derived from requirements and failure mechanisms.",
+            title: "Derive tests from failure mechanisms",
+            body: "The team works out which loads, sample sizes and test durations are needed to answer the relevant engineering question.",
           },
           {
-            title: "Evaluate data",
-            body: "Test and failure data are interpreted so that they support a decision.",
+            title: "Turn data into robust evidence",
+            body: "Test and failure data are evaluated, uncertainty is made explicit and results are formulated to support an actual decision.",
           },
         ],
         proofPointsTitle: "Seminar content",
@@ -2058,19 +2058,19 @@ export const detailPageCollections: Record<
         metaDescription:
           "Seminar on validation of electronic components: requirements, failure mechanisms, testing, data analysis and evidence.",
         lead:
-          "Electronic components create specific requirements for failure mechanisms, testing and evidence.",
+          "For electronic components, environment, use, ageing and potential failure mechanisms have to be considered together. This connection is the focus of the seminar.",
         sections: [
           {
-            title: "Understand specific risks",
-            body: "Electronics require a precise view of loads, environmental conditions, ageing and usage profiles.",
+            title: "Connect loads and ageing",
+            body: "Temperature, humidity, electrical loads and usage profiles are linked to the component's relevant failure mechanisms.",
           },
           {
-            title: "Plan validation systematically",
-            body: "The seminar shows how requirements, tests and data analysis are connected.",
+            title: "Derive a test strategy from risk",
+            body: "The team learns which test provides which evidence and how requirements, testing and data analysis work together.",
           },
           {
-            title: "Practical for development teams",
-            body: "The content is aligned with typical questions from development and quality assurance.",
+            title: "Document evidence clearly",
+            body: "Results and remaining uncertainty are recorded so that development, quality and release teams work from the same technical basis.",
           },
         ],
         proofPointsTitle: "Focus",
@@ -2405,33 +2405,51 @@ export const detailPageCollections: Record<
         eyebrow: "Über uns",
         title: "Dr.-Ing. Kevin Lucan",
         description:
-          "Geschäftsführer von RelTest Solutions und Ansprechpartner für Reliability Engineering, Erprobung und technische Projektbegleitung.",
+          "Geschäftsführer und Gründer von RelTest Solutions, Zuverlässigkeitsingenieur, Berater und Trainer für Reliability Engineering, Erprobung und technische Projektbegleitung.",
         metaTitle: "Dr.-Ing. Kevin Lucan | RelTest Solutions",
         metaDescription:
-          "Dr.-Ing. Kevin Lucan, Geschäftsführer von RelTest Solutions: Reliability Engineering, Erprobung, DoE und technische Beratung.",
+          "Dr.-Ing. Kevin Lucan: Geschäftsführer von RelTest Solutions, Zuverlässigkeitsingenieur sowie Experte für Erprobung, DoE, Felddaten und Normung.",
         lead:
-          "Persönlicher Kontakt ist in Beratungsprojekten wichtig. Kevin Lucan steht für die Verbindung aus technischer Tiefe, klarer Kommunikation und pragmatischer Projektarbeit.",
+          "Kevin Lucan verbindet Forschung, Normungsarbeit und industrielle Beratung. Im Projekt übersetzt er komplexe Zuverlässigkeitsfragen in nachvollziehbare Prozesse, Erprobungsstrategien und Entscheidungen.",
+        visual: {
+          src: "/about/kevin-lucan-professional.webp",
+          alt: "Dr.-Ing. Kevin Lucan, Geschäftsführer von RelTest Solutions",
+          caption:
+            "Geschäftsführer, Gründer und direkter Ansprechpartner für neue Projekte.",
+        },
         sections: [
           {
-            title: "Technische Perspektive",
-            body: "Der Fokus liegt auf Zuverlässigkeit, Erprobung, Datenanalyse und belastbaren Entwicklungsentscheidungen.",
+            title: "Universität und Verantwortung",
+            body: "Nach dem Maschinenbaustudium an der Universität Stuttgart arbeitete Kevin Lucan am Institut für Maschinenelemente. Als wissenschaftlicher Mitarbeiter und stellvertretender Leiter der Zuverlässigkeitstechnik verband er Forschung, Lehre und anwendungsnahe Industrieprojekte.",
           },
           {
-            title: "Podcast als persönlicher Einstieg",
-            body: "Über den Ingenieurshelden-Podcast erhalten Interessierte einen Eindruck von Haltung, Werdegang und technischer Denkweise.",
+            title: "Normung und beschleunigte Erprobung",
+            body: "Er arbeitet im DKE/K 132 Zuverlässigkeit mit und war an der Überarbeitung der IEC 62506 zu Methoden der beschleunigten Produkterprobung beteiligt. Damit bringt er den Stand der Technik unmittelbar in die Projektarbeit ein.",
+          },
+          {
+            title: "Lastkollektive und Promotion",
+            body: "In seiner Promotion entwickelte Kevin Lucan eine Methodik zur Ermittlung repräsentativer Lastkollektive. Zudem leitete er einen Arbeitskreis zur Standardisierung von Lastkollektiven für Nutzfahrzeugbremsen und überführte die Ergebnisse in eine europäische technische Empfehlung.",
+          },
+          {
+            title: "Beratung und Wissenstransfer",
+            body: "Heute begleitet er Unternehmen mit maßgeschneiderten Zuverlässigkeitsprozessen, Risiko- und Schwachstellenanalysen, Erprobungsstrategien, Garantie- und Kulanzdaten, Kundenlastdaten sowie Design of Experiments. Seine Erfahrung vermittelt er außerdem in Seminaren und Fachvorträgen.",
           },
         ],
-        proofPointsTitle: "Themen",
+        proofPointsTitle: "Erfahrung und fachlicher Beitrag",
         proofPoints: [
-          "Reliability Engineering",
-          "Versuchsplanung und DoE",
-          "Lebensdauer- und Datenanalyse",
-          "Projektbegleitung und Beratung",
+          "Stellvertretende Leitung Zuverlässigkeitstechnik am IMA",
+          "DKE/K 132 und Mitarbeit an IEC 62506",
+          "Methodik für repräsentative Lastkollektive",
+          "Beratung, Training und technische Projektverantwortung",
         ],
         ctaTitle: "Gespräch mit RelTest starten",
         ctaText:
-          "Für Projekt- oder Schulungsanfragen ist der Kontaktbereich der schnellste Einstieg.",
-        primaryCta: contactLink,
+          "In einem ersten Gespräch lässt sich schnell klären, welche Unterstützung für Ihre technische Fragestellung sinnvoll ist.",
+        primaryCta: {
+          label: "Termin mit Kevin vereinbaren",
+          href: "https://calendly.com/kevin-lucan",
+          external: true,
+        },
         secondaryCta: {
           label: "Podcast anhören",
           href: "https://ingenieurshelden.de/podcast-fuer-ingenieure-und-ingenieurinnen/kevin-lucan",
@@ -2443,33 +2461,50 @@ export const detailPageCollections: Record<
         eyebrow: "Über uns",
         title: "Prof. Dr.-Ing. Bernd Bertsche",
         description:
-          "Fachliche Autorität im Bereich Zuverlässigkeitstechnik und Mitautor des Springer-Fachbuchs zur Zuverlässigkeit im Fahrzeug- und Maschinenbau.",
+          "Gründer des Stuttgarter Forschungsgebiets Zuverlässigkeitstechnik, ehemaliger Institutsleiter, Industrieentwickler und international anerkannte fachliche Autorität.",
         metaTitle: "Prof. Dr.-Ing. Bernd Bertsche | RelTest Solutions",
         metaDescription:
-          "Prof. Dr.-Ing. Bernd Bertsche: fachliche Expertise zu Zuverlässigkeitstechnik, Fahrzeug- und Maschinenbau.",
+          "Prof. Dr.-Ing. Bernd Bertsche: Gründer des Forschungsgebiets Zuverlässigkeitstechnik, ehemaliger IMA-Institutsleiter, Autor und Industrieexperte.",
         lead:
-          "Die Verbindung aus wissenschaftlicher Tiefe und industrieller Anwendung ist ein wichtiges Vertrauenssignal für RelTest.",
+          "Bernd Bertsche verbindet jahrzehntelange Forschung und Lehre mit eigener Entwicklungserfahrung in der Automobilindustrie. Dieses Wissen fließt als Mentoring und fachliche Beratung in RelTest ein.",
+        visual: {
+          src: "/about/bernd-bertsche-professional.webp",
+          alt: "Prof. Dr.-Ing. Bernd Bertsche, Gründer und fachlicher Berater von RelTest Solutions",
+          caption:
+            "Gründer, Mentor und langjähriger Wissensträger der Zuverlässigkeitstechnik.",
+        },
         sections: [
           {
-            title: "Fachliche Substanz",
-            body: "Das Springer-Fachbuch zur Zuverlässigkeit im Fahrzeug- und Maschinenbau ist ein sichtbarer Beleg der methodischen Tiefe.",
+            title: "Forschung und Institutsleitung",
+            body: "Bernd Bertsche begann 1984 am Institut für Maschinenelemente der Universität Stuttgart und promovierte zur Systemzuverlässigkeit. 1996 gründete er dort das Forschungsgebiet Zuverlässigkeitstechnik; ab 2000 leitete er das IMA mit mehreren Forschungsbereichen und im Mittel rund 55 Mitarbeitenden.",
           },
           {
-            title: "Relevanz für RelTest",
-            body: "Die Inhalte der Website knüpfen an diesen Anspruch an: technische Themen sollen verständlich, aber belastbar erklärt werden.",
+            title: "Industrielle Entwicklung",
+            body: "Zwischen 1989 und 1992 arbeitete er in der Pkw-Entwicklung der Daimler AG. Dort verantwortete er unter anderem eine Stufengetriebegruppe und leitete das Projekt für einen neuen allradgetriebenen Pkw, aus dem die 4MATIC-Entwicklung hervorging.",
+          },
+          {
+            title: "Publikationen und Erfindungen",
+            body: "Neun Fachbücher, rund 300 nationale und internationale Publikationen sowie vier Patente dokumentieren seine Arbeit. Seine Dissertation wurde mit dem Forschungspreis von FAG Kugelfischer und dem Ehrenring des VDI ausgezeichnet.",
+          },
+          {
+            title: "Fachgremien und Transfer",
+            body: "Als Sprecher einer DFG-Forschergruppe, Leiter des VDI-Beirats Zuverlässigkeitsmanagement und Mitglied des DKE-Komitees K 132 prägte er den fachlichen Austausch. Zusätzlich unterstützte er über die TTI GmbH zahlreiche technologieorientierte Gründungsprojekte.",
           },
         ],
-        proofPointsTitle: "Bezug",
+        proofPointsTitle: "Erfahrung und fachlicher Beitrag",
         proofPoints: [
-          "Zuverlässigkeit im Fahrzeug- und Maschinenbau",
-          "Lebensdauer und Systemzuverlässigkeit",
-          "wissenschaftliche Methodik",
-          "Transfer in industrielle Anwendungen",
+          "Gründer des Forschungsgebiets Zuverlässigkeitstechnik",
+          "Professor und ehemaliger Institutsleiter am IMA",
+          "Neun Fachbücher, rund 300 Publikationen und vier Patente",
+          "Leitende Arbeit in DFG-, VDI- und DKE-Fachgremien",
         ],
         ctaTitle: "Fachbuch ansehen",
         ctaText:
-          "Die Literaturseite bündelt die wichtigsten Informationen zum Springer-Fachbuch.",
-        primaryCta: { label: "Zur Literatur", href: "/literatur" },
+          "Die Expertise-Seite bündelt beide Springer-Fachbücher und weitere sichtbare Belege der fachlichen Arbeit.",
+        primaryCta: {
+          label: "Fachbücher ansehen",
+          href: "/expertise#fachbuecher",
+        },
         secondaryCta: contactLink,
       },
     ],
@@ -2782,54 +2817,104 @@ detailPageCollections.industries.en = detailPageCollections.industries.de.map(
 detailPageCollections.people.en = detailPageCollections.people.de.map((page) => ({
   ...page,
   eyebrow: "About us",
+  visual: page.visual
+    ? {
+        ...page.visual,
+        alt:
+          page.slug === "kevin-lucan"
+            ? "Dr.-Ing. Kevin Lucan, Managing Director of RelTest Solutions"
+            : "Prof. Dr.-Ing. Bernd Bertsche, founder and technical advisor to RelTest Solutions",
+        caption:
+          page.slug === "kevin-lucan"
+            ? "Managing Director, founder and direct contact for new projects."
+            : "Founder, mentor and long-standing authority in reliability engineering.",
+      }
+    : undefined,
   description:
     page.slug === "kevin-lucan"
-      ? "Managing Director of RelTest Solutions and contact person for reliability engineering, testing and technical project support."
-      : "Technical authority in reliability engineering and co-author of the Springer reference on reliability in automotive and mechanical engineering.",
+      ? "Managing Director and founder of RelTest Solutions, reliability engineer, consultant and trainer for reliability engineering, testing and technical project support."
+      : "Founder of the Stuttgart reliability engineering research field, former institute director, industrial development engineer and internationally recognised technical authority.",
   metaTitle:
     page.slug === "kevin-lucan"
       ? "Dr.-Ing. Kevin Lucan | RelTest Solutions"
       : "Prof. Dr.-Ing. Bernd Bertsche | RelTest Solutions",
   metaDescription:
     page.slug === "kevin-lucan"
-      ? "Dr.-Ing. Kevin Lucan, Managing Director of RelTest Solutions: reliability engineering, testing, DoE and consulting."
-      : "Prof. Dr.-Ing. Bernd Bertsche: technical expertise in reliability engineering for automotive and mechanical engineering.",
+      ? "Dr.-Ing. Kevin Lucan: Managing Director of RelTest Solutions and expert in testing, DoE, field data, standardisation and reliability engineering."
+      : "Prof. Dr.-Ing. Bernd Bertsche: founder of the reliability engineering research field, former IMA director, author and industry expert.",
   lead:
     page.slug === "kevin-lucan"
-      ? "Personal contact matters in consulting projects. Kevin Lucan represents technical depth, clear communication and pragmatic project work."
-      : "The connection between scientific depth and industrial application is an important trust signal for RelTest.",
+      ? "Kevin Lucan combines research, standardisation and industrial consulting. In projects, he translates complex reliability questions into transparent processes, test strategies and decisions."
+      : "Bernd Bertsche combines decades of research and teaching with first-hand development experience in the automotive industry. He contributes this knowledge to RelTest through mentoring and technical advice.",
   sections:
     page.slug === "kevin-lucan"
       ? [
           {
-            title: "Technical perspective",
-            body: "The focus is on reliability, testing, data analysis and robust development decisions.",
+            title: "University and responsibility",
+            body: "After studying mechanical engineering at the University of Stuttgart, Kevin Lucan worked at the Institute of Machine Components. As a research associate and deputy head of reliability engineering, he combined research, teaching and application-oriented industrial projects.",
           },
           {
-            title: "Podcast as a personal introduction",
-            body: "The Ingenieurshelden podcast gives visitors an impression of mindset, career and technical thinking.",
+            title: "Standardisation and accelerated testing",
+            body: "He contributes to the DKE/K 132 reliability committee and participated in the revision of IEC 62506 on accelerated product testing methods. This work brings the current state of the art directly into customer projects.",
+          },
+          {
+            title: "Load spectra and doctorate",
+            body: "His doctoral research developed a methodology for determining representative load spectra. He also led a working group on standardised load spectra for commercial-vehicle brakes and helped transfer the results into a European technical recommendation.",
+          },
+          {
+            title: "Consulting and knowledge transfer",
+            body: "Today, he supports companies with tailored reliability processes, risk and weakness analyses, test strategies, warranty and goodwill data, customer load data and Design of Experiments. He also shares this experience through seminars and technical presentations.",
           },
         ]
       : [
           {
-            title: "Technical substance",
-            body: "The Springer reference on reliability in automotive and mechanical engineering is a visible proof of methodological depth.",
+            title: "Research and institute leadership",
+            body: "Bernd Bertsche joined the Institute of Machine Components at the University of Stuttgart in 1984 and completed his doctorate in system reliability. In 1996, he established reliability engineering as a research field; from 2000 onward, he directed IMA with several research groups and an average of around 55 employees.",
           },
           {
-            title: "Relevance for RelTest",
-            body: "The website follows this standard: technical topics should be explained clearly and robustly.",
+            title: "Industrial development",
+            body: "Between 1989 and 1992, he worked in passenger-car development at Daimler AG. His responsibilities included a stepped-transmission group and the project for a new all-wheel-drive passenger car that contributed to the 4MATIC development.",
+          },
+          {
+            title: "Publications and inventions",
+            body: "Nine specialist books, around 300 national and international publications and four patents document his work. His dissertation received the FAG Kugelfischer Research Award and the VDI Ring of Honour.",
+          },
+          {
+            title: "Professional bodies and transfer",
+            body: "As spokesperson for a DFG research group, head of the VDI advisory board for reliability management and member of DKE committee K 132, he shaped professional exchange. Through TTI GmbH, he also supported numerous technology-oriented start-up projects.",
           },
         ],
-  proofPointsTitle: page.slug === "kevin-lucan" ? "Topics" : "Context",
+  proofPointsTitle: "Experience and technical contribution",
+  proofPoints:
+    page.slug === "kevin-lucan"
+      ? [
+          "Deputy head of reliability engineering at IMA",
+          "DKE/K 132 and contribution to IEC 62506",
+          "Methodology for representative load spectra",
+          "Consulting, training and technical project responsibility",
+        ]
+      : [
+          "Founder of the reliability engineering research field",
+          "Professor and former institute director at IMA",
+          "Nine specialist books, around 300 publications and four patents",
+          "Leadership roles in DFG, VDI and DKE technical bodies",
+        ],
   ctaTitle:
     page.slug === "kevin-lucan"
       ? "Start a conversation with RelTest"
       : "View the technical reference",
   ctaText:
     page.slug === "kevin-lucan"
-      ? "For project or training inquiries, the contact page is the fastest starting point."
-      : "The literature page provides the central information on the Springer reference.",
-  primaryCta: page.slug === "kevin-lucan" ? contactLinkEn : { label: "View literature", href: "/literatur" },
+      ? "An initial conversation quickly clarifies which form of support is appropriate for your technical challenge."
+      : "The expertise page brings together both Springer books and further visible evidence of the technical work.",
+  primaryCta:
+    page.slug === "kevin-lucan"
+      ? {
+          label: "Schedule a meeting with Kevin",
+          href: "https://calendly.com/kevin-lucan",
+          external: true,
+        }
+      : { label: "View reference books", href: "/expertise#books" },
   secondaryCta:
     page.slug === "kevin-lucan"
       ? {

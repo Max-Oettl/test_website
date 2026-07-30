@@ -1,38 +1,19 @@
 "use client";
 
-import { useEffect, useSyncExternalStore } from "react";
-
-import {
-  getLandingConceptFromUrl,
-  getServerLandingConcept,
-  subscribeToLandingConceptChanges,
-} from "./landing-concept-store";
+import { useEffect } from "react";
 
 export function LandingConceptBodySync() {
-  const concept = useSyncExternalStore(
-    subscribeToLandingConceptChanges,
-    getLandingConceptFromUrl,
-    getServerLandingConcept,
-  );
-
   useEffect(() => {
-    const visualConcept =
-      concept === "kacheln2" ||
-      concept === "kacheln3" ||
-      concept === "kacheln31" ||
-      concept === "winnstein" ||
-      concept === "winnsteinLogo"
-        ? "kacheln"
-        : concept;
+    document.body.dataset.landingConcept = "kacheln";
+    document.body.dataset.landingConceptVariant = "winnstein";
 
-    document.body.dataset.landingConcept = visualConcept;
-    document.body.dataset.landingConceptVariant = concept;
+    const url = new URL(window.location.href);
 
-    return () => {
-      document.body.dataset.landingConcept = "current";
-      document.body.dataset.landingConceptVariant = "current";
-    };
-  }, [concept]);
+    if (url.searchParams.has("landing")) {
+      url.searchParams.delete("landing");
+      window.history.replaceState(null, "", url);
+    }
+  }, []);
 
   return null;
 }

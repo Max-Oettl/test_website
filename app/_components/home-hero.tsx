@@ -31,12 +31,12 @@ const heroContent = {
       {
         title: "Schulungen vor Ort",
         description: "Praxisnahe Seminare für Entwicklungs-, Erprobungs- und Qualitätsteams.",
-        href: "/weiterbildung/seminare",
+        href: "/education#vor-ort-schulung",
       },
       {
         title: "RelTest Education",
         description: "Strukturiertes E-Learning für Ingenieurinnen und Ingenieure.",
-        href: "/weiterbildung/academy",
+        href: "/education#e-learning",
       },
     ],
     imageAlt:
@@ -65,12 +65,12 @@ const heroContent = {
       {
         title: "On-site training",
         description: "Practical seminars for development, testing and quality teams.",
-        href: "/weiterbildung/seminare",
+        href: "/education#on-site-training",
       },
       {
         title: "RelTest Education",
         description: "Structured e-learning for engineers.",
-        href: "/weiterbildung/academy",
+        href: "/education#e-learning",
       },
     ],
     imageAlt:

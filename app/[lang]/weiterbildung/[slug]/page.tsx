@@ -1,8 +1,12 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
-import { DetailPageTemplate } from "../../../_components/detail-page-template";
+import { EducationDetailPage as EducationDetailPageView } from "../../../_components/education-detail-page";
 import { getDetailPage, getDetailPages } from "../../../_content/migration-pages";
-import { locales, resolveLocale } from "../../../_i18n/config";
+import {
+  locales,
+  localizeHref,
+  resolveLocale,
+} from "../../../_i18n/config";
 import { buildLocalizedMetadata } from "../../../_seo/metadata";
 
 type Props = {
@@ -38,11 +42,27 @@ export async function generateMetadata({ params }: Props) {
 export default async function EducationDetailPage({ params }: Props) {
   const locale = await resolveLocale(params);
   const { slug } = await params;
+
+  if (slug === "seminare") {
+    permanentRedirect(
+      localizeHref(
+        locale,
+        locale === "de"
+          ? "/education#vor-ort-schulung"
+          : "/education#on-site-training",
+      ),
+    );
+  }
+
+  if (slug === "academy") {
+    permanentRedirect(localizeHref(locale, "/education#e-learning"));
+  }
+
   const page = getDetailPage("education", locale, slug);
 
   if (!page) {
     notFound();
   }
 
-  return <DetailPageTemplate locale={locale} page={page} />;
+  return <EducationDetailPageView locale={locale} page={page} />;
 }
