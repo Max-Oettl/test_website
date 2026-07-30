@@ -555,10 +555,9 @@ const content = {
       education: {
         intro: {
           eyebrow: "Education",
-          title:
-            "Zuverlässigkeit lernen. Im Projekt anwenden.",
+          title: "Zuverlässigkeit lernen. Digital oder vor Ort.",
           description:
-            "Vor-Ort-Schulungen für technische Teams und digitales E-Learning für Reliability Engineering, Erprobung und Design of Experiments.",
+            "Flexibles E-Learning für Reliability Engineering und Design of Experiments sowie Vor-Ort-Schulungen als eigenständige Präsenzalternative.",
         },
         visualAlt:
           "RelTest Experten erklären Zuverlässigkeitsanforderungen in einer Schulung",
@@ -1148,10 +1147,9 @@ const content = {
       education: {
         intro: {
           eyebrow: "Education",
-          title:
-            "Learn reliability. Apply it in your project.",
+          title: "Learn reliability. Digitally or on site.",
           description:
-            "On-site training for technical teams and digital learning for reliability engineering, testing and Design of Experiments.",
+            "Flexible e-learning for reliability engineering and Design of Experiments, with on-site training as a separate face-to-face alternative.",
         },
         visualAlt:
           "RelTest experts explaining reliability requirements in a training session",

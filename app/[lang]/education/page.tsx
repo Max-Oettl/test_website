@@ -19,61 +19,65 @@ const educationCopy = {
     hero: {
       title: "Reliability Engineering. Digital lernen. Sicher anwenden.",
       description:
-        "RelTest Education macht Zuverlässigkeitstechnik und DoE für Ingenieurinnen und Ingenieure flexibel zugänglich: strukturiert, praxisnah und im eigenen Tempo. Vor-Ort-Schulungen ergänzen das digitale Angebot bei konkretem Teambedarf.",
-      onSiteCta: "Vor-Ort-Schulungen ergänzend",
+        "RelTest Education macht Zuverlässigkeitstechnik und DoE flexibel zugänglich. Im Mittelpunkt steht zeit- und ortsunabhängiges E-Learning; Vor-Ort-Schulungen bieten wir als eigenständige Alternative für gemeinsames Lernen mit festen Terminen an.",
+      onSiteCta: "Vor-Ort-Alternative",
       digitalCta: "Zur RelTest Education",
       imageAlt:
         "Digitales Lern-Dashboard für Reliability Engineering mit Kursmodulen und Fortschrittsanzeige",
     },
     paths: {
-      title: "E-Learning im Fokus. Vor Ort, wenn der Projektkontext zählt.",
-      description:
-        "Das digitale Lernangebot ist der skalierbare Einstieg in Reliability Engineering und DoE. Vor-Ort-Schulungen setzen dort an, wo Teams Wissen gemeinsam auf konkrete Produkte und Projekte übertragen möchten.",
+      selector: {
+        label: "Direkt zum Lernformat",
+        digitalTitle: "E-Learning",
+        digitalText: "Flexibel, ortsunabhängig und wiederholbar",
+        onSiteTitle: "Vor Ort",
+        onSiteText: "Fester Termin und direkter Austausch",
+      },
       onSite: {
-        title: "Vor-Ort-Schulungen als gezielte Ergänzung",
+        title: "Vor-Ort-Schulung: gemeinsam lernen",
         text:
-          "Wenn ein Team an derselben technischen Fragestellung arbeitet, übertragen wir Methoden gemeinsam auf Produkte, Daten und offene Projektfragen im Unternehmen.",
+          "Vor-Ort-Schulungen sind die Präsenzalternative zum digitalen Lernen. Unsere Referenten vermitteln ausgewählte Fachthemen in einem festen Seminarformat; konkrete Entwicklungsaufgaben bearbeiten wir getrennt davon im Rahmen unserer Solutions-Beratung.",
         points: [
+          "kompaktes Lernen zu festen Terminen",
+          "direkter Austausch mit unseren Referenten",
           "im Unternehmen oder an einem vereinbarten Schulungsort",
-          "auf Wissensstand und Fragestellung des Teams abgestimmt",
-          "mit Raum für Diskussion, Übungen und eigene Beispiele",
         ],
         cta: "Schulung anfragen",
       },
       digital: {
-        title: "RelTest Education: Wissen flexibel aufbauen",
+        title: "RelTest Education: flexibel und unabhängig lernen",
         text:
-          "Die digitalen Lernmodule vermitteln Reliability Engineering und DoE strukturiert, nachvollziehbar und praxisnah. Einzelne Fachkräfte und verteilte Teams können Wissen unabhängig von Ort und Zeit aufbauen.",
+          "Die digitalen Module vermitteln Reliability Engineering und DoE strukturiert und praxisnah. Lernende greifen während ihres gebuchten Nutzungszeitraums orts- und zeitunabhängig auf die Inhalte zu und können Lektionen gezielt wiederholen.",
         points: [
-          "orts- und zeitunabhängig verfügbar",
-          "Inhalte im eigenen Tempo erarbeiten und wiederholen",
-          "als Grundlage oder Ergänzung zur Präsenzschulung nutzbar",
+          "zeit- und ortsunabhängig online verfügbar",
+          "Lerntempo selbst bestimmen und Inhalte wiederholen",
+          "für einzelne Fachkräfte und ganze Teams skalierbar",
         ],
         cta: "E-Learning-Angebot ansehen",
       },
     },
     seminars: {
-      title: "Ergänzende Vor-Ort-Schulungen",
+      title: "Vor-Ort-Schulungen als Präsenzalternative",
       description:
-        "Für Teams mit einer gemeinsamen technischen Fragestellung stimmen wir Inhalt, Dauer und Beispiele direkt auf den Projektkontext ab.",
+        "Für alle, die ein festes Seminarformat und direkten Austausch bevorzugen. Die Schulungen vermitteln definierte Fachthemen; individuelle Projektarbeit ist Teil unserer separaten Solutions-Beratung.",
       linkLabel: "Seminar ansehen",
     },
     choice: {
-      title: "Digital starten. Bei Bedarf gemeinsam vertiefen.",
+      title: "Welches Lernformat passt?",
       description:
-        "Für individuelles oder standortübergreifendes Lernen ist RelTest Education der empfohlene Einstieg. Ein gemeinsamer Projektkontext spricht zusätzlich für eine Vor-Ort-Schulung.",
+        "E-Learning und Vor-Ort-Schulung vermitteln Fachwissen auf zwei unterschiedlichen Wegen. Die Wahl richtet sich danach, wie und wann gelernt werden soll – nicht nach einer aufeinander aufbauenden Reihenfolge.",
       items: [
         {
-          question: "Ein Team arbeitet an derselben technischen Frage.",
-          answer: "Vor-Ort-Schulung",
-        },
-        {
-          question: "Fachkräfte sollen Grundlagen flexibel aufbauen.",
+          question: "Zeitlich flexibel lernen und Inhalte wiederholt nutzen.",
           answer: "E-Learning",
         },
         {
-          question: "Grundlagen vorab, Anwendung anschließend im Team.",
-          answer: "Kombination",
+          question: "Gemeinsam zu einem festen Termin mit Referenten lernen.",
+          answer: "Vor-Ort-Schulung",
+        },
+        {
+          question: "Eine konkrete technische Aufgabe im Entwicklungsprojekt lösen.",
+          answer: "Solutions-Beratung",
         },
       ],
       ctaTitle: "Noch nicht sicher, welches Format sinnvoll ist?",
@@ -86,61 +90,65 @@ const educationCopy = {
     hero: {
       title: "Reliability engineering. Learn digitally. Apply with confidence.",
       description:
-        "RelTest Education makes reliability engineering and DoE accessible to engineers through structured, practical learning at their own pace. On-site training complements the digital offer for specific team needs.",
-      onSiteCta: "Complement with on-site training",
+        "RelTest Education makes reliability engineering and DoE flexibly accessible. The focus is on e-learning independent of time and location; on-site training is available as a separate alternative for learning together at scheduled times.",
+      onSiteCta: "On-site alternative",
       digitalCta: "Open RelTest Education",
       imageAlt:
         "Digital reliability engineering learning dashboard with course modules and progress tracking",
     },
     paths: {
-      title: "E-learning first. On site when project context matters.",
-      description:
-        "The digital learning programme is the scalable entry point into reliability engineering and DoE. On-site training helps teams transfer that knowledge to specific products and projects.",
+      selector: {
+        label: "Go directly to the learning format",
+        digitalTitle: "E-learning",
+        digitalText: "Flexible, location-independent and repeatable",
+        onSiteTitle: "On site",
+        onSiteText: "Scheduled sessions and direct exchange",
+      },
       onSite: {
-        title: "On-site training as a focused complement",
+        title: "On-site training: learn together",
         text:
-          "When a team shares the same technical challenge, we apply the methods directly to products, data and open project questions within the company.",
+          "On-site training is the face-to-face alternative to digital learning. Our instructors teach selected technical subjects in a scheduled seminar format; specific development tasks are handled separately through our Solutions consulting.",
         points: [
+          "focused learning at scheduled times",
+          "direct exchange with our instructors",
           "at your company or an agreed training location",
-          "aligned with the team's experience and technical questions",
-          "with time for discussion, exercises and your own examples",
         ],
         cta: "Request training",
       },
       digital: {
-        title: "RelTest Education: build knowledge flexibly",
+        title: "RelTest Education: learn flexibly and independently",
         text:
-          "The digital modules teach reliability engineering and DoE in a clear, structured and practical way. Individual engineers and distributed teams can build knowledge independent of time and location.",
+          "The digital modules teach reliability engineering and DoE in a structured and practical way. Learners can access the content independent of time and location throughout their booked access period and revisit individual lessons as needed.",
         points: [
-          "available independent of location and schedule",
-          "learn and revisit content at your own pace",
-          "use as a foundation or complement to on-site training",
+          "available online independent of time and location",
+          "set your own pace and revisit content",
+          "scalable for individual engineers and whole teams",
         ],
         cta: "View the e-learning offer",
       },
     },
     seminars: {
-      title: "Complementary on-site training",
+      title: "On-site training as a face-to-face alternative",
       description:
-        "For teams working on a shared technical challenge, we align content, duration and examples directly with the project context.",
+        "For those who prefer a scheduled seminar and direct exchange. Training covers defined technical subjects; individual project work remains part of our separate Solutions consulting.",
       linkLabel: "View seminar",
     },
     choice: {
-      title: "Start digitally. Deepen together when needed.",
+      title: "Which learning format fits?",
       description:
-        "RelTest Education is the recommended starting point for individual or distributed learning. A shared project context can then be addressed through on-site training.",
+        "E-learning and on-site training provide two different ways to build expertise. The choice depends on how and when people want to learn, not on a required sequence.",
       items: [
         {
-          question: "A team is working on the same technical question.",
-          answer: "On-site training",
-        },
-        {
-          question: "Engineers need to build fundamentals flexibly.",
+          question: "Learn flexibly and revisit content over time.",
           answer: "E-learning",
         },
         {
-          question: "Fundamentals first, team application afterwards.",
-          answer: "Combined",
+          question: "Learn together with instructors at a scheduled time.",
+          answer: "On-site training",
+        },
+        {
+          question: "Solve a specific technical task in a development project.",
+          answer: "Solutions consulting",
         },
       ],
       ctaTitle: "Not sure which format is the right fit?",
@@ -256,16 +264,52 @@ export default async function EducationPage({ params }: Props) {
         <div className="h-2 bg-brand-education" />
       </section>
 
-      <section className="bg-white px-5 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <section className="bg-white px-5 pt-14 pb-20 sm:px-6 lg:px-8 lg:pt-20 lg:pb-28">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-7 border-b border-brand-marine/15 pb-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <h2 className="max-w-2xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
-              {copy.paths.title}
-            </h2>
-            <p className="max-w-3xl text-lg leading-8 text-brand-marine/72 lg:justify-self-end">
-              {copy.paths.description}
-            </p>
-          </div>
+          <nav
+            aria-label={copy.paths.selector.label}
+            className="mb-10 grid border border-brand-marine/15 sm:grid-cols-2 lg:grid-cols-[0.62fr_1fr_1fr]"
+          >
+            <div className="flex min-h-32 items-center bg-brand-marine px-7 py-6 text-white sm:col-span-2 sm:px-9 lg:col-span-1">
+              <p className="max-w-56 font-winnstein-display text-xl leading-tight font-bold sm:text-2xl">
+                {copy.paths.selector.label}
+              </p>
+            </div>
+            <Link
+              href="https://reltest-academy.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex min-h-32 items-center justify-between gap-6 border-t border-brand-marine/15 bg-brand-education/[0.045] px-7 py-6 transition-colors hover:bg-brand-education/[0.09] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-brand-education lg:border-t-0 lg:border-l"
+            >
+              <span>
+                <span className="block font-winnstein-display text-2xl font-bold text-brand-marine">
+                  {copy.paths.selector.digitalTitle}
+                </span>
+                <span className="mt-2 block text-sm leading-6 text-brand-marine/65">
+                  {copy.paths.selector.digitalText}
+                </span>
+              </span>
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-brand-education text-white transition-transform group-hover:translate-x-1">
+                <ArrowIcon />
+              </span>
+            </Link>
+            <Link
+              href={localizeHref(locale, "/kontakt")}
+              className="group flex min-h-32 items-center justify-between gap-6 border-t border-brand-marine/15 px-7 py-6 transition-colors hover:bg-brand-steel-cyan-10 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-brand-steel-cyan sm:border-l lg:border-t-0"
+            >
+              <span>
+                <span className="block font-winnstein-display text-2xl font-bold text-brand-marine">
+                  {copy.paths.selector.onSiteTitle}
+                </span>
+                <span className="mt-2 block text-sm leading-6 text-brand-marine/65">
+                  {copy.paths.selector.onSiteText}
+                </span>
+              </span>
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-brand-steel-cyan text-brand-steel-cyan transition-transform group-hover:translate-x-1">
+                <ArrowIcon />
+              </span>
+            </Link>
+          </nav>
 
           <article
             id="e-learning"

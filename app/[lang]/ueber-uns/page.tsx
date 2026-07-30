@@ -561,7 +561,9 @@ export default async function AboutPage({ params }: Props) {
                   <div
                     key={principle}
                     className={`flex min-h-20 items-center gap-3 py-4 font-winnstein-display text-sm font-bold ${
-                      index > 0 ? "sm:border-l sm:border-white/18 sm:pl-5" : ""
+                      index > 0
+                        ? "sm:border-l sm:border-white/18 sm:px-7"
+                        : "sm:pr-7"
                     }`}
                   >
                     <span
