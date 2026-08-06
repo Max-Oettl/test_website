@@ -107,10 +107,6 @@ const conceptContent = {
       metrics: [
         { value: "Seit 2016", label: "Industrieberatung" },
         { value: "2", label: "Springer-Fachbücher" },
-        {
-          value: String(referenceLogos.length),
-          label: "Unternehmensreferenzen",
-        },
       ],
       booksEyebrow: "Springer Vieweg",
       booksTitle: "Fachwissen, das veröffentlicht und nachprüfbar ist.",
@@ -187,10 +183,6 @@ const conceptContent = {
       metrics: [
         { value: "Since 2016", label: "industrial consulting" },
         { value: "2", label: "Springer engineering books" },
-        {
-          value: String(referenceLogos.length),
-          label: "company references",
-        },
       ],
       booksEyebrow: "Springer Vieweg",
       booksTitle: "Engineering knowledge that is published and verifiable.",
@@ -425,7 +417,7 @@ export function LandingConceptKachelnTail({
               </p>
             </div>
 
-            <dl className="grid grid-cols-3 border-t border-l border-white/15">
+            <dl className="grid grid-cols-2 border-t border-l border-white/15">
               {content.trust.metrics.map((metric) => (
                 <div
                   key={metric.label}

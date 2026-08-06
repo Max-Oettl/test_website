@@ -266,7 +266,6 @@ const contentByLocale = {
       { value: "Seit 2016", label: "Industrieberatung" },
       { value: "SFZ", label: "Forschung an der Universität Stuttgart" },
       { value: "2", label: "Springer-Fachbücher" },
-      { value: String(referenceLogos.length), label: "Unternehmensreferenzen" },
     ],
     universityLabel: "Stuttgarter Forschungszentrum Zuverlässigkeitstechnik (SFZ)",
     universityAffiliation: "Universität Stuttgart",
@@ -288,7 +287,7 @@ const contentByLocale = {
     ],
     referencesTitle: "Industrieerfahrung, die sich belegen lässt.",
     referencesText:
-      "Ein ausgewählter Ausschnitt aus 27 Unternehmen, mit denen RelTest bereits zusammengearbeitet hat.",
+      "Ausgewählte Unternehmen, mit denen RelTest bereits zusammengearbeitet hat.",
     referencesCta: "Alle Referenzen ansehen",
     industriesTitle: "Zuverlässigkeit kennt keine Branchengrenzen",
     industryCta: "Branche ansehen",
@@ -523,7 +522,6 @@ const contentByLocale = {
       { value: "Since 2016", label: "industrial consulting" },
       { value: "SFZ", label: "research at the University of Stuttgart" },
       { value: "2", label: "Springer engineering books" },
-      { value: String(referenceLogos.length), label: "company references" },
     ],
     universityLabel: "Stuttgart Research Center for Reliability Engineering (SFZ)",
     universityAffiliation: "University of Stuttgart",
@@ -545,7 +543,7 @@ const contentByLocale = {
     ],
     referencesTitle: "Industrial experience backed by evidence.",
     referencesText:
-      "A selected cross-section of 27 companies RelTest has already worked with.",
+      "Selected companies RelTest has already worked with.",
     referencesCta: "View all references",
     industriesTitle: "Reliability knows no industry boundaries",
     industryCta: "Explore industry",
@@ -582,8 +580,8 @@ export function LandingConceptWinnsteinTail({
     <div className="winnstein-page-tail bg-white">
       <section className="border-b border-line-soft bg-white">
         <div className="mx-auto max-w-[120rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
-          <div className="grid overflow-hidden border border-line-soft lg:grid-cols-[minmax(20rem,0.72fr)_minmax(0,1.28fr)]">
-            <div className="flex flex-col justify-between bg-brand-steel-cyan-10 p-7 sm:p-10 lg:p-12 xl:p-14">
+          <div className="grid gap-12 lg:grid-cols-[minmax(20rem,0.72fr)_minmax(0,1.28fr)] lg:items-start lg:gap-16 xl:gap-24">
+            <div className="flex flex-col justify-between lg:py-3">
               <div>
                 <span aria-hidden="true" className="block h-1 w-20 bg-brand-cyan" />
                 <h2 className="mt-8 max-w-xl text-[clamp(2.25rem,3vw,3.65rem)] leading-[1.02] font-semibold tracking-[-0.06em] text-brand-ink">
@@ -604,32 +602,33 @@ export function LandingConceptWinnsteinTail({
               </Link>
             </div>
 
-            <nav aria-label={content.supportNavigation} className="bg-white">
+            <nav
+              aria-label={content.supportNavigation}
+              className="grid gap-x-10 sm:grid-cols-2"
+            >
               {content.supportItems.map((item) => (
                 <Link
                   key={item.href}
                   href={localizeHref(locale, item.href)}
-                  className="group grid min-h-28 grid-cols-[3.5rem_minmax(0,1fr)_2rem] items-center gap-5 border-b border-line-soft px-5 py-5 transition-colors last:border-b-0 hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:grid-cols-[4rem_minmax(0,1fr)_2.5rem] sm:gap-7 sm:px-8 lg:min-h-32 lg:border-l"
+                  className="group grid min-h-36 grid-cols-[3rem_minmax(0,1fr)_1.5rem] items-start gap-4 border-t border-line-soft py-7 transition-colors hover:border-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4 sm:gap-5"
                 >
-                  <span className="grid size-14 place-items-center bg-brand-steel-cyan-10 ring-1 ring-brand-steel-cyan/15 transition-colors group-hover:bg-white sm:size-16">
-                    <Image
-                      src={`${assetBase}/${item.icon}`}
-                      alt=""
-                      aria-hidden="true"
-                      width={44}
-                      height={44}
-                      className="h-10 w-10"
-                    />
-                  </span>
-                  <span className="min-w-0 sm:grid sm:grid-cols-[minmax(12rem,0.7fr)_minmax(14rem,1fr)] sm:items-center sm:gap-8">
+                  <Image
+                    src={`${assetBase}/${item.icon}`}
+                    alt=""
+                    aria-hidden="true"
+                    width={44}
+                    height={44}
+                    className="h-11 w-11"
+                  />
+                  <span className="min-w-0">
                     <span className="block text-lg leading-tight font-semibold tracking-[-0.035em] text-brand-ink sm:text-xl">
                       {item.title}
                     </span>
-                    <span className="mt-2 block text-sm leading-6 font-medium text-slate-500 sm:mt-0">
+                    <span className="mt-3 block max-w-md text-sm leading-6 font-medium text-slate-500">
                       {item.description}
                     </span>
                   </span>
-                  <span className="text-brand-cyan transition-transform group-hover:translate-x-1">
+                  <span className="mt-1 text-brand-cyan transition-transform group-hover:translate-x-1">
                     <ArrowIcon className="h-5 w-5" />
                   </span>
                 </Link>
@@ -651,10 +650,10 @@ export function LandingConceptWinnsteinTail({
             action={
               <Link
                 href={localizeHref(locale, "/kontakt")}
-                className="group inline-flex min-h-12 items-center justify-center gap-4 bg-brand-ink px-7 text-sm font-bold text-white transition-colors hover:bg-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-[#f7fafc]"
+                className="brand-action group inline-flex min-h-12 items-center justify-center gap-4 bg-brand-ink px-7 text-sm font-bold text-white transition-colors hover:bg-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-[#f7fafc]"
               >
                 {content.projectsCta}
-                <span className="text-brand-cyan transition-transform group-hover:translate-x-1">
+                <span className="text-white transition-transform group-hover:translate-x-1">
                   <ArrowIcon />
                 </span>
               </Link>
@@ -684,9 +683,9 @@ export function LandingConceptWinnsteinTail({
                       <span className="inline-flex items-center gap-3 text-sm font-bold text-brand-blue">
                         <span className="group-open:hidden">{content.expandLabel}</span>
                         <span className="hidden group-open:inline">{content.collapseLabel}</span>
-                        <span className="relative grid size-9 place-items-center rounded-full bg-brand-ink text-white shadow-[0_7px_18px_rgba(7,20,48,0.16)]">
-                          <span className="absolute h-0.5 w-3.5 rounded-full bg-brand-cyan" />
-                          <span className="absolute h-3.5 w-0.5 rounded-full bg-brand-cyan transition-transform duration-200 group-open:scale-y-0" />
+                        <span className="brand-icon-point relative grid size-10 place-items-center text-white">
+                          <span className="absolute h-0.5 w-3.5 bg-white" />
+                          <span className="absolute h-3.5 w-0.5 bg-white transition-transform duration-200 group-open:scale-y-0" />
                         </span>
                       </span>
                     </div>
@@ -697,10 +696,10 @@ export function LandingConceptWinnsteinTail({
                       src={project.image}
                       alt={project.imageAlt}
                       fill
-                      className="object-cover object-center opacity-90 transition-transform duration-700 group-hover:scale-[1.025]"
+                      className="object-cover object-center opacity-100 saturate-[0.92] contrast-[1.04] transition-transform duration-700 group-hover:scale-[1.025]"
                       sizes="(min-width: 1024px) 24rem, 100vw"
                     />
-                    <span className="absolute inset-0 bg-[linear-gradient(90deg,rgba(237,245,248,0.88)_0%,rgba(237,245,248,0.18)_44%,rgba(7,20,48,0.12)_100%)]" />
+                    <span className="absolute inset-0 bg-[linear-gradient(90deg,rgba(46,161,207,0.22)_0%,rgba(20,36,82,0.08)_52%,rgba(20,36,82,0.16)_100%)]" />
                   </div>
                 </summary>
 
@@ -711,7 +710,7 @@ export function LandingConceptWinnsteinTail({
                         key={`${project.title}-${milestone.title}`}
                         className="relative px-4 first:pl-0 last:pr-0"
                       >
-                        <span className="relative z-10 mx-auto grid size-14 place-items-center rounded-full border border-brand-steel-cyan/20 bg-brand-steel-cyan-10 shadow-[0_8px_22px_rgba(12,132,180,0.12)]">
+                        <span className="relative z-10 mx-auto grid size-14 place-items-center rounded-full border border-brand-steel-cyan/20 bg-brand-steel-cyan-10">
                           <Image
                             src={`${assetBase}/${milestone.icon}`}
                             alt=""
@@ -762,13 +761,13 @@ export function LandingConceptWinnsteinTail({
               </p>
             </div>
 
-            <dl className="grid grid-cols-2 border-t border-l border-white/15 bg-white/[0.035] lg:grid-cols-4">
+            <dl className="grid grid-cols-2 gap-x-8 gap-y-9 lg:grid-cols-3 lg:gap-x-10">
               {content.metrics.map((metric) => (
                 <div
                   key={metric.label}
-                  className="flex min-h-32 flex-col justify-center border-r border-b border-white/15 px-4 py-6 sm:min-h-40 sm:px-6"
+                  className="flex min-w-0 flex-col border-l-2 border-brand-steel-cyan pl-4 sm:pl-5"
                 >
-                  <dt className="mt-3 text-xs leading-5 font-semibold text-slate-400 sm:text-sm">
+                  <dt className="mt-2 text-xs leading-5 font-semibold text-slate-400 sm:text-sm">
                     {metric.label}
                   </dt>
                   <dd className="order-first text-xl leading-tight font-semibold tracking-[-0.045em] text-white sm:text-2xl xl:text-3xl">
@@ -816,7 +815,7 @@ export function LandingConceptWinnsteinTail({
                       {content.universityLabel}
                     </span>
                   </span>
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-brand-cyan transition-transform group-hover/sfz:translate-x-1">
+                  <span className="brand-icon-point flex h-10 w-10 shrink-0 items-center justify-center text-white transition-transform group-hover/sfz:translate-x-1">
                     <ArrowIcon />
                   </span>
                 </span>
@@ -835,7 +834,7 @@ export function LandingConceptWinnsteinTail({
                   >
                     <span
                       aria-hidden="true"
-                      className="mt-2 h-2 w-2 shrink-0 bg-brand-gold"
+                      className="brand-list-dash"
                     />
                     {signal}
                   </li>
@@ -864,7 +863,7 @@ export function LandingConceptWinnsteinTail({
                 </Link>
               </div>
 
-              <div className="grid flex-1 bg-brand-steel-cyan-10 sm:grid-cols-2">
+              <div className="grid flex-1 gap-8 bg-brand-steel-cyan-10 px-7 py-9 sm:grid-cols-2 sm:gap-12 sm:px-10 sm:py-11">
                 {siteContent.books.slice(0, 2).map((book, index) => (
                   <a
                     key={book.href}
@@ -872,7 +871,7 @@ export function LandingConceptWinnsteinTail({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={content.bookTitles[index]}
-                    className="group/book flex min-h-[23rem] items-center justify-center border-b border-line-soft p-5 transition-colors hover:bg-brand-steel-cyan-20 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:border-r sm:border-b-0 sm:last:border-r-0"
+                    className="group/book flex min-h-[23rem] items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
                   >
                     <Image
                       src={book.cover}
@@ -948,21 +947,21 @@ export function LandingConceptWinnsteinTail({
               <Link
                 key={industry.href}
                 href={industry.href}
-                className="group relative isolate flex min-h-32 items-center justify-between gap-7 overflow-hidden border-r border-b border-line-soft px-6 py-7 transition-colors hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:px-9"
+                className="group relative isolate grid min-h-32 grid-cols-[minmax(0,1fr)_2rem] items-center gap-5 overflow-hidden border-r border-b border-line-soft px-6 py-7 transition-colors hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:grid-cols-[minmax(0,20rem)_max-content] sm:justify-start sm:gap-9 sm:px-9"
               >
                 <Image
                   src={industry.image}
                   alt=""
                   fill
                   aria-hidden="true"
-                  className="-z-20 object-cover object-center opacity-35 saturate-[0.78] transition duration-500 group-hover:scale-[1.025] group-hover:opacity-48"
+                  className="-z-20 object-cover object-center opacity-70 saturate-[0.9] contrast-[1.04] transition duration-500 group-hover:scale-[1.025] group-hover:opacity-82"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
-                <span className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.96)_48%,rgba(255,255,255,0.64)_72%,rgba(255,255,255,0.16)_100%)]" />
+                <span className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.9)_38%,rgba(213,236,247,0.42)_64%,rgba(20,36,82,0.08)_100%)]" />
                 <span className="text-xl leading-tight font-semibold tracking-[-0.035em] text-brand-ink sm:text-2xl">
                   {industry.name}
                 </span>
-                <span className="flex shrink-0 items-center gap-3 text-sm font-bold text-brand-cyan">
+                <span className="flex min-w-0 items-center justify-self-start gap-3 text-sm font-bold text-brand-marine transition-colors group-hover:text-brand-steel-cyan">
                   <span className="hidden sm:inline">{content.industryCta}</span>
                   <span className="transition-transform group-hover:translate-x-1">
                     <ArrowIcon className="h-5 w-5" />

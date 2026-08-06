@@ -48,7 +48,7 @@ const expertiseContent = {
       title: "Industrieerfahrung in anspruchsvollen Entwicklungsumfeldern",
       description:
         "Die Referenzen zeigen, dass RelTest dort arbeitet, wo Produktzuverlässigkeit, Lebensdauer, Erprobung und belastbare Nachweise echte Projektwirkung haben.",
-      cta: "Alle {count} Referenzen ansehen",
+      cta: "Alle Referenzen ansehen",
       linkLabel: "Referenzwebsite öffnen",
       imageAlt:
         "Industriegruppe bespricht Zuverlässigkeitsdaten im Prüfumfeld",
@@ -145,7 +145,7 @@ const expertiseContent = {
       title: "Industrial experience in demanding development environments",
       description:
         "The references show that RelTest works where product reliability, lifetime, testing and robust evidence directly influence project outcomes.",
-      cta: "View all {count} references",
+      cta: "View all references",
       linkLabel: "Open reference website",
       imageAlt:
         "Industrial team discussing reliability data in a test environment",
@@ -295,7 +295,7 @@ export default async function ExpertisePage({ params }: Props) {
             <p className="mt-7 max-w-3xl text-lg leading-8 text-white/76">
               {content.intro.description}
             </p>
-            <div className="mt-10 h-1 w-16 bg-brand-gold" />
+            <div className="mt-10 h-1 w-16 bg-brand-steel-cyan" />
           </div>
           <div className="relative min-h-[25rem] border-t border-white/15 lg:min-h-[39rem] lg:border-t-0 lg:border-l">
             <Image
@@ -394,10 +394,7 @@ export default async function ExpertisePage({ params }: Props) {
                 href={localizeHref(locale, "/referenzen")}
                 className="mt-6 inline-flex items-center gap-4 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold"
               >
-                {content.reference.cta.replace(
-                  "{count}",
-                  String(referenceLogos.length),
-                )}
+                {content.reference.cta}
                 <ArrowIcon />
               </Link>
             </div>
@@ -492,11 +489,18 @@ export default async function ExpertisePage({ params }: Props) {
                     aria-label={`${content.books.externalLabel}: ${book.title}`}
                     className={`group/book-hotspot absolute z-10 -translate-x-1/2 -translate-y-1/2 ${hotspotPosition}`}
                   >
-                    <span className="relative grid size-12 place-items-center rounded-full border-2 border-white bg-brand-steel-cyan font-winnstein-display text-xs font-bold text-white shadow-[0_10px_28px_rgba(3,19,52,.35)] transition-transform duration-200 group-hover/book-hotspot:scale-110 group-focus-visible/book-hotspot:scale-110 group-focus-visible/book-hotspot:outline-none group-focus-visible/book-hotspot:ring-4 group-focus-visible/book-hotspot:ring-white/70 sm:size-14 sm:text-sm">
-                      0{index + 1}
-                      <span
+                    <span className="relative grid size-9 place-items-center transition-transform duration-200 group-hover/book-hotspot:scale-110 group-focus-visible/book-hotspot:scale-110 group-focus-visible/book-hotspot:outline-none group-focus-visible/book-hotspot:ring-4 group-focus-visible/book-hotspot:ring-white/70 sm:size-10">
+                      <Image
+                        src={
+                          index === 0
+                            ? "/branding/reltest-number-1.svg"
+                            : "/branding/reltest-number-2.svg"
+                        }
+                        alt=""
                         aria-hidden="true"
-                        className="absolute inset-[-0.55rem] -z-10 rounded-full border border-brand-steel-cyan/55 bg-white/15 transition-transform duration-300 group-hover/book-hotspot:scale-110 group-focus-visible/book-hotspot:scale-110"
+                        width={40}
+                        height={40}
+                        className="h-full w-full"
                       />
                     </span>
 
@@ -558,7 +562,7 @@ export default async function ExpertisePage({ params }: Props) {
         className="scroll-mt-28 bg-white px-5 py-20 sm:px-6 lg:px-8 lg:py-24"
       >
         <div className="mx-auto grid max-w-7xl border-y border-brand-marine/18 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-          <div className="relative min-h-[26rem] border-b border-brand-marine/18 lg:min-h-[38rem] lg:border-r lg:border-b-0">
+          <div className="relative min-h-[26rem] border-b border-brand-marine/18 lg:min-h-[38rem] lg:border-b-0">
             <Image
               src="/expertise/podcast-recording.png"
               alt={content.podcast.imageAlt}
@@ -582,7 +586,7 @@ export default async function ExpertisePage({ params }: Props) {
               href={content.podcast.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex min-h-12 w-fit items-center gap-6 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
+              className="brand-action mt-8 inline-flex min-h-12 w-fit items-center gap-6 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
             >
               {content.podcast.cta}
               <ArrowIcon />
@@ -611,7 +615,7 @@ export default async function ExpertisePage({ params }: Props) {
             </p>
             <Link
               href={localizeHref(locale, "/branchen")}
-              className="group mt-4 inline-flex min-h-14 items-center justify-between gap-8 bg-brand-marine px-7 py-4 font-winnstein-display text-sm font-bold text-white shadow-[0_16px_35px_rgba(3,19,52,.14)] transition-colors hover:bg-brand-steel-cyan"
+              className="brand-action group mt-4 inline-flex min-h-14 items-center justify-between gap-8 bg-brand-marine px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
             >
               {content.industries.cta}
               <span className="text-brand-steel-cyan transition-all group-hover:translate-x-1 group-hover:text-white">
@@ -662,14 +666,14 @@ export default async function ExpertisePage({ params }: Props) {
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href={localizeHref(locale, "/kontakt")}
-              className="inline-flex min-h-12 items-center justify-between gap-6 bg-brand-steel-cyan px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
+              className="brand-action inline-flex min-h-12 items-center justify-between gap-6 bg-brand-steel-cyan px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
             >
               {content.cta.primary}
               <ArrowIcon />
             </Link>
             <Link
               href={localizeHref(locale, "/leistungen")}
-              className="inline-flex min-h-12 items-center justify-between gap-6 border border-white/30 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white"
+              className="brand-action brand-action-outline inline-flex min-h-12 items-center justify-between gap-6 border border-white/30 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white"
             >
               {content.cta.secondary}
               <ArrowIcon />

@@ -157,6 +157,7 @@ export function LandingConceptWinnsteinHero({
   const content = conceptContent[locale];
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const activeSlide = content.slides[activeIndex];
 
   useEffect(() => {
     if (isPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -184,14 +185,14 @@ export function LandingConceptWinnsteinHero({
         onFocusCapture={() => setIsPaused(true)}
         onBlurCapture={() => setIsPaused(false)}
       >
-        <div className="relative min-h-[44rem] overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[40rem] lg:min-h-[40rem]">
+        <div className="relative min-h-[44rem] overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[40rem]">
           {content.slides.map((slide, index) => {
             const isActive = index === activeIndex;
 
             return (
               <div
                 key={slide.title}
-                aria-hidden={!isActive}
+                aria-hidden="true"
                 className={`absolute inset-0 transition-[opacity,transform] duration-1000 ease-out motion-reduce:transition-none ${
                   isActive
                     ? "z-10 scale-100 opacity-100"
@@ -207,41 +208,47 @@ export function LandingConceptWinnsteinHero({
                   className={`object-cover ${slide.imagePosition}`}
                   sizes="(min-width: 1280px) 110rem, 100vw"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.98)_35%,rgba(255,255,255,0.82)_52%,rgba(255,255,255,0.2)_78%,rgba(255,255,255,0.08)_100%)]" />
-                <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-white/85 to-transparent" />
-
-                <div className="relative flex min-h-[44rem] items-center px-6 py-16 sm:min-h-[40rem] sm:px-10 sm:py-20 lg:min-h-[40rem] lg:px-16 xl:px-20">
-                  <div className="max-w-[49rem]">
-                    <h1 className="max-w-[47rem] text-[clamp(2.65rem,4.3vw,5.25rem)] leading-[0.96] font-semibold tracking-[-0.068em] text-brand-ink">
-                      {slide.title}
-                    </h1>
-                    <p className="mt-8 max-w-[46rem] text-[clamp(1.15rem,1.35vw,1.45rem)] leading-[1.45] font-semibold tracking-[-0.015em] text-brand-marine/82">
-                      {slide.description}
-                    </p>
-                    <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
-                      <Link
-                        href={localizeHref(locale, slide.href)}
-                        className="inline-flex min-h-12 items-center justify-center gap-4 bg-brand-marine px-7 text-sm font-bold text-white shadow-[0_14px_30px_rgba(3,19,52,0.16)] transition hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
-                      >
-                        {slide.cta}
-                        <ArrowIcon />
-                      </Link>
-                      <Link
-                        href={localizeHref(locale, "/kontakt")}
-                        className="inline-flex min-h-12 items-center justify-center gap-3 border-b-2 border-brand-steel-cyan px-1 text-sm font-bold text-brand-marine transition hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
-                      >
-                        {content.contactTitle}
-                        <ArrowIcon />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
               </div>
             );
           })}
 
+          <div className="absolute inset-0 z-20 bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.98)_35%,rgba(255,255,255,0.82)_52%,rgba(255,255,255,0.2)_78%,rgba(255,255,255,0.08)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 z-20 h-44 bg-gradient-to-t from-white/85 to-transparent" />
+
+          <div className="relative z-20 flex min-h-[44rem] items-center px-6 py-16 sm:min-h-[40rem] sm:px-10 sm:py-20 lg:px-16 xl:px-20">
+            <div
+              key={activeSlide.title}
+              className="winnstein-hero-copy flex h-[31rem] w-full max-w-[56rem] flex-col sm:h-[27rem]"
+            >
+              <div className="flex min-h-0 flex-1 items-end">
+                <h1 className="max-w-[56rem] text-[clamp(2.55rem,3.7vw,4.75rem)] leading-[0.98] font-semibold tracking-[-0.06em] text-brand-ink">
+                  {activeSlide.title}
+                </h1>
+              </div>
+              <p className="mt-7 min-h-[4.25rem] max-w-[50rem] text-[clamp(1.1rem,1.25vw,1.35rem)] leading-[1.45] font-semibold tracking-[-0.015em] text-brand-marine/82">
+                {activeSlide.description}
+              </p>
+              <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
+                <Link
+                  href={localizeHref(locale, activeSlide.href)}
+                  className="brand-action inline-flex min-h-12 items-center justify-center gap-4 bg-brand-marine px-7 text-sm font-bold text-white transition hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
+                >
+                  {activeSlide.cta}
+                  <ArrowIcon />
+                </Link>
+                <Link
+                  href={localizeHref(locale, "/kontakt")}
+                  className="brand-action brand-action-outline brand-action-outline-light inline-flex min-h-12 items-center justify-center gap-3 border border-brand-marine/35 bg-white/65 px-7 text-sm font-bold text-brand-marine transition hover:border-brand-steel-cyan hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
+                >
+                  {content.contactTitle}
+                  <ArrowIcon />
+                </Link>
+              </div>
+            </div>
+          </div>
+
           <div
-            className="absolute bottom-7 left-6 z-30 flex items-center gap-2.5 sm:left-10 lg:left-16 xl:left-20"
+            className="absolute bottom-11 left-6 z-30 flex items-center gap-2.5 sm:bottom-14 sm:left-10 lg:bottom-16 lg:left-16 xl:left-20"
             aria-label={content.slideLabel}
           >
             {content.slides.map((slide, index) => {
@@ -256,7 +263,7 @@ export function LandingConceptWinnsteinHero({
                   }}
                   className={
                     isActive
-                      ? "h-2.5 w-10 bg-brand-gold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
+                      ? "h-2.5 w-10 bg-brand-steel-cyan transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
                       : "h-2.5 w-2.5 bg-brand-marine/35 transition-all duration-300 hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
                   }
                   aria-label={`${index + 1}: ${slide.title}`}
@@ -269,26 +276,26 @@ export function LandingConceptWinnsteinHero({
 
         <nav
           aria-label={content.carouselLabel}
-          className="grid border-x border-b border-line-soft bg-white shadow-[0_18px_55px_rgba(23,52,76,0.08)] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+          className="grid border-x border-b border-line-soft bg-white shadow-[0_18px_55px_rgba(23,52,76,0.08)] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
         >
           {content.services.map((service) => (
             <Link
               key={service.href}
               href={localizeHref(locale, service.href)}
-              className="group flex min-h-28 min-w-0 items-center gap-3 border-r border-b border-line-soft px-5 py-5 transition hover:z-10 hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:min-h-32 sm:px-6 xl:border-b-0 2xl:gap-5"
+              className="group flex min-h-28 min-w-0 items-center gap-3 border-r border-b border-line-soft px-5 py-5 transition hover:z-10 hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:min-h-32 sm:px-6 2xl:border-b-0"
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-brand-steel-cyan-10 ring-1 ring-brand-steel-cyan/15 transition group-hover:bg-white 2xl:h-14 2xl:w-14">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-brand-steel-cyan-10 ring-1 ring-brand-steel-cyan/15 transition group-hover:bg-white">
                 <Image
                   src={`${iconBase}/${service.icon}`}
                   alt=""
                   aria-hidden="true"
                   width={44}
                   height={44}
-                  className="h-9 w-9 2xl:h-10 2xl:w-10"
+                  className="h-9 w-9"
                 />
               </span>
               <span className="min-w-0">
-                <span className="block hyphens-auto text-base leading-tight font-semibold tracking-[-0.035em] text-brand-ink [overflow-wrap:anywhere] 2xl:text-lg">
+                <span className="block break-words text-base leading-[1.15] font-semibold tracking-[-0.025em] text-brand-ink">
                   {service.title}
                 </span>
               </span>
@@ -297,9 +304,9 @@ export function LandingConceptWinnsteinHero({
 
           <Link
             href={localizeHref(locale, "/kontakt")}
-            className="group flex min-h-28 min-w-0 items-center justify-between gap-5 bg-brand-marine px-6 py-5 text-white transition hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:col-span-2 sm:min-h-32 lg:col-span-2 xl:col-span-1"
+            className="group flex min-h-28 min-w-0 items-center justify-between gap-5 bg-brand-marine px-6 py-5 text-white transition hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:col-span-2 sm:min-h-32 lg:col-span-2 xl:col-span-4 2xl:col-span-1"
           >
-            <span className="hyphens-auto text-xl font-semibold tracking-[-0.035em] [overflow-wrap:anywhere]">
+            <span className="break-words text-xl font-semibold tracking-[-0.025em]">
               {content.contactTitle}
             </span>
             <span className="shrink-0 text-white transition-transform duration-200 group-hover:translate-x-1">

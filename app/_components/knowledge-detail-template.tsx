@@ -342,7 +342,7 @@ export function KnowledgeDetailTemplate({ locale, page }: { locale: Locale; page
               <div className="mt-7 grid gap-3">
                 {page.proofPoints.map((point) => (
                   <div key={point} className="flex gap-3 rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200">
-                    <span className={`mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r ${theme.gradient}`} />
+                    <span aria-hidden="true" className="brand-list-dash" />
                     <p className="text-sm leading-7 font-medium text-slate-700">
                       {point}
                     </p>
@@ -439,7 +439,7 @@ export function KnowledgeDetailTemplate({ locale, page }: { locale: Locale; page
                   href={resolveHref(locale, page.primaryCta.href)}
                   target={page.primaryCta.external ? "_blank" : undefined}
                   rel={page.primaryCta.external ? "noopener noreferrer" : undefined}
-                  className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-4 text-sm font-bold text-slate-950 transition-colors hover:bg-cyan-300"
+                  className="brand-chamfer-control inline-flex items-center justify-center bg-cyan-400 px-6 py-4 text-sm font-bold text-slate-950 transition-colors hover:bg-cyan-300"
                 >
                   {page.primaryCta.label}
                 </Link>
@@ -448,7 +448,7 @@ export function KnowledgeDetailTemplate({ locale, page }: { locale: Locale; page
                     href={resolveHref(locale, page.secondaryCta.href)}
                     target={page.secondaryCta.external ? "_blank" : undefined}
                     rel={page.secondaryCta.external ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-4 text-sm font-bold text-white transition-colors hover:border-cyan-300 hover:text-cyan-200"
+                    className="brand-action brand-action-outline inline-flex items-center justify-center border border-white/15 px-6 py-4 text-sm font-bold text-white transition-colors hover:border-cyan-300 hover:text-cyan-200"
                   >
                     {page.secondaryCta.label}
                   </Link>
@@ -466,7 +466,7 @@ export function KnowledgeDetailTemplate({ locale, page }: { locale: Locale; page
                     href={resolveHref(locale, link.href)}
                     target={"external" in link && link.external ? "_blank" : undefined}
                     rel={"external" in link && link.external ? "noopener noreferrer" : undefined}
-                    className="rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm font-semibold text-slate-100 transition-colors hover:border-cyan-300 hover:text-cyan-200"
+                    className="brand-chamfer-control-sm border border-white/10 bg-white/8 px-4 py-2 text-sm font-semibold text-slate-100 transition-colors hover:border-cyan-300 hover:text-cyan-200"
                   >
                     {link.label}
                   </Link>

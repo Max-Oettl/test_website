@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Hintergrund" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 42.5 42.5">
+  <!-- Generator: Adobe Illustrator 30.5.1, SVG Export Plug-In . SVG Version: 2.1.4 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #fff;
+      }
+
+      .st2 {
+        fill: #0c84b4;
+      }
+
+      .st3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st0" x="0" y="0" width="42.5" height="42.5"/>
+    </clipPath>
+  </defs>
+  <g class="st3">
+    <path class="st2" d="M42.5,14.6V0S10.9,0,10.9,0C4.9,0,0,4.9,0,10.9v2.1s0,0,0,0v3.1s0,0,0,0v4.8h0S0,23.3,0,23.3H0v10.2s0,0,0,0v2.4s0,0,0,0v6.6h34.3l8.2-8s0,0,0,0v-2.4s0,0,0,0v-15h0s0-2.4,0-2.4h0Z"/>
+  </g>
+  <path class="st1" d="M11.2,26h-3.5c1.4,4.4,4.9,7.8,9.3,9.2v-3.5c-2.6-1-4.7-3.1-5.8-5.6ZM7.6,17.8h3.5c1.1-2.8,3.2-5,6-6.1v-3.5c-4.6,1.4-8.2,5-9.4,9.6ZM31,26c-1.1,2.6-3.2,4.6-5.8,5.7v3.5c4.4-1.4,7.9-4.8,9.4-9.2h-3.6ZM25.2,8.2v3.5c2.7,1.1,4.9,3.3,6,6.1h3.5c-1.3-4.6-4.9-8.2-9.5-9.6Z"/>
+  <circle class="st1" cx="21.1" cy="21.7" r="5.4"/>
+  <rect class="st1" x="2.9" y="20.3" width="10.1" height="3.3"/>
+  <rect class="st1" x="29.3" y="20.3" width="10" height="3.3"/>
+  <rect class="st1" x="19.5" y="30.1" width="3.3" height="10.1"/>
+  <rect class="st1" x="19.5" y="3.7" width="3.3" height="10"/>
+</svg>

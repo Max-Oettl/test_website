@@ -21,4 +21,6 @@ RelTest-Website.
 - [Folgetermin Website-Relaunch](C:/Users/MaximilianÖttl/Documents/test_website/docs/project/folgetermin-website-relaunch.md)
 - [SEO-Codex-Leitfaden](C:/Users/MaximilianÖttl/Documents/test_website/docs/seo/seo-codex-leitfaden.md)
 - [SEO-Audit und Aufgaben](C:/Users/MaximilianÖttl/Documents/test_website/docs/seo/seo-audit-und-aufgaben.md)
+- [Wissensinventar der alten Website](C:/Users/MaximilianÖttl/Documents/test_website/docs/seo/wissensinventar-alte-website.md)
 - [RelTest Website Vision](C:/Users/MaximilianÖttl/Documents/test_website/docs/vision/reltest-website-vision.md)
+- [Corporate Design Webregeln](C:/Users/MaximilianÖttl/Documents/test_website/docs/vision/corporate-design-web-regeln.md)

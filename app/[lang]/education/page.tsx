@@ -207,30 +207,38 @@ export default async function EducationPage({ params }: Props) {
         <div className="absolute -right-20 top-0 h-80 w-80 rounded-full border border-brand-education/20" />
         <div className="absolute -right-4 top-16 h-56 w-56 rounded-full border border-brand-education/15" />
 
-        <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,0.9fr)_minmax(32rem,1.1fr)]">
-          <div className="flex flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-            <div className="w-fit bg-white px-5 py-3">
+        <div className="relative mx-auto grid max-w-7xl lg:grid-cols-2">
+          <div className="flex flex-col justify-center px-5 py-14 sm:px-8 lg:px-10 lg:py-16">
+            <div className="w-fit">
               <Image
-                src="/branding/reltest-education-horizontal-positive.svg"
+                src="/branding/reltest-education-horizontal-negative.svg"
                 alt="RelTest Education"
                 width={466}
                 height={226}
                 priority
-                className="h-auto w-52 sm:w-60"
+                className="h-auto w-60 sm:w-72"
               />
             </div>
-            <h1 className="mt-10 max-w-3xl font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[4.35rem]">
-              {copy.hero.title}
+            <h1 className="mt-7 max-w-3xl font-winnstein-display text-4xl leading-[1.08] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[2.8rem] xl:text-5xl">
+              {copy.hero.title.split(". ").map((line, index, lines) => (
+                <span
+                  key={line}
+                  className="block xl:whitespace-nowrap"
+                >
+                  {line}
+                  {index < lines.length - 1 ? "." : ""}
+                </span>
+              ))}
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-white/78 lg:text-lg">
               {copy.hero.description}
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="https://reltest-academy.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-14 items-center justify-between gap-7 bg-brand-education px-7 py-4 font-winnstein-display text-base font-bold text-white shadow-[0_18px_45px_rgba(0,167,84,.22)] transition-colors hover:bg-[#008f48]"
+                className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-education px-7 py-4 font-winnstein-display text-base font-bold text-white transition-colors hover:bg-[#008f48]"
               >
                 {copy.hero.digitalCta}
                 <ArrowIcon />
@@ -241,7 +249,7 @@ export default async function EducationPage({ params }: Props) {
                     ? "#vor-ort-schulung"
                     : "#on-site-training"
                 }
-                className="inline-flex min-h-14 items-center justify-between gap-5 border border-white/35 px-6 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
+                className="brand-action brand-action-outline inline-flex min-h-14 items-center justify-between gap-5 border border-white/35 px-6 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
               >
                 {copy.hero.onSiteCta}
                 <ArrowIcon />
@@ -249,7 +257,7 @@ export default async function EducationPage({ params }: Props) {
             </div>
           </div>
 
-          <div className="relative min-h-[25rem] border-t border-white/15 lg:min-h-[42rem] lg:border-t-0 lg:border-l">
+          <div className="relative min-h-[24rem] border-t border-white/15 lg:min-h-[36rem] lg:border-t-0 lg:border-l">
             <Image
               src="/education/digital-learning-hero.png"
               alt={copy.hero.imageAlt}
@@ -289,7 +297,7 @@ export default async function EducationPage({ params }: Props) {
                   {copy.paths.selector.digitalText}
                 </span>
               </span>
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-brand-education text-white transition-transform group-hover:translate-x-1">
+              <span className="brand-action flex h-11 w-11 shrink-0 items-center justify-center bg-brand-education text-white transition-transform group-hover:translate-x-1">
                 <ArrowIcon />
               </span>
             </Link>
@@ -305,7 +313,7 @@ export default async function EducationPage({ params }: Props) {
                   {copy.paths.selector.onSiteText}
                 </span>
               </span>
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-brand-steel-cyan text-brand-steel-cyan transition-transform group-hover:translate-x-1">
+              <span className="brand-action brand-action-outline brand-action-outline-light flex h-11 w-11 shrink-0 items-center justify-center text-brand-steel-cyan transition-transform group-hover:translate-x-1">
                 <ArrowIcon />
               </span>
             </Link>
@@ -320,15 +328,15 @@ export default async function EducationPage({ params }: Props) {
                 href="https://reltest-academy.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-fit bg-white px-5 py-3 transition-transform hover:-translate-y-0.5"
+                className="w-fit transition-transform hover:-translate-y-0.5"
                 aria-label={copy.paths.digital.cta}
               >
                 <Image
-                  src="/branding/reltest-education-horizontal-positive.svg"
+                  src="/branding/reltest-education-horizontal-negative.svg"
                   alt="RelTest Education"
                   width={466}
                   height={226}
-                  className="h-auto w-56 sm:w-72"
+                  className="h-auto w-64 sm:w-80"
                 />
               </Link>
               <h2 className="mt-9 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
@@ -343,7 +351,10 @@ export default async function EducationPage({ params }: Props) {
                     key={point}
                     className="flex gap-4 py-4 text-sm leading-6 font-semibold text-white/90"
                   >
-                    <span className="mt-2 h-2 w-2 shrink-0 bg-brand-education" />
+                    <span
+                      aria-hidden="true"
+                      className="brand-list-dash brand-list-dash-education"
+                    />
                     {point}
                   </li>
                 ))}
@@ -352,7 +363,7 @@ export default async function EducationPage({ params }: Props) {
                 href="https://reltest-academy.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-9 inline-flex min-h-14 w-full items-center justify-between gap-7 bg-brand-education px-7 py-4 font-winnstein-display text-base font-bold text-white shadow-[0_18px_45px_rgba(0,167,84,.2)] transition-colors hover:bg-[#008f48] sm:w-fit"
+                className="brand-action mt-9 inline-flex min-h-14 w-full items-center justify-between gap-7 bg-brand-education px-7 py-4 font-winnstein-display text-base font-bold text-white transition-colors hover:bg-[#008f48] sm:w-fit"
               >
                 {copy.paths.digital.cta}
                 <ArrowIcon />
@@ -406,7 +417,10 @@ export default async function EducationPage({ params }: Props) {
                     key={point}
                     className="flex gap-4 py-4 text-sm leading-6 font-semibold"
                   >
-                    <span className="mt-2 h-2 w-2 shrink-0 bg-brand-education" />
+                    <span
+                      aria-hidden="true"
+                      className="brand-list-dash brand-list-dash-education"
+                    />
                     {point}
                   </li>
                 ))}
@@ -456,7 +470,7 @@ export default async function EducationPage({ params }: Props) {
                 </span>
                 <span className="inline-flex items-center gap-4 font-winnstein-display text-sm font-bold">
                   {copy.seminars.linkLabel}
-                  <span className="flex h-10 w-10 items-center justify-center border border-brand-marine/20 group-hover:border-white/30">
+                  <span className="education-seminar-icon brand-action brand-action-outline brand-action-outline-light flex h-10 w-10 items-center justify-center">
                     <ArrowIcon />
                   </span>
                 </span>
@@ -508,7 +522,7 @@ export default async function EducationPage({ params }: Props) {
           </div>
           <Link
             href={localizeHref(locale, "/kontakt")}
-            className="inline-flex min-h-12 items-center justify-between gap-6 bg-brand-education px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#008f48]"
+            className="brand-action inline-flex min-h-12 items-center justify-between gap-6 bg-brand-education px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#008f48]"
           >
             {copy.choice.ctaLabel}
             <ArrowIcon />

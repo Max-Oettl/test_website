@@ -74,9 +74,7 @@ export default async function LocaleLayout({
     "@type": "Organization",
     name: "RelTest Solutions GmbH",
     url: siteUrl,
-    logo: absoluteUrl(
-      "/branding/reltest-solutions-horizontal-positive.svg",
-    ),
+    logo: absoluteUrl("/branding/reltest-horizontal-positive.svg"),
     email: "info@reltest-solutions.com",
     telephone: "+49 711 25253531",
     address: {

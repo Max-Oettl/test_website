@@ -57,7 +57,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   return (
     <>
       <LandingConceptBodySync />
-      <header className="site-header-shell sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+      <header className="site-header-shell sticky top-0 z-50 border-b border-brand-steel-cyan/20 bg-white/95 backdrop-blur-xl">
       <div className="site-header-inner mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-6 lg:px-8">
         <Link
           href={localizeHref(locale, "/")}
@@ -67,9 +67,6 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           <span className="site-header-logo-mark relative block h-11 w-36 sm:w-44">
             <ConceptBrandLogo placement="header" />
           </span>
-          <span className="site-header-claim hidden text-xs font-medium uppercase tracking-[0.22em] text-cyan-700 2xl:block">
-            Reliability & Testing
-          </span>
         </Link>
 
         <nav
@@ -78,6 +75,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         >
           {navigation.items.map((item) => {
             const dropdown = dropdowns[item.href];
+            const isEducationItem = item.href === "/education";
             const dropdownItems =
               dropdown?.items?.map((dropdownItem) =>
                 removeHash(dropdownItem.href),
@@ -86,9 +84,16 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
               (href) => localizeHref(locale, href),
             );
             const topLinkClassName =
-              "site-nav-link block whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-cyan-700";
-            const topActiveClassName =
-              "site-nav-link-active bg-cyan-50 text-cyan-800 ring-1 ring-cyan-100";
+              `site-nav-link ${
+                isEducationItem
+                  ? "site-nav-link-education hover:text-brand-education"
+                  : "hover:text-brand-steel-cyan"
+              } block whitespace-nowrap px-2 py-2 font-winnstein-display text-sm font-semibold text-brand-marine transition-colors`;
+            const topActiveClassName = `site-nav-link-active ${
+              isEducationItem
+                ? "site-nav-link-education-active text-brand-education"
+                : "text-brand-marine"
+            }`;
 
             return dropdown ? (
               <div key={item.href} className="group relative">
@@ -102,24 +107,24 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 </ActiveNavLink>
 
                 <div
-                  className={`pointer-events-none absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100 ${
+                  className={`site-nav-dropdown-shell pointer-events-none absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100 ${
                     dropdown.width === "wide" ? "w-96" : "w-72"
                   }`}
                 >
-                  <div className="site-nav-dropdown rounded-2xl border border-slate-200 bg-white p-3 shadow-2xl shadow-slate-950/10">
+                  <div className="site-nav-dropdown border border-brand-marine/15 bg-white p-3">
                     <ActiveNavLink
                       href={localizeHref(locale, item.href)}
-                      className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 hover:text-cyan-700"
-                      activeClassName="bg-cyan-50 text-cyan-800 ring-1 ring-cyan-100"
+                      className="block border-l-2 border-transparent px-4 py-3 font-winnstein-display text-sm font-semibold text-brand-marine hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-steel-cyan"
+                      activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
                     >
                       {dropdown.overview}
                     </ActiveNavLink>
-                    <div className="my-2 h-px bg-slate-200" />
+                    <div className="my-2 h-px bg-brand-marine/10" />
                     {dropdown.groups ? (
                       <div className="grid gap-3">
                         {dropdown.groups.map((group) => (
                           <div key={group.title}>
-                            <p className="px-4 pb-1 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-cyan-700">
+                            <p className="px-4 pb-1 font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.16em] text-brand-steel-cyan">
                               {group.title}
                             </p>
                             <div className="grid gap-1">
@@ -127,8 +132,8 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                                 <ActiveNavLink
                                   key={dropdownItem.href}
                                   href={localizeHref(locale, dropdownItem.href)}
-                                  className="block rounded-xl px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
-                                  activeClassName="bg-cyan-50 text-cyan-800"
+                                  className="block border-l-2 border-transparent px-4 py-2.5 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
+                                  activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
                                 >
                                   {dropdownItem.label}
                                 </ActiveNavLink>
@@ -143,7 +148,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                           <Link
                             key={dropdownItem.href}
                             href={localizeHref(locale, dropdownItem.href)}
-                            className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
+                            className="block border-l-2 border-transparent px-4 py-3 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
                           >
                             {dropdownItem.label}
                           </Link>
@@ -151,8 +156,8 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                           <ActiveNavLink
                             key={dropdownItem.href}
                             href={localizeHref(locale, dropdownItem.href)}
-                            className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
-                            activeClassName="bg-cyan-50 text-cyan-800"
+                            className="block border-l-2 border-transparent px-4 py-3 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
+                            activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
                           >
                             {dropdownItem.label}
                           </ActiveNavLink>
@@ -182,25 +187,26 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         <div className="site-header-actions hidden items-center gap-3 xl:flex">
           <Link
             href={localizeHref(locale, "/kontakt")}
-            className="site-header-cta whitespace-nowrap rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-cyan-800"
+            className="brand-action site-header-cta whitespace-nowrap bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan"
           >
             {navigation.inquiry}
           </Link>
-          <div className="site-header-language ml-1 border-l border-slate-200 pl-4">
+          <div className="site-header-language ml-1 border-l border-brand-marine/15 pl-4">
             <LanguageSwitcher locale={locale} />
           </div>
         </div>
 
         <details className="group relative xl:hidden">
-          <summary className="flex cursor-pointer list-none items-center rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-800 [&::-webkit-details-marker]:hidden">
+          <summary className="flex cursor-pointer list-none items-center border border-brand-marine/20 px-4 py-2 font-winnstein-display text-sm font-semibold text-brand-marine [&::-webkit-details-marker]:hidden">
             {navigation.menu}
           </summary>
-          <div className="absolute right-0 mt-3 w-72 rounded-2xl border border-slate-200 bg-white p-3 shadow-2xl shadow-slate-950/10">
+          <div className="absolute right-0 mt-3 w-72 border border-brand-marine/15 bg-white p-3 shadow-[0_18px_45px_rgba(20,36,82,0.12)]">
             <div className="mb-2 px-2">
               <LanguageSwitcher locale={locale} compact />
             </div>
             {navigation.items.map((item) => {
               const dropdown = dropdowns[item.href];
+              const isEducationItem = item.href === "/education";
               const dropdownItems =
                 dropdown?.items?.map((dropdownItem) =>
                   removeHash(dropdownItem.href),
@@ -210,12 +216,20 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
               );
 
               return dropdown ? (
-                <div key={item.href} className="rounded-xl px-2 py-2">
+                <div key={item.href} className="px-2 py-2">
                   <ActiveNavLink
                     href={localizeHref(locale, item.href)}
-                    className="block rounded-xl px-2 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50 hover:text-cyan-700"
+                    className={`block border-l-2 border-transparent px-2 py-2 font-winnstein-display text-sm font-semibold text-brand-marine ${
+                      isEducationItem
+                        ? "hover:border-brand-education hover:bg-brand-education/[0.07] hover:text-brand-education"
+                        : "hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10"
+                    }`}
                     activeHrefs={activeHrefs}
-                    activeClassName="bg-cyan-50 text-cyan-800 ring-1 ring-cyan-100"
+                    activeClassName={
+                      isEducationItem
+                        ? "border-brand-education bg-brand-education/[0.07] text-brand-education"
+                        : "border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
+                    }
                   >
                     {dropdown.overview}
                   </ActiveNavLink>
@@ -223,7 +237,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     {dropdown.groups ? (
                       dropdown.groups.map((group) => (
                         <div key={group.title} className="mt-2">
-                          <p className="px-4 pb-1 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-cyan-700">
+                          <p className="px-4 pb-1 font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.16em] text-brand-steel-cyan">
                             {group.title}
                           </p>
                           <div className="grid gap-1">
@@ -231,8 +245,8 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                               <ActiveNavLink
                                 key={dropdownItem.href}
                                 href={localizeHref(locale, dropdownItem.href)}
-                                className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
-                                activeClassName="bg-cyan-50 text-cyan-800"
+                                className="block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
+                                activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
                               >
                                 {dropdownItem.label}
                               </ActiveNavLink>
@@ -246,7 +260,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                           <Link
                             key={dropdownItem.href}
                             href={localizeHref(locale, dropdownItem.href)}
-                            className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
+                            className="block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
                           >
                             {dropdownItem.label}
                           </Link>
@@ -254,8 +268,8 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                           <ActiveNavLink
                             key={dropdownItem.href}
                             href={localizeHref(locale, dropdownItem.href)}
-                            className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
-                            activeClassName="bg-cyan-50 text-cyan-800"
+                            className="block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
+                            activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
                           >
                             {dropdownItem.label}
                           </ActiveNavLink>
@@ -268,8 +282,8 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 <ActiveNavLink
                   key={item.href}
                   href={localizeHref(locale, item.href)}
-                  className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-cyan-700"
-                  activeClassName="bg-cyan-50 font-semibold text-cyan-800 ring-1 ring-cyan-100"
+                  className="block border-l-2 border-transparent px-4 py-3 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
+                  activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 font-semibold text-brand-marine"
                 >
                   {item.label}
                 </ActiveNavLink>
@@ -277,7 +291,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             })}
             <Link
               href={localizeHref(locale, "/kontakt")}
-              className="mt-2 flex rounded-xl bg-slate-950 px-4 py-3 text-sm font-semibold text-white"
+              className="brand-action site-header-cta mt-2 flex bg-brand-marine px-4 py-3 font-winnstein-display text-sm font-semibold text-white"
             >
               {navigation.inquiry}
             </Link>

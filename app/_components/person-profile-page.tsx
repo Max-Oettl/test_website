@@ -123,7 +123,7 @@ function ProfileLink({
       rel={external ? "noopener noreferrer" : undefined}
       className={
         primary
-          ? "inline-flex min-h-12 items-center justify-center gap-3 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
+          ? "brand-action inline-flex min-h-12 items-center justify-center gap-3 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
           : "inline-flex items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan"
       }
     >
@@ -249,18 +249,14 @@ export function PersonProfilePage({
             aria-label={personCopy.topicsLabel}
             className="divide-y divide-line-soft border-y border-line-soft"
           >
-            {page.proofPoints.map((point, index) => (
+            {page.proofPoints.map((point) => (
               <li
                 key={point}
-                className="grid grid-cols-[0.75rem_1fr] items-center gap-4 py-5"
+                className="grid grid-cols-[1rem_1fr] items-center gap-4 py-5"
               >
                 <span
                   aria-hidden="true"
-                  className={`h-2.5 w-2.5 ${
-                    index === 1
-                      ? "bg-brand-gold"
-                      : "bg-brand-steel-cyan"
-                  }`}
+                  className="brand-list-dash brand-list-dash-center"
                 />
                 <span className="font-winnstein-display text-base font-semibold leading-6">
                   {point}
@@ -286,7 +282,7 @@ export function PersonProfilePage({
                   href={podcastUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-12 items-center justify-center gap-3 bg-white px-6 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:bg-brand-steel-cyan-10"
+                  className="brand-action inline-flex min-h-12 items-center justify-center gap-3 bg-white px-6 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:bg-brand-steel-cyan-10"
                 >
                   {copy.kevin.podcastLabel}
                   <ArrowIcon />

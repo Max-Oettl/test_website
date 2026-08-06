@@ -264,7 +264,7 @@ export default async function IndustriesPage({ params }: Props) {
             <p className="mt-7 max-w-3xl text-lg leading-8 text-white/76">
               {content.hero.description}
             </p>
-            <div className="mt-10 h-1 w-16 bg-brand-gold" />
+            <div className="mt-10 h-1 w-16 bg-brand-steel-cyan" />
           </div>
           <div className="grid min-h-[30rem] grid-cols-2 border-t border-white/15 lg:min-h-[39rem] lg:border-t-0 lg:border-l">
             {heroImages.map((industry) => (
@@ -364,14 +364,14 @@ export default async function IndustriesPage({ params }: Props) {
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href={localizeHref(locale, "/kontakt")}
-              className="inline-flex min-h-12 items-center justify-between gap-6 bg-brand-steel-cyan px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
+              className="brand-action inline-flex min-h-12 items-center justify-between gap-6 bg-brand-steel-cyan px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
             >
               {content.cta.primary}
               <ArrowIcon />
             </Link>
             <Link
               href={localizeHref(locale, "/leistungen")}
-              className="inline-flex min-h-12 items-center justify-between gap-6 border border-white/30 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white"
+              className="brand-action brand-action-outline inline-flex min-h-12 items-center justify-between gap-6 border border-white/30 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white"
             >
               {content.cta.secondary}
               <ArrowIcon />

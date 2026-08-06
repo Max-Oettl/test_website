@@ -30,10 +30,10 @@ export function ConceptBrandLogo({ placement }: ConceptBrandLogoProps) {
       <Image
         src={
           useNewLogo
-            ? "/branding/reltest-solutions-horizontal-positive.svg"
+            ? "/branding/reltest-horizontal-positive.svg"
             : "/reltest-solutions-logo.png"
         }
-        alt="RelTest Solutions"
+        alt={useNewLogo ? "RelTest" : "RelTest Solutions"}
         fill
         priority
         className="object-contain object-left"
@@ -43,12 +43,12 @@ export function ConceptBrandLogo({ placement }: ConceptBrandLogoProps) {
   }
 
   return useNewLogo ? (
-    <div className="flex h-24 w-72 items-center">
+    <div className="flex h-28 w-80 max-w-full items-center">
       <Image
-        src="/branding/reltest-solutions-horizontal-negative.svg"
-        alt="RelTest Solutions GmbH"
+        src="/branding/reltest-horizontal-negative.svg"
+        alt="RelTest"
         width={466}
-        height={226}
+        height={195}
         className="h-full w-full object-contain object-left"
       />
     </div>

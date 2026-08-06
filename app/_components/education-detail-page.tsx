@@ -158,7 +158,10 @@ export function EducationDetailPage({
                   key={point}
                   className="flex gap-4 py-4 text-sm leading-6 font-semibold"
                 >
-                  <span className="mt-2 h-2 w-2 shrink-0 bg-brand-education" />
+                  <span
+                    aria-hidden="true"
+                    className="brand-list-dash brand-list-dash-education"
+                  />
                   {point}
                 </li>
               ))}
@@ -167,7 +170,7 @@ export function EducationDetailPage({
               href={resolveHref(locale, page.primaryCta.href)}
               target={page.primaryCta.external ? "_blank" : undefined}
               rel={page.primaryCta.external ? "noopener noreferrer" : undefined}
-              className="mt-7 inline-flex min-h-12 w-full items-center justify-between gap-5 bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
+              className="brand-action mt-7 inline-flex min-h-12 w-full items-center justify-between gap-5 bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
             >
               {page.primaryCta.label}
               <ArrowIcon />
@@ -238,7 +241,7 @@ export function EducationDetailPage({
               href={resolveHref(locale, page.primaryCta.href)}
               target={page.primaryCta.external ? "_blank" : undefined}
               rel={page.primaryCta.external ? "noopener noreferrer" : undefined}
-              className="inline-flex min-h-12 items-center justify-between gap-6 bg-brand-education px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#008f48]"
+              className="brand-action inline-flex min-h-12 items-center justify-between gap-6 bg-brand-education px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#008f48]"
             >
               {page.primaryCta.label}
               <ArrowIcon />
@@ -252,7 +255,7 @@ export function EducationDetailPage({
                     ? "noopener noreferrer"
                     : undefined
                 }
-                className="inline-flex min-h-12 items-center justify-between gap-6 border border-white/30 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white"
+                className="brand-action brand-action-outline inline-flex min-h-12 items-center justify-between gap-6 border border-white/30 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white"
               >
                 {page.secondaryCta.label}
                 <ArrowIcon />

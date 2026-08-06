@@ -29,7 +29,7 @@ export function IndexCardGrid({ locale, basePath, items }: IndexCardGridProps) {
           <div className="mt-auto pt-8">
             <Link
               href={localizeHref(locale, `${basePath}/${item.slug}`)}
-              className="inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-cyan-800"
+              className="brand-chamfer-control inline-flex items-center bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-cyan-800"
             >
               {locale === "de" ? "Mehr erfahren" : "Learn more"}
             </Link>

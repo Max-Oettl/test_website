@@ -421,7 +421,7 @@ function PrimaryLink({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className="inline-flex min-h-12 items-center justify-center gap-3 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
+      className="brand-action inline-flex min-h-12 items-center justify-center gap-3 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
     >
       {children}
       <ArrowIcon />
@@ -530,7 +530,7 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <div className="overflow-x-clip bg-white font-winnstein-body text-brand-marine">
-      <section className="relative overflow-hidden border-b border-white/12 bg-[radial-gradient(circle_at_88%_12%,rgba(12,132,180,0.24),transparent_34%),linear-gradient(112deg,#031334_0%,#071b3f_62%,#08264c_100%)] text-white">
+      <section className="relative overflow-hidden border-b border-white/12 bg-[radial-gradient(circle_at_88%_12%,rgba(46,161,207,0.22),transparent_34%),linear-gradient(112deg,#142452_0%,#192c5e_62%,#20396b_100%)] text-white">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full border border-brand-steel-cyan/20"
@@ -543,13 +543,13 @@ export default async function AboutPage({ params }: Props) {
         <div className="relative mx-auto flex min-h-[20rem] max-w-7xl items-center px-5 py-14 sm:px-6 lg:px-8 lg:py-16">
           <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-end">
             <div className="relative z-10 min-w-0">
-              <span
-                aria-hidden="true"
-                className="mb-7 block h-1 w-20 bg-brand-steel-cyan"
-              />
               <h1 className="max-w-3xl font-winnstein-display text-[2.4rem] font-bold leading-[1.03] tracking-[-0.04em] text-white sm:text-6xl lg:text-[4.7rem]">
                 {content.hero.title}
               </h1>
+              <span
+                aria-hidden="true"
+                className="mt-7 block h-1 w-20 bg-brand-steel-cyan"
+              />
             </div>
             <div>
               <p className="max-w-3xl text-lg leading-8 text-white/76">
@@ -567,9 +567,8 @@ export default async function AboutPage({ params }: Props) {
                     }`}
                   >
                     <span
-                      className={`h-2.5 w-2.5 ${
-                        index === 1 ? "bg-brand-gold" : "bg-brand-steel-cyan"
-                      }`}
+                      aria-hidden="true"
+                      className="brand-list-dash brand-list-dash-center"
                     />
                     {principle}
                   </div>
@@ -591,9 +590,9 @@ export default async function AboutPage({ params }: Props) {
             </p>
           </div>
 
-          <div className="mt-10 overflow-hidden border border-line-soft shadow-[0_30px_80px_-52px_rgba(3,19,52,0.5)]">
+          <div className="mt-10 grid gap-8 lg:gap-10">
             {content.leadership.profiles.map((profile, index) => {
-              const isInverse = index % 2 === 1;
+              const isImageReversed = index % 2 === 1;
               const portraitPosition = profile.name.includes("Kevin")
                 ? "object-[50%_8%] lg:object-[50%_10%]"
                 : "object-[50%_20%] lg:object-[50%_34%]";
@@ -611,40 +610,22 @@ export default async function AboutPage({ params }: Props) {
               );
 
               const details = (
-                <div
-                  className={`flex min-w-0 flex-col justify-center p-7 sm:p-10 lg:p-12 ${
-                    isInverse
-                      ? "bg-brand-marine text-white"
-                      : "bg-brand-steel-cyan-10 text-brand-marine"
-                  }`}
-                >
+                <div className="flex min-w-0 flex-col justify-center bg-brand-marine p-7 text-white sm:p-10 lg:p-12">
                   <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan sm:text-base">
                     {profile.role}
                   </p>
                   <h3 className="mt-3 font-winnstein-display text-3xl font-bold tracking-[-0.035em] sm:text-4xl">
                     {profile.name}
                   </h3>
-                  <p
-                    className={`mt-6 max-w-2xl text-base leading-8 ${
-                      isInverse ? "text-white/76" : "text-copy-muted"
-                    }`}
-                  >
+                  <p className="mt-6 max-w-2xl text-base leading-8 text-white/76">
                     {profile.introduction}
                   </p>
 
-                  <ul
-                    className={`mt-7 grid border-t sm:grid-cols-2 ${
-                      isInverse ? "border-white/18" : "border-line-soft"
-                    }`}
-                  >
+                  <ul className="mt-7 grid border-t border-white/18 sm:grid-cols-2">
                     {profile.facts.map((fact, factIndex) => (
                       <li
                         key={fact}
-                        className={`flex gap-3 border-b py-4 text-sm leading-6 ${
-                          isInverse
-                            ? "border-white/18 text-white/82"
-                            : "border-line-soft text-copy-muted"
-                        } ${
+                        className={`flex gap-3 border-b border-white/18 py-4 text-sm leading-6 text-white/82 ${
                           factIndex % 2 === 1
                             ? "sm:border-l sm:pl-5"
                             : "sm:pr-5"
@@ -652,11 +633,7 @@ export default async function AboutPage({ params }: Props) {
                       >
                         <span
                           aria-hidden="true"
-                          className={`mt-2 h-2 w-2 shrink-0 ${
-                            factIndex === 1
-                              ? "bg-brand-gold"
-                              : "bg-brand-steel-cyan"
-                          }`}
+                          className="brand-list-dash"
                         />
                         {fact}
                       </li>
@@ -666,11 +643,7 @@ export default async function AboutPage({ params }: Props) {
                   <div className="mt-8 flex flex-wrap items-center gap-6">
                     <Link
                       href={localizeHref(locale, profile.profileHref)}
-                      className={`inline-flex min-h-12 items-center justify-center gap-3 px-6 py-3 font-winnstein-display text-sm font-bold transition-colors ${
-                        isInverse
-                          ? "bg-white text-brand-marine hover:bg-brand-steel-cyan-10"
-                          : "bg-brand-marine text-white hover:bg-brand-steel-cyan"
-                      }`}
+                      className="brand-action inline-flex min-h-12 items-center justify-center gap-3 bg-white px-6 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:bg-brand-steel-cyan-10"
                     >
                       {profile.profileLabel}
                       <ArrowIcon />
@@ -682,7 +655,7 @@ export default async function AboutPage({ params }: Props) {
                           : localizeHref(locale, profile.secondaryHref)
                       }
                       external={profile.secondaryExternal}
-                      inverse={isInverse}
+                      inverse
                     >
                       {profile.secondaryLabel}
                     </TextLink>
@@ -693,12 +666,10 @@ export default async function AboutPage({ params }: Props) {
               return (
                 <article
                   key={profile.name}
-                  className={`grid lg:grid-cols-2 ${
-                    index > 0 ? "border-t border-line-soft" : ""
-                  }`}
+                  className="grid overflow-hidden border border-line-soft shadow-[0_30px_80px_-52px_rgba(3,19,52,0.5)] lg:grid-cols-2"
                 >
-                  {isInverse ? details : image}
-                  {isInverse ? image : details}
+                  {isImageReversed ? details : image}
+                  {isImageReversed ? image : details}
                 </article>
               );
             })}
@@ -726,7 +697,7 @@ export default async function AboutPage({ params }: Props) {
                 href={podcastUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center justify-center gap-3 bg-white px-6 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:bg-brand-steel-cyan-10"
+                className="brand-action inline-flex min-h-12 items-center justify-center gap-3 bg-white px-6 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:bg-brand-steel-cyan-10"
               >
                 {content.podcast.linkLabel}
                 <ArrowIcon />
@@ -740,12 +711,12 @@ export default async function AboutPage({ params }: Props) {
           <div className="border-y border-white/18 py-5">
             <div className="relative aspect-[3/1] overflow-hidden">
               <Image
-                src="/about/podcast-waveform-corporate.webp"
+                src="/about/podcast-waveform-transparent.png"
                 alt=""
                 fill
                 aria-hidden="true"
                 sizes="(min-width: 1024px) 46vw, 100vw"
-                className="object-cover"
+                className="object-contain object-center"
               />
             </div>
             <p className="mt-1 text-right text-sm text-white/60">
@@ -766,7 +737,7 @@ export default async function AboutPage({ params }: Props) {
             </p>
           </div>
 
-          <div className="mt-10 overflow-hidden border border-line-soft bg-surface-muted">
+          <div className="brand-panel-cut-bottom-right mt-10 overflow-hidden border border-line-soft bg-surface-muted">
             <div className="relative aspect-[8/3] overflow-hidden border-b border-line-soft bg-white">
               <Image
                 src="/about/team-expertise-pictograms-v3.webp"
@@ -827,7 +798,7 @@ export default async function AboutPage({ params }: Props) {
                   href={linkedInUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-12 items-center justify-center gap-3 bg-brand-steel-cyan px-5 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
+                  className="brand-action inline-flex min-h-12 items-center justify-center gap-3 bg-brand-steel-cyan px-5 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
                 >
                   <LinkedInIcon />
                   {content.team.linkedInLabel}

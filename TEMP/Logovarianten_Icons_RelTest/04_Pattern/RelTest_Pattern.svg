@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Hintergrund" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 2003.1 1459.7">
+  <!-- Generator: Adobe Illustrator 30.5.1, SVG Export Plug-In . SVG Version: 2.1.4 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #0d173d;
+      }
+
+      .st2 {
+        fill: url(#Neues_Muster_3);
+      }
+
+      .st3 {
+        fill: #fff;
+      }
+
+      .st4 {
+        opacity: 0;
+      }
+
+      .st5 {
+        fill: url(#Unbenannter_Verlauf_26);
+      }
+    </style>
+    <pattern id="Neues_Muster_3" data-name="Neues Muster 3" x="0" y="0" width="90.7" height="87.9" patternTransform="translate(-3608.4896 -5372.6059) scale(1.0335)" patternUnits="userSpaceOnUse" viewBox="0 0 90.7 87.9">
+      <g>
+        <rect class="st0" width="90.7" height="87.9"/>
+        <rect class="st1" x="90.1" y="85.9" width="91.9" height="91.9"/>
+        <rect class="st1" x="-.6" y="85.9" width="91.9" height="91.9"/>
+        <rect class="st1" x="-91.3" y="85.9" width="91.9" height="91.9"/>
+        <rect class="st1" x="90.1" y="-2" width="91.9" height="91.9"/>
+        <g>
+          <rect class="st1" x="-.6" y="-2" width="91.9" height="91.9"/>
+          <g class="st4">
+            <path class="st3" d="M23.5,46.9l-14.3,2.1v15.4c12.8-.8,26.4-2.5,35.2-6-6.2-2.6-13.3-6.5-20.9-11.6Z"/>
+            <path class="st3" d="M64.8,40.8l-33.3,4.9c7.1,4.4,13.5,7.5,19,9.4,6.3-4.5,10.8-9,14.2-14.3Z"/>
+            <path class="st3" d="M9.2,36.6v7.1l7.9-1.2c-2.7-1.9-5.3-3.9-7.9-5.9Z"/>
+            <path class="st3" d="M24.8,41.4l43.2-6.4c3.4-7.2,5.8-16.2,8-27.2H22c-7.1,0-12.8,5.7-12.8,12.8v9.2c5.4,4.3,10.6,8.2,15.6,11.5Z"/>
+            <path class="st3" d="M51.8,61c-.1,0-.3,0-.4-.1-4.8,2.9-16.2,7.3-42.2,8.9v10.3h63.6l8.7-8.7v-3.8c-9.6-1.7-20-3.9-29.7-6.5Z"/>
+            <path class="st3" d="M81.5,38.3l-10,1.5c-3.5,6.7-8.1,12-14.5,17.1,8.1,2.1,16.5,3.8,24.5,5.2v-23.9Z"/>
+            <path class="st3" d="M81.5,33V7.8h-.1c-1.8,9.3-4,18.5-7.2,26.3l7.3-1.1Z"/>
+          </g>
+        </g>
+        <rect class="st1" x="-91.3" y="-2" width="91.9" height="91.9"/>
+        <rect class="st1" x="90.1" y="-89.9" width="91.9" height="91.9"/>
+        <rect class="st1" x="-.6" y="-89.9" width="91.9" height="91.9"/>
+        <rect class="st1" x="-91.3" y="-89.9" width="91.9" height="91.9"/>
+      </g>
+    </pattern>
+    <linearGradient id="Unbenannter_Verlauf_26" data-name="Unbenannter Verlauf 26" x1="19.7" y1="36.8" x2="2324.6" y2="1663.8" gradientUnits="userSpaceOnUse">
+      <stop offset=".3" stop-color="#0d173d"/>
+      <stop offset=".8" stop-color="#142553" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect class="st2" width="2003.1" height="1453.3"/>
+  <rect class="st5" x="5.9" y="3.4" width="1996.1" height="1456.3"/>
+</svg>

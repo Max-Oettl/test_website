@@ -170,14 +170,14 @@ export default async function ReferencesPage({ params }: Props) {
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href={localizeHref(locale, "/kontakt")}
-              className="inline-flex min-h-12 items-center justify-between gap-6 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
+              className="brand-action inline-flex min-h-12 items-center justify-between gap-6 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
             >
               {copy.ctaPrimary}
               <ArrowIcon />
             </Link>
             <Link
               href={localizeHref(locale, "/expertise")}
-              className="inline-flex min-h-12 items-center justify-between gap-6 border border-brand-marine/30 px-6 py-3 font-winnstein-display text-sm font-bold transition-colors hover:border-brand-steel-cyan"
+              className="brand-action brand-action-outline brand-action-outline-light inline-flex min-h-12 items-center justify-between gap-6 border border-brand-marine/30 bg-white px-6 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:border-brand-steel-cyan hover:text-brand-steel-cyan"
             >
               {copy.ctaSecondary}
               <ArrowIcon />

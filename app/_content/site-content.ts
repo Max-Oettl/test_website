@@ -159,7 +159,7 @@ const content = {
       knowledgeOverview: "Wissen im Überblick",
       expertiseOverview: "Expertise im Überblick",
       items: [
-        { label: "Leistungen", href: "/leistungen" },
+        { label: "Solutions", href: "/leistungen" },
         { label: "Education", href: "/education" },
         { label: "Wissen", href: "/wissen" },
         { label: "Expertise", href: "/expertise" },
@@ -214,12 +214,12 @@ const content = {
     },
     footer: {
       description:
-        "Reliability Engineering, Zuverlässigkeitsmanagement und Erprobung für technische Produkte mit hohen Qualitäts- und Lebensdaueranforderungen.",
+        "Wir verankern Zuverlässigkeit als Ihren strategischen Erfolgsfaktor.",
       quickAccess: "Schnellzugriff",
       contact: "Kontakt",
       copyright: "© 2026 RelTest Solutions. Alle Rechte vorbehalten.",
       links: [
-        { label: "Leistungen", href: "/leistungen" },
+        { label: "Solutions", href: "/leistungen" },
         { label: "Education", href: "/education" },
         { label: "Wissen", href: "/wissen" },
         { label: "Expertise", href: "/expertise" },
@@ -757,7 +757,7 @@ const content = {
       knowledgeOverview: "Knowledge overview",
       expertiseOverview: "Expertise overview",
       items: [
-        { label: "Services", href: "/leistungen" },
+        { label: "Solutions", href: "/leistungen" },
         { label: "Education", href: "/education" },
         { label: "Knowledge", href: "/wissen" },
         { label: "Expertise", href: "/expertise" },
@@ -809,12 +809,12 @@ const content = {
     },
     footer: {
       description:
-        "Reliability engineering, reliability management and testing for technical products with demanding quality and service-life requirements.",
+        "We make reliability your strategic advantage.",
       quickAccess: "Quick access",
       contact: "Contact",
       copyright: "© 2026 RelTest Solutions. All rights reserved.",
       links: [
-        { label: "Services", href: "/leistungen" },
+        { label: "Solutions", href: "/leistungen" },
         { label: "Education", href: "/education" },
         { label: "Knowledge", href: "/wissen" },
         { label: "Expertise", href: "/expertise" },

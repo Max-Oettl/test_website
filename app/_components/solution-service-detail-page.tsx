@@ -68,14 +68,14 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={localizeHref(locale, "/kontakt")}
-                className="inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
+                className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
               >
                 {text.discuss}
                 <ArrowIcon />
               </Link>
               <Link
                 href="#leistungsbausteine"
-                className="inline-flex min-h-14 items-center justify-between gap-5 border border-white/35 px-6 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
+                className="brand-action brand-action-outline inline-flex min-h-14 items-center justify-between gap-5 border border-white/35 px-6 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
               >
                 {text.overview}
                 <ArrowIcon />
@@ -215,18 +215,14 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
               {page.deliverables.description}
             </p>
             <div className="mt-8 divide-y divide-white/15 border-y border-white/15">
-              {page.deliverables.items.map((item, index) => (
+              {page.deliverables.items.map((item) => (
                 <div
                   key={item.title}
                   className="grid gap-2 py-5 sm:grid-cols-[2.5rem_1fr]"
                 >
                   <span
                     aria-hidden="true"
-                    className={
-                      index === page.deliverables.items.length - 1
-                        ? "mt-2 h-2 w-2 bg-brand-gold"
-                        : "mt-2 h-2 w-2 bg-brand-steel-cyan"
-                    }
+                    className="brand-list-dash"
                   />
                   <div>
                     <h3 className="font-winnstein-display text-base font-bold">
@@ -283,14 +279,14 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href={localizeHref(locale, "/kontakt")}
-              className="inline-flex min-h-14 items-center justify-between gap-8 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
+              className="brand-action inline-flex min-h-14 items-center justify-between gap-8 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
             >
               {text.contact}
               <ArrowIcon />
             </Link>
             <Link
               href={localizeHref(locale, "/leistungen")}
-              className="inline-flex min-h-14 items-center justify-between gap-8 border border-white/35 px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
+              className="brand-action brand-action-outline inline-flex min-h-14 items-center justify-between gap-8 border border-white/35 px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
             >
               {text.serviceOverview}
               <ArrowIcon />

@@ -52,7 +52,7 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
                   className="rounded-2xl bg-slate-50 px-4 py-4 ring-1 ring-slate-200"
                 >
                   <div className="flex gap-3">
-                    <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500" />
+                    <span aria-hidden="true" className="brand-list-dash" />
                     <p className="text-sm leading-7 font-medium text-slate-700">
                       {point}
                     </p>
@@ -98,7 +98,7 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
                   href={resolveHref(locale, link.href)}
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
-                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition-colors hover:border-cyan-300 hover:text-cyan-800"
+                  className="brand-chamfer-control-sm border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition-colors hover:border-cyan-300 hover:text-cyan-800"
                 >
                   {link.label}
                 </Link>
@@ -124,7 +124,7 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
                 href={resolveHref(locale, page.primaryCta.href)}
                 target={page.primaryCta.external ? "_blank" : undefined}
                 rel={page.primaryCta.external ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-4 text-sm font-bold text-slate-950 transition-colors hover:bg-cyan-300"
+                className="brand-chamfer-control inline-flex items-center justify-center bg-cyan-400 px-6 py-4 text-sm font-bold text-slate-950 transition-colors hover:bg-cyan-300"
               >
                 {page.primaryCta.label}
               </Link>
@@ -137,7 +137,7 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-4 text-sm font-bold text-white transition-colors hover:border-cyan-300 hover:text-cyan-200"
+                  className="brand-action brand-action-outline inline-flex items-center justify-center border border-white/15 px-6 py-4 text-sm font-bold text-white transition-colors hover:border-cyan-300 hover:text-cyan-200"
                 >
                   {page.secondaryCta.label}
                 </Link>

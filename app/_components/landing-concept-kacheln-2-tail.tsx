@@ -111,7 +111,6 @@ const conceptContent = {
     metrics: [
       { value: "Seit 2016", label: "Industrieberatung" },
       { value: "2", label: "Springer-Fachbücher" },
-      { value: String(referenceLogos.length), label: "Referenzen" },
     ],
     booksTitle: "Fachbücher bei Springer Vieweg",
     bookTitles: [
@@ -196,7 +195,6 @@ const conceptContent = {
     metrics: [
       { value: "Since 2016", label: "industrial consulting" },
       { value: "2", label: "Springer engineering books" },
-      { value: String(referenceLogos.length), label: "references" },
     ],
     booksTitle: "Engineering books from Springer Vieweg",
     bookTitles: [
@@ -347,7 +345,7 @@ export function LandingConceptKacheln2Tail({
               </p>
             </div>
 
-            <dl className="grid grid-cols-3 border-t border-l border-white/16">
+            <dl className="grid grid-cols-2 border-t border-l border-white/16">
               {content.metrics.map((metric) => (
                 <div
                   key={metric.label}

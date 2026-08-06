@@ -171,14 +171,14 @@ export default async function ServicesPage({ params }: Props) {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={localizeHref(locale, "/kontakt")}
-                className="inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
+                className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
               >
                 {copy.hero.primaryCta}
                 <ArrowIcon />
               </Link>
               <Link
                 href="#leistungsfelder"
-                className="inline-flex min-h-14 items-center justify-between gap-5 border border-white/35 px-6 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
+                className="brand-action brand-action-outline inline-flex min-h-14 items-center justify-between gap-5 border border-white/35 px-6 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
               >
                 {copy.hero.secondaryCta}
                 <ArrowIcon />
@@ -281,7 +281,7 @@ export default async function ServicesPage({ params }: Props) {
       </section>
 
       <section className="bg-brand-steel-cyan-10 px-5 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <div className="mx-auto grid max-w-7xl border border-brand-marine/15 bg-white lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="brand-panel-cut-bottom-right mx-auto grid max-w-7xl border border-brand-marine/15 bg-white lg:grid-cols-[0.92fr_1.08fr]">
           <div className="relative aspect-[2/3] bg-white lg:aspect-auto lg:min-h-[46rem]">
             <Image
               src="/services/engineering-partnership-pictogram.png"
@@ -292,7 +292,7 @@ export default async function ServicesPage({ params }: Props) {
             />
           </div>
           <div className="relative flex flex-col justify-center bg-brand-marine p-7 text-white sm:p-10 lg:p-14">
-            <span className="absolute left-0 top-0 h-full w-1.5 bg-brand-gold" />
+            <span className="absolute left-0 top-0 h-full w-1.5 bg-brand-steel-cyan" />
             <h2 className="font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
               {copy.partnership.title}
             </h2>
@@ -300,31 +300,12 @@ export default async function ServicesPage({ params }: Props) {
               {copy.partnership.description}
             </p>
             <ul className="mt-9 grid gap-3 sm:grid-cols-2">
-              {copy.partnership.points.map((point, index) => (
+              {copy.partnership.points.map((point) => (
                 <li
                   key={point}
                   className="flex min-h-24 items-start gap-4 border border-white/15 bg-white/[0.055] p-5 font-winnstein-display text-base leading-6 font-bold text-white"
                 >
-                  <span
-                    className={`mt-1 flex h-7 w-7 shrink-0 items-center justify-center text-brand-marine ${
-                      index === 3 ? "bg-brand-gold" : "bg-brand-steel-cyan"
-                    }`}
-                  >
-                    <svg
-                      aria-hidden="true"
-                      viewBox="0 0 20 20"
-                      className="h-4 w-4"
-                      fill="none"
-                    >
-                      <path
-                        d="m5 10.5 3 3 7-7"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      />
-                    </svg>
-                  </span>
+                  <span aria-hidden="true" className="brand-list-dash" />
                   <span>{point}</span>
                 </li>
               ))}
@@ -334,7 +315,7 @@ export default async function ServicesPage({ params }: Props) {
                 locale,
                 "/leistungen/langfristige-kooperation",
               )}
-              className="mt-9 inline-flex min-h-14 w-full items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d] sm:w-fit"
+              className="brand-action mt-9 inline-flex min-h-14 w-full items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d] sm:w-fit"
             >
               {copy.partnership.cta}
               <ArrowIcon />
@@ -380,7 +361,7 @@ export default async function ServicesPage({ params }: Props) {
           </div>
           <Link
             href={localizeHref(locale, "/kontakt")}
-            className="inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
+            className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
           >
             {copy.contact.cta}
             <ArrowIcon />

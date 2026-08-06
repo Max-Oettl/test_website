@@ -127,7 +127,7 @@ export function IndustryDetailPage({ locale, content }: Props) {
             </p>
             <Link
               href={localizeHref(locale, "/kontakt")}
-              className="mt-9 inline-flex min-h-14 w-fit items-center justify-between gap-8 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
+              className="brand-action mt-9 inline-flex min-h-14 w-fit items-center justify-between gap-8 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
             >
               {content.heroCta}
               <ArrowIcon />
@@ -252,7 +252,7 @@ export function IndustryDetailPage({ locale, content }: Props) {
               <h2 className="mt-4 max-w-xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
                 {content.questionsTitle}
               </h2>
-              <div className="mt-8 h-1 w-14 bg-brand-gold" />
+              <div className="mt-8 h-1 w-14 bg-brand-steel-cyan" />
             </div>
             <div className="border-t border-brand-marine/18">
               {content.questions.map((item, index) => (
@@ -290,17 +290,14 @@ export function IndustryDetailPage({ locale, content }: Props) {
             </p>
           </div>
           <div className="grid border-t border-l border-white/20 sm:grid-cols-2">
-            {content.contextTerms.map((term, index) => (
+            {content.contextTerms.map((term) => (
               <div
                 key={term}
                 className="flex min-h-24 items-center gap-4 border-r border-b border-white/20 p-5"
               >
                 <span
-                  className={`h-2.5 w-2.5 shrink-0 ${
-                    index === content.contextTerms.length - 1
-                      ? "bg-brand-gold"
-                      : "bg-brand-steel-cyan"
-                  }`}
+                  aria-hidden="true"
+                  className="brand-list-dash brand-list-dash-center"
                 />
                 <span className="font-winnstein-display text-sm leading-6 font-bold">
                   {term}
@@ -323,7 +320,7 @@ export function IndustryDetailPage({ locale, content }: Props) {
           </div>
           <Link
             href={localizeHref(locale, "/kontakt")}
-            className="inline-flex min-h-14 items-center justify-between gap-8 bg-brand-marine px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
+            className="brand-action inline-flex min-h-14 items-center justify-between gap-8 bg-brand-marine px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
           >
             {content.ctaLabel}
             <ArrowIcon />

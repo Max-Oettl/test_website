@@ -5,7 +5,7 @@ import { buildLocalizedMetadata } from "../../_seo/metadata";
 
 const calendlyHref = "https://calendly.com/kevin-lucan";
 const calendlyEmbedHref =
-  "https://calendly.com/kevin-lucan?hide_gdpr_banner=1&background_color=ffffff&text_color=031334&primary_color=0c84b4";
+  "https://calendly.com/kevin-lucan?hide_gdpr_banner=1&background_color=ffffff&text_color=142452&primary_color=2ea1cf";
 
 const contactCopy = {
   de: {
@@ -144,8 +144,8 @@ export default async function ContactPage({ params }: Props) {
 
   return (
     <main className="font-winnstein-body text-brand-marine">
-      <section className="bg-brand-marine px-5 py-10 text-white sm:px-6 lg:px-8 lg:py-14">
-        <div className="mx-auto grid max-w-7xl overflow-hidden border border-white/18 lg:grid-cols-[1.04fr_0.96fr]">
+      <section className="bg-white px-5 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div className="mx-auto grid max-w-7xl overflow-hidden border border-brand-marine/15 bg-brand-marine text-white lg:grid-cols-[1.04fr_0.96fr]">
           <div className="relative flex min-w-0 flex-col justify-center overflow-hidden px-7 py-14 sm:px-10 lg:px-14 lg:py-20">
             <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:64px_64px]" />
             <div className="absolute -left-32 bottom-[-8rem] h-80 w-80 rounded-full border border-brand-steel-cyan/20" />
@@ -161,14 +161,14 @@ export default async function ContactPage({ params }: Props) {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#termin"
-                  className="inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
+                  className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
                 >
                   {copy.hero.primaryCta}
                   <ArrowIcon />
                 </a>
                 <a
                   href={emailHref}
-                  className="inline-flex min-h-14 items-center justify-between gap-7 border border-white/35 px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
+                  className="brand-action brand-action-outline inline-flex min-h-14 items-center justify-between gap-7 border border-white/35 px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
                 >
                   {copy.hero.secondaryCta}
                   <ArrowIcon />
@@ -186,7 +186,7 @@ export default async function ContactPage({ params }: Props) {
               sizes="(min-width: 1024px) 48vw, 100vw"
               className="object-cover object-[50%_10%]"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(3,19,52,.94)_0%,rgba(3,19,52,.22)_42%,transparent_68%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(20,36,82,.94)_0%,rgba(20,36,82,.22)_42%,transparent_68%)]" />
             <div className="absolute right-0 bottom-0 left-0 p-7 sm:p-9">
               <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">
                 {copy.hero.contactLabel}
@@ -215,7 +215,7 @@ export default async function ContactPage({ params }: Props) {
             </p>
           </div>
 
-          <div className="mt-10 grid border border-brand-marine/15 bg-white shadow-[0_32px_80px_-54px_rgba(3,19,52,0.5)] lg:grid-cols-[1fr_21rem]">
+          <div className="brand-panel-cut-bottom-right mt-10 grid border border-brand-marine/15 bg-white lg:grid-cols-[1fr_21rem]">
             <div className="min-w-0 overflow-hidden">
               <iframe
                 title={copy.booking.embedTitle}

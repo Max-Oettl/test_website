@@ -1,6 +1,11 @@
 # RelTest Website Vision
 
-Stand: 10. Juni 2026
+Stand: 5. August 2026
+
+Die verbindlichen Webregeln aus dem aktuellen Corporate Design sind in
+[Corporate Design Webregeln](corporate-design-web-regeln.md) dokumentiert.
+Bei Abweichungen zwischen älteren Gestaltungsentscheidungen und diesem
+Regelwerk gilt die aktuelle Corporate-Design-Fassung vom 2. August 2026.
 
 ## 1. Zweck dieses Dokuments
 

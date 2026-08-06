@@ -72,7 +72,7 @@ export function buildLocalizedMetadata({
       url: absoluteUrl(localizedPath),
       title,
       description,
-      siteName: "RelTest Solutions",
+      siteName: "RelTest",
       locale: locale === "de" ? "de_DE" : "en_US",
     },
   };

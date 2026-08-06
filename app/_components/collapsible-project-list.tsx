@@ -49,7 +49,7 @@ export function CollapsibleProjectList({
               type="button"
               aria-expanded={isExpanded}
               onClick={() => setIsExpanded((currentValue) => !currentValue)}
-              className="group inline-flex min-h-12 items-center justify-center gap-4 border border-brand-marine/20 bg-white px-6 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:border-brand-steel-cyan hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4 sm:col-start-2 sm:row-start-1 sm:self-center"
+              className="brand-action brand-action-outline brand-action-outline-light group inline-flex min-h-12 items-center justify-center gap-4 border border-brand-marine/20 bg-white px-6 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:border-brand-steel-cyan hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4 sm:col-start-2 sm:row-start-1 sm:self-center"
             >
               {isExpanded ? collapseLabel : expandLabel}
               <svg

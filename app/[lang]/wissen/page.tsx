@@ -218,7 +218,7 @@ export default async function KnowledgePage({ params }: Props) {
           </div>
           <Link
             href={localizeHref(locale, "/leistungen")}
-            className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-4 text-sm font-bold text-slate-900 transition hover:border-cyan-300 hover:text-cyan-800"
+            className="brand-action brand-action-outline brand-action-outline-light inline-flex items-center justify-center border border-slate-300 bg-white px-6 py-4 text-sm font-bold text-slate-900 transition hover:border-cyan-300 hover:text-cyan-800"
           >
             {isGerman ? "Passende Leistungen ansehen" : "View related services"}
           </Link>
@@ -257,7 +257,7 @@ export default async function KnowledgePage({ params }: Props) {
                     </div>
                     <Link
                       href={localizeHref(locale, `/wissen/${topic.id}`)}
-                      className="mt-7 inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-cyan-800"
+                      className="brand-chamfer-control mt-7 inline-flex items-center bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-cyan-800"
                     >
                       {isGerman ? "Fachseite öffnen" : "Open technical page"}
                     </Link>
@@ -291,13 +291,13 @@ export default async function KnowledgePage({ params }: Props) {
               <div className="flex flex-col gap-3">
                 <Link
                   href={localizeHref(locale, "/kontakt")}
-                  className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-4 text-sm font-bold text-slate-950 transition-colors hover:bg-cyan-300"
+                  className="brand-chamfer-control inline-flex items-center justify-center bg-cyan-400 px-6 py-4 text-sm font-bold text-slate-950 transition-colors hover:bg-cyan-300"
                 >
                   {page.preparation.contactCta}
                 </Link>
                 <Link
                   href={localizeHref(locale, "/leistungen")}
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-4 text-sm font-bold text-white transition-colors hover:border-cyan-300 hover:text-cyan-200"
+                  className="brand-action brand-action-outline inline-flex items-center justify-center border border-white/15 px-6 py-4 text-sm font-bold text-white transition-colors hover:border-cyan-300 hover:text-cyan-200"
                 >
                   {page.preparation.servicesCta}
                 </Link>

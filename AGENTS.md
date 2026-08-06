@@ -12,6 +12,8 @@ For WordPress-to-Next.js migration, go-live planning, redirects, legacy URL hand
 
 # Website Vision Rules
 
+For colors, typography, logo hierarchy, claims, buttons, icons and imagery, use [Corporate Design Webregeln](C:/Users/MaximilianÖttl/Documents/test_website/docs/vision/corporate-design-web-regeln.md). These rules reflect the Corporate Design state from 2 August 2026 and take precedence over older visual conventions.
+
 For all content, UX and visual work in this repository, use [RelTest Website Vision](C:/Users/MaximilianÖttl/Documents/test_website/docs/vision/reltest-website-vision.md) as the primary brand, structure and positioning guide.
 
 For practical execution, workflows and content decisions, also use [Arbeitsregeln und Workflows](C:/Users/MaximilianÖttl/Documents/test_website/docs/project/arbeitsregeln-und-workflows.md) and [Content- und Seitenregeln](C:/Users/MaximilianÖttl/Documents/test_website/docs/content/content-und-seitenregeln.md).
