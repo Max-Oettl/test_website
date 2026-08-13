@@ -1,311 +1,221 @@
 import Link from "next/link";
 
-import {
-  getKnowledgeTheme,
-  KnowledgeDiagram,
-} from "../../_components/knowledge-detail-template";
-import { getSiteContent } from "../../_content/site-content";
-import { localizeHref, resolveLocale, type Locale } from "../../_i18n/config";
+import { BrandLineWatermark } from "../../_components/brand-line-watermark";
+import { KnowledgeMediaPlaceholder } from "../../_components/knowledge-media-placeholder";
+import { getKnowledgeArticles, type KnowledgeMedia } from "../../_content/knowledge-content";
+import { localizeHref, resolveLocale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
 
-type Props = {
-  params: Promise<{ lang: string }>;
-};
-
-const processTopics = [
-  "planung",
-  "schwachstellenanalyse",
-  "absicherung",
-  "erprobung",
-  "prognosen",
-] as const;
-
-const methodTopics = ["design-of-experiments", "risikomanagement"] as const;
-
-type Topic = ReturnType<typeof getSiteContent>["pages"]["knowledge"]["topics"][number];
-
-function topicById(topics: readonly Topic[], id: string) {
-  return topics.find((topic) => topic.id === id);
-}
-
-function topicBadgeLabel(locale: Locale, index: string) {
-  if (index.startsWith("M")) {
-    return locale === "de" ? "Methode" : "Method";
-  }
-
-  return locale === "de" ? `Phase ${index}` : `Phase ${index}`;
-}
-
-function KnowledgeMap({ locale, topics }: { locale: Locale; topics: readonly Topic[] }) {
-  const isGerman = locale === "de";
-  const labels = {
-    title: isGerman ? "Fachlandkarte" : "Knowledge map",
-    clickHint: isGerman
-      ? "Klicken Sie auf ein Themenfeld, um die Fachseite zu öffnen."
-      : "Click a topic field to open the technical page.",
-    clickable: isGerman ? "Klickbare Übersicht" : "Clickable overview",
-    process: isGerman ? "Prozessfelder" : "Process fields",
-    methods: isGerman ? "Methoden" : "Methods",
-    method: isGerman ? "Methode" : "Method",
-    open: isGerman ? "Fachseite öffnen" : "Open page",
-  };
-
-  return (
-    <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70">
-      <div className="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-700">
-            {labels.title}
-          </p>
-          <p className="mt-2 max-w-sm text-sm leading-6 font-medium text-slate-600">
-            {labels.clickHint}
-          </p>
-        </div>
-        <span className="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-cyan-800">
-          {labels.clickable}
-        </span>
-      </div>
-      <p className="mt-6 text-[11px] font-black uppercase tracking-[0.22em] text-slate-400">
-        {labels.process}
-      </p>
-      <div className="mt-6 grid gap-3">
-        {processTopics.map((id, index) => {
-          const topic = topicById(topics, id);
-          const theme = getKnowledgeTheme(id);
-
-          if (!topic) {
-            return null;
-          }
-
-          return (
-            <Link
-              key={id}
-              href={localizeHref(locale, `/wissen/${id}`)}
-              className="group grid grid-cols-[3rem_1fr_auto] items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-3 transition hover:-translate-y-0.5 hover:border-cyan-300 hover:bg-white hover:shadow-lg hover:shadow-slate-200/70 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cyan-100"
-              aria-label={`${labels.open}: ${topic.title}`}
-            >
-              <span className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-r text-sm font-black text-white shadow-sm ${theme.gradient}`}>
-                {index + 1}
-              </span>
-              <span>
-                <span className="block text-sm font-bold text-slate-950 group-hover:text-cyan-800">
-                  {topic.title}
-                </span>
-                <span className="mt-1 block text-xs font-medium text-slate-500">
-                  {theme.label[locale]}
-                </span>
-              </span>
-              <span className="hidden rounded-full bg-white px-3 py-1.5 text-xs font-black text-slate-500 ring-1 ring-slate-200 transition group-hover:bg-cyan-50 group-hover:text-cyan-800 group-hover:ring-cyan-200 sm:inline-flex">
-                →
-              </span>
-            </Link>
-          );
-        })}
-      </div>
-      <p className="mt-6 text-[11px] font-black uppercase tracking-[0.22em] text-slate-400">
-        {labels.methods}
-      </p>
-      <div className="mt-6 grid gap-3 sm:grid-cols-2">
-        {methodTopics.map((id) => {
-          const topic = topicById(topics, id);
-          const theme = getKnowledgeTheme(id);
-
-          if (!topic) {
-            return null;
-          }
-
-          return (
-            <Link
-              key={id}
-              href={localizeHref(locale, `/wissen/${id}`)}
-              className={`group rounded-2xl border p-4 transition hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cyan-100 ${theme.accentBorder} ${theme.accentBg}`}
-              aria-label={`${labels.open}: ${topic.title}`}
-            >
-              <span className={`rounded-full bg-white/80 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] ring-1 ring-current/10 ${theme.accentText}`}>
-                {labels.method}
-              </span>
-              <span className="mt-3 block text-sm font-bold text-slate-950">
-                {topic.title}
-              </span>
-              <span className={`mt-2 block text-xs font-semibold ${theme.accentText}`}>
-                {theme.label[locale]}
-              </span>
-              <span className="mt-4 inline-flex items-center text-xs font-black text-slate-600 transition group-hover:text-cyan-800">
-                {labels.open} <span className="ml-2">→</span>
-              </span>
-            </Link>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
+type Props = { params: Promise<{ lang: string }> };
 
 export async function generateMetadata({ params }: Props) {
   const locale = await resolveLocale(params);
-  const page = getSiteContent(locale).pages.knowledge;
-
   return buildLocalizedMetadata({
     locale,
     path: "/wissen",
     title:
       locale === "de"
-        ? "Wissen zu Zuverlässigkeitstechnik und DoE | RelTest"
-        : "Reliability Engineering and DoE Knowledge | RelTest",
-    description: page.intro.description,
+        ? "Wissen zu Zuverlässigkeitstechnik, DoE und Risiko | RelTest"
+        : "Reliability Engineering, DoE and Risk Knowledge | RelTest",
+    description:
+      locale === "de"
+        ? "Fachwissen zu Zuverlässigkeitstechnik, Planung, Schwachstellenanalyse, Erprobung, Absicherung, Prognosen, DoE und technischem Risikomanagement."
+        : "Technical knowledge on reliability engineering, planning, weak-point analysis, testing, assurance, prediction, DoE and risk management.",
   });
 }
 
 export default async function KnowledgePage({ params }: Props) {
   const locale = await resolveLocale(params);
-  const page = getSiteContent(locale).pages.knowledge;
   const isGerman = locale === "de";
+  const articles = getKnowledgeArticles(locale);
+  const overview = articles[0];
+  const foundationMedia = overview.heroMedia;
+  const overviewHeroMedia: KnowledgeMedia = {
+    src: "/graphics/wissen/reliability-product-development-overview.png",
+    ratio: "wide",
+    label: isGerman
+      ? "Zuverlässigkeit in der Produktentwicklung"
+      : "Reliability in product development",
+    brief: isGerman
+      ? "Anforderungen, Risiken, Modelle, Versuche, Daten und Nachweise greifen im Entwicklungsprozess ineinander."
+      : "Requirements, risks, models, tests, data and evidence work together throughout product development.",
+    alt: isGerman
+      ? "Technisches Übersichtsbild eines elektromechanischen Produkts, das Anforderungen, Risikoanalyse, Modellbildung, Erprobung, Datenanalyse, Nachweis und Felderfahrung im Produktentwicklungsprozess verbindet."
+      : "Technical overview of an electromechanical product connecting requirements, risk analysis, modelling, testing, data analysis, verification and field experience throughout product development.",
+    caption: isGerman
+      ? "Zuverlässigkeit entsteht, wenn Anforderungen, Risiken, Modelle, Versuche, Daten und Nachweise über die Produktentwicklung hinweg zusammengeführt werden."
+      : "Reliability emerges when requirements, risks, models, tests, data and evidence are connected throughout product development.",
+  };
+  const fields = articles.filter((article) =>
+    ["planung", "schwachstellenanalyse", "erprobung", "absicherung", "prognosen"].includes(article.slug),
+  );
+  const methods = articles.filter((article) =>
+    ["design-of-experiments", "risikomanagement"].includes(article.slug),
+  );
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fbfd_0%,#eef5f8_100%)]">
-        <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-200/30 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-6 lg:grid-cols-[1fr_0.78fr] lg:items-center lg:px-8 lg:py-20">
+      <header className="relative overflow-hidden bg-[var(--solution-marine)] font-winnstein-body text-white">
+        <BrandLineWatermark placement="knowledge" />
+        <div className="relative mx-auto grid max-w-[1440px] gap-10 px-6 py-16 lg:grid-cols-[minmax(0,.9fr)_minmax(420px,.82fr)] lg:items-center lg:px-12 lg:py-20">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-700">
-              {page.intro.eyebrow}
+            <p className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)]">
+              {isGerman ? "Technisches Wissen" : "Technical knowledge"}
             </p>
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.06em] text-slate-950 sm:text-5xl lg:text-6xl">
-              {page.intro.title}
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-9 text-slate-600">
-              {page.intro.description}
-            </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {(isGerman
-                ? [
-                    ["7", "Fachthemen"],
-                    ["DoE", "Versuchsplanung"],
-                    ["Risiko", "Priorisierung"],
-                  ]
-                : [
-                    ["7", "Technical topics"],
-                    ["DoE", "Experimental design"],
-                    ["Risk", "Prioritisation"],
-                  ]
-              ).map(([value, label]) => (
-                <div key={label} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <p className="text-3xl font-black tracking-[-0.05em] text-slate-950">
-                    {value}
-                  </p>
-                  <p className="mt-1 text-sm font-semibold text-slate-500">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <KnowledgeMap locale={locale} topics={page.topics} />
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-6 lg:px-8">
-        <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-          <div>
-            <p className="text-sm font-black uppercase tracking-[0.28em] text-cyan-700">
-              {isGerman ? "Themen vertiefen" : "Explore topics"}
-            </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
+            <h1 className="mt-4 max-w-4xl font-winnstein-display text-5xl font-semibold leading-[1.05] sm:text-6xl">
               {isGerman
-                ? "Technisches Wissen so aufbereitet, dass daraus Projektentscheidungen werden."
-                : "Technical knowledge structured to support project decisions."}
-            </h2>
+                ? "Zuverlässigkeit verstehen. Methoden sicher einordnen."
+                : "Understand reliability. Apply methods with confidence."}
+            </h1>
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/[0.78]">
+              {isGerman
+                ? "Dieser Bereich erklärt die fachlichen Grundlagen hinter belastbaren Entwicklungs-, Prüf- und Freigabeentscheidungen. Die Inhalte stammen aus der bisherigen RelTest-Wissenswelt und werden hier in einer klaren, zusammenhängenden Struktur weitergeführt."
+                : "This section explains the technical foundations behind defensible development, testing and release decisions. It continues the established RelTest knowledge base in a clear and connected structure."}
+            </p>
+            <Link
+              href={localizeHref(locale, `/wissen/${overview.slug}`)}
+              className="brand-action mt-9 inline-flex items-center gap-8 bg-[var(--solution-steel-cyan)] px-6 py-4 font-winnstein-display text-sm font-semibold text-[var(--solution-marine)]"
+            >
+              {isGerman ? "Grundlagen der Zuverlässigkeit" : "Reliability fundamentals"} <span aria-hidden="true">→</span>
+            </Link>
           </div>
+          <KnowledgeMediaPlaceholder media={overviewHeroMedia} dark preload locale={locale} />
+        </div>
+        <div className="relative h-1.5 bg-brand-steel-cyan" aria-hidden="true" />
+      </header>
+
+      <main className="font-winnstein-body">
+        <section className="mx-auto max-w-6xl px-6 pt-16 lg:px-8 lg:pt-24">
           <Link
-            href={localizeHref(locale, "/leistungen")}
-            className="brand-action brand-action-outline brand-action-outline-light inline-flex items-center justify-center border border-slate-300 bg-white px-6 py-4 text-sm font-bold text-slate-900 transition hover:border-cyan-300 hover:text-cyan-800"
+            href={localizeHref(locale, `/wissen/${overview.slug}`)}
+            className="group grid overflow-hidden border-y border-[var(--solution-marine-20)] lg:grid-cols-[.78fr_1.22fr]"
           >
-            {isGerman ? "Passende Leistungen ansehen" : "View related services"}
+            <div className="flex flex-col justify-center py-10 pr-0 lg:pr-14">
+              <p className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)]">
+                {isGerman ? "01 / Zuverlässigkeitstechnik" : "01 / Reliability engineering"}
+              </p>
+              <h2 className="mt-3 font-winnstein-display text-4xl font-semibold leading-tight text-[var(--solution-marine)]">
+                {overview.navLabel}
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-[var(--solution-marine-80)]">{overview.lead}</p>
+              <span className="mt-7 font-winnstein-display font-semibold text-[var(--solution-steel-cyan)] underline decoration-transparent underline-offset-8 transition group-hover:decoration-current">
+                {isGerman ? "Grundlagen vertiefen" : "Explore the fundamentals"} <span className="ml-5" aria-hidden="true">→</span>
+              </span>
+            </div>
+            <KnowledgeMediaPlaceholder
+              media={foundationMedia}
+              className="my-8 lg:my-0"
+              frameClassName="!aspect-[16/10] lg:!aspect-[16/9]"
+              locale={locale}
+            />
           </Link>
-        </div>
+        </section>
 
-        <div className="grid gap-7">
-          {page.topics.map((topic, index) => {
-            const theme = getKnowledgeTheme(topic.id);
+        <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8 lg:py-24">
+          <div className="max-w-3xl">
+            <p className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)]">
+              {isGerman ? "Fachfelder" : "Technical fields"}
+            </p>
+            <h2 className="mt-3 font-winnstein-display text-4xl font-semibold leading-tight text-[var(--solution-marine)]">
+              {isGerman
+                ? "Je nach Fragestellung greifen unterschiedliche Perspektiven ineinander."
+                : "Different perspectives come together depending on the engineering question."}
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-[var(--solution-marine-80)]">
+              {isGerman
+                ? "Die Themen sind keine vorgeschriebene Prozesskette. Sie markieren eigenständige Arbeitsfelder, die in realen Projekten gezielt kombiniert werden."
+                : "These topics are not a prescribed process chain. They are distinct fields that are combined as required in real projects."}
+            </p>
+          </div>
 
-            return (
-              <article
-                key={topic.id}
-                id={topic.id}
-                className="scroll-mt-28 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:shadow-xl hover:shadow-slate-200/70"
+          <nav className="mt-14 border-t border-[var(--solution-marine-20)]" aria-label={isGerman ? "Wissensthemen" : "Knowledge topics"}>
+            {fields.map((article, index) => (
+              <Link
+                key={article.slug}
+                href={localizeHref(locale, `/wissen/${article.slug}`)}
+                className="group grid gap-3 border-b border-[var(--solution-marine-20)] py-7 sm:grid-cols-[minmax(210px,.7fr)_minmax(0,1.3fr)_auto] sm:items-center sm:gap-8"
               >
-                <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
-                  <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className={`rounded-full border px-3 py-1 text-xs font-black ${theme.accentBorder} ${theme.accentBg} ${theme.accentText}`}>
-                        {topicBadgeLabel(locale, theme.index)}
-                      </span>
-                      <span className="text-xs font-black uppercase tracking-[0.22em] text-slate-400">
-                        {theme.label[locale]}
-                      </span>
-                    </div>
-                    <h2 className="mt-5 text-3xl font-semibold tracking-[-0.05em] text-slate-950">
-                      {topic.title}
-                    </h2>
-                    <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
-                      {topic.description}
-                    </p>
-                    <div className="mt-6 rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-200">
-                      <p className="text-sm font-bold text-slate-900">
-                        {theme.result[locale]}
-                      </p>
-                    </div>
-                    <Link
-                      href={localizeHref(locale, `/wissen/${topic.id}`)}
-                      className="brand-chamfer-control mt-7 inline-flex items-center bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-cyan-800"
-                    >
-                      {isGerman ? "Fachseite öffnen" : "Open technical page"}
-                    </Link>
-                  </div>
-
-                  <KnowledgeDiagram slug={topic.id} locale={locale} compact />
+                <div className="flex items-baseline gap-5">
+                  <span className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)]">0{index + 2}</span>
+                  <h3 className="font-winnstein-display text-2xl font-semibold text-[var(--solution-marine)] transition group-hover:text-[var(--solution-steel-cyan)]">
+                    {article.navLabel}
+                  </h3>
                 </div>
-              </article>
-            );
-          })}
-        </div>
-      </section>
+                <p className="text-base leading-7 text-[var(--solution-marine-80)]">{article.lead}</p>
+                <span aria-hidden="true" className="text-2xl text-[var(--solution-steel-cyan)]">→</span>
+              </Link>
+            ))}
+          </nav>
+        </section>
 
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-2xl shadow-slate-300 sm:p-10 lg:p-12">
-            <div className="grid gap-8 lg:grid-cols-[1fr_0.5fr] lg:items-center">
+        <section className="bg-[var(--solution-marine-10)]">
+          <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8 lg:py-20">
+            <div className="grid gap-10 lg:grid-cols-[.58fr_1.42fr]">
               <div>
-                <p className="text-sm font-black uppercase tracking-[0.28em] text-cyan-300">
-                  {isGerman ? "Vom Wissen ins Projekt" : "From knowledge to project"}
+                <p className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)]">
+                  {isGerman ? "Querschnittsmethoden" : "Cross-cutting methods"}
                 </p>
-                <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.05em] sm:text-4xl">
-                  {isGerman
-                    ? "Wenn aus einem Fachthema eine konkrete Entscheidung werden soll, ist RelTest der richtige Sparringspartner."
-                    : "When a technical topic has to become a concrete decision, RelTest is the right sparring partner."}
+                <h2 className="mt-3 font-winnstein-display text-4xl font-semibold text-[var(--solution-marine)]">
+                  {isGerman ? "Versuche planen und Risiken beherrschen" : "Plan experiments and manage risk"}
                 </h2>
-                <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
-                  {page.preparation.description}
-                </p>
               </div>
-              <div className="flex flex-col gap-3">
-                <Link
-                  href={localizeHref(locale, "/kontakt")}
-                  className="brand-chamfer-control inline-flex items-center justify-center bg-cyan-400 px-6 py-4 text-sm font-bold text-slate-950 transition-colors hover:bg-cyan-300"
-                >
-                  {page.preparation.contactCta}
-                </Link>
-                <Link
-                  href={localizeHref(locale, "/leistungen")}
-                  className="brand-action brand-action-outline inline-flex items-center justify-center border border-white/15 px-6 py-4 text-sm font-bold text-white transition-colors hover:border-cyan-300 hover:text-cyan-200"
-                >
-                  {page.preparation.servicesCta}
-                </Link>
+              <div className="border-t border-[var(--solution-marine-20)]">
+                {methods.map((article, index) => (
+                  <Link
+                    key={article.slug}
+                    href={localizeHref(locale, `/wissen/${article.slug}`)}
+                    className="group block border-b border-[var(--solution-marine-20)] py-7"
+                  >
+                    <div className="flex items-start justify-between gap-6">
+                      <div>
+                        <div className="flex items-baseline gap-5">
+                          <span className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)]">0{index + 7}</span>
+                          <h3 className="font-winnstein-display text-2xl font-semibold text-[var(--solution-marine)] group-hover:text-[var(--solution-steel-cyan)]">
+                            {article.navLabel}
+                          </h3>
+                        </div>
+                        <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--solution-marine-80)]">{article.lead}</p>
+                      </div>
+                      <span aria-hidden="true" className="text-2xl text-[var(--solution-steel-cyan)]">→</span>
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8 lg:py-20">
+          <div className="grid gap-10 lg:grid-cols-2">
+            <div className="border-t-4 border-[var(--solution-steel-cyan)] pt-7">
+              <h2 className="font-winnstein-display text-3xl font-semibold text-[var(--solution-marine)]">
+                {isGerman ? "Begriffe präzise nachschlagen" : "Look up key terms precisely"}
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-[var(--solution-marine-80)]">
+                {isGerman
+                  ? "Das Glossar erklärt zentrale Kennzahlen, Methoden und Fachbegriffe aus Zuverlässigkeit, Lebensdauer und Risikomanagement."
+                  : "The glossary explains key metrics, methods and terms from reliability, lifetime and risk management."}
+              </p>
+              <Link href={localizeHref(locale, "/glossar")} className="mt-6 inline-flex font-winnstein-display font-semibold text-[var(--solution-steel-cyan)] underline underline-offset-8">
+                {isGerman ? "Glossar öffnen" : "Open glossary"} <span className="ml-5" aria-hidden="true">→</span>
+              </Link>
+            </div>
+            <div className="border-t-4 border-[var(--solution-marine)] pt-7">
+              <h2 className="font-winnstein-display text-3xl font-semibold text-[var(--solution-marine)]">
+                {isGerman ? "Anwendungswissen aus der Praxis" : "Applied knowledge from practice"}
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-[var(--solution-marine-80)]">
+                {isGerman
+                  ? "Vertiefende Beiträge zu Smart Data, beschleunigten Lebensdauertests und effizienter Testplanung finden Sie unter Aktuelles."
+                  : "Further articles on smart data, accelerated lifetime testing and efficient test planning are available under News."}
+              </p>
+              <Link href={localizeHref(locale, "/aktuelles")} className="mt-6 inline-flex font-winnstein-display font-semibold text-[var(--solution-steel-cyan)] underline underline-offset-8">
+                {isGerman ? "Fachbeiträge ansehen" : "View technical articles"} <span className="ml-5" aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
     </>
   );
 }

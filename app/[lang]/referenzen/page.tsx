@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { getSiteContent, referenceLogos } from "../../_content/site-content";
+import { PageClosingCta } from "../../_components/page-closing-cta";
 import { localizeHref, resolveLocale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
 
@@ -37,25 +37,6 @@ const referencesCopy = {
     ctaSecondary: "View expertise",
   },
 } as const;
-
-function ArrowIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 20 20"
-      className="h-4 w-4"
-      fill="none"
-    >
-      <path
-        d="M4 10h11m-4-4 4 4-4 4"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 export async function generateMetadata({ params }: Props) {
   const locale = await resolveLocale(params);
@@ -157,34 +138,18 @@ export default async function ReferencesPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-brand-steel-cyan-10 px-5 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 border-y border-brand-marine/18 py-10 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <h2 className="max-w-4xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
-              {copy.ctaTitle}
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-brand-marine/72">
-              {copy.ctaText}
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={localizeHref(locale, "/kontakt")}
-              className="brand-action inline-flex min-h-12 items-center justify-between gap-6 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
-            >
-              {copy.ctaPrimary}
-              <ArrowIcon />
-            </Link>
-            <Link
-              href={localizeHref(locale, "/expertise")}
-              className="brand-action brand-action-outline brand-action-outline-light inline-flex min-h-12 items-center justify-between gap-6 border border-brand-marine/30 bg-white px-6 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:border-brand-steel-cyan hover:text-brand-steel-cyan"
-            >
-              {copy.ctaSecondary}
-              <ArrowIcon />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PageClosingCta
+        title={copy.ctaTitle}
+        description={copy.ctaText}
+        primary={{
+          href: localizeHref(locale, "/kontakt"),
+          label: copy.ctaPrimary,
+        }}
+        secondary={{
+          href: localizeHref(locale, "/expertise"),
+          label: copy.ctaSecondary,
+        }}
+      />
     </main>
   );
 }

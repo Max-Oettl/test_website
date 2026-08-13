@@ -188,6 +188,10 @@ const content = {
         { label: "E-Learning", href: "/education#e-learning" },
       ],
       knowledgeItems: [
+        {
+          label: "Zuverlässigkeitstechnik",
+          href: "/wissen/zuverlaessigkeitstechnik",
+        },
         { label: "Planung", href: "/wissen/planung" },
         {
           label: "Schwachstellenanalyse",
@@ -198,6 +202,7 @@ const content = {
         { label: "Prognosen", href: "/wissen/prognosen" },
         { label: "Design of Experiments", href: "/wissen/design-of-experiments" },
         { label: "Risikomanagement", href: "/wissen/risikomanagement" },
+        { label: "Glossar", href: "/glossar" },
       ],
       expertiseItems: [
         {
@@ -786,6 +791,10 @@ const content = {
         { label: "E-learning", href: "/education#e-learning" },
       ],
       knowledgeItems: [
+        {
+          label: "Reliability engineering",
+          href: "/wissen/zuverlaessigkeitstechnik",
+        },
         { label: "Planning", href: "/wissen/planung" },
         {
           label: "Weak-point analysis",
@@ -796,6 +805,7 @@ const content = {
         { label: "Predictions", href: "/wissen/prognosen" },
         { label: "Design of Experiments", href: "/wissen/design-of-experiments" },
         { label: "Risk management", href: "/wissen/risikomanagement" },
+        { label: "Glossary", href: "/glossar" },
       ],
       expertiseItems: [
         {

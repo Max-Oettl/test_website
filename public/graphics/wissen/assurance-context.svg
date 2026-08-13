@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1200" height="900" fill="url(#dark-panel)"/>
+<rect width="1200" height="900" fill="url(#dot-pattern)" opacity=".55"/>
+     <path d="M-40 790C190 650 340 740 535 620S910 460 1240 590" stroke="#2EA1CF" stroke-width="2" opacity=".16"/>
+     <path d="M-40 835C210 690 365 790 565 665S935 505 1240 640" stroke="#FFFFFF" stroke-width="1.5" opacity=".08"/>
+     
+    <g transform="translate(72 110)">
+      <g>
+    <rect x="0" y="0" width="250" height="98" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="28" y="34" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">REQ-17</text>
+    <text x="28" y="70" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">function + target</text>
+  </g>
+      <g>
+    <rect x="0" y="144" width="250" height="98" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="28" y="178" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">R-04</text>
+    <text x="28" y="214" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">failure mechanism</text>
+  </g>
+      <path d="M250 49h110M250 193h110" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+      <rect x="360" y="0" width="430" height="386" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+      <text x="575" y="46" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">ASSURANCE</text>
+      <rect x="404" y="88" width="150" height="98" fill="rgba(255,255,255,.06)" stroke="#2EA1CF" stroke-width="2"/>
+      <rect x="596" y="88" width="150" height="98" fill="rgba(255,255,255,.06)" stroke="#2EA1CF" stroke-width="2"/>
+      <rect x="404" y="230" width="150" height="98" fill="rgba(255,255,255,.06)" stroke="#2EA1CF" stroke-width="2"/>
+      <rect x="596" y="230" width="150" height="98" fill="rgba(255,255,255,.06)" stroke="#2EA1CF" stroke-width="2"/>
+      <text x="479" y="137" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">FMEA</text><text x="671" y="137" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">SIM</text>
+      <text x="479" y="279" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">TEST</text><text x="671" y="279" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">DATA</text>
+      <path d="M790 193h110" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+      <rect x="900" y="82" width="220" height="222" fill="#EAF5FB"/>
+      <path d="M948 120h124v146H948zM970 154h80M970 186h80M970 218h52" stroke="#142452" stroke-width="4"/>
+      <circle cx="1060" cy="248" r="34" fill="#2EA1CF"/>
+      <path d="m1044 248 12 12 22-28" stroke="#FFFFFF" stroke-width="5"/>
+      <text x="1010" y="350" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">E-12</text>
+      <path d="M1010 386v156" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+      <rect x="830" y="560" width="360" height="112" fill="rgba(255,255,255,.08)" stroke="#2EA1CF" stroke-width="3"/>
+      <text x="1010" y="596" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle" dominant-baseline="middle">RELEASE</text>
+      <text x="1010" y="635" fill="rgba(255,255,255,.65)" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle" dominant-baseline="middle">traceable decision</text>
+    </g>
+  
+</svg>

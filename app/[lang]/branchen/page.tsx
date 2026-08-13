@@ -1,6 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import { AiAwareImage as Image } from "../../_components/ai-aware-image";
+import { PageClosingCta } from "../../_components/page-closing-cta";
 import { localizeHref, resolveLocale, type Locale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
 
@@ -351,34 +352,18 @@ export default async function IndustriesPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-brand-marine px-5 py-16 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <h2 className="max-w-4xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
-              {content.cta.title}
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-white/72">
-              {content.cta.description}
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={localizeHref(locale, "/kontakt")}
-              className="brand-action inline-flex min-h-12 items-center justify-between gap-6 bg-brand-steel-cyan px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
-            >
-              {content.cta.primary}
-              <ArrowIcon />
-            </Link>
-            <Link
-              href={localizeHref(locale, "/leistungen")}
-              className="brand-action brand-action-outline inline-flex min-h-12 items-center justify-between gap-6 border border-white/30 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white"
-            >
-              {content.cta.secondary}
-              <ArrowIcon />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PageClosingCta
+        title={content.cta.title}
+        description={content.cta.description}
+        primary={{
+          href: localizeHref(locale, "/kontakt"),
+          label: content.cta.primary,
+        }}
+        secondary={{
+          href: localizeHref(locale, "/leistungen"),
+          label: content.cta.secondary,
+        }}
+      />
     </main>
   );
 }

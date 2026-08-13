@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1200" height="900" fill="url(#dark-panel)"/>
+<rect width="1200" height="900" fill="url(#dot-pattern)" opacity=".55"/>
+     <path d="M-40 790C190 650 340 740 535 620S910 460 1240 590" stroke="#2EA1CF" stroke-width="2" opacity=".16"/>
+     <path d="M-40 835C210 690 365 790 565 665S935 505 1240 640" stroke="#FFFFFF" stroke-width="1.5" opacity=".08"/>
+     
+    <g transform="translate(74 125)">
+      <g>
+    <rect x="0" y="0" width="290" height="176" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="28" y="34" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">FIELD</text>
+    <text x="28" y="70" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">load + environment</text>
+  </g>
+      <path d="M26 128H264M34 116c30-70 52 62 82 0s56-6 82-46 42 52 62 4" stroke="#2EA1CF" stroke-width="5"/>
+      <path d="M290 88h110" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+      <rect x="400" y="0" width="520" height="445" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+      <path d="M462 280h395M520 226h278v108H520z" stroke="#FFFFFF" stroke-width="5"/>
+      <circle cx="590" cy="280" r="42" stroke="#2EA1CF" stroke-width="8"/><circle cx="730" cy="280" r="42" stroke="#2EA1CF" stroke-width="8"/>
+      <path d="M590 238v-80M730 238v-80M590 158h140" stroke="#2EA1CF" stroke-width="4"/>
+      <circle cx="590" cy="158" r="10" fill="#E9B400"/><circle cx="730" cy="158" r="10" fill="#E9B400"/>
+      <text x="660" y="390" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">TEST</text>
+      <path d="M920 220h110" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+      <g>
+    <rect x="760" y="510" width="290" height="176" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="788" y="544" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">EVIDENCE</text>
+    <text x="788" y="580" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">criterion + uncertainty</text>
+  </g>
+      <path d="M790 628h230M800 620c42-2 67-16 96-42 29-26 56-31 112-38" stroke="#2EA1CF" stroke-width="5"/>
+      <path d="M660 445v153h100" stroke="rgba(255,255,255,.28)" stroke-width="3" stroke-dasharray="8 9"/>
+    </g>
+  
+</svg>

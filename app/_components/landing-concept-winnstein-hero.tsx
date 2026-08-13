@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { startTransition, useEffect, useState } from "react";
 
+import { AiAwareImage as Image } from "./ai-aware-image";
 import { localizeHref, type Locale } from "../_i18n/config";
 
 type LandingConceptWinnsteinHeroProps = {
@@ -218,7 +218,7 @@ export function LandingConceptWinnsteinHero({
           <div className="relative z-20 flex min-h-[44rem] items-center px-6 py-16 sm:min-h-[40rem] sm:px-10 sm:py-20 lg:px-16 xl:px-20">
             <div
               key={activeSlide.title}
-              className="winnstein-hero-copy flex h-[31rem] w-full max-w-[56rem] flex-col sm:h-[27rem]"
+              className="winnstein-hero-copy flex h-[31rem] w-full max-w-[56rem] translate-y-8 flex-col sm:h-[27rem] sm:translate-y-10"
             >
               <div className="flex min-h-0 flex-1 items-end">
                 <h1 className="max-w-[56rem] text-[clamp(2.55rem,3.7vw,4.75rem)] leading-[0.98] font-semibold tracking-[-0.06em] text-brand-ink">
@@ -248,7 +248,7 @@ export function LandingConceptWinnsteinHero({
           </div>
 
           <div
-            className="absolute bottom-11 left-6 z-30 flex items-center gap-2.5 sm:bottom-14 sm:left-10 lg:bottom-16 lg:left-16 xl:left-20"
+            className="absolute bottom-3 left-6 z-30 flex items-center gap-2.5 sm:bottom-4 sm:left-10 lg:bottom-5 lg:left-16 xl:left-20"
             aria-label={content.slideLabel}
           >
             {content.slides.map((slide, index) => {

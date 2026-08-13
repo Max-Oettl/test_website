@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1600" height="700" fill="#F8FBFD"/>
+<rect x="24" y="24" width="1552" height="652" stroke="#D0D3DC" stroke-width="2"/>
+     <path d="M90 615H1510" stroke="#D0D3DC" stroke-width="2"/>
+     
+    <rect x="70" y="348" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="124" y="348" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="178" y="348" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="232" y="348" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="286" y="348" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="70" y="294" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="124" y="294" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="178" y="294" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="232" y="294" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="286" y="294" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="70" y="240" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="124" y="240" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="178" y="240" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="232" y="240" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="286" y="240" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><rect x="70" y="186" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="124" y="186" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="178" y="186" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="232" y="186" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><rect x="286" y="186" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><rect x="70" y="132" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="124" y="132" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="178" y="132" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><rect x="232" y="132" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><rect x="286" y="132" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><circle cx="313" cy="159" r="16" fill="#EC6244" stroke="#142452" stroke-width="4"/><text x="205" y="442" fill="#142452" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">R0</text>
+    <text x="205" y="90" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">INITIAL RISK</text>
+    <path d="M375 270h90" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+    <g transform="translate(480 132)">
+      <rect x="0" y="0" width="250" height="270" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/>
+      <path d="m50 150 48-48 38 38 64-80" stroke="#0C84B4" stroke-width="6"/>
+      <path d="M46 202h158" stroke="#142452" stroke-width="4"/>
+      <text x="125" y="236" fill="#142452" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle" dominant-baseline="middle">M</text>
+    </g>
+    <path d="M730 270h80" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+    <g transform="translate(825 132)">
+      <rect x="0" y="0" width="250" height="270" fill="#142452"/>
+      <path d="M44 60h162v112H44z" stroke="#FFFFFF" stroke-width="4"/>
+      <path d="M64 144c28-68 62 40 122-50" stroke="#2EA1CF" stroke-width="5"/>
+      <circle cx="184" cy="196" r="28" fill="#2EA1CF"/><path d="m171 196 10 10 18-23" stroke="#FFFFFF" stroke-width="4"/>
+      <text x="125" y="236" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle" dominant-baseline="middle">E</text>
+    </g>
+    <path d="M1075 270h80" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+    <rect x="1170" y="348" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="1224" y="348" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="1278" y="348" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="1332" y="348" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1386" y="348" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1170" y="294" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="1224" y="294" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="1278" y="294" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1332" y="294" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1386" y="294" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1170" y="240" width="54" height="54" fill="#D5ECF7" stroke="#FFFFFF" stroke-width="2"/><rect x="1224" y="240" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1278" y="240" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1332" y="240" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1386" y="240" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><rect x="1170" y="186" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1224" y="186" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1278" y="186" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1332" y="186" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><rect x="1386" y="186" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><rect x="1170" y="132" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1224" y="132" width="54" height="54" fill="#F7EEC0" stroke="#FFFFFF" stroke-width="2"/><rect x="1278" y="132" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><rect x="1332" y="132" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><rect x="1386" y="132" width="54" height="54" fill="#FDE0D8" stroke="#FFFFFF" stroke-width="2"/><circle cx="1251" cy="321" r="16" fill="#0C84B4" stroke="#142452" stroke-width="4"/><text x="1305" y="442" fill="#142452" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">R1</text>
+    <text x="1305" y="90" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">RESIDUAL RISK</text>
+    <path d="M205 500H1305" stroke="#435075" stroke-width="2" stroke-dasharray="8 8"/>
+    <text x="755" y="548" fill="#435075" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle" dominant-baseline="middle">mechanism  ->  measure  ->  verified effectiveness  ->  reassessment</text>
+  
+</svg>

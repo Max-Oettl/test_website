@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1600" height="700" fill="#F8FBFD"/>
+<rect x="24" y="24" width="1552" height="652" stroke="#D0D3DC" stroke-width="2"/>
+     <path d="M90 615H1510" stroke="#D0D3DC" stroke-width="2"/>
+     
+    <rect x="100" y="98" width="240" height="422" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/><text x="220" y="138" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">REQ</text><rect x="132" y="204" width="176" height="72" fill="#E7E9EE"/><rect x="132" y="350" width="176" height="72" fill="#E7E9EE"/><text x="220" y="240" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">REQ-17</text><text x="220" y="386" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">REQ-22</text><rect x="390" y="98" width="240" height="422" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/><text x="510" y="138" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">RISK</text><rect x="422" y="204" width="176" height="72" fill="#FDECE8"/><rect x="422" y="350" width="176" height="72" fill="#FDECE8"/><text x="510" y="240" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">R-04</text><text x="510" y="386" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">R-09</text><rect x="680" y="98" width="240" height="422" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/><text x="800" y="138" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">METHOD</text><rect x="712" y="204" width="176" height="72" fill="#E7E9EE"/><rect x="712" y="350" width="176" height="72" fill="#E7E9EE"/><text x="800" y="240" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">FMEA</text><text x="800" y="386" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">TEST-03</text><rect x="970" y="98" width="240" height="422" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/><text x="1090" y="138" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">EVIDENCE</text><rect x="1002" y="204" width="176" height="72" fill="#E7E9EE"/><rect x="1002" y="350" width="176" height="72" fill="#E7E9EE"/><text x="1090" y="240" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">E-12</text><text x="1090" y="386" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">E-18</text><rect x="1260" y="98" width="240" height="422" fill="#EAF5FB" stroke="#D0D3DC" stroke-width="2"/><text x="1380" y="138" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">RELEASE</text><rect x="1292" y="204" width="176" height="72" fill="#E7E9EE"/><rect x="1292" y="350" width="176" height="72" fill="#E7E9EE"/><text x="1380" y="240" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">REL-02</text><text x="1380" y="386" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">REL-02</text>
+    <path d="M308 240H422M598 240H712M888 240H1002M1178 240H1292" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+    <path d="M308 386H422M598 386H712M888 386H1002M1178 386H1292" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+    <path d="M220 276v74M510 276v74M800 276v74M1090 276v74M1380 276v74" stroke="#435075" stroke-width="2" stroke-dasharray="7 7"/>
+    <circle cx="1380" cy="240" r="18" fill="#2EA1CF"/><path d="m1371 240 7 7 13-16" stroke="#FFFFFF" stroke-width="3"/>
+    <circle cx="1380" cy="386" r="18" fill="#2EA1CF"/><path d="m1371 386 7 7 13-16" stroke="#FFFFFF" stroke-width="3"/>
+    <path d="M500 570h600" stroke="#435075" stroke-width="2" marker-start="url(#arrow-marine)" marker-end="url(#arrow-marine)"/>
+    <text x="800" y="620" fill="#435075" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle" dominant-baseline="middle">bidirectional traceability</text>
+  
+</svg>

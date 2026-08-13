@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1200" height="900" fill="url(#dark-panel)"/>
+<rect width="1200" height="900" fill="url(#dot-pattern)" opacity=".55"/>
+     <path d="M-40 790C190 650 340 740 535 620S910 460 1240 590" stroke="#2EA1CF" stroke-width="2" opacity=".16"/>
+     <path d="M-40 835C210 690 365 790 565 665S935 505 1240 640" stroke="#FFFFFF" stroke-width="1.5" opacity=".08"/>
+     
+    <g transform="translate(390 238)">
+      <circle cx="210" cy="210" r="182" fill="rgba(255,255,255,.035)" stroke="#2EA1CF" stroke-width="2"/>
+      <circle cx="210" cy="210" r="132" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.24)" stroke-width="2"/>
+      <path d="M144 174 210 134l66 40v76l-66 40-66-40z" stroke="#FFFFFF" stroke-width="5"/>
+      <path d="m144 174 66 40 66-40M210 214v76" stroke="#2EA1CF" stroke-width="4"/>
+      <circle cx="210" cy="210" r="12" fill="#2EA1CF"/>
+      <text x="210" y="356" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">SYSTEM</text>
+    </g>
+    <g>
+    <rect x="74" y="94" width="300" height="120" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="102" y="128" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">REQ</text>
+    <text x="102" y="164" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">function + conditions</text>
+  </g>
+    <g>
+    <rect x="826" y="94" width="300" height="120" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="854" y="128" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">MODEL</text>
+    <text x="854" y="164" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">mechanism + R(t)</text>
+  </g>
+    <g>
+    <rect x="74" y="686" width="300" height="120" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="102" y="720" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">FIELD</text>
+    <text x="102" y="756" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">loads + observations</text>
+  </g>
+    <g>
+    <rect x="826" y="686" width="300" height="120" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="854" y="720" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">TEST</text>
+    <text x="854" y="756" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">profile + evidence</text>
+  </g>
+    <path d="M374 154C510 126 690 126 826 154" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+    <path d="M1066 214C1148 338 1148 548 1066 686" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+    <path d="M826 746C690 774 510 774 374 746" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+    <path d="M134 686C52 550 52 350 134 214" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+    <path d="M374 188 468 270M826 188 732 270M374 712 468 630M826 712 732 630" stroke="rgba(255,255,255,.30)" stroke-width="2" stroke-dasharray="8 10"/>
+  
+</svg>

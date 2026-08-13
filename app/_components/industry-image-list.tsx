@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import { AiAwareImage as Image } from "./ai-aware-image";
 
 type IndustryImageListItem = {
   name: string;

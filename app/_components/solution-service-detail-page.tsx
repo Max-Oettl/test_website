@@ -1,6 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import { AiAwareImage as Image } from "./ai-aware-image";
+import { PageClosingCta } from "./page-closing-cta";
 import type { SolutionServicePage } from "../_content/solution-service-pages";
 import { localizeHref, type Locale } from "../_i18n/config";
 
@@ -266,34 +267,18 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
         </div>
       </section>
 
-      <section className="bg-brand-marine px-5 py-16 text-white sm:px-6 lg:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <h2 className="max-w-4xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.025em] sm:text-4xl">
-              {page.cta.title}
-            </h2>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-white/72">
-              {page.cta.text}
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={localizeHref(locale, "/kontakt")}
-              className="brand-action inline-flex min-h-14 items-center justify-between gap-8 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
-            >
-              {text.contact}
-              <ArrowIcon />
-            </Link>
-            <Link
-              href={localizeHref(locale, "/leistungen")}
-              className="brand-action brand-action-outline inline-flex min-h-14 items-center justify-between gap-8 border border-white/35 px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
-            >
-              {text.serviceOverview}
-              <ArrowIcon />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PageClosingCta
+        title={page.cta.title}
+        description={page.cta.text}
+        primary={{
+          href: localizeHref(locale, "/kontakt"),
+          label: text.contact,
+        }}
+        secondary={{
+          href: localizeHref(locale, "/leistungen"),
+          label: text.serviceOverview,
+        }}
+      />
     </main>
   );
 }

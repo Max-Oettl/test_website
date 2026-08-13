@@ -1,8 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import { AiAwareImage as Image } from "./ai-aware-image";
 import type { IndustryDetailContent } from "../_content/industry-detail-content";
 import { localizeHref, type Locale } from "../_i18n/config";
+import { PageClosingCta } from "./page-closing-cta";
 
 type Props = {
   locale: Locale;
@@ -308,25 +309,14 @@ export function IndustryDetailPage({ locale, content }: Props) {
         </div>
       </section>
 
-      <section className="bg-[#eef5f8] px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-7xl gap-8 border-l-4 border-brand-steel-cyan bg-white p-7 shadow-[0_24px_65px_rgba(3,19,52,.08)] sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <h2 className="max-w-4xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
-              {content.ctaTitle}
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-brand-marine/72">
-              {content.ctaText}
-            </p>
-          </div>
-          <Link
-            href={localizeHref(locale, "/kontakt")}
-            className="brand-action inline-flex min-h-14 items-center justify-between gap-8 bg-brand-marine px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
-          >
-            {content.ctaLabel}
-            <ArrowIcon />
-          </Link>
-        </div>
-      </section>
+      <PageClosingCta
+        title={content.ctaTitle}
+        description={content.ctaText}
+        primary={{
+          href: localizeHref(locale, "/kontakt"),
+          label: content.ctaLabel,
+        }}
+      />
     </main>
   );
 }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1600" height="700" fill="#F8FBFD"/>
+<rect x="24" y="24" width="1552" height="652" stroke="#D0D3DC" stroke-width="2"/>
+     <path d="M90 615H1510" stroke="#D0D3DC" stroke-width="2"/>
+     
+    <text x="392" y="70" fill="#0C84B4" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">FMEA</text>
+    <g transform="translate(72 150)">
+      <rect x="0" y="0" width="260" height="130" fill="#EAF5FB" stroke="#2EA1CF" stroke-width="2"/>
+      <rect x="330" y="0" width="260" height="130" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/>
+      <rect x="660" y="0" width="260" height="130" fill="#FDECE8" stroke="#EC6244" stroke-width="2"/>
+      <text x="130" y="48" fill="#142452" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle" dominant-baseline="middle">C</text><text x="130" y="88" fill="#435075" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" dominant-baseline="middle">cause</text>
+      <text x="460" y="48" fill="#142452" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle" dominant-baseline="middle">FM</text><text x="460" y="88" fill="#435075" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" dominant-baseline="middle">failure mode</text>
+      <text x="790" y="48" fill="#142452" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle" dominant-baseline="middle">E</text><text x="790" y="88" fill="#435075" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" dominant-baseline="middle">effect</text>
+      <path d="M260 65h70M590 65h70" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+      <path d="M130 130v158h660V130" stroke="#435075" stroke-width="3" stroke-dasharray="8 8"/>
+      <rect x="254" y="288" width="412" height="92" fill="#142452"/>
+      <text x="460" y="322" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">ACTION + EVIDENCE</text>
+      <text x="460" y="354" fill="rgba(255,255,255,.67)" font-family="Arial, sans-serif" font-size="16" font-weight="400" text-anchor="middle" dominant-baseline="middle">priority follows mechanism and consequence</text>
+    </g>
+    <path d="M830 70V610" stroke="#D0D3DC" stroke-width="2"/>
+    <text x="1215" y="70" fill="#0C84B4" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">FTA</text>
+    <g transform="translate(900 112)">
+      <rect x="190" y="0" width="250" height="76" fill="#FDECE8" stroke="#EC6244" stroke-width="2"/>
+      <text x="315" y="38" fill="#142452" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">TOP EVENT</text>
+      <path d="M315 76v46" stroke="#142452" stroke-width="3"/>
+      <path d="M285 122h60l-30 44z" fill="#EAF5FB" stroke="#0C84B4" stroke-width="3"/>
+      <text x="315" y="142" fill="#142452" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" dominant-baseline="middle">OR</text>
+      <path d="M315 166v40M315 206H100M315 206h215M100 206v48M530 206v48" stroke="#142452" stroke-width="3"/>
+      <circle cx="100" cy="292" r="48" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/>
+      <text x="100" y="292" fill="#142452" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">B1</text>
+      <path d="M500 254h60l-30 44z" fill="#EAF5FB" stroke="#0C84B4" stroke-width="3"/>
+      <text x="530" y="274" fill="#142452" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="middle">AND</text>
+      <path d="M530 298v40M530 338H410M530 338h120M410 338v52M650 338v52" stroke="#142452" stroke-width="3"/>
+      <circle cx="410" cy="438" r="48" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/>
+      <circle cx="650" cy="438" r="48" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/>
+      <text x="410" y="438" fill="#142452" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">B2</text><text x="650" y="438" fill="#142452" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">B3</text>
+      <text x="315" y="534" fill="#435075" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">TE = B1  OR  (B2 AND B3)</text>
+    </g>
+  
+</svg>

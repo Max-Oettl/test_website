@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1600" height="700" fill="#F8FBFD"/>
+<rect x="24" y="24" width="1552" height="652" stroke="#D0D3DC" stroke-width="2"/>
+     <path d="M90 615H1510" stroke="#D0D3DC" stroke-width="2"/>
+     
+    <g transform="translate(58 105)">
+      <text x="230" y="0" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">DATA</text>
+      <path d="M20 385V60M20 385H450" stroke="#142452" stroke-width="3"/>
+      <g stroke="#0C84B4" stroke-width="4">
+        <path d="M36 110h96M36 165h152M36 220h210M36 275h258M36 330h334"/>
+      </g>
+      <g stroke="#EC6244" stroke-width="5">
+        <path d="m124 100 16 20m0-20-16 20M180 155l16 20m0-20-16 20M238 210l16 20m0-20-16 20"/>
+      </g>
+      <g stroke="#E9B400" stroke-width="5"><path d="M294 265v20m0-10h20M370 320v20m0-10h20"/></g>
+      <text x="230" y="426" fill="#435075" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="middle">x = failure     + = right-censored</text>
+    </g>
+    <path d="M535 300h92" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+    <g transform="translate(640 170)">
+      <rect x="0" y="0" width="300" height="260" fill="#142452"/>
+      <text x="150" y="76" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle" dominant-baseline="middle">L(&#952; | data)</text>
+      <path d="M50 142h200M70 210c38-78 70-78 112 0" stroke="#2EA1CF" stroke-width="5"/>
+      <text x="150" y="232" fill="rgba(255,255,255,.65)" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="middle">model + mechanism</text>
+    </g>
+    <path d="M960 300h92" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+    <g transform="translate(1060 105)">
+      <text x="230" y="0" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">PREDICTION</text>
+      <path d="M20 385V60M20 385H470" stroke="#142452" stroke-width="3"/>
+      <path d="M42 80C180 90 315 175 445 355L445 318C320 138 183 58 42 50Z" fill="url(#confidence)"/>
+      <path d="M42 64C180 74 315 154 445 337" stroke="#0C84B4" stroke-width="6"/>
+      <path d="M116 385v-134" stroke="#EC6244" stroke-width="4" stroke-dasharray="8 8"/>
+      <path d="M20 251h96" stroke="#EC6244" stroke-width="3" stroke-dasharray="8 8"/>
+      <text x="116" y="423" fill="#EC6244" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">B10</text>
+      <text x="-16" y="210" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">R(t)</text>
+    </g>
+  
+</svg>

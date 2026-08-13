@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1200" height="900" fill="url(#dark-panel)"/>
+<rect width="1200" height="900" fill="url(#dot-pattern)" opacity=".55"/>
+     <path d="M-40 790C190 650 340 740 535 620S910 460 1240 590" stroke="#2EA1CF" stroke-width="2" opacity=".16"/>
+     <path d="M-40 835C210 690 365 790 565 665S935 505 1240 640" stroke="#FFFFFF" stroke-width="1.5" opacity=".08"/>
+     
+    <g transform="translate(72 95)">
+      <g>
+    <rect x="0" y="0" width="330" height="98" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="28" y="34" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">R* SYSTEM</text>
+    <text x="28" y="70" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">target + conditions</text>
+  </g>
+      <path d="M165 98v74M165 172H55M165 172h110" stroke="#2EA1CF" stroke-width="4"/>
+      <g>
+    <rect x="0" y="172" width="110" height="88" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="28" y="206" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">A</text>
+    <text x="28" y="242" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">R_A</text>
+  </g>
+      <g>
+    <rect x="110" y="172" width="110" height="88" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="138" y="206" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">B</text>
+    <text x="138" y="242" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">R_B</text>
+  </g>
+      <g>
+    <rect x="220" y="172" width="110" height="88" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="248" y="206" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">C</text>
+    <text x="248" y="242" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">R_C</text>
+  </g>
+      <path d="M55 260v74M165 260v74M275 260v74" stroke="rgba(255,255,255,.25)" stroke-width="3" stroke-dasharray="8 8"/>
+      <rect x="0" y="334" width="330" height="214" fill="rgba(255,255,255,.045)" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
+      <path d="M34 504V380M34 504H300" stroke="#FFFFFF" stroke-width="3"/>
+      <path d="M48 470 106 435l61 17 54-75 58 24" stroke="#2EA1CF" stroke-width="5"/>
+      <circle cx="106" cy="435" r="7" fill="#FFFFFF"/><circle cx="221" cy="377" r="7" fill="#FFFFFF"/>
+    </g>
+    <g transform="translate(500 130)">
+      <path d="M0 500H610" stroke="rgba(255,255,255,.35)" stroke-width="4"/>
+      <path d="M40 500V130M205 500V230M370 500V174M535 500V94" stroke="rgba(255,255,255,.18)" stroke-width="3"/>
+      <circle cx="40" cy="500" r="18" fill="#2EA1CF"/><circle cx="205" cy="500" r="18" fill="#2EA1CF"/><circle cx="370" cy="500" r="18" fill="#2EA1CF"/><circle cx="535" cy="500" r="18" fill="#2EA1CF"/>
+      <text x="40" y="545" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">M0</text><text x="205" y="545" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">M1</text><text x="370" y="545" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">M2</text><text x="535" y="545" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">M3</text>
+      <g>
+    <rect x="0" y="58" width="170" height="90" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="28" y="92" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">TARGETS</text>
+    <text x="28" y="128" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">function + R*</text>
+  </g>
+      <g>
+    <rect x="164" y="158" width="170" height="90" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="192" y="192" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">ARCH</text>
+    <text x="192" y="228" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">allocation</text>
+  </g>
+      <g>
+    <rect x="328" y="102" width="170" height="90" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="356" y="136" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">TEST</text>
+    <text x="356" y="172" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">evidence plan</text>
+  </g>
+      <g>
+    <rect x="492" y="22" width="118" height="90" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+    <text x="520" y="56" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="middle">REL</text>
+    <text x="520" y="92" fill="rgba(255,255,255,.62)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start" dominant-baseline="middle">release</text>
+  </g>
+    </g>
+  
+</svg>

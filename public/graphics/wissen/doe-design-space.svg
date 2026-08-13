@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1600" height="700" fill="#F8FBFD"/>
+<rect x="24" y="24" width="1552" height="652" stroke="#D0D3DC" stroke-width="2"/>
+     <path d="M90 615H1510" stroke="#D0D3DC" stroke-width="2"/>
+     
+    <g transform="translate(70 115)">
+      <text x="220" y="0" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">DESIGN</text>
+      <path d="M60 90h210v210H60zM140 20h210v210H140zM60 90 140 20M270 90 350 20M270 300l80-70M60 300l80-70" stroke="#435075" stroke-width="4"/>
+      <g fill="#0C84B4">
+        <circle cx="60" cy="90" r="9"/><circle cx="270" cy="90" r="9"/><circle cx="60" cy="300" r="9"/><circle cx="270" cy="300" r="9"/>
+        <circle cx="140" cy="20" r="9"/><circle cx="350" cy="20" r="9"/><circle cx="140" cy="230" r="9"/><circle cx="350" cy="230" r="9"/>
+      </g>
+      <text x="286" y="335" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">A</text><text x="36" y="190" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">B</text><text x="370" y="112" fill="#142452" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">C</text>
+    </g>
+    <path d="M500 300h90" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+    <g transform="translate(610 115)">
+      <text x="180" y="0" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">EFFECTS</text>
+      <path d="M0 370V45M0 370H360" stroke="#142452" stroke-width="3"/>
+      <path d="M55 300 130 170 205 260 280 78" stroke="#0C84B4" stroke-width="6"/>
+      <path d="M55 260 130 285 205 115 280 240" stroke="#EC6244" stroke-width="5" stroke-dasharray="10 8"/>
+      <circle cx="55" cy="300" r="8" fill="#0C84B4"/><circle cx="130" cy="170" r="8" fill="#0C84B4"/><circle cx="205" cy="260" r="8" fill="#0C84B4"/><circle cx="280" cy="78" r="8" fill="#0C84B4"/>
+      <text x="55" y="405" fill="#435075" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" dominant-baseline="middle">A-</text><text x="130" y="405" fill="#435075" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" dominant-baseline="middle">A+</text><text x="205" y="405" fill="#435075" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" dominant-baseline="middle">B-</text><text x="280" y="405" fill="#435075" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" dominant-baseline="middle">B+</text>
+      <text x="180" y="448" fill="#435075" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="middle">main effect + interaction</text>
+    </g>
+    <path d="M995 300h90" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+    <g transform="translate(1100 110)">
+      <text x="210" y="0" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">RESPONSE</text>
+      <rect x="0" y="45" width="420" height="350" fill="#EAF5FB" stroke="#D0D3DC" stroke-width="2"/>
+      <ellipse cx="220" cy="220" rx="164" ry="122" stroke="#2EA1CF" stroke-width="3"/>
+      <ellipse cx="220" cy="220" rx="118" ry="82" stroke="#0C84B4" stroke-width="4"/>
+      <ellipse cx="220" cy="220" rx="66" ry="42" fill="#D5ECF7" stroke="#142452" stroke-width="3"/>
+      <circle cx="220" cy="220" r="12" fill="#EC6244"/>
+      <path d="M220 208v-35M208 220h-35" stroke="#EC6244" stroke-width="3"/>
+      <text x="210" y="438" fill="#435075" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="middle">valid only inside design space</text>
+    </g>
+  
+</svg>

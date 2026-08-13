@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1600" height="700" fill="#F8FBFD"/>
+<rect x="24" y="24" width="1552" height="652" stroke="#D0D3DC" stroke-width="2"/>
+     <path d="M90 615H1510" stroke="#D0D3DC" stroke-width="2"/>
+     
+    <g transform="translate(90 112)">
+      <rect x="0" y="0" width="340" height="126" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/>
+      <circle cx="58" cy="63" r="30" fill="#EAF5FB" stroke="#2EA1CF" stroke-width="3"/>
+      <path d="m43 64 10 10 22-25" stroke="#142452" stroke-width="5"/>
+      <text x="108" y="46" fill="#142452" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="middle">f(x)</text>
+      <text x="108" y="78" fill="#435075" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="middle">required function</text>
+      <rect x="0" y="160" width="340" height="126" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/>
+      <path d="M42 238h36M60 203v70M44 218l32 40M76 218l-32 40" stroke="#0C84B4" stroke-width="3"/>
+      <text x="108" y="206" fill="#142452" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="middle">x = {L, T, U}</text>
+      <text x="108" y="238" fill="#435075" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="middle">load + environment + use</text>
+      <rect x="0" y="320" width="340" height="126" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/>
+      <circle cx="60" cy="383" r="30" stroke="#0C84B4" stroke-width="3"/>
+      <path d="M60 383v-18M60 383l17 9" stroke="#142452" stroke-width="4"/>
+      <text x="108" y="367" fill="#142452" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="middle">t</text>
+      <text x="108" y="399" fill="#435075" font-family="Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="middle">time or usage horizon</text>
+    </g>
+    <path d="M454 176H650M454 336H650M454 496H650" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+    <rect x="650" y="188" width="350" height="300" fill="#142452"/>
+    <text x="825" y="275" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="52" font-weight="700" text-anchor="middle" dominant-baseline="middle">R(t | x)</text>
+    <text x="825" y="332" fill="rgba(255,255,255,.70)" font-family="Arial, sans-serif" font-size="23" font-weight="700" text-anchor="middle" dominant-baseline="middle">P { f(x) fulfilled }</text>
+    <path d="M720 420h210M740 395c36 2 61 15 90 34 28 19 49 27 81 28" stroke="#2EA1CF" stroke-width="5"/>
+    <path d="M1000 338H1150" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+    <g transform="translate(1150 176)">
+      <path d="M0 320V0M0 320H320" stroke="#142452" stroke-width="3"/>
+      <path d="M20 36C116 42 205 92 300 286" stroke="#0C84B4" stroke-width="6"/>
+      <path d="M20 66C120 72 208 118 300 305L300 270C214 75 121 32 20 22Z" fill="url(#confidence)"/>
+      <text x="154" y="350" fill="#142452" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">t</text>
+      <text x="-32" y="150" fill="#142452" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">R(t)</text>
+    </g>
+  
+</svg>

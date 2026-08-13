@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AiAwareImage as Image } from "../../_components/ai-aware-image";
 
 import { resolveLocale, type Locale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";

@@ -1,8 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import { AiAwareImage as Image } from "./ai-aware-image";
 
 import type { DetailPage } from "../_content/migration-pages";
 import { localizeHref, type Locale } from "../_i18n/config";
+import { PageClosingCta } from "./page-closing-cta";
 
 type EducationDetailPageProps = {
   locale: Locale;
@@ -226,44 +228,25 @@ export function EducationDetailPage({
         </section>
       ) : null}
 
-      <section className="bg-brand-marine px-5 py-16 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <h2 className="font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em]">
-              {page.ctaTitle}
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-white/72">
-              {page.ctaText}
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={resolveHref(locale, page.primaryCta.href)}
-              target={page.primaryCta.external ? "_blank" : undefined}
-              rel={page.primaryCta.external ? "noopener noreferrer" : undefined}
-              className="brand-action inline-flex min-h-12 items-center justify-between gap-6 bg-brand-education px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#008f48]"
-            >
-              {page.primaryCta.label}
-              <ArrowIcon />
-            </Link>
-            {page.secondaryCta ? (
-              <Link
-                href={resolveHref(locale, page.secondaryCta.href)}
-                target={page.secondaryCta.external ? "_blank" : undefined}
-                rel={
-                  page.secondaryCta.external
-                    ? "noopener noreferrer"
-                    : undefined
-                }
-                className="brand-action brand-action-outline inline-flex min-h-12 items-center justify-between gap-6 border border-white/30 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white"
-              >
-                {page.secondaryCta.label}
-                <ArrowIcon />
-              </Link>
-            ) : null}
-          </div>
-        </div>
-      </section>
+      <PageClosingCta
+        title={page.ctaTitle}
+        description={page.ctaText}
+        theme="education"
+        primary={{
+          href: resolveHref(locale, page.primaryCta.href),
+          label: page.primaryCta.label,
+          external: page.primaryCta.external,
+        }}
+        secondary={
+          page.secondaryCta
+            ? {
+                href: resolveHref(locale, page.secondaryCta.href),
+                label: page.secondaryCta.label,
+                external: page.secondaryCta.external,
+              }
+            : undefined
+        }
+      />
     </main>
   );
 }

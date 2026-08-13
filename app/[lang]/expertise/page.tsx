@@ -1,7 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import { AiAwareImage as Image } from "../../_components/ai-aware-image";
+import { BrandLineWatermark } from "../../_components/brand-line-watermark";
 import { referenceLogos } from "../../_content/site-content";
+import { PageClosingCta } from "../../_components/page-closing-cta";
 import { localizeHref, resolveLocale, type Locale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
 
@@ -283,7 +285,7 @@ export default async function ExpertisePage({ params }: Props) {
   return (
     <main className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
-        <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:64px_64px]" />
+        <BrandLineWatermark placement="expertise" />
         <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,1.05fr)_minmax(28rem,0.95fr)]">
           <div className="flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
             <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
@@ -470,6 +472,7 @@ export default async function ExpertisePage({ params }: Props) {
                     : "Both RelTest Springer reference books on a desk with technical notes"
                 }
                 fill
+                showAiDisclosure={false}
                 sizes="(min-width: 1024px) 62vw, 100vw"
                 className="object-cover"
               />
@@ -567,6 +570,7 @@ export default async function ExpertisePage({ params }: Props) {
               src="/expertise/podcast-recording.png"
               alt={content.podcast.imageAlt}
               fill
+              showAiDisclosure={false}
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
@@ -653,34 +657,18 @@ export default async function ExpertisePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-brand-marine px-5 py-16 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <h2 className="max-w-4xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
-              {content.cta.title}
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-white/72">
-              {content.cta.description}
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={localizeHref(locale, "/kontakt")}
-              className="brand-action inline-flex min-h-12 items-center justify-between gap-6 bg-brand-steel-cyan px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
-            >
-              {content.cta.primary}
-              <ArrowIcon />
-            </Link>
-            <Link
-              href={localizeHref(locale, "/leistungen")}
-              className="brand-action brand-action-outline inline-flex min-h-12 items-center justify-between gap-6 border border-white/30 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white"
-            >
-              {content.cta.secondary}
-              <ArrowIcon />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PageClosingCta
+        title={content.cta.title}
+        description={content.cta.description}
+        primary={{
+          href: localizeHref(locale, "/kontakt"),
+          label: content.cta.primary,
+        }}
+        secondary={{
+          href: localizeHref(locale, "/leistungen"),
+          label: content.cta.secondary,
+        }}
+      />
     </main>
   );
 }

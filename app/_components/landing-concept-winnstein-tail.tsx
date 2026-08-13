@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import { AiAwareImage as Image } from "./ai-aware-image";
 import { CollapsibleProjectList } from "./collapsible-project-list";
 import { getSiteContent, referenceLogos } from "../_content/site-content";
 import { localizeHref, type Locale } from "../_i18n/config";
@@ -290,7 +290,7 @@ const contentByLocale = {
       "Ausgewählte Unternehmen, mit denen RelTest bereits zusammengearbeitet hat.",
     referencesCta: "Alle Referenzen ansehen",
     industriesTitle: "Zuverlässigkeit kennt keine Branchengrenzen",
-    industryCta: "Branche ansehen",
+    industryCta: "Entdecken",
   },
   en: {
     supportTitle: "From technical risk to a robust decision.",
@@ -546,7 +546,7 @@ const contentByLocale = {
       "Selected companies RelTest has already worked with.",
     referencesCta: "View all references",
     industriesTitle: "Reliability knows no industry boundaries",
-    industryCta: "Explore industry",
+    industryCta: "Explore",
   },
 } as const;
 
@@ -947,7 +947,7 @@ export function LandingConceptWinnsteinTail({
               <Link
                 key={industry.href}
                 href={industry.href}
-                className="group relative isolate grid min-h-32 grid-cols-[minmax(0,1fr)_2rem] items-center gap-5 overflow-hidden border-r border-b border-line-soft px-6 py-7 transition-colors hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:grid-cols-[minmax(0,20rem)_max-content] sm:justify-start sm:gap-9 sm:px-9"
+                className="group relative isolate flex min-h-32 flex-col items-start justify-center gap-3 overflow-hidden border-r border-b border-line-soft px-6 py-7 transition-colors hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:px-9"
               >
                 <Image
                   src={industry.image}
@@ -961,8 +961,8 @@ export function LandingConceptWinnsteinTail({
                 <span className="text-xl leading-tight font-semibold tracking-[-0.035em] text-brand-ink sm:text-2xl">
                   {industry.name}
                 </span>
-                <span className="flex min-w-0 items-center justify-self-start gap-3 text-sm font-bold text-brand-marine transition-colors group-hover:text-brand-steel-cyan">
-                  <span className="hidden sm:inline">{content.industryCta}</span>
+                <span className="flex min-w-0 items-center gap-2 text-sm font-bold text-brand-marine/58 transition-colors group-hover:text-brand-steel-cyan">
+                  <span>{content.industryCta}</span>
                   <span className="transition-transform group-hover:translate-x-1">
                     <ArrowIcon className="h-5 w-5" />
                   </span>

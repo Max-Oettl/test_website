@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1600" height="700" fill="#F8FBFD"/>
+<rect x="24" y="24" width="1552" height="652" stroke="#D0D3DC" stroke-width="2"/>
+     <path d="M90 615H1510" stroke="#D0D3DC" stroke-width="2"/>
+     
+    <text x="800" y="70" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">TOP-DOWN</text>
+    <rect x="590" y="98" width="420" height="96" fill="#142452"/>
+    <text x="800" y="133" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle" dominant-baseline="middle">R_SYSTEM* = 0.950</text>
+    <text x="800" y="169" fill="rgba(255,255,255,.68)" font-family="Arial, sans-serif" font-size="17" font-weight="400" text-anchor="middle" dominant-baseline="middle">defined target</text>
+    <path d="M800 194v64M800 258H340M800 258h460M340 258v64M800 258v64M1260 258v64" stroke="#2EA1CF" stroke-width="4" marker-end="url(#arrow-cyan)"/>
+    <g>
+      <rect x="190" y="322" width="300" height="118" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/>
+      <rect x="650" y="322" width="300" height="118" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/>
+      <rect x="1110" y="322" width="300" height="118" fill="#FFFFFF" stroke="#D0D3DC" stroke-width="2"/>
+      <text x="340" y="362" fill="#142452" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle" dominant-baseline="middle">A</text><text x="340" y="407" fill="#0C84B4" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">R_A = 0.980</text>
+      <text x="800" y="362" fill="#142452" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle" dominant-baseline="middle">B</text><text x="800" y="407" fill="#0C84B4" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">R_B = 0.985</text>
+      <text x="1260" y="362" fill="#142452" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle" dominant-baseline="middle">C</text><text x="1260" y="407" fill="#0C84B4" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">R_C = 0.985</text>
+    </g>
+    <path d="M340 440v76M800 440v76M1260 440v76M340 516H1260" stroke="#435075" stroke-width="3" stroke-dasharray="8 9"/>
+    <path d="M800 516v-34" stroke="#435075" stroke-width="3" marker-end="url(#arrow-marine)"/>
+    <rect x="520" y="516" width="560" height="82" fill="#EAF5FB" stroke="#2EA1CF" stroke-width="2"/>
+    <text x="800" y="548" fill="#142452" font-family="Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="middle">R_SYSTEM = R_A x R_B x R_C</text>
+    <text x="800" y="579" fill="#0C84B4" font-family="Arial, sans-serif" font-size="21" font-weight="700" text-anchor="middle" dominant-baseline="middle">0.980 x 0.985 x 0.985 = 0.9508  &#8805;  0.950</text>
+    <text x="800" y="645" fill="#435075" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">BOTTOM-UP</text>
+  
+</svg>

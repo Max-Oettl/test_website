@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1200" height="900" fill="url(#dark-panel)"/>
+<rect width="1200" height="900" fill="url(#dot-pattern)" opacity=".55"/>
+     <path d="M-40 790C190 650 340 740 535 620S910 460 1240 590" stroke="#2EA1CF" stroke-width="2" opacity=".16"/>
+     <path d="M-40 835C210 690 365 790 565 665S935 505 1240 640" stroke="#FFFFFF" stroke-width="1.5" opacity=".08"/>
+     
+    <g transform="translate(64 124)">
+      <rect x="0" y="0" width="420" height="590" fill="rgba(255,255,255,.045)" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
+      <text x="210" y="50" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">OBSERVATIONS</text>
+      <path d="M60 120v360M60 480h310" stroke="rgba(255,255,255,.38)" stroke-width="3"/>
+      <g stroke="#2EA1CF" stroke-width="4">
+        <path d="M70 165h80M70 225h135M70 285h185M70 345h228M70 405h270"/>
+      </g>
+      <g stroke="#EC6244" stroke-width="5">
+        <path d="m142 155 16 20m0-20-16 20M197 215l16 20m0-20-16 20M247 275l16 20m0-20-16 20"/>
+      </g>
+      <g stroke="#E9B400" stroke-width="5">
+        <path d="M298 335v20m0-10h20M340 395v20m0-10h20"/>
+      </g>
+      <text x="210" y="535" fill="rgba(255,255,255,.66)" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="middle">failure  x    censored  +</text>
+      <path d="M420 292h120" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+      <rect x="540" y="105" width="600" height="450" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+      <path d="M610 490V160M610 490h460" stroke="#FFFFFF" stroke-width="3"/>
+      <path d="M632 190C770 202 890 278 1046 462L1046 420C900 232 771 164 632 154Z" fill="rgba(46,161,207,.20)"/>
+      <path d="M632 174C770 184 893 252 1046 442" stroke="#2EA1CF" stroke-width="6"/>
+      <path d="M690 490v-70" stroke="#EC6244" stroke-width="4" stroke-dasharray="7 7"/>
+      <text x="690" y="530" fill="#EC6244" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">B10</text>
+      <text x="835" y="120" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="middle">R(t)</text>
+      <text x="860" y="590" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">MODEL + UNCERTAINTY</text>
+    </g>
+  
+</svg>

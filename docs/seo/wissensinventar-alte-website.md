@@ -1,7 +1,24 @@
 # Wissensinventar der alten Website
 
-Stand: 31. Juli 2026  
-Status: Analyse zur Sichtung, noch keine Freigabe zur Umsetzung
+Stand: 12. August 2026
+Status: Inhaltlich und technisch in den neuen Wissensbereich übernommen; Validierung mit Search Console und Backlinkdaten vor dem Go-live offen
+
+## Umsetzungsstand im neuen Projekt
+
+Der Wissensbereich wurde auf Basis dieses Inventars neu aufgebaut und an das aktuelle Corporate Design angepasst. Dabei wurden die fachlichen Suchintentionen der alten WordPress-Seiten nicht in eine einzelne allgemeine Seite verdichtet, sondern als eigenständige, intern verlinkte Informationsziele erhalten.
+
+Umgesetzt sind:
+
+- die fachliche Übersicht zur Zuverlässigkeitstechnik,
+- die fünf Themen Planung, Schwachstellenanalyse, Erprobung, Absicherung und Prognosen,
+- eine eigenständige Wissensseite zu Design of Experiments,
+- eine ergänzende Wissensseite zu technischem Risikomanagement,
+- ein deutsch- und englischsprachiges Glossar mit sämtlichen 22 Begriffen des alten Glossars und zusätzlichen relevanten Begriffen,
+- eindeutige Seitentitel, Beschreibungen, Canonicals und Sprachalternativen,
+- direkte Redirects der bekannten alten Wissens-URLs auf die jeweils passende neue Informationsseite,
+- in den Textfluss integrierte Bildplätze mit konkreten Briefings für die spätere Bildproduktion.
+
+Die Wissensseiten sind bewusst als redaktionelle Fachseiten und nicht als Kopien der kommerziellen Solutions-Seiten aufgebaut. Noch offen sind die Prüfung realer Suchanfragen, Rankings und Backlinks in der Google Search Console sowie die spätere Erstellung und Optimierung der vorgesehenen Abbildungen.
 
 ## Zweck
 
@@ -35,8 +52,8 @@ fachlichen Beiträgen und kommerziellen Leistungsseiten mit Wissensanteilen.
   inhaltliches Doppelungsrisiko.
 - Für die Zuverlässigkeitstechnik existieren sechs englische Seiten:
   Übersichtsseite plus fünf Fachseiten.
-- Das alte Glossar enthält 22 Begriffe. Das neue Glossar enthält aktuell nur
-  neun Begriffe und deckt einen großen Teil des Altbestands nicht ab.
+- Das alte Glossar enthält 22 Begriffe. Alle Begriffe wurden übernommen und
+  um weitere fachlich relevante Begriffe ergänzt.
 - Drei deutschsprachige Fachbeiträge besitzen einen dauerhaften Wissenswert:
   Smart Data, effiziente Lebensdauertestplanung und beschleunigte
   Lebensdauertests. Englische Gegenstücke sind vorhanden.
@@ -52,15 +69,15 @@ WordPress-Inhalten. Sie dienen nur zur Einordnung und nicht als Qualitätsmaß.
 
 | ID | Alter Inhalt | Alte URL | Umfang | Suchintention und Kernthemen | Aktueller Stand im neuen Projekt | Vorläufige Empfehlung |
 | --- | --- | --- | ---: | --- | --- | --- |
-| W01 | Zuverlässigkeitstechnik / Zuverlässigkeitsprozess | `/zuverlaessigkeitstechnik/` | ca. 597 Wörter | Definition von Zuverlässigkeit, Reliability Engineering, Überblick über Planung, Schwachstellenanalyse, Erprobung, Absicherung und Prognose | Redirect zeigt aktuell auf `/de/leistungen/zuverlaessigkeitstechnik`; zusätzlich existiert `/de/wissen` | **P0:** Informations- und Leistungsintention sauber trennen. Prüfen, ob eine eigene Fachübersicht benötigt wird oder die Leistungsseite den bisherigen Informationswert vollständig trägt. |
+| W01 | Zuverlässigkeitstechnik / Zuverlässigkeitsprozess | `/zuverlaessigkeitstechnik/` | ca. 597 Wörter | Definition von Zuverlässigkeit, Reliability Engineering, Überblick über Planung, Schwachstellenanalyse, Erprobung, Absicherung und Prognose | Eigene Fachübersicht unter `/de/wissen/zuverlaessigkeitstechnik`; direkter Redirect eingerichtet | **Umgesetzt:** Informations- und Leistungsintention sind getrennt. |
 | W02 | Zuverlässigkeitsplanung | `/zuverlaessigkeitstechnik/planung/` | ca. 319 Wörter | Anforderungen, Kunden- und Gesetzgebervorgaben, Produktstrategie, Entscheidungsraum, Top-down- und Bottom-up-Planung | `/de/wissen/planung` vorhanden | **P0:** Als eigenständige Wissensseite erhalten und inhaltliche Gleichwertigkeit prüfen. |
 | W03 | Schwachstellenanalyse | `/zuverlaessigkeitstechnik/schwachstellenanalyse/` | ca. 365 Wörter | Frühe Schwachstellenerkennung, Zuverlässigkeitsverbesserung, FMEA, FTA und HALT | `/de/wissen/schwachstellenanalyse` vorhanden | **P0:** Als eigenständige Wissensseite erhalten. FMEA, FTA und HALT müssen fachlich sichtbar bleiben. |
 | W04 | Zuverlässigkeitserprobung | `/zuverlaessigkeitstechnik/erprobung/` | ca. 267 Wörter | Erprobungsstrategie, Lebensdauer- und Funktionstests, Last- und Nutzungskollektive, Produktlebenszyklus | `/de/wissen/erprobung` vorhanden | **P0:** Als eigenständige Wissensseite erhalten. Abgrenzung zur kommerziellen Leistung „Test & Datenanalyse“ klar halten. |
 | W05 | Zuverlässigkeitsabsicherung | `/zuverlaessigkeitstechnik/absicherung/` | ca. 349 Wörter | Qualitative und quantitative Absicherung, Mechanik, Elektronik und Software, Anforderungsnachweis | `/de/wissen/absicherung` vorhanden | **P0:** Als eigenständige Wissensseite erhalten. Nachweisführung und Systembezug nicht verkürzen. |
 | W06 | Zuverlässigkeitsprognose | `/zuverlaessigkeitstechnik/prognosen/` | ca. 259 Wörter | Versuchs- und Felddaten, statistische Analyse, Lebensdauermodelle, Belastungs-Lebensdauer-Zusammenhang | `/de/wissen/prognosen` vorhanden | **P0:** Als eigenständige Wissensseite erhalten. Felddaten, Modellbildung und Unsicherheit sollten deutlich behandelt werden. |
-| W07 | Design of Experiments | `/design-of-experiments/` | ca. 670 Wörter | Statistische Versuchsplanung, Faktoren, Faktorstufen, Störgrößen, Auswertung, Effizienz, Qualität und Robustheit | Wissensseite `/de/wissen/design-of-experiments` und Leistungsseite `/de/leistungen/design-of-experiments` vorhanden; Alt-Redirect zeigt aktuell auf die Leistungsseite | **P0:** Ein kanonisches Informationsziel und eine klar getrennte Leistungsseite festlegen. Das Redirectziel erst nach Prüfung der alten Suchintention finalisieren. |
-| W08 | Glossar | `/glossar/` | 22 gelistete Begriffe | Begriffserklärungen rund um Reliability Engineering, Lebensdauer, Ausfälle, Verfügbarkeit und Analyseverfahren | `/de/glossar` vorhanden, aktuell nur 9 Einträge | **P0:** Alten Begriffsbestand mindestens vollständig abdecken und anschließend fachlich erweitern. |
-| W09 | Zweite DoE-Seite | `/design-of-experiments-doe/` | ca. 1 Wort | Kein eigenständiger sichtbarer Mehrwert | Alter Pfad `/glossar/design-of-experiments-doe/` leitet hierhin; neue Redirectkonfiguration zeigt auf die DoE-Leistungsseite | **P0:** Nicht als eigene Seite übernehmen. Historische Varianten direkt auf das final gewählte DoE-Ziel weiterleiten und Redirectketten vermeiden. |
+| W07 | Design of Experiments | `/design-of-experiments/` | ca. 670 Wörter | Statistische Versuchsplanung, Faktoren, Faktorstufen, Störgrößen, Auswertung, Effizienz, Qualität und Robustheit | Wissensseite `/de/wissen/design-of-experiments` und getrennte Solutions-Seite vorhanden; Alt-Redirect führt auf die Wissensseite | **Umgesetzt:** Informations- und Leistungsintention sind getrennt. Search-Console-Daten vor Go-live noch kontrollieren. |
+| W08 | Glossar | `/glossar/` | 22 gelistete Begriffe | Begriffserklärungen rund um Reliability Engineering, Lebensdauer, Ausfälle, Verfügbarkeit und Analyseverfahren | `/de/glossar` enthält den vollständigen Altbestand und zusätzliche Begriffe | **Umgesetzt:** Gemeinsame Glossarseite mit stabilen Sprungmarken. |
+| W09 | Zweite DoE-Seite | `/design-of-experiments-doe/` | ca. 1 Wort | Kein eigenständiger sichtbarer Mehrwert | Historische Varianten leiten direkt auf `/de/wissen/design-of-experiments` | **Umgesetzt:** Keine dünne Doppelseite und keine Redirectkette. |
 
 ## B. Glossarbegriffe der alten Website
 
@@ -83,44 +100,13 @@ Das alte Glossar listet folgende 22 Begriffe:
 
 ### Abgleich mit dem neuen Glossar
 
-Das neue Glossar enthält aktuell:
-
-- Zuverlässigkeit
-- Lebensdauer
-- B10-Wert
-- MTTF
-- Weibull-Analyse
-- DoE
-- FMEA
-- FTA
-- Health Monitoring
-
-Damit sind mehrere sinnvolle neue Begriffe vorhanden. Aus dem alten Glossar
-fehlen jedoch noch wesentliche Themen, insbesondere:
-
-- Ausfallmechanismus und Ausfallrate
-- Badewannenkurve
-- Design for Reliability
-- Ermüdungs-, Früh- und Verschleißausfälle
-- Lebensdaueranalyse und Lebensdauermodell
-- Maintainability, MTBF und MTTR
-- PHM
-- Reliability Block Diagram
-- Reliability Engineering
-- Root Cause Analysis
-- Stress Screening
-- Systemverfügbarkeit
-
-### Vorläufige Empfehlung zum Glossar
-
-- Zunächst eine starke Glossar-Sammelseite mit stabilen Sprungmarken je Begriff
-  aufbauen.
-- Begriffe nicht automatisch als 22 dünne Einzelseiten veröffentlichen.
-- Für suchstarke und erklärungsbedürftige Themen können später eigenständige
-  Fachseiten entstehen, zum Beispiel Weibull-Analyse, Badewannenkurve,
-  Lebensdaueranalyse, MTBF/MTTR, PHM und Systemverfügbarkeit.
-- Vor einer Aufteilung in Einzel-URLs Search-Console-Daten und Backlinks
-  prüfen, damit keine künstliche Keyword-Kannibalisierung entsteht.
+Der vollständige Altbestand ist inzwischen in einer gemeinsamen, alphabetisch
+gegliederten Glossarseite enthalten. Ergänzt wurden unter anderem
+Zuverlässigkeit, Lebensdauer, MTTF, FMEA und Health Monitoring. Die Begriffe
+werden bewusst nicht als viele dünne Einzel-URLs veröffentlicht. Ob einzelne
+Themen später eine eigene Fachseite erhalten, wird erst anhand von
+Search-Console-Daten, fachlichem Erklärungsbedarf und möglicher
+Keyword-Kannibalisierung entschieden.
 
 ## C. Fachbeiträge und Webinare
 
@@ -145,7 +131,7 @@ Grundstruktur:
 
 | Alter Inhalt | Alte URL | Aktuelles Ziel im neuen Projekt |
 | --- | --- | --- |
-| Reliability Engineering | `/en/reliability-engineering/` | `/en/leistungen/zuverlaessigkeitstechnik` |
+| Reliability Engineering | `/en/reliability-engineering/` | `/en/wissen/zuverlaessigkeitstechnik` |
 | Reliability Planning | `/en/reliability-engineering/reliability-planning/` | `/en/wissen/planung` |
 | Vulnerability Analysis | `/en/reliability-engineering/vulnerability-analysis/` | `/en/wissen/schwachstellenanalyse` |
 | Reliability Testing | `/en/reliability-engineering/reliability-testing/` | `/en/wissen/erprobung` |
@@ -186,25 +172,24 @@ eine klar unterscheidbare Suchintention:
 
 ## F. Wichtigste SEO-Risiken vor der Umsetzung
 
-### 1. DoE-Zielseite ist noch nicht eindeutig
+### 1. DoE-Zielseite ist festgelegt
 
-Die alte DoE-Seite kombiniert Fachinformation und Leistungsangebot. Im neuen
-Projekt existieren bereits eine Wissens- und eine Leistungsseite. Der aktuelle
-Redirect führt zur Leistungsseite. Ohne Search-Console-Daten ist noch nicht
-belegt, ob dies für die bisherigen Suchanfragen das beste Ziel ist.
+Die alte DoE-Seite kombiniert Fachinformation und Leistungsangebot. Der alte
+Pfad führt nun auf die neue DoE-Wissensseite. Das konkrete Beratungsangebot
+bleibt als getrennte Solutions-Seite erhalten. Die Zuordnung wird vor dem
+Go-live noch mit Search-Console-Daten kontrolliert.
 
-### 2. Das Glossar verliert derzeit Themenbreite
+### 2. Die Themenbreite des Glossars ist geschützt
 
-Eine Reduktion von 22 alten auf 9 neue Begriffe kann thematische Relevanz und
-Long-Tail-Abdeckung verlieren. Der Altbestand sollte vor dem Go-live
-vollständig aufgenommen oder pro Begriff bewusst bewertet werden.
+Die 22 alten Begriffe sind vollständig übernommen und fachlich erweitert. Das
+Risiko eines Verlusts der bisherigen Long-Tail-Abdeckung ist damit inhaltlich
+adressiert.
 
-### 3. Übersichtsseite wechselt ihre Suchintention
+### 3. Die Suchintention der Übersichtsseite bleibt erhalten
 
-Die alte Zuverlässigkeitstechnik-Seite ist eine umfangreiche fachliche
-Übersicht. Das aktuelle Redirectziel ist eine Leistungsseite. Diese Zuordnung
-kann funktionieren, wenn Inhalt und Suchintention erhalten bleiben; sie muss
-aber bewusst geprüft werden.
+Die alte Zuverlässigkeitstechnik-Seite führt auf eine eigenständige fachliche
+Übersicht. Die kommerzielle Solutions-Seite ist separat verlinkt und muss
+nicht gleichzeitig die Informationsintention erfüllen.
 
 ### 4. Rankings und Backlinks sind noch nicht bewertet
 
@@ -227,10 +212,7 @@ Jede indexierbare Sprachversion braucht:
 - eine inhaltlich echte Übersetzung
 - eine passende Sprachumschaltung auf die entsprechende Fachseite
 
-## G. Vorläufige Empfehlung zur neuen Wissensstruktur
-
-Diese Struktur ist eine Empfehlung zur Sichtung, noch keine
-Umsetzungsfreigabe:
+## G. Umgesetzte Wissensstruktur
 
 1. Wissensübersicht
 2. Zuverlässigkeitstechnik
@@ -249,20 +231,16 @@ Prognose müssen nicht als starre nummerierte Prozesskette dargestellt werden.
 Sie können als eigenständig nutzbare Fachfelder erscheinen und bleiben
 dadurch später erweiterbar.
 
-## H. Entscheidungen für die gemeinsame Sichtung
+## H. Noch offene Prüfungen
 
-Vor der Umsetzung sollten folgende Punkte entschieden werden:
-
-- Soll die alte Zuverlässigkeitstechnik-Übersicht als eigene Wissensseite
-  erhalten bleiben oder vollständig in der Leistungsseite aufgehen?
-- Soll die alte DoE-URL auf die neue Wissensseite oder auf die Leistungsseite
-  weiterleiten?
-- Sollen alle 22 Glossarbegriffe sofort übernommen werden?
-- Welche Glossarbegriffe verdienen später eine eigene Fachseite?
-- Sollen die drei Fachbeiträge im Bereich „Aktuelles“ bleiben oder unter
-  „Wissen“ zusätzlich kuratiert und verlinkt werden?
-- Soll die englische Wissensstruktur gleichzeitig vollständig ausgebaut
-  werden?
+- Search-Console- und Backlinkdaten vor dem Go-live gegen die Redirectziele
+  prüfen.
+- Für die vorgesehenen Bildplätze fachlich korrekte Grafiken erstellen,
+  komprimieren und mit aussagekräftigen Alt-Texten versehen.
+- Nach dem Go-live Indexierung, hreflang-Verarbeitung, Rankings und 404-Fehler
+  überwachen.
+- Später datenbasiert entscheiden, ob einzelne Glossarbegriffe eine eigene
+  Fachseite benötigen.
 
 ## Quellen und Prüfmethode
 

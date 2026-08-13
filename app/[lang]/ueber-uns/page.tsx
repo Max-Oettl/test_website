@@ -1,6 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import { AiAwareImage as Image } from "../../_components/ai-aware-image";
+import { PageClosingCta } from "../../_components/page-closing-cta";
 import { localizeHref, resolveLocale, type Locale } from "../../_i18n/config";
 import {
   absoluteUrl,
@@ -407,28 +408,6 @@ function LinkedInIcon() {
   );
 }
 
-function PrimaryLink({
-  href,
-  children,
-  external = false,
-}: {
-  href: string;
-  children: React.ReactNode;
-  external?: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noopener noreferrer" : undefined}
-      className="brand-action inline-flex min-h-12 items-center justify-center gap-3 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
-    >
-      {children}
-      <ArrowIcon />
-    </Link>
-  );
-}
-
 function TextLink({
   href,
   children,
@@ -603,6 +582,7 @@ export default async function AboutPage({ params }: Props) {
                     alt={profile.imageAlt}
                     fill
                     priority
+                    showAiDisclosure={false}
                     className={`object-cover ${portraitPosition}`}
                     sizes="(min-width: 1024px) 47vw, 100vw"
                   />
@@ -815,26 +795,18 @@ export default async function AboutPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="border-t border-line-soft bg-white px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="mx-auto grid max-w-7xl gap-8 bg-brand-steel-cyan-10 p-7 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center lg:p-14">
-          <div>
-            <h2 className="font-winnstein-display text-3xl font-bold tracking-[-0.04em] sm:text-4xl">
-              {content.cta.title}
-            </h2>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-copy-muted">
-              {content.cta.description}
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center gap-6 lg:justify-end">
-            <PrimaryLink href={localizeHref(locale, "/kontakt")}>
-              {content.cta.primaryLabel}
-            </PrimaryLink>
-            <TextLink href={localizeHref(locale, "/leistungen")}>
-              {content.cta.secondaryLabel}
-            </TextLink>
-          </div>
-        </div>
-      </section>
+      <PageClosingCta
+        title={content.cta.title}
+        description={content.cta.description}
+        primary={{
+          href: localizeHref(locale, "/kontakt"),
+          label: content.cta.primaryLabel,
+        }}
+        secondary={{
+          href: localizeHref(locale, "/leistungen"),
+          label: content.cta.secondaryLabel,
+        }}
+      />
 
       <script
         type="application/ld+json"

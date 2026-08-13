@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { getDetailPages } from "./_content/migration-pages";
+import { getKnowledgeArticles } from "./_content/knowledge-content";
 import { locales, type Locale } from "./_i18n/config";
 import { absoluteUrl } from "./_seo/metadata";
 
@@ -25,7 +26,6 @@ const staticPaths = [
 
 const detailGroups = [
   ["services", "/leistungen"],
-  ["knowledge", "/wissen"],
   ["education", "/weiterbildung"],
   ["industries", "/branchen"],
   ["people", "/ueber-uns"],
@@ -52,7 +52,7 @@ function sitemapEntry(
 
   return {
     url: absoluteUrl(localizedPath),
-    lastModified: "2026-06-21",
+    lastModified: "2026-08-12",
     changeFrequency: "monthly",
     priority,
     alternates: localizedAlternates(path),
@@ -74,5 +74,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
   );
 
-  return [...staticEntries, ...detailEntries];
+  const knowledgeEntries = locales.flatMap((locale) =>
+    getKnowledgeArticles(locale).map((article) =>
+      sitemapEntry(locale, `/wissen/${article.slug}`, 0.72),
+    ),
+  );
+
+  return [...staticEntries, ...detailEntries, ...knowledgeEntries];
 }

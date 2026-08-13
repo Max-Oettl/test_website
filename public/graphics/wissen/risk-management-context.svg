@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1200" height="900" fill="url(#dark-panel)"/>
+<rect width="1200" height="900" fill="url(#dot-pattern)" opacity=".55"/>
+     <path d="M-40 790C190 650 340 740 535 620S910 460 1240 590" stroke="#2EA1CF" stroke-width="2" opacity=".16"/>
+     <path d="M-40 835C210 690 365 790 565 665S935 505 1240 640" stroke="#FFFFFF" stroke-width="1.5" opacity=".08"/>
+     
+    <g transform="translate(74 126)">
+      <g transform="translate(0 40)">
+        <rect x="0" y="180" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="45" y="180" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="90" y="180" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="135" y="180" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="180" y="180" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="0" y="135" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="45" y="135" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="90" y="135" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="135" y="135" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="180" y="135" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="0" y="90" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="45" y="90" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="90" y="90" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="135" y="90" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="180" y="90" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="0" y="45" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="45" y="45" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="90" y="45" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="135" y="45" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="180" y="45" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="0" y="0" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="45" y="0" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="90" y="0" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="135" y="0" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="180" y="0" width="45" height="45" fill="#FDE0D8" stroke="#142452" stroke-width="1"/>
+        <circle cx="180" cy="45" r="16" fill="#EC6244" stroke="#FFFFFF" stroke-width="4"/>
+        <text x="112" y="270" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">R0</text>
+      </g>
+      <path d="M270 155h100" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+      <rect x="370" y="48" width="260" height="250" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+      <path d="m435 185 55-55 45 45 65-80" stroke="#2EA1CF" stroke-width="6"/>
+      <path d="M420 228h160" stroke="#FFFFFF" stroke-width="4"/>
+      <text x="500" y="270" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">MEASURE</text>
+      <path d="M630 173h100" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+      <rect x="730" y="48" width="260" height="250" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+      <path d="M780 95h160v110H780z" stroke="#FFFFFF" stroke-width="4"/>
+      <path d="M802 178c28-72 62 40 116-52" stroke="#2EA1CF" stroke-width="5"/>
+      <circle cx="916" cy="220" r="30" fill="#2EA1CF"/><path d="m901 220 11 11 20-25" stroke="#FFFFFF" stroke-width="5"/>
+      <text x="860" y="270" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">EVIDENCE</text>
+      <path d="M990 173h110" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+      <g transform="translate(790 390)">
+        <rect x="0" y="180" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="45" y="180" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="90" y="180" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="135" y="180" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="180" y="180" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="0" y="135" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="45" y="135" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="90" y="135" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="135" y="135" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="180" y="135" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="0" y="90" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="45" y="90" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="90" y="90" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="135" y="90" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="180" y="90" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="0" y="45" width="45" height="45" fill="#D5ECF7" stroke="#142452" stroke-width="1"/><rect x="45" y="45" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="90" y="45" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="135" y="45" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="180" y="45" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="0" y="0" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="45" y="0" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="90" y="0" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="135" y="0" width="45" height="45" fill="#F7EEC0" stroke="#142452" stroke-width="1"/><rect x="180" y="0" width="45" height="45" fill="#FDE0D8" stroke="#142452" stroke-width="1"/>
+        <circle cx="45" cy="180" r="16" fill="#0C84B4" stroke="#FFFFFF" stroke-width="4"/>
+        <text x="112" y="270" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="middle">R1</text>
+      </g>
+      <path d="M860 298v92" stroke="rgba(255,255,255,.25)" stroke-width="3" stroke-dasharray="8 8"/>
+    </g>
+  
+</svg>

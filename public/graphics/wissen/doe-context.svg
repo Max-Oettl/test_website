@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1200" height="900" fill="url(#dark-panel)"/>
+<rect width="1200" height="900" fill="url(#dot-pattern)" opacity=".55"/>
+     <path d="M-40 790C190 650 340 740 535 620S910 460 1240 590" stroke="#2EA1CF" stroke-width="2" opacity=".16"/>
+     <path d="M-40 835C210 690 365 790 565 665S935 505 1240 640" stroke="#FFFFFF" stroke-width="1.5" opacity=".08"/>
+     
+    <g transform="translate(70 120)">
+      <g transform="translate(0 70)">
+        <path d="M80 80h220v220H80zM160 0h220v220H160zM80 80 160 0M300 80 380 0M300 300l80-80M80 300l80-80" stroke="rgba(255,255,255,.58)" stroke-width="4"/>
+        <g fill="#2EA1CF">
+          <circle cx="80" cy="80" r="9"/><circle cx="300" cy="80" r="9"/><circle cx="80" cy="300" r="9"/><circle cx="300" cy="300" r="9"/>
+          <circle cx="160" cy="0" r="9"/><circle cx="380" cy="0" r="9"/><circle cx="160" cy="220" r="9"/><circle cx="380" cy="220" r="9"/>
+        </g>
+        <text x="320" y="340" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">A</text><text x="46" y="190" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">B</text><text x="400" y="112" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">C</text>
+        <text x="225" y="390" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">2^3 DESIGN</text>
+      </g>
+      <path d="M420 260h100" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+      <rect x="520" y="100" width="300" height="340" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.23)" stroke-width="2"/>
+      <path d="M568 310h205M610 250h122v120H610z" stroke="#FFFFFF" stroke-width="5"/>
+      <circle cx="650" cy="310" r="30" stroke="#2EA1CF" stroke-width="7"/><circle cx="712" cy="310" r="30" stroke="#2EA1CF" stroke-width="7"/>
+      <path d="M650 280v-78M712 280v-78" stroke="#2EA1CF" stroke-width="4"/>
+      <circle cx="650" cy="202" r="9" fill="#E9B400"/><circle cx="712" cy="202" r="9" fill="#E9B400"/>
+      <text x="670" y="400" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="21" font-weight="700" text-anchor="middle" dominant-baseline="middle">EXPERIMENT</text>
+      <path d="M820 260h100" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+      <g transform="translate(920 90)">
+        <path d="M0 360V0M0 360H220" stroke="#FFFFFF" stroke-width="3"/>
+        <path d="M12 310c50-220 118-220 196-20" stroke="#2EA1CF" stroke-width="6"/>
+        <path d="M18 270c45-150 111-190 184-56" stroke="#FFFFFF" stroke-width="3" opacity=".4"/>
+        <circle cx="120" cy="128" r="12" fill="#E9B400"/>
+        <text x="110" y="410" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="21" font-weight="700" text-anchor="middle" dominant-baseline="middle">RESPONSE</text>
+      </g>
+    </g>
+  
+</svg>

@@ -10,7 +10,7 @@ const legacyRedirectPairs = [
   ["/en/weiterbildung/seminare", "/en/education#on-site-training"],
   ["/de/weiterbildung/academy", "/de/education#e-learning"],
   ["/en/weiterbildung/academy", "/en/education#e-learning"],
-  ["/zuverlaessigkeitstechnik", "/de/leistungen/zuverlaessigkeitstechnik"],
+  ["/zuverlaessigkeitstechnik", "/de/wissen/zuverlaessigkeitstechnik"],
   ["/zuverlaessigkeitstechnik/planung", "/de/wissen/planung"],
   ["/zuverlaessigkeitstechnik/absicherung", "/de/wissen/absicherung"],
   [
@@ -45,8 +45,9 @@ const legacyRedirectPairs = [
     "/zuverlaessigkeitsmanagement/seminare/entwicklung-und-absicherung-elektronischer-komponenten",
     "/de/weiterbildung/entwicklung-absicherung-elektronischer-komponenten",
   ],
-  ["/design-of-experiments", "/de/leistungen/design-of-experiments"],
-  ["/design-of-experiments-doe", "/de/leistungen/design-of-experiments"],
+  ["/design-of-experiments", "/de/wissen/design-of-experiments"],
+  ["/design-of-experiments-doe", "/de/wissen/design-of-experiments"],
+  ["/glossar/design-of-experiments-doe", "/de/wissen/design-of-experiments"],
   ["/design-of-experiments/consulting", "/de/leistungen/doe-consulting"],
   ["/design-of-experiments/coaching", "/de/leistungen/doe-coaching"],
   [
@@ -111,7 +112,7 @@ const legacyRedirectPairs = [
   ["/category/a", "/de/aktuelles"],
   ["/category/cee", "/de/aktuelles"],
   ["/author/MasterRel20", "/de/aktuelles"],
-  ["/en/reliability-engineering", "/en/leistungen/zuverlaessigkeitstechnik"],
+  ["/en/reliability-engineering", "/en/wissen/zuverlaessigkeitstechnik"],
   ["/en/reliability-engineering/reliability-planning", "/en/wissen/planung"],
   ["/en/reliability-engineering/reliability-testing", "/en/wissen/erprobung"],
   [

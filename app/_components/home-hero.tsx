@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import { AiAwareImage as Image } from "./ai-aware-image";
 import { getSiteContent } from "../_content/site-content";
 import { localizeHref, type Locale } from "../_i18n/config";
 

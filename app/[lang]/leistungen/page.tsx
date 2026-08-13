@@ -1,8 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import { AiAwareImage as Image } from "../../_components/ai-aware-image";
+import { BrandLineWatermark } from "../../_components/brand-line-watermark";
 import { serviceCardImages } from "../../_content/service-card-assets";
 import { getSiteContent } from "../../_content/site-content";
+import { PageClosingCta } from "../../_components/page-closing-cta";
 import { localizeHref, resolveLocale, type Locale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
 
@@ -156,9 +158,7 @@ export default async function ServicesPage({ params }: Props) {
   return (
     <main className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
-        <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:64px_64px]" />
-        <div className="absolute -left-24 bottom-0 h-72 w-72 rounded-full border border-brand-steel-cyan/20" />
-        <div className="absolute -left-8 bottom-16 h-48 w-48 rounded-full border border-brand-steel-cyan/15" />
+        <BrandLineWatermark placement="solutions" />
 
         <div className="relative mx-auto grid max-w-7xl xl:grid-cols-[58%_42%]">
           <div className="flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
@@ -349,25 +349,14 @@ export default async function ServicesPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-brand-marine px-5 py-16 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-7 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <h2 className="font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em]">
-              {copy.contact.title}
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-white/72">
-              {copy.contact.description}
-            </p>
-          </div>
-          <Link
-            href={localizeHref(locale, "/kontakt")}
-            className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
-          >
-            {copy.contact.cta}
-            <ArrowIcon />
-          </Link>
-        </div>
-      </section>
+      <PageClosingCta
+        title={copy.contact.title}
+        description={copy.contact.description}
+        primary={{
+          href: localizeHref(locale, "/kontakt"),
+          label: copy.contact.cta,
+        }}
+      />
     </main>
   );
 }

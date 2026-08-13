@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" fill="none">
+
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2EA1CF"/>
+    </marker>
+    <marker id="arrow-marine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#142452"/>
+    </marker>
+    <marker id="arrow-white" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFFFFF"/>
+    </marker>
+    <pattern id="dot-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#2EA1CF" opacity=".14"/>
+    </pattern>
+    <linearGradient id="dark-panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#142452"/>
+      <stop offset="1" stop-color="#1B326D"/>
+    </linearGradient>
+    <linearGradient id="confidence" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2EA1CF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#2EA1CF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+<rect width="1600" height="700" fill="#F8FBFD"/>
+<rect x="24" y="24" width="1552" height="652" stroke="#D0D3DC" stroke-width="2"/>
+     <path d="M90 615H1510" stroke="#D0D3DC" stroke-width="2"/>
+     
+    <g transform="translate(60 106)">
+      <text x="245" y="0" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">FIELD</text>
+      <path d="M0 370V52M0 370H500" stroke="#142452" stroke-width="3"/>
+      <path d="M12 286c32-48 45 42 78-72s44 102 77-4 53 46 78-80 39 174 73 22 55 74 82-22 52 62 88-28" stroke="#0C84B4" stroke-width="5"/>
+      <path d="M70 40v350M170 40v350M270 40v350M370 40v350M470 40v350" stroke="#D0D3DC" stroke-width="1"/>
+      <text x="250" y="414" fill="#142452" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="middle">t</text>
+    </g>
+    <path d="M585 300h100" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+    <g transform="translate(700 112)">
+      <text x="225" y="0" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">COLLECTIVE</text>
+      <path d="M0 370V52M0 370H450" stroke="#142452" stroke-width="3"/>
+      <rect x="42" y="110" width="54" height="260" fill="#0C84B4" opacity=".9"/>
+      <rect x="122" y="164" width="54" height="206" fill="#0C84B4" opacity=".76"/>
+      <rect x="202" y="228" width="54" height="142" fill="#0C84B4" opacity=".62"/>
+      <rect x="282" y="280" width="54" height="90" fill="#0C84B4" opacity=".48"/>
+      <rect x="362" y="326" width="54" height="44" fill="#0C84B4" opacity=".34"/>
+      <text x="225" y="414" fill="#435075" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" dominant-baseline="middle">load classes</text>
+    </g>
+    <path d="M1170 300h94" stroke="#2EA1CF" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+    <g transform="translate(1280 112)">
+      <text x="130" y="0" fill="#0C84B4" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">TEST</text>
+      <path d="M0 370V52M0 370H260" stroke="#142452" stroke-width="3"/>
+      <path d="M12 310h26v-170h42v170h28v-98h40v98h28v-222h40v222h30" stroke="#EC6244" stroke-width="5"/>
+      <text x="130" y="414" fill="#435075" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" dominant-baseline="middle">compressed blocks</text>
+    </g>
+    <rect x="588" y="540" width="420" height="70" fill="#142452"/>
+    <text x="798" y="575" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="middle">D_TEST  &#8776;  D_FIELD</text>
+    <path d="M1020 575h220" stroke="#435075" stroke-width="3" stroke-dasharray="8 8"/>
+    <circle cx="1260" cy="575" r="28" fill="#EAF5FB" stroke="#2EA1CF" stroke-width="3"/>
+    <path d="m1247 575 10 10 18-22" stroke="#142452" stroke-width="4"/>
+  
+</svg>
