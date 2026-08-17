@@ -5,6 +5,7 @@ import { AiAwareImage as Image } from "./ai-aware-image";
 import type { DetailPage } from "../_content/migration-pages";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { absoluteUrl, siteUrl } from "../_seo/metadata";
+import { PageContextBar } from "./page-context-bar";
 
 type PersonProfilePageProps = {
   locale: Locale;
@@ -227,6 +228,13 @@ export function PersonProfilePage({
           </div>
         </div>
       </section>
+
+      <PageContextBar
+        locale={locale}
+        sectionHref="/ueber-uns"
+        sectionLabel={locale === "de" ? "Wir sind RelTest" : "About RelTest"}
+        currentLabel={page.title}
+      />
 
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">

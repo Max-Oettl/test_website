@@ -19,11 +19,31 @@ export function KnowledgeMediaPlaceholder({
   preload = false,
   locale = "de",
 }: Props) {
-  const aspectRatio = media.ratio === "wide" ? "aspect-[16/7]" : "aspect-[4/3]";
+  const aspectRatio =
+    media.ratio === "wide"
+      ? "aspect-[16/7]"
+      : media.ratio === "two-one"
+        ? "aspect-[2/1]"
+        : media.ratio === "sixteen-nine"
+          ? "aspect-video"
+          : "aspect-[4/3]";
+  const widthClass =
+    media.maxWidth === "tiny"
+      ? "mx-auto w-full max-w-lg"
+      : media.maxWidth === "small"
+        ? "mx-auto w-full max-w-2xl"
+        : media.maxWidth === "compact"
+          ? "mx-auto w-full max-w-4xl"
+          : media.maxWidth === "standard"
+            ? "mx-auto w-full max-w-5xl"
+            : media.maxWidth === "wide"
+              ? "mx-auto w-full max-w-6xl"
+              : "";
+  const figureClassName = `${widthClass} ${className}`.trim();
 
   if (media.src) {
     return (
-      <figure className={className}>
+      <figure className={figureClassName}>
         <div
           className={`brand-panel-cut-bottom-right relative overflow-hidden border ${aspectRatio} ${
             dark
@@ -36,7 +56,9 @@ export function KnowledgeMediaPlaceholder({
             alt={media.alt ?? media.label}
             fill
             sizes={
-              media.ratio === "wide"
+              media.ratio === "wide" ||
+              media.ratio === "sixteen-nine" ||
+              media.ratio === "two-one"
                 ? "(max-width: 1024px) 100vw, 960px"
                 : "(max-width: 1024px) 100vw, 560px"
             }
@@ -67,7 +89,7 @@ export function KnowledgeMediaPlaceholder({
         dark
           ? "border-white/15 bg-white/[0.06] text-white"
           : "border-[var(--solution-marine-20)] bg-[var(--solution-steel-cyan-10)] text-[var(--solution-marine)]"
-      } ${aspectRatio} ${className}`}
+      } ${aspectRatio} ${figureClassName}`}
       role="img"
       aria-label={media.label}
     >

@@ -56,6 +56,16 @@ export default async function LegalNoticePage({ params }: Props) {
                 : "Authorised representative, register information, VAT ID and further mandatory information must be transferred from the existing legal notice and reviewed before publication."}
             </p>
           </div>
+          <div className="mt-10 border-t border-slate-200 pt-8">
+            <h2 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+              {locale === "de" ? "Hinweis zu Bildinhalten" : "Notice on visual content"}
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              {locale === "de"
+                ? "Auf dieser Website werden teilweise KI-generierte und KI-bearbeitete Bilder und Grafiken verwendet."
+                : "This website uses some AI-generated and AI-edited images and graphics."}
+            </p>
+          </div>
         </div>
       </section>
     </>

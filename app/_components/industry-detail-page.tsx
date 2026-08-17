@@ -4,6 +4,7 @@ import { AiAwareImage as Image } from "./ai-aware-image";
 import type { IndustryDetailContent } from "../_content/industry-detail-content";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { PageClosingCta } from "./page-closing-cta";
+import { PageContextBar } from "./page-context-bar";
 
 type Props = {
   locale: Locale;
@@ -149,6 +150,13 @@ export function IndustryDetailPage({ locale, content }: Props) {
         </div>
         <div className="h-2 bg-brand-steel-cyan" />
       </section>
+
+      <PageContextBar
+        locale={locale}
+        sectionHref="/expertise"
+        sectionLabel="Expertise"
+        currentLabel={content.title}
+      />
 
       <section className="bg-white px-5 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">

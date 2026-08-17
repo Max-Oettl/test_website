@@ -4,7 +4,8 @@ import { knowledgeVisuals } from "./knowledge-visuals";
 export type KnowledgeMedia = {
   label: string;
   brief: string;
-  ratio?: "landscape" | "wide";
+  ratio?: "landscape" | "wide" | "sixteen-nine" | "two-one";
+  maxWidth?: "tiny" | "small" | "compact" | "standard" | "wide";
   src?: string;
   alt?: string;
   caption?: string;
@@ -171,12 +172,6 @@ const deArticles: readonly KnowledgeArticle[] = [
           "Die Design- oder Prozess-FMEA strukturiert mögliche Fehlerarten, Ursachen und Folgen aus Expertensicht. Die Fehlerbaumanalyse (FTA) startet dagegen bei einem unerwünschten Top-Ereignis und zerlegt die möglichen Ursachen logisch. Beide Methoden liefern einen hohen Nutzen, wenn ihre Ergebnisse in konkrete Maßnahmen und Nachweise übersetzt werden.",
           "Die Bewertung ist kein Selbstzweck. Sie hilft, die begrenzte Entwicklungs- und Erprobungszeit auf die Risiken zu konzentrieren, deren Eintritt oder Auswirkung für Funktion, Sicherheit und Lebensdauer tatsächlich entscheidend ist.",
         ],
-        media: {
-          label: "Grafikplatz: FMEA und Fehlerbaum",
-          brief:
-            "Zweiteilige, reduzierte Fachgrafik: links Ursache–Fehler–Folge, rechts Top-Ereignis mit logischem Fehlerbaum.",
-          ratio: "wide",
-        },
       },
       {
         heading: "HALT als früher Robustheitsimpuls",
@@ -184,6 +179,12 @@ const deArticles: readonly KnowledgeArticle[] = [
           "Highly Accelerated Life Testing (HALT) belastet Produkte schrittweise über den vorgesehenen Einsatzbereich hinaus. Ziel ist nicht der statistische Lebensdauernachweis, sondern das frühe Auffinden konstruktiver Grenzen und verborgener Schwachstellen.",
           "Wirksam wird HALT erst im iterativen Zusammenspiel aus Belastung, Fehleranalyse und Produktverbesserung. Erkenntnisse müssen technisch bewertet und anschließend in Konstruktion, Absicherungsstrategie oder Serienüberwachung überführt werden.",
         ],
+        media: {
+          label: "Diagramm: Betriebs- und Vernichtungsmargen bei HALT",
+          brief:
+            "Darstellung von Design-Spezifikation, operativer Marge, Betriebsgrenze und Vernichtungsmargen.",
+          ratio: "wide",
+        },
       },
     ],
     related: ["risikomanagement", "erprobung", "absicherung"],
@@ -211,12 +212,6 @@ const deArticles: readonly KnowledgeArticle[] = [
           "Produkte erleben im Feld wechselnde Lasten, Temperaturen, Feuchte, Verschmutzung und unterschiedliche Bedienprofile. Eine aussagekräftige Erprobung bildet diese Realität in einem repräsentativen Last- oder Nutzungskollektiv ab.",
           "Maximalbelastungen allein reichen häufig nicht aus. Entscheidend ist, welche Kombinationen und zeitlichen Verläufe einen relevanten Ausfallmechanismus aktivieren. Eine beschleunigte Prüfung muss denselben Mechanismus adressieren, der auch im Feld erwartet wird.",
         ],
-        media: {
-          label: "Grafikplatz: Vom Feldprofil zum Prüfkollektiv",
-          brief:
-            "Fachgrafik zur Verdichtung realer Nutzung, Umwelt- und Lastdaten in ein repräsentatives Prüfprofil.",
-          ratio: "wide",
-        },
       },
       {
         heading: "Funktionstest und Lebensdauertest unterscheiden",
@@ -231,6 +226,12 @@ const deArticles: readonly KnowledgeArticle[] = [
           "In frühen Prototypenphasen stehen Erkenntnisgewinn und Schwachstellensuche im Vordergrund. Mit zunehmender Produktreife verschiebt sich der Fokus auf quantitative Lebensdaueraussagen, Freigabekriterien und die Bestätigung definierter Anforderungen.",
           "Weil Erprobung Zeit, Muster und Prüfstandskapazität bindet, sollte sie gezielt geplant werden. Design of Experiments kann helfen, Einflussgrößen und Wechselwirkungen mit weniger Versuchen systematisch zu untersuchen.",
         ],
+        media: {
+          label: "Diagramm: Teststrategien im Produktentwicklungsprozess",
+          brief:
+            "Zuordnung von Testgründen und Untersuchungszielen zu ausfallbasierten und ausfallfreien Teststrategien.",
+          ratio: "wide",
+        },
       },
     ],
     related: ["design-of-experiments", "absicherung", "prognosen"],
@@ -265,12 +266,6 @@ const deArticles: readonly KnowledgeArticle[] = [
           "Die Methoden müssen zum Produkt passen. In der Mechanik beschreiben beispielsweise Wöhlerlinien und Schadensakkumulationsmodelle den Zusammenhang zwischen Belastung und Ermüdung. In der Elektronik können temperaturabhängige Alterungsmodelle wie der Arrhenius-Ansatz relevant sein. Softwarebezogene Fehler folgen wiederum anderen Gesetzmäßigkeiten.",
           "Bei komplexen Systemen reicht es nicht, diese Bereiche getrennt zu betrachten. Schnittstellen, gemeinsame Ursachen und Wechselwirkungen entscheiden häufig darüber, ob ein Nachweis das reale Systemverhalten abbildet.",
         ],
-        media: {
-          label: "Grafikplatz: Absicherungslogik im System",
-          brief:
-            "Technische Darstellung, wie Risikoanalyse, Versuch, Simulation und Dokumentation zu einer Freigabeaussage zusammenlaufen.",
-          ratio: "wide",
-        },
       },
       {
         heading: "Prüfen, simulieren und dokumentieren",
@@ -278,6 +273,12 @@ const deArticles: readonly KnowledgeArticle[] = [
           "Umfangreiche Erprobung kann erforderlich sein, ist aber nicht immer der wirtschaftlichste Weg. Stochastische und numerische Simulationen ergänzen reale Versuche, wenn Modelle und Eingangsdaten ausreichend abgesichert sind. So lassen sich Prüfaufwand, Zeit und Kosten reduzieren, ohne die Aussagekraft zu verlieren.",
           "Die Nachweisdokumentation hält Ziel, Methode, Datenbasis, Annahmen, Unsicherheiten und Ergebnis fest. Sie macht Entscheidungen für Entwicklung, Qualität, Kunden und mögliche Haftungsfragen nachvollziehbar.",
         ],
+        media: {
+          label: "Diagramm: Statistische Entscheidung beim Zuverlässigkeitsnachweis",
+          brief:
+            "Vergleich von geforderter und beobachteter Lebensdauer unter Berücksichtigung der oberen Vertrauensgrenze.",
+          ratio: "wide",
+        },
       },
     ],
     related: ["planung", "erprobung", "risikomanagement"],
@@ -463,24 +464,24 @@ const enOverrides: Record<string, KnowledgeArticle> = {
     ...deArticles[2], navLabel: "Weak-point analysis", eyebrow: "Weak-point analysis", title: "Identify critical failure mechanisms before they reach the field.", lead: "Weak-point analysis combines design knowledge, risk methods, testing and field experience to create a reasoned priority rather than a long fault list.", metaTitle: "Weak-Point Analysis with FMEA, FTA and HALT | RelTest", metaDescription: "Weak-point analysis for technical products: FMEA, FTA, HALT, failure mechanisms and risk prioritisation.", heroMedia: { label: "Image placeholder: technical failure analysis", brief: "Engineers analysing a real failed component with measurement and design context." },
     sections: [
       { heading: "From symptom to mechanism", paragraphs: ["An observed failure is initially a symptom. Effective improvement requires an understanding of the physical, electronic or software mechanism and the conditions that trigger it.", "Analysis can start at concept stage and later incorporate test-bench and field evidence."] },
-      { heading: "Use FMEA and FTA deliberately", paragraphs: ["Design and process FMEA structure possible failure modes, causes and effects. Fault Tree Analysis starts from an unwanted top event and develops the possible causes logically.", "Both methods create value when their results lead to concrete design actions and evidence."], media: { label: "Graphic placeholder: FMEA and fault tree", brief: "Cause–failure–effect logic alongside a reduced fault tree.", ratio: "wide" } },
-      { heading: "Use HALT as an early robustness impulse", paragraphs: ["HALT applies stepwise overstress to reveal hidden design limits. It is not a statistical lifetime demonstration.", "Its benefit comes from the iterative link between stress, failure analysis and product improvement."] },
+      { heading: "Use FMEA and FTA deliberately", paragraphs: ["Design and process FMEA structure possible failure modes, causes and effects. Fault Tree Analysis starts from an unwanted top event and develops the possible causes logically.", "Both methods create value when their results lead to concrete design actions and evidence."] },
+      { heading: "Use HALT as an early robustness impulse", paragraphs: ["HALT applies stepwise overstress to reveal hidden design limits. It is not a statistical lifetime demonstration.", "Its benefit comes from the iterative link between stress, failure analysis and product improvement."], media: { label: "Diagram: operating and destruction margins in HALT", brief: "Design specification, operating margin, operating limit and destruction margins.", ratio: "wide" } },
     ], related: ["risikomanagement", "erprobung", "absicherung"], service: { label: "Risk and assurance services", href: "/leistungen/risikomanagement" },
   },
   erprobung: {
     ...deArticles[3], navLabel: "Testing", eyebrow: "Reliability testing", title: "Testing must translate real use into defensible evidence.", lead: "A test creates value only when its question, load, failure criterion and later decision fit together.", metaTitle: "Reliability Testing and Lifetime Tests | RelTest", metaDescription: "Reliability testing explained: test strategy, function and lifetime tests, load collectives and representative use.", heroMedia: { label: "Image placeholder: reliability test bench", brief: "Modern real test bench with specimen, sensors and data acquisition." },
     sections: [
-      { heading: "Understand use and loading", paragraphs: ["Products experience changing loads, temperature, humidity, contamination and user profiles. Meaningful testing translates this reality into representative load collectives.", "Acceleration is valid only when it addresses the same failure mechanism expected in the field."], media: { label: "Graphic placeholder: field profile to test collective", brief: "Transformation of real use and environmental data into a test profile.", ratio: "wide" } },
+      { heading: "Understand use and loading", paragraphs: ["Products experience changing loads, temperature, humidity, contamination and user profiles. Meaningful testing translates this reality into representative load collectives.", "Acceleration is valid only when it addresses the same failure mechanism expected in the field."] },
       { heading: "Separate function and lifetime questions", paragraphs: ["Function tests verify the required product function under defined conditions. Lifetime tests investigate when relevant failures occur and how strongly they vary.", "Sample size, duration and evaluation depend on the intended statement. A passed test is not automatically a reliability demonstration."] },
-      { heading: "Adapt the strategy to product maturity", paragraphs: ["Early prototypes focus on learning and weak-point discovery. Mature products require quantitative evidence and release criteria.", "Because tests consume time, samples and capacity, experimental design can improve their information value."] },
+      { heading: "Adapt the strategy to product maturity", paragraphs: ["Early prototypes focus on learning and weak-point discovery. Mature products require quantitative evidence and release criteria.", "Because tests consume time, samples and capacity, experimental design can improve their information value."], media: { label: "Diagram: test strategies in the product development process", brief: "Mapping test reasons and objectives to failure-based and failure-free test strategies.", ratio: "wide" } },
     ], related: ["design-of-experiments", "absicherung", "prognosen"], service: { label: "Testing and data analysis services", href: "/leistungen/datenanalyse-prognostik" },
   },
   absicherung: {
     ...deArticles[4], navLabel: "Assurance", eyebrow: "Reliability assurance", title: "Assurance connects risk, evidence and release decisions.", lead: "Reliability assurance provides a traceable technical justification that requirements are met under relevant conditions.", metaTitle: "Reliability Assurance and Evidence | RelTest", metaDescription: "Reliability assurance explained: qualitative and quantitative methods, testing, simulation, documentation and release.", heroMedia: { label: "Image placeholder: assurance and release", brief: "Engineer reviewing evidence next to a technical product and test data." },
     sections: [
       { heading: "Assurance starts in development", paragraphs: ["Reliability cannot be tested into a finished product. Concept and design decisions offer the greatest leverage to avoid or control failure mechanisms.", "Qualitative methods identify critical paths; quantitative methods assess lifetime, failure probability or availability. A robust strategy connects both."] },
-      { heading: "Match methods to mechanics, electronics and software", paragraphs: ["Mechanical fatigue, electronic ageing and software-related failure patterns require different evidence. Complex systems also demand attention to interfaces and common causes.", "The method must fit the product and the failure physics rather than follow a generic checklist."], media: { label: "Graphic placeholder: system assurance logic", brief: "Risk analysis, testing, simulation and documentation converging into release evidence.", ratio: "wide" } },
-      { heading: "Test, simulate and document", paragraphs: ["Stochastic and numerical simulation can complement physical testing when models and inputs are sufficiently validated.", "Evidence documentation records targets, methods, data, assumptions, uncertainty and results so that decisions remain traceable."] },
+      { heading: "Match methods to mechanics, electronics and software", paragraphs: ["Mechanical fatigue, electronic ageing and software-related failure patterns require different evidence. Complex systems also demand attention to interfaces and common causes.", "The method must fit the product and the failure physics rather than follow a generic checklist."] },
+      { heading: "Test, simulate and document", paragraphs: ["Stochastic and numerical simulation can complement physical testing when models and inputs are sufficiently validated.", "Evidence documentation records targets, methods, data, assumptions, uncertainty and results so that decisions remain traceable."], media: { label: "Diagram: statistical decision in reliability demonstration", brief: "Comparison of required and observed lifetime while accounting for the upper confidence limit.", ratio: "wide" } },
     ], related: ["planung", "erprobung", "risikomanagement"], service: { label: "Risk and assurance services", href: "/leistungen/risikomanagement" },
   },
   prognosen: {
@@ -523,8 +524,8 @@ function addKnowledgeVisuals(article: KnowledgeArticle, locale: Locale): Knowled
     ...article,
     heroMedia: {
       ...article.heroMedia,
-      src: pngSource(visuals.hero.src),
       ...visuals.hero[locale],
+      src: pngSource(visuals.hero[locale].src ?? visuals.hero.src),
     },
     sections: article.sections.map((section) => {
       if (!section.media || inlineVisualAdded) return section;
@@ -534,8 +535,8 @@ function addKnowledgeVisuals(article: KnowledgeArticle, locale: Locale): Knowled
         ...section,
         media: {
           ...section.media,
-          src: pngSource(visuals.inline.src),
           ...visuals.inline[locale],
+          src: pngSource(visuals.inline[locale].src ?? visuals.inline.src),
         },
       };
     }),

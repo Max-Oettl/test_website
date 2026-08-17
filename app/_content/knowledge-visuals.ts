@@ -1,4 +1,7 @@
 export type KnowledgeVisualCopy = {
+  src?: string;
+  ratio?: "landscape" | "wide" | "sixteen-nine" | "two-one";
+  maxWidth?: "tiny" | "small" | "compact" | "standard" | "wide";
   alt: string;
   caption: string;
   lead?: string;
@@ -65,18 +68,24 @@ export const knowledgeVisuals: Record<string, KnowledgeVisualSet> = {
     inline: {
       src: "target-allocation",
       de: {
-        alt: "Top-down-Allokation und Bottom-up-Bewertung eines seriellen Systems mit drei Komponenten.",
+        src: "reliability-planning-system-levels",
+        ratio: "landscape",
+        maxWidth: "small",
+        alt: "Schaubild zur Zuverlässigkeitsplanung mit Anforderungsquellen sowie Top-down-Ableitung und Bottom-up-Validierung von System-, Subsystem- und Komponentenzuverlässigkeit.",
         lead:
-          "Die Allokation wird in beide Richtungen geprüft: vom Systemziel zu den Komponenten und von realistischen Komponentenwerten zurück zum System.",
+          "Die Abbildung verbindet Zuverlässigkeitsanforderungen mit der Ableitung von Systemzielen auf Komponentenebene und der anschließenden Validierung zurück zum System.",
         caption:
-          "Für ein serielles System ergibt sich die Systemzuverlässigkeit aus dem Produkt der Komponentenzuverlässigkeiten.",
+          "Zuverlässigkeitsplanung arbeitet top-down bei der Zielableitung und bottom-up bei der Bewertung der erreichbaren Systemzuverlässigkeit.",
       },
       en: {
-        alt: "Top-down allocation and bottom-up assessment of a three-component series system.",
+        src: "reliability-planning-system-levels",
+        ratio: "landscape",
+        maxWidth: "small",
+        alt: "Reliability planning diagram showing requirement sources and the top-down derivation and bottom-up validation of system, subsystem and component reliability.",
         lead:
-          "Allocation is checked in both directions: from the system target to components and from realistic component values back to the system.",
+          "The figure connects reliability requirements with the allocation of system targets down to components and the subsequent validation back at system level.",
         caption:
-          "For a series system, system reliability is the product of the component reliabilities.",
+          "Reliability planning works top-down when deriving targets and bottom-up when assessing achievable system reliability.",
       },
     },
   },
@@ -95,20 +104,24 @@ export const knowledgeVisuals: Record<string, KnowledgeVisualSet> = {
       },
     },
     inline: {
-      src: "fmea-fta",
+      src: "halt-operating-destruction-margins",
       de: {
-        alt: "Gegenüberstellung einer Ursache-Fehlerart-Fehlerfolge-Kette und eines Fehlerbaums mit UND- und ODER-Verknüpfung.",
+        ratio: "sixteen-nine",
+        maxWidth: "small",
+        alt: "Diagramm der operativen Marge und Vernichtungsmargen zwischen Design-Spezifikation, oberer Betriebsgrenze und Zerstörungsgrenzen.",
         lead:
-          "FMEA und FTA beleuchten dasselbe Risiko aus unterschiedlichen Richtungen: entlang der Fehlerkette und ausgehend vom unerwünschten Top-Ereignis.",
+          "HALT untersucht gezielt die Abstände zwischen spezifiziertem Betriebsbereich, tatsächlichen Betriebsgrenzen und den Belastungen, bei denen bleibende Schäden auftreten.",
         caption:
-          "FMEA strukturiert Fehlerketten; FTA zerlegt ein Top-Ereignis logisch in mögliche Ursachen.",
+          "Operative und Vernichtungsmargen machen konstruktive Robustheitsreserven und mögliche Schwachstellen sichtbar.",
       },
       en: {
-        alt: "Comparison of a cause-failure mode-effect chain and a fault tree with AND and OR logic.",
+        ratio: "sixteen-nine",
+        maxWidth: "small",
+        alt: "Diagram of the operating margin and destruction margins between the design specification, upper operating limit and destruction limits.",
         lead:
-          "FMEA and FTA examine the same risk from different directions: along the failure chain and backwards from the unwanted top event.",
+          "HALT deliberately investigates the distances between the specified operating range, actual operating limits and the stresses at which permanent damage occurs.",
         caption:
-          "FMEA structures failure chains; FTA decomposes a top event logically into possible causes.",
+          "Operating and destruction margins reveal design robustness reserves and potential weak points.",
       },
     },
   },
@@ -127,20 +140,24 @@ export const knowledgeVisuals: Record<string, KnowledgeVisualSet> = {
       },
     },
     inline: {
-      src: "field-to-test-profile",
+      src: "testing-strategy-product-development",
       de: {
-        alt: "Diagramm zur Überführung eines Feldlastprofils in ein beschleunigtes Prüfkollektiv bei vergleichbarer Schädigung.",
+        ratio: "sixteen-nine",
+        maxWidth: "standard",
+        alt: "Flussdiagramm zur Auswahl von Teststrategien im Produktentwicklungsprozess abhängig von Testgrund, Untersuchungsziel und Entwicklungsphase.",
         lead:
-          "Das Feldprofil darf nur dann zeitlich verdichtet werden, wenn Lastfolge und Niveau den relevanten Ausfallmechanismus weiterhin repräsentieren.",
+          "Die geeignete Teststrategie hängt von Produktreife und Untersuchungsziel ab: Frühe ausfallbasierte Versuche liefern Verteilungsparameter, während der Zuverlässigkeitsnachweis auch ausfallfreie Erfolgsprüfungen nutzt.",
         caption:
-          "D_Test ≈ D_Feld gilt nur unter erhaltener Ausfallphysik; reine Zeitraffung genügt nicht.",
+          "Mit zunehmender Produktreife verschiebt sich die Erprobung vom Erkenntnisgewinn zur quantitativen Zuverlässigkeitsdemonstration.",
       },
       en: {
-        alt: "Diagram translating a field load profile into an accelerated test spectrum with comparable damage.",
+        ratio: "sixteen-nine",
+        maxWidth: "standard",
+        alt: "Flowchart for selecting test strategies in the product development process according to test reason, objective and development phase.",
         lead:
-          "A field profile may only be compressed in time when load sequence and level still represent the relevant failure mechanism.",
+          "The appropriate test strategy depends on product maturity and objective: early failure-based tests provide distribution parameters, while reliability demonstration can also use failure-free success runs.",
         caption:
-          "D_Test ≈ D_Field is valid only when failure physics are preserved; time compression alone is insufficient.",
+          "As the product matures, testing shifts from learning and comparison towards quantitative reliability demonstration.",
       },
     },
   },
@@ -159,20 +176,24 @@ export const knowledgeVisuals: Record<string, KnowledgeVisualSet> = {
       },
     },
     inline: {
-      src: "assurance-traceability",
+      src: "reliability-demonstration-confidence-limit",
       de: {
-        alt: "Traceability-Diagramm mit verknüpften IDs für Anforderung, Risiko, Methode, Evidenz und Entscheidung.",
+        ratio: "landscape",
+        maxWidth: "tiny",
+        alt: "Diagramm zum Zuverlässigkeitsnachweis mit geforderter Bq-Lebensdauer, beobachteter Lebensdauer, oberer Vertrauensgrenze und Bereichen für erfolgreichen oder fehlgeschlagenen Nachweis.",
         lead:
-          "Traceability bedeutet, dass jede Freigabeaussage bis zur Anforderung, zum Risiko, zur Methode und zur konkreten Evidenz zurückverfolgt werden kann.",
+          "Für einen erfolgreichen Zuverlässigkeitsnachweis muss die statistisch abgesicherte Lebensdaueraussage die geforderte Bq-Lebensdauer erreichen; die Punktschätzung allein genügt nicht.",
         caption:
-          "Eine belastbare Freigabe bleibt über eindeutige Verknüpfungen fachlich und dokumentarisch nachvollziehbar.",
+          "Die Vertrauensgrenze entscheidet, ob eine beobachtete Lebensdauer als belastbarer Nachweis akzeptiert werden kann.",
       },
       en: {
-        alt: "Traceability diagram linking IDs for requirement, risk, method, evidence and decision.",
+        ratio: "landscape",
+        maxWidth: "tiny",
+        alt: "Reliability demonstration diagram with required Bq life, observed life, upper confidence limit and regions for successful or failed proof.",
         lead:
-          "Traceability means that every release statement can be followed back to its requirement, risk, method and specific evidence.",
+          "For a successful reliability demonstration, the statistically supported lifetime statement must reach the required Bq life; the point estimate alone is insufficient.",
         caption:
-          "A defensible release remains technically and documentarily traceable through explicit links.",
+          "The confidence limit determines whether an observed lifetime can be accepted as defensible proof.",
       },
     },
   },
@@ -193,18 +214,22 @@ export const knowledgeVisuals: Record<string, KnowledgeVisualSet> = {
     inline: {
       src: "censored-data-prediction",
       de: {
-        alt: "Ausfall- und rechtszensierte Beobachtungen werden in eine Überlebensfunktion R von t mit Konfidenzgrenzen überführt.",
+        ratio: "two-one",
+        maxWidth: "wide",
+        alt: "Dreistufiges Diagramm vom Datenkontext über das Zuverlässigkeitsmodell zur Prognose mit bekannten Daten, zukünftigem Ereignis und Unsicherheitsband.",
         lead:
-          "Nicht ausgefallene Prüflinge werden als rechtszensierte Beobachtungen in die Schätzung einbezogen und nicht als fehlende Daten verworfen.",
+          "Eine belastbare Prognose entsteht in drei Schritten: Daten im Entstehungskontext einordnen, ein fachlich passendes Modell wählen und die Extrapolation mit ihrer Unsicherheit darstellen.",
         caption:
-          "Zensierte Daten tragen Information bis zum letzten beobachteten Zeitpunkt und beeinflussen Modell sowie B10-Schätzung.",
+          "Datenkontext, Modell und Prognose bilden eine nachvollziehbare Kette; das Unsicherheitsband kennzeichnet die zunehmende Streuung außerhalb des bekannten Datenbereichs.",
       },
       en: {
-        alt: "Failure and right-censored observations are transformed into a survival function R of t with confidence limits.",
+        ratio: "two-one",
+        maxWidth: "wide",
+        alt: "Three-stage diagram from data context through a reliability model to a prognosis with known data, a future event and an uncertainty band.",
         lead:
-          "Test items that have not failed are included as right-censored observations rather than discarded as missing data.",
+          "A defensible prognosis follows three steps: understand the data in context, select a technically appropriate model and present the extrapolation together with its uncertainty.",
         caption:
-          "Censored data carry information up to the last observed time and influence both model and B10 estimate.",
+          "Data context, model and prognosis form a traceable chain; the uncertainty band shows the increasing spread beyond the known data range.",
       },
     },
   },

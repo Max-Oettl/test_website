@@ -1,4 +1,5 @@
 import { AiAwareImage as Image } from "../../_components/ai-aware-image";
+import { BrandLineWatermark } from "../../_components/brand-line-watermark";
 
 import { resolveLocale, type Locale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
@@ -148,8 +149,9 @@ export default async function ContactPage({ params }: Props) {
         <div className="mx-auto grid max-w-7xl overflow-hidden border border-brand-marine/15 bg-brand-marine text-white lg:grid-cols-[1.04fr_0.96fr]">
           <div className="relative flex min-w-0 flex-col justify-center overflow-hidden px-7 py-14 sm:px-10 lg:px-14 lg:py-20">
             <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:64px_64px]" />
-            <div className="absolute -left-32 bottom-[-8rem] h-80 w-80 rounded-full border border-brand-steel-cyan/20" />
-            <div className="absolute -left-16 bottom-[-4rem] h-52 w-52 rounded-full border border-brand-steel-cyan/15" />
+            <div className="contact-watermark-mask pointer-events-none absolute inset-0 overflow-hidden">
+              <BrandLineWatermark placement="contact" />
+            </div>
 
             <div className="relative">
               <h1 className="max-w-3xl font-winnstein-display text-4xl leading-[1.05] font-bold tracking-[-0.04em] sm:text-5xl lg:text-[3.6rem]">

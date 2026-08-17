@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getSiteContent } from "../_content/site-content";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { ActiveNavLink } from "./active-nav-link";
+import { CompactHeaderMenu } from "./compact-header-menu";
 import { ConceptBrandLogo } from "./concept-brand-logo";
 import { LanguageSwitcher } from "./language-switcher";
 import { LandingConceptBodySync } from "./landing-concept-body-sync";
@@ -100,6 +101,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 <ActiveNavLink
                   href={localizeHref(locale, item.href)}
                   activeHrefs={activeHrefs}
+                  blurOnPointerActivation
                   className={topLinkClassName}
                   activeClassName={topActiveClassName}
                 >
@@ -196,11 +198,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           </div>
         </div>
 
-        <details className="group relative xl:hidden">
-          <summary className="flex cursor-pointer list-none items-center border border-brand-marine/20 px-4 py-2 font-winnstein-display text-sm font-semibold text-brand-marine [&::-webkit-details-marker]:hidden">
-            {navigation.menu}
-          </summary>
-          <div className="absolute right-0 mt-3 w-72 border border-brand-marine/15 bg-white p-3 shadow-[0_18px_45px_rgba(20,36,82,0.12)]">
+        <CompactHeaderMenu label={navigation.menu}>
             <div className="mb-2 px-2">
               <LanguageSwitcher locale={locale} compact />
             </div>
@@ -219,10 +217,10 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 <div key={item.href} className="px-2 py-2">
                   <ActiveNavLink
                     href={localizeHref(locale, item.href)}
-                    className={`block border-l-2 border-transparent px-2 py-2 font-winnstein-display text-sm font-semibold text-brand-marine ${
+                    className={`site-compact-menu-link block border-l-2 border-transparent px-2 py-2 font-winnstein-display text-sm font-semibold text-brand-marine ${
                       isEducationItem
-                        ? "hover:border-brand-education hover:bg-brand-education/[0.07] hover:text-brand-education"
-                        : "hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10"
+                        ? "site-compact-menu-link-education"
+                        : ""
                     }`}
                     activeHrefs={activeHrefs}
                     activeClassName={
@@ -245,7 +243,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                               <ActiveNavLink
                                 key={dropdownItem.href}
                                 href={localizeHref(locale, dropdownItem.href)}
-                                className="block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
+                                className="site-compact-menu-link block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80"
                                 activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
                               >
                                 {dropdownItem.label}
@@ -260,7 +258,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                           <Link
                             key={dropdownItem.href}
                             href={localizeHref(locale, dropdownItem.href)}
-                            className="block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
+                            className="site-compact-menu-link block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80"
                           >
                             {dropdownItem.label}
                           </Link>
@@ -268,7 +266,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                           <ActiveNavLink
                             key={dropdownItem.href}
                             href={localizeHref(locale, dropdownItem.href)}
-                            className="block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
+                            className="site-compact-menu-link block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80"
                             activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
                           >
                             {dropdownItem.label}
@@ -282,7 +280,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 <ActiveNavLink
                   key={item.href}
                   href={localizeHref(locale, item.href)}
-                  className="block border-l-2 border-transparent px-4 py-3 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
+                  className="site-compact-menu-link block border-l-2 border-transparent px-4 py-3 text-sm font-medium text-brand-marine/80"
                   activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 font-semibold text-brand-marine"
                 >
                   {item.label}
@@ -291,12 +289,11 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             })}
             <Link
               href={localizeHref(locale, "/kontakt")}
-              className="brand-action site-header-cta mt-2 flex bg-brand-marine px-4 py-3 font-winnstein-display text-sm font-semibold text-white"
+              className="brand-action site-header-cta mt-2 flex bg-brand-marine px-4 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan/40"
             >
               {navigation.inquiry}
             </Link>
-          </div>
-        </details>
+        </CompactHeaderMenu>
       </div>
     </header>
     </>

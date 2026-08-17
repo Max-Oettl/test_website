@@ -197,12 +197,9 @@ const content = {
           label: "Schwachstellenanalyse",
           href: "/wissen/schwachstellenanalyse",
         },
-        { label: "Absicherung", href: "/wissen/absicherung" },
         { label: "Erprobung", href: "/wissen/erprobung" },
+        { label: "Absicherung", href: "/wissen/absicherung" },
         { label: "Prognosen", href: "/wissen/prognosen" },
-        { label: "Design of Experiments", href: "/wissen/design-of-experiments" },
-        { label: "Risikomanagement", href: "/wissen/risikomanagement" },
-        { label: "Glossar", href: "/glossar" },
       ],
       expertiseItems: [
         {
@@ -800,12 +797,9 @@ const content = {
           label: "Weak-point analysis",
           href: "/wissen/schwachstellenanalyse",
         },
-        { label: "Validation", href: "/wissen/absicherung" },
         { label: "Testing", href: "/wissen/erprobung" },
+        { label: "Assurance", href: "/wissen/absicherung" },
         { label: "Predictions", href: "/wissen/prognosen" },
-        { label: "Design of Experiments", href: "/wissen/design-of-experiments" },
-        { label: "Risk management", href: "/wissen/risikomanagement" },
-        { label: "Glossary", href: "/glossar" },
       ],
       expertiseItems: [
         {

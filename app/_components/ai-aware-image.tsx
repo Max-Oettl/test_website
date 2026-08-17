@@ -1,8 +1,5 @@
 import Image, { type ImageProps } from "next/image";
 
-import { getAiImageDisclosure } from "../_content/ai-image-disclosures";
-import { AiImageLabel } from "./ai-image-label";
-
 type AiAwareImageProps = ImageProps & {
   disclosureClassName?: string;
   disclosureLocale?: "de" | "en";
@@ -12,26 +9,16 @@ type AiAwareImageProps = ImageProps & {
 
 export function AiAwareImage({
   alt,
-  disclosureClassName = "right-3 bottom-3",
-  disclosureLocale,
-  disclosureSize = "sm",
-  showAiDisclosure = true,
+  disclosureClassName: _disclosureClassName,
+  disclosureLocale: _disclosureLocale,
+  disclosureSize: _disclosureSize,
+  showAiDisclosure: _showAiDisclosure,
   ...imageProps
 }: AiAwareImageProps) {
-  const src = typeof imageProps.src === "string" ? imageProps.src : undefined;
-  const kind = getAiImageDisclosure(src);
+  void _disclosureClassName;
+  void _disclosureLocale;
+  void _disclosureSize;
+  void _showAiDisclosure;
 
-  return (
-    <>
-      <Image {...imageProps} alt={alt} />
-      {showAiDisclosure && kind ? (
-        <AiImageLabel
-          kind={kind}
-          locale={disclosureLocale}
-          size={disclosureSize}
-          className={disclosureClassName}
-        />
-      ) : null}
-    </>
-  );
+  return <Image {...imageProps} alt={alt} />;
 }

@@ -11,6 +11,30 @@ type Props = {
   params: Promise<{ lang: string }>;
 };
 
+function BookHotspotIcon({ number }: { number: 1 | 2 }) {
+  return (
+    <span className="relative grid size-9 place-items-center transition-transform duration-200 group-hover/book-hotspot:scale-110 group-focus-visible/book-hotspot:scale-110 group-focus-visible/book-hotspot:outline-none group-focus-visible/book-hotspot:ring-4 group-focus-visible/book-hotspot:ring-white/70 sm:size-10">
+      <svg
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full"
+        viewBox="0 0 42.52 42.52"
+        fill="none"
+      >
+        <path
+          fill="#142553"
+          d="M42.52,14.62V0S10.94,0,10.94,0C4.9,0,0,4.89,0,10.94v2.14s.03.02.04.04v3.06s-.03-.02-.04-.03v4.79h.04S.04,23.34.04,23.34H0v10.22s.03,0,.04,0v2.41s-.03,0-.04,0v6.55h34.34l8.17-8.03s-.01,0-.02,0v-2.43s.02,0,.02,0v-15.02h-.02s0-2.41,0-2.41h.02Z"
+        />
+      </svg>
+      <span
+        aria-hidden="true"
+        className="relative -translate-y-px font-winnstein-display text-[1.85rem] leading-none font-bold text-white sm:text-[2rem]"
+      >
+        {number}
+      </span>
+    </span>
+  );
+}
+
 const featuredReferences = [
   "Bosch",
   "Mercedes-Benz",
@@ -26,7 +50,6 @@ const expertiseContent = {
     metaDescription:
       "Referenzen, Springer-Fachbücher, Podcast und Branchenkontexte zeigen die fachliche Substanz hinter RelTest Solutions.",
     intro: {
-      eyebrow: "Expertise",
       title: "Fachliche Substanz, die über reine Leistungsversprechen hinausgeht.",
       description:
         "RelTest arbeitet in anspruchsvollen technischen Kontexten. Diese Seite bündelt ausgewählte Vertrauenssignale: industrielle Referenzen, veröffentlichte Fachbücher, persönliche Einblicke und Branchen, in denen Zuverlässigkeit messbar entscheidend ist.",
@@ -123,7 +146,6 @@ const expertiseContent = {
     metaDescription:
       "References, Springer books, podcast insights and industry contexts show the technical substance behind RelTest Solutions.",
     intro: {
-      eyebrow: "Expertise",
       title: "Technical substance that goes beyond service claims.",
       description:
         "RelTest works in demanding technical environments. This page brings together selected trust signals: industrial references, published technical books, personal insights and industries where reliability has measurable impact.",
@@ -288,10 +310,7 @@ export default async function ExpertisePage({ params }: Props) {
         <BrandLineWatermark placement="expertise" />
         <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,1.05fr)_minmax(28rem,0.95fr)]">
           <div className="flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-              {content.intro.eyebrow}
-            </p>
-            <h1 className="mt-5 max-w-4xl hyphens-auto font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.25rem] xl:text-[3.55rem]">
+            <h1 className="max-w-4xl hyphens-auto font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.25rem] xl:text-[3.55rem]">
               {content.intro.title}
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-white/76">
@@ -492,20 +511,7 @@ export default async function ExpertisePage({ params }: Props) {
                     aria-label={`${content.books.externalLabel}: ${book.title}`}
                     className={`group/book-hotspot absolute z-10 -translate-x-1/2 -translate-y-1/2 ${hotspotPosition}`}
                   >
-                    <span className="relative grid size-9 place-items-center transition-transform duration-200 group-hover/book-hotspot:scale-110 group-focus-visible/book-hotspot:scale-110 group-focus-visible/book-hotspot:outline-none group-focus-visible/book-hotspot:ring-4 group-focus-visible/book-hotspot:ring-white/70 sm:size-10">
-                      <Image
-                        src={
-                          index === 0
-                            ? "/branding/reltest-number-1.svg"
-                            : "/branding/reltest-number-2.svg"
-                        }
-                        alt=""
-                        aria-hidden="true"
-                        width={40}
-                        height={40}
-                        className="h-full w-full"
-                      />
-                    </span>
+                    <BookHotspotIcon number={index === 0 ? 1 : 2} />
 
                     <span
                       className={`pointer-events-none absolute top-[calc(100%+1rem)] z-20 w-64 border border-brand-marine/15 bg-white p-4 text-left text-brand-marine opacity-0 shadow-[0_18px_45px_rgba(3,19,52,.24)] transition-all duration-200 group-hover/book-hotspot:translate-y-0 group-hover/book-hotspot:opacity-100 group-focus-visible/book-hotspot:translate-y-0 group-focus-visible/book-hotspot:opacity-100 ${

@@ -4,6 +4,7 @@ import { AiAwareImage as Image } from "./ai-aware-image";
 
 import type { DetailPage, DetailLink } from "../_content/migration-pages";
 import { localizeHref, type Locale } from "../_i18n/config";
+import { PageContextBar } from "./page-context-bar";
 import { PageIntro } from "./page-intro";
 
 type ServiceDetailTemplateProps = {
@@ -669,6 +670,13 @@ export function ServiceDetailTemplate({
         eyebrow={page.eyebrow}
         title={page.title}
         description={page.description}
+      />
+
+      <PageContextBar
+        locale={locale}
+        sectionHref="/leistungen"
+        sectionLabel="Solutions"
+        currentLabel={page.title}
       />
 
       <section className="relative overflow-hidden bg-slate-50 px-5 py-16 sm:px-6 lg:px-8 lg:py-20">

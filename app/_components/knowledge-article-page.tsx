@@ -1,13 +1,43 @@
+import Image from "next/image";
 import Link from "next/link";
 
-import type { KnowledgeArticle } from "../_content/knowledge-content";
+const knowledgeHeaderImages = {
+  de: {
+    planung: { src: "/wissen/uebersicht/planung-de.png", width: 1672, height: 941, alt: "Diagramm zum Entscheidungsraum der Zuverlässigkeitsplanung mit Zuverlässigkeitskosten, Folgekosten und akzeptablen Kosten" },
+    schwachstellenanalyse: { src: "/wissen/uebersicht/schwachstellenanalyse-de.png", width: 1672, height: 941, alt: "Badewannenkurve zur Schwachstellenanalyse mit Frühausfällen, Zufallsausfällen und Verschleißausfällen" },
+    erprobung: { src: "/wissen/uebersicht/erprobung-de.png", width: 2172, height: 724, alt: "Vergleich von Worst-Case-, einsatzbezogenen und synthetischen Lastkollektiven für die Zuverlässigkeitserprobung" },
+    absicherung: { src: "/wissen/uebersicht/absicherung-de.png", width: 1672, height: 941, alt: "Technisches Diagramm zur Zuverlässigkeitsabsicherung vom Bauteilmodell bis zum Systemnachweis" },
+    prognosen: { src: "/wissen/uebersicht/prognose-cropped.png", width: 760, height: 680, alt: "Veranschaulichung einer Zuverlässigkeitsprognose aus Versuchs- und Felddaten mit statistischem Lebensdauermodell" },
+  },
+  en: {
+    planung: { src: "/wissen/uebersicht/planung-en.png", width: 1672, height: 941, alt: "Reliability planning decision-space diagram comparing reliability costs, failure costs and acceptable customer costs" },
+    schwachstellenanalyse: { src: "/wissen/uebersicht/schwachstellenanalyse-en.png", width: 1672, height: 941, alt: "Bathtub curve for weak-point analysis showing early, random and wear-out failures" },
+    erprobung: { src: "/wissen/uebersicht/erprobung-en.png", width: 1748, height: 900, alt: "Comparison of worst-case, use-specific and synthetic load profiles for reliability testing" },
+    absicherung: { src: "/wissen/uebersicht/absicherung-en.png", width: 1672, height: 941, alt: "Technical reliability assurance diagram from component models to system verification" },
+    prognosen: { src: "/wissen/uebersicht/prognose-cropped.png", width: 760, height: 680, alt: "Reliability prediction based on test and field data using a statistical lifetime model" },
+  },
+} as const;
+
+import type { KnowledgeArticle, KnowledgeMedia } from "../_content/knowledge-content";
 import { getKnowledgeArticles } from "../_content/knowledge-content";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { KnowledgeMediaPlaceholder } from "./knowledge-media-placeholder";
+import { PageContextBar } from "./page-context-bar";
 
 type Props = {
   article: KnowledgeArticle;
   locale: Locale;
+};
+
+const mediaWidthClasses: Record<
+  NonNullable<KnowledgeMedia["maxWidth"]>,
+  string
+> = {
+  tiny: "mx-auto w-full max-w-lg",
+  small: "mx-auto w-full max-w-2xl",
+  compact: "mx-auto w-full max-w-4xl",
+  standard: "mx-auto w-full max-w-5xl",
+  wide: "mx-auto w-full max-w-6xl",
 };
 
 export function KnowledgeArticlePage({ article, locale }: Props) {
@@ -18,11 +48,12 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
     .filter((item): item is KnowledgeArticle => Boolean(item));
   const isQuantitative = ["prognosen", "design-of-experiments", "erprobung"].includes(article.slug);
   const isDiagnostic = ["schwachstellenanalyse", "risikomanagement"].includes(article.slug);
+  const headerImage = knowledgeHeaderImages[locale][article.slug as keyof (typeof knowledgeHeaderImages)[Locale]];
 
   return (
     <>
-      <header className={`${isQuantitative ? "bg-white text-[var(--solution-marine)]" : "bg-[var(--solution-marine)] text-white"} font-winnstein-body`}>
-        <div className={`${isQuantitative ? "lg:grid-cols-1" : "lg:grid-cols-[minmax(0,.92fr)_minmax(420px,.78fr)] lg:items-center"} mx-auto grid max-w-[1440px] gap-10 px-6 py-14 lg:px-12 lg:py-20`}>
+      <header className="bg-[var(--solution-marine)] font-winnstein-body text-white">
+        <div className="mx-auto grid max-w-[1440px] gap-10 px-6 py-14 lg:grid-cols-[minmax(0,.92fr)_minmax(360px,.68fr)] lg:items-center lg:px-12 lg:py-20">
           <div>
             <Link
               href={localizeHref(locale, "/wissen")}
@@ -36,13 +67,34 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
             <h1 className="mt-4 max-w-4xl font-winnstein-display text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-[3.65rem]">
               {article.title}
             </h1>
-            <p className={`mt-7 max-w-3xl text-lg leading-8 ${isQuantitative ? "text-[var(--solution-marine-80)]" : "text-white/[0.78]"}`}>
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/[0.78]">
               {article.lead}
             </p>
           </div>
-          <KnowledgeMediaPlaceholder media={article.heroMedia} dark={!isQuantitative} preload className={isQuantitative ? "mt-2" : ""} />
+          {headerImage ? (
+            <figure className="relative flex min-h-[240px] w-full max-w-[560px] items-center justify-center justify-self-center lg:min-h-[300px]">
+              <Image
+                src={headerImage.src}
+                alt={headerImage.alt}
+                width={headerImage.width}
+                height={headerImage.height}
+                sizes="(min-width: 1024px) 48vw, 100vw"
+                preload
+                className="h-auto max-h-[360px] w-full object-contain [filter:invert(1)_hue-rotate(180deg)] mix-blend-screen"
+              />
+            </figure>
+          ) : (
+            <KnowledgeMediaPlaceholder media={article.heroMedia} dark preload locale={locale} />
+          )}
         </div>
       </header>
+
+      <PageContextBar
+        locale={locale}
+        sectionHref="/wissen"
+        sectionLabel={isGerman ? "Wissen" : "Knowledge"}
+        currentLabel={article.navLabel}
+      />
 
       <main className="font-winnstein-body">
         {article.definition ? (
@@ -84,7 +136,15 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
                 </div>
               </div>
               {section.media ? (
-                <div className={`${isQuantitative ? "-mx-0 lg:-mx-16" : ""} mt-10`}>
+                <div
+                  className={`${
+                    section.media.maxWidth
+                      ? mediaWidthClasses[section.media.maxWidth]
+                      : isQuantitative
+                        ? "-mx-0 lg:-mx-16"
+                        : ""
+                  } mt-10`}
+                >
                   {section.media.lead ? (
                     <p className="mb-5 max-w-4xl border-l-2 border-[var(--solution-steel-cyan)] pl-5 text-base font-medium leading-7 text-[var(--solution-marine)]">
                       {section.media.lead}

@@ -4,6 +4,7 @@ import { AiAwareImage as Image } from "./ai-aware-image";
 import { PageClosingCta } from "./page-closing-cta";
 import type { SolutionServicePage } from "../_content/solution-service-pages";
 import { localizeHref, type Locale } from "../_i18n/config";
+import { PageContextBar } from "./page-context-bar";
 
 type Props = {
   locale: Locale;
@@ -118,6 +119,13 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
         </nav>
         <div className="h-2 bg-brand-steel-cyan" />
       </section>
+
+      <PageContextBar
+        locale={locale}
+        sectionHref="/leistungen"
+        sectionLabel="Solutions"
+        currentLabel={page.hero.title}
+      />
 
       <section
         id="leistungsbausteine"

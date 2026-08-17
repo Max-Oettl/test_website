@@ -155,10 +155,10 @@ export function LanguageSwitcher({
                 void switchLanguage(language);
               }}
               aria-pressed={locale === language}
-              className={`flex w-full items-center gap-3 px-3 py-2.5 text-left text-sm font-semibold transition-colors ${
+              className={`flex w-full items-center gap-3 border-l-[3px] px-3 py-2.5 text-left text-sm font-semibold outline-none transition-[background-color,border-color,color] duration-150 hover:border-brand-cyan hover:bg-[#d5ecf7] hover:text-brand-ink focus-visible:border-brand-cyan focus-visible:bg-[#d5ecf7] focus-visible:text-brand-ink focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-cyan active:bg-[#bfe3f2] ${
                 locale === language
-                  ? "bg-[#edf5f8] text-brand-ink"
-                  : "text-slate-600 hover:bg-slate-50 hover:text-brand-ink"
+                  ? "border-brand-cyan bg-[#edf5f8] text-brand-ink"
+                  : "border-transparent text-slate-600"
               }`}
             >
               <LanguageFlag language={language} />

@@ -4,6 +4,7 @@ import { AiAwareImage as Image } from "./ai-aware-image";
 
 import type { DetailPage } from "../_content/migration-pages";
 import { localizeHref, type Locale } from "../_i18n/config";
+import { PageContextBar } from "./page-context-bar";
 import { PageClosingCta } from "./page-closing-cta";
 
 type EducationDetailPageProps = {
@@ -121,6 +122,14 @@ export function EducationDetailPage({
         </div>
         <div className="h-2 bg-brand-education" />
       </section>
+
+      <PageContextBar
+        accent="education"
+        locale={locale}
+        sectionHref="/education"
+        sectionLabel="Education"
+        currentLabel={page.title}
+      />
 
       <section className="bg-white px-5 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.55fr)]">

@@ -8,6 +8,7 @@ type ActiveNavLinkProps = Omit<ComponentProps<typeof Link>, "href"> & {
   href: string;
   activeClassName: string;
   activeHrefs?: readonly string[];
+  blurOnPointerActivation?: boolean;
   children: ReactNode;
   exact?: boolean;
   inactiveClassName?: string;
@@ -46,11 +47,13 @@ function pathMatches(pathname: string, href: string, exact: boolean) {
 export function ActiveNavLink({
   activeClassName,
   activeHrefs,
+  blurOnPointerActivation = false,
   children,
   className,
   exact = false,
   href,
   inactiveClassName,
+  onPointerUp,
   ...props
 }: ActiveNavLinkProps) {
   const pathname = usePathname();
@@ -64,6 +67,12 @@ export function ActiveNavLink({
       href={href}
       aria-current={isActive ? "page" : undefined}
       className={cx(className, isActive ? activeClassName : inactiveClassName)}
+      onPointerUp={(event) => {
+        onPointerUp?.(event);
+        if (blurOnPointerActivation && !event.defaultPrevented) {
+          event.currentTarget.blur();
+        }
+      }}
       {...props}
     >
       {children}

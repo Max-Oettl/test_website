@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { AiAwareImage as Image } from "../../_components/ai-aware-image";
+import { BrandLineWatermark } from "../../_components/brand-line-watermark";
 import { PageClosingCta } from "../../_components/page-closing-cta";
 import { localizeHref, resolveLocale, type Locale } from "../../_i18n/config";
 import {
@@ -509,15 +510,10 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <div className="overflow-x-clip bg-white font-winnstein-body text-brand-marine">
-      <section className="relative overflow-hidden border-b border-white/12 bg-[radial-gradient(circle_at_88%_12%,rgba(46,161,207,0.22),transparent_34%),linear-gradient(112deg,#142452_0%,#192c5e_62%,#20396b_100%)] text-white">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full border border-brand-steel-cyan/20"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-8 -top-16 h-56 w-56 rounded-full border border-brand-steel-cyan/14"
-        />
+      <section className="relative overflow-hidden border-b border-white/12 bg-brand-marine text-white">
+        <div className="knowledge-watermark-mask pointer-events-none absolute inset-0">
+          <BrandLineWatermark placement="about" />
+        </div>
 
         <div className="relative mx-auto flex min-h-[20rem] max-w-7xl items-center px-5 py-14 sm:px-6 lg:px-8 lg:py-16">
           <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-end">
@@ -556,6 +552,7 @@ export default async function AboutPage({ params }: Props) {
             </div>
           </div>
         </div>
+        <div className="h-2 bg-brand-steel-cyan" />
       </section>
 
       <section className="bg-white">
