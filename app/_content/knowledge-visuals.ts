@@ -21,33 +21,35 @@ export type KnowledgeVisualSet = {
 export const knowledgeVisuals: Record<string, KnowledgeVisualSet> = {
   zuverlaessigkeitstechnik: {
     hero: {
-      src: "reliability-engineering-context",
+      src: "reliability-engineering-motor",
       de: {
-        alt: "Badewannenkurve mit Frühausfall-, Nutzungs- und Verschleißphase sowie den zugehörigen Ausfallursachen.",
+        alt: "Zuverlässigkeitstechnik vom technischen Anforderungsdokument über Prüfobjekt und Prüfdaten bis zur abgesicherten Entscheidung.",
         caption:
-          "Die Badewannenkurve ordnet unterschiedliche Ausfallmechanismen den typischen Phasen eines Produktlebens zu.",
+          "Zuverlässigkeitstechnik verbindet Anforderungen, reale Prüfobjekte und belastbare Prüfdaten zu einer nachvollziehbaren technischen Entscheidung.",
       },
       en: {
-        alt: "Bathtub curve showing early-failure, useful-life and wear-out phases with their characteristic failure causes.",
+        alt: "Reliability engineering from technical requirements through test object and test data to a substantiated decision.",
         caption:
-          "The bathtub curve assigns different failure mechanisms to the typical phases of a product life cycle.",
+          "Reliability engineering connects requirements, real test objects and robust test data to a traceable technical decision.",
       },
     },
     inline: {
       src: "reliability-dimensions",
       de: {
-        alt: "Diagramm zur bedingten Zuverlässigkeit R von t mit Funktion, Einsatzbedingungen und Zeitbezug.",
+        ratio: "sixteen-nine",
+        alt: "Schaubild einer Zuverlässigkeitsaussage, die Funktion, Einsatzbedingungen, Zeit beziehungsweise Lebensdauer sowie Daten und Methoden zu Nachweis und Entscheidung verbindet.",
         lead:
-          "Die Abbildung zeigt, weshalb eine Zuverlässigkeitsaussage nur im Zusammenhang mit Funktion, Einsatzbedingungen und Zeit vollständig ist.",
+          "Eine belastbare Zuverlässigkeitsaussage verbindet die geforderte Funktion mit Einsatzbedingungen, Zeitbezug und einer geeigneten Daten- und Methodenbasis.",
         caption:
-          "Erst der definierte Aussagekontext macht R(t | x) technisch interpretierbar.",
+          "Erst das Zusammenspiel dieser vier Perspektiven schafft eine nachvollziehbare Grundlage für Nachweis und technische Entscheidung.",
       },
       en: {
-        alt: "Diagram of conditional reliability R of t linked to function, operating conditions and time.",
+        ratio: "sixteen-nine",
+        alt: "Diagram of a reliability statement connecting function, operating conditions, time or lifetime, and data and methods with evidence and decision-making.",
         lead:
-          "The diagram shows why a reliability statement is complete only when function, operating conditions and time are defined together.",
+          "A defensible reliability statement connects the required function with operating conditions, a defined time horizon and an appropriate data and method basis.",
         caption:
-          "A defined statement context is what makes R(t | x) technically interpretable.",
+          "Only the interaction of these four perspectives provides a traceable basis for evidence and technical decisions.",
       },
     },
   },

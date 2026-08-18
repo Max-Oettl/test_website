@@ -25,7 +25,7 @@ const educationCopy = {
       onSiteCta: "Vor-Ort-Alternative",
       digitalCta: "Zur RelTest Education",
       imageAlt:
-        "Digitales Lern-Dashboard für Reliability Engineering mit Kursmodulen und Fortschrittsanzeige",
+        "Ingenieur beim digitalen E-Learning zur Zuverlässigkeitstechnik mit technischen Zuverlässigkeitsdiagrammen",
     },
     paths: {
       selector: {
@@ -96,7 +96,7 @@ const educationCopy = {
       onSiteCta: "On-site alternative",
       digitalCta: "Open RelTest Education",
       imageAlt:
-        "Digital reliability engineering learning dashboard with course modules and progress tracking",
+        "Engineer studying reliability engineering digitally with technical reliability diagrams",
     },
     paths: {
       selector: {
@@ -259,14 +259,14 @@ export default async function EducationPage({ params }: Props) {
 
           <div className="relative min-h-[24rem] border-t border-white/15 lg:min-h-[36rem] lg:border-t-0 lg:border-l">
             <Image
-              src="/education/digital-learning-hero.png"
+              src="/education/digital-reliability-learning-hero-ai.webp"
               alt={copy.hero.imageAlt}
               fill
               priority
               sizes="(min-width: 1024px) 55vw, 100vw"
-              className="bg-[#f4f8fb] object-contain object-center p-4 sm:p-7 lg:p-9"
+              className="object-cover object-[55%_center]"
             />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.14),transparent_24%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.2),transparent_30%)]" />
           </div>
         </div>
         <div className="h-2 bg-brand-education" />
@@ -511,12 +511,9 @@ export default async function EducationPage({ params }: Props) {
       </section>
 
       <PageClosingCta
+        locale={locale}
         title={copy.choice.ctaTitle}
         description={copy.choice.ctaText}
-        primary={{
-          href: localizeHref(locale, "/kontakt"),
-          label: copy.choice.ctaLabel,
-        }}
         theme="education"
       />
     </main>

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 const knowledgeHeaderImages = {
   de: {
+    zuverlaessigkeitstechnik: { src: "/graphics/wissen/technical-plots/reliability-engineering-motor-de.png", width: 1536, height: 1024, alt: "Zuverlässigkeitstechnik vom technischen Anforderungsdokument über Prüfobjekt und Prüfdaten bis zur abgesicherten Entscheidung" },
     planung: { src: "/wissen/uebersicht/planung-de.png", width: 1672, height: 941, alt: "Diagramm zum Entscheidungsraum der Zuverlässigkeitsplanung mit Zuverlässigkeitskosten, Folgekosten und akzeptablen Kosten" },
     schwachstellenanalyse: { src: "/wissen/uebersicht/schwachstellenanalyse-de.png", width: 1672, height: 941, alt: "Badewannenkurve zur Schwachstellenanalyse mit Frühausfällen, Zufallsausfällen und Verschleißausfällen" },
     erprobung: { src: "/wissen/uebersicht/erprobung-de.png", width: 2172, height: 724, alt: "Vergleich von Worst-Case-, einsatzbezogenen und synthetischen Lastkollektiven für die Zuverlässigkeitserprobung" },
@@ -10,6 +11,7 @@ const knowledgeHeaderImages = {
     prognosen: { src: "/wissen/uebersicht/prognose-cropped.png", width: 760, height: 680, alt: "Veranschaulichung einer Zuverlässigkeitsprognose aus Versuchs- und Felddaten mit statistischem Lebensdauermodell" },
   },
   en: {
+    zuverlaessigkeitstechnik: { src: "/graphics/wissen/technical-plots/reliability-engineering-motor-en.png", width: 1536, height: 1024, alt: "Reliability engineering from technical requirements through test object and test data to a substantiated decision" },
     planung: { src: "/wissen/uebersicht/planung-en.png", width: 1672, height: 941, alt: "Reliability planning decision-space diagram comparing reliability costs, failure costs and acceptable customer costs" },
     schwachstellenanalyse: { src: "/wissen/uebersicht/schwachstellenanalyse-en.png", width: 1672, height: 941, alt: "Bathtub curve for weak-point analysis showing early, random and wear-out failures" },
     erprobung: { src: "/wissen/uebersicht/erprobung-en.png", width: 1748, height: 900, alt: "Comparison of worst-case, use-specific and synthetic load profiles for reliability testing" },
@@ -80,7 +82,7 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
                 height={headerImage.height}
                 sizes="(min-width: 1024px) 48vw, 100vw"
                 preload
-                className="h-auto max-h-[360px] w-full object-contain [filter:invert(1)_hue-rotate(180deg)] mix-blend-screen"
+                className="h-auto max-h-[360px] w-full object-contain [filter:brightness(1.06)_invert(1)_hue-rotate(180deg)] mix-blend-screen"
               />
             </figure>
           ) : (

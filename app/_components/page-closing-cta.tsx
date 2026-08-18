@@ -1,16 +1,11 @@
 import Link from "next/link";
 
-type CtaAction = {
-  href: string;
-  label: string;
-  external?: boolean;
-};
+import { localizeHref, type Locale } from "../_i18n/config";
 
 type PageClosingCtaProps = {
+  locale: Locale;
   title: string;
   description: string;
-  primary: CtaAction;
-  secondary?: CtaAction;
   theme?: "solutions" | "education";
 };
 
@@ -34,22 +29,25 @@ function ArrowIcon() {
 }
 
 export function PageClosingCta({
+  locale,
   title,
   description,
-  primary,
-  secondary,
   theme = "solutions",
 }: PageClosingCtaProps) {
   const isEducation = theme === "education";
+  const scheduleLabel =
+    locale === "de" ? "Erstgespräch vereinbaren" : "Book an initial consultation";
+  const formLabel =
+    locale === "de" ? "Anliegen schriftlich senden" : "Send your inquiry";
   const primaryClasses = isEducation
     ? "bg-brand-education hover:bg-[#008f48]"
     : "bg-brand-marine hover:bg-brand-steel-cyan";
   const accentClasses = isEducation
     ? "bg-brand-education"
     : "bg-brand-steel-cyan";
-  const secondaryHoverClasses = isEducation
-    ? "hover:text-brand-education after:bg-brand-education"
-    : "hover:text-brand-steel-cyan after:bg-brand-steel-cyan";
+  const secondaryClasses = isEducation
+    ? "text-brand-education hover:text-[#008f48]"
+    : "text-brand-marine hover:text-brand-steel-cyan";
 
   return (
     <section className="border-t border-line-soft bg-white px-5 py-14 sm:px-6 lg:px-8 lg:py-20">
@@ -67,27 +65,21 @@ export function PageClosingCta({
               {description}
             </p>
           </div>
-          <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center lg:justify-end">
+          <div className="flex w-full flex-col gap-3 sm:w-72 lg:justify-self-end">
             <Link
-              href={primary.href}
-              target={primary.external ? "_blank" : undefined}
-              rel={primary.external ? "noopener noreferrer" : undefined}
-              className={`brand-action inline-flex min-h-12 items-center justify-between gap-7 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors ${primaryClasses}`}
+              href={localizeHref(locale, "/kontakt#termin")}
+              className={`brand-action inline-flex min-h-12 w-full items-center justify-between gap-5 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors ${primaryClasses}`}
             >
-              {primary.label}
+              {scheduleLabel}
               <ArrowIcon />
             </Link>
-            {secondary ? (
-              <Link
-                href={secondary.href}
-                target={secondary.external ? "_blank" : undefined}
-                rel={secondary.external ? "noopener noreferrer" : undefined}
-                className={`relative inline-flex min-h-11 items-center gap-7 py-2 font-winnstein-display text-sm font-bold text-brand-marine transition-colors after:absolute after:right-0 after:bottom-0 after:left-0 after:h-px ${secondaryHoverClasses}`}
-              >
-                {secondary.label}
-                <ArrowIcon />
-              </Link>
-            ) : null}
+            <Link
+              href={localizeHref(locale, "/kontakt#anfrageformular")}
+              className={`brand-action brand-action-outline brand-action-outline-light inline-flex min-h-12 w-full items-center justify-between gap-5 px-6 py-3 font-winnstein-display text-sm font-bold transition-colors ${secondaryClasses}`}
+            >
+              {formLabel}
+              <ArrowIcon />
+            </Link>
           </div>
         </div>
       </div>

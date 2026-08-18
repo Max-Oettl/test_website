@@ -296,6 +296,30 @@ Vor Go-live entscheiden:
 - Wird ein externer Form-Service genutzt oder eine eigene API-Route?
 - Welche Datenschutzhinweise sind erforderlich?
 
+Vorgemerkte Zielumsetzung (18. August 2026):
+
+- Das sichtbare Kontaktformular soll perspektivisch nicht mehr per `mailto:`
+  das lokale E-Mail-Programm öffnen, sondern im Browser an eine serverseitige
+  Next.js-Route senden.
+- Empfohlener Versandweg ist die Resend-E-Mail-API. Zieladresse bleibt
+  `info@reltest-solutions.com`; die vom Besucher angegebene Adresse wird als
+  `Reply-To` gesetzt.
+- Der Versand erfolgt ausschließlich serverseitig. API-Schlüssel und
+  Empfängeradresse werden als geschützte Umgebungsvariablen in Vercel
+  hinterlegt und niemals an den Browser ausgeliefert oder in Git gespeichert.
+- Für den Absender wird vorzugsweise eine eigene Versand-Subdomain mit SPF und
+  DKIM verifiziert, damit die bestehende Microsoft-365-Mailkonfiguration der
+  Hauptdomain nicht unnötig verändert wird.
+- Als Spam-Schutz ist Cloudflare Turnstile vorgesehen; Honeypot, serverseitige
+  Feldvalidierung, Größenlimits und eine begrenzte Anfragefrequenz bleiben
+  zusätzlich erforderlich.
+- Das Formular benötigt Lade-, Erfolgs- und Fehlerzustände sowie einen
+  weiterhin sichtbaren E-Mail-Fallback.
+- Vor Aktivierung sind Auftragsverarbeitung, Datenflüsse und Datenschutzhinweise
+  für Hosting, Resend und Turnstile zu prüfen und zu dokumentieren.
+- Bis API-Schlüssel, DNS-Freigabe und Datenschutzentscheidung vorliegen, bleibt
+  der bestehende `mailto:`-Versand als vorläufige, funktionsfähige Lösung aktiv.
+
 Migrationsrisiko:
 
 Ein Formular ist ein Lead-Kanal. Wenn es wegfaellt, muss der alternative

@@ -276,16 +276,9 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
       </section>
 
       <PageClosingCta
+        locale={locale}
         title={page.cta.title}
         description={page.cta.text}
-        primary={{
-          href: localizeHref(locale, "/kontakt"),
-          label: text.contact,
-        }}
-        secondary={{
-          href: localizeHref(locale, "/leistungen"),
-          label: text.serviceOverview,
-        }}
       />
     </main>
   );

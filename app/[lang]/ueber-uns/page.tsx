@@ -28,8 +28,8 @@ type LeaderProfile = {
   secondaryExternal?: boolean;
 };
 
-type TeamProfile = {
-  name: string;
+type TeamCapability = {
+  title: string;
   field: string;
   summary: string;
   links: {
@@ -43,12 +43,6 @@ const podcastUrl =
   "https://ingenieurshelden.de/podcast-fuer-ingenieure-und-ingenieurinnen/kevin-lucan";
 const calendlyUrl = "https://calendly.com/kevin-lucan";
 const linkedInUrl = "https://www.linkedin.com/company/reltest-solutions";
-const marcoArndtResearchUrl =
-  "https://www.ima.uni-stuttgart.de/forschung/zuverlaessigkeitstechnik/projekte/lebensdauermodellzahnriemen/";
-const dshamilEfingerProfileUrl =
-  "https://www.sfb1244.uni-stuttgart.de/team/Efinger-00001/";
-const kimHintzPublicationsUrl =
-  "https://www.ima.uni-stuttgart.de/archiv/forschung/zuverlaessigkeit/publikationen/";
 
 const aboutContent: Record<
   Locale,
@@ -77,7 +71,7 @@ const aboutContent: Record<
       title: string;
       description: string;
       imageAlt: string;
-      profiles: TeamProfile[];
+      profiles: TeamCapability[];
       moreTitle: string;
       moreDescription: string;
       linkedInLabel: string;
@@ -146,7 +140,7 @@ const aboutContent: Record<
           ],
           profileHref: "/ueber-uns/bernd-bertsche",
           profileLabel: "Profil von Bernd Bertsche",
-          secondaryHref: "/expertise#fachbuecher",
+          secondaryHref: "/ueber-uns/bernd-bertsche#fachbuecher",
           secondaryLabel: "Fachbücher ansehen",
         },
       ],
@@ -161,67 +155,64 @@ const aboutContent: Record<
       durationLabel: "Gespräch über Ingenieurpraxis und Verantwortung",
     },
     team: {
-      title: "Drei Perspektiven. Ein Team.",
+      title: "Kompetenz, die im Projekt zusammenwirkt.",
       description:
-        "Drei ausgewählte Profile zeigen, welche fachlichen Perspektiven in unseren Projekten zusammenkommen. Die weiteren Piktogramme stehen für das gesamte Team hinter RelTest.",
+        "Unsere Fachgebiete sind keine einzelnen Personenpakete. Methodenwissen wird im Team geteilt, fachlich abgestimmt und passend zur jeweiligen Aufgabe kombiniert.",
       imageAlt:
-        "Drei ausgewählte RelTest-Experten als Piktogramme vor dem weiteren Team",
+        "Schematische Darstellung eines vernetzten RelTest-Projektteams mit unterschiedlichen Kompetenzfeldern",
       profiles: [
         {
-          name: "Kim Hintz",
-          field: "Technisches Risikomanagement und Zuverlässigkeitsabsicherung",
+          title: "Risiko und technische Absicherung",
+          field: "Ausfallmechanismen · Priorisierung · Wirksamkeitsnachweis",
           summary:
-            "Kim Hintz berät und schult zu Risikoanalysen, quantitativer Zuverlässigkeitsbewertung, DoE und Zuverlässigkeitstests. Seine Forschung umfasst insbesondere die Absicherung von Photovoltaiksystemen.",
+            "Wir verbinden FMEA, FTA und quantitative Risikobewertung mit konkreten Ausfallmechanismen, Prüfungen und dokumentierten Nachweisen. So bleibt die Bewertung über Entwicklung, Freigabe und Änderungen hinweg belastbar.",
           links: [
             {
-              label: "Risikomanagement bei RelTest",
+              label: "Risikomanagement",
               href: "/leistungen/risikomanagement",
             },
             {
-              label: "Forschung und Publikationen",
-              href: kimHintzPublicationsUrl,
-              external: true,
+              label: "Wissen zur Absicherung",
+              href: "/wissen/absicherung",
             },
           ],
         },
         {
-          name: "Dshamil Efinger",
-          field: "Systemzuverlässigkeit und nachhaltige Produktentwicklung",
+          title: "Systemzuverlässigkeit und Produktlebenszyklus",
+          field: "Anforderungen · Architektur · Erprobung · Felddaten",
           summary:
-            "Dshamil Efinger verbindet Zuverlässigkeitsanalysen mit nachhaltiger Produktgestaltung und datenbasierten Bewertungsmethoden.",
+            "Wir betrachten Produktfunktion, Nutzung, Lebensdauer und Systemgrenzen gemeinsam. Anforderungen, Erprobung und Felderfahrung werden so verbunden, dass Entscheidungen nicht an einzelnen Disziplinen oder Projektphasen abbrechen.",
           links: [
             {
-              label: "Wissen bei RelTest",
-              href: "/wissen",
+              label: "Zuverlässigkeitstechnik",
+              href: "/leistungen/zuverlaessigkeitstechnik",
             },
             {
-              label: "Forschungsprofil",
-              href: dshamilEfingerProfileUrl,
-              external: true,
+              label: "Wissen zum Gesamtprozess",
+              href: "/wissen/zuverlaessigkeitstechnik",
             },
           ],
         },
         {
-          name: "Marco Arndt",
-          field: "DoE und statistische Modellbildung",
+          title: "Versuchsplanung und statistische Modellierung",
+          field: "DoE · Lebensdaueranalyse · Prognose",
           summary:
-            "Marco Arndt entwickelt effiziente Versuchspläne und probabilistische Modelle für komplexe technische Systeme und Lebensdauerdaten.",
+            "Wir entwickeln effiziente Versuchspläne und belastbare Modelle für technische Systeme und Lebensdauerdaten. Statistik wird dabei nicht isoliert eingesetzt, sondern auf Prüfziel, Datenqualität und technische Entscheidung ausgerichtet.",
           links: [
             {
-              label: "DoE bei RelTest",
+              label: "Design of Experiments",
               href: "/leistungen/design-of-experiments",
             },
             {
-              label: "Forschung und Publikationen",
-              href: marcoArndtResearchUrl,
-              external: true,
+              label: "Wissen zu Prognosen",
+              href: "/wissen/prognosen",
             },
           ],
         },
       ],
-      moreTitle: "RelTest besteht aus mehr als dieser Auswahl.",
+      moreTitle: "Das passende Projektteam entsteht aus der Aufgabe.",
       moreDescription:
-        "Diese Auswahl macht unterschiedliche Schwerpunkte sichtbar, ist aber keine vollständige Teamliste. Weitere Kolleginnen und Kollegen bringen ihre Erfahrung in Beratung, Analyse, Erprobung und Education ein.",
+        "Wir stellen die Bearbeitung nach technischem System, Entwicklungsphase, Methodenbedarf und Projektumfang zusammen. Eine klare Projektleitung hält Ziele, Ergebnisse und Kommunikation zusammen; weitere Kompetenzen werden genau dort eingebunden, wo sie fachlich Mehrwert schaffen.",
       linkedInLabel: "Das Team auf LinkedIn",
       expertiseLabel: "Gesamte Expertise ansehen",
     },
@@ -288,7 +279,7 @@ const aboutContent: Record<
           ],
           profileHref: "/ueber-uns/bernd-bertsche",
           profileLabel: "Bernd Bertsche's profile",
-          secondaryHref: "/expertise#books",
+          secondaryHref: "/ueber-uns/bernd-bertsche#books",
           secondaryLabel: "View reference books",
         },
       ],
@@ -303,67 +294,64 @@ const aboutContent: Record<
       durationLabel: "A conversation about engineering practice and responsibility",
     },
     team: {
-      title: "Three perspectives. One team.",
+      title: "Expertise that works together in the project.",
       description:
-        "Three selected profiles show how different technical perspectives come together in our projects. The additional pictograms represent the wider RelTest team.",
+        "Our technical fields are not individual person packages. Methods and experience are shared across the team, reviewed together and combined to match the specific task.",
       imageAlt:
-        "Three selected RelTest experts shown as pictograms in front of the wider team",
+        "Schematic view of a connected RelTest project team with complementary fields of expertise",
       profiles: [
         {
-          name: "Kim Hintz",
-          field: "Technical risk management and reliability assurance",
+          title: "Risk and technical assurance",
+          field: "Failure mechanisms · Prioritisation · Effectiveness evidence",
           summary:
-            "Kim Hintz advises and trains teams in risk analysis, quantitative reliability assessment, DoE and reliability testing. His research includes the reliability assurance of photovoltaic systems.",
+            "We connect FMEA, FTA and quantitative risk assessment with specific failure mechanisms, tests and documented evidence. This keeps the assessment robust across development, release and later changes.",
           links: [
             {
-              label: "Risk management at RelTest",
+              label: "Risk management",
               href: "/leistungen/risikomanagement",
             },
             {
-              label: "Research and publications",
-              href: kimHintzPublicationsUrl,
-              external: true,
+              label: "Assurance knowledge",
+              href: "/wissen/absicherung",
             },
           ],
         },
         {
-          name: "Dshamil Efinger",
-          field: "System reliability and sustainable product development",
+          title: "System reliability and product lifecycle",
+          field: "Requirements · Architecture · Testing · Field data",
           summary:
-            "Dshamil Efinger combines reliability analysis with sustainable product design and data-driven assessment methods.",
+            "We consider product function, use, lifetime and system boundaries together. Requirements, testing and field experience are connected so that decisions remain coherent across disciplines and project phases.",
           links: [
             {
-              label: "RelTest knowledge",
-              href: "/wissen",
+              label: "Reliability engineering",
+              href: "/leistungen/zuverlaessigkeitstechnik",
             },
             {
-              label: "Research profile",
-              href: dshamilEfingerProfileUrl,
-              external: true,
+              label: "Knowledge of the overall process",
+              href: "/wissen/zuverlaessigkeitstechnik",
             },
           ],
         },
         {
-          name: "Marco Arndt",
-          field: "DoE and statistical modelling",
+          title: "Experimental design and statistical modelling",
+          field: "DoE · Lifetime analysis · Prognosis",
           summary:
-            "Marco Arndt develops efficient experimental designs and probabilistic models for complex technical systems and lifetime data.",
+            "We develop efficient experimental designs and robust models for technical systems and lifetime data. Statistics are not used in isolation but aligned with the test objective, data quality and engineering decision.",
           links: [
             {
-              label: "DoE at RelTest",
+              label: "Design of Experiments",
               href: "/leistungen/design-of-experiments",
             },
             {
-              label: "Research and publications",
-              href: marcoArndtResearchUrl,
-              external: true,
+              label: "Prognosis knowledge",
+              href: "/wissen/prognosen",
             },
           ],
         },
       ],
-      moreTitle: "RelTest is more than this selection.",
+      moreTitle: "The right project team follows from the task.",
       moreDescription:
-        "This selection highlights different areas of expertise, but it is not a complete team list. Further colleagues contribute their experience in consulting, analysis, testing and education.",
+        "We assemble the work according to the technical system, development phase, required methods and project scope. Clear project leadership keeps objectives, results and communication together, while additional expertise is involved where it adds technical value.",
       linkedInLabel: "Meet the team on LinkedIn",
       expertiseLabel: "View all expertise",
     },
@@ -728,7 +716,7 @@ export default async function AboutPage({ params }: Props) {
             <div className="grid bg-white md:grid-cols-3">
               {content.team.profiles.map((profile, index) => (
                 <article
-                  key={profile.name}
+                  key={profile.title}
                   className="flex min-h-full flex-col border-b border-line-soft p-7 last:border-b-0 md:border-r md:border-b-0 md:last:border-r-0 lg:p-9"
                 >
                   <div className="flex items-center gap-4">
@@ -738,7 +726,7 @@ export default async function AboutPage({ params }: Props) {
                     <span className="h-px flex-1 bg-line-soft" />
                   </div>
                   <h3 className="mt-6 font-winnstein-display text-2xl font-bold text-brand-marine lg:text-3xl">
-                    {profile.name}
+                    {profile.title}
                   </h3>
                   <p className="mt-3 min-h-12 text-sm font-semibold leading-6 text-brand-steel-cyan lg:text-base">
                     {profile.field}
@@ -749,7 +737,7 @@ export default async function AboutPage({ params }: Props) {
                   <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-4 pt-8">
                     {profile.links.map((link) => (
                       <TextLink
-                        key={`${profile.name}-${link.href}`}
+                        key={`${profile.title}-${link.href}`}
                         href={localizeHref(locale, link.href)}
                         external={link.external}
                       >
@@ -793,16 +781,9 @@ export default async function AboutPage({ params }: Props) {
       </section>
 
       <PageClosingCta
+        locale={locale}
         title={content.cta.title}
         description={content.cta.description}
-        primary={{
-          href: localizeHref(locale, "/kontakt"),
-          label: content.cta.primaryLabel,
-        }}
-        secondary={{
-          href: localizeHref(locale, "/leistungen"),
-          label: content.cta.secondaryLabel,
-        }}
       />
 
       <script

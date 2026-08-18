@@ -27,7 +27,8 @@ const conceptContent = {
         cta: "Zuverlässigkeitstechnik ansehen",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.png",
-        imagePosition: "object-[65%_center]",
+        imagePosition:
+          "object-[50%_48%] sm:translate-x-[14%] sm:translate-y-[8%] sm:scale-[1.3] sm:object-center",
       },
       {
         title: "Risiken priorisieren. Maßnahmen wirksam ausrichten.",
@@ -85,7 +86,8 @@ const conceptContent = {
         cta: "Explore reliability engineering",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.png",
-        imagePosition: "object-[65%_center]",
+        imagePosition:
+          "object-[50%_48%] sm:translate-x-[14%] sm:translate-y-[8%] sm:scale-[1.3] sm:object-center",
       },
       {
         title: "Prioritise risks. Direct measures effectively.",
@@ -176,7 +178,7 @@ export function LandingConceptWinnsteinHero({
   return (
     <section className="winnstein-hero border-t border-line-soft bg-white">
       <div
-        className="relative mx-auto max-w-[120rem] px-5 pt-12 sm:px-6 sm:pt-14 lg:px-12 lg:pt-16 xl:px-16"
+        className="relative mx-auto max-w-[96rem] px-5 pt-12 sm:px-6 sm:pt-14 lg:px-12 lg:pt-16 xl:px-16"
         role="region"
         aria-roledescription="carousel"
         aria-label={content.carouselLabel}
@@ -185,7 +187,7 @@ export function LandingConceptWinnsteinHero({
         onFocusCapture={() => setIsPaused(true)}
         onBlurCapture={() => setIsPaused(false)}
       >
-        <div className="relative min-h-[44rem] overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[40rem]">
+        <div className="relative min-h-[40rem] overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[36rem]">
           {content.slides.map((slide, index) => {
             const isActive = index === activeIndex;
 
@@ -215,13 +217,13 @@ export function LandingConceptWinnsteinHero({
           <div className="absolute inset-0 z-20 bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.98)_35%,rgba(255,255,255,0.82)_52%,rgba(255,255,255,0.2)_78%,rgba(255,255,255,0.08)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 z-20 h-44 bg-gradient-to-t from-white/85 to-transparent" />
 
-          <div className="relative z-20 flex min-h-[44rem] items-center px-6 py-16 sm:min-h-[40rem] sm:px-10 sm:py-20 lg:px-16 xl:px-20">
+          <div className="relative z-20 flex min-h-[40rem] items-center px-6 py-14 sm:min-h-[36rem] sm:px-10 sm:py-16 lg:px-16 xl:px-20">
             <div
               key={activeSlide.title}
-              className="winnstein-hero-copy flex h-[31rem] w-full max-w-[56rem] translate-y-8 flex-col sm:h-[27rem] sm:translate-y-10"
+              className="winnstein-hero-copy flex h-[31rem] w-full max-w-[56rem] translate-y-3 flex-col sm:h-[27rem] sm:translate-y-3.5"
             >
               <div className="flex min-h-0 flex-1 items-end">
-                <h1 className="max-w-[56rem] text-[clamp(2.55rem,3.7vw,4.75rem)] leading-[0.98] font-semibold tracking-[-0.06em] text-brand-ink">
+                <h1 className="max-w-[52rem] text-[clamp(2.4rem,3.2vw,4.1rem)] leading-[1] font-semibold tracking-[-0.055em] text-brand-ink">
                   {activeSlide.title}
                 </h1>
               </div>
@@ -317,7 +319,7 @@ export function LandingConceptWinnsteinHero({
 
       </div>
 
-      <div className="mx-auto flex max-w-[120rem] justify-stretch px-5 pt-6 sm:justify-end sm:px-6 lg:px-12 xl:px-16">
+      <div className="mx-auto flex max-w-[96rem] justify-stretch px-5 pt-6 sm:justify-end sm:px-6 lg:px-12 xl:px-16">
         <div className="w-full border border-brand-education/25 bg-white shadow-[0_8px_26px_rgba(3,19,52,0.06)] sm:w-auto">
           <Link
             href="https://reltest-academy.com/"

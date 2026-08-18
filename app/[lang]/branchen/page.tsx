@@ -353,16 +353,9 @@ export default async function IndustriesPage({ params }: Props) {
       </section>
 
       <PageClosingCta
+        locale={locale}
         title={content.cta.title}
         description={content.cta.description}
-        primary={{
-          href: localizeHref(locale, "/kontakt"),
-          label: content.cta.primary,
-        }}
-        secondary={{
-          href: localizeHref(locale, "/leistungen"),
-          label: content.cta.secondary,
-        }}
       />
     </main>
   );

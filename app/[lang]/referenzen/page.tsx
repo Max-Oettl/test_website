@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { getSiteContent, referenceLogos } from "../../_content/site-content";
 import { PageClosingCta } from "../../_components/page-closing-cta";
-import { localizeHref, resolveLocale } from "../../_i18n/config";
+import { resolveLocale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
 
 type Props = {
@@ -11,7 +11,6 @@ type Props = {
 
 const referencesCopy = {
   de: {
-    countLabel: "Unternehmen aus anspruchsvollen technischen Branchen",
     heroDescription:
       "RelTest unterstützt Unternehmen, deren Produkte hohe Anforderungen an Lebensdauer, Qualität und technische Nachweisführung erfüllen müssen.",
     boardEyebrow: "Zusammenarbeit",
@@ -24,7 +23,6 @@ const referencesCopy = {
     ctaSecondary: "Expertise ansehen",
   },
   en: {
-    countLabel: "companies from demanding technical industries",
     heroDescription:
       "RelTest supports companies whose products must meet demanding requirements for lifetime, quality and technical evidence.",
     boardEyebrow: "Collaboration",
@@ -65,7 +63,7 @@ export default async function ReferencesPage({ params }: Props) {
     <main className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:64px_64px]" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.36fr)] lg:items-end lg:px-10 lg:py-24">
+        <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
           <div>
             <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
               {page.intro.eyebrow}
@@ -76,14 +74,6 @@ export default async function ReferencesPage({ params }: Props) {
             <p className="mt-7 max-w-3xl text-lg leading-8 text-white/76">
               {copy.heroDescription}
             </p>
-          </div>
-          <div className="border-t border-white/20 pt-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
-            <strong className="block font-winnstein-display text-6xl font-bold text-brand-steel-cyan sm:text-7xl">
-              {logos.length}
-            </strong>
-            <span className="mt-3 block max-w-xs text-sm leading-6 font-semibold text-white/72">
-              {copy.countLabel}
-            </span>
           </div>
         </div>
         <div className="h-2 bg-brand-steel-cyan" />
@@ -139,16 +129,9 @@ export default async function ReferencesPage({ params }: Props) {
       </section>
 
       <PageClosingCta
+        locale={locale}
         title={copy.ctaTitle}
         description={copy.ctaText}
-        primary={{
-          href: localizeHref(locale, "/kontakt"),
-          label: copy.ctaPrimary,
-        }}
-        secondary={{
-          href: localizeHref(locale, "/expertise"),
-          label: copy.ctaSecondary,
-        }}
       />
     </main>
   );

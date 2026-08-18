@@ -20,7 +20,7 @@ const detailVisuals: Record<
   }
 > = {
   "doe-praxisorientierte-statistische-versuchsplanung": {
-    src: "/team/img-0071.jpg",
+    src: "/education/doe-training-hero.png",
     position: "object-center",
   },
   "zuverlaessigkeit-erprobung-fuer-praktiker": {
@@ -28,7 +28,7 @@ const detailVisuals: Record<
     position: "object-center",
   },
   "entwicklung-absicherung-elektronischer-komponenten": {
-    src: "/team/img-0139.jpg",
+    src: "/education/electronic-components-training-hero.png",
     position: "object-center",
   },
 };
@@ -238,23 +238,10 @@ export function EducationDetailPage({
       ) : null}
 
       <PageClosingCta
+        locale={locale}
         title={page.ctaTitle}
         description={page.ctaText}
         theme="education"
-        primary={{
-          href: resolveHref(locale, page.primaryCta.href),
-          label: page.primaryCta.label,
-          external: page.primaryCta.external,
-        }}
-        secondary={
-          page.secondaryCta
-            ? {
-                href: resolveHref(locale, page.secondaryCta.href),
-                label: page.secondaryCta.label,
-                external: page.secondaryCta.external,
-              }
-            : undefined
-        }
       />
     </main>
   );

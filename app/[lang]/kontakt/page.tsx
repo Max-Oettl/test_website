@@ -1,5 +1,6 @@
 import { AiAwareImage as Image } from "../../_components/ai-aware-image";
 import { BrandLineWatermark } from "../../_components/brand-line-watermark";
+import { ContactInquiryForm } from "../../_components/contact-inquiry-form";
 
 import { resolveLocale, type Locale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
@@ -20,7 +21,7 @@ const contactCopy = {
       description:
         "Im ersten Gespräch klären wir, worum es technisch geht, welche Entscheidung ansteht und ob RelTest sinnvoll unterstützen kann.",
       primaryCta: "Termin auswählen",
-      secondaryCta: "E-Mail schreiben",
+      secondaryCta: "Kontaktformular",
       contactLabel: "Ihr Ansprechpartner",
       name: "Dr.-Ing. Kevin Lucan",
       role: "Geschäftsführer und Reliability Engineer",
@@ -65,7 +66,7 @@ const contactCopy = {
       description:
         "In the first conversation, we clarify the technical question, the decision ahead and whether RelTest is the right partner to support you.",
       primaryCta: "Choose a time",
-      secondaryCta: "Send an email",
+      secondaryCta: "Contact form",
       contactLabel: "Your contact",
       name: "Dr.-Ing. Kevin Lucan",
       role: "Managing Director and Reliability Engineer",
@@ -148,7 +149,6 @@ export default async function ContactPage({ params }: Props) {
       <section className="bg-white px-5 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl overflow-hidden border border-brand-marine/15 bg-brand-marine text-white lg:grid-cols-[1.04fr_0.96fr]">
           <div className="relative flex min-w-0 flex-col justify-center overflow-hidden px-7 py-14 sm:px-10 lg:px-14 lg:py-20">
-            <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:64px_64px]" />
             <div className="contact-watermark-mask pointer-events-none absolute inset-0 overflow-hidden">
               <BrandLineWatermark placement="contact" />
             </div>
@@ -169,7 +169,7 @@ export default async function ContactPage({ params }: Props) {
                   <ArrowIcon />
                 </a>
                 <a
-                  href={emailHref}
+                  href="#anfrageformular"
                   className="brand-action brand-action-outline inline-flex min-h-14 items-center justify-between gap-7 border border-white/35 px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
                 >
                   {copy.hero.secondaryCta}
@@ -202,6 +202,8 @@ export default async function ContactPage({ params }: Props) {
         </div>
         <div className="mx-auto h-2 max-w-7xl bg-brand-steel-cyan" />
       </section>
+
+      <ContactInquiryForm locale={locale} />
 
       <section
         id="termin"

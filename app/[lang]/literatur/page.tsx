@@ -196,12 +196,9 @@ export default async function LiteraturePage({ params }: Props) {
       </section>
 
       <PageClosingCta
+        locale={locale}
         title={copy.ctaTitle}
         description={copy.ctaText}
-        primary={{
-          href: localizeHref(locale, "/kontakt"),
-          label: copy.cta,
-        }}
       />
     </main>
   );

@@ -112,6 +112,7 @@ const copy: Record<
     metadata: { title: string; description: string };
     hero: { title: string; intro: string; link: string };
     introduction: { title: string; paragraphs: string[] };
+    foundation: { eyebrow: string; title: string; text: string; link: string };
     lifecycle: {
       eyebrow: string;
       title: string;
@@ -145,6 +146,13 @@ const copy: Record<
         "Reliability Engineering betrachtet die Nicht-Funktionsfähigkeit technischer Produkte und die Ursachen ihrer Ausfälle. Es verbindet Statistik und Wahrscheinlichkeitstheorie mit klassischem Maschinenbau und moderner Produktentwicklung.",
         "Ziel ist nicht nur, Fehler zu beschreiben. Technische Probleme sollen früh erkannt, systematisch bewertet und über den gesamten Produktlebenszyklus wirksam beherrscht werden.",
       ],
+    },
+    foundation: {
+      eyebrow: "Grundlagenbeitrag",
+      title: "Zuverlässigkeitstechnik",
+      text:
+        "Was Zuverlässigkeit bedeutet, wie Anforderungen, Kennzahlen und Methoden zusammenhängen und weshalb der Produktlebenszyklus den fachlichen Rahmen bildet.",
+      link: "Grundlagen vertiefen",
     },
     lifecycle: {
       eyebrow: "Gesamtprozess",
@@ -247,6 +255,13 @@ const copy: Record<
         "Reliability engineering examines the non-functionality of technical products and the causes of failure. It combines statistics and probability theory with mechanical engineering and modern product development.",
         "The goal is not merely to describe failures. Technical problems need to be identified early, assessed systematically and controlled effectively throughout the product life cycle.",
       ],
+    },
+    foundation: {
+      eyebrow: "Foundation article",
+      title: "Reliability engineering",
+      text:
+        "Understand what reliability means, how requirements, metrics and methods connect, and why the product life cycle provides the technical framework.",
+      link: "Explore the fundamentals",
     },
     lifecycle: {
       eyebrow: "Overall process",
@@ -468,13 +483,36 @@ export default async function KnowledgePage({ params }: Props) {
 
       <main>
         <section className="bg-white px-6 py-16 lg:px-8 lg:py-24">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.78fr_1.22fr] lg:gap-20">
-            <h2 className="max-w-xl font-winnstein-display text-4xl font-bold leading-tight text-brand-marine sm:text-5xl">
-              {content.introduction.title}
-            </h2>
-            <div className="grid gap-6 text-lg leading-8 text-brand-marine/75 md:grid-cols-2 md:gap-10">
-              {content.introduction.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-10 lg:grid-cols-[.78fr_1.22fr] lg:gap-20">
+              <h2 className="max-w-xl font-winnstein-display text-4xl font-bold leading-tight text-brand-marine sm:text-5xl">
+                {content.introduction.title}
+              </h2>
+              <div className="grid gap-6 text-lg leading-8 text-brand-marine/75 md:grid-cols-2 md:gap-10">
+                {content.introduction.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              </div>
             </div>
+
+            <Link
+              href={localizeHref(locale, "/wissen/zuverlaessigkeitstechnik")}
+              className="group mt-12 grid gap-5 border-y border-brand-marine-20 py-7 transition-colors hover:border-brand-steel-cyan sm:grid-cols-[minmax(15rem,.72fr)_minmax(0,1.28fr)_auto] sm:items-center sm:gap-8"
+            >
+              <div>
+                <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">
+                  {content.foundation.eyebrow}
+                </p>
+                <h2 className="mt-2 font-winnstein-display text-2xl font-bold text-brand-marine transition-colors group-hover:text-brand-steel-cyan sm:text-3xl">
+                  {content.foundation.title}
+                </h2>
+              </div>
+              <p className="max-w-3xl text-base leading-7 text-brand-marine/75">
+                {content.foundation.text}
+              </p>
+              <span className="inline-flex items-center gap-5 font-winnstein-display text-sm font-bold text-brand-marine transition-colors group-hover:text-brand-steel-cyan">
+                {content.foundation.link}
+                <ArrowIcon />
+              </span>
+            </Link>
           </div>
         </section>
 
@@ -522,10 +560,9 @@ export default async function KnowledgePage({ params }: Props) {
       </main>
 
       <PageClosingCta
+        locale={locale}
         title={content.closing.title}
         description={content.closing.description}
-        primary={{ href: localizeHref(locale, "/kontakt"), label: content.closing.primary }}
-        secondary={{ href: localizeHref(locale, "/leistungen"), label: content.closing.secondary }}
       />
     </>
   );

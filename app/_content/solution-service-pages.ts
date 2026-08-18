@@ -440,6 +440,131 @@ const solutionServicePages: Record<
           "Wir prüfen Fragestellung, Datenlage und Versuchsrahmen und definieren daraus ein belastbares Vorgehen.",
       },
     },
+    "langfristige-kooperation": {
+      slug: "langfristige-kooperation",
+      metaTitle: "Engineering-Projektpartnerschaft & Verantwortung | RelTest",
+      metaDescription:
+        "Feste Engineering-Projektpartnerschaft für Zuverlässigkeit mit definierten Arbeitspaketen, prüfbaren Ergebnissen, Dokumentation und klar geregelter Verantwortung.",
+      hero: {
+        title: "Engineering-Verantwortung verlässlich in Ihr Projekt integrieren.",
+        description:
+          "RelTest übernimmt klar definierte Arbeitspakete, liefert prüfbare Ergebnisse und arbeitet als verlässlicher Engineering-Partner über einzelne Analysen hinaus. Umfang, Schnittstellen, Abnahme und Verantwortungsrahmen werden vor Projektbeginn eindeutig vereinbart.",
+        image: "/team/engineering-partnership-review-v2.webp",
+        imageAlt:
+          "Engineering-Team stimmt Arbeitspakete, Schnittstellen und technische Ergebnisse ab",
+      },
+      topics: {
+        title: "Unsere Leistungen in der Projektpartnerschaft",
+        description:
+          "Die Zusammenarbeit wird so zugeschnitten, dass Aufgaben, Ergebnisse und Verantwortlichkeiten für beide Seiten transparent bleiben und sich sauber in den bestehenden Entwicklungsprozess einfügen.",
+        items: [
+          {
+            id: "engineering-arbeitspakete",
+            title: "Engineering-Arbeitspakete",
+            work:
+              "Wir grenzen Analysen, Bewertungen, Nachweise und operative Unterstützungsleistungen fachlich, zeitlich und organisatorisch klar ab.",
+            result:
+              "Ein verbindlich beschriebenes Leistungspaket mit Zielen, Terminen, Zuständigkeiten und erwarteten Ergebnissen.",
+            icon:
+              "/concepts/landingpage-ingenics-kacheln/icon-handshake.svg",
+          },
+          {
+            id: "schnittstellen-abnahme",
+            title: "Schnittstellen & Abnahme",
+            work:
+              "Eingangsdaten, Mitwirkungspflichten, Übergaben und Abnahmekriterien werden vor dem Start gemeinsam festgelegt und im Projekt aktiv geführt.",
+            result:
+              "Klare Schnittstellen und überprüfbare Kriterien, mit denen Fortschritt und Ergebnisqualität transparent bewertet werden können.",
+            icon:
+              "/concepts/landingpage-ingenics-kacheln/icon-interfaces.svg",
+          },
+          {
+            id: "ergebnisse-dokumentation",
+            title: "Ergebnisse & Dokumentation",
+            work:
+              "Annahmen, Berechnungen, Bewertungen und Entscheidungswege werden nachvollziehbar dokumentiert und für Reviews aufbereitet.",
+            result:
+              "Prüfbare Engineering-Ergebnisse, die auch nach Projektabschluss als belastbare Entscheidungsgrundlage verfügbar bleiben.",
+            icon:
+              "/concepts/landingpage-ingenics-kacheln/icon-evidence-plan.svg",
+          },
+          {
+            id: "verantwortungsrahmen",
+            title: "Verantwortungsrahmen",
+            work:
+              "Wir stimmen ab, welche Verantwortung bei internen Rollen verbleibt und wofür RelTest innerhalb des vereinbarten Leistungsumfangs einsteht.",
+            result:
+              "Ein vor Projektbeginn eindeutig geregelter Leistungs-, Abnahme- und Haftungsrahmen ohne unklare Erwartungslücken.",
+            icon:
+              "/concepts/landingpage-ingenics-kacheln/icon-process-approval.svg",
+          },
+        ],
+      },
+      situations: {
+        title: "Wann eine feste Projektpartnerschaft sinnvoll ist",
+        description:
+          "Das Modell eignet sich besonders, wenn Zuverlässigkeit über mehrere Projektphasen hinweg kontinuierlich bearbeitet und verantwortlich dokumentiert werden muss.",
+        items: [
+          {
+            title: "Fehlende Spezialkapazität",
+            text:
+              "Interne Teams benötigen über einen längeren Zeitraum zusätzliche methodische Kompetenz, ohne eine reine Einzelberatung zu suchen.",
+          },
+          {
+            title: "Abgrenzbares Arbeitspaket",
+            text:
+              "Analysen, Nachweise oder Absicherungsaufgaben lassen sich mit klaren Ergebnissen, Schnittstellen und Abnahmekriterien beschreiben.",
+          },
+          {
+            title: "Hoher Dokumentationsbedarf",
+            text:
+              "Technische Entscheidungen müssen für Reviews, Freigaben und spätere Rückfragen konsistent und nachvollziehbar belegt werden.",
+          },
+        ],
+      },
+      deliverables: {
+        title: "Was am Ende vorliegt",
+        description:
+          "Eine belastbare Zusammenarbeit mit nachvollziehbaren Ergebnissen statt einer offenen Beratungsleistung ohne klare Übergabe.",
+        items: [
+          {
+            title: "Leistungsbeschreibung",
+            text:
+              "Abgestimmte Aufgaben, Ziele, Termine und Mitwirkungspflichten.",
+          },
+          {
+            title: "Engineering-Ergebnisse",
+            text:
+              "Prüfbare Analysen, Bewertungen, Nachweise oder Absicherungspakete.",
+          },
+          {
+            title: "Projektdokumentation",
+            text:
+              "Nachvollziehbare Annahmen, Entscheidungen, Versionen und Freigabestände.",
+          },
+          {
+            title: "Geregelte Verantwortung",
+            text:
+              "Eindeutige Abnahme sowie vertraglich vereinbarter Verantwortungs- und Haftungsrahmen.",
+          },
+        ],
+      },
+      knowledge: {
+        title: "Fachliche Grundlagen vertiefen",
+        description:
+          "Die Wissensseiten zeigen, wie Planung, Risiko, Erprobung und Nachweis zu belastbaren Projektentscheidungen verbunden werden.",
+        links: [
+          { label: "Zuverlässigkeitsplanung", href: "/wissen/planung" },
+          { label: "Risikomanagement", href: "/wissen/risikomanagement" },
+          { label: "Absicherung", href: "/wissen/absicherung" },
+        ],
+      },
+      cta: {
+        title: "Welches Engineering-Paket können wir verantwortlich übernehmen?",
+        text:
+          "Im Erstgespräch klären wir Aufgabe, gewünschtes Ergebnis, Schnittstellen und den passenden vertraglichen Rahmen.",
+      },
+    },
   },
   en: {
     zuverlaessigkeitstechnik: {
@@ -819,6 +944,131 @@ const solutionServicePages: Record<
         title: "What decision should your data enable?",
         text:
           "We review the question, available data and test framework and define a robust approach.",
+      },
+    },
+    "langfristige-kooperation": {
+      slug: "langfristige-kooperation",
+      metaTitle: "Engineering Project Partnership & Responsibility | RelTest",
+      metaDescription:
+        "Long-term engineering project partnership for reliability with defined work packages, verifiable results, documentation and clearly agreed responsibility.",
+      hero: {
+        title: "Integrate accountable engineering support into your project.",
+        description:
+          "RelTest takes ownership of clearly defined work packages, delivers verifiable results and supports projects beyond isolated analyses. Scope, interfaces, acceptance and responsibility are agreed before the project begins.",
+        image: "/team/engineering-partnership-review-v2.webp",
+        imageAlt:
+          "Engineering team aligning work packages, interfaces and technical results",
+      },
+      topics: {
+        title: "Our project partnership services",
+        description:
+          "The collaboration is structured so that tasks, results and responsibilities remain transparent for both sides and integrate cleanly into the existing development process.",
+        items: [
+          {
+            id: "engineering-work-packages",
+            title: "Engineering work packages",
+            work:
+              "We define analyses, assessments, evidence and operational support clearly in technical, scheduling and organisational terms.",
+            result:
+              "A binding scope with clear objectives, dates, responsibilities and expected results.",
+            icon:
+              "/concepts/landingpage-ingenics-kacheln/icon-handshake.svg",
+          },
+          {
+            id: "interfaces-acceptance",
+            title: "Interfaces & acceptance",
+            work:
+              "Input data, customer contributions, handovers and acceptance criteria are agreed before the start and actively managed throughout the project.",
+            result:
+              "Clear interfaces and verifiable criteria for transparent assessment of progress and result quality.",
+            icon:
+              "/concepts/landingpage-ingenics-kacheln/icon-interfaces.svg",
+          },
+          {
+            id: "results-documentation",
+            title: "Results & documentation",
+            work:
+              "Assumptions, calculations, assessments and decision paths are documented traceably and prepared for technical reviews.",
+            result:
+              "Verifiable engineering results that remain available as a robust decision basis after project completion.",
+            icon:
+              "/concepts/landingpage-ingenics-kacheln/icon-evidence-plan.svg",
+          },
+          {
+            id: "responsibility-framework",
+            title: "Responsibility framework",
+            work:
+              "We agree which responsibilities remain with internal roles and what RelTest owns within the defined scope of work.",
+            result:
+              "A clearly agreed scope, acceptance process and liability framework without expectation gaps.",
+            icon:
+              "/concepts/landingpage-ingenics-kacheln/icon-process-approval.svg",
+          },
+        ],
+      },
+      situations: {
+        title: "When a long-term project partnership is valuable",
+        description:
+          "The model is particularly suitable when reliability needs continuous engineering attention and accountable documentation across several project phases.",
+        items: [
+          {
+            title: "Missing specialist capacity",
+            text:
+              "Internal teams need additional methodological expertise over an extended period rather than a single consulting intervention.",
+          },
+          {
+            title: "Definable work package",
+            text:
+              "Analysis, evidence or validation tasks can be described through clear results, interfaces and acceptance criteria.",
+          },
+          {
+            title: "High documentation need",
+            text:
+              "Technical decisions must be supported consistently and traceably for reviews, releases and later questions.",
+          },
+        ],
+      },
+      deliverables: {
+        title: "What the project delivers",
+        description:
+          "A robust collaboration with traceable results rather than an open-ended consulting assignment without a clear handover.",
+        items: [
+          {
+            title: "Scope of work",
+            text:
+              "Agreed tasks, objectives, dates and required customer contributions.",
+          },
+          {
+            title: "Engineering results",
+            text:
+              "Verifiable analyses, assessments, evidence or validation packages.",
+          },
+          {
+            title: "Project documentation",
+            text:
+              "Traceable assumptions, decisions, versions and release states.",
+          },
+          {
+            title: "Agreed responsibility",
+            text:
+              "Clear acceptance and a contractually agreed responsibility and liability framework.",
+          },
+        ],
+      },
+      knowledge: {
+        title: "Explore the technical foundations",
+        description:
+          "Our knowledge pages show how planning, risk, testing and evidence combine into robust project decisions.",
+        links: [
+          { label: "Reliability planning", href: "/wissen/planung" },
+          { label: "Risk management", href: "/wissen/risikomanagement" },
+          { label: "Assurance", href: "/wissen/absicherung" },
+        ],
+      },
+      cta: {
+        title: "Which engineering package can we take responsibility for?",
+        text:
+          "In an initial discussion, we clarify the task, expected result, interfaces and an appropriate contractual framework.",
       },
     },
   },

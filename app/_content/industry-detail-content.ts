@@ -1,4 +1,8 @@
 import type { Locale } from "../_i18n/config";
+import {
+  getIndustryEditorial,
+  type IndustryEditorialContent,
+} from "./industry-editorial-content";
 
 export type IndustryService = {
   title: string;
@@ -36,6 +40,10 @@ export type IndustryDetailContent = {
   ctaTitle: string;
   ctaText: string;
   ctaLabel: string;
+};
+
+export type ResolvedIndustryDetailContent = IndustryDetailContent & {
+  editorial: IndustryEditorialContent;
 };
 
 const serviceLinks = {
@@ -1837,5 +1845,12 @@ export function getIndustryDetails(locale: Locale) {
 }
 
 export function getIndustryDetail(locale: Locale, slug: string) {
-  return collections[locale].find((industry) => industry.slug === slug);
+  const industry = collections[locale].find((item) => item.slug === slug);
+  const editorial = getIndustryEditorial(locale, slug);
+
+  if (!industry || !editorial) {
+    return undefined;
+  }
+
+  return { ...industry, editorial } satisfies ResolvedIndustryDetailContent;
 }

@@ -579,7 +579,7 @@ export function LandingConceptWinnsteinTail({
   return (
     <div className="winnstein-page-tail bg-white">
       <section className="border-b border-line-soft bg-white">
-        <div className="mx-auto max-w-[120rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
+        <div className="mx-auto max-w-[96rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
           <div className="grid gap-12 lg:grid-cols-[minmax(20rem,0.72fr)_minmax(0,1.28fr)] lg:items-start lg:gap-16 xl:gap-24">
             <div className="flex flex-col justify-between lg:py-3">
               <div>
@@ -639,7 +639,7 @@ export function LandingConceptWinnsteinTail({
       </section>
 
       <section className="border-b border-line-soft bg-brand-marine-10/35 text-brand-ink">
-        <div className="mx-auto max-w-[120rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
+        <div className="mx-auto max-w-[96rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
           <h2 className="max-w-3xl text-[clamp(2.1rem,2.8vw,3.35rem)] leading-[1.04] font-semibold tracking-[-0.058em] text-brand-ink">
             {content.projectsTitle}
           </h2>
@@ -749,7 +749,7 @@ export function LandingConceptWinnsteinTail({
       </section>
 
       <section className="border-b border-white/10 bg-brand-ink text-white">
-        <div className="mx-auto max-w-[120rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
+        <div className="mx-auto max-w-[96rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(32rem,1.1fr)] lg:items-end lg:gap-16">
             <div>
               <span aria-hidden="true" className="block h-1 w-20 bg-brand-cyan" />
@@ -935,7 +935,7 @@ export function LandingConceptWinnsteinTail({
       </section>
 
       <section className="border-b border-line-soft bg-white">
-        <div className="mx-auto max-w-[120rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
+        <div className="mx-auto max-w-[96rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
           <div>
             <h2 className="max-w-4xl text-[clamp(2.1rem,2.8vw,3.35rem)] leading-[1.04] font-semibold tracking-[-0.058em] text-brand-ink">
               {content.industriesTitle}

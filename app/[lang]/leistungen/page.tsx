@@ -350,12 +350,9 @@ export default async function ServicesPage({ params }: Props) {
       </section>
 
       <PageClosingCta
+        locale={locale}
         title={copy.contact.title}
         description={copy.contact.description}
-        primary={{
-          href: localizeHref(locale, "/kontakt"),
-          label: copy.contact.cta,
-        }}
       />
     </main>
   );
