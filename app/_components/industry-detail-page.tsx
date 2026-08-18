@@ -2,12 +2,15 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 
 import { AiAwareImage as Image } from "./ai-aware-image";
-import type {
-  ResolvedIndustryDetailContent,
-  IndustryService,
+import {
+  getIndustryDetails,
+  type IndustryDetailContent,
+  type ResolvedIndustryDetailContent,
+  type IndustryService,
 } from "../_content/industry-detail-content";
 import type { IndustryEditorialLayout } from "../_content/industry-editorial-content";
 import { localizeHref, type Locale } from "../_i18n/config";
+import { ActiveNavLink } from "./active-nav-link";
 import { PageClosingCta } from "./page-closing-cta";
 import { PageContextBar } from "./page-context-bar";
 
@@ -152,6 +155,48 @@ const reverseHeroLayouts = new Set<IndustryEditorialLayout>([
   "mission-chain",
 ]);
 
+const industryEditorialImages: Record<
+  string,
+  Record<"wide" | "portrait", string>
+> = {
+  automotive: {
+    wide: "/industries/editorial/automotive-test-rig.jpg",
+    portrait: "/industries/editorial/automotive-field-review.jpg",
+  },
+  maschinenbau: {
+    wide: "/industries/editorial/mechanical-gearbox-analysis.jpg",
+    portrait: "/industries/editorial/mechanical-spindle-test.jpg",
+  },
+  "elektronische-produkte": {
+    wide: "/industries/editorial/electronics-climate-test.jpg",
+    portrait: "/industries/editorial/electronics-solder-analysis.jpg",
+  },
+  halbleiterindustrie: {
+    wide: "/industries/editorial/semiconductor-evidence-chain.jpg",
+    portrait: "/industries/editorial/semiconductor-power-cycling.jpg",
+  },
+  konsumgueter: {
+    wide: "/industries/editorial/consumer-tool-usage-testing.jpg",
+    portrait: "/industries/editorial/consumer-battery-system.jpg",
+  },
+  "erneuerbare-energien": {
+    wide: "/industries/editorial/renewables-wind-drivetrain.jpg",
+    portrait: "/industries/editorial/renewables-inverter-analysis.jpg",
+  },
+  medizintechnik: {
+    wide: "/industries/editorial/medical-infusion-safety-case.jpg",
+    portrait: "/industries/editorial/medical-reprocessing-verification.jpg",
+  },
+  "luft-und-raumfahrt": {
+    wide: "/industries/editorial/aerospace-mission-qualification.jpg",
+    portrait: "/industries/editorial/aerospace-avionics-vibration.jpg",
+  },
+  produktionstechnik: {
+    wide: "/industries/editorial/production-line-bottleneck.jpg",
+    portrait: "/industries/editorial/production-robot-condition-monitoring.jpg",
+  },
+};
+
 function ArrowIcon({ external = false }: { external?: boolean }) {
   return (
     <svg
@@ -180,7 +225,7 @@ function SectionShell({
 }) {
   return (
     <section className={`${className} px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24`}>
-      <div className="mx-auto max-w-7xl">{children}</div>
+      <div className="mx-auto min-w-0 max-w-7xl">{children}</div>
     </section>
   );
 }
@@ -190,16 +235,16 @@ function SeoSection({ content }: Pick<Props, "content">) {
 
   return (
     <SectionShell>
-      <div className="grid gap-9 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-16">
-        <div>
+      <div className="grid gap-9 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-14">
+        <div className="min-w-0">
           <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
             {editorial.seoEyebrow}
           </p>
-          <h2 className="mt-4 max-w-2xl font-winnstein-display text-3xl leading-[1.12] font-bold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 max-w-2xl hyphens-auto font-winnstein-display text-3xl leading-[1.12] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl xl:text-[2.65rem]">
             {editorial.seoTitle}
           </h2>
         </div>
-        <div className="space-y-6 border-t border-brand-marine/18 pt-7 text-lg leading-8 text-brand-marine/72 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
+        <div className="min-w-0 space-y-6 border-t border-brand-marine/18 pt-7 text-lg leading-8 text-brand-marine/72 xl:border-t-0 xl:border-l xl:pt-0 xl:pl-10">
           {editorial.seoParagraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -212,16 +257,16 @@ function SeoSection({ content }: Pick<Props, "content">) {
 function DecisionSection({ content }: Pick<Props, "content">) {
   return (
     <SectionShell className="bg-brand-steel-cyan-10">
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.76fr)_minmax(0,1.24fr)] lg:gap-16">
-        <div>
-          <h2 className="max-w-2xl font-winnstein-display text-3xl leading-[1.12] font-bold tracking-[-0.035em] sm:text-4xl">
+      <div className="grid gap-10 xl:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] xl:gap-14">
+        <div className="min-w-0">
+          <h2 className="max-w-2xl hyphens-auto font-winnstein-display text-3xl leading-[1.12] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">
             {content.decisionTitle}
           </h2>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-brand-marine/72">
             {content.decisionText}
           </p>
         </div>
-        <div className="relative pl-6 sm:pl-10">
+        <div className="relative min-w-0 pl-6 sm:pl-10">
           <span className="absolute top-3 bottom-3 left-0 w-px bg-brand-steel-cyan/55" />
           <div className="space-y-5">
             {content.decisionPath.map((step, index) => (
@@ -236,7 +281,7 @@ function DecisionSection({ content }: Pick<Props, "content">) {
                   0{index + 1}
                 </span>
                 <div>
-                  <h3 className="font-winnstein-display text-xl font-bold">
+              <h3 className="hyphens-auto font-winnstein-display text-xl font-bold [overflow-wrap:anywhere]">
                     {step.label}
                   </h3>
                   <p className="mt-2 text-base leading-7 text-brand-marine/68">
@@ -260,11 +305,11 @@ function ProductsSection({ locale, content }: Props) {
 
   return (
     <SectionShell>
-      <div className="grid gap-8 border-b border-brand-marine/16 pb-9 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-end">
-        <h2 className="max-w-3xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+      <div className="grid gap-8 border-b border-brand-marine/16 pb-9 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:items-end">
+        <h2 className="min-w-0 max-w-3xl hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl xl:text-[2.65rem]">
           {editorial.productTitle}
         </h2>
-        <p className="max-w-3xl text-lg leading-8 text-brand-marine/72">
+        <p className="min-w-0 max-w-3xl text-lg leading-8 text-brand-marine/72">
           {editorial.productLead}
         </p>
       </div>
@@ -284,7 +329,7 @@ function ProductsSection({ locale, content }: Props) {
               <span className="font-winnstein-display text-xs font-bold tracking-[0.12em] text-brand-steel-cyan uppercase">
                 {label} · 0{index + 1}
               </span>
-              <h3 className="mt-5 font-winnstein-display text-2xl leading-tight font-bold sm:text-3xl">
+              <h3 className="mt-5 hyphens-auto font-winnstein-display text-2xl leading-tight font-bold [overflow-wrap:anywhere] sm:text-3xl">
                 {product.name}
               </h3>
               <p className={`mt-5 leading-7 ${featured ? "text-white/76" : "text-brand-marine/70"}`}>
@@ -313,18 +358,13 @@ function ProductsSection({ locale, content }: Props) {
 }
 
 function ImageBriefSection({
-  locale,
   content,
   format,
 }: Props & { format: "wide" | "portrait" }) {
   const image = content.editorial.imageBriefs.find((item) => item.format === format);
+  const imageSrc = industryEditorialImages[content.slug]?.[format];
 
-  if (!image) return null;
-
-  const note =
-    locale === "de"
-      ? "Motiv wird ergänzt · Beschreibung für Bildproduktion und SEO vorbereitet"
-      : "Image to be added · description prepared for production and SEO";
+  if (!image || !imageSrc) return null;
 
   return (
     <SectionShell className={format === "wide" ? "bg-brand-marine text-white" : "bg-white"}>
@@ -336,34 +376,42 @@ function ImageBriefSection({
         }`}
       >
         <div
-          role="img"
-          aria-label={image.description}
-          className={`relative flex min-h-[22rem] items-center justify-center overflow-hidden p-8 ${
+          className={`relative min-h-[22rem] overflow-hidden ${
             format === "wide"
               ? "bg-white/[0.055] lg:min-h-[30rem]"
               : "bg-brand-steel-cyan-10 lg:min-h-[35rem]"
           }`}
         >
-          <span className="absolute inset-8 border border-brand-steel-cyan/35" />
-          <span className="absolute top-1/2 left-8 h-px w-28 bg-brand-steel-cyan/45" />
-          <span className="absolute top-8 left-1/2 h-28 w-px bg-brand-steel-cyan/45" />
-          <svg aria-hidden="true" viewBox="0 0 120 90" className="relative h-28 w-36 text-brand-steel-cyan" fill="none">
-            <path d="m10 72 27-28 17 15 22-31 34 44H10Z" stroke="currentColor" strokeWidth="2" />
-            <circle cx="84" cy="21" r="8" stroke="currentColor" strokeWidth="2" />
-          </svg>
+          <Image
+            src={imageSrc}
+            alt={image.alt}
+            fill
+            showAiDisclosure={false}
+            sizes={
+              format === "wide"
+                ? "(min-width: 1024px) 65vw, 100vw"
+                : "(min-width: 1024px) 36vw, 100vw"
+            }
+            className="object-cover saturate-[0.94] contrast-[1.02]"
+          />
+          <span
+            aria-hidden="true"
+            className={`absolute inset-0 ${
+              format === "wide"
+                ? "bg-[linear-gradient(90deg,rgba(3,19,52,.12),transparent_45%)]"
+                : "bg-[linear-gradient(0deg,rgba(3,19,52,.08),transparent_42%)]"
+            }`}
+          />
         </div>
-        <div className={`flex flex-col justify-center p-8 sm:p-10 ${format === "wide" ? "lg:order-first" : ""}`}>
+        <div className={`min-w-0 flex flex-col justify-center p-8 sm:p-10 ${format === "wide" ? "lg:order-first" : ""}`}>
           <p className="font-winnstein-display text-xs font-bold tracking-[0.12em] text-brand-steel-cyan uppercase">
             {image.label}
           </p>
-          <h2 className="mt-5 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.03em] sm:text-4xl">
+          <h2 className="mt-5 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.03em] [overflow-wrap:anywhere] sm:text-4xl">
             {image.title}
           </h2>
           <p className={`mt-6 text-base leading-8 ${format === "wide" ? "text-white/72" : "text-brand-marine/70"}`}>
             {image.description}
-          </p>
-          <p className="mt-8 border-t border-brand-steel-cyan/35 pt-4 font-winnstein-display text-xs font-bold tracking-[0.09em] text-brand-steel-cyan uppercase">
-            {note}
           </p>
         </div>
       </div>
@@ -380,12 +428,12 @@ function ProjectSection({ locale, content }: Props) {
 
   return (
     <SectionShell className="bg-brand-marine text-white">
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:gap-16">
-        <div>
+      <div className="grid gap-10 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-14">
+        <div className="min-w-0">
           <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
             {project.eyebrow}
           </p>
-          <h2 className="mt-4 max-w-xl font-winnstein-display text-3xl leading-[1.12] font-bold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 max-w-2xl hyphens-auto font-winnstein-display text-3xl leading-[1.12] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl xl:text-[2.65rem]">
             {project.title}
           </h2>
           <div className="mt-9 flex flex-wrap gap-3">
@@ -396,7 +444,7 @@ function ProjectSection({ locale, content }: Props) {
             ))}
           </div>
         </div>
-        <div className="space-y-1 border-t border-white/18">
+        <div className="min-w-0 space-y-1 border-t border-white/18">
           {[project.challenge, project.approach, project.result].map((text, index) => (
             <article key={terms[index]} className="grid gap-3 border-b border-white/18 py-6 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-7">
               <h3 className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
@@ -417,27 +465,32 @@ function KnowledgeSection({ locale, content }: Props) {
 
   return (
     <SectionShell className="bg-brand-steel-cyan-10">
-      <div className="grid gap-9 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-16">
-        <div>
+      <div className="grid gap-9 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-14">
+        <div className="min-w-0">
           <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
             {label}
           </p>
-          <h2 className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
+          <h2 className="mt-4 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">
             {editorial.knowledgeTitle}
           </h2>
           <p className="mt-5 text-base leading-8 text-brand-marine/70">
             {editorial.knowledgeLead}
           </p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="min-w-0 grid border-t border-l border-brand-marine/16 sm:grid-cols-2">
           {editorial.knowledge.map((item, index) => (
             <Link
               key={item.href}
               href={localizeHref(locale, item.href)}
-              className={`group flex min-h-56 flex-col border border-brand-marine/16 bg-white p-6 transition-colors hover:border-brand-steel-cyan hover:bg-brand-marine hover:text-white ${index % 3 === 0 ? "sm:translate-y-5" : ""}`}
+              className={`group flex min-h-56 flex-col border-r border-b border-brand-marine/16 bg-white p-6 transition-colors hover:bg-brand-marine hover:text-white focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-steel-cyan ${
+                editorial.knowledge.length % 2 === 1 &&
+                index === editorial.knowledge.length - 1
+                  ? "sm:col-span-2"
+                  : ""
+              }`}
             >
               <span className="font-winnstein-display text-xs font-bold text-brand-steel-cyan">0{index + 1}</span>
-              <h3 className="mt-5 font-winnstein-display text-xl leading-tight font-bold">{item.title}</h3>
+              <h3 className="mt-5 hyphens-auto font-winnstein-display text-xl leading-tight font-bold [overflow-wrap:anywhere]">{item.title}</h3>
               <p className="mt-3 flex-1 text-sm leading-6 text-brand-marine/66 group-hover:text-white/70">{item.text}</p>
               <span className="mt-5 inline-flex items-center justify-between gap-5 font-winnstein-display text-sm font-bold text-brand-steel-cyan">
                 {item.linkLabel}
@@ -458,12 +511,12 @@ function HistorySection({ content }: Pick<Props, "content">) {
 
   return (
     <SectionShell>
-      <article className="relative overflow-hidden border-l-4 border-brand-steel-cyan bg-brand-marine px-7 py-9 text-white sm:px-10 sm:py-12 lg:grid lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14">
-        <div>
+    <article className="relative overflow-hidden border-l-4 border-brand-steel-cyan bg-brand-marine px-7 py-9 text-white sm:px-10 sm:py-12 xl:grid xl:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:gap-14">
+        <div className="min-w-0">
           <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">{history.eyebrow}</p>
-          <h2 className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">{history.title}</h2>
+          <h2 className="mt-4 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">{history.title}</h2>
         </div>
-        <div className="mt-7 lg:mt-0">
+        <div className="mt-7 min-w-0 xl:mt-0">
           <p className="text-base leading-8 text-white/74">{history.text}</p>
           <p className="mt-6 border-t border-white/18 pt-6 text-base leading-8 text-white">{history.lesson}</p>
           <a
@@ -491,9 +544,9 @@ function ServiceCard({
   index: number;
 }) {
   return (
-    <article className={`flex flex-col border border-brand-marine/16 bg-white p-7 sm:p-8 ${index === 1 ? "lg:translate-y-9" : ""}`}>
+    <article className="flex flex-col border border-brand-marine/16 bg-white p-7 sm:p-8">
       <span className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">0{index + 1}</span>
-      <h3 className="mt-5 font-winnstein-display text-2xl leading-tight font-bold">{service.title}</h3>
+      <h3 className="mt-5 hyphens-auto font-winnstein-display text-2xl leading-tight font-bold [overflow-wrap:anywhere]">{service.title}</h3>
       <p className="mt-4 flex-1 text-base leading-7 text-brand-marine/70">{service.text}</p>
       <div className="mt-6 flex flex-wrap gap-2">
         {service.topics.map((topic) => (
@@ -514,11 +567,11 @@ function ServiceCard({
 function ServicesSection({ locale, content }: Props) {
   return (
     <SectionShell className="bg-brand-steel-cyan-10">
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-end">
-        <h2 className="font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl lg:text-5xl">{content.servicesTitle}</h2>
-        <p className="max-w-3xl text-lg leading-8 text-brand-marine/72">{content.servicesLead}</p>
+      <div className="grid gap-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:items-end">
+        <h2 className="min-w-0 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl xl:text-[2.65rem]">{content.servicesTitle}</h2>
+        <p className="min-w-0 max-w-3xl text-lg leading-8 text-brand-marine/72">{content.servicesLead}</p>
       </div>
-      <div className="mt-10 grid gap-5 lg:grid-cols-3 lg:pb-9">
+      <div className="mt-10 grid gap-5 lg:grid-cols-3">
         {content.services.map((service, index) => (
           <ServiceCard key={service.title} locale={locale} service={service} index={index} />
         ))}
@@ -530,14 +583,14 @@ function ServicesSection({ locale, content }: Props) {
 function QuestionsSection({ locale, content }: Props) {
   return (
     <SectionShell>
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.58fr)_minmax(0,1.42fr)] lg:gap-16">
-        <div>
+      <div className="grid gap-10 xl:grid-cols-[minmax(0,0.74fr)_minmax(0,1.26fr)] xl:gap-14">
+        <div className="min-w-0">
           <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
             {locale === "de" ? "Aus dem Projektalltag" : "From project practice"}
           </p>
-          <h2 className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">{content.questionsTitle}</h2>
+          <h2 className="mt-4 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">{content.questionsTitle}</h2>
         </div>
-        <div className="border-t border-brand-marine/18">
+        <div className="min-w-0 border-t border-brand-marine/18">
           {content.questions.map((item, index) => (
             <details key={item.question} open={index === 0} className="group border-b border-brand-marine/18">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 font-winnstein-display text-lg leading-7 font-bold marker:hidden">
@@ -556,12 +609,12 @@ function QuestionsSection({ locale, content }: Props) {
 function ContextSection({ locale, content }: Props) {
   return (
     <SectionShell className="bg-brand-marine text-white">
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center lg:gap-16">
-        <div>
+      <div className="grid gap-10 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] xl:items-center xl:gap-14">
+        <div className="min-w-0">
           <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
             {locale === "de" ? "Fachlicher Kontext" : "Engineering context"}
           </p>
-          <h2 className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">{content.contextTitle}</h2>
+          <h2 className="mt-4 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">{content.contextTitle}</h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/72">{content.contextText}</p>
         </div>
         <div className="flex flex-wrap gap-3">
@@ -571,6 +624,178 @@ function ContextSection({ locale, content }: Props) {
         </div>
       </div>
     </SectionShell>
+  );
+}
+
+const industryNavigationNames: Record<Locale, Record<string, string>> = {
+  de: {
+    automotive: "Automotive",
+    maschinenbau: "Maschinenbau",
+    "elektronische-produkte": "Elektronische Produkte",
+    halbleiterindustrie: "Halbleiterindustrie",
+    konsumgueter: "Consumer-Technik",
+    "erneuerbare-energien": "Erneuerbare Energien",
+    medizintechnik: "Medizintechnik",
+    "luft-und-raumfahrt": "Luft- und Raumfahrt",
+    produktionstechnik: "Produktionstechnik",
+  },
+  en: {
+    automotive: "Automotive",
+    maschinenbau: "Mechanical engineering",
+    "elektronische-produkte": "Electronic products",
+    halbleiterindustrie: "Semiconductor industry",
+    konsumgueter: "Consumer technology",
+    "erneuerbare-energien": "Renewable energy",
+    medizintechnik: "Medical technology",
+    "luft-und-raumfahrt": "Aerospace",
+    produktionstechnik: "Production technology",
+  },
+};
+
+function IndustryNavigationCardVisual({
+  current = false,
+  industry,
+  locale,
+}: {
+  current?: boolean;
+  industry: IndustryDetailContent;
+  locale: Locale;
+}) {
+  const labels =
+    locale === "de"
+      ? { current: "Aktuelle Branche", discover: "Entdecken" }
+      : { current: "Current industry", discover: "Explore" };
+  const name = industryNavigationNames[locale][industry.slug] ?? industry.title;
+
+  return (
+    <>
+      <Image
+        src={industry.heroImage}
+        alt=""
+        fill
+        aria-hidden="true"
+        sizes="(min-width: 768px) 50vw, 100vw"
+        className={`-z-20 object-cover object-center saturate-[0.72] transition duration-500 motion-reduce:transform-none ${
+          current
+            ? "opacity-70"
+            : "opacity-55 group-hover:scale-[1.025] group-hover:opacity-65"
+        }`}
+      />
+      <span
+        aria-hidden="true"
+        className={`absolute inset-0 -z-10 ${
+          current
+            ? "bg-[linear-gradient(90deg,rgba(232,245,252,0.99)_0%,rgba(232,245,252,0.93)_48%,rgba(232,245,252,0.34)_100%)]"
+            : "bg-[linear-gradient(90deg,rgba(255,255,255,0.99)_0%,rgba(255,255,255,0.93)_48%,rgba(255,255,255,0.28)_100%)]"
+        }`}
+      />
+
+      <span className="relative flex min-w-0 flex-col gap-3">
+        <span className="font-winnstein-display text-xl leading-tight font-bold tracking-[-0.025em] text-brand-marine sm:text-2xl">
+          {name}
+        </span>
+        <span
+          className={`inline-flex w-fit items-center gap-3 font-winnstein-display text-sm font-bold ${
+            current ? "text-brand-marine" : "text-brand-marine/68"
+          }`}
+        >
+          {current ? labels.current : labels.discover}
+          {!current && <ArrowIcon />}
+        </span>
+      </span>
+
+      {current && (
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 ring-2 ring-inset ring-brand-steel-cyan"
+        />
+      )}
+    </>
+  );
+}
+
+function IndustryNavigation({ locale, currentSlug }: { locale: Locale; currentSlug: string }) {
+  const industries = getIndustryDetails(locale);
+  const labels =
+    locale === "de"
+      ? {
+          eyebrow: "Branchennavigation",
+          title: "Branchen im Überblick",
+          description:
+            "Wechseln Sie direkt zu den branchenspezifischen Anforderungen, Risikofeldern und Methoden der Zuverlässigkeitstechnik.",
+        }
+      : {
+          eyebrow: "Industry navigation",
+          title: "Industries at a glance",
+          description:
+            "Go directly to industry-specific requirements, risk fields and reliability engineering methods.",
+        };
+
+  return (
+    <section
+      aria-labelledby="industry-navigation-title"
+      className="bg-white px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+    >
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:items-end lg:gap-12">
+          <div>
+            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
+              {labels.eyebrow}
+            </p>
+            <h2
+              id="industry-navigation-title"
+              className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl"
+            >
+              {labels.title}
+            </h2>
+          </div>
+          <p className="max-w-3xl text-base leading-8 text-brand-marine/72">
+            {labels.description}
+          </p>
+        </div>
+
+        <div className="mt-10 grid border-t border-l border-brand-marine/18 md:grid-cols-2">
+          {industries.map((industry, index) => {
+            const isCurrent = industry.slug === currentSlug;
+            const spansFullRow =
+              industries.length % 2 === 1 && index === industries.length - 1;
+            const cardClassName = `group relative isolate flex min-h-32 items-center overflow-hidden border-r border-b border-brand-marine/18 px-6 py-6 sm:min-h-36 sm:px-8 ${
+              spansFullRow ? "md:col-span-2" : ""
+            } ${isCurrent ? "bg-brand-steel-cyan-10" : "bg-white"}`;
+
+            if (isCurrent) {
+              return (
+                <div
+                  key={industry.slug}
+                  aria-current="page"
+                  className={cardClassName}
+                >
+                  <IndustryNavigationCardVisual
+                    current
+                    industry={industry}
+                    locale={locale}
+                  />
+                </div>
+              );
+            }
+
+            return (
+              <ActiveNavLink
+                key={industry.slug}
+                href={localizeHref(locale, `/branchen/${industry.slug}`)}
+                className={`${cardClassName} transition-colors hover:border-brand-steel-cyan focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-steel-cyan`}
+                activeClassName=""
+              >
+                <IndustryNavigationCardVisual
+                  industry={industry}
+                  locale={locale}
+                />
+              </ActiveNavLink>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -600,15 +825,15 @@ export function IndustryDetailPage({ locale, content }: Props) {
     <main className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:64px_64px]" />
-        <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,0.88fr)_minmax(30rem,1.12fr)]">
-          <div className={`flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24 ${reverseHero ? "lg:order-2" : ""}`}>
+        <div className="relative mx-auto grid max-w-7xl xl:grid-cols-[minmax(0,0.92fr)_minmax(30rem,1.08fr)]">
+          <div className={`flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24 ${reverseHero ? "xl:order-2" : ""}`}>
             <Link href={localizeHref(locale, "/branchen")} className="inline-flex w-fit items-center gap-3 font-winnstein-display text-sm font-bold text-brand-steel-cyan">
               <span aria-hidden="true">←</span>
               {labels.industries}
             </Link>
             <p className="mt-9 font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">{labels.eyebrow}</p>
             <p className="mt-4 w-fit border border-white/20 px-3 py-2 text-xs font-semibold tracking-[0.06em] text-white/76">{editorial.heroTag}</p>
-            <h1 className="mt-5 max-w-4xl font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.65rem]">{content.title}</h1>
+            <h1 className="mt-5 max-w-4xl hyphens-auto font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-5xl xl:text-[3.4rem]">{content.title}</h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78">{content.heroLead}</p>
             <Link href={localizeHref(locale, "/kontakt")} className="brand-action mt-9 inline-flex min-h-14 w-fit items-center justify-between gap-8 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine">
               {content.heroCta}
@@ -616,8 +841,8 @@ export function IndustryDetailPage({ locale, content }: Props) {
             </Link>
           </div>
 
-          <div className={`relative min-h-[28rem] border-t border-white/15 lg:min-h-[43rem] lg:border-t-0 ${reverseHero ? "lg:order-1 lg:border-r" : "lg:border-l"}`}>
-            <Image src={content.heroImage} alt={content.heroAlt} fill preload sizes="(min-width: 1024px) 56vw, 100vw" className="object-cover" />
+          <div className={`relative min-h-[28rem] border-t border-white/15 xl:min-h-[43rem] xl:border-t-0 ${reverseHero ? "xl:order-1 xl:border-r" : "xl:border-l"}`}>
+            <Image src={content.heroImage} alt={content.heroAlt} fill preload sizes="(min-width: 1280px) 54vw, 100vw" className="object-cover" />
             <div className={`absolute inset-0 ${reverseHero ? "bg-[linear-gradient(270deg,rgba(3,19,52,.48),transparent_48%),linear-gradient(0deg,rgba(3,19,52,.38),transparent_55%)]" : "bg-[linear-gradient(90deg,rgba(3,19,52,.54),transparent_48%),linear-gradient(0deg,rgba(3,19,52,.38),transparent_55%)]"}`} />
           </div>
         </div>
@@ -635,6 +860,8 @@ export function IndustryDetailPage({ locale, content }: Props) {
         title={content.ctaTitle}
         description={content.ctaText}
       />
+
+      <IndustryNavigation locale={locale} currentSlug={content.slug} />
     </main>
   );
 }

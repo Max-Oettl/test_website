@@ -105,11 +105,11 @@ const servicesCopy = {
 
 const serviceIcons: Record<string, string> = {
   "/leistungen/zuverlaessigkeitstechnik":
-    "/concepts/landingpage-ingenics-kacheln/icon-target.svg",
+    "/graphics/solutions-icons/icon-target.svg",
   "/leistungen/risikomanagement":
-    "/concepts/landingpage-ingenics-kacheln/icon-shield.svg",
+    "/graphics/solutions-icons/icon-shield.svg",
   "/leistungen/datenanalyse-prognostik":
-    "/concepts/landingpage-ingenics-kacheln/icon-database.svg",
+    "/graphics/solutions-icons/icon-database.svg",
 };
 
 function ArrowIcon() {

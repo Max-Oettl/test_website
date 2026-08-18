@@ -325,6 +325,7 @@ const profileCopy = {
         "Der Ingenieurshelden-Podcast vermittelt einen persönlichen Eindruck von seinem Werdegang, seiner technischen Denkweise und seinem Verständnis guter Zusammenarbeit.",
       podcastLabel: "Podcast anhören",
       contactLabel: "Termin mit Kevin vereinbaren",
+      berndProfileLabel: "Zum Profil von Bernd Bertsche",
       topicsLabel: "Fachliche Schwerpunkte von Kevin Lucan",
     },
     bernd: {
@@ -337,6 +338,7 @@ const profileCopy = {
         "Fachbücher, Herausgeberschaften und peer-reviewte Beiträge dokumentieren Bernd Bertsches Arbeit von den Grundlagen der Zuverlässigkeitstechnik bis zu moderner Testplanung und nachhaltiger Produktentwicklung.",
       booksLabel: "Ausgewählte Fachbücher von Bernd Bertsche",
       contactLabel: "Fachliches Gespräch anfragen",
+      kevinProfileLabel: "Zum Profil von Kevin Lucan",
       topicsLabel: "Fachliche Schwerpunkte von Bernd Bertsche",
     },
   },
@@ -350,6 +352,7 @@ const profileCopy = {
         "The Ingenieurshelden podcast offers a personal impression of his professional path, technical thinking and understanding of effective collaboration.",
       podcastLabel: "Listen to the podcast",
       contactLabel: "Schedule a meeting with Kevin",
+      berndProfileLabel: "View Bernd Bertsche’s profile",
       topicsLabel: "Kevin Lucan's areas of expertise",
     },
     bernd: {
@@ -362,6 +365,7 @@ const profileCopy = {
         "Books, edited volumes and peer-reviewed papers document Bernd Bertsche's work from the foundations of reliability engineering to modern demonstration planning and sustainable product development.",
       booksLabel: "Selected reference books by Bernd Bertsche",
       contactLabel: "Request a technical conversation",
+      kevinProfileLabel: "View Kevin Lucan’s profile",
       topicsLabel: "Bernd Bertsche's areas of expertise",
     },
   },
@@ -637,42 +641,59 @@ export function PersonProfilePage({
       />
 
       <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">
-          <div>
-            <h2 className="max-w-3xl font-winnstein-display text-3xl font-bold tracking-[-0.04em] sm:text-4xl lg:text-5xl">
-              {personCopy.narrativeTitle}
-            </h2>
-            <div className="mt-8 max-w-3xl space-y-6">
-              {page.sections.map((section) => (
-                <p
-                  key={section.title}
-                  className="text-base leading-8 text-copy-muted"
-                >
-                  {section.body}
-                </p>
-              ))}
-            </div>
+        <div className="mx-auto grid max-w-7xl gap-x-12 gap-y-8 px-5 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">
+          <h2 className="max-w-3xl font-winnstein-display text-3xl font-bold tracking-[-0.04em] sm:text-4xl lg:text-5xl">
+            {personCopy.narrativeTitle}
+          </h2>
+          <div aria-hidden="true" className="hidden lg:block" />
+
+          <div className="max-w-3xl space-y-6">
+            {page.sections.map((section) => (
+              <p
+                key={section.title}
+                className="text-base leading-8 text-copy-muted"
+              >
+                {section.body}
+              </p>
+            ))}
           </div>
 
-          <ul
-            aria-label={personCopy.topicsLabel}
-            className="divide-y divide-line-soft border-y border-line-soft"
-          >
-            {page.proofPoints.map((point) => (
-              <li
-                key={point}
-                className="grid grid-cols-[1rem_1fr] items-center gap-4 py-5"
-              >
-                <span
-                  aria-hidden="true"
-                  className="brand-list-dash brand-list-dash-center"
-                />
-                <span className="font-winnstein-display text-base font-semibold leading-6">
-                  {point}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <div className="self-start">
+            <ul
+              aria-label={personCopy.topicsLabel}
+              className="divide-y divide-line-soft border-y border-line-soft"
+            >
+              {page.proofPoints.map((point) => (
+                <li
+                  key={point}
+                  className="grid grid-cols-[1rem_1fr] items-center gap-4 py-5"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="brand-list-dash brand-list-dash-center"
+                  />
+                  <span className="font-winnstein-display text-base font-semibold leading-6">
+                    {point}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              href={localizeHref(
+                locale,
+                isKevin
+                  ? "/ueber-uns/bernd-bertsche"
+                  : "/ueber-uns/kevin-lucan",
+              )}
+              className="brand-action brand-action-outline brand-action-outline-light mt-7 inline-flex min-h-12 items-center justify-center gap-3 px-6 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan"
+            >
+              {isKevin
+                ? copy.kevin.berndProfileLabel
+                : copy.bernd.kevinProfileLabel}
+              <ArrowIcon />
+            </Link>
+          </div>
         </div>
       </section>
 

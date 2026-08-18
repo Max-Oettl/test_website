@@ -211,7 +211,7 @@ const content = {
           href: "/expertise#fachbuecher",
         },
         { label: "Podcast mit Kevin Lucan", href: "/expertise#podcast" },
-        { label: "Branchen", href: "/expertise#branchen" },
+        { label: "Branchen", href: "/branchen" },
       ],
     },
     footer: {
@@ -808,7 +808,7 @@ const content = {
         },
         { label: "Books & publications", href: "/expertise#books" },
         { label: "Podcast with Kevin Lucan", href: "/expertise#podcast" },
-        { label: "Industries", href: "/expertise#industries" },
+        { label: "Industries", href: "/branchen" },
       ],
     },
     footer: {

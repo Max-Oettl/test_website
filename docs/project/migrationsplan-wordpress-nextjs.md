@@ -330,6 +330,20 @@ Kontaktweg mindestens gleich sichtbar und verlässlich sein.
 Die alte Website nutzt Borlabs Cookie, Matomo, Google Tag Manager und
 Drittanbieter-Einbindungen.
 
+Umsetzungsstand 18. August 2026:
+
+- Impressum und Datenschutzerklaerung sind fuer Deutsch und Englisch in das
+  neue Design ueberfuehrt.
+- WordPress-spezifische Angaben zu Solid Security, Borlabs Cookie, Matomo,
+  Google Analytics, Google Tag Manager, Adobe Fonts und Google Maps wurden
+  nicht in die neue Datenschutzerklaerung uebernommen, weil diese Dienste im
+  aktuellen Next.js-Stand nicht eingesetzt werden.
+- Dokumentiert sind der technische Sprach-Cookie `NEXT_LOCALE`, das derzeitige
+  Mailto-Anfrageformular, lokale Webfonts, externe Links und die
+  Calendly-Einbindung.
+- Die finale rechtliche Freigabe und die Consent-Entscheidung fuer das
+  Calendly-Iframe bleiben Go-live-Voraussetzungen.
+
 Muss vor Go-live:
 
 - entscheiden, welche Tracking-Dienste wirklich gebraucht werden

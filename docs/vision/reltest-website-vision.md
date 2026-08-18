@@ -121,10 +121,10 @@ Das Winnstein-Konzept ist die alleinige aktive Gestaltungsgrundlage der
 darauf abgestimmt; eine öffentliche Konzeptauswahl oder eine Umschaltung per
 URL-Parameter ist nicht vorgesehen.
 
-Frühere Konzeptvarianten bleiben vorerst als interne Entwürfe im Repository
-erhalten. Sie dürfen jedoch nicht in der Website auswählbar oder über alte
-Vergleichslinks aktivierbar sein, solange ihre Reaktivierung nicht ausdrücklich
-beschlossen wird.
+Frühere Konzeptvarianten und ihre Vergleichsansichten werden nicht im
+Repository vorgehalten. Das produktive Design ist die einzige technische und
+gestalterische Grundlage. Neue Varianten werden nur nach einer ausdrücklichen
+Designentscheidung und in einem klar abgegrenzten Arbeitspaket angelegt.
 
 ## 6. Positionierung von RelTest
 

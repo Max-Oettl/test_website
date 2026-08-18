@@ -147,7 +147,8 @@ Alle sprachabhängigen Seiten liegen in `app/[lang]/`:
 
 - `app/_components/site-header.tsx`: Navigation, Wissens-Dropdown und Sprachumschalter
 - `app/_components/site-footer.tsx`: Footer, Schnellzugriff und Kontakt
-- `app/_components/home-hero.tsx`: Hero und technisches Orbit-Visual
+- `app/_components/home-page-hero.tsx`: aktueller Startseiten-Hero
+- `app/_components/home-page-content.tsx`: weitere Startseitenabschnitte
 - `app/_components/service-card.tsx`: Leistungskarten
 - `app/_components/page-intro.tsx`: Intro der Unterseiten
 - `app/_components/section-heading.tsx`: einheitliche Abschnittsüberschriften
@@ -188,8 +189,7 @@ Statische Dateien liegen unter `public/` und werden mit Pfaden wie `/team/img-01
 
 - `public/academy`: bestehende Legacy-Assets und Lernvisuals für RelTest Education
 - `public/branding`: aktuelle RelTest-Solutions- und RelTest-Education-Logos
-- `public/graphics`: Badewannenkurve und Prozessgrafik
-- `public/hero-pictograms`: Piktogramme des Hero-Visuals
+- `public/graphics`: Wissensgrafiken, Prozessgrafiken und aktive Solutions-Icons
 - `public/icons`: Service-Icons
 - `public/industries`: Branchenbilder fÃ¼r die Startseiten-Karten
 - `public/podcast`: Podcast-Hintergrund
@@ -214,7 +214,8 @@ In `services` beide Sprachvarianten pflegen. Das Kartendesign liegt in `service-
 
 ### Hero ändern
 
-Texte und Themen stehen in `site-content.ts`. Aufbau, Positionen und Animationen liegen in `home-hero.tsx` und `globals.css`.
+Aufbau, Texte, Positionen und Animationen liegen in
+`home-page-hero.tsx`, `home-page-content.tsx` und `globals.css`.
 
 ### Bilder austauschen
 

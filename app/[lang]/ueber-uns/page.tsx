@@ -413,14 +413,16 @@ function TextLink({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className={`inline-flex items-center gap-3 border-b pb-1 font-winnstein-display text-sm font-bold transition-colors ${
+      className={`inline-flex min-w-0 items-center justify-between gap-3 border-b pb-1 font-winnstein-display text-sm font-bold transition-colors ${
         inverse
           ? "border-white/45 text-white hover:border-brand-steel-cyan hover:text-brand-steel-cyan"
           : "border-brand-steel-cyan text-brand-marine hover:text-brand-steel-cyan"
       }`}
     >
-      {children}
-      <ArrowIcon />
+      <span className="min-w-0">{children}</span>
+      <span className="shrink-0">
+        <ArrowIcon />
+      </span>
     </Link>
   );
 }
@@ -734,7 +736,7 @@ export default async function AboutPage({ params }: Props) {
                   <p className="mt-5 text-base leading-8 text-copy-muted">
                     {profile.summary}
                   </p>
-                  <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-4 pt-8">
+                  <div className="mt-auto grid grid-cols-2 items-end gap-4 pt-8">
                     {profile.links.map((link) => (
                       <TextLink
                         key={`${profile.title}-${link.href}`}

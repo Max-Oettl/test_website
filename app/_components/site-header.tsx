@@ -4,9 +4,8 @@ import { getSiteContent } from "../_content/site-content";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { ActiveNavLink } from "./active-nav-link";
 import { CompactHeaderMenu } from "./compact-header-menu";
-import { ConceptBrandLogo } from "./concept-brand-logo";
 import { LanguageSwitcher } from "./language-switcher";
-import { LandingConceptBodySync } from "./landing-concept-body-sync";
+import { SiteBrandLogo } from "./site-brand-logo";
 
 type SiteHeaderProps = {
   locale: Locale;
@@ -56,19 +55,19 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   };
 
   return (
-    <>
-      <LandingConceptBodySync />
-      <header className="site-header-shell sticky top-0 z-50 border-b border-brand-steel-cyan/20 bg-white/95 backdrop-blur-xl">
+    <header className="site-header-shell sticky top-0 z-50 border-b border-brand-steel-cyan/20 bg-white/95 backdrop-blur-xl">
       <div className="site-header-inner mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-6 lg:px-8">
-        <Link
+        <ActiveNavLink
           href={localizeHref(locale, "/")}
           className="site-header-brand flex items-center gap-3"
+          activeClassName=""
+          exact
           aria-label={navigation.homeLabel}
         >
           <span className="site-header-logo-mark relative block h-11 w-36 sm:w-44">
-            <ConceptBrandLogo placement="header" />
+            <SiteBrandLogo placement="header" />
           </span>
-        </Link>
+        </ActiveNavLink>
 
         <nav
           className="site-header-nav hidden items-center gap-5 2xl:gap-6 xl:flex"
@@ -182,7 +181,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           })}
         </nav>
 
-        <div className="site-header-language-kacheln hidden items-center">
+        <div className="site-header-language-desktop hidden items-center">
           <LanguageSwitcher locale={locale} />
         </div>
 
@@ -296,6 +295,5 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         </CompactHeaderMenu>
       </div>
     </header>
-    </>
   );
 }

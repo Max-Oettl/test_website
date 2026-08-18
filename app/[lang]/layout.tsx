@@ -3,6 +3,7 @@ import { Archivo, IBM_Plex_Sans, Oxanium, Sora } from "next/font/google";
 
 import { SiteFooter } from "../_components/site-footer";
 import { SiteHeader } from "../_components/site-header";
+import { NavigationScrollReset } from "../_components/navigation-scroll-reset";
 import { getSiteContent } from "../_content/site-content";
 import { locales, resolveLocale } from "../_i18n/config";
 import { absoluteUrl, getRobotsMetadata, siteUrl } from "../_seo/metadata";
@@ -95,13 +96,11 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
+      data-scroll-behavior="smooth"
       className={`${plexSans.variable} ${sora.variable} ${archivo.variable} ${oxanium.variable} h-full scroll-smooth antialiased`}
     >
-      <body
-        className="min-h-full"
-        data-landing-concept="kacheln"
-        data-landing-concept-variant="winnstein"
-      >
+      <body className="min-h-full" data-site-design="winnstein">
+        <NavigationScrollReset />
         <div className="min-h-screen bg-slate-50 text-slate-950">
           <SiteHeader locale={locale} />
           <main>{children}</main>

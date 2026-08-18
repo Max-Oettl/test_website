@@ -1,5 +1,5 @@
-import { LandingConceptWinnsteinHero } from "../_components/landing-concept-winnstein-hero";
-import { LandingConceptWinnsteinTail } from "../_components/landing-concept-winnstein-tail";
+import { HomePageHero } from "../_components/home-page-hero";
+import { HomePageContent } from "../_components/home-page-content";
 import { getSiteContent } from "../_content/site-content";
 import { localizeHref, resolveLocale, type Locale } from "../_i18n/config";
 import { buildLocalizedMetadata } from "../_seo/metadata";
@@ -113,8 +113,8 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
-      <LandingConceptWinnsteinHero locale={locale} />
-      <LandingConceptWinnsteinTail
+      <HomePageHero locale={locale} />
+      <HomePageContent
         locale={locale}
         industries={{
           items: industryItems,

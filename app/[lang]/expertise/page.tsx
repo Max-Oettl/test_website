@@ -628,7 +628,7 @@ export default async function ExpertisePage({ params }: Props) {
               className="brand-action group mt-4 inline-flex min-h-14 items-center justify-between gap-8 bg-brand-marine px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
             >
               {content.industries.cta}
-              <span className="text-brand-steel-cyan transition-all group-hover:translate-x-1 group-hover:text-white">
+              <span className="text-white transition-transform group-hover:translate-x-1">
                 <ArrowIcon />
               </span>
             </Link>

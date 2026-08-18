@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { getSiteContent } from "../_content/site-content";
 import { localizeHref, type Locale } from "../_i18n/config";
-import { ConceptBrandLogo } from "./concept-brand-logo";
+import { SiteBrandLogo } from "./site-brand-logo";
 
 type SiteFooterProps = {
   locale: Locale;
@@ -18,7 +18,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
     <footer className="site-footer-shell border-t border-slate-800 bg-slate-950 text-white">
       <div className="mx-auto grid max-w-[100rem] gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.15fr_1.2fr_0.85fr_0.7fr] lg:gap-12 lg:px-8 lg:py-16 xl:gap-16">
         <div>
-          <ConceptBrandLogo placement="footer" />
+          <SiteBrandLogo placement="footer" />
           <p className="mt-5 max-w-md text-sm leading-7 text-slate-300">
             {footer.description}
           </p>

@@ -85,7 +85,7 @@ const solutionServicePages: Record<
             result:
               "Ein abgestimmter Zuverlässigkeitsplan mit klaren Zielen, Arbeitspaketen, Schnittstellen und Entscheidungspunkten.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-target.svg",
+              "/graphics/solutions-icons/icon-target.svg",
           },
           {
             id: "lebensdauerbewertung",
@@ -94,7 +94,7 @@ const solutionServicePages: Record<
               "Bauteilbelastungen, Festigkeiten, Ausfallmechanismen sowie Prüf- und Felddaten werden zu einer nachvollziehbaren Lebensdaueraussage zusammengeführt.",
             result:
               "Eine bewertete Lebensdauer mit dokumentierten Annahmen, Unsicherheiten und technischen Grenzen.",
-            icon: "/concepts/landingpage-ingenics-kacheln/icon-chart.svg",
+            icon: "/graphics/solutions-icons/icon-chart.svg",
           },
           {
             id: "zuverlaessigkeitsnachweise",
@@ -104,7 +104,7 @@ const solutionServicePages: Record<
             result:
               "Ein prüfbarer Nachweis, der Freigabeentscheidungen fachlich und dokumentarisch trägt.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-evidence-plan.svg",
+              "/graphics/solutions-icons/icon-evidence-plan.svg",
           },
           {
             id: "methodische-beratung",
@@ -114,7 +114,7 @@ const solutionServicePages: Record<
             result:
               "Eine klare fachliche Empfehlung mit begründeter Methodenauswahl und nächsten Schritten.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-process-design.svg",
+              "/graphics/solutions-icons/icon-process-design.svg",
           },
         ],
       },
@@ -210,7 +210,7 @@ const solutionServicePages: Record<
             result:
               "Eine strukturierte Fehler- und Ursachenanalyse, die kritische Zusammenhänge verständlich macht.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-risk-identification.svg",
+              "/graphics/solutions-icons/icon-risk-identification.svg",
           },
           {
             id: "risikobewertung",
@@ -220,7 +220,7 @@ const solutionServicePages: Record<
             result:
               "Eine fachlich begründete Priorisierung, die Ressourcen auf die entscheidenden Risiken lenkt.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-risk-matrix.svg",
+              "/graphics/solutions-icons/icon-risk-matrix.svg",
           },
           {
             id: "absicherungsstrategie",
@@ -230,7 +230,7 @@ const solutionServicePages: Record<
             result:
               "Ein umsetzbarer Absicherungsplan mit Verantwortlichkeiten, Nachweisen und klarer Reihenfolge.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-measures.svg",
+              "/graphics/solutions-icons/icon-measures.svg",
           },
           {
             id: "stand-der-technik",
@@ -240,7 +240,7 @@ const solutionServicePages: Record<
             result:
               "Eine dokumentierte technische Herleitung, die Reviews und spätere Nachfragen belastbar unterstützt.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-process-approval.svg",
+              "/graphics/solutions-icons/icon-process-approval.svg",
           },
         ],
       },
@@ -339,7 +339,7 @@ const solutionServicePages: Record<
             result:
               "Ein effizienter Versuchsplan, der mit vertretbarem Aufwand belastbare Ursache-Wirkungs-Aussagen ermöglicht.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-factors.svg",
+              "/graphics/solutions-icons/icon-factors.svg",
           },
           {
             id: "lebensdauererprobung",
@@ -349,7 +349,7 @@ const solutionServicePages: Record<
             result:
               "Eine Erprobungs- und Auswertestrategie mit klarer Aussagekraft, Prüfdauer und statistischer Absicherung.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-evidence-plan.svg",
+              "/graphics/solutions-icons/icon-evidence-plan.svg",
           },
           {
             id: "felddatenanalyse",
@@ -359,7 +359,7 @@ const solutionServicePages: Record<
             result:
               "Eine nachvollziehbare Sicht auf Ausfallverhalten, Betroffenheit und relevante Einflussgrößen im Feld.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-database.svg",
+              "/graphics/solutions-icons/icon-database.svg",
           },
           {
             id: "prognostik",
@@ -368,7 +368,7 @@ const solutionServicePages: Record<
               "Geeignete statistische oder physikalisch gestützte Modelle beschreiben den weiteren Verlauf. Modellgrenzen und Prognoseunsicherheit werden ausdrücklich mitbewertet.",
             result:
               "Eine belastbare Prognose zu Lebensdauer, Ausfallwahrscheinlichkeit oder zukünftigem Handlungsbedarf.",
-            icon: "/concepts/landingpage-ingenics-kacheln/icon-model.svg",
+            icon: "/graphics/solutions-icons/icon-model.svg",
           },
         ],
       },
@@ -466,7 +466,7 @@ const solutionServicePages: Record<
             result:
               "Ein verbindlich beschriebenes Leistungspaket mit Zielen, Terminen, Zuständigkeiten und erwarteten Ergebnissen.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-handshake.svg",
+              "/graphics/solutions-icons/icon-handshake.svg",
           },
           {
             id: "schnittstellen-abnahme",
@@ -476,7 +476,7 @@ const solutionServicePages: Record<
             result:
               "Klare Schnittstellen und überprüfbare Kriterien, mit denen Fortschritt und Ergebnisqualität transparent bewertet werden können.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-interfaces.svg",
+              "/graphics/solutions-icons/icon-interfaces.svg",
           },
           {
             id: "ergebnisse-dokumentation",
@@ -486,7 +486,7 @@ const solutionServicePages: Record<
             result:
               "Prüfbare Engineering-Ergebnisse, die auch nach Projektabschluss als belastbare Entscheidungsgrundlage verfügbar bleiben.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-evidence-plan.svg",
+              "/graphics/solutions-icons/icon-evidence-plan.svg",
           },
           {
             id: "verantwortungsrahmen",
@@ -496,7 +496,7 @@ const solutionServicePages: Record<
             result:
               "Ein vor Projektbeginn eindeutig geregelter Leistungs-, Abnahme- und Haftungsrahmen ohne unklare Erwartungslücken.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-process-approval.svg",
+              "/graphics/solutions-icons/icon-process-approval.svg",
           },
         ],
       },
@@ -593,7 +593,7 @@ const solutionServicePages: Record<
             result:
               "An aligned reliability plan with clear targets, work packages, interfaces and decision points.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-target.svg",
+              "/graphics/solutions-icons/icon-target.svg",
           },
           {
             id: "lifetime-assessment",
@@ -602,7 +602,7 @@ const solutionServicePages: Record<
               "Component loads, strengths, failure mechanisms as well as test and field data are combined into a traceable lifetime statement.",
             result:
               "An assessed lifetime with documented assumptions, uncertainty and technical limits.",
-            icon: "/concepts/landingpage-ingenics-kacheln/icon-chart.svg",
+            icon: "/graphics/solutions-icons/icon-chart.svg",
           },
           {
             id: "reliability-evidence",
@@ -612,7 +612,7 @@ const solutionServicePages: Record<
             result:
               "Verifiable evidence that supports release decisions from both a technical and documentary perspective.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-evidence-plan.svg",
+              "/graphics/solutions-icons/icon-evidence-plan.svg",
           },
           {
             id: "methodological-consulting",
@@ -622,7 +622,7 @@ const solutionServicePages: Record<
             result:
               "A clear technical recommendation with a justified method selection and defined next steps.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-process-design.svg",
+              "/graphics/solutions-icons/icon-process-design.svg",
           },
         ],
       },
@@ -717,7 +717,7 @@ const solutionServicePages: Record<
             result:
               "A structured failure and cause analysis that makes critical relationships understandable.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-risk-identification.svg",
+              "/graphics/solutions-icons/icon-risk-identification.svg",
           },
           {
             id: "risk-assessment",
@@ -727,7 +727,7 @@ const solutionServicePages: Record<
             result:
               "A technically justified prioritisation that directs resources towards the decisive risks.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-risk-matrix.svg",
+              "/graphics/solutions-icons/icon-risk-matrix.svg",
           },
           {
             id: "assurance-strategy",
@@ -737,7 +737,7 @@ const solutionServicePages: Record<
             result:
               "An actionable assurance plan with responsibilities, evidence and a clear sequence.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-measures.svg",
+              "/graphics/solutions-icons/icon-measures.svg",
           },
           {
             id: "state-of-the-art",
@@ -747,7 +747,7 @@ const solutionServicePages: Record<
             result:
               "A documented technical rationale that provides robust support for reviews and later questions.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-process-approval.svg",
+              "/graphics/solutions-icons/icon-process-approval.svg",
           },
         ],
       },
@@ -845,7 +845,7 @@ const solutionServicePages: Record<
             result:
               "An efficient experimental plan that enables robust cause-and-effect conclusions with reasonable effort.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-factors.svg",
+              "/graphics/solutions-icons/icon-factors.svg",
           },
           {
             id: "lifetime-testing",
@@ -855,7 +855,7 @@ const solutionServicePages: Record<
             result:
               "A testing and evaluation strategy with defined validity, test duration and statistical assurance.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-evidence-plan.svg",
+              "/graphics/solutions-icons/icon-evidence-plan.svg",
           },
           {
             id: "field-data-analysis",
@@ -865,7 +865,7 @@ const solutionServicePages: Record<
             result:
               "A transparent view of failure behaviour, affected populations and relevant influencing factors in the field.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-database.svg",
+              "/graphics/solutions-icons/icon-database.svg",
           },
           {
             id: "prognostics",
@@ -874,7 +874,7 @@ const solutionServicePages: Record<
               "Suitable statistical or physics-informed models describe future behaviour. Model limits and prediction uncertainty are assessed explicitly.",
             result:
               "A robust prediction of lifetime, failure probability or future need for action.",
-            icon: "/concepts/landingpage-ingenics-kacheln/icon-model.svg",
+            icon: "/graphics/solutions-icons/icon-model.svg",
           },
         ],
       },
@@ -972,7 +972,7 @@ const solutionServicePages: Record<
             result:
               "A binding scope with clear objectives, dates, responsibilities and expected results.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-handshake.svg",
+              "/graphics/solutions-icons/icon-handshake.svg",
           },
           {
             id: "interfaces-acceptance",
@@ -982,7 +982,7 @@ const solutionServicePages: Record<
             result:
               "Clear interfaces and verifiable criteria for transparent assessment of progress and result quality.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-interfaces.svg",
+              "/graphics/solutions-icons/icon-interfaces.svg",
           },
           {
             id: "results-documentation",
@@ -992,7 +992,7 @@ const solutionServicePages: Record<
             result:
               "Verifiable engineering results that remain available as a robust decision basis after project completion.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-evidence-plan.svg",
+              "/graphics/solutions-icons/icon-evidence-plan.svg",
           },
           {
             id: "responsibility-framework",
@@ -1002,7 +1002,7 @@ const solutionServicePages: Record<
             result:
               "A clearly agreed scope, acceptance process and liability framework without expectation gaps.",
             icon:
-              "/concepts/landingpage-ingenics-kacheln/icon-process-approval.svg",
+              "/graphics/solutions-icons/icon-process-approval.svg",
           },
         ],
       },
