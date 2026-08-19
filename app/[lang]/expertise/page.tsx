@@ -36,13 +36,22 @@ function BookHotspotIcon({ number }: { number: 1 | 2 }) {
 }
 
 const featuredReferences = [
-  "Bosch",
   "Mercedes-Benz",
-  "Porsche",
-  "Stihl",
-  "ZEISS",
-  "ZF",
+  "Kärcher",
+  "ASYS",
+  "PI",
+  "SMA",
+  "Nidec",
 ] as const;
+
+const featuredReferenceLogoSources: Record<string, string> = {
+  "Mercedes-Benz": "/references/mercedes-benz-logo-landing.webp",
+  "Kärcher": "/references/kaercher-logo-landing.webp",
+  ASYS: "/references/asys-logo-landing.webp",
+  PI: "/references/physik-instrumente-logo-landing.webp",
+  SMA: "/references/sma-logo-landing.webp",
+  Nidec: "/references/nidec-logo-landing.webp",
+};
 
 const expertiseContent = {
   de: {
@@ -280,7 +289,9 @@ export default async function ExpertisePage({ params }: Props) {
   const logos = featuredReferences.flatMap((name) => {
     const logo = referenceLogos.find((item) => item.name === name);
 
-    return logo ? [logo] : [];
+    return logo
+      ? [{ ...logo, src: featuredReferenceLogoSources[name] ?? logo.src }]
+      : [];
   });
   const sectionIds =
     locale === "de"
@@ -432,19 +443,14 @@ export default async function ExpertisePage({ params }: Props) {
                 className="group relative flex min-h-44 items-center justify-center overflow-hidden border-r border-b border-brand-marine/18 bg-white px-8 py-9"
               >
                 <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-brand-steel-cyan transition-transform duration-300 group-hover:scale-x-100 group-focus-visible:scale-x-100" />
-                <span
-                  className={
-                    logo.name === "ZEISS"
-                      ? "relative block h-24 w-24"
-                      : "relative block h-16 w-full max-w-[13rem]"
-                  }
-                >
+                <span className="relative block h-20 w-full max-w-[14rem]">
                   <Image
                     src={logo.src}
                     alt={`${logo.name} Logo`}
                     fill
                     className="object-contain"
-                    sizes="210px"
+                    sizes="224px"
+                    unoptimized
                   />
                 </span>
               </a>

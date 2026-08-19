@@ -21,15 +21,26 @@ type HomePageContentProps = {
 const assetBase = "/graphics/solutions-icons";
 
 const featuredReferenceNames = new Set([
-  "Aesculap",
-  "Bosch",
-  "ebm-papst",
+  "ASYS",
+  "EKK",
+  "Hyundai",
+  "Kärcher",
   "Mercedes-Benz",
-  "Porsche",
-  "Stihl",
-  "ZEISS",
-  "ZF",
+  "Nidec",
+  "PI",
+  "SMA",
 ]);
+
+const landingReferenceLogoSources: Record<string, string> = {
+  ASYS: "/references/asys-logo-landing.webp",
+  EKK: "/references/ekk-eagle-logo-landing.webp",
+  Hyundai: "/references/hyundai-logo-landing.webp",
+  "Kärcher": "/references/kaercher-logo-landing.webp",
+  "Mercedes-Benz": "/references/mercedes-benz-logo-landing.webp",
+  Nidec: "/references/nidec-logo-landing.webp",
+  PI: "/references/physik-instrumente-logo-landing.webp",
+  SMA: "/references/sma-logo-landing.webp",
+};
 
 const featuredReferences = referenceLogos.filter((reference) =>
   featuredReferenceNames.has(reference.name),
@@ -913,20 +924,22 @@ export function HomePageContent({
                   href={reference.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/logo flex min-h-28 items-center justify-center bg-white px-5 py-6 transition-colors hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset"
+                  className="group/logo flex min-h-28 items-center justify-center bg-white px-4 py-6 transition-colors hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset"
                   aria-label={`${reference.name} - Website`}
                 >
-                  <Image
-                    src={reference.src}
-                    alt={reference.name}
-                    width={reference.name === "ZEISS" ? 96 : 150}
-                    height={reference.name === "ZEISS" ? 96 : 64}
-                    className={
-                      reference.name === "ZEISS"
-                        ? "h-16 w-auto object-contain opacity-100 transition duration-200 group-hover/logo:scale-105"
-                        : "max-h-12 w-auto max-w-full object-contain opacity-90 transition duration-200 group-hover/logo:scale-105 group-hover/logo:opacity-100"
-                    }
-                  />
+                  <span className="relative h-16 w-full max-w-[9rem]">
+                    <Image
+                      src={
+                        landingReferenceLogoSources[reference.name] ??
+                        reference.src
+                      }
+                      alt={reference.name}
+                      fill
+                      sizes="144px"
+                      unoptimized
+                      className="object-contain opacity-90 transition duration-200 group-hover/logo:scale-105 group-hover/logo:opacity-100"
+                    />
+                  </span>
                 </a>
               ))}
             </div>

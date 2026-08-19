@@ -703,12 +703,10 @@ const content = {
       references: {
         intro: {
           eyebrow: "Referenzen",
-          title:
-            "Ein Auszug der Unternehmen, für die RelTest bereits gearbeitet hat",
+          title: "Erfahrung aus anspruchsvollen Entwicklungsprojekten",
           description:
-            "Die Referenzen werden mit den Logos der bisherigen Website gezeigt. So entsteht direkt ein belastbares Signal für Branchennähe, Vertrauen und technische Anschlussfähigkeit.",
+            "Unternehmensnamen und Branchenkontexte zeigen die Erfahrung von RelTest mit unterschiedlichen Produktsystemen, Entwicklungsbedingungen und Risikofeldern.",
         },
-        logoLinkLabel: "Website von {name} öffnen",
       },
       contact: {
         intro: {
@@ -1297,11 +1295,10 @@ const content = {
       references: {
         intro: {
           eyebrow: "References",
-          title: "A selection of companies RelTest has worked with",
+          title: "Experience from demanding development projects",
           description:
-            "The customer logos provide an immediate and credible signal of industry experience, trust and technical compatibility.",
+            "Company names and industry contexts demonstrate RelTest's experience with different product systems, development conditions and fields of risk.",
         },
-        logoLinkLabel: "Open {name} website",
       },
       contact: {
         intro: {
