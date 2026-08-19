@@ -320,11 +320,11 @@ export default async function ExpertisePage({ params }: Props) {
           </div>
           <div className="relative min-h-[25rem] border-t border-white/15 lg:min-h-[39rem] lg:border-t-0 lg:border-l">
             <Image
-              src="/expertise/decision-dashboard.png"
+              src="/expertise/decision-dashboard.webp"
               alt={content.proof.imageAlt}
               fill
-              priority
-              sizes="(min-width: 1024px) 55vw, 100vw"
+              preload
+              sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.45),transparent_52%)]" />
@@ -356,7 +356,7 @@ export default async function ExpertisePage({ params }: Props) {
         <div className="mx-auto grid max-w-7xl border-y border-brand-marine/18 lg:grid-cols-[minmax(0,1.12fr)_minmax(24rem,0.88fr)]">
           <div className="relative min-h-[28rem] border-b border-brand-marine/18 lg:min-h-[42rem] lg:border-r lg:border-b-0">
             <Image
-              src="/expertise/lab-review.png"
+              src="/expertise/lab-review.webp"
               alt={content.reference.imageAlt}
               fill
               sizes="(min-width: 1024px) 58vw, 100vw"
@@ -484,7 +484,7 @@ export default async function ExpertisePage({ params }: Props) {
           <div className="mt-10 grid border border-white/20 lg:grid-cols-[minmax(0,1.25fr)_minmax(23rem,0.75fr)]">
             <div className="relative min-h-[24rem] border-b border-white/20 lg:min-h-[34rem] lg:border-r lg:border-b-0">
               <Image
-                src="/expertise/books-and-methods.png"
+                src="/expertise/books-and-methods.webp"
                 alt={
                   locale === "de"
                     ? "Beide RelTest Springer-Fachbücher auf einem Arbeitstisch mit technischen Notizen"

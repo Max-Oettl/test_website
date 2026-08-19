@@ -5,7 +5,7 @@ import {
   getIndustryDetail,
   getIndustryDetails,
 } from "../../../_content/industry-detail-content";
-import { locales, resolveLocale } from "../../../_i18n/config";
+import { locales, localizeHref, resolveLocale } from "../../../_i18n/config";
 import {
   absoluteUrl,
   buildLocalizedMetadata,
@@ -50,7 +50,7 @@ export default async function IndustryDetailPage({ params }: Props) {
     notFound();
   }
 
-  const localizedPath = `/${locale}/branchen/${page.slug}`;
+  const localizedPath = localizeHref(locale, `/branchen/${page.slug}`);
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -68,7 +68,7 @@ export default async function IndustryDetailPage({ params }: Props) {
           provider: {
             "@type": "Organization",
             name: "RelTest Solutions",
-            url: absoluteUrl(`/${locale}`),
+            url: absoluteUrl(localizeHref(locale, "/")),
           },
         },
       },
@@ -79,13 +79,13 @@ export default async function IndustryDetailPage({ params }: Props) {
             "@type": "ListItem",
             position: 1,
             name: locale === "de" ? "Startseite" : "Home",
-            item: absoluteUrl(`/${locale}`),
+            item: absoluteUrl(localizeHref(locale, "/")),
           },
           {
             "@type": "ListItem",
             position: 2,
             name: locale === "de" ? "Branchen" : "Industries",
-            item: absoluteUrl(`/${locale}/branchen`),
+            item: absoluteUrl(localizeHref(locale, "/branchen")),
           },
           {
             "@type": "ListItem",

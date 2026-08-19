@@ -68,7 +68,7 @@ const solutionServicePages: Record<
         title: "Zuverlässigkeit von Anfang an belastbar entwickeln.",
         description:
           "RelTest übersetzt reale Einsatzbedingungen in klare Zuverlässigkeitsziele, bewertet relevante Ausfallmechanismen und entwickelt Nachweise, die zur Produktreife und zur anstehenden Entscheidung passen.",
-        image: "/team/img-0112.jpg",
+        image: "/team/engineering-simulation-review.jpg",
         imageAlt:
           "RelTest Experten untersuchen ein technisches Bauteil und mögliche Ausfallmechanismen",
       },
@@ -193,7 +193,7 @@ const solutionServicePages: Record<
         title: "Technische Risiken früh erkennen und wirksam absichern.",
         description:
           "RelTest schafft eine belastbare Verbindung zwischen Risikoanalyse, technischer Bewertung und konkreter Absicherung. So werden kritische Schwachstellen nicht nur dokumentiert, sondern gezielt bearbeitet.",
-        image: "/expertise/lab-review.png",
+        image: "/expertise/lab-review.webp",
         imageAlt:
           "Ingenieurteam bewertet technische Risiken und Absicherungsmaßnahmen",
       },
@@ -449,7 +449,7 @@ const solutionServicePages: Record<
         title: "Engineering-Verantwortung verlässlich in Ihr Projekt integrieren.",
         description:
           "RelTest übernimmt klar definierte Arbeitspakete, liefert prüfbare Ergebnisse und arbeitet als verlässlicher Engineering-Partner über einzelne Analysen hinaus. Umfang, Schnittstellen, Abnahme und Verantwortungsrahmen werden vor Projektbeginn eindeutig vereinbart.",
-        image: "/team/engineering-partnership-review-v2.webp",
+        image: "/team/engineering-project-partnership-review.webp",
         imageAlt:
           "Engineering-Team stimmt Arbeitspakete, Schnittstellen und technische Ergebnisse ab",
       },
@@ -576,7 +576,7 @@ const solutionServicePages: Record<
         title: "Develop reliability on a sound basis from the start.",
         description:
           "RelTest translates real operating conditions into clear reliability targets, evaluates relevant failure mechanisms and develops evidence that fits product maturity and the decision at hand.",
-        image: "/team/img-0112.jpg",
+        image: "/team/engineering-simulation-review.jpg",
         imageAlt:
           "RelTest experts examining a technical component and potential failure mechanisms",
       },
@@ -700,7 +700,7 @@ const solutionServicePages: Record<
         title: "Identify technical risks early and control them effectively.",
         description:
           "RelTest creates a robust connection between risk analysis, technical assessment and concrete assurance. Critical weaknesses are not only documented, but actively addressed.",
-        image: "/expertise/lab-review.png",
+        image: "/expertise/lab-review.webp",
         imageAlt:
           "Engineering team assessing technical risks and assurance measures",
       },
@@ -955,7 +955,7 @@ const solutionServicePages: Record<
         title: "Integrate accountable engineering support into your project.",
         description:
           "RelTest takes ownership of clearly defined work packages, delivers verifiable results and supports projects beyond isolated analyses. Scope, interfaces, acceptance and responsibility are agreed before the project begins.",
-        image: "/team/engineering-partnership-review-v2.webp",
+        image: "/team/engineering-project-partnership-review.webp",
         imageAlt:
           "Engineering team aligning work packages, interfaces and technical results",
       },

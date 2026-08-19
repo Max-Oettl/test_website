@@ -184,8 +184,8 @@ export default async function ContactPage({ params }: Props) {
               src="/about/kevin-lucan-professional.webp"
               alt={copy.hero.imageAlt}
               fill
-              priority
-              sizes="(min-width: 1024px) 48vw, 100vw"
+              preload
+              sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
               className="object-cover object-[50%_10%]"
             />
             <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(20,36,82,.94)_0%,rgba(20,36,82,.22)_42%,transparent_68%)]" />

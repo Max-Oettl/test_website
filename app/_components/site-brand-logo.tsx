@@ -11,7 +11,6 @@ export function SiteBrandLogo({ placement }: SiteBrandLogoProps) {
         src="/branding/reltest-horizontal-positive.svg"
         alt="RelTest"
         fill
-        priority
         className="object-contain object-left"
         sizes="(min-width: 640px) 208px, 168px"
       />

@@ -1,6 +1,6 @@
 # URL-Migrationsmatrix
 
-Stand: 21. Juni 2026
+Stand: 19. August 2026
 
 ## Zweck
 
@@ -43,6 +43,23 @@ Wichtig:
   nicht gelistete, aber SEO-relevante URLs zu erkennen.
 - Die Matrix bleibt vor Go-live zu prüfen und um Datenwerte wie Klicks,
   Impressionen und Backlinks zu ergänzen.
+
+## Festgelegte Zielentscheidungen
+
+- Der neue Auftritt enthält bewusst keinen Karrierebereich. Die bisherigen
+  Karriere-URLs werden per `301` auf die jeweilige Sprachversion von
+  `Wir sind RelTest` weitergeleitet und nicht in der XML-Sitemap geführt.
+- `/de|en/weiterbildung/seminare` und `/de|en/weiterbildung/academy` sind
+  reine Weiterleitungsziele in die Education-Seite und deshalb nicht als
+  eigenständige Sitemap-URLs gelistet.
+- Die deutsche News-Struktur bleibt unter `/de/aktuelles/...`; die englische
+  Struktur verwendet kanonisch `/en/news/...`.
+- Alle öffentlichen englischen URLs verwenden englische Slugs, zum Beispiel
+  `/en/services`, `/en/knowledge`, `/en/industries`, `/en/about-us`,
+  `/en/contact`, `/en/legal-notice` und `/en/privacy-policy`.
+- Frühere englische URLs mit deutschen Slugs sowie bestehende WordPress-Pfade
+  werden per `301` ohne Redirect-Kette auf die kanonische englische Ziel-URL
+  geführt. Die Zuordnung ist zentral in `app/_i18n/routes.ts` definiert.
 
 Weitere Daten werden ergänzt, sobald sie aus folgenden Quellen vorliegen:
 

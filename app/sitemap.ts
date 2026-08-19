@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { getDetailPages } from "./_content/migration-pages";
 import { getKnowledgeArticles } from "./_content/knowledge-content";
 import { locales, type Locale } from "./_i18n/config";
+import { localizedPath } from "./_i18n/routes";
 import { absoluteUrl } from "./_seo/metadata";
 
 const staticPaths = [
@@ -18,7 +19,6 @@ const staticPaths = [
   "/branchen",
   "/ueber-uns",
   "/aktuelles",
-  "/karriere",
   "/glossar",
   "/impressum",
   "/datenschutz",
@@ -30,15 +30,16 @@ const detailGroups = [
   ["industries", "/branchen"],
   ["people", "/ueber-uns"],
   ["news", "/aktuelles"],
-  ["careers", "/karriere"],
 ] as const;
+
+const redirectOnlyEducationSlugs = new Set(["seminare", "academy"]);
 
 function localizedAlternates(path: string) {
   return {
     languages: {
-      de: absoluteUrl(`/de${path}`),
-      en: absoluteUrl(`/en${path}`),
-      "x-default": absoluteUrl(`/de${path}`),
+      de: absoluteUrl(localizedPath("de", path || "/")),
+      en: absoluteUrl(localizedPath("en", path)),
+      "x-default": absoluteUrl(localizedPath("de", path || "/")),
     },
   };
 }
@@ -48,10 +49,10 @@ function sitemapEntry(
   path: string,
   priority: number,
 ): MetadataRoute.Sitemap[number] {
-  const localizedPath = `/${locale}${path}`;
+  const publicPath = localizedPath(locale, path || "/");
 
   return {
-    url: absoluteUrl(localizedPath),
+    url: absoluteUrl(publicPath),
     lastModified: "2026-08-12",
     changeFrequency: "monthly",
     priority,
@@ -68,9 +69,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const detailEntries = detailGroups.flatMap(([group, basePath]) =>
     locales.flatMap((locale) =>
-      getDetailPages(group, locale).map((page) =>
-        sitemapEntry(locale, `${basePath}/${page.slug}`, 0.68),
-      ),
+      getDetailPages(group, locale)
+        .filter(
+          (page) =>
+            group !== "education" ||
+            !redirectOnlyEducationSlugs.has(page.slug),
+        )
+        .map((page) =>
+          sitemapEntry(locale, `${basePath}/${page.slug}`, 0.68),
+        ),
     ),
   );
 

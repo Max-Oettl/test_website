@@ -33,7 +33,7 @@ const industriesContent = {
         title: "Automotive",
         description:
           "Hohe Stückzahlen, kurze Entwicklungszyklen und Sicherheitsanforderungen machen belastbare Prüf- und Nachweisstrategien entscheidend.",
-        image: "/industries/automotive.png",
+        image: "/industries/automotive.webp",
         alt: "Automotive-Antriebsstrang in einem technischen Prüfumfeld",
       },
       {
@@ -41,7 +41,7 @@ const industriesContent = {
         title: "Maschinenbau",
         description:
           "Variable Lasten, Verschleiß und lange Nutzungszeiten verlangen eine realistische Lebensdauerbewertung und wirtschaftliche Erprobung.",
-        image: "/industries/maschinenbau.png",
+        image: "/industries/maschinenbau.webp",
         alt: "Mechanisches Getriebe für industrielle Anwendungen",
       },
       {
@@ -49,7 +49,7 @@ const industriesContent = {
         title: "Elektronische Produkte",
         description:
           "Temperatur, Feuchte, Alterung und Bauteilstreuung müssen gemeinsam bewertet werden, damit Tests relevante Ausfallmechanismen treffen.",
-        image: "/industries/elektronische-produkte.png",
+        image: "/industries/elektronische-produkte.webp",
         alt: "Elektronische Baugruppe während einer technischen Messung",
       },
       {
@@ -57,7 +57,7 @@ const industriesContent = {
         title: "Halbleiterindustrie",
         description:
           "Enge Prozessfenster und hohe Datendichte erfordern eine saubere Trennung von Streuung, Einflussgrößen und tatsächlichen Risiken.",
-        image: "/industries/halbleiterindustrie.png",
+        image: "/industries/halbleiterindustrie.webp",
         alt: "Halbleiter-Wafer in einer präzisen Fertigungsumgebung",
       },
       {
@@ -65,7 +65,7 @@ const industriesContent = {
         title: "Consumer-Technik",
         description:
           "Vielfältige Nutzung trifft auf hohe Kundenerwartungen und Kostendruck. Zuverlässigkeit muss deshalb früh und effizient abgesichert werden.",
-        image: "/industries/consumer-technik-v2.png",
+        image: "/industries/consumer-products-reliability-testing.webp",
         alt: "Consumer-Elektronik in einem Zuverlässigkeitslabor",
       },
       {
@@ -73,7 +73,7 @@ const industriesContent = {
         title: "Erneuerbare Energien",
         description:
           "Lange Betriebszeiten, wechselnde Umweltbedingungen und schwer zugängliche Systeme erhöhen die Bedeutung belastbarer Prognosen.",
-        image: "/industries/erneuerbare-energien.png",
+        image: "/industries/erneuerbare-energien.webp",
         alt: "Technische Komponenten für erneuerbare Energiesysteme",
       },
       {
@@ -81,7 +81,7 @@ const industriesContent = {
         title: "Medizintechnik",
         description:
           "Technische Risiken, Nachweise und Dokumentation müssen konsequent zusammenspielen, weil Ausfälle unmittelbare Folgen haben können.",
-        image: "/industries/medizintechnik-v2.png",
+        image: "/industries/medical-device-reliability-testing.webp",
         alt: "Medizintechnisches System in einem technischen Labor",
       },
       {
@@ -89,7 +89,7 @@ const industriesContent = {
         title: "Luft- und Raumfahrt",
         description:
           "Hohe Sicherheitsanforderungen verlangen nachvollziehbare Risikobewertungen, robuste Nachweise und lückenlose technische Argumentation.",
-        image: "/industries/luft-und-raumfahrt-v2.png",
+        image: "/industries/aerospace-reliability-engineering.webp",
         alt: "Luft- und Raumfahrtkomponente während einer Präzisionsprüfung",
       },
       {
@@ -97,7 +97,7 @@ const industriesContent = {
         title: "Produktionstechnik",
         description:
           "Stillstände wirken direkt auf Ausbringung, Qualität und Kosten. Betriebs- und Ausfalldaten machen kritische Komponenten früh sichtbar.",
-        image: "/expertise/lab-review.png",
+        image: "/expertise/lab-review.webp",
         alt: "Ingenieurteam bei der Analyse eines industriellen Prüfsystems",
       },
     ],
@@ -132,7 +132,7 @@ const industriesContent = {
         title: "Automotive",
         description:
           "High volumes, short development cycles and safety requirements make robust test and evidence strategies essential.",
-        image: "/industries/automotive.png",
+        image: "/industries/automotive.webp",
         alt: "Automotive powertrain in a technical test environment",
       },
       {
@@ -140,7 +140,7 @@ const industriesContent = {
         title: "Mechanical engineering",
         description:
           "Variable loads, wear and long operating periods require realistic lifetime assessment and economical testing.",
-        image: "/industries/maschinenbau.png",
+        image: "/industries/maschinenbau.webp",
         alt: "Mechanical gearbox for industrial applications",
       },
       {
@@ -148,7 +148,7 @@ const industriesContent = {
         title: "Electronic products",
         description:
           "Temperature, humidity, ageing and component variation must be assessed together so that tests address relevant failure mechanisms.",
-        image: "/industries/elektronische-produkte.png",
+        image: "/industries/elektronische-produkte.webp",
         alt: "Electronic assembly during technical measurement",
       },
       {
@@ -156,7 +156,7 @@ const industriesContent = {
         title: "Semiconductor industry",
         description:
           "Tight process windows and high data density demand a clear separation of variation, influencing factors and actual risks.",
-        image: "/industries/halbleiterindustrie.png",
+        image: "/industries/halbleiterindustrie.webp",
         alt: "Semiconductor wafer in a precision manufacturing environment",
       },
       {
@@ -164,7 +164,7 @@ const industriesContent = {
         title: "Consumer technology",
         description:
           "Diverse use meets high customer expectations and cost pressure. Reliability therefore needs to be validated early and efficiently.",
-        image: "/industries/consumer-technik-v2.png",
+        image: "/industries/consumer-products-reliability-testing.webp",
         alt: "Consumer electronics in a reliability laboratory",
       },
       {
@@ -172,7 +172,7 @@ const industriesContent = {
         title: "Renewable energy",
         description:
           "Long operating periods, changing environmental conditions and hard-to-access systems increase the importance of robust predictions.",
-        image: "/industries/erneuerbare-energien.png",
+        image: "/industries/erneuerbare-energien.webp",
         alt: "Technical components for renewable energy systems",
       },
       {
@@ -180,7 +180,7 @@ const industriesContent = {
         title: "Medical technology",
         description:
           "Technical risks, evidence and documentation must work together consistently because failures can have immediate consequences.",
-        image: "/industries/medizintechnik-v2.png",
+        image: "/industries/medical-device-reliability-testing.webp",
         alt: "Medical technology system in a technical laboratory",
       },
       {
@@ -188,7 +188,7 @@ const industriesContent = {
         title: "Aerospace",
         description:
           "High safety requirements demand traceable risk assessments, robust evidence and complete technical reasoning.",
-        image: "/industries/luft-und-raumfahrt-v2.png",
+        image: "/industries/aerospace-reliability-engineering.webp",
         alt: "Aerospace component undergoing precision testing",
       },
       {
@@ -196,7 +196,7 @@ const industriesContent = {
         title: "Production technology",
         description:
           "Downtime directly affects output, quality and costs. Operating and failure data reveal critical components early.",
-        image: "/expertise/lab-review.png",
+        image: "/expertise/lab-review.webp",
         alt: "Engineering team analysing an industrial test system",
       },
     ],
@@ -277,8 +277,7 @@ export default async function IndustriesPage({ params }: Props) {
                   src={industry.image}
                   alt=""
                   fill
-                  priority
-                  sizes="(min-width: 1024px) 28vw, 50vw"
+                  sizes="(min-width: 1280px) 352px, (min-width: 1024px) 27vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-brand-marine/45" />

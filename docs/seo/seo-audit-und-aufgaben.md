@@ -326,24 +326,28 @@ Auf der Wissensseite steht mehrfach sinngemäß `Inhalt folgt`. Die fünf Themen
 
 ### P0.9 Englische URLs und bestehende englische Pfade strategisch festlegen
 
-**Befund**
+**Umsetzungsstand: abgeschlossen am 19. August 2026**
 
-Die englische Website verwendet aktuell deutsche Slugs:
+Die englische Website verwendet kanonische, englische Slugs. Beispiele:
 
-- `/en/leistungen`
-- `/en/weiterbildung`
-- `/en/wissen`
-- `/en/kontakt`
+- `/en/services`
+- `/en/education`
+- `/en/knowledge`
+- `/en/contact`
+- `/en/industries`
+- `/en/about-us`
+- `/en/news`
 
-Die bestehende Website verwendet englische URLs wie `/en/contact/`, `/en/credentials/` und `/en/reliability-engineering/`.
+Die frühere Next.js-Struktur mit deutschen Slugs unter `/en` sowie bestehende WordPress-Pfade wie `/en/credentials/` und `/en/reliability-engineering/` werden per `301` auf die jeweils inhaltlich passende kanonische URL weitergeleitet.
 
 **Aufgabe**
 
-- [ ] Vor Go-live entscheiden, ob englische Slugs verwendet werden.
-- [ ] Bevorzugte englische Zielstruktur festlegen, zum Beispiel `/en/services`, `/en/training`, `/en/knowledge`, `/en/contact`.
-- [ ] Bereits bestehende englische URLs und deren Signale berücksichtigen.
+- [x] Englische Slugs als kanonische Zielstruktur festlegen.
+- [x] Englische Zielstruktur für Leistungen, Wissen, Branchen, News, Kontakt und Rechtstexte umsetzen.
+- [x] Bestehende englische WordPress-URLs und frühere interne Next.js-Pfade berücksichtigen.
+- [x] Altpfade per permanentem Redirect ohne Redirect-Kette auflösen.
+- [x] Canonicals, `hreflang`, Sitemap, Sprachumschalter und interne Links auf dieselbe Zuordnung umstellen.
 - [ ] Nach dem Go-live keine erneute URL-Umstellung ohne zwingenden Grund durchführen.
-- [ ] Alle Altpfade in die Redirect-Matrix aufnehmen.
 
 **Abnahmekriterium**
 

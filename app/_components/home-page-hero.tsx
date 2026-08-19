@@ -26,7 +26,7 @@ const conceptContent = {
           "RelTest steht für Ingenieursberatung in Zuverlässigkeitstechnik und Risikomanagement – von der Entwicklung bis zur Freigabe.",
         cta: "Zuverlässigkeitstechnik ansehen",
         href: "/leistungen/zuverlaessigkeitstechnik",
-        image: "/team/home-engineering-consulting.png",
+        image: "/team/home-engineering-consulting.webp",
         imagePosition:
           "object-[50%_48%] sm:translate-x-[14%] sm:translate-y-[8%] sm:scale-[1.3] sm:object-center",
       },
@@ -85,7 +85,7 @@ const conceptContent = {
           "RelTest provides engineering consulting in reliability and risk management – from development through release.",
         cta: "Explore reliability engineering",
         href: "/leistungen/zuverlaessigkeitstechnik",
-        image: "/team/home-engineering-consulting.png",
+        image: "/team/home-engineering-consulting.webp",
         imagePosition:
           "object-[50%_48%] sm:translate-x-[14%] sm:translate-y-[8%] sm:scale-[1.3] sm:object-center",
       },
@@ -159,21 +159,47 @@ export function HomePageHero({
   const content = conceptContent[locale];
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [loadedSlideIndexes, setLoadedSlideIndexes] = useState(
+    () => new Set([0]),
+  );
   const activeSlide = content.slides[activeIndex];
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const nextIndex = (activeIndex + 1) % content.slides.length;
+    const timer = window.setTimeout(() => {
+      setLoadedSlideIndexes((current) => {
+        if (current.has(nextIndex)) {
+          return current;
+        }
+
+        const next = new Set(current);
+        next.add(nextIndex);
+        return next;
+      });
+    }, 4800);
+
+    return () => window.clearTimeout(timer);
+  }, [activeIndex, content.slides.length]);
 
   useEffect(() => {
     if (isPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
 
-    const timer = window.setInterval(() => {
+    const timer = window.setTimeout(() => {
+      const nextIndex = (activeIndex + 1) % content.slides.length;
+
       startTransition(() => {
-        setActiveIndex((current) => (current + 1) % content.slides.length);
+        setActiveIndex(nextIndex);
       });
     }, 6500);
 
-    return () => window.clearInterval(timer);
-  }, [content.slides.length, isPaused]);
+    return () => window.clearTimeout(timer);
+  }, [activeIndex, content.slides.length, isPaused]);
 
   return (
     <section className="winnstein-hero border-t border-line-soft bg-white">
@@ -189,6 +215,10 @@ export function HomePageHero({
       >
         <div className="relative min-h-[40rem] overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[36rem]">
           {content.slides.map((slide, index) => {
+            if (!loadedSlideIndexes.has(index)) {
+              return null;
+            }
+
             const isActive = index === activeIndex;
 
             return (
@@ -205,10 +235,10 @@ export function HomePageHero({
                   src={slide.image}
                   alt=""
                   fill
-                  priority={index === 0}
+                  preload={index === 0}
                   aria-hidden="true"
                   className={`object-cover ${slide.imagePosition}`}
-                  sizes="(min-width: 1280px) 110rem, 100vw"
+                  sizes="(min-width: 1536px) 1408px, (min-width: 1280px) calc(100vw - 128px), (min-width: 1024px) calc(100vw - 96px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 40px)"
                 />
               </div>
             );
@@ -261,6 +291,15 @@ export function HomePageHero({
                   key={slide.title}
                   type="button"
                   onClick={() => {
+                    setLoadedSlideIndexes((current) => {
+                      if (current.has(index)) {
+                        return current;
+                      }
+
+                      const next = new Set(current);
+                      next.add(index);
+                      return next;
+                    });
                     startTransition(() => setActiveIndex(index));
                   }}
                   className={

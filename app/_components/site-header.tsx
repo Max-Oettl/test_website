@@ -187,7 +187,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
         <div className="site-header-actions hidden items-center gap-3 xl:flex">
           <Link
-            href={localizeHref(locale, "/kontakt#anfrageformular")}
+            href={localizeHref(locale, "/kontakt")}
             className="brand-action site-header-cta whitespace-nowrap bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan"
           >
             {navigation.inquiry}
@@ -287,7 +287,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
               );
             })}
             <Link
-              href={localizeHref(locale, "/kontakt#anfrageformular")}
+              href={localizeHref(locale, "/kontakt")}
               className="brand-action site-header-cta mt-2 flex bg-brand-marine px-4 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan/40"
             >
               {navigation.inquiry}

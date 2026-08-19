@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { startTransition, useEffect, useRef } from "react";
 
 import type { Locale } from "../_i18n/config";
+import { switchLocalePathname } from "../_i18n/routes";
 
 type LanguageSwitcherProps = {
   locale: Locale;
@@ -61,9 +62,7 @@ export function LanguageSwitcher({
       return;
     }
 
-    const segments = pathname.split("/");
-    segments[1] = nextLocale;
-    const nextPathname = segments.join("/") || `/${nextLocale}`;
+    const nextPathname = switchLocalePathname(pathname, nextLocale);
     const nextPath =
       typeof window === "undefined"
         ? nextPathname

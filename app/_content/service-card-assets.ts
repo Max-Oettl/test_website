@@ -9,12 +9,12 @@ export type ServiceCardImage = {
 export const serviceCardImages = {
   de: {
     "/leistungen/zuverlaessigkeitstechnik": {
-      src: "/team/img-0112.jpg",
+      src: "/team/engineering-simulation-review.jpg",
       alt: "RelTest Experten analysieren ein technisches Bauteil und Ausfallmechanismen",
       label: "Zuverlässigkeitstechnik",
     },
     "/leistungen/risikomanagement": {
-      src: "/expertise/lab-review.png",
+      src: "/expertise/lab-review.webp",
       alt: "Technisches Team bewertet Risiken und Absicherungsmaßnahmen",
       label: "Risiko und Absicherung",
     },
@@ -24,12 +24,12 @@ export const serviceCardImages = {
       label: "Test und Datenanalyse",
     },
     "/leistungen/beratung": {
-      src: "/team/img-0112.jpg",
+      src: "/team/engineering-simulation-review.jpg",
       alt: "RelTest Experten analysieren ein technisches Bauteil und Ausfallmechanismen",
       label: "Technische Beratung",
     },
     "/weiterbildung/seminare": {
-      src: "/team/img-0107.png",
+      src: "/team/reliability-engineering-seminar.webp",
       alt: "RelTest Seminar zur Zuverlässigkeitstechnik vor Ort",
       label: "Direkter Wissenstransfer",
     },
@@ -39,19 +39,19 @@ export const serviceCardImages = {
       label: "Digital lernen",
     },
     "/leistungen/langfristige-kooperation": {
-      src: "/team/img-0139.jpg",
+      src: "/team/reliability-test-laboratory.jpg",
       alt: "RelTest Experte unterstützt technische Absicherung an einem Prüfstand",
       label: "Projektbegleitung",
     },
   },
   en: {
     "/leistungen/zuverlaessigkeitstechnik": {
-      src: "/team/img-0112.jpg",
+      src: "/team/engineering-simulation-review.jpg",
       alt: "RelTest experts analysing a technical component and failure mechanisms",
       label: "Reliability engineering",
     },
     "/leistungen/risikomanagement": {
-      src: "/expertise/lab-review.png",
+      src: "/expertise/lab-review.webp",
       alt: "Technical team assessing risks and validation measures",
       label: "Risk and validation",
     },
@@ -61,12 +61,12 @@ export const serviceCardImages = {
       label: "Testing and data analysis",
     },
     "/leistungen/beratung": {
-      src: "/team/img-0112.jpg",
+      src: "/team/engineering-simulation-review.jpg",
       alt: "RelTest experts analysing a technical component and failure mechanisms",
       label: "Technical consulting",
     },
     "/weiterbildung/seminare": {
-      src: "/team/img-0107.png",
+      src: "/team/reliability-engineering-seminar.webp",
       alt: "RelTest on-site seminar on reliability engineering",
       label: "Direct knowledge transfer",
     },
@@ -76,7 +76,7 @@ export const serviceCardImages = {
       label: "Digital learning",
     },
     "/leistungen/langfristige-kooperation": {
-      src: "/team/img-0139.jpg",
+      src: "/team/reliability-test-laboratory.jpg",
       alt: "RelTest expert supporting technical validation at a test bench",
       label: "Project support",
     },

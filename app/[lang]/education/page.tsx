@@ -215,7 +215,6 @@ export default async function EducationPage({ params }: Props) {
                 alt="RelTest Education"
                 width={466}
                 height={226}
-                priority
                 className="h-auto w-60 sm:w-72"
               />
             </div>
@@ -259,11 +258,12 @@ export default async function EducationPage({ params }: Props) {
 
           <div className="relative min-h-[24rem] border-t border-white/15 lg:min-h-[36rem] lg:border-t-0 lg:border-l">
             <Image
-              src="/education/digital-reliability-learning-hero-ai.webp"
+              src="/education/digital-reliability-engineering-elearning.webp"
               alt={copy.hero.imageAlt}
               fill
-              priority
-              sizes="(min-width: 1024px) 55vw, 100vw"
+              preload
+              unoptimized
+              sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
               className="object-cover object-[55%_center]"
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.2),transparent_30%)]" />
@@ -392,7 +392,7 @@ export default async function EducationPage({ params }: Props) {
           >
             <div className="relative min-h-[20rem] lg:min-h-[32rem]">
               <Image
-                src="/team/img-0107.png"
+                src="/team/reliability-engineering-seminar.webp"
                 alt={
                   locale === "de"
                     ? "RelTest Experten vermitteln Zuverlässigkeitstechnik in einer Vor-Ort-Schulung"

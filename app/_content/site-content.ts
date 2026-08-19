@@ -4,108 +4,108 @@ const shared = {
   referenceLogos: [
     {
       name: "Aesculap",
-      src: "/references/aesculp.jpg",
+      src: "/references/aesculap-logo.jpg",
       href: "https://www.aesculap.com/",
     },
     {
       name: "ASYS",
-      src: "/references/asys.jpg",
+      src: "/references/asys-group-logo.jpg",
       href: "https://www.asys-group.com/",
     },
     {
       name: "Bosch",
-      src: "/references/bosch.jpg",
+      src: "/references/bosch-logo.jpg",
       href: "https://www.bosch.com/",
     },
     {
       name: "ebm-papst",
-      src: "/references/ebm-papst.png",
+      src: "/references/ebm-papst-logo.png",
       href: "https://www.ebmpapst.com/",
     },
     {
       name: "EKK",
-      src: "/references/ekk.jpg",
+      src: "/references/ekk-eagle-logo.jpg",
       href: "https://www.ekkeagle.com/en/",
     },
     {
       name: "Hofer Powertrain",
-      src: "/references/hofer_power.jpg",
+      src: "/references/hofer-powertrain-logo.jpg",
       href: "https://www.hoferpowertrain.com/",
     },
     {
       name: "Hyundai",
-      src: "/references/hyundai.jpg",
+      src: "/references/hyundai-logo.jpg",
       href: "https://www.hyundai.com/worldwide/en/",
     },
     {
       name: "Kärcher",
-      src: "/references/117-karcher_logo.jpg",
+      src: "/references/kaercher-logo.jpg",
       href: "https://www.kaercher.com/",
     },
     {
       name: "Knorr-Bremse",
-      src: "/references/knorr.jpg",
+      src: "/references/knorr-bremse-logo.jpg",
       href: "https://www.knorr-bremse.com/",
     },
     {
       name: "Kostyrka",
-      src: "/references/kostyrka.jpg",
+      src: "/references/kostyrka-logo.jpg",
       href: "https://www.kostyrka.com/",
     },
     {
       name: "Leica Biosystems",
-      src: "/references/Leica.png",
+      src: "/references/leica-biosystems-logo.png",
       href: "https://www.leicabiosystems.com/",
     },
     {
       name: "Leybold",
-      src: "/references/leybold.png",
+      src: "/references/leybold-logo.png",
       href: "https://www.leybold.com/",
     },
     {
       name: "Mercedes-Benz",
-      src: "/references/Mercedes-Benz-logo.png",
+      src: "/references/mercedes-benz-logo.png",
       href: "https://www.mercedes-benz.com/",
     },
     {
       name: "MTU",
-      src: "/references/mtu.jpg",
+      src: "/references/mtu-solutions-logo.jpg",
       href: "https://www.mtu-solutions.com/",
     },
     {
       name: "Nidec",
-      src: "/references/nidec.jpg",
+      src: "/references/nidec-logo.jpg",
       href: "https://www.nidec.com/en/",
     },
     {
       name: "Olympus",
-      src: "/references/olympus.jpg",
+      src: "/references/olympus-logo.jpg",
       href: "https://www.olympus-global.com/",
     },
     {
       name: "Optibelt",
-      src: "/references/optibelt.jpg",
+      src: "/references/optibelt-logo.jpg",
       href: "https://www.optibelt.com/",
     },
     {
       name: "PI",
-      src: "/references/PI.jpg",
+      src: "/references/physik-instrumente-logo.jpg",
       href: "https://www.physikinstrumente.com/",
     },
     {
       name: "Porsche",
-      src: "/references/porsche.png",
+      src: "/references/porsche-logo.png",
       href: "https://www.porsche.com/",
     },
-    { name: "SMA", src: "/references/sma.jpg", href: "https://www.sma.de/" },
+    { name: "SMA", src: "/references/sma-logo.jpg", href: "https://www.sma.de/" },
     {
       name: "Stihl",
-      src: "/references/stihl.png",
+      src: "/references/stihl-logo.png",
       href: "https://www.stihl.com/",
     },
     {
       name: "Testo",
-      src: "/references/testo.jpg",
+      src: "/references/testo-logo.jpg",
       href: "https://www.testo.com/",
     },
     {
@@ -115,20 +115,20 @@ const shared = {
     },
     {
       name: "Walther Flender",
-      src: "/references/walther.jpg",
+      src: "/references/walther-flender-logo.jpg",
       href: "https://www.walther-flender.de/",
     },
     {
       name: "Weber-Hydraulik",
-      src: "/references/weber.png",
+      src: "/references/weber-hydraulik-logo.png",
       href: "https://www.weber-hydraulik.com/",
     },
     {
       name: "ZEISS",
-      src: "/references/zeiss.png",
+      src: "/references/zeiss-logo.png",
       href: "https://www.zeiss.com/",
     },
-    { name: "ZF", src: "/references/zf.jpg", href: "https://www.zf.com/" },
+    { name: "ZF", src: "/references/zf-logo.jpg", href: "https://www.zf.com/" },
   ],
   books: {
     reliabilityTests: {
@@ -578,7 +578,7 @@ const content = {
         cardImages: [
           {
             label: "Direkt vor Ort",
-            src: "/team/img-0107.png",
+            src: "/team/reliability-engineering-seminar.webp",
             alt: "RelTest Seminar zur Zuverlässigkeitstechnik vor Ort",
           },
           {
@@ -1172,7 +1172,7 @@ const content = {
         cardImages: [
           {
             label: "On-site exchange",
-            src: "/team/img-0107.png",
+            src: "/team/reliability-engineering-seminar.webp",
             alt: "RelTest on-site seminar on reliability engineering",
           },
           {

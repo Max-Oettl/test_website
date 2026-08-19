@@ -72,24 +72,50 @@ export default async function LocaleLayout({
   const locale = await resolveLocale(params);
   const organizationJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "RelTest Solutions GmbH",
-    url: siteUrl,
-    logo: absoluteUrl("/branding/reltest-horizontal-positive.svg"),
-    email: "info@reltest-solutions.com",
-    telephone: "+49 711 25253531",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Steglen 26",
-      postalCode: "71083",
-      addressLocality: "Herrenberg",
-      addressCountry: "DE",
-    },
-    sameAs: [
-      "https://www.linkedin.com/company/reltest-solutions",
-      "https://reltest-academy.com/",
-      "https://link.springer.com/book/10.1007/978-3-662-65024-0",
-      "https://link.springer.com/book/9783662729663",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "RelTest Solutions GmbH",
+        alternateName: "RelTest",
+        url: siteUrl,
+        logo: {
+          "@type": "ImageObject",
+          url: absoluteUrl("/branding/reltest-horizontal-positive.svg"),
+        },
+        email: "info@reltest-solutions.com",
+        telephone: "+49 711 25253531",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Steglen 26",
+          postalCode: "71083",
+          addressLocality: "Herrenberg",
+          addressCountry: "DE",
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "customer service",
+          email: "info@reltest-solutions.com",
+          telephone: "+49 711 25253531",
+          availableLanguage: ["de", "en"],
+        },
+        sameAs: ["https://www.linkedin.com/company/reltest-solutions"],
+        knowsAbout: [
+          "Reliability Engineering",
+          "Zuverlässigkeitstechnik",
+          "Technisches Risikomanagement",
+          "Design of Experiments",
+          "Lebensdauererprobung",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "RelTest",
+        inLanguage: ["de-DE", "en-US"],
+        publisher: { "@id": `${siteUrl}/#organization` },
+      },
     ],
   };
 
@@ -109,7 +135,7 @@ export default async function LocaleLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd),
+            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
           }}
         />
       </body>

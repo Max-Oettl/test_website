@@ -103,11 +103,11 @@ export default async function LiteraturePage({ params }: Props) {
 
           <div className="relative min-h-[25rem] border-t border-white/18 lg:min-h-[38rem] lg:border-t-0 lg:border-l">
             <Image
-              src="/expertise/books-and-methods.png"
+              src="/expertise/books-and-methods.webp"
               alt=""
               fill
-              priority
-              sizes="(min-width: 1024px) 55vw, 100vw"
+              preload
+              sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,36,82,.28),transparent_45%)]" />

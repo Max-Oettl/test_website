@@ -61,7 +61,7 @@ const de: IndustryDetailContent[] = [
       "Reliability Engineering für Automotive: Lebensdauererprobung, Risikomanagement, DoE, Felddatenanalyse und belastbare Zuverlässigkeitsnachweise.",
     heroLead:
       "Kurze Entwicklungszyklen, hohe Stückzahlen und sehr unterschiedliche Nutzungsprofile verlangen eine Absicherung, die reale Belastungen, Ausfallmechanismen und Freigabeziele zusammenführt.",
-    heroImage: "/industries/automotive.png",
+    heroImage: "/industries/automotive.webp",
     heroAlt:
       "Automotive-Antriebsstrang in einer technischen Erprobungsumgebung",
     heroCta: "Automotive-Projekt besprechen",
@@ -167,7 +167,7 @@ const de: IndustryDetailContent[] = [
       "Zuverlässigkeitstechnik im Maschinenbau: Lebensdauerbewertung, Verschleiß, Erprobungsstrategie, Weibull-Analyse und Verfügbarkeitsbewertung.",
     heroLead:
       "Variable Lasten, lange Einsatzzeiten und teure Stillstände machen Zuverlässigkeit zu einer technischen und wirtschaftlichen Kenngröße.",
-    heroImage: "/industries/maschinenbau.png",
+    heroImage: "/industries/maschinenbau.webp",
     heroAlt:
       "Industriegetriebe als Beispiel für zuverlässigkeitskritische Maschinenbaukomponenten",
     heroCta: "Maschinenbau-Projekt besprechen",
@@ -269,7 +269,7 @@ const de: IndustryDetailContent[] = [
       "Reliability Engineering für Elektronik: Umwelterprobung, thermische Zyklen, Alterung, DoE, Ausfallmechanismen und Lebensdauerbewertung.",
     heroLead:
       "Temperatur, Feuchte, Vibration, elektrische Belastung und Bauteilstreuung wirken gleichzeitig. Gute Absicherung prüft deshalb Mechanismen und nicht nur Normprofile.",
-    heroImage: "/industries/elektronische-produkte.png",
+    heroImage: "/industries/elektronische-produkte.webp",
     heroAlt:
       "Elektronische Baugruppe während einer technischen Zuverlässigkeitsmessung",
     heroCta: "Elektronik-Projekt besprechen",
@@ -375,7 +375,7 @@ const de: IndustryDetailContent[] = [
       "Reliability Engineering für Halbleiter: DoE, Prozessstreuung, AEC-Q100-Kontext, IEC 60749, Lebensdauertests und statistische Datenanalyse.",
     heroLead:
       "Enge Prozessfenster, hohe Datendichte und neue Technologien verlangen eine klare Trennung von Prozessstreuung, Messunsicherheit und tatsächlicher Zuverlässigkeitsänderung.",
-    heroImage: "/industries/halbleiterindustrie.png",
+    heroImage: "/industries/halbleiterindustrie.webp",
     heroAlt:
       "Halbleiter-Wafer in einer präzisen Fertigungs- und Prüfumgebung",
     heroCta: "Halbleiter-Projekt besprechen",
@@ -481,7 +481,7 @@ const de: IndustryDetailContent[] = [
       "Zuverlässigkeit für Consumer-Technik: Nutzungsprofile, Robust Design, beschleunigte Tests, DoE, Rückläuferdaten und wirtschaftliche Absicherung.",
     heroLead:
       "Vielfältige Nutzung, hoher Kostendruck und kurze Produktzyklen erfordern eine Absicherung, die schnell lernt und dennoch relevante Ausfallrisiken trifft.",
-    heroImage: "/industries/consumer-technik-v2.png",
+    heroImage: "/industries/consumer-products-reliability-testing.webp",
     heroAlt:
       "Consumer-Elektronik und Smart Devices in einem Zuverlässigkeitslabor",
     heroCta: "Consumer-Produkt besprechen",
@@ -587,7 +587,7 @@ const de: IndustryDetailContent[] = [
       "Reliability Engineering für erneuerbare Energien: Windenergie, Lebensdauerprognose, Felddatenanalyse, Verfügbarkeit und risikobasierte Erprobung.",
     heroLead:
       "Lange Laufzeiten, wechselnde Umweltbedingungen und schwer zugängliche Anlagen machen Prognosen, Verfügbarkeit und wartungsarme Konstruktionen zum Geschäftsfaktor.",
-    heroImage: "/industries/erneuerbare-energien.png",
+    heroImage: "/industries/erneuerbare-energien.webp",
     heroAlt:
       "Technische Komponenten und Prüfumgebung für erneuerbare Energiesysteme",
     heroCta: "Energie-Projekt besprechen",
@@ -689,7 +689,7 @@ const de: IndustryDetailContent[] = [
       "Zuverlässigkeitstechnik für Medizintechnik: ISO-14971-Kontext, Risikoanalyse, Verifikation, Lebensdauererprobung und technische Dokumentation.",
     heroLead:
       "Technische Funktion, Patientensicherheit und nachvollziehbare Dokumentation müssen über den gesamten Produktlebenszyklus konsistent zusammenwirken.",
-    heroImage: "/industries/medizintechnik-v2.png",
+    heroImage: "/industries/medical-device-reliability-testing.webp",
     heroAlt:
       "Medizintechnisches System in einer technischen Entwicklungs- und Prüfumgebung",
     heroCta: "Medizintechnik-Projekt besprechen",
@@ -795,7 +795,7 @@ const de: IndustryDetailContent[] = [
       "Reliability Engineering für Luft- und Raumfahrt: Dependability, FMEA, FTA, Lebensdauer, Umwelterprobung und nachvollziehbare Nachweise.",
     heroLead:
       "Geringe Stückzahlen, extreme Umgebungen und hohe Ausfallfolgen verlangen eine Absicherung, die Risiken systematisch beherrscht und jede Annahme nachvollziehbar macht.",
-    heroImage: "/industries/luft-und-raumfahrt-v2.png",
+    heroImage: "/industries/aerospace-reliability-engineering.webp",
     heroAlt:
       "Luft- und Raumfahrtkomponente während einer präzisen technischen Prüfung",
     heroCta: "Aerospace-Projekt besprechen",
@@ -897,7 +897,7 @@ const de: IndustryDetailContent[] = [
       "Reliability Engineering für Produktionstechnik: Anlagenverfügbarkeit, Ausfalldaten, Schwachstellenanalyse, Wartung und Lebensdauerprognose.",
     heroLead:
       "Ungeplante Stillstände wirken unmittelbar auf Ausbringung, Qualität und Lieferfähigkeit. Betriebs- und Instandhaltungsdaten können diese Risiken messbar machen.",
-    heroImage: "/expertise/lab-review.png",
+    heroImage: "/expertise/lab-review.webp",
     heroAlt:
       "Ingenieurteam bei der Analyse eines industriellen Produktions- und Prüfsystems",
     heroCta: "Produktionsprojekt besprechen",
@@ -1002,7 +1002,7 @@ const en: IndustryDetailContent[] = [
       "Automotive reliability engineering: lifetime testing, risk management, DoE, field data analysis and robust reliability demonstration.",
     heroLead:
       "Short development cycles, high volumes and widely varying use profiles require an assurance strategy that connects real loads, failure mechanisms and release targets.",
-    heroImage: "/industries/automotive.png",
+    heroImage: "/industries/automotive.webp",
     heroAlt: "Automotive powertrain in a technical test environment",
     heroCta: "Discuss an automotive project",
     decisionTitle:
@@ -1095,7 +1095,7 @@ const en: IndustryDetailContent[] = [
       "Reliability engineering for machinery: lifetime assessment, wear, test strategy, Weibull analysis and availability evaluation.",
     heroLead:
       "Variable loads, long service periods and expensive downtime make reliability both an engineering and a commercial metric.",
-    heroImage: "/industries/maschinenbau.png",
+    heroImage: "/industries/maschinenbau.webp",
     heroAlt:
       "Industrial gearbox representing reliability-critical machinery components",
     heroCta: "Discuss a machinery project",
@@ -1189,7 +1189,7 @@ const en: IndustryDetailContent[] = [
       "Electronics reliability engineering: environmental testing, thermal cycling, ageing, DoE, failure mechanisms and lifetime assessment.",
     heroLead:
       "Temperature, humidity, vibration, electrical stress and component variation act simultaneously. Good assurance therefore tests mechanisms, not only standard profiles.",
-    heroImage: "/industries/elektronische-produkte.png",
+    heroImage: "/industries/elektronische-produkte.webp",
     heroAlt: "Electronic assembly during a technical reliability measurement",
     heroCta: "Discuss an electronics project",
     decisionTitle:
@@ -1282,7 +1282,7 @@ const en: IndustryDetailContent[] = [
       "Semiconductor reliability engineering: DoE, process variation, AEC-Q100 context, IEC 60749, life testing and statistical analysis.",
     heroLead:
       "Tight process windows, dense data and new technologies require a clear distinction between process variation, measurement uncertainty and real reliability change.",
-    heroImage: "/industries/halbleiterindustrie.png",
+    heroImage: "/industries/halbleiterindustrie.webp",
     heroAlt: "Semiconductor wafer in a precision manufacturing environment",
     heroCta: "Discuss a semiconductor project",
     decisionTitle:
@@ -1379,7 +1379,7 @@ const en: IndustryDetailContent[] = [
       "Reliability for consumer technology: use profiles, robust design, accelerated testing, DoE, returns data and efficient assurance.",
     heroLead:
       "Diverse use, strong cost pressure and short product cycles require an assurance strategy that learns quickly and still targets relevant failure risks.",
-    heroImage: "/industries/consumer-technik-v2.png",
+    heroImage: "/industries/consumer-products-reliability-testing.webp",
     heroAlt: "Consumer electronics and smart devices in a reliability lab",
     heroCta: "Discuss a consumer product",
     decisionTitle:
@@ -1472,7 +1472,7 @@ const en: IndustryDetailContent[] = [
       "Renewable energy reliability engineering: wind energy, lifetime prediction, field data, availability and risk-based testing.",
     heroLead:
       "Long operating periods, changing environments and hard-to-access systems make prediction, availability and low-maintenance design commercial factors.",
-    heroImage: "/industries/erneuerbare-energien.png",
+    heroImage: "/industries/erneuerbare-energien.webp",
     heroAlt: "Technical components and test environment for renewable energy",
     heroCta: "Discuss an energy project",
     decisionTitle:
@@ -1565,7 +1565,7 @@ const en: IndustryDetailContent[] = [
       "Medical-device reliability engineering: ISO 14971 context, risk analysis, verification, lifetime testing and technical documentation.",
     heroLead:
       "Technical function, patient safety and traceable documentation must remain consistent throughout the product lifecycle.",
-    heroImage: "/industries/medizintechnik-v2.png",
+    heroImage: "/industries/medical-device-reliability-testing.webp",
     heroAlt: "Medical technology system in a development and test environment",
     heroCta: "Discuss a medical-device project",
     decisionTitle:
@@ -1658,7 +1658,7 @@ const en: IndustryDetailContent[] = [
       "Aerospace reliability engineering: dependability, FMEA, FTA, lifetime, environmental testing and traceable evidence.",
     heroLead:
       "Low volumes, extreme environments and severe failure consequences require assurance that controls risk systematically and makes every assumption traceable.",
-    heroImage: "/industries/luft-und-raumfahrt-v2.png",
+    heroImage: "/industries/aerospace-reliability-engineering.webp",
     heroAlt: "Aerospace component undergoing precision testing",
     heroCta: "Discuss an aerospace project",
     decisionTitle:
@@ -1751,7 +1751,7 @@ const en: IndustryDetailContent[] = [
       "Reliability engineering for production systems: equipment availability, failure data, weakness analysis, maintenance and lifetime prediction.",
     heroLead:
       "Unplanned downtime directly affects output, quality and delivery. Operating and maintenance data can turn these risks into measurable engineering priorities.",
-    heroImage: "/expertise/lab-review.png",
+    heroImage: "/expertise/lab-review.webp",
     heroAlt: "Engineering team analysing an industrial production system",
     heroCta: "Discuss a production project",
     decisionTitle:

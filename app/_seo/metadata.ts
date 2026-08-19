@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import type { Locale } from "../_i18n/config";
+import { localizedPath } from "../_i18n/routes";
 import { isVercelPreviewDeployment } from "./deployment";
 
 export const siteUrl = "https://reltest-solutions.com";
@@ -50,9 +51,9 @@ export function buildLocalizedMetadata({
   title: string;
   description: string;
 }): Metadata {
-  const localizedPath = path === "/" ? `/${locale}` : `/${locale}${path}`;
-  const dePath = path === "/" ? "/de" : `/de${path}`;
-  const enPath = path === "/" ? "/en" : `/en${path}`;
+  const canonicalPath = localizedPath(locale, path);
+  const dePath = localizedPath("de", path);
+  const enPath = localizedPath("en", path);
 
   return {
     metadataBase: new URL(siteUrl),
@@ -60,7 +61,7 @@ export function buildLocalizedMetadata({
     description,
     robots: getRobotsMetadata(),
     alternates: {
-      canonical: absoluteUrl(localizedPath),
+      canonical: absoluteUrl(canonicalPath),
       languages: {
         de: absoluteUrl(dePath),
         en: absoluteUrl(enPath),
@@ -69,11 +70,17 @@ export function buildLocalizedMetadata({
     },
     openGraph: {
       type: "website",
-      url: absoluteUrl(localizedPath),
+      url: absoluteUrl(canonicalPath),
       title,
       description,
       siteName: "RelTest",
       locale: locale === "de" ? "de_DE" : "en_US",
+      alternateLocale: locale === "de" ? ["en_US"] : ["de_DE"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
   };
 }

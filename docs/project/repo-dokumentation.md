@@ -114,19 +114,22 @@ verwendet werden, wenn es dafür einen guten Grund gibt.
 Die Website unterstützt Deutsch und Englisch. Jede Seite liegt unter einem Sprachpräfix:
 
 - Deutsch: `/de`, `/de/leistungen`, `/de/kontakt`
-- Englisch: `/en`, `/en/leistungen`, `/en/kontakt`
+- Englisch: `/en`, `/en/services`, `/en/contact`
 
 Der Umschalter im Header speichert die Auswahl für ein Jahr. Ein Aufruf ohne Sprachpräfix wird anhand der gespeicherten Auswahl oder der Browsersprache weitergeleitet.
 
 Wichtige Dateien:
 
 - `app/_i18n/config.ts`: unterstützte Sprachen und Link-Helfer
+- `app/_i18n/routes.ts`: zentrale Zuordnung interner Routen zu den kanonischen englischen URLs
 - `app/_components/language-switcher.tsx`: sichtbarer DE/EN-Umschalter
 - `app/api/locale/route.ts`: speichert die gewählte Sprache
 - `proxy.ts`: erkennt und ergänzt das Sprachpräfix
 - `app/_content/site-content.ts`: sämtliche deutschen und englischen Texte
 
 Neue oder geänderte Texte müssen in `site-content.ts` immer sowohl unter `de` als auch unter `en` gepflegt werden.
+
+Die gemeinsam genutzten App-Routen behalten intern ihre deutschen Slugs. Nach außen werden englische, semantische URLs ausgegeben; `next.config.ts` löst diese per Rewrite auf und leitet frühere englische Pfade permanent auf die kanonische Ziel-URL weiter. Neue Links dürfen daher nicht durch manuelles Voranstellen von `/en` gebaut werden, sondern müssen `localizeHref` verwenden.
 
 ## Seitenstruktur
 
@@ -185,7 +188,9 @@ Ganze `<section>`-Blöcke können dort verschoben werden, um die Reihenfolge zu 
 
 ## Bilder und Grafiken
 
-Statische Dateien liegen unter `public/` und werden mit Pfaden wie `/team/img-0107.jpg` eingebunden.
+Statische Dateien liegen unter `public/` und werden mit beschreibenden Pfaden wie `/team/reliability-engineering-seminar.webp` eingebunden.
+
+Große fotografische Motive werden zur Laufzeit als WebP referenziert. Die verlustarmen PNG-Ausgangsdateien bleiben als Master erhalten; nach einem Austausch lassen sich die WebP-Varianten mit `npm run images:optimize` neu erzeugen. Beschriftete Wissensdiagramme sind von dieser automatischen Foto-Komprimierung bewusst ausgenommen, damit kleine Texte lesbar bleiben.
 
 - `public/academy`: bestehende Legacy-Assets und Lernvisuals für RelTest Education
 - `public/branding`: aktuelle RelTest-Solutions- und RelTest-Education-Logos

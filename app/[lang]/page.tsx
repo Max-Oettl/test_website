@@ -11,69 +11,69 @@ const industryVisuals: Record<
   de: {
     Automotive: {
       slug: "automotive",
-      image: "/industries/automotive.png",
+      image: "/industries/automotive.webp",
     },
     Maschinenbau: {
       slug: "maschinenbau",
-      image: "/industries/maschinenbau.png",
+      image: "/industries/maschinenbau.webp",
     },
     "Elektronische Produkte": {
       slug: "elektronische-produkte",
-      image: "/industries/elektronische-produkte.png",
+      image: "/industries/elektronische-produkte.webp",
     },
     Halbleiterindustrie: {
       slug: "halbleiterindustrie",
-      image: "/industries/halbleiterindustrie.png",
+      image: "/industries/halbleiterindustrie.webp",
     },
     "Consumer-Technik": {
       slug: "konsumgueter",
-      image: "/industries/consumer-technik-v2.png",
+      image: "/industries/consumer-products-reliability-testing.webp",
     },
     "Erneuerbare Energien": {
       slug: "erneuerbare-energien",
-      image: "/industries/erneuerbare-energien.png",
+      image: "/industries/erneuerbare-energien.webp",
     },
     Medizintechnik: {
       slug: "medizintechnik",
-      image: "/industries/medizintechnik-v2.png",
+      image: "/industries/medical-device-reliability-testing.webp",
     },
     "Luft- und Raumfahrt": {
       slug: "luft-und-raumfahrt",
-      image: "/industries/luft-und-raumfahrt-v2.png",
+      image: "/industries/aerospace-reliability-engineering.webp",
     },
   },
   en: {
     Automotive: {
       slug: "automotive",
-      image: "/industries/automotive.png",
+      image: "/industries/automotive.webp",
     },
     "Mechanical engineering": {
       slug: "maschinenbau",
-      image: "/industries/maschinenbau.png",
+      image: "/industries/maschinenbau.webp",
     },
     "Electronic products": {
       slug: "elektronische-produkte",
-      image: "/industries/elektronische-produkte.png",
+      image: "/industries/elektronische-produkte.webp",
     },
     "Semiconductor industry": {
       slug: "halbleiterindustrie",
-      image: "/industries/halbleiterindustrie.png",
+      image: "/industries/halbleiterindustrie.webp",
     },
     "Consumer technology": {
       slug: "konsumgueter",
-      image: "/industries/consumer-technik-v2.png",
+      image: "/industries/consumer-products-reliability-testing.webp",
     },
     "Renewable energy": {
       slug: "erneuerbare-energien",
-      image: "/industries/erneuerbare-energien.png",
+      image: "/industries/erneuerbare-energien.webp",
     },
     "Medical technology": {
       slug: "medizintechnik",
-      image: "/industries/medizintechnik-v2.png",
+      image: "/industries/medical-device-reliability-testing.webp",
     },
     Aerospace: {
       slug: "luft-und-raumfahrt",
-      image: "/industries/luft-und-raumfahrt-v2.png",
+      image: "/industries/aerospace-reliability-engineering.webp",
     },
   },
 };

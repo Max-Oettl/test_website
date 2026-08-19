@@ -442,28 +442,35 @@ export async function generateMetadata({ params }: Props) {
 export default async function AboutPage({ params }: Props) {
   const locale = await resolveLocale(params);
   const content = aboutContent[locale];
+  const aboutUrl = absoluteUrl(localizeHref(locale, "/ueber-uns"));
+  const kevinUrl = absoluteUrl(
+    localizeHref(locale, "/ueber-uns/kevin-lucan"),
+  );
+  const berndUrl = absoluteUrl(
+    localizeHref(locale, "/ueber-uns/bernd-bertsche"),
+  );
 
   const peopleJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "AboutPage",
-        "@id": absoluteUrl(`/${locale}/ueber-uns#page`),
-        url: absoluteUrl(`/${locale}/ueber-uns`),
+        "@id": `${aboutUrl}#page`,
+        url: aboutUrl,
         name: content.metaTitle,
         description: content.metaDescription,
         about: [
-          { "@id": absoluteUrl(`/${locale}/ueber-uns/kevin-lucan#person`) },
-          { "@id": absoluteUrl(`/${locale}/ueber-uns/bernd-bertsche#person`) },
+          { "@id": `${kevinUrl}#person` },
+          { "@id": `${berndUrl}#person` },
         ],
       },
       {
         "@type": "Person",
-        "@id": absoluteUrl(`/${locale}/ueber-uns/kevin-lucan#person`),
+        "@id": `${kevinUrl}#person`,
         name: "Dr.-Ing. Kevin Lucan",
         jobTitle: locale === "de" ? "Geschäftsführer" : "Managing Director",
         image: absoluteUrl("/about/kevin-lucan-professional.webp"),
-        url: absoluteUrl(`/${locale}/ueber-uns/kevin-lucan`),
+        url: kevinUrl,
         sameAs: [podcastUrl],
         alumniOf: {
           "@type": "CollegeOrUniversity",
@@ -478,10 +485,10 @@ export default async function AboutPage({ params }: Props) {
       },
       {
         "@type": "Person",
-        "@id": absoluteUrl(`/${locale}/ueber-uns/bernd-bertsche#person`),
+        "@id": `${berndUrl}#person`,
         name: "Prof. Dr.-Ing. Bernd Bertsche",
         image: absoluteUrl("/about/bernd-bertsche-professional.webp"),
-        url: absoluteUrl(`/${locale}/ueber-uns/bernd-bertsche`),
+        url: berndUrl,
         affiliation: [
           {
             "@type": "Organization",
@@ -568,7 +575,6 @@ export default async function AboutPage({ params }: Props) {
                     src={profile.image}
                     alt={profile.imageAlt}
                     fill
-                    priority
                     showAiDisclosure={false}
                     className={`object-cover ${portraitPosition}`}
                     sizes="(min-width: 1024px) 47vw, 100vw"
@@ -707,7 +713,7 @@ export default async function AboutPage({ params }: Props) {
           <div className="brand-panel-cut-bottom-right mt-10 overflow-hidden border border-line-soft bg-surface-muted">
             <div className="relative aspect-[8/3] overflow-hidden border-b border-line-soft bg-white">
               <Image
-                src="/about/team-expertise-pictograms-v3.webp"
+                src="/about/reltest-team-knowledge-network.webp"
                 alt={content.team.imageAlt}
                 fill
                 sizes="(min-width: 1440px) 1280px, (min-width: 1024px) calc(100vw - 64px), calc(100vw - 40px)"

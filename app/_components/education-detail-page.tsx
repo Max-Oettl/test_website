@@ -20,15 +20,15 @@ const detailVisuals: Record<
   }
 > = {
   "doe-praxisorientierte-statistische-versuchsplanung": {
-    src: "/education/doe-training-hero.png",
+    src: "/education/doe-training-hero.webp",
     position: "object-center",
   },
   "zuverlaessigkeit-erprobung-fuer-praktiker": {
-    src: "/team/img-0107.png",
+    src: "/team/reliability-engineering-seminar.webp",
     position: "object-center",
   },
   "entwicklung-absicherung-elektronischer-komponenten": {
-    src: "/education/electronic-components-training-hero.png",
+    src: "/education/electronic-components-training-hero.webp",
     position: "object-center",
   },
 };
@@ -81,7 +81,7 @@ export function EducationDetailPage({
 }: EducationDetailPageProps) {
   const copy = editorialCopy[locale];
   const visual = detailVisuals[page.slug] ?? {
-    src: "/team/img-0107.png",
+    src: "/team/reliability-engineering-seminar.webp",
     position: "object-center",
   };
 
@@ -113,8 +113,8 @@ export function EducationDetailPage({
               src={visual.src}
               alt={`${copy.imageAltPrefix} ${page.title}`}
               fill
-              priority
-              sizes="(min-width: 1024px) 52vw, 100vw"
+              preload
+              sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
               className={`object-cover ${visual.position}`}
             />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.25),transparent_50%)]" />

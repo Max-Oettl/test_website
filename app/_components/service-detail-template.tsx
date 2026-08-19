@@ -89,7 +89,7 @@ const serviceEnhancements = {
     },
     beratung: {
       visual: {
-        src: "/team/img-0112.jpg",
+        src: "/team/engineering-simulation-review.jpg",
         alt: "RelTest Experten analysieren ein technisches Bauteil und Ausfallmechanismen",
         caption:
           "Beratung bedeutet bei RelTest: technische Fragestellung verstehen, Methoden passend wählen und Entscheidungen absichern.",
@@ -173,7 +173,7 @@ const serviceEnhancements = {
     },
     "doe-coaching": {
       visual: {
-        src: "/team/img-3164.jpg",
+        src: "/team/weibull-data-model-review.jpg",
         alt: "RelTest Experten besprechen Analyseergebnisse am Bildschirm",
         caption:
           "DoE Coaching baut Methodenkompetenz direkt an realen Projekten und Versuchsdaten auf.",
@@ -201,7 +201,7 @@ const serviceEnhancements = {
     },
     coaching: {
       visual: {
-        src: "/team/img-0071.jpg",
+        src: "/team/reltest-weibull-data-analysis.jpg",
         alt: "RelTest Experte analysiert CAD- und Zuverlässigkeitsdaten am Arbeitsplatz",
         caption:
           "Coaching verbindet Methodenwissen mit konkreten Projektentscheidungen im Entwicklungsalltag.",
@@ -229,7 +229,7 @@ const serviceEnhancements = {
     },
     "langfristige-kooperation": {
       visual: {
-        src: "/team/img-0139.jpg",
+        src: "/team/reliability-test-laboratory.jpg",
         alt: "RelTest Experte unterstützt technische Absicherung an einem Prüfstand",
         caption:
           "Langfristige Kooperation bedeutet kontinuierliche technische Begleitung über einzelne Analysen hinaus.",
@@ -257,7 +257,7 @@ const serviceEnhancements = {
     },
     "datenanalyse-prognostik": {
       visual: {
-        src: "/team/img-0071.jpg",
+        src: "/team/reltest-weibull-data-analysis.jpg",
         alt: "RelTest Experte wertet technische Lebensdauer- und Weibull-Daten aus",
         caption:
           "Datenanalyse wird wertvoll, wenn Daten in technische Aussagen, Prognosen und Entscheidungen übersetzt werden.",
@@ -371,7 +371,7 @@ const serviceEnhancements = {
     },
     beratung: {
       visual: {
-        src: "/team/img-0112.jpg",
+        src: "/team/engineering-simulation-review.jpg",
         alt: "RelTest experts analysing a technical component and failure mechanisms",
         caption:
           "Consulting at RelTest means understanding the technical question, selecting the right methods and securing decisions.",
@@ -455,7 +455,7 @@ const serviceEnhancements = {
     },
     "doe-coaching": {
       visual: {
-        src: "/team/img-3164.jpg",
+        src: "/team/weibull-data-model-review.jpg",
         alt: "RelTest experts discussing analysis results on a screen",
         caption:
           "DoE coaching builds method confidence directly on real projects and test data.",
@@ -483,7 +483,7 @@ const serviceEnhancements = {
     },
     coaching: {
       visual: {
-        src: "/team/img-0071.jpg",
+        src: "/team/reltest-weibull-data-analysis.jpg",
         alt: "RelTest expert analysing CAD and reliability data at a workstation",
         caption:
           "Coaching connects method knowledge with concrete project decisions in daily engineering work.",
@@ -511,7 +511,7 @@ const serviceEnhancements = {
     },
     "langfristige-kooperation": {
       visual: {
-        src: "/team/img-0139.jpg",
+        src: "/team/reliability-test-laboratory.jpg",
         alt: "RelTest expert supporting technical validation at a test bench",
         caption:
           "Long-term partnership means continuous technical support beyond individual analyses.",
@@ -539,7 +539,7 @@ const serviceEnhancements = {
     },
     "datenanalyse-prognostik": {
       visual: {
-        src: "/team/img-0071.jpg",
+        src: "/team/reltest-weibull-data-analysis.jpg",
         alt: "RelTest expert evaluating life data and Weibull analysis",
         caption:
           "Data analysis creates value when data is translated into technical statements, predictions and decisions.",

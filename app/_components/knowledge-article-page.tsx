@@ -8,7 +8,7 @@ const knowledgeHeaderImages = {
     schwachstellenanalyse: { src: "/wissen/uebersicht/schwachstellenanalyse-de.png", width: 1672, height: 941, alt: "Badewannenkurve zur Schwachstellenanalyse mit Frühausfällen, Zufallsausfällen und Verschleißausfällen" },
     erprobung: { src: "/wissen/uebersicht/erprobung-de.png", width: 2172, height: 724, alt: "Vergleich von Worst-Case-, einsatzbezogenen und synthetischen Lastkollektiven für die Zuverlässigkeitserprobung" },
     absicherung: { src: "/wissen/uebersicht/absicherung-de.png", width: 1672, height: 941, alt: "Technisches Diagramm zur Zuverlässigkeitsabsicherung vom Bauteilmodell bis zum Systemnachweis" },
-    prognosen: { src: "/wissen/uebersicht/prognose-cropped.png", width: 760, height: 680, alt: "Veranschaulichung einer Zuverlässigkeitsprognose aus Versuchs- und Felddaten mit statistischem Lebensdauermodell" },
+    prognosen: { src: "/wissen/uebersicht/reliability-prediction-overview.png", width: 760, height: 680, alt: "Veranschaulichung einer Zuverlässigkeitsprognose aus Versuchs- und Felddaten mit statistischem Lebensdauermodell" },
   },
   en: {
     zuverlaessigkeitstechnik: { src: "/graphics/wissen/technical-plots/reliability-engineering-motor-en.png", width: 1536, height: 1024, alt: "Reliability engineering from technical requirements through test object and test data to a substantiated decision" },
@@ -16,7 +16,7 @@ const knowledgeHeaderImages = {
     schwachstellenanalyse: { src: "/wissen/uebersicht/schwachstellenanalyse-en.png", width: 1672, height: 941, alt: "Bathtub curve for weak-point analysis showing early, random and wear-out failures" },
     erprobung: { src: "/wissen/uebersicht/erprobung-en.png", width: 1748, height: 900, alt: "Comparison of worst-case, use-specific and synthetic load profiles for reliability testing" },
     absicherung: { src: "/wissen/uebersicht/absicherung-en.png", width: 1672, height: 941, alt: "Technical reliability assurance diagram from component models to system verification" },
-    prognosen: { src: "/wissen/uebersicht/prognose-cropped.png", width: 760, height: 680, alt: "Reliability prediction based on test and field data using a statistical lifetime model" },
+    prognosen: { src: "/wissen/uebersicht/reliability-prediction-overview.png", width: 760, height: 680, alt: "Reliability prediction based on test and field data using a statistical lifetime model" },
   },
 } as const;
 

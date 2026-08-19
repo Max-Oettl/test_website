@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { localizeHref, type Locale } from "../_i18n/config";
+import { toInternalPath } from "../_i18n/routes";
 
 type Crumb = {
   label: string;
@@ -19,7 +20,6 @@ const sectionLabels: Record<Locale, Record<string, string>> = {
     expertise: "Expertise",
     glossar: "Glossar",
     impressum: "Impressum",
-    karriere: "Karriere",
     kontakt: "Kontakt",
     leistungen: "Leistungen",
     literatur: "Literatur",
@@ -37,7 +37,6 @@ const sectionLabels: Record<Locale, Record<string, string>> = {
     expertise: "Expertise",
     glossar: "Glossary",
     impressum: "Legal notice",
-    karriere: "Careers",
     kontakt: "Contact",
     leistungen: "Services",
     literatur: "Literature",
@@ -74,7 +73,6 @@ const detailLabels: Record<Locale, Record<string, string>> = {
     "luft-und-raumfahrt": "Luft- und Raumfahrt",
     maschinenbau: "Maschinenbau",
     medizintechnik: "Medizintechnik",
-    "marketing-manager": "Marketing Manager",
     planung: "Planung",
     produktionstechnik: "Produktionstechnik",
     prognosen: "Prognosen",
@@ -87,7 +85,6 @@ const detailLabels: Record<Locale, Record<string, string>> = {
       "Webinar: Beschleunigte Lebensdauertests",
     "webinar-effiziente-lebensdauertestplanung":
       "Webinar: Effiziente Lebensdauertestplanung",
-    "werkstudentin-e-learning": "Werkstudent:in E-Learning",
     "zuverlaessigkeit-erprobung-fuer-praktiker":
       "Zuverl\u00e4ssigkeit & Erprobung",
     zuverlaessigkeitsmanagement: "Zuverl\u00e4ssigkeitsmanagement",
@@ -117,7 +114,6 @@ const detailLabels: Record<Locale, Record<string, string>> = {
     "luft-und-raumfahrt": "Aerospace",
     maschinenbau: "Mechanical engineering",
     medizintechnik: "Medical technology",
-    "marketing-manager": "Marketing manager",
     planung: "Planning",
     produktionstechnik: "Production technology",
     prognosen: "Predictions",
@@ -130,7 +126,6 @@ const detailLabels: Record<Locale, Record<string, string>> = {
       "Webinar: accelerated life tests",
     "webinar-effiziente-lebensdauertestplanung":
       "Webinar: efficient life test planning",
-    "werkstudentin-e-learning": "Working student e-learning",
     "zuverlaessigkeit-erprobung-fuer-praktiker":
       "Reliability & testing for practitioners",
     zuverlaessigkeitsmanagement: "Reliability management",
@@ -176,7 +171,11 @@ function getLabel(locale: Locale, segment: string, index: number) {
 function buildCrumbs(pathname: string, locale: Locale): Crumb[] {
   const pathWithoutQuery = pathname.split("?")[0] ?? pathname;
   const segments = pathWithoutQuery.split("/").filter(Boolean);
-  const pageSegments = segments[0] === locale ? segments.slice(1) : segments;
+  const localizedContentPath =
+    segments[0] === locale ? `/${segments.slice(1).join("/")}` : pathWithoutQuery;
+  const internalContentPath =
+    locale === "en" ? toInternalPath(localizedContentPath) : localizedContentPath;
+  const pageSegments = internalContentPath.split("/").filter(Boolean);
 
   if (pageSegments.length === 0) {
     return [];

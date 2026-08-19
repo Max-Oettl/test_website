@@ -64,7 +64,7 @@ export function KnowledgeMediaPlaceholder({
             }
             className="object-contain"
             preload={preload}
-            unoptimized
+            quality={90}
             disclosureLocale={locale}
           />
         </div>

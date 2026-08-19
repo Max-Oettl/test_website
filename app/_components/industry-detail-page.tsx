@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import Link from "next/link";
 
 import { AiAwareImage as Image } from "./ai-aware-image";
@@ -6,146 +5,15 @@ import {
   getIndustryDetails,
   type IndustryDetailContent,
   type ResolvedIndustryDetailContent,
-  type IndustryService,
 } from "../_content/industry-detail-content";
 import type { IndustryEditorialLayout } from "../_content/industry-editorial-content";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { ActiveNavLink } from "./active-nav-link";
 import { PageClosingCta } from "./page-closing-cta";
-import { PageContextBar } from "./page-context-bar";
 
 type Props = {
   locale: Locale;
   content: ResolvedIndustryDetailContent;
-};
-
-type EditorialBlock =
-  | "seo"
-  | "decision"
-  | "products"
-  | "imageWide"
-  | "imagePortrait"
-  | "project"
-  | "knowledge"
-  | "history"
-  | "services"
-  | "questions"
-  | "context";
-
-const sectionOrder: Record<IndustryEditorialLayout, EditorialBlock[]> = {
-  "field-loop": [
-    "seo",
-    "products",
-    "imageWide",
-    "decision",
-    "project",
-    "history",
-    "knowledge",
-    "services",
-    "imagePortrait",
-    "questions",
-    "context",
-  ],
-  "lifetime-curve": [
-    "seo",
-    "decision",
-    "imagePortrait",
-    "products",
-    "project",
-    "knowledge",
-    "imageWide",
-    "services",
-    "questions",
-    "context",
-  ],
-  "stress-map": [
-    "seo",
-    "imageWide",
-    "products",
-    "knowledge",
-    "decision",
-    "project",
-    "services",
-    "imagePortrait",
-    "questions",
-    "context",
-  ],
-  "qualification-stack": [
-    "seo",
-    "products",
-    "decision",
-    "project",
-    "imageWide",
-    "knowledge",
-    "services",
-    "imagePortrait",
-    "questions",
-    "context",
-  ],
-  "usage-spectrum": [
-    "seo",
-    "imagePortrait",
-    "products",
-    "history",
-    "decision",
-    "knowledge",
-    "project",
-    "imageWide",
-    "services",
-    "questions",
-    "context",
-  ],
-  "asset-cycle": [
-    "seo",
-    "decision",
-    "products",
-    "imageWide",
-    "history",
-    "project",
-    "knowledge",
-    "services",
-    "imagePortrait",
-    "questions",
-    "context",
-  ],
-  "safety-case": [
-    "seo",
-    "project",
-    "imagePortrait",
-    "products",
-    "decision",
-    "history",
-    "knowledge",
-    "imageWide",
-    "services",
-    "questions",
-    "context",
-  ],
-  "mission-chain": [
-    "seo",
-    "imageWide",
-    "decision",
-    "history",
-    "products",
-    "project",
-    "knowledge",
-    "services",
-    "imagePortrait",
-    "questions",
-    "context",
-  ],
-  "availability-loop": [
-    "seo",
-    "products",
-    "project",
-    "decision",
-    "imagePortrait",
-    "knowledge",
-    "services",
-    "imageWide",
-    "questions",
-    "context",
-  ],
 };
 
 const reverseHeroLayouts = new Set<IndustryEditorialLayout>([
@@ -216,414 +84,392 @@ function ArrowIcon({ external = false }: { external?: boolean }) {
   );
 }
 
-function SectionShell({
-  children,
-  className = "bg-white",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <section className={`${className} px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24`}>
-      <div className="mx-auto min-w-0 max-w-7xl">{children}</div>
-    </section>
-  );
-}
-
-function SeoSection({ content }: Pick<Props, "content">) {
+function IndustryEditorialFlow({ locale, content }: Props) {
   const { editorial } = content;
+  const wideImage = editorial.imageBriefs.find((item) => item.format === "wide");
+  const portraitImage = editorial.imageBriefs.find((item) => item.format === "portrait");
+  const imageSources = industryEditorialImages[content.slug];
+  const history = editorial.history;
+  const idPrefix = `industry-${content.slug}`;
+  const sectionName = industryNavigationNames[locale][content.slug] ?? content.title;
+  const projectTerms =
+    locale === "de"
+      ? ["Ausgangslage", "Vorgehen", "Ergebnis"]
+      : ["Challenge", "Approach", "Result"];
+  const labels =
+    locale === "de"
+      ? {
+          navigation: "Auf dieser Seite",
+          overview: "Anforderungen und Freigabe",
+          systems: "Produkte und Risikofelder",
+          validation: "Prüf- und Nachweisstrategie",
+          field: "Felddaten und Rückkopplung",
+          support: "Zusammenarbeit mit RelTest",
+          risk: "Risikofeld",
+          evidence: "Nachweis",
+          project: "Projektbeispiel",
+          deliverables: "Ergebnisse",
+          practice: "Praxisbeispiel",
+          source: "Quelle",
+          serviceTopics: "Schwerpunkte",
+          serviceLink: "Leistung im Detail",
+          knowledge: "Fachwissen zur Vertiefung",
+          questions: "Fragen, die wir zu Projektbeginn klären",
+          context: "Fachlicher Rahmen",
+        }
+      : {
+          navigation: "On this page",
+          overview: "Requirements and release",
+          systems: "Products and risk fields",
+          validation: "Test and evidence strategy",
+          field: "Field data and feedback",
+          support: "Working with RelTest",
+          risk: "Risk field",
+          evidence: "Evidence",
+          project: "Project example",
+          deliverables: "Deliverables",
+          practice: "Practical example",
+          source: "Source",
+          serviceTopics: "Focus areas",
+          serviceLink: "Explore service",
+          knowledge: "Technical knowledge",
+          questions: "Questions we clarify at project start",
+          context: "Engineering context",
+        };
+  const chapters = [
+    { number: "01", label: labels.overview, href: `#${idPrefix}-anforderungen` },
+    { number: "02", label: labels.systems, href: `#${idPrefix}-systeme` },
+    { number: "03", label: wideImage?.label ?? labels.validation, href: `#${idPrefix}-nachweis` },
+    { number: "04", label: portraitImage?.label ?? labels.field, href: `#${idPrefix}-felddaten` },
+    { number: "05", label: labels.support, href: `#${idPrefix}-zusammenarbeit` },
+  ];
 
   return (
-    <SectionShell>
-      <div className="grid gap-9 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-14">
-        <div className="min-w-0">
-          <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-            {editorial.seoEyebrow}
-          </p>
-          <h2 className="mt-4 max-w-2xl hyphens-auto font-winnstein-display text-3xl leading-[1.12] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl xl:text-[2.65rem]">
-            {editorial.seoTitle}
-          </h2>
-        </div>
-        <div className="min-w-0 space-y-6 border-t border-brand-marine/18 pt-7 text-lg leading-8 text-brand-marine/72 xl:border-t-0 xl:border-l xl:pt-0 xl:pl-10">
-          {editorial.seoParagraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-
-function DecisionSection({ content }: Pick<Props, "content">) {
-  return (
-    <SectionShell className="bg-brand-steel-cyan-10">
-      <div className="grid gap-10 xl:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] xl:gap-14">
-        <div className="min-w-0">
-          <h2 className="max-w-2xl hyphens-auto font-winnstein-display text-3xl leading-[1.12] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">
-            {content.decisionTitle}
-          </h2>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-brand-marine/72">
-            {content.decisionText}
-          </p>
-        </div>
-        <div className="relative min-w-0 pl-6 sm:pl-10">
-          <span className="absolute top-3 bottom-3 left-0 w-px bg-brand-steel-cyan/55" />
-          <div className="space-y-5">
-            {content.decisionPath.map((step, index) => (
-              <article
-                key={step.label}
-                className={`relative bg-white p-6 shadow-[0_16px_40px_rgba(3,19,52,0.06)] sm:grid sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-5 ${
-                  index % 2 === 1 ? "sm:ml-10" : "sm:mr-10"
-                }`}
-              >
-                <span className="absolute top-8 -left-[1.79rem] h-3 w-3 rounded-full border-2 border-white bg-brand-steel-cyan sm:-left-[2.91rem]" />
-                <span className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
-                  0{index + 1}
-                </span>
-                <div>
-              <h3 className="hyphens-auto font-winnstein-display text-xl font-bold [overflow-wrap:anywhere]">
-                    {step.label}
-                  </h3>
-                  <p className="mt-2 text-base leading-7 text-brand-marine/68">
-                    {step.text}
-                  </p>
-                </div>
-              </article>
-            ))}
+    <section className="bg-white px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto grid max-w-7xl gap-12 xl:grid-cols-[13rem_minmax(0,1fr)] xl:gap-16">
+        <aside className="hidden xl:block">
+          <div className="sticky top-32 border-t border-brand-marine/18 pt-5">
+            <p className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+              {sectionName}
+            </p>
+            <p className="mt-2 text-xs font-semibold tracking-[0.06em] text-brand-marine/48 uppercase">
+              {labels.navigation}
+            </p>
+            <nav aria-label={labels.navigation} className="mt-5">
+              <ol className="space-y-1">
+                {chapters.map((chapter) => (
+                  <li key={chapter.href}>
+                    <a
+                      href={chapter.href}
+                      className="group grid grid-cols-[2rem_minmax(0,1fr)] gap-3 border-t border-brand-marine/12 py-4 text-sm leading-5 text-brand-marine/64 transition-colors hover:text-brand-marine"
+                    >
+                      <span className="font-winnstein-display text-xs font-bold text-brand-steel-cyan">
+                        {chapter.number}
+                      </span>
+                      <span>{chapter.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
           </div>
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
+        </aside>
 
-function ProductsSection({ locale, content }: Props) {
-  const { editorial } = content;
-  const featureLast = ["stress-map", "mission-chain"].includes(editorial.layout);
-  const featuredIndex = featureLast ? editorial.products.length - 1 : 0;
-  const label = locale === "de" ? "Produktfokus" : "Product focus";
+        <article className="min-w-0">
+          <section id={`${idPrefix}-anforderungen`} className="scroll-mt-36 pb-16 sm:pb-20">
+            <header className="grid gap-4 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6">
+              <span className="font-winnstein-display text-2xl font-bold text-brand-steel-cyan">01</span>
+              <div>
+                <h2 className="max-w-4xl hyphens-auto font-winnstein-display text-3xl leading-[1.12] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl xl:text-[2.65rem]">
+                  {editorial.seoTitle}
+                </h2>
+              </div>
+            </header>
 
-  return (
-    <SectionShell>
-      <div className="grid gap-8 border-b border-brand-marine/16 pb-9 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:items-end">
-        <h2 className="min-w-0 max-w-3xl hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl xl:text-[2.65rem]">
-          {editorial.productTitle}
-        </h2>
-        <p className="min-w-0 max-w-3xl text-lg leading-8 text-brand-marine/72">
-          {editorial.productLead}
-        </p>
-      </div>
-      <div className="mt-9 grid gap-5 lg:grid-cols-12">
-        {editorial.products.map((product, index) => {
-          const featured = index === featuredIndex;
+            <div className="mt-8 space-y-5 text-lg leading-8 text-brand-marine/72 sm:ml-[5.5rem]">
+              {editorial.seoParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
 
-          return (
-            <article
-              key={product.name}
-              className={`relative overflow-hidden border border-brand-marine/16 p-7 sm:p-8 ${
-                featured
-                  ? "bg-brand-marine text-white lg:col-span-6 lg:row-span-2"
-                  : "bg-white lg:col-span-6"
-              }`}
-            >
-              <span className="font-winnstein-display text-xs font-bold tracking-[0.12em] text-brand-steel-cyan uppercase">
-                {label} · 0{index + 1}
-              </span>
-              <h3 className="mt-5 hyphens-auto font-winnstein-display text-2xl leading-tight font-bold [overflow-wrap:anywhere] sm:text-3xl">
-                {product.name}
-              </h3>
-              <p className={`mt-5 leading-7 ${featured ? "text-white/76" : "text-brand-marine/70"}`}>
-                {product.context}
+            <div className="mt-12 border-t border-brand-marine/18 pt-8 sm:ml-[5.5rem]">
+              <p className="max-w-4xl font-winnstein-display text-2xl leading-tight font-bold">
+                {content.decisionTitle}
               </p>
-              <div className={`mt-7 grid gap-5 border-t pt-6 sm:grid-cols-2 ${featured ? "border-white/18" : "border-brand-marine/14"}`}>
-                <p className={`text-sm leading-6 ${featured ? "text-white/68" : "text-brand-marine/64"}`}>
-                  <strong className={`mb-1 block font-winnstein-display ${featured ? "text-white" : "text-brand-marine"}`}>
-                    {locale === "de" ? "Risikofeld" : "Risk field"}
-                  </strong>
-                  {product.risk}
-                </p>
-                <p className={`text-sm leading-6 ${featured ? "text-white/68" : "text-brand-marine/64"}`}>
-                  <strong className={`mb-1 block font-winnstein-display ${featured ? "text-white" : "text-brand-marine"}`}>
-                    {locale === "de" ? "Belastbarer Nachweis" : "Robust evidence"}
-                  </strong>
-                  {product.evidence}
+              <p className="mt-4 max-w-4xl text-base leading-8 text-brand-marine/70">
+                {content.decisionText}
+              </p>
+              <ul className="mt-8 border-t border-brand-marine/16">
+                {content.decisionPath.map((step) => (
+                  <li
+                    key={step.label}
+                    className="grid gap-y-2 border-b border-brand-marine/16 py-5 sm:grid-cols-[10rem_minmax(0,1fr)] sm:items-start sm:gap-5"
+                  >
+                    <strong className="font-winnstein-display text-base">{step.label}</strong>
+                    <span className="text-base leading-7 text-brand-marine/68">{step.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          <section id={`${idPrefix}-systeme`} className="scroll-mt-36 border-t border-brand-marine/18 py-16 sm:py-20">
+            <header className="grid gap-4 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6">
+              <span className="font-winnstein-display text-2xl font-bold text-brand-steel-cyan">02</span>
+              <div>
+                <h2 className="max-w-4xl hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">
+                  {editorial.productTitle}
+                </h2>
+                <p className="mt-5 max-w-3xl text-lg leading-8 text-brand-marine/72">
+                  {editorial.productLead}
                 </p>
               </div>
-            </article>
-          );
-        })}
-      </div>
-    </SectionShell>
-  );
-}
+            </header>
 
-function ImageBriefSection({
-  content,
-  format,
-}: Props & { format: "wide" | "portrait" }) {
-  const image = content.editorial.imageBriefs.find((item) => item.format === format);
-  const imageSrc = industryEditorialImages[content.slug]?.[format];
+            <div className="mt-10 sm:ml-[5.5rem]">
+              {editorial.products.map((product) => (
+                <article
+                  key={product.name}
+                  className="grid gap-y-5 border-t border-brand-marine/16 py-8 xl:grid-cols-[15rem_minmax(0,1fr)] xl:gap-7"
+                >
+                  <h3 className="hyphens-auto font-winnstein-display text-xl leading-tight font-bold [overflow-wrap:anywhere]">
+                    {product.name}
+                  </h3>
+                  <div>
+                    <p className="text-base leading-7 text-brand-marine/72">{product.context}</p>
+                    <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                      <p className="text-sm leading-6 text-brand-marine/64">
+                        <strong className="mb-1 block font-winnstein-display text-brand-marine">
+                          {labels.risk}
+                        </strong>
+                        {product.risk}
+                      </p>
+                      <p className="text-sm leading-6 text-brand-marine/64">
+                        <strong className="mb-1 block font-winnstein-display text-brand-marine">
+                          {labels.evidence}
+                        </strong>
+                        {product.evidence}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
 
-  if (!image || !imageSrc) return null;
+          <section id={`${idPrefix}-nachweis`} className="scroll-mt-36 border-t border-brand-marine/18 py-16 sm:py-20">
+            <header className="grid gap-4 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6">
+              <span className="font-winnstein-display text-2xl font-bold text-brand-steel-cyan">03</span>
+              <div>
+                {wideImage && (
+                  <>
+                    <h2 className="max-w-4xl hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">
+                      {wideImage.title}
+                    </h2>
+                    <p className="mt-5 max-w-3xl text-lg leading-8 text-brand-marine/72">
+                      {wideImage.description}
+                    </p>
+                  </>
+                )}
+              </div>
+            </header>
 
-  return (
-    <SectionShell className={format === "wide" ? "bg-brand-marine text-white" : "bg-white"}>
-      <div
-        className={`grid overflow-hidden border ${
-          format === "wide"
-            ? "border-white/18 lg:grid-cols-[minmax(0,1.35fr)_minmax(20rem,0.65fr)]"
-            : "border-brand-marine/16 lg:grid-cols-[minmax(18rem,0.72fr)_minmax(0,1.28fr)]"
-        }`}
-      >
-        <div
-          className={`relative min-h-[22rem] overflow-hidden ${
-            format === "wide"
-              ? "bg-white/[0.055] lg:min-h-[30rem]"
-              : "bg-brand-steel-cyan-10 lg:min-h-[35rem]"
-          }`}
-        >
-          <Image
-            src={imageSrc}
-            alt={image.alt}
-            fill
-            showAiDisclosure={false}
-            sizes={
-              format === "wide"
-                ? "(min-width: 1024px) 65vw, 100vw"
-                : "(min-width: 1024px) 36vw, 100vw"
-            }
-            className="object-cover saturate-[0.94] contrast-[1.02]"
-          />
-          <span
-            aria-hidden="true"
-            className={`absolute inset-0 ${
-              format === "wide"
-                ? "bg-[linear-gradient(90deg,rgba(3,19,52,.12),transparent_45%)]"
-                : "bg-[linear-gradient(0deg,rgba(3,19,52,.08),transparent_42%)]"
-            }`}
-          />
-        </div>
-        <div className={`min-w-0 flex flex-col justify-center p-8 sm:p-10 ${format === "wide" ? "lg:order-first" : ""}`}>
-          <p className="font-winnstein-display text-xs font-bold tracking-[0.12em] text-brand-steel-cyan uppercase">
-            {image.label}
-          </p>
-          <h2 className="mt-5 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.03em] [overflow-wrap:anywhere] sm:text-4xl">
-            {image.title}
-          </h2>
-          <p className={`mt-6 text-base leading-8 ${format === "wide" ? "text-white/72" : "text-brand-marine/70"}`}>
-            {image.description}
-          </p>
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
+            {wideImage && imageSources?.wide && (
+              <figure className="mt-10 sm:ml-[5.5rem]">
+                <div className="relative aspect-[16/9] overflow-hidden bg-brand-steel-cyan-10">
+                  <Image
+                    src={imageSources.wide}
+                    alt={wideImage.alt}
+                    fill
+                    showAiDisclosure={false}
+                    sizes="(min-width: 1280px) 60rem, 100vw"
+                    className="object-cover saturate-[0.94] contrast-[1.02]"
+                  />
+                </div>
+                <figcaption className="mt-3 text-sm leading-6 text-brand-marine/56">
+                  {wideImage.alt}
+                </figcaption>
+              </figure>
+            )}
 
-function ProjectSection({ locale, content }: Props) {
-  const project = content.editorial.project;
-  const terms =
-    locale === "de"
-      ? ["Ausgangslage", "Engineering-Ansatz", "Entscheidungswert"]
-      : ["Challenge", "Engineering approach", "Decision value"];
-
-  return (
-    <SectionShell className="bg-brand-marine text-white">
-      <div className="grid gap-10 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-14">
-        <div className="min-w-0">
-          <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-            {project.eyebrow}
-          </p>
-          <h2 className="mt-4 max-w-2xl hyphens-auto font-winnstein-display text-3xl leading-[1.12] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl xl:text-[2.65rem]">
-            {project.title}
-          </h2>
-          <div className="mt-9 flex flex-wrap gap-3">
-            {project.deliverables.map((deliverable) => (
-              <span key={deliverable} className="border border-white/20 px-4 py-2 text-sm text-white/78">
-                {deliverable}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="min-w-0 space-y-1 border-t border-white/18">
-          {[project.challenge, project.approach, project.result].map((text, index) => (
-            <article key={terms[index]} className="grid gap-3 border-b border-white/18 py-6 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-7">
-              <h3 className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
-                {terms[index]}
+            <div className="mt-12 border-t border-brand-marine/18 pt-9 sm:ml-[5.5rem]">
+              <h3 className="max-w-4xl hyphens-auto font-winnstein-display text-2xl leading-tight font-bold [overflow-wrap:anywhere] sm:text-3xl">
+                {labels.project}: {editorial.project.title}
               </h3>
-              <p className="text-base leading-7 text-white/74">{text}</p>
-            </article>
-          ))}
-        </div>
+              <dl className="mt-7 border-t border-brand-marine/16">
+                {[editorial.project.challenge, editorial.project.approach, editorial.project.result].map((text, index) => (
+                  <div
+                    key={projectTerms[index]}
+                    className="grid gap-2 border-b border-brand-marine/16 py-5 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6"
+                  >
+                    <dt className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+                      {projectTerms[index]}
+                    </dt>
+                    <dd className="text-base leading-7 text-brand-marine/70">{text}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-6 text-sm leading-7 text-brand-marine/66">
+                <strong className="font-winnstein-display text-brand-marine">
+                  {labels.deliverables}:
+                </strong>{" "}
+                {editorial.project.deliverables.join(" · ")}
+              </p>
+            </div>
+          </section>
+
+          <section id={`${idPrefix}-felddaten`} className="scroll-mt-36 border-t border-brand-marine/18 py-16 sm:py-20">
+            <header className="grid gap-4 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6">
+              <span className="font-winnstein-display text-2xl font-bold text-brand-steel-cyan">04</span>
+              <div>
+                {portraitImage && (
+                  <>
+                    <h2 className="max-w-4xl hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">
+                      {portraitImage.title}
+                    </h2>
+                    <p className="mt-5 max-w-3xl text-lg leading-8 text-brand-marine/72">
+                      {portraitImage.description}
+                    </p>
+                  </>
+                )}
+              </div>
+            </header>
+
+            {portraitImage && imageSources?.portrait && (
+              <figure className="mt-10 sm:ml-[5.5rem]">
+                <div className="relative aspect-[16/8] min-h-[20rem] overflow-hidden bg-brand-steel-cyan-10">
+                  <Image
+                    src={imageSources.portrait}
+                    alt={portraitImage.alt}
+                    fill
+                    showAiDisclosure={false}
+                    sizes="(min-width: 1280px) 60rem, 100vw"
+                    className="object-cover saturate-[0.94] contrast-[1.02]"
+                  />
+                </div>
+                <figcaption className="mt-3 text-sm leading-6 text-brand-marine/56">
+                  {portraitImage.alt}
+                </figcaption>
+              </figure>
+            )}
+
+            {history && (
+              <div className="mt-12 border-t border-brand-marine/18 pt-9 sm:ml-[5.5rem]">
+                <h3 className="max-w-4xl hyphens-auto font-winnstein-display text-2xl leading-tight font-bold [overflow-wrap:anywhere] sm:text-3xl">
+                  {labels.practice}: {history.title}
+                </h3>
+                <div className="mt-6 max-w-4xl space-y-5 text-base leading-8 text-brand-marine/72">
+                  <p>{history.text}</p>
+                  <p>{history.lesson}</p>
+                </div>
+                <a
+                  href={history.sourceHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center gap-3 font-winnstein-display text-sm font-bold text-brand-steel-cyan hover:text-brand-marine"
+                >
+                  {labels.source}: {history.sourceLabel}
+                  <ArrowIcon external />
+                </a>
+              </div>
+            )}
+          </section>
+
+          <section id={`${idPrefix}-zusammenarbeit`} className="scroll-mt-36 border-t border-brand-marine/18 pt-16 sm:pt-20">
+            <header className="grid gap-4 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6">
+              <span className="font-winnstein-display text-2xl font-bold text-brand-steel-cyan">05</span>
+              <div>
+                <h2 className="max-w-4xl hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">
+                  {content.servicesTitle}
+                </h2>
+                <p className="mt-5 max-w-3xl text-lg leading-8 text-brand-marine/72">
+                  {content.servicesLead}
+                </p>
+              </div>
+            </header>
+
+            <div className="mt-10 sm:ml-[5.5rem]">
+              {content.services.map((service) => (
+                <article
+                  key={service.title}
+                  className="grid gap-y-4 border-t border-brand-marine/16 py-7 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-7"
+                >
+                  <h3 className="hyphens-auto font-winnstein-display text-xl leading-tight font-bold [overflow-wrap:anywhere]">
+                    {service.title}
+                  </h3>
+                  <div>
+                    <p className="text-base leading-7 text-brand-marine/70">{service.text}</p>
+                    <p className="mt-3 text-sm leading-6 text-brand-marine/60">
+                      <strong className="font-winnstein-display text-brand-marine">
+                        {labels.serviceTopics}:
+                      </strong>{" "}
+                      {service.topics.join(" · ")}
+                    </p>
+                    <Link
+                      href={localizeHref(locale, service.href)}
+                      className="mt-4 inline-flex items-center gap-3 font-winnstein-display text-sm font-bold text-brand-steel-cyan hover:text-brand-marine"
+                    >
+                      {labels.serviceLink}
+                      <ArrowIcon />
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-10 border-t border-brand-marine/18 pt-8 sm:ml-[5.5rem]">
+              <h3 className="font-winnstein-display text-xl font-bold">{labels.knowledge}</h3>
+              <p className="mt-3 max-w-3xl text-base leading-7 text-brand-marine/68">
+                {editorial.knowledgeLead}
+              </p>
+              <ul className="mt-5 flex flex-wrap gap-x-7 gap-y-4">
+                {editorial.knowledge.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={localizeHref(locale, item.href)}
+                      className="inline-flex items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold hover:text-brand-steel-cyan"
+                    >
+                      {item.title}
+                      <ArrowIcon />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-12 border-t border-brand-marine/18 pt-9 sm:ml-[5.5rem]">
+              <h3 className="font-winnstein-display text-2xl font-bold">{labels.questions}</h3>
+              <div className="mt-5 border-t border-brand-marine/16">
+                {content.questions.map((item, index) => (
+                  <details key={item.question} open={index === 0} className="group border-b border-brand-marine/16">
+                    <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-5 font-winnstein-display text-base leading-7 font-bold marker:hidden">
+                      <span>{item.question}</span>
+                      <span aria-hidden="true" className="text-brand-steel-cyan group-open:rotate-45">+</span>
+                    </summary>
+                    <p className="max-w-3xl pb-6 text-base leading-8 text-brand-marine/70">
+                      {item.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-10 border-t border-brand-marine/18 pt-8 sm:ml-[5.5rem]">
+              <p className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+                {labels.context}
+              </p>
+              <p className="mt-3 max-w-4xl text-base leading-8 text-brand-marine/70">
+                <strong className="font-winnstein-display text-brand-marine">{content.contextTitle}.</strong>{" "}
+                {content.contextText}
+              </p>
+              <p className="mt-4 text-sm leading-7 text-brand-marine/60">
+                {content.contextTerms.join(" · ")}
+              </p>
+            </div>
+          </section>
+        </article>
       </div>
-    </SectionShell>
-  );
-}
-
-function KnowledgeSection({ locale, content }: Props) {
-  const { editorial } = content;
-  const label = locale === "de" ? "Wissen" : "Knowledge";
-
-  return (
-    <SectionShell className="bg-brand-steel-cyan-10">
-      <div className="grid gap-9 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] xl:gap-14">
-        <div className="min-w-0">
-          <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-            {label}
-          </p>
-          <h2 className="mt-4 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">
-            {editorial.knowledgeTitle}
-          </h2>
-          <p className="mt-5 text-base leading-8 text-brand-marine/70">
-            {editorial.knowledgeLead}
-          </p>
-        </div>
-        <div className="min-w-0 grid border-t border-l border-brand-marine/16 sm:grid-cols-2">
-          {editorial.knowledge.map((item, index) => (
-            <Link
-              key={item.href}
-              href={localizeHref(locale, item.href)}
-              className={`group flex min-h-56 flex-col border-r border-b border-brand-marine/16 bg-white p-6 transition-colors hover:bg-brand-marine hover:text-white focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-steel-cyan ${
-                editorial.knowledge.length % 2 === 1 &&
-                index === editorial.knowledge.length - 1
-                  ? "sm:col-span-2"
-                  : ""
-              }`}
-            >
-              <span className="font-winnstein-display text-xs font-bold text-brand-steel-cyan">0{index + 1}</span>
-              <h3 className="mt-5 hyphens-auto font-winnstein-display text-xl leading-tight font-bold [overflow-wrap:anywhere]">{item.title}</h3>
-              <p className="mt-3 flex-1 text-sm leading-6 text-brand-marine/66 group-hover:text-white/70">{item.text}</p>
-              <span className="mt-5 inline-flex items-center justify-between gap-5 font-winnstein-display text-sm font-bold text-brand-steel-cyan">
-                {item.linkLabel}
-                <ArrowIcon />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-
-function HistorySection({ content }: Pick<Props, "content">) {
-  const history = content.editorial.history;
-
-  if (!history) return null;
-
-  return (
-    <SectionShell>
-    <article className="relative overflow-hidden border-l-4 border-brand-steel-cyan bg-brand-marine px-7 py-9 text-white sm:px-10 sm:py-12 xl:grid xl:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:gap-14">
-        <div className="min-w-0">
-          <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">{history.eyebrow}</p>
-          <h2 className="mt-4 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">{history.title}</h2>
-        </div>
-        <div className="mt-7 min-w-0 xl:mt-0">
-          <p className="text-base leading-8 text-white/74">{history.text}</p>
-          <p className="mt-6 border-t border-white/18 pt-6 text-base leading-8 text-white">{history.lesson}</p>
-          <a
-            href={history.sourceHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-7 inline-flex items-center gap-3 font-winnstein-display text-sm font-bold text-brand-steel-cyan hover:text-white"
-          >
-            {history.sourceLabel}
-            <ArrowIcon external />
-          </a>
-        </div>
-      </article>
-    </SectionShell>
-  );
-}
-
-function ServiceCard({
-  locale,
-  service,
-  index,
-}: {
-  locale: Locale;
-  service: IndustryService;
-  index: number;
-}) {
-  return (
-    <article className="flex flex-col border border-brand-marine/16 bg-white p-7 sm:p-8">
-      <span className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">0{index + 1}</span>
-      <h3 className="mt-5 hyphens-auto font-winnstein-display text-2xl leading-tight font-bold [overflow-wrap:anywhere]">{service.title}</h3>
-      <p className="mt-4 flex-1 text-base leading-7 text-brand-marine/70">{service.text}</p>
-      <div className="mt-6 flex flex-wrap gap-2">
-        {service.topics.map((topic) => (
-          <span key={topic} className="bg-brand-steel-cyan-10 px-3 py-2 text-xs font-semibold text-brand-marine/78">{topic}</span>
-        ))}
-      </div>
-      <Link
-        href={localizeHref(locale, service.href)}
-        className="group mt-7 inline-flex items-center justify-between border-t border-brand-marine/16 pt-5 font-winnstein-display text-sm font-bold text-brand-marine hover:text-brand-steel-cyan"
-      >
-        {locale === "de" ? "Leistung im Detail" : "Explore service"}
-        <span className="transition-transform group-hover:translate-x-1"><ArrowIcon /></span>
-      </Link>
-    </article>
-  );
-}
-
-function ServicesSection({ locale, content }: Props) {
-  return (
-    <SectionShell className="bg-brand-steel-cyan-10">
-      <div className="grid gap-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:items-end">
-        <h2 className="min-w-0 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl xl:text-[2.65rem]">{content.servicesTitle}</h2>
-        <p className="min-w-0 max-w-3xl text-lg leading-8 text-brand-marine/72">{content.servicesLead}</p>
-      </div>
-      <div className="mt-10 grid gap-5 lg:grid-cols-3">
-        {content.services.map((service, index) => (
-          <ServiceCard key={service.title} locale={locale} service={service} index={index} />
-        ))}
-      </div>
-    </SectionShell>
-  );
-}
-
-function QuestionsSection({ locale, content }: Props) {
-  return (
-    <SectionShell>
-      <div className="grid gap-10 xl:grid-cols-[minmax(0,0.74fr)_minmax(0,1.26fr)] xl:gap-14">
-        <div className="min-w-0">
-          <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-            {locale === "de" ? "Aus dem Projektalltag" : "From project practice"}
-          </p>
-          <h2 className="mt-4 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">{content.questionsTitle}</h2>
-        </div>
-        <div className="min-w-0 border-t border-brand-marine/18">
-          {content.questions.map((item, index) => (
-            <details key={item.question} open={index === 0} className="group border-b border-brand-marine/18">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 font-winnstein-display text-lg leading-7 font-bold marker:hidden">
-                <span className="flex gap-5"><span className="text-sm text-brand-steel-cyan">0{index + 1}</span>{item.question}</span>
-                <span aria-hidden="true" className="text-brand-steel-cyan group-open:rotate-45">+</span>
-              </summary>
-              <p className="max-w-3xl pb-7 pl-10 text-base leading-8 text-brand-marine/70">{item.answer}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </SectionShell>
-  );
-}
-
-function ContextSection({ locale, content }: Props) {
-  return (
-    <SectionShell className="bg-brand-marine text-white">
-      <div className="grid gap-10 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] xl:items-center xl:gap-14">
-        <div className="min-w-0">
-          <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-            {locale === "de" ? "Fachlicher Kontext" : "Engineering context"}
-          </p>
-          <h2 className="mt-4 hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">{content.contextTitle}</h2>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-white/72">{content.contextText}</p>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          {content.contextTerms.map((term, index) => (
-            <span key={term} className={`border border-white/20 px-5 py-4 font-winnstein-display text-sm font-bold ${index % 3 === 1 ? "bg-white text-brand-marine" : "text-white"}`}>{term}</span>
-          ))}
-        </div>
-      </div>
-    </SectionShell>
+    </section>
   );
 }
 
@@ -663,54 +509,25 @@ function IndustryNavigationCardVisual({
 }) {
   const labels =
     locale === "de"
-      ? { current: "Aktuelle Branche", discover: "Entdecken" }
-      : { current: "Current industry", discover: "Explore" };
+      ? { current: "Aktuell" }
+      : { current: "Current" };
   const name = industryNavigationNames[locale][industry.slug] ?? industry.title;
 
   return (
-    <>
-      <Image
-        src={industry.heroImage}
-        alt=""
-        fill
-        aria-hidden="true"
-        sizes="(min-width: 768px) 50vw, 100vw"
-        className={`-z-20 object-cover object-center saturate-[0.72] transition duration-500 motion-reduce:transform-none ${
-          current
-            ? "opacity-70"
-            : "opacity-55 group-hover:scale-[1.025] group-hover:opacity-65"
-        }`}
-      />
-      <span
-        aria-hidden="true"
-        className={`absolute inset-0 -z-10 ${
-          current
-            ? "bg-[linear-gradient(90deg,rgba(232,245,252,0.99)_0%,rgba(232,245,252,0.93)_48%,rgba(232,245,252,0.34)_100%)]"
-            : "bg-[linear-gradient(90deg,rgba(255,255,255,0.99)_0%,rgba(255,255,255,0.93)_48%,rgba(255,255,255,0.28)_100%)]"
-        }`}
-      />
-
-      <span className="relative flex min-w-0 flex-col gap-3">
-        <span className="font-winnstein-display text-xl leading-tight font-bold tracking-[-0.025em] text-brand-marine sm:text-2xl">
-          {name}
-        </span>
-        <span
-          className={`inline-flex w-fit items-center gap-3 font-winnstein-display text-sm font-bold ${
-            current ? "text-brand-marine" : "text-brand-marine/68"
-          }`}
-        >
-          {current ? labels.current : labels.discover}
-          {!current && <ArrowIcon />}
-        </span>
+    <span className="flex min-w-0 items-center justify-between gap-5">
+      <span className="font-winnstein-display text-base leading-tight font-bold text-brand-marine">
+        {name}
       </span>
-
-      {current && (
-        <span
-          aria-hidden="true"
-          className="absolute inset-0 ring-2 ring-inset ring-brand-steel-cyan"
-        />
+      {current ? (
+        <span className="shrink-0 text-xs font-semibold text-brand-steel-cyan">
+          {labels.current}
+        </span>
+      ) : (
+        <span className="shrink-0 text-brand-steel-cyan transition-transform group-hover:translate-x-1">
+          <ArrowIcon />
+        </span>
       )}
-    </>
+    </span>
   );
 }
 
@@ -719,81 +536,78 @@ function IndustryNavigation({ locale, currentSlug }: { locale: Locale; currentSl
   const labels =
     locale === "de"
       ? {
-          eyebrow: "Branchennavigation",
-          title: "Branchen im Überblick",
-          description:
-            "Wechseln Sie direkt zu den branchenspezifischen Anforderungen, Risikofeldern und Methoden der Zuverlässigkeitstechnik.",
+          title: "Branche wechseln",
+          all: "Alle Branchen ansehen",
         }
       : {
-          eyebrow: "Industry navigation",
-          title: "Industries at a glance",
-          description:
-            "Go directly to industry-specific requirements, risk fields and reliability engineering methods.",
+          title: "Change industry",
+          all: "View all industries",
         };
 
   return (
     <section
       aria-labelledby="industry-navigation-title"
-      className="bg-white px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+      className="bg-brand-steel-cyan-10 px-5 py-12 sm:px-6 sm:py-14 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:items-end lg:gap-12">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-              {labels.eyebrow}
-            </p>
             <h2
               id="industry-navigation-title"
-              className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl"
+              className="font-winnstein-display text-2xl leading-tight font-bold tracking-[-0.035em] sm:text-3xl"
             >
               {labels.title}
             </h2>
           </div>
-          <p className="max-w-3xl text-base leading-8 text-brand-marine/72">
-            {labels.description}
-          </p>
+          <Link
+            href={localizeHref(locale, "/branchen")}
+            className="inline-flex w-fit items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold hover:text-brand-steel-cyan"
+          >
+            {labels.all}
+            <ArrowIcon />
+          </Link>
         </div>
 
-        <div className="mt-10 grid border-t border-l border-brand-marine/18 md:grid-cols-2">
-          {industries.map((industry, index) => {
-            const isCurrent = industry.slug === currentSlug;
-            const spansFullRow =
-              industries.length % 2 === 1 && index === industries.length - 1;
-            const cardClassName = `group relative isolate flex min-h-32 items-center overflow-hidden border-r border-b border-brand-marine/18 px-6 py-6 sm:min-h-36 sm:px-8 ${
-              spansFullRow ? "md:col-span-2" : ""
-            } ${isCurrent ? "bg-brand-steel-cyan-10" : "bg-white"}`;
+        <nav aria-label={labels.title} className="mt-8">
+          <div className="grid border-t border-l border-brand-marine/16 bg-white sm:grid-cols-2 lg:grid-cols-3">
+            {industries.map((industry) => {
+              const isCurrent = industry.slug === currentSlug;
+              const itemClassName = `group border-r border-b border-brand-marine/16 px-5 py-4 ${
+                isCurrent ? "bg-brand-steel-cyan-10" : "bg-white hover:bg-brand-steel-cyan-10/60"
+              }`;
 
-            if (isCurrent) {
+              if (isCurrent) {
+                return (
+                  <div
+                    key={industry.slug}
+                    aria-current="page"
+                    className={itemClassName}
+                  >
+                    <IndustryNavigationCardVisual
+                      current
+                      industry={industry}
+                      locale={locale}
+                    />
+                  </div>
+                );
+              }
+
               return (
-                <div
+                <ActiveNavLink
                   key={industry.slug}
-                  aria-current="page"
-                  className={cardClassName}
+                  href={localizeHref(locale, `/branchen/${industry.slug}`)}
+                  className={`${itemClassName} transition-colors focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-steel-cyan`}
+                  activeClassName=""
                 >
                   <IndustryNavigationCardVisual
-                    current
                     industry={industry}
                     locale={locale}
                   />
-                </div>
+                </ActiveNavLink>
               );
-            }
-
-            return (
-              <ActiveNavLink
-                key={industry.slug}
-                href={localizeHref(locale, `/branchen/${industry.slug}`)}
-                className={`${cardClassName} transition-colors hover:border-brand-steel-cyan focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-steel-cyan`}
-                activeClassName=""
-              >
-                <IndustryNavigationCardVisual
-                  industry={industry}
-                  locale={locale}
-                />
-              </ActiveNavLink>
-            );
-          })}
-        </div>
+            })}
+          </div>
+        </nav>
       </div>
     </section>
   );
@@ -804,22 +618,8 @@ export function IndustryDetailPage({ locale, content }: Props) {
   const reverseHero = reverseHeroLayouts.has(editorial.layout);
   const labels =
     locale === "de"
-      ? { eyebrow: "Branchenkompetenz", industries: "Alle Branchen", section: "Branchen" }
-      : { eyebrow: "Industry expertise", industries: "All industries", section: "Industries" };
-
-  const blocks: Record<EditorialBlock, ReactNode> = {
-    seo: <SeoSection content={content} />,
-    decision: <DecisionSection content={content} />,
-    products: <ProductsSection locale={locale} content={content} />,
-    imageWide: <ImageBriefSection locale={locale} content={content} format="wide" />,
-    imagePortrait: <ImageBriefSection locale={locale} content={content} format="portrait" />,
-    project: <ProjectSection locale={locale} content={content} />,
-    knowledge: <KnowledgeSection locale={locale} content={content} />,
-    history: <HistorySection content={content} />,
-    services: <ServicesSection locale={locale} content={content} />,
-    questions: <QuestionsSection locale={locale} content={content} />,
-    context: <ContextSection locale={locale} content={content} />,
-  };
+      ? { industries: "Alle Branchen" }
+      : { industries: "All industries" };
 
   return (
     <main className="font-winnstein-body text-brand-marine">
@@ -831,9 +631,7 @@ export function IndustryDetailPage({ locale, content }: Props) {
               <span aria-hidden="true">←</span>
               {labels.industries}
             </Link>
-            <p className="mt-9 font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">{labels.eyebrow}</p>
-            <p className="mt-4 w-fit border border-white/20 px-3 py-2 text-xs font-semibold tracking-[0.06em] text-white/76">{editorial.heroTag}</p>
-            <h1 className="mt-5 max-w-4xl hyphens-auto font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-5xl xl:text-[3.4rem]">{content.title}</h1>
+            <h1 className="mt-10 max-w-4xl hyphens-auto font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-5xl xl:text-[3.4rem]">{content.title}</h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78">{content.heroLead}</p>
             <Link href={localizeHref(locale, "/kontakt")} className="brand-action mt-9 inline-flex min-h-14 w-fit items-center justify-between gap-8 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine">
               {content.heroCta}
@@ -842,18 +640,21 @@ export function IndustryDetailPage({ locale, content }: Props) {
           </div>
 
           <div className={`relative min-h-[28rem] border-t border-white/15 xl:min-h-[43rem] xl:border-t-0 ${reverseHero ? "xl:order-1 xl:border-r" : "xl:border-l"}`}>
-            <Image src={content.heroImage} alt={content.heroAlt} fill preload sizes="(min-width: 1280px) 54vw, 100vw" className="object-cover" />
+            <Image
+              src={content.heroImage}
+              alt={content.heroAlt}
+              fill
+              preload
+              sizes="(min-width: 1280px) 720px, (min-width: 1024px) 54vw, 100vw"
+              className="object-cover"
+            />
             <div className={`absolute inset-0 ${reverseHero ? "bg-[linear-gradient(270deg,rgba(3,19,52,.48),transparent_48%),linear-gradient(0deg,rgba(3,19,52,.38),transparent_55%)]" : "bg-[linear-gradient(90deg,rgba(3,19,52,.54),transparent_48%),linear-gradient(0deg,rgba(3,19,52,.38),transparent_55%)]"}`} />
           </div>
         </div>
         <div className="h-2 bg-brand-steel-cyan" />
       </section>
 
-      <PageContextBar locale={locale} sectionHref="/branchen" sectionLabel={labels.section} currentLabel={content.title} />
-
-      {sectionOrder[editorial.layout].map((block) => (
-        <div key={block}>{blocks[block]}</div>
-      ))}
+      <IndustryEditorialFlow locale={locale} content={content} />
 
       <PageClosingCta
         locale={locale}

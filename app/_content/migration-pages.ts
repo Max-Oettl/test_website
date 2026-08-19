@@ -38,8 +38,7 @@ export type DetailGroup =
   | "education"
   | "industries"
   | "people"
-  | "news"
-  | "careers";
+  | "news";
 
 const contactLink = { label: "Projekt besprechen", href: "/kontakt" };
 const contactLinkEn = { label: "Discuss your project", href: "/kontakt" };
@@ -2202,7 +2201,7 @@ export const detailPageCollections: Record<
         lead:
           "In der Halbleiterindustrie treffen hohe Qualitätsanforderungen, enge Prozessfenster und datenintensive Entscheidungen aufeinander.",
         visual: {
-          src: "/expertise/decision-dashboard.png",
+          src: "/expertise/decision-dashboard.webp",
           alt: "Technisches Meeting mit Zuverlässigkeitsdaten, Risikomatrix und Projektplanung",
           caption:
             "Halbleiternahe Projekte profitieren von klarer Testplanung, strukturierter Datenbewertung und nachvollziehbarer technischer Argumentation.",
@@ -2529,8 +2528,8 @@ export const detailPageCollections: Record<
             body: "Ein schneller Test ist nur dann hilfreich, wenn er dieselben relevanten Ausfallmechanismen adressiert wie der reale Einsatz.",
           },
           {
-            title: "Einordnung für die neue Website",
-            body: "Der Inhalt wird künftig stärker im Wissensbereich rund um Erprobung und Prognosen aufgegriffen.",
+            title: "Beschleunigungsmodell und Aussagegrenze",
+            body: "Belastungsniveau, Ausfallmechanismus und Übertragungsmodell müssen zusammenpassen. Erst dann lässt sich die verkürzte Prüfzeit auf den späteren Einsatz beziehen.",
           },
         ],
         proofPointsTitle: "Anknüpfungspunkte",
@@ -2542,7 +2541,7 @@ export const detailPageCollections: Record<
         ],
         ctaTitle: "Mehr zur Erprobung",
         ctaText:
-          "Die neue Website ordnet das Thema in den Wissens- und Leistungsbereich ein.",
+          "Vertiefen Sie, wie Prüfziel, Lastkollektiv, Stichprobe und Auswertung zu einer belastbaren Lebensdaueraussage verbunden werden.",
         primaryCta: { label: "Erprobung verstehen", href: "/wissen/erprobung" },
         secondaryCta: contactLink,
       },
@@ -2680,77 +2679,6 @@ export const detailPageCollections: Record<
           "Wir helfen, aus vorhandenen Daten belastbare Entwicklungsentscheidungen abzuleiten.",
         primaryCta: { label: "Datenanalyse ansehen", href: "/leistungen/datenanalyse-prognostik" },
         secondaryCta: contactLink,
-      },
-    ],
-    en: [],
-  },
-  careers: {
-    de: [
-      {
-        slug: "werkstudentin-e-learning",
-        eyebrow: "Karriere",
-        title: "Werkstudent:in E-Learning Content und Plattformpflege",
-        description:
-          "Archivierte Karriere-Seite aus der bisherigen Website. Aktuelle Möglichkeiten werden künftig zentral im Karrierebereich gepflegt.",
-        metaTitle: "Werkstudent:in E-Learning | RelTest Karriere",
-        metaDescription:
-          "Karriere bei RelTest: E-Learning, Content und Plattformpflege im Umfeld Zuverlässigkeitstechnik.",
-        lead:
-          "Diese Seite erhält die alte URL-Signatur und führt künftig Interessierte in den zentralen Karrierebereich.",
-        sections: [
-          {
-            title: "Aktueller Stand",
-            body: "Konkrete Ausschreibungen sollten vor Go-live final geprüft und aktualisiert werden.",
-          },
-          {
-            title: "Warum erhalten",
-            body: "Karriere-URLs können über externe Links oder Suchmaschinen auffindbar sein und sollten nicht unkontrolliert verschwinden.",
-          },
-        ],
-        proofPointsTitle: "Nächste Schritte",
-        proofPoints: [
-          "Ausschreibung intern prüfen",
-          "Status aktiv oder archiviert festlegen",
-          "Ansprechperson ergänzen",
-          "Karrierebereich finalisieren",
-        ],
-        ctaTitle: "Interesse an RelTest?",
-        ctaText:
-          "Nutzen Sie den Kontaktbereich für Initiativkontakt oder Rückfragen.",
-        primaryCta: contactLink,
-      },
-      {
-        slug: "marketing-manager",
-        eyebrow: "Karriere",
-        title: "Marketing Manager",
-        description:
-          "Archivierte Karriere-Seite aus der bisherigen Website. Aktuelle Stellen sollten vor Go-live final geprüft werden.",
-        metaTitle: "Marketing Manager | RelTest Karriere",
-        metaDescription:
-          "Karriere bei RelTest: Marketing, Marke und Kommunikation im technischen B2B-Umfeld.",
-        lead:
-          "Diese alte Stellen-URL wird nicht ersatzlos entfernt, sondern in die neue Karriere-Struktur übernommen.",
-        sections: [
-          {
-            title: "Status klären",
-            body: "Vor Veröffentlichung muss entschieden werden, ob die Stelle aktiv, pausiert oder archiviert ist.",
-          },
-          {
-            title: "SEO und Nutzerführung",
-            body: "Alte Karriere-URLs werden sauber weitergeleitet oder inhaltlich eingeordnet, damit keine unnötigen 404 entstehen.",
-          },
-        ],
-        proofPointsTitle: "Offen",
-        proofPoints: [
-          "Aktualität der Stelle",
-          "Anforderungsprofil",
-          "Kontaktweg",
-          "Einbindung in Karriereübersicht",
-        ],
-        ctaTitle: "Kontakt aufnehmen",
-        ctaText:
-          "Bis zur finalen Stellenpflege dient der Kontaktbereich als sicherer Einstieg.",
-        primaryCta: contactLink,
       },
     ],
     en: [],
@@ -2925,64 +2853,180 @@ detailPageCollections.people.en = detailPageCollections.people.de.map((page) => 
       : contactLinkEn,
 }));
 
-detailPageCollections.news.en = detailPageCollections.news.de.map((page) => ({
-  ...page,
-  eyebrow: "News",
-  description:
-    "Migrated news content from the former website, now connected to the new reliability knowledge and service structure.",
-  metaTitle: `${page.title} | RelTest Solutions`,
-  metaDescription:
-    "RelTest news and technical context related to reliability engineering, testing, data analysis and technical validation.",
-  lead:
-    "This migrated news item is retained so existing URLs and topic signals do not disappear during the relaunch.",
-  sections: [
-    {
-      title: "Technical context",
-      body: "The topic remains relevant as part of RelTest's reliability engineering, testing and data-analysis expertise.",
-    },
-    {
-      title: "Connection to the new website",
-      body: "The new structure links former news topics more clearly to knowledge pages, services and contact paths.",
-    },
-  ],
-  proofPointsTitle: "Related topics",
-  proofPoints: ["reliability engineering", "testing", "data analysis", "technical decisions"],
-  ctaTitle: "Continue with the topic",
-  ctaText:
-    "Use the knowledge and service pages to explore the technical context in more depth.",
-  primaryCta: { label: "View knowledge", href: "/wissen" },
-  secondaryCta: contactLinkEn,
-}));
-
-detailPageCollections.careers.en = detailPageCollections.careers.de.map(
-  (page) => ({
-    ...page,
-    eyebrow: "Careers",
+const newsEnglishCopy: Record<
+  string,
+  Omit<DetailPage, "slug" | "visual">
+> = {
+  "webinar-beschleunigte-lebensdauertests": {
+    eyebrow: "News",
+    title: "Webinar: Accelerated Life Testing",
     description:
-      "Migrated career page from the former website. Current openings should be reviewed before go-live.",
-    metaTitle: `${page.title} | RelTest Careers`,
+      "A technical introduction to accelerating life tests without compromising the validity of the result.",
+    metaTitle: "Accelerated Life Testing Webinar | RelTest",
     metaDescription:
-      "Career information at RelTest Solutions in a technical B2B reliability engineering environment.",
+      "Webinar on accelerated life testing: test planning, acceleration models, evaluation and defensible engineering conclusions.",
     lead:
-      "This former career URL is retained in the new structure to avoid unnecessary 404 errors and to provide a clear contact path.",
+      "Accelerated life tests create value when they are based on plausible physics and evaluated with an appropriate statistical model.",
     sections: [
       {
-        title: "Status to be confirmed",
-        body: "Before publication, the team should decide whether this role is active, paused or archived.",
+        title: "Why acceleration requires engineering judgement",
+        body: "A faster test is useful only if it activates the same relevant failure mechanisms as the product experiences in service.",
       },
       {
-        title: "Clear user path",
-        body: "Until final job content is approved, the contact page provides a reliable way to reach RelTest.",
+        title: "Acceleration model and limits of interpretation",
+        body: "Stress level, failure mechanism and transfer model must be consistent before a shortened test can support a statement about field use.",
       },
     ],
-    proofPointsTitle: "Open before go-live",
-    proofPoints: ["role status", "requirements", "contact person", "career overview"],
-    ctaTitle: "Contact RelTest",
+    proofPointsTitle: "Technical focus",
+    proofPoints: [
+      "life testing",
+      "failure mechanisms",
+      "Weibull analysis",
+      "lifetime prediction",
+    ],
+    ctaTitle: "Explore reliability testing",
     ctaText:
-      "Until final job pages are approved, please use the contact page for inquiries.",
+      "See how test objectives, load spectra, sample size and evaluation are connected to form a defensible lifetime statement.",
+    primaryCta: { label: "Explore testing", href: "/wissen/erprobung" },
+    secondaryCta: contactLinkEn,
+  },
+  "kooperation-holland-innovative": {
+    eyebrow: "News",
+    title: "Cooperation with Holland Innovative",
+    description:
+      "International collaboration and technical exchange in the field of reliability engineering.",
+    metaTitle: "Cooperation with Holland Innovative | RelTest",
+    metaDescription:
+      "RelTest and Holland Innovative: cooperation and technical exchange in reliability engineering.",
+    lead:
+      "Reliability engineering benefits from international exchange and from connecting different industrial and methodological perspectives.",
+    sections: [
+      {
+        title: "Technical exchange",
+        body: "The cooperation broadens the perspective on reliability methods and their application in industrial projects.",
+      },
+      {
+        title: "Value for projects",
+        body: "Clients benefit from a wider experience base, an established technical network and international viewpoints.",
+      },
+    ],
+    proofPointsTitle: "What the cooperation adds",
+    proofPoints: [
+      "technical network",
+      "international exchange",
+      "reliability expertise",
+      "method and project focus",
+    ],
+    ctaTitle: "Discuss a collaboration",
+    ctaText:
+      "RelTest supports companies with specialised expertise for demanding reliability challenges.",
     primaryCta: contactLinkEn,
-  }),
-);
+  },
+  "rams-award": {
+    eyebrow: "News",
+    title: "RAMS Award",
+    description:
+      "Recognition within the professional field of Reliability, Availability, Maintainability and Safety.",
+    metaTitle: "RAMS Award | RelTest Solutions",
+    metaDescription:
+      "RAMS Award and its technical context in Reliability, Availability, Maintainability and Safety.",
+    lead:
+      "RAMS demonstrates why reliability is often part of a wider system context that includes availability, maintainability and safety.",
+    sections: [
+      {
+        title: "Reliability in the system context",
+        body: "Reliability is assessed together with availability, maintainability and safety rather than as an isolated product attribute.",
+      },
+      {
+        title: "A visible technical contribution",
+        body: "Recognition in the professional community provides an additional signal of methodological depth and engineering credibility.",
+      },
+    ],
+    proofPointsTitle: "RAMS dimensions",
+    proofPoints: [
+      "reliability",
+      "availability",
+      "maintainability",
+      "safety",
+    ],
+    ctaTitle: "Put RAMS into engineering context",
+    ctaText:
+      "We help structure system risks, validation activities and technical evidence.",
+    primaryCta: contactLinkEn,
+    secondaryCta: { label: "Explore risk management", href: "/leistungen/risikomanagement" },
+  },
+  "webinar-effiziente-lebensdauertestplanung": {
+    eyebrow: "News",
+    title: "Webinar: Efficient Life Test Planning",
+    description:
+      "A technical perspective on planning life tests with an appropriate sample size, duration and level of confidence.",
+    metaTitle: "Efficient Life Test Planning Webinar | RelTest",
+    metaDescription:
+      "Efficient life test planning: test duration, sample size, confidence and statistical lifetime evaluation.",
+    lead:
+      "Efficient test planning reduces effort without sacrificing the engineering value of the result.",
+    sections: [
+      {
+        title: "Not every test provides the same value",
+        body: "The required engineering decision determines which result the test must provide and how certain that result needs to be.",
+      },
+      {
+        title: "Connecting DoE and statistics",
+        body: "Sample size, test duration, censoring and evaluation must be planned as one coherent strategy.",
+      },
+    ],
+    proofPointsTitle: "Technical focus",
+    proofPoints: [
+      "test duration",
+      "sample size",
+      "confidence",
+      "lifetime analysis",
+    ],
+    ctaTitle: "Plan tests more efficiently",
+    ctaText:
+      "RelTest develops test strategies that remain economical while supporting a defensible decision.",
+    primaryCta: { label: "Explore testing", href: "/wissen/erprobung" },
+    secondaryCta: contactLinkEn,
+  },
+  "smart-data-produktdesign": {
+    eyebrow: "News",
+    title: "Smart Data for Product Design",
+    description:
+      "How product and field data can be translated into better-supported engineering decisions.",
+    metaTitle: "Smart Data for Product Design | RelTest",
+    metaDescription:
+      "Smart data for product design: data analysis, failure behaviour, prediction and better engineering decisions.",
+    lead:
+      "Smart data creates value when information is not merely collected, but interpreted in the context of a specific engineering decision.",
+    sections: [
+      {
+        title: "Start with the engineering question",
+        body: "A useful analysis begins by defining which technical question the available data needs to answer.",
+      },
+      {
+        title: "Improve product design",
+        body: "Data can reveal weak points, influential factors and opportunities for focused product improvement.",
+      },
+    ],
+    proofPointsTitle: "Technical focus",
+    proofPoints: [
+      "data analysis",
+      "prognostics",
+      "weak-point analysis",
+      "product optimisation",
+    ],
+    ctaTitle: "Turn data into decisions",
+    ctaText:
+      "We help transform existing data into robust development and release decisions.",
+    primaryCta: { label: "Explore data analysis", href: "/leistungen/datenanalyse-prognostik" },
+    secondaryCta: contactLinkEn,
+  },
+};
+
+detailPageCollections.news.en = detailPageCollections.news.de.map((page) => ({
+  ...page,
+  ...newsEnglishCopy[page.slug],
+}));
 
 export function getDetailPages(group: DetailGroup, locale: Locale) {
   return detailPageCollections[group][locale];

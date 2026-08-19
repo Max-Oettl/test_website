@@ -1,5 +1,10 @@
 import type { NextConfig } from "next";
 
+import {
+  canonicalizeLocalizedHref,
+  englishRoutePairs,
+} from "./app/_i18n/routes";
+
 const isVercelPreviewDeployment = process.env.VERCEL_ENV === "preview";
 
 const legacyRedirectPairs = [
@@ -89,9 +94,16 @@ const legacyRedirectPairs = [
   ["/glossar", "/de/glossar"],
   ["/aktuelles", "/de/aktuelles"],
   ["/membership-login", "/de/kontakt"],
-  ["/karriere", "/de/karriere"],
-  ["/karriere/werkstudentin-e-learning", "/de/karriere/werkstudentin-e-learning"],
-  ["/karriere/marketing-manager", "/de/karriere/marketing-manager"],
+  ["/karriere", "/de/ueber-uns"],
+  ["/karriere/werkstudentin-e-learning", "/de/ueber-uns"],
+  ["/karriere/marketing-manager", "/de/ueber-uns"],
+  ["/de/karriere", "/de/ueber-uns"],
+  ["/de/karriere/werkstudentin-e-learning", "/de/ueber-uns"],
+  ["/de/karriere/marketing-manager", "/de/ueber-uns"],
+  ["/en/karriere", "/en/ueber-uns"],
+  ["/en/karriere/werkstudentin-e-learning", "/en/ueber-uns"],
+  ["/en/karriere/marketing-manager", "/en/ueber-uns"],
+  ["/en/careers", "/en/ueber-uns"],
   [
     "/webinar-beschleunigte-lebensdauertests",
     "/de/aktuelles/webinar-beschleunigte-lebensdauertests",
@@ -192,8 +204,34 @@ function withOptionalTrailingSlash(
   ];
 }
 
+function canonicalRedirectPairs() {
+  const migratedLegacyPairs = legacyRedirectPairs.map(([source, destination]) =>
+    [source, canonicalizeLocalizedHref(destination)] as const,
+  );
+  const formerInternalEnglishPaths = englishRoutePairs.map(
+    ([internalPath, publicPath]) =>
+      [`/en${internalPath}`, `/en${publicPath}`] as const,
+  );
+  const uniquePairs = new Map<string, string>();
+
+  for (const [source, destination] of [
+    ...migratedLegacyPairs,
+    ...formerInternalEnglishPaths,
+  ]) {
+    if (source !== destination && !uniquePairs.has(source)) {
+      uniquePairs.set(source, destination);
+    }
+  }
+
+  return [...uniquePairs.entries()];
+}
+
 const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
+  images: {
+    deviceSizes: [640, 750, 828, 1080, 1200, 1440, 1600, 1920, 2048],
+    qualities: [75, 90],
+  },
   async headers() {
     if (!isVercelPreviewDeployment) {
       return [];
@@ -212,9 +250,15 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    return legacyRedirectPairs.flatMap(([source, destination]) =>
+    return canonicalRedirectPairs().flatMap(([source, destination]) =>
       withOptionalTrailingSlash(source, destination),
     );
+  },
+  async rewrites() {
+    return englishRoutePairs.map(([internalPath, publicPath]) => ({
+      source: `/en${publicPath}`,
+      destination: `/en${internalPath}`,
+    }));
   },
 };
 

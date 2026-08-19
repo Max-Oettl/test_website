@@ -551,12 +551,12 @@ export function PersonProfilePage({
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": absoluteUrl(`/${locale}${profilePath}#person`),
+    "@id": `${absoluteUrl(localizeHref(locale, profilePath))}#person`,
     name: page.title,
     jobTitle: personCopy.role,
     description: page.metaDescription,
     image: page.visual ? absoluteUrl(page.visual.src) : undefined,
-    url: absoluteUrl(`/${locale}${profilePath}`),
+    url: absoluteUrl(localizeHref(locale, profilePath)),
     sameAs: isKevin ? [podcastUrl] : [berndUniversityProfileUrl],
     worksFor: {
       "@type": "Organization",
@@ -618,13 +618,13 @@ export function PersonProfilePage({
                   src={page.visual.src}
                   alt={page.visual.alt}
                   fill
-                  priority
+                  preload
                   className={`object-cover ${
                     isKevin
                       ? "object-[50%_8%] lg:object-[50%_10%]"
                       : "object-[50%_20%] lg:object-[50%_34%]"
                   }`}
-                  sizes="(min-width: 1024px) 43vw, 100vw"
+                  sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-marine/25 via-transparent to-transparent" />
               </div>

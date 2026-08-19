@@ -51,7 +51,7 @@ const processImages: Record<Locale, Record<string, ProcessImageAsset>> = {
       alt: "Technisches Diagramm zur Zuverlässigkeitsabsicherung vom Bauteilmodell bis zum Systemnachweis",
     },
     prognosen: {
-      src: "/wissen/uebersicht/prognose-cropped.png",
+      src: "/wissen/uebersicht/reliability-prediction-overview.png",
       width: 760,
       height: 680,
       alt: "Veranschaulichung einer Zuverlässigkeitsprognose aus Versuchs- und Felddaten mit statistischem Lebensdauermodell",
@@ -83,7 +83,7 @@ const processImages: Record<Locale, Record<string, ProcessImageAsset>> = {
       alt: "Technical reliability assurance diagram from component models to system verification",
     },
     prognosen: {
-      src: "/wissen/uebersicht/prognose-cropped.png",
+      src: "/wissen/uebersicht/reliability-prediction-overview.png",
       width: 760,
       height: 680,
       alt: "Reliability prediction based on test and field data using a statistical lifetime model",
@@ -472,8 +472,8 @@ export default async function KnowledgePage({ params }: Props) {
             alt={knowledgeHeroImages[locale].alt}
             width={knowledgeHeroImages[locale].width}
             height={knowledgeHeroImages[locale].height}
-            priority
-            sizes="(min-width: 1024px) 48vw, 100vw"
+            preload
+            sizes="(min-width: 1280px) 860px, (min-width: 1024px) 60vw, 100vw"
             className="h-auto max-h-[460px] w-full object-contain mix-blend-screen lg:max-h-[520px] lg:w-[140%] lg:max-w-none lg:-translate-x-[5%]"
           />
         </figure>

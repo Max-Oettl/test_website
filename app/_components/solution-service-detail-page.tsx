@@ -90,8 +90,8 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
               src={page.hero.image}
               alt={page.hero.imageAlt}
               fill
-              priority
-              sizes="(min-width: 1280px) 44vw, 100vw"
+              preload
+              sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.38),transparent_52%),linear-gradient(0deg,rgba(3,19,52,.3),transparent_48%)]" />

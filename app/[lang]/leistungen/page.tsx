@@ -188,11 +188,11 @@ export default async function ServicesPage({ params }: Props) {
 
           <div className="relative min-h-[25rem] border-t border-white/15 xl:min-h-[42rem] xl:border-t-0 xl:border-l">
             <Image
-              src="/team/home-engineering-consulting.png"
+              src="/team/home-engineering-consulting.webp"
               alt={copy.hero.imageAlt}
               fill
-              priority
-              sizes="(min-width: 1280px) 42vw, 100vw"
+              preload
+              sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.34),transparent_50%),linear-gradient(0deg,rgba(3,19,52,.35),transparent_48%)]" />

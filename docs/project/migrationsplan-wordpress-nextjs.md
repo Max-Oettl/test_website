@@ -649,13 +649,15 @@ Erste 8 bis 12 Wochen:
 
 | Alte URL-Gruppe | Neue Zielrichtung |
 | --- | --- |
-| `/en/` | englische Startseite |
-| `/en/contact/` | englische Kontaktseite |
-| `/en/credentials/` | englische Referenzseite |
-| `/en/reliability-engineering/...` | englischer Wissens-/Leistungsbereich |
-| `/en/reliability-management/...` | englischer Leistungs-/Weiterbildungsbereich |
-| `/en/industries/...` | englische Branchenstruktur oder passende Zielseite |
-| `/en/about-us/...` | englische Ueber-uns-/Team-Zielseite |
+| `/en/` | `/en` |
+| `/en/contact/` | `/en/contact` |
+| `/en/credentials/` | `/en/references` |
+| `/en/reliability-engineering/...` | passende Seite unter `/en/knowledge/...` |
+| `/en/reliability-management/...` | passende Seite unter `/en/services/...` oder `/en/education` |
+| `/en/industries/...` | passende Seite unter `/en/industries/...` |
+| `/en/about-us/...` | passende Seite unter `/en/about-us/...` |
+
+Die kanonische englische Zielstruktur verwendet ausschließlich englische Slugs. Frühere Next.js-Pfade mit deutschen Slugs unter `/en`, beispielsweise `/en/leistungen`, `/en/wissen` oder `/en/branchen/maschinenbau`, werden ebenfalls per `301` auf `/en/services`, `/en/knowledge` beziehungsweise `/en/industries/mechanical-engineering` weitergeleitet. Die zentrale Zuordnung liegt in `app/_i18n/routes.ts`; Sitemap, Canonicals, `hreflang`, Sprachumschalter und interne Links verwenden dieselbe Quelle.
 
 ## 9. No-Go-Kriterien vor Go-live
 
