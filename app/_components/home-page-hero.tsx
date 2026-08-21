@@ -261,7 +261,21 @@ export function HomePageHero({
                       : "max-w-[52rem]"
                   }`}
                 >
-                  {activeSlide.title}
+                  {activeSlide.href ===
+                  "/leistungen/datenanalyse-prognostik" ? (
+                    <>
+                      <span>
+                        {locale === "de" ? "Versuche planen." : "Plan tests."}
+                      </span>
+                      <span className="min-[1120px]:block 2xl:inline">
+                        {locale === "de"
+                          ? " Lebensdauer belastbar bewerten."
+                          : " Assess lifetime robustly."}
+                      </span>
+                    </>
+                  ) : (
+                    activeSlide.title
+                  )}
                 </h1>
               </div>
               <p className="mt-7 min-h-[4.25rem] max-w-[50rem] text-[clamp(1.1rem,1.25vw,1.35rem)] leading-[1.45] font-semibold tracking-[-0.015em] text-brand-marine/82">
