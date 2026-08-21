@@ -21,9 +21,10 @@ const conceptContent = {
     academyCta: "RelTest Education entdecken",
     slides: [
       {
-        title: "Zuverlässigkeit verstehen. Entscheidungen absichern.",
+        title:
+          "Zuverlässigkeits\u00adberatung für Industrieprodukte.",
         description:
-          "RelTest steht für Ingenieursberatung in Zuverlässigkeitstechnik und Risikomanagement – von der Entwicklung bis zur Freigabe.",
+          "Wir verbinden Zuverlässigkeitsziele, technische Risiken, Tests und Daten zu belastbaren Produktentscheidungen.",
         cta: "Zuverlässigkeitstechnik ansehen",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.webp",
@@ -31,21 +32,21 @@ const conceptContent = {
           "object-[50%_48%] sm:translate-x-[14%] sm:translate-y-[8%] sm:scale-[1.3] sm:object-center",
       },
       {
-        title: "Risiken priorisieren. Maßnahmen wirksam ausrichten.",
+        title: "Technische Risiken gezielt absichern.",
         description:
-          "RelTest verbindet technische Risikobewertung mit Absicherung, Nachweisen und nachvollziehbarer Dokumentation.",
+          "FMEA, FTA, Risikobewertung und Nachweisplanung werden zu einer nachvollziehbaren Entscheidungsgrundlage verbunden.",
         cta: "Risikomanagement ansehen",
         href: "/leistungen/risikomanagement",
         image: "/graphics/knowledge/risk-management.png",
         imagePosition: "object-center",
       },
       {
-        title: "Tests und Daten in belastbare Aussagen übersetzen.",
+        title: "Versuche planen. Lebensdauer belastbar bewerten.",
         description:
-          "Versuchsplanung, DoE und statistische Analyse schaffen Klarheit über Lebensdauer, Streuung und Feldverhalten.",
+          "Design of Experiments, Lebensdauererprobung, Felddatenanalyse und statistische Modelle werden passend zur technischen Frage eingesetzt.",
         cta: "Datenanalyse ansehen",
         href: "/leistungen/datenanalyse-prognostik",
-        image: "/graphics/knowledge/testing.png",
+        image: "/graphics/knowledge/testing-realistic.webp",
         imagePosition: "object-center",
       },
     ],
@@ -80,9 +81,9 @@ const conceptContent = {
     academyCta: "Explore RelTest Education",
     slides: [
       {
-        title: "Understand reliability. Safeguard decisions.",
+        title: "Reliability consulting for industrial products.",
         description:
-          "RelTest provides engineering consulting in reliability and risk management – from development through release.",
+          "We connect reliability targets, technical risks, testing and data to support robust product decisions.",
         cta: "Explore reliability engineering",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.webp",
@@ -90,21 +91,21 @@ const conceptContent = {
           "object-[50%_48%] sm:translate-x-[14%] sm:translate-y-[8%] sm:scale-[1.3] sm:object-center",
       },
       {
-        title: "Prioritise risks. Direct measures effectively.",
+        title: "Assure technical risks systematically.",
         description:
-          "RelTest connects technical risk assessment with assurance, evidence and traceable documentation.",
+          "FMEA, FTA, risk assessment and evidence planning are combined into a traceable basis for decisions.",
         cta: "Explore risk management",
         href: "/leistungen/risikomanagement",
         image: "/graphics/knowledge/risk-management.png",
         imagePosition: "object-center",
       },
       {
-        title: "Turn tests and data into robust conclusions.",
+        title: "Plan tests. Assess lifetime robustly.",
         description:
-          "Test planning, DoE and statistical analysis clarify lifetime, variation and field behaviour.",
+          "Design of Experiments, lifetime testing, field data analysis and statistical models are selected for the technical question.",
         cta: "Explore data analysis",
         href: "/leistungen/datenanalyse-prognostik",
-        image: "/graphics/knowledge/testing.png",
+        image: "/graphics/knowledge/testing-realistic.webp",
         imagePosition: "object-center",
       },
     ],
@@ -253,7 +254,13 @@ export function HomePageHero({
               className="winnstein-hero-copy flex h-[31rem] w-full max-w-[56rem] translate-y-3 flex-col sm:h-[27rem] sm:translate-y-3.5"
             >
               <div className="flex min-h-0 flex-1 items-end">
-                <h1 className="max-w-[52rem] text-[clamp(2.4rem,3.2vw,4.1rem)] leading-[1] font-semibold tracking-[-0.055em] text-brand-ink">
+                <h1
+                  className={`text-[clamp(2.05rem,3.2vw,4.1rem)] leading-[1] font-semibold tracking-[-0.045em] text-brand-ink hyphens-manual ${
+                    activeSlide.href === "/leistungen/risikomanagement"
+                      ? "max-w-[36rem] 2xl:max-w-[52rem]"
+                      : "max-w-[52rem]"
+                  }`}
+                >
                   {activeSlide.title}
                 </h1>
               </div>

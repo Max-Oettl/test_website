@@ -36,7 +36,7 @@ const formCopy = {
     companyOptional: "Optional für Privatpersonen",
     email: "E-Mail-Adresse",
     phone: "Telefon",
-    optional: "optional",
+    phoneOptional: "Optional",
     message: "Worum geht es bei Ihrem Produkt, Projekt oder Anliegen?",
     messageHint:
       "Hilfreich sind Produkt oder System, anstehende Entscheidung, Projektphase sowie bereits vorhandene Daten oder Versuche.",
@@ -86,7 +86,7 @@ const formCopy = {
     companyOptional: "Optional for private individuals",
     email: "Email address",
     phone: "Phone",
-    optional: "optional",
+    phoneOptional: "Optional",
     message: "What is your product, project or inquiry about?",
     messageHint:
       "Useful context includes the product or system, the decision ahead, the project phase and any existing data or tests.",
@@ -271,11 +271,14 @@ export function ContactInquiryForm({ locale }: ContactInquiryFormProps) {
             </label>
 
             <label className="font-winnstein-display text-sm font-semibold sm:col-span-2">
-              {copy.phone}{" "}
-              <span className="font-winnstein-body font-normal text-brand-marine/50">
-                ({copy.optional})
-              </span>
-              <input name="phone" type="tel" autoComplete="tel" className={fieldClassName} />
+              {copy.phone}
+              <input
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                placeholder={copy.phoneOptional}
+                className={fieldClassName}
+              />
             </label>
 
             <label className="font-winnstein-display text-sm font-semibold sm:col-span-2">

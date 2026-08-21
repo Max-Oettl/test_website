@@ -24,7 +24,7 @@ import type { KnowledgeArticle, KnowledgeMedia } from "../_content/knowledge-con
 import { getKnowledgeArticles } from "../_content/knowledge-content";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { KnowledgeMediaPlaceholder } from "./knowledge-media-placeholder";
-import { PageContextBar } from "./page-context-bar";
+import { SectionRailNavigation } from "./section-rail-navigation";
 
 type Props = {
   article: KnowledgeArticle;
@@ -51,6 +51,12 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
   const isQuantitative = ["prognosen", "design-of-experiments", "erprobung"].includes(article.slug);
   const isDiagnostic = ["schwachstellenanalyse", "risikomanagement"].includes(article.slug);
   const headerImage = knowledgeHeaderImages[locale][article.slug as keyof (typeof knowledgeHeaderImages)[Locale]];
+  const sectionIdPrefix = `knowledge-${article.slug}`;
+  const sectionNavigationItems = article.sections.map((section, index) => ({
+    href: `#${sectionIdPrefix}-${index + 1}`,
+    label: section.heading,
+    number: String(index + 1).padStart(2, "0"),
+  }));
 
   return (
     <>
@@ -91,13 +97,6 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
         </div>
       </header>
 
-      <PageContextBar
-        locale={locale}
-        sectionHref="/wissen"
-        sectionLabel={isGerman ? "Wissen" : "Knowledge"}
-        currentLabel={article.navLabel}
-      />
-
       <main className="font-winnstein-body">
         {article.definition ? (
           <section className="border-b border-[var(--solution-marine-20)] bg-white">
@@ -109,55 +108,68 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
           </section>
         ) : null}
 
-        <article className="mx-auto max-w-6xl px-6 py-14 lg:px-8 lg:py-20">
-          {article.sections.map((section, index) => (
-            <section
-              key={section.heading}
-              className={`${index > 0 ? "mt-20 border-t border-[var(--solution-marine-20)] pt-16" : ""}`}
-            >
-              <div className={`${isDiagnostic ? "lg:grid-cols-[minmax(280px,.72fr)_minmax(0,1.28fr)]" : "lg:grid-cols-[minmax(220px,.55fr)_minmax(0,1.45fr)]"} grid gap-7`}>
-                <h2 className="font-winnstein-display text-3xl font-semibold leading-tight text-[var(--solution-marine)]">
-                  {section.heading}
-                </h2>
-                <div>
-                  <div className="space-y-6 text-lg leading-8 text-[var(--solution-marine-80)]">
-                    {section.paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
-                  </div>
-                  {section.bullets?.length ? (
-                    <ul className="mt-8 space-y-3 border-y border-[var(--solution-marine-20)] py-6">
-                      {section.bullets.map((bullet) => (
-                        <li key={bullet} className="flex gap-4 text-base leading-7 text-[var(--solution-marine)]">
-                          <span aria-hidden="true" className="mt-[.8em] h-0.5 w-4 shrink-0 bg-[var(--solution-steel-cyan)]" />
-                          <span>{bullet}</span>
-                        </li>
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 lg:px-8 lg:py-20 xl:grid-cols-[13rem_minmax(0,1fr)] xl:gap-16">
+          <SectionRailNavigation
+            ariaLabel={
+              isGerman
+                ? `Abschnitte in ${article.navLabel}`
+                : `Sections in ${article.navLabel}`
+            }
+            items={sectionNavigationItems}
+            title={article.navLabel}
+          />
+
+          <article className="min-w-0">
+            {article.sections.map((section, index) => (
+              <section
+                id={`${sectionIdPrefix}-${index + 1}`}
+                key={section.heading}
+                className={`scroll-mt-36 ${index > 0 ? "mt-20 border-t border-[var(--solution-marine-20)] pt-16" : ""}`}
+              >
+                <div className={`${isDiagnostic ? "lg:grid-cols-[minmax(280px,.72fr)_minmax(0,1.28fr)] xl:grid-cols-[minmax(320px,.75fr)_minmax(0,1.25fr)]" : "lg:grid-cols-[minmax(220px,.55fr)_minmax(0,1.45fr)] xl:grid-cols-[minmax(340px,.75fr)_minmax(0,1.25fr)]"} grid gap-7 xl:gap-12`}>
+                  <h2 className="min-w-0 break-words font-winnstein-display text-3xl font-semibold leading-tight text-[var(--solution-marine)] hyphens-none">
+                    {section.heading}
+                  </h2>
+                  <div>
+                    <div className="space-y-6 text-lg leading-8 text-[var(--solution-marine-80)]">
+                      {section.paragraphs.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
                       ))}
-                    </ul>
-                  ) : null}
+                    </div>
+                    {section.bullets?.length ? (
+                      <ul className="mt-8 space-y-3 border-y border-[var(--solution-marine-20)] py-6">
+                        {section.bullets.map((bullet) => (
+                          <li key={bullet} className="flex gap-4 text-base leading-7 text-[var(--solution-marine)]">
+                            <span aria-hidden="true" className="mt-[.8em] h-0.5 w-4 shrink-0 bg-[var(--solution-steel-cyan)]" />
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
                 </div>
-              </div>
-              {section.media ? (
-                <div
-                  className={`${
-                    section.media.maxWidth
-                      ? mediaWidthClasses[section.media.maxWidth]
-                      : isQuantitative
-                        ? "-mx-0 lg:-mx-16"
-                        : ""
-                  } mt-10`}
-                >
-                  {section.media.lead ? (
-                    <p className="mb-5 max-w-4xl border-l-2 border-[var(--solution-steel-cyan)] pl-5 text-base font-medium leading-7 text-[var(--solution-marine)]">
-                      {section.media.lead}
-                    </p>
-                  ) : null}
-                  <KnowledgeMediaPlaceholder media={section.media} />
-                </div>
-              ) : null}
-            </section>
-          ))}
-        </article>
+                {section.media ? (
+                  <div
+                    className={`${
+                      section.media.maxWidth
+                        ? mediaWidthClasses[section.media.maxWidth]
+                        : isQuantitative
+                          ? "-mx-0 lg:-mx-16"
+                          : ""
+                    } mt-10`}
+                  >
+                    {section.media.lead ? (
+                      <p className="mb-5 max-w-4xl border-l-2 border-[var(--solution-steel-cyan)] pl-5 text-base font-medium leading-7 text-[var(--solution-marine)]">
+                        {section.media.lead}
+                      </p>
+                    ) : null}
+                    <KnowledgeMediaPlaceholder media={section.media} />
+                  </div>
+                ) : null}
+              </section>
+            ))}
+          </article>
+        </div>
 
         <section className="bg-[var(--solution-marine-10)]">
           <div className="mx-auto max-w-5xl px-6 py-14 lg:px-8 lg:py-16">

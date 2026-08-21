@@ -17,7 +17,7 @@ const contactCopy = {
         "Sprechen Sie mit RelTest Solutions über Ihre technische Fragestellung in Zuverlässigkeitstechnik, Risikomanagement, Test oder Datenanalyse.",
     },
     hero: {
-      title: "Lassen Sie uns über Ihr Projekt sprechen.",
+      title: "Technisches Projekt besprechen.",
       description:
         "Im ersten Gespräch klären wir, worum es technisch geht, welche Entscheidung ansteht und ob RelTest sinnvoll unterstützen kann.",
       primaryCta: "Termin auswählen",
@@ -29,14 +29,14 @@ const contactCopy = {
         "Dr.-Ing. Kevin Lucan, Geschäftsführer von RelTest Solutions",
     },
     booking: {
-      title: "Termin direkt auswählen.",
+      title: "Termin für ein Erstgespräch.",
       description:
         "Wählen Sie im Kalender einen passenden Termin. Das Gespräch findet online statt; die Zugangsdaten erhalten Sie mit der Bestätigung.",
       embedTitle: "Terminbuchung bei RelTest Solutions mit Kevin Lucan",
       fallback: "Terminbuchung separat öffnen",
     },
     preparation: {
-      title: "Für den Einstieg reichen drei Punkte.",
+      title: "Das brauchen wir zum Einstieg.",
       items: [
         "Worum geht es bei Ihrem Produkt oder Projekt?",
         "Welche technische Entscheidung steht an?",
@@ -46,7 +46,7 @@ const contactCopy = {
         "Eine fertige Aufgabenbeschreibung ist nicht nötig. Den sinnvollen Umfang grenzen wir gemeinsam ein.",
     },
     direct: {
-      title: "Lieber direkt schreiben oder anrufen?",
+      title: "Direkter Kontakt zu RelTest.",
       description:
         "Sie erreichen RelTest ohne Umweg. Technische Unterlagen können Sie gerne per E-Mail mitsenden.",
       emailSubject: "Projektanfrage an RelTest Solutions",
@@ -62,7 +62,7 @@ const contactCopy = {
         "Talk to RelTest Solutions about your technical question in reliability engineering, risk management, testing or data analysis.",
     },
     hero: {
-      title: "Let us talk about your project.",
+      title: "Discuss your technical project.",
       description:
         "In the first conversation, we clarify the technical question, the decision ahead and whether RelTest is the right partner to support you.",
       primaryCta: "Choose a time",
@@ -74,14 +74,14 @@ const contactCopy = {
         "Dr.-Ing. Kevin Lucan, Managing Director of RelTest Solutions",
     },
     booking: {
-      title: "Choose a meeting time directly.",
+      title: "Schedule an initial consultation.",
       description:
         "Select a suitable time in the calendar. The meeting will take place online; you will receive the access details with your confirmation.",
       embedTitle: "Schedule a meeting with Kevin Lucan at RelTest Solutions",
       fallback: "Open scheduling separately",
     },
     preparation: {
-      title: "Three points are enough to get started.",
+      title: "What we need to get started.",
       items: [
         "What is the product or project about?",
         "Which technical decision is ahead?",
@@ -91,7 +91,7 @@ const contactCopy = {
         "You do not need a finished scope of work. We will define a sensible scope together.",
     },
     direct: {
-      title: "Prefer to write or call directly?",
+      title: "Contact RelTest directly.",
       description:
         "You can reach RelTest without any detours. Technical documents are welcome by email.",
       emailSubject: "Project inquiry for RelTest Solutions",

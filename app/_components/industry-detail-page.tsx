@@ -10,6 +10,7 @@ import type { IndustryEditorialLayout } from "../_content/industry-editorial-con
 import { localizeHref, type Locale } from "../_i18n/config";
 import { ActiveNavLink } from "./active-nav-link";
 import { PageClosingCta } from "./page-closing-cta";
+import { SectionRailNavigation } from "./section-rail-navigation";
 
 type Props = {
   locale: Locale;
@@ -99,7 +100,6 @@ function IndustryEditorialFlow({ locale, content }: Props) {
   const labels =
     locale === "de"
       ? {
-          navigation: "Auf dieser Seite",
           overview: "Anforderungen und Freigabe",
           systems: "Produkte und Risikofelder",
           validation: "Prüf- und Nachweisstrategie",
@@ -118,7 +118,6 @@ function IndustryEditorialFlow({ locale, content }: Props) {
           context: "Fachlicher Rahmen",
         }
       : {
-          navigation: "On this page",
           overview: "Requirements and release",
           systems: "Products and risk fields",
           validation: "Test and evidence strategy",
@@ -147,33 +146,15 @@ function IndustryEditorialFlow({ locale, content }: Props) {
   return (
     <section className="bg-white px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-12 xl:grid-cols-[13rem_minmax(0,1fr)] xl:gap-16">
-        <aside className="hidden xl:block">
-          <div className="sticky top-32 border-t border-brand-marine/18 pt-5">
-            <p className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
-              {sectionName}
-            </p>
-            <p className="mt-2 text-xs font-semibold tracking-[0.06em] text-brand-marine/48 uppercase">
-              {labels.navigation}
-            </p>
-            <nav aria-label={labels.navigation} className="mt-5">
-              <ol className="space-y-1">
-                {chapters.map((chapter) => (
-                  <li key={chapter.href}>
-                    <a
-                      href={chapter.href}
-                      className="group grid grid-cols-[2rem_minmax(0,1fr)] gap-3 border-t border-brand-marine/12 py-4 text-sm leading-5 text-brand-marine/64 transition-colors hover:text-brand-marine"
-                    >
-                      <span className="font-winnstein-display text-xs font-bold text-brand-steel-cyan">
-                        {chapter.number}
-                      </span>
-                      <span>{chapter.label}</span>
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </nav>
-          </div>
-        </aside>
+        <SectionRailNavigation
+          ariaLabel={
+            locale === "de"
+              ? `Abschnitte in ${sectionName}`
+              : `Sections in ${sectionName}`
+          }
+          items={chapters}
+          title={sectionName}
+        />
 
         <article className="min-w-0">
           <section id={`${idPrefix}-anforderungen`} className="scroll-mt-36 pb-16 sm:pb-20">

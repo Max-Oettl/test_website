@@ -65,7 +65,7 @@ const solutionServicePages: Record<
       metaDescription:
         "Zuverlässigkeitsplanung, Lebensdauerbewertung und belastbare Zuverlässigkeitsnachweise für technische Produkte und Systeme.",
       hero: {
-        title: "Zuverlässigkeit von Anfang an belastbar entwickeln.",
+        title: "Zuverlässigkeit planen und nachweisen.",
         description:
           "RelTest übersetzt reale Einsatzbedingungen in klare Zuverlässigkeitsziele, bewertet relevante Ausfallmechanismen und entwickelt Nachweise, die zur Produktreife und zur anstehenden Entscheidung passen.",
         image: "/team/engineering-simulation-review.jpg",
@@ -190,7 +190,7 @@ const solutionServicePages: Record<
       metaDescription:
         "Technische Risiken mit FMEA, FTA und risikobasierten Absicherungsstrategien systematisch bewerten, priorisieren und dokumentieren.",
       hero: {
-        title: "Technische Risiken früh erkennen und wirksam absichern.",
+        title: "Technische Risiken bewerten und absichern.",
         description:
           "RelTest schafft eine belastbare Verbindung zwischen Risikoanalyse, technischer Bewertung und konkreter Absicherung. So werden kritische Schwachstellen nicht nur dokumentiert, sondern gezielt bearbeitet.",
         image: "/expertise/lab-review.webp",
@@ -319,7 +319,7 @@ const solutionServicePages: Record<
       metaDescription:
         "Versuchsplanung mit DoE, Lebensdauererprobung, Felddatenanalyse und Prognostik für belastbare technische Entscheidungen.",
       hero: {
-        title: "Tests so planen, dass Daten eine klare Entscheidung ermöglichen.",
+        title: "Versuche planen und Daten auswerten.",
         description:
           "RelTest verbindet Versuchsplanung, statistische Auswertung und technisches Produktverständnis. Dadurch entstehen aus Prüf- und Felddaten belastbare Aussagen statt isolierter Kennzahlen.",
         image: "/team/home-testbench-review.png",
@@ -446,7 +446,7 @@ const solutionServicePages: Record<
       metaDescription:
         "Feste Engineering-Projektpartnerschaft für Zuverlässigkeit mit definierten Arbeitspaketen, prüfbaren Ergebnissen, Dokumentation und klar geregelter Verantwortung.",
       hero: {
-        title: "Engineering-Verantwortung verlässlich in Ihr Projekt integrieren.",
+        title: "Engineering-Arbeitspakete verlässlich übernehmen.",
         description:
           "RelTest übernimmt klar definierte Arbeitspakete, liefert prüfbare Ergebnisse und arbeitet als verlässlicher Engineering-Partner über einzelne Analysen hinaus. Umfang, Schnittstellen, Abnahme und Verantwortungsrahmen werden vor Projektbeginn eindeutig vereinbart.",
         image: "/team/engineering-project-partnership-review.webp",
@@ -573,7 +573,7 @@ const solutionServicePages: Record<
       metaDescription:
         "Reliability planning, lifetime assessment and robust reliability evidence for technical products and systems.",
       hero: {
-        title: "Develop reliability on a sound basis from the start.",
+        title: "Plan and demonstrate reliability.",
         description:
           "RelTest translates real operating conditions into clear reliability targets, evaluates relevant failure mechanisms and develops evidence that fits product maturity and the decision at hand.",
         image: "/team/engineering-simulation-review.jpg",
@@ -697,7 +697,7 @@ const solutionServicePages: Record<
       metaDescription:
         "Assess, prioritise and document technical risks systematically with FMEA, FTA and risk-based assurance strategies.",
       hero: {
-        title: "Identify technical risks early and control them effectively.",
+        title: "Assess and control technical risks.",
         description:
           "RelTest creates a robust connection between risk analysis, technical assessment and concrete assurance. Critical weaknesses are not only documented, but actively addressed.",
         image: "/expertise/lab-review.webp",
@@ -825,7 +825,7 @@ const solutionServicePages: Record<
       metaDescription:
         "Design of Experiments, lifetime testing, field data analysis and prognostics for robust technical decisions.",
       hero: {
-        title: "Plan tests so that data enables a clear decision.",
+        title: "Plan tests and analyse data.",
         description:
           "RelTest combines experimental design, statistical evaluation and technical product understanding. This turns test and field data into robust conclusions rather than isolated metrics.",
         image: "/team/home-testbench-review.png",
@@ -952,7 +952,7 @@ const solutionServicePages: Record<
       metaDescription:
         "Long-term engineering project partnership for reliability with defined work packages, verifiable results, documentation and clearly agreed responsibility.",
       hero: {
-        title: "Integrate accountable engineering support into your project.",
+        title: "Deliver engineering work packages reliably.",
         description:
           "RelTest takes ownership of clearly defined work packages, delivers verifiable results and supports projects beyond isolated analyses. Scope, interfaces, acceptance and responsibility are agreed before the project begins.",
         image: "/team/engineering-project-partnership-review.webp",

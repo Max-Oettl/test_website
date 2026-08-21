@@ -30,13 +30,12 @@ type LeaderProfile = {
 
 type TeamCapability = {
   title: string;
-  field: string;
-  summary: string;
-  links: {
+  points: string[];
+  link: {
     label: string;
     href: string;
     external?: boolean;
-  }[];
+  };
 };
 
 const podcastUrl =
@@ -52,7 +51,10 @@ const aboutContent: Record<
     hero: {
       title: string;
       description: string;
-      principles: string[];
+      principles: {
+        firstLine: string;
+        secondLine: string;
+      }[];
     };
     leadership: {
       title: string;
@@ -94,13 +96,22 @@ const aboutContent: Record<
       description:
         "Wir verbinden wissenschaftliche Tiefe mit Verantwortung für reale Entwicklungsentscheidungen. Im Projekt arbeiten Sie direkt mit Menschen, die technische Zusammenhänge verständlich machen und Entscheidungen belastbar vorbereiten.",
       principles: [
-        "Persönlich ansprechbar",
-        "Wissenschaftlich fundiert",
-        "Industriell erfahren",
+        {
+          firstLine: "Technische Ursachen",
+          secondLine: "systematisch klären",
+        },
+        {
+          firstLine: "Passende Methoden",
+          secondLine: "gezielt einsetzen",
+        },
+        {
+          firstLine: "Ergebnisse klar",
+          secondLine: "dokumentieren",
+        },
       ],
     },
     leadership: {
-      title: "Verantwortung hat bei RelTest ein Gesicht.",
+      title: "Verantwortung in Kundenprojekten.",
       description:
         "Dr.-Ing. Kevin Lucan und Prof. Dr.-Ing. Bernd Bertsche verbinden direkte Verantwortung im Kundenprojekt mit jahrzehntelang gewachsener Fachautorität.",
       profiles: [
@@ -119,9 +130,9 @@ const aboutContent: Record<
             "Beratung zu Zuverlässigkeitsprozessen, Erprobungsstrategien, Felddaten und DoE.",
           ],
           profileHref: "/ueber-uns/kevin-lucan",
-          profileLabel: "Profil von Kevin Lucan",
+          profileLabel: "Profil ansehen",
           secondaryHref: calendlyUrl,
-          secondaryLabel: "Termin mit Kevin",
+          secondaryLabel: "Gespräch vereinbaren",
           secondaryExternal: true,
         },
         {
@@ -139,7 +150,7 @@ const aboutContent: Record<
             "Leitende Facharbeit in DFG, VDI und DKE sowie Transfer zwischen Forschung und Industrie.",
           ],
           profileHref: "/ueber-uns/bernd-bertsche",
-          profileLabel: "Profil von Bernd Bertsche",
+          profileLabel: "Profil ansehen",
           secondaryHref: "/ueber-uns/bernd-bertsche#fachbuecher",
           secondaryLabel: "Fachbücher ansehen",
         },
@@ -151,7 +162,7 @@ const aboutContent: Record<
       description:
         "Im Podcast spricht Kevin über seinen Weg, technische Verantwortung und die Zusammenarbeit in anspruchsvollen Entwicklungsprojekten. Ein persönlicher Einstieg, bevor wir miteinander sprechen.",
       linkLabel: "Podcast anhören",
-      contactLabel: "Termin mit Kevin",
+      contactLabel: "Gespräch vereinbaren",
       durationLabel: "Gespräch über Ingenieurpraxis und Verantwortung",
     },
     team: {
@@ -163,51 +174,39 @@ const aboutContent: Record<
       profiles: [
         {
           title: "Risiko und technische Absicherung",
-          field: "Ausfallmechanismen · Priorisierung · Wirksamkeitsnachweis",
-          summary:
-            "Wir verbinden FMEA, FTA und quantitative Risikobewertung mit konkreten Ausfallmechanismen, Prüfungen und dokumentierten Nachweisen. So bleibt die Bewertung über Entwicklung, Freigabe und Änderungen hinweg belastbar.",
-          links: [
-            {
-              label: "Risikomanagement",
-              href: "/leistungen/risikomanagement",
-            },
-            {
-              label: "Wissen zur Absicherung",
-              href: "/wissen/absicherung",
-            },
+          points: [
+            "Ausfallmechanismen verstehen",
+            "Risiken priorisieren",
+            "Nachweise absichern",
           ],
+          link: {
+            label: "Risikomanagement",
+            href: "/leistungen/risikomanagement",
+          },
         },
         {
           title: "Systemzuverlässigkeit und Produktlebenszyklus",
-          field: "Anforderungen · Architektur · Erprobung · Felddaten",
-          summary:
-            "Wir betrachten Produktfunktion, Nutzung, Lebensdauer und Systemgrenzen gemeinsam. Anforderungen, Erprobung und Felderfahrung werden so verbunden, dass Entscheidungen nicht an einzelnen Disziplinen oder Projektphasen abbrechen.",
-          links: [
-            {
-              label: "Zuverlässigkeitstechnik",
-              href: "/leistungen/zuverlaessigkeitstechnik",
-            },
-            {
-              label: "Wissen zum Gesamtprozess",
-              href: "/wissen/zuverlaessigkeitstechnik",
-            },
+          points: [
+            "Anforderungen verbinden",
+            "Erprobung ausrichten",
+            "Felddaten zurückführen",
           ],
+          link: {
+            label: "Zuverlässigkeitstechnik",
+            href: "/leistungen/zuverlaessigkeitstechnik",
+          },
         },
         {
           title: "Versuchsplanung und statistische Modellierung",
-          field: "DoE · Lebensdaueranalyse · Prognose",
-          summary:
-            "Wir entwickeln effiziente Versuchspläne und belastbare Modelle für technische Systeme und Lebensdauerdaten. Statistik wird dabei nicht isoliert eingesetzt, sondern auf Prüfziel, Datenqualität und technische Entscheidung ausgerichtet.",
-          links: [
-            {
-              label: "Design of Experiments",
-              href: "/leistungen/design-of-experiments",
-            },
-            {
-              label: "Wissen zu Prognosen",
-              href: "/wissen/prognosen",
-            },
+          points: [
+            "Versuche effizient planen",
+            "Lebensdauerdaten auswerten",
+            "Prognosen belastbar machen",
           ],
+          link: {
+            label: "Design of Experiments",
+            href: "/leistungen/design-of-experiments",
+          },
         },
       ],
       moreTitle: "Das passende Projektteam entsteht aus der Aufgabe.",
@@ -217,7 +216,7 @@ const aboutContent: Record<
       expertiseLabel: "Gesamte Expertise ansehen",
     },
     cta: {
-      title: "Lernen wir uns im Gespräch kennen.",
+      title: "Ihr Projektteam kennenlernen.",
       description:
         "Schildern Sie uns Ihre technische Fragestellung. Gemeinsam klären wir, welche Unterstützung für Ihr Projekt sinnvoll ist.",
       primaryLabel: "Gespräch vereinbaren",
@@ -233,13 +232,22 @@ const aboutContent: Record<
       description:
         "We combine scientific depth with responsibility for real development decisions. In every project, you work directly with people who make technical relationships understandable and prepare robust decisions.",
       principles: [
-        "Personally accessible",
-        "Scientifically grounded",
-        "Industrially experienced",
+        {
+          firstLine: "Examine causes",
+          secondLine: "systematically",
+        },
+        {
+          firstLine: "Use suitable methods",
+          secondLine: "purposefully",
+        },
+        {
+          firstLine: "Document results",
+          secondLine: "transparently",
+        },
       ],
     },
     leadership: {
-      title: "At RelTest, responsibility has a face.",
+      title: "Responsibility in client projects.",
       description:
         "Dr.-Ing. Kevin Lucan and Prof. Dr.-Ing. Bernd Bertsche combine direct responsibility in customer projects with technical authority built over decades.",
       profiles: [
@@ -258,9 +266,9 @@ const aboutContent: Record<
             "Advises on reliability processes, test strategies, field data and Design of Experiments.",
           ],
           profileHref: "/ueber-uns/kevin-lucan",
-          profileLabel: "Kevin Lucan's profile",
+          profileLabel: "View profile",
           secondaryHref: calendlyUrl,
-          secondaryLabel: "Meet with Kevin",
+          secondaryLabel: "Schedule a conversation",
           secondaryExternal: true,
         },
         {
@@ -278,7 +286,7 @@ const aboutContent: Record<
             "Senior technical work in DFG, VDI and DKE bodies and sustained transfer between research and industry.",
           ],
           profileHref: "/ueber-uns/bernd-bertsche",
-          profileLabel: "Bernd Bertsche's profile",
+          profileLabel: "View profile",
           secondaryHref: "/ueber-uns/bernd-bertsche#books",
           secondaryLabel: "View reference books",
         },
@@ -290,7 +298,7 @@ const aboutContent: Record<
       description:
         "In the podcast, Kevin talks about his professional path, technical responsibility and collaboration in demanding development projects. A personal introduction before we speak directly.",
       linkLabel: "Listen to the podcast",
-      contactLabel: "Meet with Kevin",
+      contactLabel: "Schedule a conversation",
       durationLabel: "A conversation about engineering practice and responsibility",
     },
     team: {
@@ -302,51 +310,39 @@ const aboutContent: Record<
       profiles: [
         {
           title: "Risk and technical assurance",
-          field: "Failure mechanisms · Prioritisation · Effectiveness evidence",
-          summary:
-            "We connect FMEA, FTA and quantitative risk assessment with specific failure mechanisms, tests and documented evidence. This keeps the assessment robust across development, release and later changes.",
-          links: [
-            {
-              label: "Risk management",
-              href: "/leistungen/risikomanagement",
-            },
-            {
-              label: "Assurance knowledge",
-              href: "/wissen/absicherung",
-            },
+          points: [
+            "Understand failure mechanisms",
+            "Prioritise risks",
+            "Verify technical assurance",
           ],
+          link: {
+            label: "Risk management",
+            href: "/leistungen/risikomanagement",
+          },
         },
         {
           title: "System reliability and product lifecycle",
-          field: "Requirements · Architecture · Testing · Field data",
-          summary:
-            "We consider product function, use, lifetime and system boundaries together. Requirements, testing and field experience are connected so that decisions remain coherent across disciplines and project phases.",
-          links: [
-            {
-              label: "Reliability engineering",
-              href: "/leistungen/zuverlaessigkeitstechnik",
-            },
-            {
-              label: "Knowledge of the overall process",
-              href: "/wissen/zuverlaessigkeitstechnik",
-            },
+          points: [
+            "Connect requirements",
+            "Align testing",
+            "Feed back field data",
           ],
+          link: {
+            label: "Reliability engineering",
+            href: "/leistungen/zuverlaessigkeitstechnik",
+          },
         },
         {
           title: "Experimental design and statistical modelling",
-          field: "DoE · Lifetime analysis · Prognosis",
-          summary:
-            "We develop efficient experimental designs and robust models for technical systems and lifetime data. Statistics are not used in isolation but aligned with the test objective, data quality and engineering decision.",
-          links: [
-            {
-              label: "Design of Experiments",
-              href: "/leistungen/design-of-experiments",
-            },
-            {
-              label: "Prognosis knowledge",
-              href: "/wissen/prognosen",
-            },
+          points: [
+            "Plan efficient experiments",
+            "Analyse lifetime data",
+            "Build robust forecasts",
           ],
+          link: {
+            label: "Design of Experiments",
+            href: "/leistungen/design-of-experiments",
+          },
         },
       ],
       moreTitle: "The right project team follows from the task.",
@@ -356,7 +352,7 @@ const aboutContent: Record<
       expertiseLabel: "View all expertise",
     },
     cta: {
-      title: "Let us get to know each other.",
+      title: "Meet your project team.",
       description:
         "Tell us about your technical challenge. Together, we will determine which form of support makes sense for your project.",
       primaryLabel: "Arrange a conversation",
@@ -531,7 +527,7 @@ export default async function AboutPage({ params }: Props) {
               <div className="mt-8 grid border-y border-white/18 sm:grid-cols-3">
                 {content.hero.principles.map((principle, index) => (
                   <div
-                    key={principle}
+                    key={`${principle.firstLine}-${principle.secondLine}`}
                     className={`flex min-h-20 items-center gap-3 py-4 font-winnstein-display text-sm font-bold ${
                       index > 0
                         ? "sm:border-l sm:border-white/18 sm:px-7"
@@ -542,7 +538,10 @@ export default async function AboutPage({ params }: Props) {
                       aria-hidden="true"
                       className="brand-list-dash brand-list-dash-center"
                     />
-                    {principle}
+                    <span>
+                      <span className="block whitespace-nowrap">{principle.firstLine}</span>
+                      <span className="block whitespace-nowrap">{principle.secondLine}</span>
+                    </span>
                   </div>
                 ))}
               </div>
@@ -722,36 +721,32 @@ export default async function AboutPage({ params }: Props) {
             </div>
 
             <div className="grid bg-white md:grid-cols-3">
-              {content.team.profiles.map((profile, index) => (
+              {content.team.profiles.map((profile) => (
                 <article
                   key={profile.title}
-                  className="flex min-h-full flex-col border-b border-line-soft p-7 last:border-b-0 md:border-r md:border-b-0 md:last:border-r-0 lg:p-9"
+                  className="flex flex-col border-b border-line-soft p-7 last:border-b-0 md:border-r md:border-b-0 md:last:border-r-0 lg:p-9"
                 >
-                  <div className="flex items-center gap-4">
-                    <span className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="h-px flex-1 bg-line-soft" />
-                  </div>
-                  <h3 className="mt-6 font-winnstein-display text-2xl font-bold text-brand-marine lg:text-3xl">
+                  <h3 className="max-w-md font-winnstein-display text-2xl font-bold text-brand-marine lg:text-3xl">
                     {profile.title}
                   </h3>
-                  <p className="mt-3 min-h-12 text-sm font-semibold leading-6 text-brand-steel-cyan lg:text-base">
-                    {profile.field}
-                  </p>
-                  <p className="mt-5 text-base leading-8 text-copy-muted">
-                    {profile.summary}
-                  </p>
-                  <div className="mt-auto grid grid-cols-2 items-end gap-4 pt-8">
-                    {profile.links.map((link) => (
-                      <TextLink
-                        key={`${profile.title}-${link.href}`}
-                        href={localizeHref(locale, link.href)}
-                        external={link.external}
-                      >
-                        {link.label}
-                      </TextLink>
+                  <ul className="mt-5 space-y-2 text-base leading-6 text-copy-muted">
+                    {profile.points.map((point) => (
+                      <li key={point} className="flex gap-3">
+                        <span
+                          aria-hidden="true"
+                          className="mt-3 h-px w-3 shrink-0 bg-brand-steel-cyan"
+                        />
+                        <span>{point}</span>
+                      </li>
                     ))}
+                  </ul>
+                  <div className="mt-auto pt-7">
+                    <TextLink
+                      href={localizeHref(locale, profile.link.href)}
+                      external={profile.link.external}
+                    >
+                      {profile.link.label}
+                    </TextLink>
                   </div>
                 </article>
               ))}

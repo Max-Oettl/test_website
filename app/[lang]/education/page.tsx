@@ -19,7 +19,7 @@ type Props = {
 const educationCopy = {
   de: {
     hero: {
-      title: "Reliability Engineering. Digital lernen. Sicher anwenden.",
+      title: "Reliability Engineering und DoE lernen.",
       description:
         "RelTest Education macht Zuverlässigkeitstechnik und DoE flexibel zugänglich. Im Mittelpunkt steht zeit- und ortsunabhängiges E-Learning; Vor-Ort-Schulungen bieten wir als eigenständige Alternative für gemeinsames Lernen mit festen Terminen an.",
       onSiteCta: "Vor-Ort-Alternative",
@@ -36,7 +36,7 @@ const educationCopy = {
         onSiteText: "Fester Termin und direkter Austausch",
       },
       onSite: {
-        title: "Vor-Ort-Schulung: gemeinsam lernen",
+        title: "Reliability Engineering gemeinsam vor Ort lernen",
         text:
           "Vor-Ort-Schulungen sind die Präsenzalternative zum digitalen Lernen. Unsere Referenten vermitteln ausgewählte Fachthemen in einem festen Seminarformat; konkrete Entwicklungsaufgaben bearbeiten wir getrennt davon im Rahmen unserer Solutions-Beratung.",
         points: [
@@ -47,7 +47,7 @@ const educationCopy = {
         cta: "Schulung anfragen",
       },
       digital: {
-        title: "RelTest Education: flexibel und unabhängig lernen",
+        title: "Flexibles E-Learning für Reliability Engineering",
         text:
           "Die digitalen Module vermitteln Reliability Engineering und DoE strukturiert und praxisnah. Lernende greifen während ihres gebuchten Nutzungszeitraums orts- und zeitunabhängig auf die Inhalte zu und können Lektionen gezielt wiederholen.",
         points: [
@@ -59,7 +59,7 @@ const educationCopy = {
       },
     },
     seminars: {
-      title: "Vor-Ort-Schulungen als Präsenzalternative",
+      title: "Vor-Ort-Seminare für technische Teams",
       description:
         "Für alle, die ein festes Seminarformat und direkten Austausch bevorzugen. Die Schulungen vermitteln definierte Fachthemen; individuelle Projektarbeit ist Teil unserer separaten Solutions-Beratung.",
       linkLabel: "Seminar ansehen",
@@ -90,7 +90,7 @@ const educationCopy = {
   },
   en: {
     hero: {
-      title: "Reliability engineering. Learn digitally. Apply with confidence.",
+      title: "Learn reliability engineering and DoE.",
       description:
         "RelTest Education makes reliability engineering and DoE flexibly accessible. The focus is on e-learning independent of time and location; on-site training is available as a separate alternative for learning together at scheduled times.",
       onSiteCta: "On-site alternative",
@@ -107,7 +107,7 @@ const educationCopy = {
         onSiteText: "Scheduled sessions and direct exchange",
       },
       onSite: {
-        title: "On-site training: learn together",
+        title: "Learn reliability engineering together on site",
         text:
           "On-site training is the face-to-face alternative to digital learning. Our instructors teach selected technical subjects in a scheduled seminar format; specific development tasks are handled separately through our Solutions consulting.",
         points: [
@@ -118,7 +118,7 @@ const educationCopy = {
         cta: "Request training",
       },
       digital: {
-        title: "RelTest Education: learn flexibly and independently",
+        title: "Flexible e-learning for reliability engineering",
         text:
           "The digital modules teach reliability engineering and DoE in a structured and practical way. Learners can access the content independent of time and location throughout their booked access period and revisit individual lessons as needed.",
         points: [
@@ -130,7 +130,7 @@ const educationCopy = {
       },
     },
     seminars: {
-      title: "On-site training as a face-to-face alternative",
+      title: "On-site seminars for technical teams",
       description:
         "For those who prefer a scheduled seminar and direct exchange. Training covers defined technical subjects; individual project work remains part of our separate Solutions consulting.",
       linkLabel: "View seminar",
@@ -219,15 +219,7 @@ export default async function EducationPage({ params }: Props) {
               />
             </div>
             <h1 className="mt-7 max-w-3xl font-winnstein-display text-4xl leading-[1.08] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[2.8rem] xl:text-5xl">
-              {copy.hero.title.split(". ").map((line, index, lines) => (
-                <span
-                  key={line}
-                  className="block xl:whitespace-nowrap"
-                >
-                  {line}
-                  {index < lines.length - 1 ? "." : ""}
-                </span>
-              ))}
+              {copy.hero.title}
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/78 lg:text-lg">
               {copy.hero.description}
@@ -476,36 +468,6 @@ export default async function EducationPage({ params }: Props) {
                 </span>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-5 py-20 sm:px-6 lg:px-8 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
-            <div>
-              <h2 className="font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
-                {copy.choice.title}
-              </h2>
-              <p className="mt-5 max-w-xl text-base leading-8 text-brand-marine/72">
-                {copy.choice.description}
-              </p>
-            </div>
-            <dl className="border-t border-brand-marine/20">
-              {copy.choice.items.map((item) => (
-                <div
-                  key={item.answer}
-                  className="grid gap-2 border-b border-brand-marine/20 py-6 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-8"
-                >
-                  <dt className="text-base leading-7 text-brand-marine/75">
-                    {item.question}
-                  </dt>
-                  <dd className="font-winnstein-display text-lg font-bold text-brand-education">
-                    {item.answer}
-                  </dd>
-                </div>
-              ))}
-            </dl>
           </div>
         </div>
       </section>

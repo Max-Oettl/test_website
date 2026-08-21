@@ -70,7 +70,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         </ActiveNavLink>
 
         <nav
-          className="site-header-nav hidden items-center gap-5 2xl:gap-6 xl:flex"
+          className="site-header-nav hidden items-center gap-5 min-[1120px]:flex 2xl:gap-6"
           aria-label={navigation.ariaLabel}
         >
           {navigation.items.map((item) => {
@@ -185,7 +185,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           <LanguageSwitcher locale={locale} />
         </div>
 
-        <div className="site-header-actions hidden items-center gap-3 xl:flex">
+        <div className="site-header-actions hidden items-center gap-3 min-[1120px]:flex">
           <Link
             href={localizeHref(locale, "/kontakt")}
             className="brand-action site-header-cta whitespace-nowrap bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan"

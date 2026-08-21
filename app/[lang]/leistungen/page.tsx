@@ -15,7 +15,7 @@ type Props = {
 const servicesCopy = {
   de: {
     hero: {
-      title: "Engineering für belastbare Produkt\u00adentscheidungen.",
+      title: "Zuverlässigkeit entwickeln und\u00a0absichern.",
       description:
         "RelTest unterstützt Unternehmen bei Zuverlässigkeit, technischer Absicherung und datenbasierten Entscheidungen: punktuell in einer Fachfrage oder dauerhaft als verantwortlicher Engineering Partner.",
       primaryCta: "Projekt besprechen",
@@ -25,12 +25,10 @@ const servicesCopy = {
     },
     overview: {
       title: "Wobei RelTest konkret unterstützt",
-      description:
-        "Drei fachliche Leistungsfelder schaffen Klarheit über Zuverlässigkeit, Risiken und Daten. Wenn eine dauerhafte Einbindung sinnvoll ist, übernimmt RelTest definierte Engineering-Arbeitspakete im Projekt.",
       cta: "Leistung im Detail",
     },
     partnership: {
-      title: "Ein Engineering Partner, der für Ergebnisse einsteht.",
+      title: "Engineering mit klarer Verantwortung.",
       description:
         "RelTest kann mehr übernehmen als Beratung und einzelne Analysen. Als fester Engineering Partner bearbeiten wir klar abgegrenzte Arbeitspakete, liefern prüfbare Ergebnisse und führen die zugehörige technische Dokumentation.",
       responsibility:
@@ -46,12 +44,12 @@ const servicesCopy = {
         "Systemgrafik einer Engineering-Partnerschaft mit Zuverlässigkeitstechnik, Risikomanagement, Test, Datenanalyse, Dokumentation und Rechtssicherheit",
     },
     methods: {
-      title: "Methoden passend zur technischen Entscheidung",
+      title: "Methoden passend zur Projektentscheidung",
       description:
         "DoE, FMEA, Lebensdatenanalyse oder Zuverlässigkeitsnachweise sind keine isolierten Pakete. Wir setzen die Methode ein, die zur Fragestellung, Datenlage und Projektphase passt.",
     },
     contact: {
-      title: "Welche Unterstützung braucht Ihr Projekt?",
+      title: "Passende Unterstützung für Ihr Projekt",
       description:
         "In einem ersten Gespräch klären wir die technische Fragestellung, den sinnvollen Leistungsumfang und ob eine punktuelle Beratung oder eine feste Projektpartnerschaft besser passt.",
       cta: "Anfrage starten",
@@ -59,7 +57,7 @@ const servicesCopy = {
   },
   en: {
     hero: {
-      title: "Engineering for robust product decisions.",
+      title: "Develop and assure reliability.",
       description:
         "RelTest supports companies with reliability, technical assurance and data-based decisions: for a specific technical question or continuously as an accountable engineering partner.",
       primaryCta: "Discuss a project",
@@ -69,12 +67,10 @@ const servicesCopy = {
     },
     overview: {
       title: "Where RelTest provides concrete support",
-      description:
-        "Three technical service areas create clarity around reliability, risks and data. When continuous involvement is the better fit, RelTest takes ownership of defined engineering work packages.",
       cta: "Explore this service",
     },
     partnership: {
-      title: "An engineering partner that stands behind its results.",
+      title: "Engineering with clear responsibility.",
       description:
         "RelTest can take on more than consulting and individual analyses. As a dedicated engineering partner, we deliver clearly defined work packages, verifiable results and the associated technical documentation.",
       responsibility:
@@ -90,27 +86,18 @@ const servicesCopy = {
         "System diagram of an engineering partnership covering reliability, risk management, testing, data analysis, documentation and legal certainty",
     },
     methods: {
-      title: "Methods selected for the technical decision",
+      title: "Methods selected for the project decision",
       description:
         "DoE, FMEA, life data analysis and reliability evidence are not isolated packages. We use the method that fits the question, available data and project phase.",
     },
     contact: {
-      title: "What kind of support does your project need?",
+      title: "The right support for your project",
       description:
         "In an initial conversation, we clarify the technical question, a suitable scope and whether focused consulting or a long-term project partnership is the better fit.",
       cta: "Start an inquiry",
     },
   },
 } as const satisfies Record<Locale, object>;
-
-const serviceIcons: Record<string, string> = {
-  "/leistungen/zuverlaessigkeitstechnik":
-    "/graphics/solutions-icons/icon-target.svg",
-  "/leistungen/risikomanagement":
-    "/graphics/solutions-icons/icon-shield.svg",
-  "/leistungen/datenanalyse-prognostik":
-    "/graphics/solutions-icons/icon-database.svg",
-};
 
 function ArrowIcon() {
   return (
@@ -160,7 +147,7 @@ export default async function ServicesPage({ params }: Props) {
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <BrandLineWatermark placement="solutions" />
 
-        <div className="relative mx-auto grid max-w-7xl xl:grid-cols-[58%_42%]">
+        <div className="relative mx-auto grid max-w-7xl min-[1120px]:grid-cols-[66%_34%] 2xl:grid-cols-[58%_42%]">
           <div className="flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
             <h1 className="max-w-4xl font-winnstein-display text-4xl leading-[1.06] font-bold tracking-[-0.035em] hyphens-manual sm:text-5xl lg:text-[3.2rem] xl:text-[3.4rem]">
               {copy.hero.title}
@@ -186,13 +173,13 @@ export default async function ServicesPage({ params }: Props) {
             </div>
           </div>
 
-          <div className="relative min-h-[25rem] border-t border-white/15 xl:min-h-[42rem] xl:border-t-0 xl:border-l">
+          <div className="relative min-h-[25rem] border-t border-white/15 min-[1120px]:min-h-[38rem] min-[1120px]:border-t-0 min-[1120px]:border-l 2xl:min-h-[42rem]">
             <Image
               src="/team/home-engineering-consulting.webp"
               alt={copy.hero.imageAlt}
               fill
               preload
-              sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
+              sizes="(min-width: 1536px) 540px, (min-width: 1120px) 34vw, 100vw"
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.34),transparent_50%),linear-gradient(0deg,rgba(3,19,52,.35),transparent_48%)]" />
@@ -206,19 +193,15 @@ export default async function ServicesPage({ params }: Props) {
         className="scroll-mt-28 bg-white px-5 py-20 sm:px-6 lg:px-8 lg:py-28"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-7 border-b border-brand-marine/15 pb-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
-            <h2 className="max-w-3xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+          <div className="border-b border-brand-marine/15 pb-10">
+            <h2 className="font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl lg:whitespace-nowrap lg:text-5xl">
               {copy.overview.title}
             </h2>
-            <p className="max-w-3xl text-lg leading-8 text-brand-marine/72 lg:justify-self-end">
-              {copy.overview.description}
-            </p>
           </div>
 
           <div className="grid border-l border-brand-marine/15 md:grid-cols-3">
             {technicalServices.map((service) => {
               const visual = serviceImages[service.href];
-              const icon = serviceIcons[service.href];
 
               return (
                 <article
@@ -237,25 +220,14 @@ export default async function ServicesPage({ params }: Props) {
                       <div className="absolute inset-0 bg-brand-marine/18" />
                     </div>
                   ) : null}
-                  <div className="flex flex-1 flex-col p-7 lg:p-8">
-                    <div className="flex h-14 w-14 items-center justify-center bg-brand-steel-cyan-10">
-                      {icon ? (
-                        <Image
-                          src={icon}
-                          alt=""
-                          width={30}
-                          height={30}
-                          className="h-8 w-8"
-                        />
-                      ) : null}
-                    </div>
-                    <h2 className="mt-7 font-winnstein-display text-2xl leading-tight font-bold tracking-[-0.025em] sm:text-3xl md:min-h-20 xl:min-h-0">
+                  <div className="flex flex-1 flex-col border-t-4 border-brand-steel-cyan p-7 lg:p-8">
+                    <h2 className="font-winnstein-display text-2xl leading-tight font-bold tracking-[-0.025em] sm:text-3xl md:min-h-16 xl:min-h-0">
                       {service.title}
                     </h2>
-                    <p className="mt-5 text-base leading-8 text-brand-marine/72 md:min-h-48 lg:min-h-40 xl:min-h-32">
+                    <p className="mt-4 text-base leading-8 text-brand-marine/72 md:min-h-44 lg:min-h-36 xl:min-h-32">
                       {service.description}
                     </p>
-                    <ul className="mt-7 divide-y divide-brand-marine/15 border-y border-brand-marine/15">
+                    <ul className="mt-8 divide-y divide-brand-marine/15 border-y border-brand-marine/15">
                       {service.topics.map((topic) => (
                         <li
                           key={topic}

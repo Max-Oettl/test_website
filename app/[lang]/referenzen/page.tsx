@@ -24,6 +24,7 @@ const referenceGroups = [
       "Hyundai Motor Company",
       "Knorr-Bremse",
       "Mercedes-Benz",
+      "Nidec GPM",
       "Porsche",
       "ZF Friedrichshafen",
     ],
@@ -35,7 +36,6 @@ const referenceGroups = [
       "EKK Eagle Industry",
       "Kostyrka",
       "mtu Solutions",
-      "Nidec GPM",
       "Optibelt",
       "Walther Flender Group",
       "Weber-Hydraulik",
@@ -55,11 +55,11 @@ const referenceGroups = [
   },
   {
     key: "energyConsumer",
-    names: ["Kärcher", "Miele", "SMA Solar Technology", "Stihl", "V-Zug"],
+    names: ["Bosch", "Kärcher", "Miele", "SMA Solar Technology", "Stihl", "V-Zug"],
   },
   {
     key: "medical",
-    names: ["Aesculap", "Leica Biosystems", "Olympus"],
+    names: ["Aesculap", "Leica Biosystems", "Miele", "Olympus"],
   },
 ] as const;
 
@@ -72,13 +72,13 @@ const referencesCopy = {
     },
     hero: {
       eyebrow: "Referenzen",
-      title: "Erfahrung aus anspruchsvollen Entwicklungsprojekten",
+      title: "Projektreferenzen von RelTest",
       description:
         "RelTest arbeitet mit Unternehmen, deren Produkte hohe Anforderungen an Lebensdauer, Qualität und technische Nachweisführung erfüllen müssen. Die Referenzen zeigen die Breite dieser Erfahrung über unterschiedliche Produkte, Branchen und Entwicklungsbedingungen hinweg.",
     },
     references: {
       eyebrow: "Zusammenarbeit",
-      title: "Ein Auszug aus unserer Projekterfahrung mit Unternehmen und Branchen",
+      title: "Projekterfahrung nach Branchen",
       groupLabels: {
         mobility: "Automotive und Mobilität",
         industry: "Maschinen- und Anlagenbau",
@@ -92,7 +92,7 @@ const referencesCopy = {
     },
     common: {
       eyebrow: "Branchenübergreifender Ansatz",
-      title: "Die Produkte ändern sich. Die Anforderungen an eine belastbare Entscheidung bleiben.",
+      title: "Produkt, Risiko, Tests und Daten verbinden.",
       description:
         "RelTest überträgt keine Standardschablone auf jedes Projekt. Wiederkehrend ist jedoch die methodische Verbindung von Produktverständnis, Risiko, Erprobung und Datenbewertung.",
       items: [
@@ -108,7 +108,7 @@ const referencesCopy = {
       ],
     },
     cta: {
-      title: "Welche Erfahrung passt zu Ihrer technischen Aufgabenstellung?",
+      title: "Passende Projekterfahrung besprechen.",
       description:
         "In einem ersten Gespräch ordnen wir gemeinsam ein, welche Methoden, Projekterfahrungen und nächsten Schritte für Ihr Produkt sinnvoll sind.",
     },
@@ -121,13 +121,13 @@ const referencesCopy = {
     },
     hero: {
       eyebrow: "References",
-      title: "Experience from demanding development projects",
+      title: "RelTest project references",
       description:
         "RelTest works with companies whose products must meet demanding requirements for lifetime, quality and technical evidence. The references show the breadth of this experience across different products, sectors and development conditions.",
     },
     references: {
       eyebrow: "Collaboration",
-      title: "A selection of companies and sectors from our project experience",
+      title: "Project experience by industry",
       groupLabels: {
         mobility: "Automotive and mobility",
         industry: "Mechanical and plant engineering",
@@ -141,7 +141,7 @@ const referencesCopy = {
     },
     common: {
       eyebrow: "Cross-sector approach",
-      title: "Products change. The requirements for a robust decision remain.",
+      title: "Connect product, risk, testing and data.",
       description:
         "RelTest does not apply the same standard template to every project. What remains consistent is the methodical connection of product understanding, risk, testing and data evaluation.",
       items: [
@@ -157,7 +157,7 @@ const referencesCopy = {
       ],
     },
     cta: {
-      title: "Which experience is relevant to your technical challenge?",
+      title: "Discuss relevant project experience.",
       description:
         "In an initial consultation, we identify the methods, project experience and next steps that make sense for your product.",
     },

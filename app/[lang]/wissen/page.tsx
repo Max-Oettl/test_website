@@ -24,6 +24,12 @@ type ProcessImageAsset = {
   alt: string;
 };
 
+type LifecycleImageAsset = ProcessImageAsset & {
+  mobileSrc: string;
+  mobileWidth: number;
+  mobileHeight: number;
+};
+
 const processImages: Record<Locale, Record<string, ProcessImageAsset>> = {
   de: {
     planung: {
@@ -91,17 +97,23 @@ const processImages: Record<Locale, Record<string, ProcessImageAsset>> = {
   },
 };
 
-const lifecycleImages: Record<Locale, ProcessImageAsset> = {
+const lifecycleImages: Record<Locale, LifecycleImageAsset> = {
   de: {
-    src: "/wissen/uebersicht/lebenszyklus-de.png",
-    width: 1536,
-    height: 1024,
+    src: "/wissen/uebersicht/lebenszyklus-prozess-de.svg",
+    width: 1440,
+    height: 760,
+    mobileSrc: "/wissen/uebersicht/lebenszyklus-prozess-mobile-de.svg",
+    mobileWidth: 720,
+    mobileHeight: 1536,
     alt: "Lebensdauerbegleitendes Zuverlässigkeitsmanagement mit qualitativen und quantitativen Methoden entlang des Produktlebenszyklus",
   },
   en: {
-    src: "/wissen/uebersicht/lebenszyklus-en.png",
-    width: 1484,
-    height: 1060,
+    src: "/wissen/uebersicht/lebenszyklus-prozess-en.svg",
+    width: 1440,
+    height: 760,
+    mobileSrc: "/wissen/uebersicht/lebenszyklus-prozess-mobile-en.svg",
+    mobileWidth: 720,
+    mobileHeight: 1536,
     alt: "Lifecycle reliability management with qualitative and quantitative methods across the product lifecycle",
   },
 };
@@ -135,13 +147,13 @@ const copy: Record<
         "Grundlagen der Zuverlässigkeitstechnik: Zuverlässigkeitsplanung, Schwachstellenanalyse, Erprobung, Absicherung und Zuverlässigkeitsprognose verständlich eingeordnet.",
     },
     hero: {
-      title: "Zuverlässigkeit über den Produktlebenszyklus verstehen.",
+      title: "Zuverlässigkeit im Lebenszyklus.",
       intro:
         "Zuverlässigkeitstechnik verbindet Anforderungen, Risiken, Versuche und Felddaten zu belastbaren Entscheidungen in Entwicklung und Freigabe.",
       link: "Die fünf Teilprozesse ansehen",
     },
     introduction: {
-      title: "Eine durchgängige Ingenieurdisziplin",
+      title: "Ausfälle technisch und statistisch bewerten",
       paragraphs: [
         "Reliability Engineering betrachtet die Nicht-Funktionsfähigkeit technischer Produkte und die Ursachen ihrer Ausfälle. Es verbindet Statistik und Wahrscheinlichkeitstheorie mit klassischem Maschinenbau und moderner Produktentwicklung.",
         "Ziel ist nicht nur, Fehler zu beschreiben. Technische Probleme sollen früh erkannt, systematisch bewertet und über den gesamten Produktlebenszyklus wirksam beherrscht werden.",
@@ -149,14 +161,14 @@ const copy: Record<
     },
     foundation: {
       eyebrow: "Grundlagenbeitrag",
-      title: "Zuverlässigkeitstechnik",
+      title: "Grundlagen der Zuverlässigkeitstechnik",
       text:
         "Was Zuverlässigkeit bedeutet, wie Anforderungen, Kennzahlen und Methoden zusammenhängen und weshalb der Produktlebenszyklus den fachlichen Rahmen bildet.",
       link: "Grundlagen vertiefen",
     },
     lifecycle: {
       eyebrow: "Gesamtprozess",
-      title: "Lebensdauerbegleitendes Zuverlässigkeitsmanagement",
+      title: "Methoden im Lebenszyklus",
       intro:
         "Qualitative und quantitative Methoden greifen von der ersten Anforderung bis zur Felderfahrung ineinander. So bleibt Zuverlässigkeit über alle Entwicklungsphasen hinweg steuerbar.",
       stages: ["Konzeption", "Entwurf", "Ausarbeitung", "Fertigung", "Kundeneinsatz", "Wiederverwendung"],
@@ -172,7 +184,7 @@ const copy: Record<
     },
     processIntro: {
       eyebrow: "Fünf Teilprozesse",
-      title: "Von der Planung bis zur belastbaren Prognose",
+      title: "Fünf Teilprozesse der Zuverlässigkeitstechnik",
       text:
         "Die fünf Themen bilden den fachlichen Kern der Zuverlässigkeitstechnik. Je nach Produkt und Entwicklungsstand werden sie einzeln vertieft oder als durchgängiger Prozess verbunden.",
     },
@@ -230,7 +242,7 @@ const copy: Record<
       },
     ],
     closing: {
-      title: "Welche Zuverlässigkeitsfrage beschäftigt Ihr Projekt?",
+      title: "Fachfrage zum Projekt klären",
       description:
         "Im ersten Gespräch ordnen wir ein, welcher Teilprozess und welche methodische Tiefe für Ihre Entscheidung sinnvoll sind.",
       primary: "Anfrage starten",
@@ -244,13 +256,13 @@ const copy: Record<
         "Reliability engineering fundamentals covering reliability planning, weak-point analysis, testing, assurance and reliability prediction.",
     },
     hero: {
-      title: "Understand reliability across the product life cycle.",
+      title: "Reliability across the life cycle.",
       intro:
         "Reliability engineering connects requirements, risks, testing and field data to support robust development and release decisions.",
       link: "Explore the five sub-processes",
     },
     introduction: {
-      title: "An integrated engineering discipline",
+      title: "Assess failures technically and statistically",
       paragraphs: [
         "Reliability engineering examines the non-functionality of technical products and the causes of failure. It combines statistics and probability theory with mechanical engineering and modern product development.",
         "The goal is not merely to describe failures. Technical problems need to be identified early, assessed systematically and controlled effectively throughout the product life cycle.",
@@ -258,14 +270,14 @@ const copy: Record<
     },
     foundation: {
       eyebrow: "Foundation article",
-      title: "Reliability engineering",
+      title: "Reliability engineering fundamentals",
       text:
         "Understand what reliability means, how requirements, metrics and methods connect, and why the product life cycle provides the technical framework.",
       link: "Explore the fundamentals",
     },
     lifecycle: {
       eyebrow: "Overall process",
-      title: "Reliability management throughout the product life cycle",
+      title: "Methods across the life cycle",
       intro:
         "Qualitative and quantitative methods interact from the initial requirement through to field experience, keeping reliability manageable across all development phases.",
       stages: ["Concept", "Design", "Development", "Production", "Field use", "Reuse"],
@@ -281,7 +293,7 @@ const copy: Record<
     },
     processIntro: {
       eyebrow: "Five sub-processes",
-      title: "From planning to robust prediction",
+      title: "Five reliability engineering sub-processes",
       text:
         "These five topics form the technical core of reliability engineering. Depending on the product and development stage, they can be addressed individually or connected in one integrated process.",
     },
@@ -339,7 +351,7 @@ const copy: Record<
       },
     ],
     closing: {
-      title: "Which reliability question is your project facing?",
+      title: "Clarify your project's technical question",
       description:
         "In an initial discussion, we identify the relevant sub-process and the right methodological depth for your decision.",
       primary: "Start an enquiry",
@@ -406,6 +418,29 @@ function ProcessImage({
   );
 }
 
+function LifecycleDiagram({ image }: { image: LifecycleImageAsset }) {
+  return (
+    <figure className="flex w-full items-center justify-center">
+      <Image
+        src={image.mobileSrc}
+        alt={image.alt}
+        width={image.mobileWidth}
+        height={image.mobileHeight}
+        sizes="100vw"
+        className="h-auto w-full sm:hidden"
+      />
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        sizes="(min-width: 1280px) 1280px, (min-width: 640px) calc(100vw - 48px), 100vw"
+        className="hidden h-auto w-full sm:block"
+      />
+    </figure>
+  );
+}
+
 function ProcessSection({ item, index, locale, linkLabel }: { item: ProcessItem; index: number; locale: Locale; linkLabel: string }) {
   const content = (
     <div className="flex h-full flex-col py-4 lg:px-10 lg:py-4">
@@ -457,7 +492,7 @@ export default async function KnowledgePage({ params }: Props) {
       </div>
       <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[minmax(0,.92fr)_minmax(420px,1.08fr)] lg:items-center lg:px-8 lg:py-16">
         <div>
-          <h1 className="max-w-3xl font-winnstein-display text-5xl font-bold leading-[1.06] tracking-[-0.03em] sm:text-6xl">
+          <h1 className="max-w-3xl font-winnstein-display text-5xl font-bold leading-[1.06] tracking-[-0.03em] [overflow-wrap:anywhere] sm:text-6xl">
             {content.hero.title}
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-white/[0.78]">{content.hero.intro}</p>
@@ -521,12 +556,12 @@ export default async function KnowledgePage({ params }: Props) {
             <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:items-end">
               <div>
                 <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">{content.lifecycle.eyebrow}</p>
-                <h2 className="mt-4 font-winnstein-display text-4xl font-bold leading-tight text-brand-marine sm:text-5xl">{content.lifecycle.title}</h2>
+                <h2 className="mt-4 font-winnstein-display text-4xl font-bold leading-tight text-brand-marine [overflow-wrap:anywhere] sm:text-5xl">{content.lifecycle.title}</h2>
               </div>
               <p className="max-w-3xl text-lg leading-8 text-brand-marine/75">{content.lifecycle.intro}</p>
             </div>
             <div className="mt-12">
-              <ProcessImage image={lifecycleImages[locale]} featured />
+              <LifecycleDiagram image={lifecycleImages[locale]} />
             </div>
           </div>
         </section>
@@ -547,8 +582,7 @@ export default async function KnowledgePage({ params }: Props) {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 pb-12 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
               <div>
-                <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">{content.processIntro.eyebrow}</p>
-                <h2 className="mt-4 font-winnstein-display text-4xl font-bold leading-tight text-brand-marine sm:text-5xl">{content.processIntro.title}</h2>
+                <h2 className="font-winnstein-display text-4xl font-bold leading-tight text-brand-marine sm:text-5xl">{content.processIntro.title}</h2>
               </div>
               <p className="max-w-3xl text-lg leading-8 text-brand-marine/75">{content.processIntro.text}</p>
             </div>

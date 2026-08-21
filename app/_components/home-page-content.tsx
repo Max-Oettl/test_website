@@ -48,7 +48,7 @@ const featuredReferences = referenceLogos.filter((reference) =>
 
 const contentByLocale = {
   de: {
-    supportTitle: "Vom technischen Risiko zur belastbaren Entscheidung.",
+    supportTitle: "Zuverlässigkeit planen und nachweisen.",
     supportText:
       "RelTest strukturiert technische Fragestellungen, wählt passende Methoden und macht Ergebnisse für Entwicklung und Freigabe nutzbar.",
     supportCta: "Alle Beratungsleistungen",
@@ -132,8 +132,8 @@ const contentByLocale = {
       {
         title: "Risikobasierte Absicherungsstrategie entwickeln",
         role: "Risikoanalyse und strategische Absicherungsplanung",
-        image: "/projects/risk-based-assurance-teams-meeting.png",
-        imageAlt: "Ingenieursteam in einer hybriden Besprechung mit geteilter Risikomatrix",
+        image: "/projects/risk-based-assurance-review-v2.webp",
+        imageAlt: "Zwei Ingenieure besprechen eine technische Risikomatrix",
         milestones: [
           {
             title: "Risiken identifizieren",
@@ -167,8 +167,8 @@ const contentByLocale = {
       {
         title: "Design of Experiments (DoE) effizient einsetzen und technische Systeme optimieren",
         role: "Versuchsplanung, statistische Analyse und Modellbildung",
-        image: "/projects/design-of-experiments-lab-team.png",
-        imageAlt: "Zwei Ingenieurinnen bei einem Design-of-Experiments-Versuch im Prüflabor",
+        image: "/projects/design-of-experiments-testbench-v2.webp",
+        imageAlt: "Ingenieur bei einem Design-of-Experiments-Versuch am Prüfstand",
         milestones: [
           {
             title: "Zielgröße festlegen",
@@ -270,7 +270,7 @@ const contentByLocale = {
           "Priorisierte Ursachen und nachweislich wirksame Maßnahmen gegen wiederkehrende Ausfälle.",
       },
     ],
-    trustTitle: "Fachliche Tiefe, die sichtbar wird.",
+    trustTitle: "Industrieerfahrung, Forschung und Fachliteratur",
     trustText:
       "RelTest verbindet wissenschaftliche Fundierung, publizierte Fachliteratur und Erfahrung aus anspruchsvollen Industrieprojekten.",
     metrics: [
@@ -280,7 +280,7 @@ const contentByLocale = {
     ],
     universityLabel: "Stuttgarter Forschungszentrum Zuverlässigkeitstechnik (SFZ)",
     universityAffiliation: "Universität Stuttgart",
-    universityTitle: "Aus Forschung wird belastbare Ingenieurpraxis.",
+    universityTitle: "Forschungstransfer in die Ingenieurpraxis",
     universityText:
       "Unsere Mitarbeiter haben an der Universität Stuttgart promoviert und waren im Umfeld des SFZ wissenschaftlich tätig. Die enge Zusammenarbeit sowie der Austausch über Forschung, Konferenzen und fachliche Fragestellungen halten unsere Methoden am aktuellen Stand der Technik.",
     universitySignals: [
@@ -288,7 +288,7 @@ const contentByLocale = {
       "Austausch über Forschung und Konferenzen",
       "Transfer aktueller Erkenntnisse in Industrieprojekte",
     ],
-    booksTitle: "Publizierte Expertise statt bloßer Behauptung.",
+    booksTitle: "Zwei Springer-Fachbücher zur Zuverlässigkeit",
     booksText:
       "Zwei Springer-Fachbücher dokumentieren methodische Grundlagen, Prüfstrategien und die praktische Absicherung technischer Produkte.",
     booksCta: "Fachbücher ansehen",
@@ -296,7 +296,7 @@ const contentByLocale = {
       "Zuverlässigkeitstests für eine effiziente Absicherung",
       "Zuverlässigkeit im Fahrzeug- und Maschinenbau",
     ],
-    referencesTitle: "Industrieerfahrung, die sich belegen lässt.",
+    referencesTitle: "Ausgewählte Projektreferenzen",
     referencesText:
       "Ausgewählte Unternehmen, mit denen RelTest bereits zusammengearbeitet hat.",
     referencesCta: "Alle Referenzen ansehen",
@@ -304,7 +304,7 @@ const contentByLocale = {
     industryCta: "Entdecken",
   },
   en: {
-    supportTitle: "From technical risk to a robust decision.",
+    supportTitle: "Plan and demonstrate reliability.",
     supportText:
       "RelTest structures technical questions, selects suitable methods and turns results into a sound basis for development and release.",
     supportCta: "All consulting services",
@@ -388,8 +388,8 @@ const contentByLocale = {
       {
         title: "Develop a risk-based assurance strategy",
         role: "Risk analysis and strategic assurance planning",
-        image: "/projects/risk-based-assurance-teams-meeting.png",
-        imageAlt: "Engineering team in a hybrid meeting reviewing a shared risk matrix",
+        image: "/projects/risk-based-assurance-review-v2.webp",
+        imageAlt: "Two engineers reviewing a technical risk matrix",
         milestones: [
           {
             title: "Identify risks",
@@ -423,8 +423,8 @@ const contentByLocale = {
       {
         title: "Use Design of Experiments (DoE) efficiently to optimise technical systems",
         role: "Experimental design, statistical analysis and modelling",
-        image: "/projects/design-of-experiments-lab-team.png",
-        imageAlt: "Two engineers running a Design of Experiments test in an industrial laboratory",
+        image: "/projects/design-of-experiments-testbench-v2.webp",
+        imageAlt: "Engineer running a Design of Experiments test at an industrial test bench",
         milestones: [
           {
             title: "Define the response",
@@ -526,7 +526,7 @@ const contentByLocale = {
           "Prioritised causes and demonstrably effective measures against recurring failures.",
       },
     ],
-    trustTitle: "Technical depth made visible.",
+    trustTitle: "Industrial experience, research and technical literature",
     trustText:
       "RelTest combines scientific foundations, published engineering literature and experience from demanding industrial projects.",
     metrics: [
@@ -536,7 +536,7 @@ const contentByLocale = {
     ],
     universityLabel: "Stuttgart Research Center for Reliability Engineering (SFZ)",
     universityAffiliation: "University of Stuttgart",
-    universityTitle: "Turning research into robust engineering practice.",
+    universityTitle: "Transferring research into engineering practice",
     universityText:
       "Our employees earned their doctorates at the University of Stuttgart and worked in the SFZ research environment. Close collaboration and continuous exchange through research, conferences and technical discussions keep our methods aligned with the current state of the art.",
     universitySignals: [
@@ -544,7 +544,7 @@ const contentByLocale = {
       "Exchange through research and conferences",
       "Transfer of current findings into industrial projects",
     ],
-    booksTitle: "Published expertise, not an unsupported claim.",
+    booksTitle: "Two Springer books on reliability",
     booksText:
       "Two Springer engineering books document methodological foundations, test strategies and the practical validation of technical products.",
     booksCta: "View engineering books",
@@ -552,7 +552,7 @@ const contentByLocale = {
       "Reliability testing for efficient validation",
       "Reliability in automotive and mechanical engineering",
     ],
-    referencesTitle: "Industrial experience backed by evidence.",
+    referencesTitle: "Selected project references",
     referencesText:
       "Selected companies RelTest has already worked with.",
     referencesCta: "View all references",

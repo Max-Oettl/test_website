@@ -16,13 +16,13 @@ const industriesContent = {
       "Zuverlässigkeitstechnik, Risikomanagement, Erprobung und Datenanalyse für Automotive, Maschinenbau, Elektronik, Medizintechnik und weitere technische Branchen.",
     hero: {
       eyebrow: "Branchen",
-      title: "Zuverlässigkeit kennt keine Branchengrenzen.",
+      title: "Zuverlässigkeit nach Branche.",
       description:
         "Produkte, Einsatzbedingungen und Nachweispflichten unterscheiden sich. Die zentrale Aufgabe bleibt: technische Risiken früh verstehen und Entscheidungen auf belastbare Daten stützen.",
     },
     overview: {
       eyebrow: "Anwendungsfelder",
-      title: "Branchenspezifische Herausforderungen. Methodisch belastbare Antworten.",
+      title: "Typische Risiken nach Branche.",
       description:
         "RelTest überträgt Zuverlässigkeitstechnik nicht schematisch. Prüfstrategie, Datenanalyse und Absicherung werden an Produkt, Nutzung und Entwicklungsstand angepasst.",
       linkLabel: "Branche vertiefen",
@@ -102,7 +102,7 @@ const industriesContent = {
       },
     ],
     cta: {
-      title: "Ihre Branche stellt eigene Anforderungen?",
+      title: "Anforderungen Ihrer Branche klären.",
       description:
         "Wir ordnen gemeinsam ein, welche Risiken, Daten und Nachweise für Ihr Produkt tatsächlich entscheidend sind.",
       primary: "Projekt besprechen",
@@ -115,13 +115,13 @@ const industriesContent = {
       "Reliability engineering, risk management, testing and data analysis for automotive, mechanical engineering, electronics, medical technology and other technical industries.",
     hero: {
       eyebrow: "Industries",
-      title: "Reliability has no industry boundaries.",
+      title: "Reliability by industry.",
       description:
         "Products, operating conditions and evidence requirements differ. The central task remains the same: understand technical risks early and base decisions on robust data.",
     },
     overview: {
       eyebrow: "Fields of application",
-      title: "Industry-specific challenges. Methodologically robust answers.",
+      title: "Typical risks by industry.",
       description:
         "RelTest does not apply reliability engineering as a standard template. Test strategy, data analysis and validation are adapted to the product, its use and its development status.",
       linkLabel: "Explore industry",
@@ -201,7 +201,7 @@ const industriesContent = {
       },
     ],
     cta: {
-      title: "Does your industry have its own requirements?",
+      title: "Clarify your industry's requirements.",
       description:
         "Together, we identify which risks, data and evidence are truly decisive for your product.",
       primary: "Discuss your project",

@@ -53,7 +53,7 @@ export function CompactHeaderMenu({
   }, []);
 
   return (
-    <details ref={menuRef} className="group relative xl:hidden">
+    <details ref={menuRef} className="group relative min-[1120px]:hidden">
       <summary className="site-compact-menu-trigger flex cursor-pointer list-none items-center border border-brand-marine/20 px-4 py-2 font-winnstein-display text-sm font-semibold text-brand-marine outline-none transition-[background-color,border-color,color] duration-150 hover:border-brand-steel-cyan hover:bg-[#edf5f8] focus-visible:border-brand-steel-cyan focus-visible:bg-[#edf5f8] focus-visible:ring-2 focus-visible:ring-brand-steel-cyan/40 [&::-webkit-details-marker]:hidden">
         {label}
       </summary>

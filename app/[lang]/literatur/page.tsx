@@ -12,25 +12,15 @@ type Props = {
 
 const literatureCopy = {
   de: {
-    count: "2 Springer-Fachbücher",
-    context: "Methodik aus Forschung und Ingenieurpraxis",
-    sectionTitle: "Publizierte Expertise, die in Projekten anwendbar bleibt.",
-    sectionText:
-      "Die Bücher verbinden Grundlagen, Prüfstrategien und statistische Verfahren mit den Entscheidungen, die Entwicklung und Freigabe technischer Produkte prägen.",
-    bookLabel: "Fachbuch",
-    ctaTitle: "Eine Fachfrage aus Ihrem Projekt einordnen?",
+    sectionTitle: "Zuverlässigkeitstests und technische Absicherung",
+    ctaTitle: "Fachfrage aus Ihrem Projekt klären",
     ctaText:
       "Wir übertragen die Methodik auf Ihre konkrete Produkt-, Prüf- oder Datenfrage.",
     cta: "Fachfrage besprechen",
   },
   en: {
-    count: "2 Springer reference books",
-    context: "Methods grounded in research and engineering practice",
-    sectionTitle: "Published expertise that remains applicable in projects.",
-    sectionText:
-      "The books connect fundamentals, test strategies and statistical methods with the decisions that shape engineering and product release.",
-    bookLabel: "Reference book",
-    ctaTitle: "Would you like to assess a technical question from your project?",
+    sectionTitle: "Reliability testing and technical assurance",
+    ctaTitle: "Clarify a technical question from your project",
     ctaText:
       "We apply the methodology to your specific product, testing or data challenge.",
     cta: "Discuss a technical question",
@@ -78,27 +68,12 @@ export default async function LiteraturePage({ params }: Props) {
         <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:64px_64px]" />
         <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[0.9fr_1.1fr]">
           <div className="flex flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-            <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">
-              {page.intro.eyebrow}
-            </p>
-            <h1 className="mt-5 max-w-3xl font-winnstein-display text-4xl font-extrabold sm:text-5xl lg:text-[3.6rem]">
+            <h1 className="max-w-3xl font-winnstein-display text-4xl font-extrabold sm:text-5xl lg:text-[3.6rem]">
               {page.intro.title}
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-[1.55] text-white/78">
               {page.intro.description}
             </p>
-            <div className="mt-10 grid max-w-xl border-y border-white/18 sm:grid-cols-2">
-              <div className="py-5 sm:border-r sm:border-white/18 sm:pr-6">
-                <strong className="block font-winnstein-display text-xl font-semibold text-white">
-                  {copy.count}
-                </strong>
-              </div>
-              <div className="border-t border-white/18 py-5 sm:border-t-0 sm:pl-6">
-                <span className="block text-sm leading-6 text-white/68">
-                  {copy.context}
-                </span>
-              </div>
-            </div>
           </div>
 
           <div className="relative min-h-[25rem] border-t border-white/18 lg:min-h-[38rem] lg:border-t-0 lg:border-l">
@@ -118,26 +93,21 @@ export default async function LiteraturePage({ params }: Props) {
 
       <section className="bg-white px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-7 border-b border-brand-marine/15 pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-            <h2 className="max-w-3xl font-winnstein-display text-3xl font-semibold sm:text-4xl lg:text-5xl">
-              {copy.sectionTitle}
-            </h2>
-            <p className="max-w-3xl text-lg leading-[1.55] text-brand-marine/72 lg:justify-self-end">
-              {copy.sectionText}
-            </p>
-          </div>
+          <h2 className="font-winnstein-display text-3xl font-semibold sm:text-4xl">
+            {copy.sectionTitle}
+          </h2>
 
-          <div className="border-l border-brand-marine/15">
-            {content.books.map((book, index) => (
+          <div className="mt-9 grid gap-x-8 gap-y-14 lg:grid-cols-2">
+            {content.books.map((book) => (
               <article
                 key={book.href}
-                className="grid border-r border-b border-brand-marine/15 lg:grid-cols-[minmax(18rem,0.72fr)_minmax(0,1.28fr)]"
+                className="grid gap-7 border-t border-brand-marine/15 pt-8 sm:grid-cols-[minmax(9rem,0.62fr)_minmax(0,1fr)] lg:gap-8 lg:[&:nth-child(even)]:border-l lg:[&:nth-child(even)]:pl-8"
               >
                 <Link
                   href={book.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex min-h-[30rem] items-center justify-center overflow-hidden bg-brand-steel-cyan-10 px-7 py-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:min-h-[35rem]"
+                  className="group flex min-h-[22rem] items-center justify-center bg-brand-steel-cyan-10 px-5 py-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:min-h-[25rem]"
                   aria-label={`${page.bookCta}: ${book.title}`}
                 >
                   <Image
@@ -145,44 +115,34 @@ export default async function LiteraturePage({ params }: Props) {
                     alt={book.title}
                     width={900}
                     height={book.cover.endsWith(".webp") ? 1306 : 1284}
-                    className="h-[27rem] w-auto max-w-full object-contain transition-transform duration-300 group-hover:-translate-y-1 sm:h-[31rem]"
-                    sizes="(min-width: 1024px) 22vw, 65vw"
+                    className="h-[19rem] w-auto max-w-full object-contain transition-transform duration-300 group-hover:-translate-y-1 sm:h-[22rem]"
+                    sizes="(min-width: 1024px) 14vw, (min-width: 640px) 25vw, 75vw"
                   />
                 </Link>
 
-                <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
-                  <div className="flex items-center gap-4">
-                    <span className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="h-px flex-1 bg-brand-marine/15" />
-                    <span className="text-sm text-brand-marine/58">{copy.bookLabel}</span>
-                  </div>
-                  <h2 className="mt-7 max-w-3xl font-winnstein-display text-3xl font-semibold sm:text-4xl">
+                <div className="flex min-w-0 flex-col justify-center">
+                  <h3 className="font-winnstein-display text-2xl font-semibold leading-tight">
                     {book.title}
-                  </h2>
-                  <p className="mt-5 text-lg font-semibold leading-[1.45] text-brand-steel-cyan">
-                    {book.subtitle}
-                  </p>
-                  <p className="mt-7 max-w-3xl text-base leading-[1.65] text-brand-marine/72">
+                  </h3>
+                  <p className="mt-5 text-base leading-[1.65] text-brand-marine/72">
                     {book.description}
                   </p>
-                  <p className="mt-5 max-w-3xl text-sm leading-7 text-brand-marine/62">
+                  <p className="mt-4 text-sm leading-6 text-brand-marine/62">
                     {page.authorsLabel}: {book.authors}
                   </p>
-                  <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
+                  <div className="mt-7 flex flex-col items-start gap-4">
                     <Link
                       href={book.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="brand-action inline-flex min-h-12 items-center justify-between gap-7 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan"
+                      className="inline-flex items-center gap-5 border-b-2 border-brand-steel-cyan pb-1.5 font-winnstein-display text-sm font-semibold transition-colors hover:text-brand-steel-cyan"
                     >
                       {page.bookCta}
                       <ArrowIcon />
                     </Link>
                     <Link
                       href={localizeHref(locale, "/kontakt")}
-                      className="inline-flex items-center gap-5 border-b-2 border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-semibold"
+                      className="inline-flex items-center gap-5 font-winnstein-display text-sm font-semibold text-brand-marine/68 transition-colors hover:text-brand-steel-cyan"
                     >
                       {page.questionCta}
                       <ArrowIcon />

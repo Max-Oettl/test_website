@@ -691,13 +691,12 @@ const content = {
       literature: {
         intro: {
           eyebrow: "Literatur",
-          title:
-            "Fachliche Autorität, die über Marketingbehauptungen hinausgeht",
+          title: "Fachbücher zur Zuverlässigkeit",
           description:
             "Die Springer-Fachbücher mit Beteiligung aus dem RelTest-Umfeld zeigen die wissenschaftliche und praktische Tiefe hinter den Leistungen von RelTest: von Zuverlässigkeit im Maschinenbau bis zu effizienter entwicklungsbegleitender Absicherung.",
         },
         authorsLabel: "Autoren",
-        bookCta: "Buchseite öffnen",
+        bookCta: "Bei Springer ansehen",
         questionCta: "Fachfragen stellen",
       },
       references: {
@@ -1284,12 +1283,12 @@ const content = {
       literature: {
         intro: {
           eyebrow: "Literature",
-          title: "Technical authority that goes beyond marketing claims",
+          title: "Books on reliability engineering",
           description:
             "The Springer references connected to the RelTest environment demonstrate the scientific and practical depth behind RelTest's services: from reliability in mechanical engineering to efficient development-accompanying validation.",
         },
         authorsLabel: "Authors",
-        bookCta: "Open book page",
+        bookCta: "View at Springer",
         questionCta: "Ask a technical question",
       },
       references: {

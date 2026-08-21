@@ -11,30 +11,6 @@ type Props = {
   params: Promise<{ lang: string }>;
 };
 
-function BookHotspotIcon({ number }: { number: 1 | 2 }) {
-  return (
-    <span className="relative grid size-9 place-items-center transition-transform duration-200 group-hover/book-hotspot:scale-110 group-focus-visible/book-hotspot:scale-110 group-focus-visible/book-hotspot:outline-none group-focus-visible/book-hotspot:ring-4 group-focus-visible/book-hotspot:ring-white/70 sm:size-10">
-      <svg
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full"
-        viewBox="0 0 42.52 42.52"
-        fill="none"
-      >
-        <path
-          fill="#142553"
-          d="M42.52,14.62V0S10.94,0,10.94,0C4.9,0,0,4.89,0,10.94v2.14s.03.02.04.04v3.06s-.03-.02-.04-.03v4.79h.04S.04,23.34.04,23.34H0v10.22s.03,0,.04,0v2.41s-.03,0-.04,0v6.55h34.34l8.17-8.03s-.01,0-.02,0v-2.43s.02,0,.02,0v-15.02h-.02s0-2.41,0-2.41h.02Z"
-        />
-      </svg>
-      <span
-        aria-hidden="true"
-        className="relative -translate-y-px font-winnstein-display text-[1.85rem] leading-none font-bold text-white sm:text-[2rem]"
-      >
-        {number}
-      </span>
-    </span>
-  );
-}
-
 const featuredReferences = [
   "Mercedes-Benz",
   "Kärcher",
@@ -59,14 +35,13 @@ const expertiseContent = {
     metaDescription:
       "Referenzen, Springer-Fachbücher, Podcast und Branchenkontexte zeigen die fachliche Substanz hinter RelTest Solutions.",
     intro: {
-      title: "Fachliche Substanz, die über reine Leistungsversprechen hinausgeht.",
+      title: "Industrieerfahrung, Forschung und Fachliteratur.",
       description:
         "RelTest arbeitet in anspruchsvollen technischen Kontexten. Diese Seite bündelt ausgewählte Vertrauenssignale: industrielle Referenzen, veröffentlichte Fachbücher, persönliche Einblicke und Branchen, in denen Zuverlässigkeit messbar entscheidend ist.",
     },
     proof: {
       eyebrow: "Kompetenz in der Anwendung",
-      title:
-        "Expertise wird sichtbar, wenn Daten, Produkt und Entscheidung zusammenkommen.",
+      title: "Daten in technische Entscheidungen übersetzen.",
       description:
         "RelTest verbindet technische Bewertung, methodische Diskussion und nachvollziehbare Ergebnisse. Entscheidend ist nicht die einzelne Methode, sondern ihr belastbarer Einsatz im Projekt.",
       items: [
@@ -79,7 +54,7 @@ const expertiseContent = {
     },
     reference: {
       eyebrow: "Referenzen",
-      title: "Industrieerfahrung in anspruchsvollen Entwicklungsumfeldern",
+      title: "Projekterfahrung in anspruchsvollen Entwicklungsumfeldern",
       description:
         "Die Referenzen zeigen, dass RelTest dort arbeitet, wo Produktzuverlässigkeit, Lebensdauer, Erprobung und belastbare Nachweise echte Projektwirkung haben.",
       cta: "Alle Referenzen ansehen",
@@ -89,11 +64,8 @@ const expertiseContent = {
     },
     books: {
       eyebrow: "Literatur",
-      title: "Veröffentlichte Expertise statt reiner Marketingaussage",
-      description:
-        "Die Springer-Fachbücher machen die methodische Tiefe sichtbar, auf der Beratung, Schulung und technische Absicherung bei RelTest aufbauen.",
+      title: "Zwei Springer-Fachbücher",
       cta: "Zur Literaturseite",
-      externalLabel: "Springer-Buchseite öffnen",
       items: [
         {
           title:
@@ -114,7 +86,7 @@ const expertiseContent = {
     },
     podcast: {
       eyebrow: "Podcast",
-      title: "Ein persönlicher Einstieg in Denkweise und Haltung",
+      title: "Kevin Lucan im Ingenieurshelden-Podcast",
       description:
         "Im Podcast der Ingenieurshelden spricht Geschäftsführer Dr.-Ing. Kevin Lucan über Werdegang, technische Verantwortung und Engineering-Mindset. Für Besucher ist das ein guter erster Kontakt mit der Person hinter RelTest.",
       cta: "Podcast anhören",
@@ -124,12 +96,9 @@ const expertiseContent = {
     },
     industries: {
       eyebrow: "Branchen",
-      title:
-        "Relevant überall dort, wo Ausfälle teuer, kritisch oder erklärungsbedürftig sind",
+      title: "Expertise für anspruchsvolle technische Branchen",
       description:
         "RelTest unterstützt besonders technische B2B-Umfelder mit hohen Anforderungen an Qualität, Lebensdauer, Sicherheit, Verfügbarkeit und Nachweisführung.",
-      ctaHint:
-        "Branchenspezifische Anforderungen, typische Risiken und passende RelTest-Leistungen",
       cta: "Alle Branchen im Detail entdecken",
       imageAlt:
         "Remote-Review mit geteiltem Zuverlässigkeitsdashboard und drei Ingenieuren",
@@ -143,7 +112,7 @@ const expertiseContent = {
       ],
     },
     cta: {
-      title: "Passt diese Expertise zu Ihrer technischen Fragestellung?",
+      title: "Expertise für Ihr Projekt",
       description:
         "In einem ersten Gespräch ordnen wir ein, welche fachliche Unterstützung für Ihr Projekt sinnvoll ist.",
       primary: "Projekt besprechen",
@@ -155,14 +124,13 @@ const expertiseContent = {
     metaDescription:
       "References, Springer books, podcast insights and industry contexts show the technical substance behind RelTest Solutions.",
     intro: {
-      title: "Technical substance that goes beyond service claims.",
+      title: "Industrial experience, research and technical literature.",
       description:
         "RelTest works in demanding technical environments. This page brings together selected trust signals: industrial references, published technical books, personal insights and industries where reliability has measurable impact.",
     },
     proof: {
       eyebrow: "Expertise in application",
-      title:
-        "Expertise becomes visible where data, product and decision meet.",
+      title: "Turn data into technical decisions.",
       description:
         "RelTest combines technical assessment, methodological discussion and traceable results. What matters is not the individual method, but its robust use in the project.",
       items: [
@@ -175,7 +143,7 @@ const expertiseContent = {
     },
     reference: {
       eyebrow: "References",
-      title: "Industrial experience in demanding development environments",
+      title: "Project experience in demanding development environments",
       description:
         "The references show that RelTest works where product reliability, lifetime, testing and robust evidence directly influence project outcomes.",
       cta: "View all references",
@@ -185,11 +153,8 @@ const expertiseContent = {
     },
     books: {
       eyebrow: "Books",
-      title: "Published expertise instead of pure marketing claims",
-      description:
-        "The Springer books make visible the methodological depth behind RelTest's consulting, training and technical validation work.",
+      title: "Two Springer books",
       cta: "View literature page",
-      externalLabel: "Open Springer book page",
       items: [
         {
           title:
@@ -210,7 +175,7 @@ const expertiseContent = {
     },
     podcast: {
       eyebrow: "Podcast",
-      title: "A personal entry point into mindset and engineering attitude",
+      title: "Kevin Lucan on the Ingenieurshelden podcast",
       description:
         "In the Ingenieurshelden podcast, Managing Director Dr.-Ing. Kevin Lucan talks about his career, technical responsibility and engineering mindset. It gives visitors a first personal impression of the people behind RelTest.",
       cta: "Listen to the podcast",
@@ -220,12 +185,9 @@ const expertiseContent = {
     },
     industries: {
       eyebrow: "Industries",
-      title:
-        "Relevant wherever failures are costly, critical or require explanation",
+      title: "Expertise for demanding technical industries",
       description:
         "RelTest supports technical B2B environments with high requirements for quality, lifetime, safety, availability and evidence.",
-      ctaHint:
-        "Industry-specific requirements, typical risks and matching RelTest services",
       cta: "Explore all industries in detail",
       imageAlt:
         "Remote review with shared reliability dashboard and three engineers",
@@ -239,7 +201,7 @@ const expertiseContent = {
       ],
     },
     cta: {
-      title: "Does this expertise match your technical challenge?",
+      title: "Expertise for your project",
       description:
         "In an initial conversation, we assess which technical support is appropriate for your project.",
       primary: "Discuss your project",
@@ -464,27 +426,13 @@ export default async function ExpertisePage({ params }: Props) {
         className="scroll-mt-28 bg-brand-marine px-5 py-20 text-white sm:px-6 lg:px-8 lg:py-24"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 border-b border-white/20 pb-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-end">
-            <div>
-              <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-                {content.books.eyebrow}
-              </p>
-              <h2 className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
-                {content.books.title}
-              </h2>
-            </div>
-            <div className="lg:border-l lg:border-white/20 lg:pl-10">
-              <p className="max-w-3xl text-base leading-8 text-white/72">
-                {content.books.description}
-              </p>
-              <Link
-                href={localizeHref(locale, "/literatur")}
-                className="mt-6 inline-flex items-center gap-4 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold text-white"
-              >
-                {content.books.cta}
-                <ArrowIcon />
-              </Link>
-            </div>
+          <div className="border-b border-white/20 pb-10">
+            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
+              {content.books.eyebrow}
+            </p>
+            <h2 className="mt-4 max-w-4xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
+              {content.books.title}
+            </h2>
           </div>
 
           <div className="mt-10 grid border border-white/20 lg:grid-cols-[minmax(0,1.25fr)_minmax(23rem,0.75fr)]">
@@ -502,69 +450,29 @@ export default async function ExpertisePage({ params }: Props) {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.12),transparent_55%)]" />
-              {content.books.items.map((book, index) => {
-                const hotspotPosition =
-                  index === 0
-                    ? "top-[23%] left-[63%]"
-                    : "top-[16%] left-[27%]";
-
-                return (
-                  <a
-                    key={book.href}
-                    href={book.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${content.books.externalLabel}: ${book.title}`}
-                    className={`group/book-hotspot absolute z-10 -translate-x-1/2 -translate-y-1/2 ${hotspotPosition}`}
-                  >
-                    <BookHotspotIcon number={index === 0 ? 1 : 2} />
-
-                    <span
-                      className={`pointer-events-none absolute top-[calc(100%+1rem)] z-20 w-64 border border-brand-marine/15 bg-white p-4 text-left text-brand-marine opacity-0 shadow-[0_18px_45px_rgba(3,19,52,.24)] transition-all duration-200 group-hover/book-hotspot:translate-y-0 group-hover/book-hotspot:opacity-100 group-focus-visible/book-hotspot:translate-y-0 group-focus-visible/book-hotspot:opacity-100 ${
-                        index === 0
-                          ? "right-0 translate-y-2"
-                          : "left-0 translate-y-2"
-                      }`}
-                    >
-                      <strong className="block font-winnstein-display text-sm leading-5 font-bold">
-                        {book.title}
-                      </strong>
-                      <span className="mt-2 flex items-center justify-between gap-4 text-xs font-semibold text-brand-steel-cyan">
-                        {content.books.externalLabel}
-                        <ArrowIcon />
-                      </span>
-                    </span>
-                  </a>
-                );
-              })}
             </div>
             <div className="bg-white text-brand-marine">
-              {content.books.items.map((book, index) => (
+              {content.books.items.map((book) => (
                 <article
-                  key={book.href}
+                  key={book.title}
                   className="flex min-h-64 flex-col justify-between border-b border-brand-marine/18 p-7 last:border-b-0 sm:p-9"
                 >
                   <div>
-                    <span className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
-                      0{index + 1}
-                    </span>
-                    <h3 className="mt-4 font-winnstein-display text-xl leading-snug font-bold">
+                    <h3 className="font-winnstein-display text-xl leading-snug font-bold">
                       {book.title}
                     </h3>
                     <p className="mt-3 text-sm leading-6 text-brand-marine/68">
                       {book.subtitle}
                     </p>
                   </div>
-                  <a
-                    href={book.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${content.books.externalLabel}: ${book.title}`}
-                    className="mt-6 inline-flex w-fit items-center gap-4 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold"
+                  <Link
+                    href={localizeHref(locale, "/literatur")}
+                    aria-label={`${content.books.cta}: ${book.title}`}
+                    className="mt-6 inline-flex w-fit items-center gap-4 self-end border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold"
                   >
-                    {content.books.externalLabel}
+                    {content.books.cta}
                     <ArrowIcon />
-                  </a>
+                  </Link>
                 </article>
               ))}
             </div>
@@ -617,24 +525,18 @@ export default async function ExpertisePage({ params }: Props) {
       >
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)]">
           <div>
-            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-              {content.industries.eyebrow}
-            </p>
-            <h2 className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
+            <h2 className="font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
               {content.industries.title}
             </h2>
             <p className="mt-6 text-base leading-8 text-brand-marine/72">
               {content.industries.description}
             </p>
-            <p className="mt-8 max-w-xl font-winnstein-display text-base leading-7 font-bold">
-              {content.industries.ctaHint}
-            </p>
             <Link
               href={localizeHref(locale, "/branchen")}
-              className="brand-action group mt-4 inline-flex min-h-14 items-center justify-between gap-8 bg-brand-marine px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
+              className="group mt-8 inline-flex items-center gap-5 border-b-2 border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-steel-cyan"
             >
               {content.industries.cta}
-              <span className="text-white transition-transform group-hover:translate-x-1">
+              <span className="transition-transform group-hover:translate-x-1">
                 <ArrowIcon />
               </span>
             </Link>

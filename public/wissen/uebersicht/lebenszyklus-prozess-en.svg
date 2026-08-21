@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="760" viewBox="0 0 1440 760" role="img" aria-labelledby="title desc" xml:lang="en">
+  <title id="title">Reliability management across the product lifecycle</title>
+  <desc id="desc">Qualitative methods accompany six product phases. Quantitative evidence connects targets, tests, field data and forecasts. Field experience feeds back into planning.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1l8 4-8 4z" fill="#2ea1cf"/>
+    </marker>
+    <style>
+      .label{font:700 18px Arial,sans-serif;letter-spacing:2px;fill:#2ea1cf}
+      .heading{font:700 24px Arial,sans-serif;fill:#142452}
+      .copy{font:400 17px Arial,sans-serif;fill:#435075}
+      .stage{font:700 18px Arial,sans-serif;fill:#142452}
+      .number{font:700 16px Arial,sans-serif;fill:#fff}
+    </style>
+  </defs>
+  <rect width="1440" height="760" fill="#fff"/>
+
+  <text class="label" x="72" y="62">QUALITATIVE</text>
+  <path d="M220 56h1148" stroke="#d5ecf7" stroke-width="2"/>
+
+  <g>
+    <rect x="72" y="96" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
+    <path d="M72 96h8v132h-8z" fill="#2ea1cf"/>
+    <text class="heading" x="108" y="143">Understand requirements</text>
+    <text class="copy" x="108" y="181">Specifications · experience</text>
+  </g>
+  <g>
+    <rect x="522" y="96" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
+    <path d="M522 96h8v132h-8z" fill="#2ea1cf"/>
+    <text class="heading" x="558" y="143">Assess risks</text>
+    <text class="copy" x="558" y="181">Design reviews · FTA · audits</text>
+  </g>
+  <g>
+    <rect x="972" y="96" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
+    <path d="M972 96h8v132h-8z" fill="#2ea1cf"/>
+    <text class="heading" x="1008" y="143">Derive improvements</text>
+    <text class="copy" x="1008" y="181">Field data · early indicators</text>
+  </g>
+
+  <text class="label" x="72" y="296">PRODUCT LIFECYCLE</text>
+  <path d="M170 354h1100" stroke="#142452" stroke-width="3"/>
+  <g text-anchor="middle">
+    <circle cx="170" cy="354" r="26" fill="#142452"/><text class="number" x="170" y="360">01</text>
+    <text class="stage" x="170" y="410">Concept</text>
+    <circle cx="390" cy="354" r="26" fill="#142452"/><text class="number" x="390" y="360">02</text>
+    <text class="stage" x="390" y="410">Design</text>
+    <circle cx="610" cy="354" r="26" fill="#142452"/><text class="number" x="610" y="360">03</text>
+    <text class="stage" x="610" y="410">Detailing</text>
+    <circle cx="830" cy="354" r="26" fill="#142452"/><text class="number" x="830" y="360">04</text>
+    <text class="stage" x="830" y="410">Production</text>
+    <circle cx="1050" cy="354" r="26" fill="#142452"/><text class="number" x="1050" y="360">05</text>
+    <text class="stage" x="1050" y="410">Customer use</text>
+    <circle cx="1270" cy="354" r="26" fill="#2ea1cf"/><text class="number" x="1270" y="360">06</text>
+    <text class="stage" x="1270" y="410">Reuse</text>
+  </g>
+  <path d="M1270 448v18c0 18-15 32-32 32H202c-18 0-32-14-32-32v-18" fill="none" stroke="#2ea1cf" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text class="copy" x="720" y="486" text-anchor="middle">Field experience feeds back into targets and planning</text>
+
+  <text class="label" x="72" y="566">QUANTITATIVE</text>
+  <path d="M230 560h1138" stroke="#d5ecf7" stroke-width="2"/>
+  <g>
+    <rect x="72" y="596" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
+    <path d="M72 596h8v132h-8z" fill="#2ea1cf"/>
+    <text class="heading" x="108" y="643">Targets &amp; risk</text>
+    <text class="copy" x="108" y="681">Reliability targets · risk analysis</text>
+    <rect x="522" y="596" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
+    <path d="M522 596h8v132h-8z" fill="#2ea1cf"/>
+    <text class="heading" x="558" y="643">Tests &amp; process</text>
+    <text class="copy" x="558" y="681">Test planning · statistical process control</text>
+    <rect x="972" y="596" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
+    <path d="M972 596h8v132h-8z" fill="#2ea1cf"/>
+    <text class="heading" x="1008" y="643">Field &amp; forecast</text>
+    <text class="copy" x="1008" y="681">Field-data analysis · remaining useful life</text>
+  </g>
+</svg>

@@ -13,13 +13,13 @@ const copy: Record<
 > = {
   de: {
     eyebrow: "RELIABILITY ENGINEERING",
-    title: "Zuverlässigkeit verstehen. Entscheidungen absichern.",
+    title: "Zuverlässigkeitsberatung für belastbare Produktentscheidungen.",
     claim: "Ingenieurberatung für belastbare Produktentscheidungen",
     topics: "Zuverlässigkeitstechnik  •  Risikomanagement  •  DoE",
   },
   en: {
     eyebrow: "RELIABILITY ENGINEERING",
-    title: "Understand reliability. Support sound decisions.",
+    title: "Reliability engineering consulting for robust product decisions.",
     claim: "Engineering consulting for robust product decisions",
     topics: "Reliability engineering  •  Risk management  •  DoE",
   },
