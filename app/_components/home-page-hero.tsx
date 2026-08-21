@@ -22,7 +22,7 @@ const conceptContent = {
     slides: [
       {
         title:
-          "Zuverlässigkeits\u00adberatung für Industrieprodukte.",
+          "Zuverlässigkeits\u00adberatung für technische Systeme.",
         description:
           "Wir verbinden Zuverlässigkeitsziele, technische Risiken, Tests und Daten zu belastbaren Produktentscheidungen.",
         cta: "Zuverlässigkeitstechnik ansehen",
@@ -81,7 +81,7 @@ const conceptContent = {
     academyCta: "Explore RelTest Education",
     slides: [
       {
-        title: "Reliability consulting for industrial products.",
+        title: "Reliability consulting for technical systems.",
         description:
           "We connect reliability targets, technical risks, testing and data to support robust product decisions.",
         cta: "Explore reliability engineering",
@@ -262,7 +262,21 @@ export function HomePageHero({
                   }`}
                 >
                   {activeSlide.href ===
-                  "/leistungen/datenanalyse-prognostik" ? (
+                  "/leistungen/zuverlaessigkeitstechnik" ? (
+                    <>
+                      <span>
+                        {locale === "de"
+                          ? "Zuverlässigkeitsberatung"
+                          : "Reliability consulting"}
+                      </span>
+                      <span className="min-[1120px]:block 2xl:inline">
+                        {locale === "de"
+                          ? " für technische Systeme."
+                          : " for technical systems."}
+                      </span>
+                    </>
+                  ) : activeSlide.href ===
+                    "/leistungen/datenanalyse-prognostik" ? (
                     <>
                       <span>
                         {locale === "de" ? "Versuche planen." : "Plan tests."}
