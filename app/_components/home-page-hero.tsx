@@ -1,7 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { startTransition, useEffect, useState } from "react";
+import {
+  startTransition,
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent as ReactMouseEvent,
+  type PointerEvent as ReactPointerEvent,
+} from "react";
 
 import { AiAwareImage as Image } from "./ai-aware-image";
 import { localizeHref, type Locale } from "../_i18n/config";
@@ -16,16 +23,17 @@ const conceptContent = {
   de: {
     carouselLabel: "RelTest Leistungsbereiche",
     slideLabel: "Hero-Thema auswählen",
+    previousSlide: "Vorheriges Hero-Thema",
+    nextSlide: "Nächstes Hero-Thema",
     contactTitle: "Projekt besprechen",
+    serviceCta: "Leistung im Detail",
     academyPrompt: "Weiterbildung gesucht?",
     academyCta: "RelTest Education entdecken",
     slides: [
       {
-        title:
-          "Zuverlässigkeits\u00adberatung für technische Systeme.",
+        title: "Ziele definieren. Lebensdauer systematisch bewerten.",
         description:
-          "Wir verbinden Zuverlässigkeitsziele, technische Risiken, Tests und Daten zu belastbaren Produktentscheidungen.",
-        cta: "Zuverlässigkeitstechnik ansehen",
+          "Wir übersetzen reale Nutzung in messbare Zuverlässigkeitsziele, bewerten relevante Ausfallmechanismen und entwickeln passende Nachweiskonzepte.",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.webp",
         imagePosition:
@@ -35,7 +43,6 @@ const conceptContent = {
         title: "Technische Risiken gezielt absichern.",
         description:
           "FMEA, FTA, Risikobewertung und Nachweisplanung werden zu einer nachvollziehbaren Entscheidungsgrundlage verbunden.",
-        cta: "Risikomanagement ansehen",
         href: "/leistungen/risikomanagement",
         image: "/graphics/knowledge/risk-management.png",
         imagePosition: "object-center",
@@ -44,31 +51,38 @@ const conceptContent = {
         title: "Versuche planen. Lebensdauer belastbar bewerten.",
         description:
           "Design of Experiments, Lebensdauererprobung, Felddatenanalyse und statistische Modelle werden passend zur technischen Frage eingesetzt.",
-        cta: "Datenanalyse ansehen",
         href: "/leistungen/datenanalyse-prognostik",
         image: "/graphics/knowledge/testing-realistic.webp",
+        imagePosition: "object-center",
+      },
+      {
+        title: "Engineering-Arbeitspakete verlässlich übernehmen.",
+        description:
+          "RelTest übernimmt klar definierte Arbeitspakete über Projektphasen hinweg. Ergebnisse, Schnittstellen, Abnahme, Dokumentation und Verantwortungsrahmen werden vorab vereinbart.",
+        href: "/leistungen/langfristige-kooperation",
+        image: "/team/project-partnership-team-review-v2.webp",
         imagePosition: "object-center",
       },
     ],
     services: [
       {
-        title: "Zuverlässigkeitstechnik",
-        href: "/leistungen/zuverlaessigkeitstechnik",
+        title: "Planung & Lebensdauer",
+        summary: "Ziele, Nutzung, Nachweiskonzept",
         icon: "icon-target.svg",
       },
       {
         title: "Risiko & Absicherung",
-        href: "/leistungen/risikomanagement",
+        summary: "Schwachstellen, FMEA, Freigabe",
         icon: "icon-shield.svg",
       },
       {
         title: "Test & Datenanalyse",
-        href: "/leistungen/datenanalyse-prognostik",
+        summary: "Versuche, Felddaten, Modelle",
         icon: "icon-database.svg",
       },
       {
         title: "Projektpartnerschaft",
-        href: "/leistungen/langfristige-kooperation",
+        summary: "Arbeitspakete, Abnahme, Verantwortung",
         icon: "icon-handshake.svg",
       },
     ],
@@ -76,15 +90,17 @@ const conceptContent = {
   en: {
     carouselLabel: "RelTest service areas",
     slideLabel: "Select hero topic",
+    previousSlide: "Previous hero topic",
+    nextSlide: "Next hero topic",
     contactTitle: "Discuss a project",
+    serviceCta: "View service details",
     academyPrompt: "Looking for professional training?",
     academyCta: "Explore RelTest Education",
     slides: [
       {
-        title: "Reliability consulting for technical systems.",
+        title: "Define targets. Assess lifetime systematically.",
         description:
-          "We connect reliability targets, technical risks, testing and data to support robust product decisions.",
-        cta: "Explore reliability engineering",
+          "We translate real-world use into measurable reliability targets, assess relevant failure mechanisms and develop suitable verification concepts.",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.webp",
         imagePosition:
@@ -94,7 +110,6 @@ const conceptContent = {
         title: "Assure technical risks systematically.",
         description:
           "FMEA, FTA, risk assessment and evidence planning are combined into a traceable basis for decisions.",
-        cta: "Explore risk management",
         href: "/leistungen/risikomanagement",
         image: "/graphics/knowledge/risk-management.png",
         imagePosition: "object-center",
@@ -103,31 +118,38 @@ const conceptContent = {
         title: "Plan tests. Assess lifetime robustly.",
         description:
           "Design of Experiments, lifetime testing, field data analysis and statistical models are selected for the technical question.",
-        cta: "Explore data analysis",
         href: "/leistungen/datenanalyse-prognostik",
         image: "/graphics/knowledge/testing-realistic.webp",
+        imagePosition: "object-center",
+      },
+      {
+        title: "Take ownership of defined engineering work packages.",
+        description:
+          "RelTest takes ownership of clearly defined work packages across project phases. Deliverables, interfaces, acceptance, documentation and responsibility are agreed in advance.",
+        href: "/leistungen/langfristige-kooperation",
+        image: "/team/project-partnership-team-review-v2.webp",
         imagePosition: "object-center",
       },
     ],
     services: [
       {
-        title: "Reliability engineering",
-        href: "/leistungen/zuverlaessigkeitstechnik",
+        title: "Planning & lifetime",
+        summary: "Targets, use, verification concept",
         icon: "icon-target.svg",
       },
       {
         title: "Risk & assurance",
-        href: "/leistungen/risikomanagement",
+        summary: "Weak points, FMEA, release",
         icon: "icon-shield.svg",
       },
       {
         title: "Testing & data analysis",
-        href: "/leistungen/datenanalyse-prognostik",
+        summary: "Tests, field data, models",
         icon: "icon-database.svg",
       },
       {
         title: "Project partnership",
-        href: "/leistungen/langfristige-kooperation",
+        summary: "Work packages, acceptance, ownership",
         icon: "icon-handshake.svg",
       },
     ],
@@ -160,10 +182,114 @@ export function HomePageHero({
   const content = conceptContent[locale];
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const [loadedSlideIndexes, setLoadedSlideIndexes] = useState(
     () => new Set([0]),
   );
+  const pointerGestureRef = useRef<{
+    pointerId: number;
+    startX: number;
+    startY: number;
+  } | null>(null);
+  const suppressClickRef = useRef(false);
   const activeSlide = content.slides[activeIndex];
+
+  function selectSlide(index: number, userInitiated = false) {
+    setLoadedSlideIndexes((current) => {
+      if (current.has(index)) {
+        return current;
+      }
+
+      const next = new Set(current);
+      next.add(index);
+      return next;
+    });
+
+    if (userInitiated) {
+      setActiveIndex(index);
+      return;
+    }
+
+    startTransition(() => setActiveIndex(index));
+  }
+
+  function moveSlide(direction: -1 | 1) {
+    const nextIndex =
+      (activeIndex + direction + content.slides.length) %
+      content.slides.length;
+
+    selectSlide(nextIndex, true);
+  }
+
+  function handlePointerDown(event: ReactPointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return;
+    }
+
+    if (
+      event.target instanceof Element &&
+      event.target.closest("a, button")
+    ) {
+      return;
+    }
+
+    pointerGestureRef.current = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+    };
+    setIsDragging(true);
+    event.currentTarget.setPointerCapture(event.pointerId);
+  }
+
+  function handlePointerUp(event: ReactPointerEvent<HTMLDivElement>) {
+    const gesture = pointerGestureRef.current;
+
+    if (!gesture || gesture.pointerId !== event.pointerId) {
+      return;
+    }
+
+    const deltaX = event.clientX - gesture.startX;
+    const deltaY = event.clientY - gesture.startY;
+    const isHorizontalSwipe =
+      Math.abs(deltaX) >= 54 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
+
+    pointerGestureRef.current = null;
+    setIsDragging(false);
+
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+
+    if (!isHorizontalSwipe) {
+      return;
+    }
+
+    suppressClickRef.current = true;
+    window.requestAnimationFrame(() => {
+      suppressClickRef.current = false;
+    });
+    moveSlide(deltaX < 0 ? 1 : -1);
+  }
+
+  function handlePointerCancel(event: ReactPointerEvent<HTMLDivElement>) {
+    pointerGestureRef.current = null;
+    setIsDragging(false);
+
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+  }
+
+  function handleClickCapture(event: ReactMouseEvent<HTMLDivElement>) {
+    if (!suppressClickRef.current) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    suppressClickRef.current = false;
+  }
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -187,20 +313,27 @@ export function HomePageHero({
   }, [activeIndex, content.slides.length]);
 
   useEffect(() => {
-    if (isPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (
+      isPaused ||
+      isDragging ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
       return;
     }
 
     const timer = window.setTimeout(() => {
       const nextIndex = (activeIndex + 1) % content.slides.length;
 
-      startTransition(() => {
-        setActiveIndex(nextIndex);
-      });
+      selectSlide(nextIndex);
     }, 6500);
 
     return () => window.clearTimeout(timer);
-  }, [activeIndex, content.slides.length, isPaused]);
+  }, [
+    activeIndex,
+    content.slides.length,
+    isDragging,
+    isPaused,
+  ]);
 
   return (
     <section className="winnstein-hero border-t border-line-soft bg-white">
@@ -209,12 +342,22 @@ export function HomePageHero({
         role="region"
         aria-roledescription="carousel"
         aria-label={content.carouselLabel}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onFocusCapture={() => setIsPaused(true)}
+        onFocusCapture={(event) =>
+          setIsPaused(
+            event.target instanceof HTMLElement &&
+              event.target.matches(":focus-visible"),
+          )
+        }
         onBlurCapture={() => setIsPaused(false)}
       >
-        <div className="relative min-h-[40rem] overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[36rem]">
+        <div
+          className="relative min-h-[49rem] touch-pan-y overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[40rem] md:min-h-[38rem]"
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerCancel}
+          onClickCapture={handleClickCapture}
+          onDragStart={(event) => event.preventDefault()}
+        >
           {content.slides.map((slide, index) => {
             if (!loadedSlideIndexes.has(index)) {
               return null;
@@ -237,7 +380,9 @@ export function HomePageHero({
                   alt=""
                   fill
                   preload={index === 0}
+                  quality={90}
                   aria-hidden="true"
+                  draggable={false}
                   className={`object-cover ${slide.imagePosition}`}
                   sizes="(min-width: 1536px) 1408px, (min-width: 1280px) calc(100vw - 128px), (min-width: 1024px) calc(100vw - 96px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 40px)"
                 />
@@ -245,17 +390,17 @@ export function HomePageHero({
             );
           })}
 
-          <div className="absolute inset-0 z-20 bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.98)_35%,rgba(255,255,255,0.82)_52%,rgba(255,255,255,0.2)_78%,rgba(255,255,255,0.08)_100%)]" />
-          <div className="absolute inset-x-0 bottom-0 z-20 h-44 bg-gradient-to-t from-white/85 to-transparent" />
+          <div className="absolute inset-0 z-20 bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.96)_24%,rgba(255,255,255,0.76)_38%,rgba(255,255,255,0.46)_52%,rgba(255,255,255,0.18)_66%,rgba(255,255,255,0.04)_78%,rgba(255,255,255,0)_86%)]" />
+          <div className="absolute inset-x-0 bottom-0 z-20 h-32 bg-gradient-to-t from-white/40 via-white/10 to-transparent" />
 
-          <div className="relative z-20 flex min-h-[40rem] items-center px-6 py-14 sm:min-h-[36rem] sm:px-10 sm:py-16 lg:px-16 xl:px-20">
+          <div className="relative z-20 flex min-h-[49rem] items-center px-6 pt-12 pb-36 sm:min-h-[40rem] sm:px-10 sm:pt-14 sm:pb-36 md:min-h-[38rem] md:pt-16 md:pb-24 lg:px-16 xl:px-20">
             <div
               key={activeSlide.title}
-              className="winnstein-hero-copy flex h-[31rem] w-full max-w-[56rem] translate-y-3 flex-col sm:h-[27rem] sm:translate-y-3.5"
+              className="winnstein-hero-copy flex min-h-[31rem] w-full min-w-0 max-w-[56rem] translate-y-3 flex-col sm:min-h-[27rem] sm:translate-y-3.5"
             >
               <div className="flex min-h-0 flex-1 items-end">
                 <h1
-                  className={`text-[clamp(2.05rem,3.2vw,4.1rem)] leading-[1] font-semibold tracking-[-0.045em] text-brand-ink hyphens-manual ${
+                  className={`winnstein-hero-title min-w-0 max-w-full text-[clamp(2rem,8vw,2.5rem)] leading-[1.15] font-semibold text-brand-ink hyphens-auto [overflow-wrap:anywhere] sm:text-[clamp(2.5rem,4.8vw,4.1rem)] lg:text-[clamp(3rem,3.2vw,4.1rem)] ${
                     activeSlide.href === "/leistungen/risikomanagement"
                       ? "max-w-[36rem] 2xl:max-w-[52rem]"
                       : "max-w-[52rem]"
@@ -266,13 +411,13 @@ export function HomePageHero({
                     <>
                       <span>
                         {locale === "de"
-                          ? "Zuverlässigkeitsberatung"
-                          : "Reliability consulting"}
+                          ? "Ziele definieren."
+                          : "Define targets."}
                       </span>
-                      <span className="min-[1120px]:block 2xl:inline">
+                      <span className="block">
                         {locale === "de"
-                          ? " für technische Systeme."
-                          : " for technical systems."}
+                          ? "Lebensdauer systematisch bewerten."
+                          : "Assess lifetime systematically."}
                       </span>
                     </>
                   ) : activeSlide.href ===
@@ -281,10 +426,24 @@ export function HomePageHero({
                       <span>
                         {locale === "de" ? "Versuche planen." : "Plan tests."}
                       </span>
+                      <span className="block">
+                        {locale === "de"
+                          ? "Lebensdauer belastbar bewerten."
+                          : "Assess lifetime robustly."}
+                      </span>
+                    </>
+                  ) : activeSlide.href ===
+                    "/leistungen/langfristige-kooperation" ? (
+                    <>
+                      <span>
+                        {locale === "de"
+                          ? "Engineering-Arbeitspakete"
+                          : "Take ownership of defined"}
+                      </span>
                       <span className="min-[1120px]:block 2xl:inline">
                         {locale === "de"
-                          ? " Lebensdauer belastbar bewerten."
-                          : " Assess lifetime robustly."}
+                          ? " verlässlich übernehmen."
+                          : " engineering work packages."}
                       </span>
                     </>
                   ) : (
@@ -297,118 +456,129 @@ export function HomePageHero({
               </p>
               <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
                 <Link
-                  href={localizeHref(locale, activeSlide.href)}
-                  className="brand-action inline-flex min-h-12 items-center justify-center gap-4 bg-brand-marine px-7 text-sm font-bold text-white transition hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
-                >
-                  {activeSlide.cta}
-                  <ArrowIcon />
-                </Link>
-                <Link
                   href={localizeHref(locale, "/kontakt")}
-                  className="brand-action brand-action-outline brand-action-outline-light inline-flex min-h-12 items-center justify-center gap-3 border border-brand-marine/35 bg-white/65 px-7 text-sm font-bold text-brand-marine transition hover:border-brand-steel-cyan hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
+                  className="brand-action group inline-flex min-h-14 items-center justify-center gap-4 bg-brand-marine px-8 text-base font-bold text-white transition-colors hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
                 >
                   {content.contactTitle}
-                  <ArrowIcon />
+                  <span className="transition-transform duration-200 group-hover:translate-x-1">
+                    <ArrowIcon />
+                  </span>
+                </Link>
+                <Link
+                  href={localizeHref(locale, activeSlide.href)}
+                  aria-label={`${content.serviceCta}: ${content.services[activeIndex].title}`}
+                  className="group inline-flex min-h-12 w-fit items-center justify-center gap-3 border-b-2 border-brand-steel-cyan px-1 py-2 text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
+                >
+                  {content.serviceCta}
+                  <span className="transition-transform duration-200 group-hover:translate-x-1">
+                    <ArrowIcon />
+                  </span>
                 </Link>
               </div>
             </div>
           </div>
 
-          <div
-            className="absolute bottom-3 left-6 z-30 flex items-center gap-2.5 sm:bottom-4 sm:left-10 lg:bottom-5 lg:left-16 xl:left-20"
-            aria-label={content.slideLabel}
-          >
-            {content.slides.map((slide, index) => {
-              const isActive = index === activeIndex;
+          <div className="absolute inset-x-0 bottom-0 z-30 border-t border-brand-marine/12 bg-white/88 px-3 py-2 backdrop-blur-md sm:px-5 lg:px-6">
+            <div className="flex items-stretch gap-2">
+              <div
+                className="grid min-w-0 flex-1 grid-cols-2 items-stretch md:grid-cols-4"
+                aria-label={content.slideLabel}
+              >
+                {content.slides.map((slide, index) => {
+                  const isActive = index === activeIndex;
+                  const topic = content.services[index];
 
-              return (
+                  return (
+                    <button
+                      key={slide.title}
+                      type="button"
+                      onClick={() => selectSlide(index, true)}
+                      onMouseEnter={() => selectSlide(index, true)}
+                      onFocus={() => selectSlide(index, true)}
+                      className={`group relative flex min-h-14 min-w-0 items-center justify-start gap-2.5 px-2.5 py-2 text-left font-winnstein-display transition-colors focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:gap-3 sm:px-3 lg:px-4 ${
+                        isActive
+                          ? "text-brand-marine"
+                          : "text-brand-marine/68 hover:bg-white/55 hover:text-brand-marine"
+                      }`}
+                      aria-pressed={isActive}
+                      aria-label={`${topic.title}: ${topic.summary}`}
+                    >
+                      <span
+                        aria-hidden="true"
+                        className={`absolute inset-x-3 top-0 h-0.5 transition-colors ${
+                          isActive
+                            ? "bg-brand-steel-cyan"
+                            : "bg-transparent group-hover:bg-brand-steel-cyan/35"
+                        }`}
+                      />
+                      <span
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center transition-colors ${
+                          isActive
+                            ? "bg-brand-steel-cyan-20"
+                            : "bg-white/60 group-hover:bg-brand-steel-cyan-10"
+                        }`}
+                      >
+                        <Image
+                          src={`${iconBase}/${topic.icon}`}
+                          alt=""
+                          aria-hidden="true"
+                          width={40}
+                          height={40}
+                          className="h-8 w-8"
+                        />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-xs leading-tight font-bold sm:text-sm xl:text-[0.95rem]">
+                          {topic.title}
+                        </span>
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="hidden shrink-0 items-center gap-1 border-l border-brand-marine/12 pl-2 lg:flex">
                 <button
-                  key={slide.title}
                   type="button"
-                  onClick={() => {
-                    setLoadedSlideIndexes((current) => {
-                      if (current.has(index)) {
-                        return current;
-                      }
-
-                      const next = new Set(current);
-                      next.add(index);
-                      return next;
-                    });
-                    startTransition(() => setActiveIndex(index));
-                  }}
-                  className={
-                    isActive
-                      ? "h-2.5 w-10 bg-brand-steel-cyan transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
-                      : "h-2.5 w-2.5 bg-brand-marine/35 transition-all duration-300 hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
-                  }
-                  aria-label={`${index + 1}: ${slide.title}`}
-                  aria-current={isActive ? "true" : undefined}
-                />
-              );
-            })}
+                  onClick={() => moveSlide(-1)}
+                  className="flex h-11 w-11 items-center justify-center text-brand-marine transition-colors hover:bg-white/70 hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+                  aria-label={content.previousSlide}
+                >
+                  <span className="rotate-180">
+                    <ArrowIcon />
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => moveSlide(1)}
+                  className="flex h-11 w-11 items-center justify-center text-brand-marine transition-colors hover:bg-white/70 hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+                  aria-label={content.nextSlide}
+                >
+                  <ArrowIcon />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <nav
-          aria-label={content.carouselLabel}
-          className="grid border-x border-b border-line-soft bg-white shadow-[0_18px_55px_rgba(23,52,76,0.08)] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
-        >
-          {content.services.map((service) => (
-            <Link
-              key={service.href}
-              href={localizeHref(locale, service.href)}
-              className="group flex min-h-28 min-w-0 items-center gap-3 border-r border-b border-line-soft px-5 py-5 transition hover:z-10 hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:min-h-32 sm:px-6 2xl:border-b-0"
-            >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-brand-steel-cyan-10 ring-1 ring-brand-steel-cyan/15 transition group-hover:bg-white">
-                <Image
-                  src={`${iconBase}/${service.icon}`}
-                  alt=""
-                  aria-hidden="true"
-                  width={44}
-                  height={44}
-                  className="h-9 w-9"
-                />
-              </span>
-              <span className="min-w-0">
-                <span className="block break-words text-base leading-[1.15] font-semibold tracking-[-0.025em] text-brand-ink">
-                  {service.title}
-                </span>
-              </span>
-            </Link>
-          ))}
-
-          <Link
-            href={localizeHref(locale, "/kontakt")}
-            className="group flex min-h-28 min-w-0 items-center justify-between gap-5 bg-brand-marine px-6 py-5 text-white transition hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:col-span-2 sm:min-h-32 lg:col-span-2 xl:col-span-4 2xl:col-span-1"
-          >
-            <span className="break-words text-xl font-semibold tracking-[-0.025em]">
-              {content.contactTitle}
-            </span>
-            <span className="shrink-0 text-white transition-transform duration-200 group-hover:translate-x-1">
-              <ArrowIcon />
-            </span>
-          </Link>
-        </nav>
-
       </div>
 
-      <div className="mx-auto flex max-w-[96rem] justify-stretch px-5 pt-6 sm:justify-end sm:px-6 lg:px-12 xl:px-16">
+      <div className="mx-auto flex max-w-[96rem] justify-stretch px-5 pt-5 sm:justify-end sm:px-6 lg:px-12 xl:px-16">
         <div className="w-full border border-brand-education/25 bg-white shadow-[0_8px_26px_rgba(3,19,52,0.06)] sm:w-auto">
           <Link
             href="https://reltest-academy.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex min-h-16 w-full flex-col items-start gap-3 px-4 py-4 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-education focus-visible:ring-inset sm:w-auto sm:flex-row sm:items-center sm:gap-5 sm:px-6 sm:py-4"
+            className="group flex min-h-16 w-full flex-col items-start gap-3 px-4 py-3.5 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-education focus-visible:ring-inset sm:w-auto sm:flex-row sm:items-center sm:gap-5 sm:px-6 sm:py-3"
           >
             <span className="flex min-w-0 flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
-              <span className="relative h-11 w-28 shrink-0 overflow-hidden sm:h-14 sm:w-40 lg:h-16 lg:w-48">
+              <span className="relative h-10 w-28 shrink-0 overflow-hidden sm:h-12 sm:w-36 lg:h-14 lg:w-40">
                 <Image
                   src="/branding/reltest-education-horizontal-positive.svg"
                   alt="RelTest Education"
                   width={466}
                   height={226}
-                  className="absolute left-0 top-1/2 h-14 w-28 -translate-y-1/2 object-contain sm:h-20 sm:w-40 lg:h-24 lg:w-48"
+                  className="absolute left-0 top-1/2 h-14 w-28 -translate-y-1/2 object-contain sm:h-[4.5rem] sm:w-36 lg:h-20 lg:w-40"
                 />
               </span>
               <span className="min-w-0 text-slate-500">
@@ -425,7 +595,7 @@ export function HomePageHero({
         </div>
       </div>
 
-      <div className="h-12 border-b border-line-soft bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] sm:h-16" />
+      <div className="h-6 border-b border-line-soft bg-[linear-gradient(180deg,#ffffff_0%,#f7fafc_100%)] sm:h-8" />
     </section>
   );
 }

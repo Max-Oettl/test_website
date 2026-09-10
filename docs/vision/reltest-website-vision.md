@@ -131,7 +131,7 @@ Designentscheidung und in einem klar abgegrenzten Arbeitspaket angelegt.
 RelTest soll nicht über einen Slogan wie `Reliability Made in Germany`
 positioniert werden, sondern eher in einer Richtung wie:
 
-- `Advanced Reliability Engineering Partner`
+- `Advanced Reliability Engineering-Partner`
 
 oder einer fachlich ähnlichen, international und professionell klingenden
 Positionierung.
@@ -166,6 +166,13 @@ Die Projektpartnerschaft ist ein strategisch wichtiges Zukunftsangebot. RelTest
 kann darin klar definierte Engineering-Arbeitspakete übernehmen, prüfbare
 Ergebnisse liefern und innerhalb eines vorab vereinbarten vertraglichen Rahmens
 für die eigenen Arbeitsergebnisse einstehen.
+
+Im Startseiten-Hero werden diese vier Felder als vier eigenständige Slides
+geführt. Weil `Zuverlässigkeitstechnik` zugleich der fachliche Dachbegriff ist,
+wird der erste kompakte Reiter dort als `Planung & Lebensdauer` bezeichnet und
+über Ziele, Nutzung und Nachweiskonzept abgegrenzt. Die anderen Reiter nennen
+entsprechend ihre konkreten Gegenstände, damit die Unterschiede bereits vor der
+Auswahl verständlich sind.
 
 RelTest Education ist ein eigener Website-Bereich und kein fünftes
 Solutions-Leistungsfeld. Er umfasst Vor-Ort-Schulungen und digitales E-Learning.
@@ -335,6 +342,7 @@ Wichtige Navigationspunkte sind:
 - Leistungen
 - Weiterbildung
 - Wissen
+- Branchen
 - Prozess
 - Literatur
 - Referenzen

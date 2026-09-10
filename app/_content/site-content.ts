@@ -145,7 +145,7 @@ const shared = {
 const content = {
   de: {
     metadata: {
-      title: "RelTest Solutions | Advanced Reliability Engineering Partner",
+      title: "RelTest Solutions | Advanced Reliability Engineering-Partner",
       description:
         "Zuverlässigkeitstechnik, Erprobung, Absicherung und Reliability Engineering für anspruchsvolle technische B2B-Produkte.",
     },
@@ -155,13 +155,19 @@ const content = {
       menu: "Menü",
       inquiry: "Anfrage starten",
       servicesOverview: "Leistungen im Überblick",
+      serviceGroupLabels: {
+        primary: "Leistungsfelder",
+        methods: "Methoden im Fokus",
+      },
       educationOverview: "Education im Überblick",
       knowledgeOverview: "Wissen im Überblick",
+      industriesOverview: "Alle Branchen im Überblick",
       expertiseOverview: "Expertise im Überblick",
       items: [
         { label: "Solutions", href: "/leistungen" },
         { label: "Education", href: "/education" },
         { label: "Wissen", href: "/wissen" },
+        { label: "Branchen", href: "/branchen" },
         { label: "Expertise", href: "/expertise" },
         { label: "Wir sind RelTest", href: "/ueber-uns" },
       ],
@@ -183,9 +189,15 @@ const content = {
           href: "/leistungen/langfristige-kooperation",
         },
       ],
+      serviceMethodItems: [
+        {
+          label: "DoE-Projektunterstützung",
+          href: "/leistungen/design-of-experiments",
+        },
+      ],
       educationItems: [
-        { label: "Vor-Ort-Schulung", href: "/education#vor-ort-schulung" },
         { label: "E-Learning", href: "/education#e-learning" },
+        { label: "Vor-Ort-Schulung", href: "/education#vor-ort-schulung" },
       ],
       knowledgeItems: [
         {
@@ -200,18 +212,24 @@ const content = {
         { label: "Erprobung", href: "/wissen/erprobung" },
         { label: "Absicherung", href: "/wissen/absicherung" },
         { label: "Prognosen", href: "/wissen/prognosen" },
+        {
+          label: "DoE-Grundlagen",
+          href: "/wissen/design-of-experiments",
+        },
       ],
       expertiseItems: [
         {
-          label: "Referenzen & Branchenvertrauen",
-          href: "/expertise#referenzen",
+          label: "Referenzen",
+          href: "/referenzen",
         },
         {
           label: "Fachbücher & Veröffentlichungen",
-          href: "/expertise#fachbuecher",
+          href: "/literatur",
         },
-        { label: "Podcast mit Kevin Lucan", href: "/expertise#podcast" },
-        { label: "Branchen", href: "/branchen" },
+        {
+          label: "Podcast mit Kevin Lucan",
+          href: "https://ingenieurshelden.de/podcast-fuer-ingenieure-und-ingenieurinnen/kevin-lucan",
+        },
       ],
     },
     footer: {
@@ -240,7 +258,7 @@ const content = {
       learnMore: "Mehr erfahren",
     },
     hero: {
-      eyebrow: "Advanced Reliability Engineering Partner",
+      eyebrow: "Advanced Reliability Engineering-Partner",
       title:
         "Zuverlässigkeitstechnik für belastbare Entscheidungen in Entwicklung, Absicherung und Serienreife.",
       description:
@@ -272,7 +290,7 @@ const content = {
     },
     services: [
       {
-        title: "Zuverlässigkeitstechnik",
+        title: "Planung & Lebensdauer",
         description:
           "Zuverlässigkeitsziele, Ausfallmechanismen und Nachweiskonzepte werden über den Produktlebenszyklus methodisch zusammengeführt.",
         highlight: "Belastbare Produktentscheidungen statt später Überraschungen",
@@ -281,7 +299,7 @@ const content = {
         meta: "Reliability Engineering",
         topics: [
           "Zuverlässigkeitsplanung",
-          "Lebensdauerbewertung",
+          "Zuverlässigkeitsbewertung",
           "Zuverlässigkeitsnachweise",
           "Methodische Beratung",
         ],
@@ -370,9 +388,9 @@ const content = {
           "RelTest verbindet methodische Analyse mit technischem Verständnis für reale Ausfallmechanismen.",
       },
       {
-        title: "Unternehmen seit 2016",
+        title: "Beratung seit 2016",
         description:
-          "RelTest Solutions begleitet seit 2016 Industrieprojekte in der Beratung. Im Team fließen zusätzlich mehrere Jahrzehnte Erfahrung in der Zuverlässigkeitstechnik ein.",
+          "Das heutige RelTest-Team begleitet seit 2016 Industrieprojekte in der Beratung. Zusätzlich fließen mehrere Jahrzehnte Erfahrung in der Zuverlässigkeitstechnik ein.",
       },
       {
         title: "Ganzheitlicher Blick",
@@ -413,16 +431,6 @@ const content = {
         external: true,
         icon: "/branding/reltest-education-horizontal-positive.svg",
       },
-    ],
-    industryReferences: [
-      "Automotive",
-      "Maschinenbau",
-      "Elektronische Produkte",
-      "Halbleiterindustrie",
-      "Consumer-Technik",
-      "Erneuerbare Energien",
-      "Medizintechnik",
-      "Luft- und Raumfahrt",
     ],
     book: {
       ...shared.books.reliabilityTests,
@@ -505,12 +513,12 @@ const content = {
         visualTitle:
           "Stimme, Haltung und technische Perspektive direkt erleben",
         visualText:
-          "Der Podcast ist ein guter Einstieg für Besucher, die nicht nur Leistungen lesen, sondern auch ein Gefühl für die Personen hinter RelTest Solutions bekommen möchten.",
+          "Der Podcast ist ein guter Einstieg für Besucher, die nicht nur Leistungen lesen, sondern auch einen der Gründer von RelTest Solutions persönlich kennenlernen möchten.",
         title: "RelTest auch im persönlichen Gespräch kennenlernen",
         description:
-          "Im Podcast-Gespräch erhalten Interessierte einen ersten persönlichen Eindruck und erleben, wie technische Themen rund um Zuverlässigkeit, Entwicklung und Verantwortung eingeordnet werden.",
+          "Im Podcast-Gespräch erhalten Interessierte einen persönlichen Eindruck von Kevin Lucan und erleben, wie technische Themen rund um Zuverlässigkeit, Entwicklung und Verantwortung eingeordnet werden.",
         hostContext:
-          "Unser Geschäftsführer Kevin Lucan spricht im Ingenieurshelden-Podcast über seinen Weg, technische Denkweisen und die Bedeutung belastbarer Entscheidungen im Ingenieurumfeld.",
+          "Unser Geschäftsführer und Mitgründer Kevin Lucan spricht im Ingenieurshelden-Podcast über seinen Weg, technische Denkweisen und die Bedeutung belastbarer Entscheidungen im Ingenieurumfeld.",
         cta: "Podcast anhören",
         contactCta: "Gespräch anfragen",
       },
@@ -752,13 +760,19 @@ const content = {
       menu: "Menu",
       inquiry: "Start an inquiry",
       servicesOverview: "Services overview",
+      serviceGroupLabels: {
+        primary: "Service areas",
+        methods: "Methods in focus",
+      },
       educationOverview: "Education overview",
       knowledgeOverview: "Knowledge overview",
+      industriesOverview: "All industries",
       expertiseOverview: "Expertise overview",
       items: [
         { label: "Solutions", href: "/leistungen" },
         { label: "Education", href: "/education" },
         { label: "Knowledge", href: "/wissen" },
+        { label: "Industries", href: "/branchen" },
         { label: "Expertise", href: "/expertise" },
         { label: "About RelTest", href: "/ueber-uns" },
       ],
@@ -780,9 +794,15 @@ const content = {
           href: "/leistungen/langfristige-kooperation",
         },
       ],
+      serviceMethodItems: [
+        {
+          label: "DoE project support",
+          href: "/leistungen/design-of-experiments",
+        },
+      ],
       educationItems: [
-        { label: "On-site training", href: "/education#on-site-training" },
         { label: "E-learning", href: "/education#e-learning" },
+        { label: "On-site training", href: "/education#on-site-training" },
       ],
       knowledgeItems: [
         {
@@ -797,15 +817,21 @@ const content = {
         { label: "Testing", href: "/wissen/erprobung" },
         { label: "Assurance", href: "/wissen/absicherung" },
         { label: "Predictions", href: "/wissen/prognosen" },
+        {
+          label: "DoE fundamentals",
+          href: "/wissen/design-of-experiments",
+        },
       ],
       expertiseItems: [
         {
-          label: "References & industry trust",
-          href: "/expertise#references",
+          label: "References",
+          href: "/referenzen",
         },
-        { label: "Books & publications", href: "/expertise#books" },
-        { label: "Podcast with Kevin Lucan", href: "/expertise#podcast" },
-        { label: "Industries", href: "/branchen" },
+        { label: "Books & publications", href: "/literatur" },
+        {
+          label: "Podcast with Kevin Lucan",
+          href: "https://ingenieurshelden.de/podcast-fuer-ingenieure-und-ingenieurinnen/kevin-lucan",
+        },
       ],
     },
     footer: {
@@ -866,7 +892,7 @@ const content = {
     },
     services: [
       {
-        title: "Reliability engineering",
+        title: "Planning & lifetime",
         description:
           "Reliability targets, failure mechanisms and verification concepts are integrated methodically across the product lifecycle.",
         highlight: "Robust product decisions instead of late surprises",
@@ -875,7 +901,7 @@ const content = {
         meta: "Reliability Engineering",
         topics: [
           "Reliability planning",
-          "Lifetime assessment",
+          "Reliability assessment",
           "Reliability verification",
           "Methodological consulting",
         ],
@@ -964,9 +990,9 @@ const content = {
           "RelTest combines methodological analysis with a technical understanding of real-world failure mechanisms.",
       },
       {
-        title: "Established in 2016",
+        title: "Consulting since 2016",
         description:
-          "RelTest Solutions has supported industrial consulting projects since 2016, while the team contributes several decades of additional reliability engineering experience.",
+          "Today's RelTest team has supported industrial consulting projects since 2016 and contributes several decades of additional reliability engineering experience.",
       },
       {
         title: "End-to-end perspective",
@@ -1007,16 +1033,6 @@ const content = {
         external: true,
         icon: "/branding/reltest-education-horizontal-positive.svg",
       },
-    ],
-    industryReferences: [
-      "Automotive",
-      "Mechanical engineering",
-      "Electronic products",
-      "Semiconductor industry",
-      "Consumer technology",
-      "Renewable energy",
-      "Medical technology",
-      "Aerospace",
     ],
     book: {
       ...shared.books.reliabilityTests,
@@ -1097,12 +1113,12 @@ const content = {
         visualTitle:
           "Hear the voice, mindset and technical perspective behind RelTest",
         visualText:
-          "The podcast is an excellent introduction for visitors who want to understand not only the services, but also the people behind RelTest Solutions.",
+          "The podcast is an excellent introduction for visitors who want to understand the services and get to know one of the founders of RelTest Solutions.",
         title: "Get to know RelTest through a personal conversation",
         description:
-          "The podcast offers a first personal impression and demonstrates how technical topics related to reliability, development and responsibility are approached.",
+          "The podcast offers a personal impression of Kevin Lucan and demonstrates how technical topics related to reliability, development and responsibility are approached.",
         hostContext:
-          "Managing Director Kevin Lucan joins the Ingenieurshelden podcast to discuss his career, engineering mindsets and the importance of robust decisions in technical environments.",
+          "Managing Director and co-founder Kevin Lucan joins the Ingenieurshelden podcast to discuss his career, engineering mindsets and the importance of robust decisions in technical environments.",
         cta: "Listen to the podcast",
         contactCta: "Request a conversation",
       },

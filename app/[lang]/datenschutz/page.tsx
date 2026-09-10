@@ -103,14 +103,17 @@ function GermanSections(locale: Locale): LegalSection[] {
     },
     {
       id: "cookies",
-      title: "Cookies und Spracheinstellung",
+      title: "Cookies und Einwilligungseinstellungen",
       content: (
         <div className="space-y-5">
           <p>
             Die Website verwendet ein technisch notwendiges Cookie mit dem Namen <code className="bg-brand-steel-cyan-10 px-1.5 py-0.5 text-sm text-brand-marine">NEXT_LOCALE</code>. Es speichert Ihre gewählte Sprache für bis zu zwölf Monate und ermöglicht die Weiterleitung auf die passende Sprachversion. Das Cookie ist als HttpOnly und SameSite=Lax gesetzt und wird in der Produktionsumgebung nur über eine verschlüsselte Verbindung übertragen.
           </p>
           <p>
-            Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse besteht in einer konsistenten und nutzerfreundlichen Sprachwahl. Weitere Cookies können durch Calendly gesetzt oder ausgelesen werden, wenn der eingebettete Buchungsbereich geladen wird. Einzelheiten finden Sie im Abschnitt zur Terminbuchung.
+            Zusätzlich speichert die Website Ihre Datenschutz-Auswahl unter dem Namen <code className="bg-brand-steel-cyan-10 px-1.5 py-0.5 text-sm text-brand-marine">reltest_consent</code> für bis zu sechs Monate im lokalen Speicher Ihres Browsers. Gespeichert werden die gewählte Kategorie „Externe Medien“, eine Versionsnummer und der Zeitpunkt der Auswahl. Dadurch müssen wir Ihre Entscheidung nicht bei jedem Seitenaufruf erneut abfragen.
+          </p>
+          <p>
+            Der Zugriff auf diese technisch notwendigen Speicherungen erfolgt nach § 25 Abs. 2 Nr. 2 TDDDG. Soweit dabei personenbezogene Daten verarbeitet werden, ist Art. 6 Abs. 1 lit. f DSGVO die Rechtsgrundlage; unser berechtigtes Interesse besteht in einer konsistenten Sprachwahl und der verlässlichen Umsetzung Ihrer Datenschutz-Entscheidung. Ihre Auswahl können Sie jederzeit über „Cookie-Einstellungen“ im Footer ändern.
           </p>
         </div>
       ),
@@ -138,10 +141,10 @@ function GermanSections(locale: Locale): LegalSection[] {
       content: (
         <div className="space-y-5">
           <p>
-            Auf der Kontaktseite ist der Terminbuchungsdienst Calendly eingebunden. Anbieter ist Calendly LLC, 115 E Main St., Ste A1B, Buford, GA 30518, USA. Wenn der Buchungsbereich angezeigt wird, stellt Ihr Browser eine Verbindung zu Calendly her. Dabei können insbesondere IP-Adresse, Browser- und Geräteinformationen, Zeitpunkt und aufgerufene Seite an Calendly übermittelt sowie Cookies oder vergleichbare Technologien eingesetzt werden.
+            Auf der Kontaktseite kann der Terminbuchungsdienst Calendly geladen werden. Anbieter ist Calendly LLC, 115 E Main St., Ste A1B, Buford, GA 30518, USA. Vor Ihrer ausdrücklichen Zustimmung wird keine Verbindung zu Calendly hergestellt. Erst wenn Sie „Externe Medien: Calendly“ erlauben oder den Buchungsbereich direkt aktivieren, lädt die Website den eingebetteten Dienst. Dabei können insbesondere IP-Adresse, Browser- und Geräteinformationen, Zeitpunkt und aufgerufene Seite an Calendly übermittelt sowie Cookies oder vergleichbare Technologien eingesetzt werden.
           </p>
           <p>
-            Wenn Sie einen Termin buchen, verarbeitet Calendly die von Ihnen eingegebenen Angaben, etwa Name, E-Mail-Adresse, Termin, Zeitzone und freiwillige Mitteilungen, um die Buchung durchzuführen und Bestätigungen zu versenden. Die Verarbeitung der Buchungsdaten erfolgt zur Durchführung vorvertraglicher Maßnahmen beziehungsweise zur Vertragserfüllung gemäß Art. 6 Abs. 1 lit. b DSGVO. Soweit für das Laden des eingebetteten Dienstes eine Einwilligung erforderlich ist, ist Art. 6 Abs. 1 lit. a DSGVO maßgeblich.
+            Das Laden des eingebetteten Dienstes beruht auf Ihrer Einwilligung gemäß § 25 Abs. 1 TDDDG und Art. 6 Abs. 1 lit. a DSGVO. Sie können diese Einwilligung jederzeit über „Cookie-Einstellungen“ im Footer mit Wirkung für die Zukunft widerrufen; der eingebettete Dienst wird dann nicht weiter geladen. Wenn Sie einen Termin buchen, verarbeitet Calendly die von Ihnen eingegebenen Angaben, etwa Name, E-Mail-Adresse, Termin, Zeitzone und freiwillige Mitteilungen, um die Buchung durchzuführen und Bestätigungen zu versenden. Die Verarbeitung der Buchungsdaten erfolgt zur Durchführung vorvertraglicher Maßnahmen beziehungsweise zur Vertragserfüllung gemäß Art. 6 Abs. 1 lit. b DSGVO.
           </p>
           <p>
             Eine Verarbeitung in den USA oder in weiteren Drittländern ist möglich. Calendly verweist für Datenübermittlungen unter anderem auf das EU-US Data Privacy Framework und Standardvertragsklauseln. Weitere Informationen finden Sie in der {" "}
@@ -173,7 +176,7 @@ function GermanSections(locale: Locale): LegalSection[] {
       content: (
         <div className="space-y-5">
           <p>
-            Die Website enthält normale Links zu externen Angeboten, beispielsweise RelTest Education, Springer, LinkedIn oder Podcast-Plattformen. Beim bloßen Besuch dieser Website werden über solche Links keine Daten an den jeweiligen Anbieter übertragen. Erst wenn Sie einen externen Link öffnen, gelten die Datenschutzbestimmungen des Zielanbieters.
+            Die Website enthält normale Links zu externen Angeboten, beispielsweise RelTest Education, Springer, LinkedIn, XING oder Podcast-Plattformen. Beim bloßen Besuch dieser Website werden über solche Links keine Daten an den jeweiligen Anbieter übertragen. Erst wenn Sie einen externen Link öffnen, gelten die Datenschutzbestimmungen des Zielanbieters.
           </p>
           <p>
             Externe Videos, Social-Media-Feeds oder Karten werden in der derzeitigen Website nicht automatisch als aktive Drittanbieter-Widgets geladen.
@@ -329,14 +332,17 @@ function EnglishSections(locale: Locale): LegalSection[] {
     },
     {
       id: "cookies",
-      title: "Cookies and language preference",
+      title: "Cookies and consent settings",
       content: (
         <div className="space-y-5">
           <p>
             The website uses a technically necessary cookie called <code className="bg-brand-steel-cyan-10 px-1.5 py-0.5 text-sm text-brand-marine">NEXT_LOCALE</code>. It stores your selected language for up to twelve months and allows the site to direct you to the appropriate language version. The cookie is set as HttpOnly and SameSite=Lax and, in production, is transmitted only over an encrypted connection.
           </p>
           <p>
-            The legal basis is Article 6(1)(f) GDPR; our legitimate interest is a consistent and user-friendly language selection. Calendly may set or read additional cookies when its embedded scheduling area is loaded. Details are provided in the scheduling section.
+            The website also stores your privacy choice under the name <code className="bg-brand-steel-cyan-10 px-1.5 py-0.5 text-sm text-brand-marine">reltest_consent</code> in your browser&apos;s local storage for up to six months. It records your choice for the “External media” category, a version number and the time of your choice. This means that we do not need to ask for your decision again on every page view.
+          </p>
+          <p>
+            Access to this technically necessary storage is based on Section 25(2)(2) TDDDG. Where personal data is processed, the legal basis is Article 6(1)(f) GDPR; our legitimate interests are a consistent language selection and reliable implementation of your privacy choice. You can change your selection at any time through “Cookie settings” in the footer.
           </p>
         </div>
       ),
@@ -364,10 +370,10 @@ function EnglishSections(locale: Locale): LegalSection[] {
       content: (
         <div className="space-y-5">
           <p>
-            The contact page embeds the Calendly scheduling service. The provider is Calendly LLC, 115 E Main St., Ste A1B, Buford, GA 30518, USA. When the scheduling area is displayed, your browser establishes a connection to Calendly. This may transmit your IP address, browser and device information, access time and page URL and may involve cookies or similar technologies.
+            The Calendly scheduling service can be loaded on the contact page. The provider is Calendly LLC, 115 E Main St., Ste A1B, Buford, GA 30518, USA. No connection to Calendly is established before you give express consent. The website loads the embedded service only after you allow “External media: Calendly” or activate the scheduling area directly. This may transmit your IP address, browser and device information, access time and page URL and may involve cookies or similar technologies.
           </p>
           <p>
-            When you schedule a meeting, Calendly processes the details you provide, such as your name, email address, chosen time, time zone and optional message, to arrange the meeting and send confirmations. Booking data is processed to take pre-contractual steps or perform a contract under Article 6(1)(b) GDPR. Where consent is required to load the embedded service, Article 6(1)(a) GDPR applies.
+            Loading the embedded service is based on your consent under Section 25(1) TDDDG and Article 6(1)(a) GDPR. You can withdraw this consent at any time with effect for the future through “Cookie settings” in the footer; the embedded service will then no longer load. When you schedule a meeting, Calendly processes the details you provide, such as your name, email address, chosen time, time zone and optional message, to arrange the meeting and send confirmations. Booking data is processed to take pre-contractual steps or perform a contract under Article 6(1)(b) GDPR.
           </p>
           <p>
             Data may be processed in the United States or other third countries. Calendly refers to the EU-US Data Privacy Framework and Standard Contractual Clauses for international transfers. Further information is available in {" "}
@@ -399,7 +405,7 @@ function EnglishSections(locale: Locale): LegalSection[] {
       content: (
         <div className="space-y-5">
           <p>
-            The website contains ordinary links to external services such as RelTest Education, Springer, LinkedIn and podcast platforms. Simply visiting this website does not transfer data through those links. Once you open an external link, the privacy policy of the destination provider applies.
+            The website contains ordinary links to external services such as RelTest Education, Springer, LinkedIn, XING and podcast platforms. Simply visiting this website does not transfer data through those links. Once you open an external link, the privacy policy of the destination provider applies.
           </p>
           <p>
             External videos, social feeds and maps are not automatically loaded as active third-party widgets in the current website.
@@ -496,7 +502,7 @@ export default async function PrivacyPage({ params }: Props) {
       }
       navigationLabel={isGerman ? "Inhalt" : "Contents"}
       updatedLabel={isGerman ? "Stand" : "Last updated"}
-      updated={isGerman ? "18. August 2026" : "18 August 2026"}
+      updated={isGerman ? "28. August 2026" : "28 August 2026"}
       sections={isGerman ? GermanSections(locale) : EnglishSections(locale)}
     />
   );

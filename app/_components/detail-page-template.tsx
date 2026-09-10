@@ -42,9 +42,15 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
             <span aria-hidden="true">←</span>
             {locale === "de" ? "Alle Beiträge" : "All news"}
           </Link>
-          <p className="mt-10 font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-            {page.eyebrow}
-          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
+            <p>{page.eyebrow}</p>
+            {page.publishedAt ? (
+              <>
+                <span aria-hidden="true" className="h-1 w-1 bg-brand-steel-cyan" />
+                <time dateTime={page.publishedAtIso}>{page.publishedAt}</time>
+              </>
+            ) : null}
+          </div>
           <h1 className="mt-5 max-w-5xl font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.8rem]">
             {page.title}
           </h1>

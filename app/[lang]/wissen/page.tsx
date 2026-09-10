@@ -3,6 +3,13 @@ import Link from "next/link";
 
 import { BrandLineWatermark } from "../../_components/brand-line-watermark";
 import { PageClosingCta } from "../../_components/page-closing-cta";
+import {
+  knowledgeLifecycleImages,
+  knowledgeOverviewHeroImages,
+  knowledgeProcessImages,
+  type KnowledgeImageAsset,
+  type KnowledgeLifecycleImageAsset,
+} from "../../_content/knowledge-image-assets";
 import { localizeHref, resolveLocale, type Locale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
 
@@ -17,105 +24,13 @@ type ProcessItem = {
   imageBrief: string;
 };
 
-type ProcessImageAsset = {
-  src: string;
-  width: number;
-  height: number;
-  alt: string;
-};
-
-type LifecycleImageAsset = ProcessImageAsset & {
-  mobileSrc: string;
-  mobileWidth: number;
-  mobileHeight: number;
-};
-
-const processImages: Record<Locale, Record<string, ProcessImageAsset>> = {
-  de: {
-    planung: {
-      src: "/wissen/uebersicht/planung-de.png",
-      width: 1672,
-      height: 941,
-      alt: "Diagramm zum Entscheidungsraum der Zuverlässigkeitsplanung mit Zuverlässigkeitskosten, Folgekosten und akzeptablen Kosten",
-    },
-    schwachstellenanalyse: {
-      src: "/wissen/uebersicht/schwachstellenanalyse-de.png",
-      width: 1672,
-      height: 941,
-      alt: "Badewannenkurve zur Schwachstellenanalyse mit Frühausfällen, Zufallsausfällen und Verschleißausfällen",
-    },
-    erprobung: {
-      src: "/wissen/uebersicht/erprobung-de.png",
-      width: 2172,
-      height: 724,
-      alt: "Vergleich von Worst-Case-, einsatzbezogenen und synthetischen Lastkollektiven für die Zuverlässigkeitserprobung",
-    },
-    absicherung: {
-      src: "/wissen/uebersicht/absicherung-de.png",
-      width: 1672,
-      height: 941,
-      alt: "Technisches Diagramm zur Zuverlässigkeitsabsicherung vom Bauteilmodell bis zum Systemnachweis",
-    },
-    prognosen: {
-      src: "/wissen/uebersicht/reliability-prediction-overview.png",
-      width: 760,
-      height: 680,
-      alt: "Veranschaulichung einer Zuverlässigkeitsprognose aus Versuchs- und Felddaten mit statistischem Lebensdauermodell",
-    },
-  },
-  en: {
-    planung: {
-      src: "/wissen/uebersicht/planung-en.png",
-      width: 1672,
-      height: 941,
-      alt: "Reliability planning decision-space diagram comparing reliability costs, failure costs and acceptable customer costs",
-    },
-    schwachstellenanalyse: {
-      src: "/wissen/uebersicht/schwachstellenanalyse-en.png",
-      width: 1672,
-      height: 941,
-      alt: "Bathtub curve for weak-point analysis showing early, random and wear-out failures",
-    },
-    erprobung: {
-      src: "/wissen/uebersicht/erprobung-en.png",
-      width: 1748,
-      height: 900,
-      alt: "Comparison of worst-case, use-specific and synthetic load profiles for reliability testing",
-    },
-    absicherung: {
-      src: "/wissen/uebersicht/absicherung-en.png",
-      width: 1672,
-      height: 941,
-      alt: "Technical reliability assurance diagram from component models to system verification",
-    },
-    prognosen: {
-      src: "/wissen/uebersicht/reliability-prediction-overview.png",
-      width: 760,
-      height: 680,
-      alt: "Reliability prediction based on test and field data using a statistical lifetime model",
-    },
-  },
-};
-
-const lifecycleImages: Record<Locale, LifecycleImageAsset> = {
-  de: {
-    src: "/wissen/uebersicht/lebenszyklus-prozess-de.svg",
-    width: 1440,
-    height: 760,
-    mobileSrc: "/wissen/uebersicht/lebenszyklus-prozess-mobile-de.svg",
-    mobileWidth: 720,
-    mobileHeight: 1536,
-    alt: "Lebensdauerbegleitendes Zuverlässigkeitsmanagement mit qualitativen und quantitativen Methoden entlang des Produktlebenszyklus",
-  },
-  en: {
-    src: "/wissen/uebersicht/lebenszyklus-prozess-en.svg",
-    width: 1440,
-    height: 760,
-    mobileSrc: "/wissen/uebersicht/lebenszyklus-prozess-mobile-en.svg",
-    mobileWidth: 720,
-    mobileHeight: 1536,
-    alt: "Lifecycle reliability management with qualitative and quantitative methods across the product lifecycle",
-  },
+type DoeFocus = {
+  eyebrow: string;
+  title: string;
+  text: string;
+  link: string;
+  imageAlt: string;
+  imageCaption: string;
 };
 
 const copy: Record<
@@ -137,6 +52,7 @@ const copy: Record<
     processIntro: { eyebrow: string; title: string; text: string };
     processLink: string;
     processes: ProcessItem[];
+    doeFocus: DoeFocus;
     closing: { title: string; description: string; primary: string; secondary: string };
   }
 > = {
@@ -144,7 +60,7 @@ const copy: Record<
     metadata: {
       title: "Zuverlässigkeitstechnik: Planung, Erprobung und Prognose | RelTest",
       description:
-        "Grundlagen der Zuverlässigkeitstechnik: Zuverlässigkeitsplanung, Schwachstellenanalyse, Erprobung, Absicherung und Zuverlässigkeitsprognose verständlich eingeordnet.",
+        "Grundlagen der Zuverlässigkeitstechnik: Planung, Schwachstellenanalyse, Erprobung, Absicherung und Prognose sowie DoE als separater Methodenfokus.",
     },
     hero: {
       title: "Zuverlässigkeit im Lebenszyklus.",
@@ -208,7 +124,7 @@ const copy: Record<
           "Potenzielle Fehlerursachen und kritische Funktionen werden frühzeitig identifiziert. FMEA, FTA, Reviews und Felderfahrung helfen, Risiken zu priorisieren und Verbesserungen gezielt auszurichten.",
         imageTitle: "Schwachstellen über die Lebensdauer erkennen",
         imageBrief:
-          "Platz für die bestehende Darstellung zur Badewannenkurve und zur Wirkung qualitativer Maßnahmen.",
+          "Badewannenkurve mit einheitlicher Linienlegende: Früh- und Zufallsausfälle werden reduziert, die Verschleißphase wird zeitlich nach hinten verschoben.",
       },
       {
         slug: "erprobung",
@@ -228,7 +144,7 @@ const copy: Record<
           "Berechnungen, Modelle, Versuchsergebnisse und Felddaten werden zu einem nachvollziehbaren Nachweis zusammengeführt. So lässt sich die Erfüllung definierter Anforderungen fundiert bewerten und dokumentieren.",
         imageTitle: "Vom Bauteil zum Systemnachweis",
         imageBrief:
-          "Platz für die bestehende Grafik zur Zusammenführung von Bauteilzuverlässigkeiten und Ausfallquoten auf Systemebene.",
+          "Vereinfachte Serienschaltungsdarstellung von Komponenten-Ausfallwahrscheinlichkeiten bis zur fachlich eingeordneten System-Ausfallwahrscheinlichkeit.",
       },
       {
         slug: "prognosen",
@@ -238,9 +154,20 @@ const copy: Record<
           "Versuchs- und Felddaten werden statistisch ausgewertet und in Lebensdauermodelle überführt. Die Prognose quantifiziert Ausfallverhalten, Restlebensdauer und Unsicherheit für technische Entscheidungen.",
         imageTitle: "Datenbasis der Zuverlässigkeitsprognose",
         imageBrief:
-          "Platz für eine Grafik, die Versuchsdaten und Felddaten mit einem Lebensdauer- oder Prognosemodell verbindet.",
+          "Versuchs- und Felddaten, Lebensdauermodell und ein Vergleichsdiagramm für kurze, mittlere und lange prognostizierte Laufzeiten.",
       },
     ],
+    doeFocus: {
+      eyebrow: "Separater Methodenfokus",
+      title: "Design of Experiments ergänzt den Zuverlässigkeitsprozess.",
+      text:
+        "DoE ist kein sechster Teilprozess. Die statistische Versuchsplanung ergänzt vor allem Erprobung und Datenanalyse, wenn mehrere Einflussgrößen, Wechselwirkungen und robuste Einstellungen mit möglichst wenigen Versuchen verstanden werden sollen.",
+      link: "DoE fachlich einordnen",
+      imageAlt:
+        "Reduzierte DoE-Grafik: Temperatur und Drehzahl werden in vier Kombinationen untersucht, nicht parallele Linien zeigen eine Wechselwirkung",
+      imageCaption:
+        "Ein strukturierter Versuchsplan variiert Temperatur und Drehzahl gemeinsam. Nicht parallele Wirkungslinien machen die Wechselwirkung sichtbar.",
+    },
     closing: {
       title: "Fachfrage zum Projekt klären",
       description:
@@ -253,7 +180,7 @@ const copy: Record<
     metadata: {
       title: "Reliability Engineering: Planning, Testing and Prediction | RelTest",
       description:
-        "Reliability engineering fundamentals covering reliability planning, weak-point analysis, testing, assurance and reliability prediction.",
+        "Reliability engineering fundamentals covering planning, weak-point analysis, testing, assurance and prediction, with DoE as a separate methodological focus.",
     },
     hero: {
       title: "Reliability across the life cycle.",
@@ -317,7 +244,7 @@ const copy: Record<
           "Potential failure causes and critical functions are identified early. FMEA, FTA, reviews and field experience help prioritise risks and target improvements.",
         imageTitle: "Identifying weak points over the life cycle",
         imageBrief:
-          "Space for the existing bathtub curve and the effect of qualitative reliability measures.",
+          "Bathtub curve with a consistent line legend: early and random failures are reduced, while the wear-out phase is shifted to a later time.",
       },
       {
         slug: "erprobung",
@@ -337,7 +264,7 @@ const copy: Record<
           "Calculations, models, test results and field data are combined in a traceable verification case, supporting a robust assessment and documented release decision.",
         imageTitle: "From component to system verification",
         imageBrief:
-          "Space for the existing graphic combining component reliability and failure rates at system level.",
+          "Simplified series-system view from component failure probabilities to a technically explained system failure probability.",
       },
       {
         slug: "prognosen",
@@ -347,9 +274,20 @@ const copy: Record<
           "Test and field data are analysed statistically and translated into lifetime models. Predictions quantify failure behaviour, remaining life and uncertainty for technical decisions.",
         imageTitle: "Data basis for reliability prediction",
         imageBrief:
-          "Space for a graphic connecting test and field data with a lifetime or prediction model.",
+          "Test and field data, a lifetime model and a comparison chart for short, medium and long predicted operating times.",
       },
     ],
+    doeFocus: {
+      eyebrow: "Separate methodological focus",
+      title: "Design of Experiments complements the reliability process.",
+      text:
+        "DoE is not a sixth sub-process. Statistical experimental design complements testing and data analysis when multiple factors, interactions and robust settings need to be understood with as few experimental runs as practical.",
+      link: "Explore the DoE fundamentals",
+      imageAlt:
+        "Simplified DoE graphic: temperature and speed are tested in four combinations, non-parallel lines reveal an interaction",
+      imageCaption:
+        "A structured experimental design varies temperature and speed together. Non-parallel response lines make the interaction visible.",
+    },
     closing: {
       title: "Clarify your project's technical question",
       description:
@@ -380,45 +318,27 @@ function ArrowIcon() {
   );
 }
 
-const knowledgeHeroImages: Record<Locale, ProcessImageAsset> = {
-  de: {
-    src: "/wissen/uebersicht/wissen-header-de.png",
-    alt: "Zuverlässigkeit und ihre Dimensionen Erfolgswahrscheinlichkeit, Haltbarkeit, Verlässlichkeit, Qualität über die Zeit und Verfügbarkeit zur Funktionserfüllung",
-    width: 1536,
-    height: 1024,
-  },
-  en: {
-    src: "/wissen/uebersicht/wissen-header-en.png",
-    alt: "Reliability and its dimensions probability of success, durability, dependability, quality over time and availability to perform a function",
-    width: 1536,
-    height: 1024,
-  },
-};
-
-function ProcessImage({
-  image,
-  compact = false,
-  featured = false,
-}: {
-  image: ProcessImageAsset;
-  compact?: boolean;
-  featured?: boolean;
-}) {
+function ProcessImage({ image }: { image: KnowledgeImageAsset }) {
   return (
-    <figure className={`relative flex items-center justify-center ${featured ? "h-full min-h-[300px]" : "mx-auto min-h-[260px] w-full max-w-[620px] lg:h-[380px] lg:min-h-[380px]"}`}>
+    <figure className="relative mx-auto flex min-h-[300px] w-full max-w-[620px] flex-col items-center justify-center lg:min-h-[380px]">
       <Image
         src={image.src}
         alt={image.alt}
         width={image.width}
         height={image.height}
         sizes="(min-width: 1024px) 50vw, 100vw"
-        className={`h-auto object-contain ${featured ? "w-full max-h-[680px]" : compact ? "w-[78%] max-w-[360px] max-h-[300px]" : "w-full max-h-[380px]"}`}
+        className={`h-auto w-full object-contain ${image.caption ? "max-h-[320px]" : "max-h-[380px]"}`}
       />
+      {image.caption ? (
+        <figcaption className="mt-4 max-w-2xl border-l-2 border-brand-steel-cyan pl-4 text-sm leading-6 text-brand-marine/65">
+          {image.caption}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
 
-function LifecycleDiagram({ image }: { image: LifecycleImageAsset }) {
+function LifecycleDiagram({ image }: { image: KnowledgeLifecycleImageAsset }) {
   return (
     <figure className="flex w-full items-center justify-center">
       <Image
@@ -449,19 +369,14 @@ function ProcessSection({ item, index, locale, linkLabel }: { item: ProcessItem;
       <p className="mt-5 max-w-2xl text-base leading-8 text-brand-marine/75">{item.summary}</p>
       <Link
         href={localizeHref(locale, `/wissen/${item.slug}`)}
-        className="group mt-7 inline-flex w-fit items-center gap-8 border-b border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan lg:mt-auto"
+        className="group mt-7 inline-flex w-fit items-center gap-8 border-b border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan"
       >
         {linkLabel}
         <ArrowIcon />
       </Link>
     </div>
   );
-  const media = (
-    <ProcessImage
-      image={processImages[locale][item.slug]}
-      compact={item.slug === "prognosen"}
-    />
-  );
+  const media = <ProcessImage image={knowledgeProcessImages[locale][item.slug]} />;
 
   return (
     <article className="grid gap-6 border-t border-brand-marine-20 py-8 lg:grid-cols-2 lg:items-stretch lg:gap-0 lg:py-10">
@@ -477,6 +392,47 @@ function ProcessSection({ item, index, locale, linkLabel }: { item: ProcessItem;
         </>
       )}
     </article>
+  );
+}
+
+function DoeFocusSection({ content, locale }: { content: DoeFocus; locale: Locale }) {
+  return (
+    <section className="border-y border-brand-marine/15 bg-brand-steel-cyan-10 px-6 py-16 lg:px-8 lg:py-24">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(26rem,.95fr)] lg:items-center lg:gap-14 xl:gap-20">
+        <div className="min-w-0">
+          <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-steel-cyan">
+            {content.eyebrow}
+          </p>
+          <h2 className="mt-4 max-w-2xl font-winnstein-display text-4xl leading-tight font-bold text-brand-marine [overflow-wrap:anywhere] sm:text-5xl">
+            {content.title}
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-brand-marine/75">
+            {content.text}
+          </p>
+          <Link
+            href={localizeHref(locale, "/wissen/design-of-experiments")}
+            className="group mt-8 inline-flex w-fit items-center gap-8 border-b border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan"
+          >
+            {content.link}
+            <ArrowIcon />
+          </Link>
+        </div>
+
+        <figure className="brand-panel-cut-bottom-right w-full border border-brand-marine/15 bg-white p-4 lg:max-w-[34rem] lg:justify-self-end">
+          <Image
+            src={`/graphics/wissen/technical-plots/doe-context-${locale}-v2.svg`}
+            alt={content.imageAlt}
+            width={760}
+            height={520}
+            sizes="(min-width: 1280px) 544px, (min-width: 1024px) 42vw, 100vw"
+            className="h-auto w-full"
+          />
+          <figcaption className="mt-4 border-l-2 border-brand-steel-cyan pl-4 text-base leading-7 text-brand-marine/70">
+            {content.imageCaption}
+          </figcaption>
+        </figure>
+      </div>
+    </section>
   );
 }
 
@@ -503,10 +459,10 @@ export default async function KnowledgePage({ params }: Props) {
         </div>
         <figure className="relative flex min-h-[300px] items-center justify-center lg:min-h-[440px]">
           <Image
-            src={knowledgeHeroImages[locale].src}
-            alt={knowledgeHeroImages[locale].alt}
-            width={knowledgeHeroImages[locale].width}
-            height={knowledgeHeroImages[locale].height}
+            src={knowledgeOverviewHeroImages[locale].src}
+            alt={knowledgeOverviewHeroImages[locale].alt}
+            width={knowledgeOverviewHeroImages[locale].width}
+            height={knowledgeOverviewHeroImages[locale].height}
             preload
             sizes="(min-width: 1280px) 860px, (min-width: 1024px) 60vw, 100vw"
             className="h-auto max-h-[460px] w-full object-contain mix-blend-screen lg:max-h-[520px] lg:w-[140%] lg:max-w-none lg:-translate-x-[5%]"
@@ -561,7 +517,7 @@ export default async function KnowledgePage({ params }: Props) {
               <p className="max-w-3xl text-lg leading-8 text-brand-marine/75">{content.lifecycle.intro}</p>
             </div>
             <div className="mt-12">
-              <LifecycleDiagram image={lifecycleImages[locale]} />
+              <LifecycleDiagram image={knowledgeLifecycleImages[locale]} />
             </div>
           </div>
         </section>
@@ -591,6 +547,8 @@ export default async function KnowledgePage({ params }: Props) {
             ))}
           </div>
         </section>
+
+        <DoeFocusSection content={content.doeFocus} locale={locale} />
       </main>
 
       <PageClosingCta

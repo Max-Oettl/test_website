@@ -23,7 +23,7 @@ const educationCopy = {
       description:
         "RelTest Education macht Zuverlässigkeitstechnik und DoE flexibel zugänglich. Im Mittelpunkt steht zeit- und ortsunabhängiges E-Learning; Vor-Ort-Schulungen bieten wir als eigenständige Alternative für gemeinsames Lernen mit festen Terminen an.",
       onSiteCta: "Vor-Ort-Alternative",
-      digitalCta: "Zur RelTest Education",
+      digitalCta: "Zu RelTest Education",
       imageAlt:
         "Ingenieur beim digitalen E-Learning zur Zuverlässigkeitstechnik mit technischen Zuverlässigkeitsdiagrammen",
     },

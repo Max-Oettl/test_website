@@ -15,9 +15,9 @@ type Props = {
 const servicesCopy = {
   de: {
     hero: {
-      title: "Zuverlässigkeit entwickeln und\u00a0absichern.",
+      title: "Zuverlässige Produkte entwickeln. Belastbare Prozesse gestalten.",
       description:
-        "RelTest unterstützt Unternehmen bei Zuverlässigkeit, technischer Absicherung und datenbasierten Entscheidungen: punktuell in einer Fachfrage oder dauerhaft als verantwortlicher Engineering Partner.",
+        "RelTest unterstützt Unternehmen dabei, technische Produkte zuverlässig zu entwickeln, Entwicklungs- und Absicherungsprozesse belastbar aufzubauen und Daten sicher zu bewerten – punktuell oder als verantwortlicher Engineering-Partner.",
       primaryCta: "Projekt besprechen",
       secondaryCta: "Leistungsfelder ansehen",
       imageAlt:
@@ -30,7 +30,7 @@ const servicesCopy = {
     partnership: {
       title: "Engineering mit klarer Verantwortung.",
       description:
-        "RelTest kann mehr übernehmen als Beratung und einzelne Analysen. Als fester Engineering Partner bearbeiten wir klar abgegrenzte Arbeitspakete, liefern prüfbare Ergebnisse und führen die zugehörige technische Dokumentation.",
+        "RelTest kann mehr übernehmen als Beratung und einzelne Analysen. Als fester Engineering-Partner bearbeiten wir klar abgegrenzte Arbeitspakete, liefern prüfbare Ergebnisse und führen die zugehörige technische Dokumentation.",
       responsibility:
         "Leistungsumfang, Schnittstellen, Abnahme und Haftung werden vor Projektbeginn eindeutig vereinbart. Innerhalb dieses vertraglich definierten Rahmens übernimmt RelTest Verantwortung für die eigenen Arbeitsergebnisse.",
       points: [
@@ -57,9 +57,9 @@ const servicesCopy = {
   },
   en: {
     hero: {
-      title: "Develop and assure reliability.",
+      title: "Develop reliable products. Build robust processes.",
       description:
-        "RelTest supports companies with reliability, technical assurance and data-based decisions: for a specific technical question or continuously as an accountable engineering partner.",
+        "RelTest helps companies develop reliable technical products, establish robust development and assurance processes, and evaluate data confidently—through focused support or as an accountable engineering partner.",
       primaryCta: "Discuss a project",
       secondaryCta: "Explore service areas",
       imageAlt:
@@ -149,7 +149,16 @@ export default async function ServicesPage({ params }: Props) {
 
         <div className="relative mx-auto grid max-w-7xl min-[1120px]:grid-cols-[66%_34%] 2xl:grid-cols-[58%_42%]">
           <div className="flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-            <h1 className="max-w-4xl font-winnstein-display text-4xl leading-[1.06] font-bold tracking-[-0.035em] hyphens-manual sm:text-5xl lg:text-[3.2rem] xl:text-[3.4rem]">
+            <div className="w-fit">
+              <Image
+                src="/branding/reltest-solutions-horizontal-negative.svg"
+                alt="RelTest Solutions"
+                width={466}
+                height={226}
+                className="h-auto w-60 sm:w-72"
+              />
+            </div>
+            <h1 className="mt-7 max-w-4xl break-normal font-winnstein-display text-4xl leading-[1.06] font-bold tracking-[-0.035em] hyphens-none [overflow-wrap:normal] [word-break:normal] sm:text-5xl lg:text-[3.2rem] xl:text-[3.4rem]">
               {copy.hero.title}
             </h1>
             <p className="mt-7 max-w-2xl break-words text-lg leading-8 text-white/78">

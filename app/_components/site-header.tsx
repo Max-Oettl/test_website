@@ -1,11 +1,14 @@
 import Link from "next/link";
 
+import { getIndustries } from "../_content/industry-overview-content";
 import { getSiteContent } from "../_content/site-content";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { ActiveNavLink } from "./active-nav-link";
 import { CompactHeaderMenu } from "./compact-header-menu";
+import { DesktopNavigationDropdown } from "./desktop-navigation-dropdown";
 import { LanguageSwitcher } from "./language-switcher";
 import { SiteBrandLogo } from "./site-brand-logo";
+import { SiteSearch } from "./site-search";
 
 type SiteHeaderProps = {
   locale: Locale;
@@ -18,7 +21,8 @@ type NavigationDropdown = {
     title: string;
     items: ReadonlyArray<{ label: string; href: string }>;
   }>;
-  width: "wide" | "default";
+  columns?: 1 | 2;
+  width: "wide" | "default" | "industries";
 };
 
 function removeHash(href: string) {
@@ -29,13 +33,34 @@ function uniqueItems(items: string[]) {
   return Array.from(new Set(items));
 }
 
+function getDropdownItems(dropdown?: NavigationDropdown) {
+  return [
+    ...(dropdown?.items ?? []),
+    ...(dropdown?.groups?.flatMap((group) => group.items) ?? []),
+  ];
+}
+
 export function SiteHeader({ locale }: SiteHeaderProps) {
   const { navigation } = getSiteContent(locale);
+  const industryItems = getIndustries(locale).map((industry) => ({
+    label: industry.title,
+    href: `/branchen/${industry.slug}`,
+  }));
+  const glossaryHref = localizeHref(locale, "/glossar");
   const dropdowns: Record<string, NavigationDropdown> = {
     "/leistungen": {
       overview: navigation.servicesOverview,
-      items: navigation.serviceItems,
-      width: "default",
+      groups: [
+        {
+          title: navigation.serviceGroupLabels.primary,
+          items: navigation.serviceItems,
+        },
+        {
+          title: navigation.serviceGroupLabels.methods,
+          items: navigation.serviceMethodItems,
+        },
+      ],
+      width: "wide",
     },
     "/education": {
       overview: navigation.educationOverview,
@@ -46,6 +71,12 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       overview: navigation.knowledgeOverview,
       items: navigation.knowledgeItems,
       width: "default",
+    },
+    "/branchen": {
+      overview: navigation.industriesOverview,
+      items: industryItems,
+      columns: 2,
+      width: "industries",
     },
     "/expertise": {
       overview: navigation.expertiseOverview,
@@ -70,16 +101,15 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         </ActiveNavLink>
 
         <nav
-          className="site-header-nav hidden items-center gap-5 min-[1120px]:flex 2xl:gap-6"
+          className="site-header-nav hidden items-center gap-5 min-[1360px]:flex 2xl:gap-6"
           aria-label={navigation.ariaLabel}
         >
           {navigation.items.map((item) => {
             const dropdown = dropdowns[item.href];
             const isEducationItem = item.href === "/education";
-            const dropdownItems =
-              dropdown?.items?.map((dropdownItem) =>
-                removeHash(dropdownItem.href),
-              ) ?? [];
+            const dropdownItems = getDropdownItems(dropdown).map(
+              (dropdownItem) => removeHash(dropdownItem.href),
+            );
             const activeHrefs = uniqueItems([item.href, ...dropdownItems]).map(
               (href) => localizeHref(locale, href),
             );
@@ -96,11 +126,12 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             }`;
 
             return dropdown ? (
-              <div key={item.href} className="group relative">
+              <DesktopNavigationDropdown key={item.href}>
                 <ActiveNavLink
                   href={localizeHref(locale, item.href)}
                   activeHrefs={activeHrefs}
                   blurOnPointerActivation
+                  data-site-nav-dropdown-trigger
                   className={topLinkClassName}
                   activeClassName={topActiveClassName}
                 >
@@ -109,7 +140,11 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
                 <div
                   className={`site-nav-dropdown-shell pointer-events-none absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100 ${
-                    dropdown.width === "wide" ? "w-96" : "w-72"
+                    dropdown.width === "wide"
+                      ? "w-96"
+                      : dropdown.width === "industries"
+                        ? "w-[36rem]"
+                        : "w-72"
                   }`}
                 >
                   <div className="site-nav-dropdown border border-brand-marine/15 bg-white p-3">
@@ -144,30 +179,38 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                         ))}
                       </div>
                     ) : (
-                      dropdown.items?.map((dropdownItem) =>
-                        dropdownItem.href.includes("#") ? (
-                          <Link
-                            key={dropdownItem.href}
-                            href={localizeHref(locale, dropdownItem.href)}
-                            className="block border-l-2 border-transparent px-4 py-3 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
-                          >
-                            {dropdownItem.label}
-                          </Link>
-                        ) : (
-                          <ActiveNavLink
-                            key={dropdownItem.href}
-                            href={localizeHref(locale, dropdownItem.href)}
-                            className="block border-l-2 border-transparent px-4 py-3 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
-                            activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
-                          >
-                            {dropdownItem.label}
-                          </ActiveNavLink>
-                        ),
-                      )
+                      <div
+                        className={
+                          dropdown.columns === 2
+                            ? "grid grid-cols-2 gap-x-2"
+                            : "grid"
+                        }
+                      >
+                        {dropdown.items?.map((dropdownItem) =>
+                          dropdownItem.href.includes("#") ? (
+                            <Link
+                              key={dropdownItem.href}
+                              href={localizeHref(locale, dropdownItem.href)}
+                              className="block border-l-2 border-transparent px-4 py-3 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
+                            >
+                              {dropdownItem.label}
+                            </Link>
+                          ) : (
+                            <ActiveNavLink
+                              key={dropdownItem.href}
+                              href={localizeHref(locale, dropdownItem.href)}
+                              className="block border-l-2 border-transparent px-4 py-3 text-sm font-medium text-brand-marine/80 hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
+                              activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
+                            >
+                              {dropdownItem.label}
+                            </ActiveNavLink>
+                          ),
+                        )}
+                      </div>
                     )}
                   </div>
                 </div>
-              </div>
+              </DesktopNavigationDropdown>
             ) : (
               <ActiveNavLink
                 key={item.href}
@@ -181,11 +224,17 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           })}
         </nav>
 
-        <div className="site-header-language-desktop hidden items-center">
-          <LanguageSwitcher locale={locale} />
+        <div className="hidden items-center gap-2 min-[1360px]:flex">
+          <SiteSearch
+            locale={locale}
+            glossaryHref={glossaryHref}
+          />
+          <div className="site-header-language-desktop hidden items-center">
+            <LanguageSwitcher locale={locale} />
+          </div>
         </div>
 
-        <div className="site-header-actions hidden items-center gap-3 min-[1120px]:flex">
+        <div className="site-header-actions hidden items-center gap-3 min-[1360px]:flex">
           <Link
             href={localizeHref(locale, "/kontakt")}
             className="brand-action site-header-cta whitespace-nowrap bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan"
@@ -197,26 +246,68 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           </div>
         </div>
 
-        <CompactHeaderMenu label={navigation.menu}>
-            <div className="mb-2 px-2">
-              <LanguageSwitcher locale={locale} compact />
+        <CompactHeaderMenu
+          label={navigation.menu}
+          closeLabel={locale === "de" ? "Menü schließen" : "Close menu"}
+          footer={
+            <Link
+              href={localizeHref(locale, "/kontakt")}
+              className="brand-action site-header-cta flex min-h-12 w-full items-center justify-between bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan/40"
+            >
+              {navigation.inquiry}
+              <svg
+                aria-hidden="true"
+                className="h-5 w-5 shrink-0"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M4 10h11m-4-4 4 4-4 4"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.8"
+                />
+              </svg>
+            </Link>
+          }
+        >
+            <div className="grid grid-cols-[minmax(0,1fr)_3rem] items-end gap-3 border-b border-brand-marine/12 bg-brand-steel-cyan-10/45 px-5 py-4">
+              <div className="min-w-0">
+                <p className="mb-2 font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.14em] text-brand-marine/60">
+                  {locale === "de" ? "Sprache" : "Language"}
+                </p>
+                <LanguageSwitcher locale={locale} compact />
+              </div>
+              <div>
+                <p className="mb-2 font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.14em] text-brand-marine/60">
+                  {locale === "de" ? "Suche" : "Search"}
+                </p>
+                <SiteSearch
+                  locale={locale}
+                  glossaryHref={glossaryHref}
+                  compact
+                />
+              </div>
             </div>
             {navigation.items.map((item) => {
               const dropdown = dropdowns[item.href];
               const isEducationItem = item.href === "/education";
-              const dropdownItems =
-                dropdown?.items?.map((dropdownItem) =>
-                  removeHash(dropdownItem.href),
-                ) ?? [];
+              const dropdownItems = getDropdownItems(dropdown).map(
+                (dropdownItem) => removeHash(dropdownItem.href),
+              );
               const activeHrefs = uniqueItems([item.href, ...dropdownItems]).map(
                 (href) => localizeHref(locale, href),
               );
 
               return dropdown ? (
-                <div key={item.href} className="px-2 py-2">
+                <section
+                  key={item.href}
+                  className="border-b border-brand-marine/10 px-5 py-4"
+                >
                   <ActiveNavLink
                     href={localizeHref(locale, item.href)}
-                    className={`site-compact-menu-link block border-l-2 border-transparent px-2 py-2 font-winnstein-display text-sm font-semibold text-brand-marine ${
+                    className={`site-compact-menu-link flex min-h-11 items-center border-l-2 border-transparent px-3 py-2 font-winnstein-display text-base font-bold text-brand-marine ${
                       isEducationItem
                         ? "site-compact-menu-link-education"
                         : ""
@@ -230,11 +321,11 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                   >
                     {dropdown.overview}
                   </ActiveNavLink>
-                  <div className="mt-1 grid gap-1">
+                  <div className="mt-2 grid gap-1 border-l border-brand-steel-cyan/20 pl-3">
                     {dropdown.groups ? (
                       dropdown.groups.map((group) => (
-                        <div key={group.title} className="mt-2">
-                          <p className="px-4 pb-1 font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.16em] text-brand-steel-cyan">
+                        <div key={group.title} className="py-1">
+                          <p className="px-3 pb-1.5 font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.14em] text-brand-steel-cyan">
                             {group.title}
                           </p>
                           <div className="grid gap-1">
@@ -242,7 +333,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                               <ActiveNavLink
                                 key={dropdownItem.href}
                                 href={localizeHref(locale, dropdownItem.href)}
-                                className="site-compact-menu-link block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80"
+                                className="site-compact-menu-link flex min-h-11 items-center border-l-2 border-transparent px-3 py-2 text-sm font-medium leading-snug text-brand-marine/80"
                                 activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
                               >
                                 {dropdownItem.label}
@@ -257,7 +348,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                           <Link
                             key={dropdownItem.href}
                             href={localizeHref(locale, dropdownItem.href)}
-                            className="site-compact-menu-link block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80"
+                            className="site-compact-menu-link flex min-h-11 items-center border-l-2 border-transparent px-3 py-2 text-sm font-medium leading-snug text-brand-marine/80"
                           >
                             {dropdownItem.label}
                           </Link>
@@ -265,7 +356,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                           <ActiveNavLink
                             key={dropdownItem.href}
                             href={localizeHref(locale, dropdownItem.href)}
-                            className="site-compact-menu-link block border-l-2 border-transparent px-4 py-2 text-sm font-medium text-brand-marine/80"
+                            className="site-compact-menu-link flex min-h-11 items-center border-l-2 border-transparent px-3 py-2 text-sm font-medium leading-snug text-brand-marine/80"
                             activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
                           >
                             {dropdownItem.label}
@@ -274,24 +365,18 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                       )
                     )}
                   </div>
-                </div>
+                </section>
               ) : (
                 <ActiveNavLink
                   key={item.href}
                   href={localizeHref(locale, item.href)}
-                  className="site-compact-menu-link block border-l-2 border-transparent px-4 py-3 text-sm font-medium text-brand-marine/80"
+                  className="site-compact-menu-link flex min-h-14 items-center border-b border-l-2 border-brand-marine/10 border-l-transparent px-8 py-3 font-winnstein-display text-base font-bold text-brand-marine"
                   activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 font-semibold text-brand-marine"
                 >
                   {item.label}
                 </ActiveNavLink>
               );
             })}
-            <Link
-              href={localizeHref(locale, "/kontakt")}
-              className="brand-action site-header-cta mt-2 flex bg-brand-marine px-4 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan/40"
-            >
-              {navigation.inquiry}
-            </Link>
         </CompactHeaderMenu>
       </div>
     </header>

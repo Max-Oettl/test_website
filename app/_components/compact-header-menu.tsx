@@ -1,23 +1,61 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { type ReactNode, useEffect, useRef } from "react";
+import { type ReactNode, useCallback, useEffect, useRef } from "react";
 
 type CompactHeaderMenuProps = {
   children: ReactNode;
+  closeLabel: string;
+  footer?: ReactNode;
   label: string;
 };
 
 export function CompactHeaderMenu({
   children,
+  closeLabel,
+  footer,
   label,
 }: CompactHeaderMenuProps) {
   const pathname = usePathname();
   const menuRef = useRef<HTMLDetailsElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  const closeMenu = useCallback(() => {
+    menuRef.current?.removeAttribute("open");
+    document.documentElement.classList.remove("site-compact-menu-open");
+  }, []);
+
+  const closeMenuAndRestoreFocus = useCallback(() => {
+    closeMenu();
+    menuRef.current?.querySelector("summary")?.focus();
+  }, [closeMenu]);
 
   useEffect(() => {
-    menuRef.current?.removeAttribute("open");
-  }, [pathname]);
+    closeMenu();
+  }, [closeMenu, pathname]);
+
+  useEffect(() => {
+    const desktopNavigation = window.matchMedia("(min-width: 1360px)");
+
+    function closeWhenDesktopNavigationAppears(event: MediaQueryListEvent) {
+      if (event.matches) {
+        closeMenu();
+      }
+    }
+
+    desktopNavigation.addEventListener(
+      "change",
+      closeWhenDesktopNavigationAppears,
+    );
+
+    return () => {
+      desktopNavigation.removeEventListener(
+        "change",
+        closeWhenDesktopNavigationAppears,
+      );
+    };
+  }, [closeMenu]);
 
   useEffect(() => {
     function closeOnOutsidePointer(event: PointerEvent) {
@@ -28,19 +66,49 @@ export function CompactHeaderMenu({
         event.target instanceof Node &&
         !menu.contains(event.target)
       ) {
-        menu.removeAttribute("open");
+        closeMenu();
       }
     }
 
     function closeOnEscape(event: KeyboardEvent) {
       const menu = menuRef.current;
 
-      if (event.key !== "Escape" || !menu?.open) {
+      if (!menu?.open) {
         return;
       }
 
-      menu.removeAttribute("open");
-      menu.querySelector("summary")?.focus();
+      if (event.key === "Escape") {
+        closeMenuAndRestoreFocus();
+        return;
+      }
+
+      if (event.key !== "Tab") {
+        return;
+      }
+
+      const panel = panelRef.current;
+      const focusableElements = panel?.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), summary, [tabindex]:not([tabindex="-1"])',
+      );
+
+      if (!panel || !focusableElements?.length) {
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      const activeElement = document.activeElement;
+
+      if (event.shiftKey && activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      } else if (!(activeElement instanceof Node) || !panel.contains(activeElement)) {
+        event.preventDefault();
+        firstElement.focus();
+      }
     }
 
     document.addEventListener("pointerdown", closeOnOutsidePointer);
@@ -49,26 +117,110 @@ export function CompactHeaderMenu({
     return () => {
       document.removeEventListener("pointerdown", closeOnOutsidePointer);
       document.removeEventListener("keydown", closeOnEscape);
+      document.documentElement.classList.remove("site-compact-menu-open");
     };
-  }, []);
+  }, [closeMenu, closeMenuAndRestoreFocus]);
 
   return (
-    <details ref={menuRef} className="group relative min-[1120px]:hidden">
-      <summary className="site-compact-menu-trigger flex cursor-pointer list-none items-center border border-brand-marine/20 px-4 py-2 font-winnstein-display text-sm font-semibold text-brand-marine outline-none transition-[background-color,border-color,color] duration-150 hover:border-brand-steel-cyan hover:bg-[#edf5f8] focus-visible:border-brand-steel-cyan focus-visible:bg-[#edf5f8] focus-visible:ring-2 focus-visible:ring-brand-steel-cyan/40 [&::-webkit-details-marker]:hidden">
-        {label}
-      </summary>
-      <div
-        className="absolute right-0 mt-3 w-72 border border-brand-marine/15 bg-white p-3 shadow-[0_18px_45px_rgba(20,36,82,0.12)]"
-        onClick={(event) => {
-          if (
-            event.target instanceof Element &&
-            event.target.closest("a, button")
-          ) {
-            menuRef.current?.removeAttribute("open");
-          }
-        }}
+    <details
+      ref={menuRef}
+      className="site-compact-menu group relative min-[1360px]:hidden"
+      onToggle={(event) => {
+        const isOpen = event.currentTarget.open;
+
+        document.documentElement.classList.toggle(
+          "site-compact-menu-open",
+          isOpen,
+        );
+
+        if (isOpen) {
+          window.requestAnimationFrame(() => closeButtonRef.current?.focus());
+        }
+      }}
+    >
+      <summary
+        className="site-compact-menu-trigger flex min-h-12 cursor-pointer list-none items-center gap-3 border border-brand-marine/20 px-4 py-2 font-winnstein-display text-sm font-semibold text-brand-marine outline-none transition-[background-color,border-color,color] duration-150 hover:border-brand-steel-cyan hover:bg-[#edf5f8] focus-visible:border-brand-steel-cyan focus-visible:bg-[#edf5f8] focus-visible:ring-2 focus-visible:ring-brand-steel-cyan/40 [&::-webkit-details-marker]:hidden"
+        aria-controls="site-compact-navigation"
       >
-        {children}
+        <span>{label}</span>
+        <svg
+          aria-hidden="true"
+          className="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="none"
+        >
+          <path
+            d="M3 5h14M3 10h14M3 15h14"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeWidth="1.8"
+          />
+        </svg>
+      </summary>
+
+      <div className="site-compact-menu-layer">
+        <button
+          type="button"
+          className="site-compact-menu-backdrop absolute inset-0 cursor-default bg-brand-marine/35 backdrop-blur-[2px]"
+          aria-label={closeLabel}
+          onClick={closeMenuAndRestoreFocus}
+        />
+        <div
+          ref={panelRef}
+          className="site-compact-menu-panel relative ml-auto flex h-full w-full max-w-[30rem] flex-col border-l border-brand-marine/15 bg-white shadow-[-18px_0_45px_rgba(20,36,82,0.16)]"
+          role="dialog"
+          aria-modal="true"
+          aria-label={label}
+          onClick={(event) => {
+            if (
+              event.target instanceof Element &&
+              event.target.closest("a, button")
+            ) {
+              closeMenu();
+            }
+          }}
+        >
+          <div className="flex min-h-16 shrink-0 items-center justify-between border-b border-brand-marine/12 px-5">
+            <p className="font-winnstein-display text-base font-bold text-brand-marine">
+              {label}
+            </p>
+            <button
+              ref={closeButtonRef}
+              type="button"
+              className="flex min-h-11 min-w-11 items-center justify-center border border-brand-marine/15 text-brand-marine transition-colors hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+              aria-label={closeLabel}
+              onClick={closeMenuAndRestoreFocus}
+            >
+              <svg
+                aria-hidden="true"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="m4 4 12 12M16 4 4 16"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeWidth="1.8"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <nav
+            id="site-compact-navigation"
+            className="site-compact-menu-scroll min-h-0 flex-1 overflow-y-auto overscroll-contain"
+            aria-label={label}
+          >
+            {children}
+          </nav>
+
+          {footer ? (
+            <div className="shrink-0 border-t border-brand-marine/12 bg-white p-4 sm:p-5">
+              {footer}
+            </div>
+          ) : null}
+        </div>
       </div>
     </details>
   );

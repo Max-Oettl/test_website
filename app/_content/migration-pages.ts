@@ -13,6 +13,8 @@ export type DetailPage = {
   description: string;
   metaTitle: string;
   metaDescription: string;
+  publishedAt?: string;
+  publishedAtIso?: string;
   lead: string;
   visual?: {
     src: string;
@@ -393,7 +395,7 @@ export const detailPageCollections: Record<
         metaDescription:
           "Feste Engineering-Partnerschaft für Zuverlässigkeit: definierte Arbeitspakete, prüfbare Ergebnisse, Dokumentation und vertraglich geregelte Haftung.",
         lead:
-          "Wenn Zuverlässigkeit dauerhaft mitgeführt werden muss, kann RelTest als fester Engineering Partner einsteigen. Vor Projektbeginn werden Leistungsumfang, Schnittstellen, Abnahme und Haftungsrahmen eindeutig vereinbart.",
+          "Wenn Zuverlässigkeit dauerhaft mitgeführt werden muss, kann RelTest als fester Engineering-Partner einsteigen. Vor Projektbeginn werden Leistungsumfang, Schnittstellen, Abnahme und Haftungsrahmen eindeutig vereinbart.",
         sections: [
           {
             title: "Ein klar abgegrenztes Leistungspaket",
@@ -2411,7 +2413,7 @@ export const detailPageCollections: Record<
         lead:
           "Kevin Lucan verbindet Forschung, Normungsarbeit und industrielle Beratung. Im Projekt übersetzt er komplexe Zuverlässigkeitsfragen in nachvollziehbare Prozesse, Erprobungsstrategien und Entscheidungen.",
         visual: {
-          src: "/about/kevin-lucan-professional.webp",
+          src: "/about/kevin-lucan-professional-v2.png",
           alt: "Dr.-Ing. Kevin Lucan, Geschäftsführer von RelTest Solutions",
           caption:
             "Geschäftsführer, Gründer und direkter Ansprechpartner für neue Projekte.",
@@ -2513,172 +2515,281 @@ export const detailPageCollections: Record<
     de: [
       {
         slug: "webinar-beschleunigte-lebensdauertests",
-        eyebrow: "Aktuelles",
+        eyebrow: "Webinar",
         title: "Webinar: Beschleunigte Lebensdauertests",
         description:
-          "Fachlicher Einstieg in die Frage, wie Lebensdauertests beschleunigt werden können, ohne Aussagekraft zu verlieren.",
+          "HALT und ALT klingen ähnlich, verfolgen aber unterschiedliche Ziele. Der Beitrag ordnet qualitative und quantitative Teststrategien fachlich ein.",
         metaTitle: "Webinar beschleunigte Lebensdauertests | RelTest",
         metaDescription:
-          "Webinar zu beschleunigten Lebensdauertests: Testplanung, Beschleunigung, Auswertung und technische Aussagekraft.",
+          "Webinar zu HALT und ALT: qualitative und quantitative Zuverlässigkeitstests, Beschleunigungsmodelle, Ausfallmechanismen und Aussagegrenzen.",
+        publishedAt: "27. Mai 2020",
+        publishedAtIso: "2020-05-27",
         lead:
-          "Beschleunigte Lebensdauertests sind besonders wertvoll, wenn sie physikalisch plausibel geplant und statistisch sauber ausgewertet werden.",
+          "Die ähnliche Bezeichnung von Highly Accelerated Life Test (HALT) und Accelerated Life Test (ALT) führt in der Praxis leicht zu falschen Erwartungen. Das Webinar schafft eine gemeinsame Grundlage und zeigt, welche Frage der jeweilige Test tatsächlich beantworten kann.",
+        visual: {
+          src: "/graphics/news/reliability-webinar-setup.webp",
+          alt: "Laptop mit Webinar-Präsentation, Webcam und Mikrofon",
+          caption:
+            "Das Webinar ordnet HALT und ALT in qualitative und quantitative Zuverlässigkeitstests ein und macht ihre unterschiedlichen Aussageziele sichtbar.",
+        },
         sections: [
           {
-            title: "Warum Beschleunigung anspruchsvoll ist",
-            body: "Ein schneller Test ist nur dann hilfreich, wenn er dieselben relevanten Ausfallmechanismen adressiert wie der reale Einsatz.",
+            title: "HALT und ALT beantworten verschiedene Fragen",
+            body: "HALT dient vor allem dazu, Robustheitsgrenzen und Schwachstellen früh sichtbar zu machen. Ein ALT soll dagegen zeitabhängige Ausfälle unter erhöhten, aber physikalisch begründeten Belastungen schneller erzeugen und eine quantitative Übertragung auf die Nutzung ermöglichen. Ein HALT-Ergebnis ist deshalb nicht automatisch ein statistischer Lebensdauernachweis.",
           },
           {
-            title: "Beschleunigungsmodell und Aussagegrenze",
-            body: "Belastungsniveau, Ausfallmechanismus und Übertragungsmodell müssen zusammenpassen. Erst dann lässt sich die verkürzte Prüfzeit auf den späteren Einsatz beziehen.",
+            title: "Der Ausfallmechanismus bleibt die Leitplanke",
+            body: "Ein beschleunigter Test ist nur belastbar, wenn er dieselben relevanten Ausfallmechanismen adressiert wie der reale Einsatz. Zu hohe Temperatur, Last oder Schwingung kann einen neuen Mechanismus erzeugen und damit zwar schnelle Ausfälle, aber keine übertragbare Lebensdaueraussage liefern. Vor der Prüfplanung stehen deshalb Schadenshypothese, Einsatzprofil und zulässiger Belastungsbereich.",
+          },
+          {
+            title: "Beschleunigungsmodell und Unsicherheit",
+            body: "Für die Übertragung werden Belastung, Lebensdauer und Modellannahmen gemeinsam betrachtet. Ob ein Arrhenius-, Eyring- oder Potenzansatz passt, hängt vom Mechanismus und von der Datenlage ab. Neben dem Schätzwert müssen auch Streuung, Konfidenz und der Gültigkeitsbereich der Extrapolation dokumentiert werden.",
+          },
+          {
+            title: "Vom Test zur Entwicklungsentscheidung",
+            body: "Eine gute Teststrategie legt vorab fest, ob Schwachstellen gefunden, ein Modell identifiziert oder eine Zuverlässigkeitsanforderung nachgewiesen werden soll. Erst dieses Ziel bestimmt Prüflinge, Laststufen, Abbruchkriterien und Auswertung. So wird Beschleunigung zum Mittel für eine konkrete Entscheidung und nicht zum Selbstzweck.",
           },
         ],
-        proofPointsTitle: "Anknüpfungspunkte",
+        proofPointsTitle: "Im Webinar eingeordnet",
         proofPoints: [
-          "Lebensdauererprobung",
-          "Ausfallmechanismen",
-          "Weibull-Auswertung",
-          "Prognosen",
+          "qualitative und quantitative Zuverlässigkeitstests",
+          "Unterschiede zwischen HALT und ALT",
+          "Ausfallmechanismen und Belastungsgrenzen",
+          "Beschleunigungsmodelle und Aussagegrenzen",
         ],
         ctaTitle: "Mehr zur Erprobung",
         ctaText:
           "Vertiefen Sie, wie Prüfziel, Lastkollektiv, Stichprobe und Auswertung zu einer belastbaren Lebensdaueraussage verbunden werden.",
         primaryCta: { label: "Erprobung verstehen", href: "/wissen/erprobung" },
         secondaryCta: contactLink,
+        related: [
+          { label: "Zuverlässigkeitserprobung", href: "/wissen/erprobung" },
+          { label: "Zuverlässigkeitsprognose", href: "/wissen/prognosen" },
+          { label: "Test & Datenanalyse", href: "/leistungen/datenanalyse-prognostik" },
+        ],
       },
       {
         slug: "kooperation-holland-innovative",
-        eyebrow: "Aktuelles",
+        eyebrow: "Kooperation",
         title: "Kooperation mit Holland Innovative",
         description:
-          "Hinweis auf internationale Zusammenarbeit und fachlichen Austausch im Umfeld Reliability Engineering.",
+          "Die 2020 veröffentlichte Meldung dokumentiert die vereinbarte Zusammenarbeit zwischen RelTest und Holland Innovative im Reliability Engineering.",
         metaTitle: "Kooperation mit Holland Innovative | RelTest",
         metaDescription:
-          "RelTest und Holland Innovative: Kooperation und fachlicher Austausch im Bereich Reliability Engineering.",
+          "RelTest und Holland Innovative: Zusammenarbeit bei Reliability Engineering, Root Cause Analysis, Data Science, Trainings und internationalen Projekten.",
+        publishedAt: "2. Juni 2020",
+        publishedAtIso: "2020-06-02",
         lead:
-          "Kooperationen zeigen, dass Zuverlässigkeitstechnik international und interdisziplinär gedacht werden muss.",
+          "RelTest und Holland Innovative B.V. aus Eindhoven unterzeichneten 2020 eine Absichtserklärung für eine intensivere Zusammenarbeit. Die Archivmeldung beschreibt, welche fachlichen Themen und Formate beide Partner damals miteinander verbinden wollten.",
+        visual: {
+          src: "/team/reliability-test-laboratory.jpg",
+          alt: "Ingenieur bei der technischen Bewertung eines Prüfaufbaus",
+          caption:
+            "Internationale Kooperationen verbinden Methodenwissen mit konkreten Entwicklungs- und Erprobungsfragen. Das Foto dient als fachliches Arbeitsmotiv und zeigt nicht die Vertragsunterzeichnung.",
+        },
         sections: [
           {
-            title: "Fachlicher Austausch",
-            body: "Die Zusammenarbeit stärkt die Perspektive auf methodische und industrielle Zuverlässigkeitsthemen.",
+            title: "Ausgangspunkt der Zusammenarbeit",
+            body: "RelTest entstand als Ausgründung aus dem Umfeld der Universität Stuttgart; Holland Innovative arbeitet aus dem Technologie-Ökosystem Brainport Eindhoven heraus. Beide Partner brachten Erfahrungen in Zuverlässigkeitstechnik und Produktentwicklung ein. Die Vereinbarung sollte diese Perspektiven für gemeinsame Angebote und Projekte zusammenführen.",
           },
           {
-            title: "Relevanz für Kunden",
-            body: "Kunden profitieren von breiter Erfahrung, fachlichem Netzwerk und internationalen Blickwinkeln.",
+            title: "Reliability, Root Cause Analysis und Data Science",
+            body: "Als gemeinsame fachliche Felder wurden Reliability Engineering, Ursachenanalyse und Data Science genannt. Gerade ihre Verbindung ist für technische Projekte relevant: Ausfalldaten werden nicht isoliert ausgewertet, sondern mit Systemverständnis, Fehlerursachen und konkreten Verbesserungsmaßnahmen verknüpft.",
+          },
+          {
+            title: "Trainings und Wissenstransfer",
+            body: "Geplant waren gemeinsame Seminare, Trainings und Veranstaltungen in Deutschland und den Niederlanden. Das damalige Programm orientierte sich unter anderem an der VDI-Richtlinie 4002 und sollte den Austausch zwischen Fachleuten aus Stuttgart und Eindhoven stärken. Ein Zuverlässigkeitsseminar im März 2021 war als erster größerer gemeinsamer Schritt angekündigt.",
+          },
+          {
+            title: "Einordnung als Archivmeldung",
+            body: "Der Beitrag hält den Stand der Vereinbarung aus dem Jahr 2020 fest. Er ist daher als Unternehmenschronik zu verstehen und nicht als tagesaktuelle Leistungs- oder Terminzusage. Für heutige Kooperations- und Trainingsmöglichkeiten sind die aktuellen Education- und Kontaktseiten maßgeblich.",
           },
         ],
-        proofPointsTitle: "Signalwirkung",
+        proofPointsTitle: "Vereinbarte Schwerpunkte",
         proofPoints: [
-          "fachliches Netzwerk",
-          "internationaler Austausch",
-          "Reliability-Kompetenz",
-          "Projekt- und Methodenfokus",
+          "Reliability Engineering und Produktentwicklung",
+          "Root Cause Analysis und Data Science",
+          "gemeinsame Trainings und Veranstaltungen",
+          "Vernetzung von Stuttgart und Brainport Eindhoven",
         ],
         ctaTitle: "Zusammenarbeit besprechen",
         ctaText:
           "RelTest unterstützt Unternehmen mit spezialisierter Expertise in anspruchsvollen Zuverlässigkeitsthemen.",
         primaryCta: contactLink,
+        related: [
+          { label: "Referenzen und Kooperationen", href: "/referenzen" },
+          { label: "RelTest Education", href: "/education" },
+          { label: "Holland Innovative", href: "https://www.holland-innovative.nl/", external: true },
+        ],
       },
       {
         slug: "rams-award",
-        eyebrow: "Aktuelles",
-        title: "RAMS-Award",
+        eyebrow: "Auszeichnung",
+        title: "Thomas L. Fagan, Jr. RAMS Student Paper Award",
         description:
-          "Auszeichnung und Sichtbarkeit im fachlichen Umfeld von Reliability, Availability, Maintainability und Safety.",
-        metaTitle: "RAMS-Award | RelTest Solutions",
+          "Erster Platz für einen Fachbeitrag zur Zuverlässigkeitsschätzung von Systemen mit konkurrierenden Ausfallarten.",
+        metaTitle: "RAMS Student Paper Award | RelTest Solutions",
         metaDescription:
-          "RAMS-Award und fachliche Relevanz für Reliability, Availability, Maintainability und Safety.",
+          "RAMS Student Paper Award für Kevin Lucan, Martin Dazer, Kim Hintz und Bernd Bertsche: konkurrierende Ausfallarten und Systemzuverlässigkeit.",
+        publishedAt: "31. Januar 2020",
+        publishedAtIso: "2020-01-31",
         lead:
-          "RAMS-Themen zeigen, dass Zuverlässigkeit in vielen Branchen Teil eines größeren technischen Sicherheits- und Verfügbarkeitskontexts ist.",
+          "Kevin Lucan, Martin Dazer, Kim Hintz und Bernd Bertsche erhielten den ersten Platz des Thomas L. Fagan, Jr. RAMS Student Paper Award für ihren Beitrag „Effect of Competing Failure Modes on the System Reliability Estimation“.",
+        visual: {
+          src: "/graphics/news/rams-student-paper-award.webp",
+          alt: "Plakette des Thomas L. Fagan, Jr. RAMS Student Paper Award für den ersten Platz",
+          caption:
+            "Die Auszeichnung wurde im Januar 2020 in Palm Springs für den Beitrag zur Systemzuverlässigkeit bei konkurrierenden Ausfallarten verliehen.",
+        },
         sections: [
           {
-            title: "Reliability im Systemkontext",
-            body: "Zuverlässigkeit wird nicht isoliert betrachtet, sondern im Zusammenspiel mit Verfügbarkeit, Wartbarkeit und Sicherheit.",
+            title: "Die Auszeichnung",
+            body: "Die Plakette nennt den ersten Platz des RAMS Student Paper Award 2019 und die vier Autoren Kevin Lucan, Martin Dazer, Kim Hintz und Bernd Bertsche. Verliehen wurde die Auszeichnung im Januar 2020 im Rahmen des Reliability and Maintainability Symposium in Palm Springs, Kalifornien.",
           },
           {
-            title: "Vertrauenssignal",
-            body: "Fachliche Sichtbarkeit stärkt die Glaubwürdigkeit gegenüber technischen Entscheidern.",
+            title: "Worum es im ausgezeichneten Beitrag geht",
+            body: "Untersucht wird, wie konkurrierende Ausfallarten die Schätzung der Systemzuverlässigkeit beeinflussen. Eine Parameterstudie betrachtet unter anderem Ermüdungs- und Zufallsausfälle, ihre jeweiligen Anteile sowie den Einfluss des Stichprobenumfangs. Daraus werden Empfehlungen für Mindeststichproben und geeignete Schätzverfahren abgeleitet.",
+          },
+          {
+            title: "Warum konkurrierende Ausfälle anspruchsvoll sind",
+            body: "Tritt eine Ausfallart zuerst ein, kann sie die Beobachtung einer anderen Ausfallart verhindern. Die Datensätze sind dadurch nicht unabhängig und dürfen nicht ohne Prüfung als getrennte Lebensdauerprobleme behandelt werden. Für eine belastbare Systemaussage müssen Ausfallursache, Zensierung und Modellannahmen gemeinsam berücksichtigt werden.",
+          },
+          {
+            title: "Bedeutung für technische Projekte",
+            body: "Die Arbeit zeigt, weshalb eine reine Gesamtzählung von Ausfällen wichtige Unterschiede verdecken kann. Für Erprobung und Felddatenanalyse bedeutet das: Ausfallarten sauber klassifizieren, die Systemstruktur berücksichtigen und vor der Auswertung festlegen, welche Zuverlässigkeitsgröße tatsächlich nachgewiesen werden soll.",
           },
         ],
-        proofPointsTitle: "Themenbezug",
+        proofPointsTitle: "Fachlicher Kern",
         proofPoints: [
-          "Reliability",
-          "Availability",
-          "Maintainability",
-          "Safety",
+          "konkurrierende Ausfallarten",
+          "Systemzuverlässigkeit und Stichprobeneinfluss",
+          "Ermüdungs- und Zufallsausfälle",
+          "Auswahl geeigneter Schätzverfahren",
         ],
         ctaTitle: "RAMS und Zuverlässigkeit einordnen",
         ctaText:
           "Wir helfen, Systemrisiken und Nachweise methodisch zu strukturieren.",
         primaryCta: contactLink,
         secondaryCta: { label: "Risikomanagement", href: "/leistungen/risikomanagement" },
+        related: [
+          { label: "Beitrag bei IEEE", href: "https://doi.org/10.1109/RAMS.2019.8768946", external: true },
+          { label: "Zuverlässigkeitsprognose", href: "/wissen/prognosen" },
+          { label: "Fachbücher und Veröffentlichungen", href: "/literatur" },
+        ],
       },
       {
         slug: "webinar-effiziente-lebensdauertestplanung",
-        eyebrow: "Aktuelles",
+        eyebrow: "Webinar",
         title: "Webinar: effiziente Lebensdauertestplanung",
         description:
-          "Fachlicher Impuls zur Planung von Lebensdauertests mit sinnvoller Stichprobe, Dauer und Aussagekraft.",
+          "Wie Stichprobe, Testdauer, Konfidenz und Erfolgswahrscheinlichkeit zu einer wirtschaftlichen Nachweisstrategie verbunden werden.",
         metaTitle: "Webinar effiziente Lebensdauertestplanung | RelTest",
         metaDescription:
-          "Effiziente Lebensdauertestplanung: Testdauer, Stichprobe, Aussagekraft und statistische Bewertung.",
+          "Effiziente Lebensdauertestplanung: Zuverlässigkeitsziel, Stichprobe, Testdauer, Konfidenz und Wahrscheinlichkeit eines erfolgreichen Nachweises.",
+        publishedAt: "6. Januar 2021",
+        publishedAtIso: "2021-01-06",
         lead:
-          "Effiziente Testplanung reduziert Aufwand, ohne die technische Aussagekraft zu opfern.",
+          "Ein Lebensdauertest ist nicht allein deshalb effizient, weil er wenige Prüflinge oder eine kurze Laufzeit benötigt. Entscheidend ist, mit welchem Aufwand er eine klar definierte Zuverlässigkeitsaussage mit ausreichender Sicherheit unterstützen kann.",
+        visual: {
+          src: "/graphics/news/reliability-webinar-setup.webp",
+          alt: "Laptop mit technischer Webinar-Präsentation, Webcam und Mikrofon",
+          caption:
+            "Die Webinaraufzeichnung betrachtet Testaufwand und statistische Aussage gemeinsam – von der Zieldefinition bis zur Erfolgswahrscheinlichkeit des Nachweises.",
+        },
         sections: [
           {
-            title: "Nicht jeder Test ist gleich wertvoll",
-            body: "Entscheidend ist, welche Aussage der Test liefern soll und wie sicher diese Aussage sein muss.",
+            title: "Mit der Entscheidung beginnen",
+            body: "Vor Stichprobe und Testdauer steht die Frage, welche Entscheidung das Ergebnis tragen soll. Zuverlässigkeitsziel, betrachtete Lebensdauer oder Lastspielzahl, zulässiger Ausfallanteil und gefordertes Konfidenzniveau müssen eindeutig beschrieben sein. Ohne diesen Rahmen lässt sich der Testaufwand weder bewerten noch optimieren.",
           },
           {
-            title: "Verbindung zu DoE und Statistik",
-            body: "Stichprobengröße, Testdauer und Auswertung müssen gemeinsam betrachtet werden.",
+            title: "Konfidenz allein plant den Test nicht vollständig",
+            body: "Das Konfidenzniveau begrenzt das Risiko einer zu optimistischen Aussage, sagt aber noch nicht, wie wahrscheinlich ein geplanter Test bei einem tatsächlich guten Produkt den geforderten Nachweis erbringen wird. Wegen der Stichprobenstreuung können gleich geplante Versuche zu unterschiedlichen Ergebnissen führen. Diese Erfolgswahrscheinlichkeit gehört deshalb in die Aufwandsplanung.",
+          },
+          {
+            title: "Testarten vergleichbar machen",
+            body: "Ausfallfreie Success-Run-Tests, zensierte Lebensdauertests und Prüfungen bis zum Ausfall nutzen Daten unterschiedlich. Eine wirtschaftliche Strategie vergleicht nicht nur Prüflingszahl und Dauer, sondern auch Informationsgehalt, Ausfallrisiko und die Möglichkeit, vorhandenes Vorwissen belastbar einzubeziehen.",
+          },
+          {
+            title: "Aufwand gezielt verteilen",
+            body: "Stichprobe, Laufzeit, Belastungsniveau und Auswertung werden als zusammenhängende Stellgrößen geplant. Sensitivitätsrechnungen zeigen, welche Annahmen den Aufwand dominieren und welche Testkonfigurationen praktisch kaum Aussicht auf einen erfolgreichen Nachweis haben. So werden knappe Prüfressourcen auf die entscheidungsrelevanten Varianten konzentriert.",
           },
         ],
-        proofPointsTitle: "Themen",
+        proofPointsTitle: "Planungsgrößen",
         proofPoints: [
-          "Testdauer",
-          "Stichprobengröße",
-          "Konfidenz",
-          "Lebensdaueranalyse",
+          "Zuverlässigkeitsziel und Nachweiskriterium",
+          "Stichprobengröße und Testdauer",
+          "Konfidenz und Erfolgswahrscheinlichkeit",
+          "Vergleich unterschiedlicher Teststrategien",
         ],
         ctaTitle: "Tests effizienter planen",
         ctaText:
           "RelTest unterstützt bei Prüfstrategien, die wirtschaftlich und aussagekräftig bleiben.",
         primaryCta: { label: "Erprobung ansehen", href: "/wissen/erprobung" },
         secondaryCta: contactLink,
+        related: [
+          { label: "Zuverlässigkeitserprobung", href: "/wissen/erprobung" },
+          { label: "Absicherung und Nachweis", href: "/wissen/absicherung" },
+          { label: "Fachbeitrag zur Probability of Test Success", href: "https://doi.org/10.3390/app12126190", external: true },
+        ],
       },
       {
         slug: "smart-data-produktdesign",
-        eyebrow: "Aktuelles",
+        eyebrow: "Fachbeitrag",
         title: "Smart Data für Produktdesign",
         description:
-          "Einordnung, wie Daten im Produktdesign genutzt werden können, um technische Entscheidungen besser abzusichern.",
+          "Wie Feld-, Prüf- und Simulationsdaten zu belastbaren Entscheidungen für Produktdesign und Zuverlässigkeit werden.",
         metaTitle: "Smart Data im Produktdesign | RelTest",
         metaDescription:
-          "Smart Data im Produktdesign: Datenanalyse, Ausfallverhalten, Prognostik und bessere technische Entscheidungen.",
+          "Smart Data im Produktdesign: Datenqualität, Ausfallmechanismen, Feld- und Prüfdaten sowie der Weg zu belastbaren Entwicklungsentscheidungen.",
+        publishedAt: "27. Oktober 2021",
+        publishedAtIso: "2021-10-27",
         lead:
-          "Smart Data ist dann wertvoll, wenn Daten nicht nur gesammelt, sondern in technische Entscheidungen übersetzt werden.",
+          "Der Beitrag aus dem Reliability Seminar 2021 ordnet ein, wie Daten im Reliability Engineering genutzt werden können. Entscheidend ist nicht die Datenmenge, sondern ob Kontext, Qualität und Auswertung zur konkreten technischen Frage passen.",
+        visual: {
+          src: "/team/reltest-weibull-data-analysis.jpg",
+          alt: "Zuverlässigkeitsingenieur bei der Auswertung technischer Lebensdauerdaten",
+          caption:
+            "Feld-, Prüf- und Simulationsdaten entfalten ihren Wert erst, wenn sie mit Produktwissen und einer klaren Entscheidungsfrage verbunden werden.",
+        },
         sections: [
           {
-            title: "Daten mit Fragestellung",
-            body: "Datenanalyse beginnt mit der Entscheidung, welche technische Frage beantwortet werden soll.",
+            title: "Vom Reliability Seminar zur Projektpraxis",
+            body: "Der Fachimpuls wurde im Rahmen des Reliability Seminar on Data Science for Reliability and Root Cause Analysis vorgestellt. Im Mittelpunkt stand die Frage, wie datenbasierte Methoden klassische Zuverlässigkeitsarbeit ergänzen, ohne Produktphysik, Randbedingungen und Unsicherheiten auszublenden.",
           },
           {
-            title: "Produktdesign verbessern",
-            body: "Aus Daten können Schwachstellen, Einflüsse und Optimierungspotenziale abgeleitet werden.",
+            title: "Smart Data ist mehr als eine große Datenmenge",
+            body: "Messwerte werden erst durch Einheiten, Betriebszustände, Lasten, Zensierungen und eine nachvollziehbare Herkunft interpretierbar. Vor der Modellwahl muss deshalb geklärt werden, welche Entscheidung unterstützt werden soll und welche Daten dafür tatsächlich belastbar sind.",
+          },
+          {
+            title: "Produktphysik und Daten gemeinsam lesen",
+            body: "Feld-, Prüfstands- und Simulationsdaten bilden unterschiedliche Ausschnitte des Produktverhaltens ab. Werden sie mit bekannten Ausfallmechanismen und dem Einsatzprofil verbunden, lassen sich Unterschiede erklären, Hypothesen prüfen und Prognosen fachlich begrenzen.",
+          },
+          {
+            title: "Rückwirkung auf das Produktdesign",
+            body: "Das Ergebnis einer Analyse sollte nicht bei einem Diagramm enden. Relevante Einflüsse werden in konkrete Maßnahmen für Konstruktion, Testplanung, Datenerfassung oder Freigabe übersetzt. So entsteht ein geschlossener Lernkreislauf zwischen Nutzung, Bewertung und Produktverbesserung.",
           },
         ],
-        proofPointsTitle: "Themen",
+        proofPointsTitle: "Leitfragen für Smart Data",
         proofPoints: [
-          "Datenanalyse",
-          "Prognostik",
-          "Schwachstellenanalyse",
-          "Produktoptimierung",
+          "Welche Entscheidung soll die Analyse tragen?",
+          "Sind Datenherkunft und Randbedingungen nachvollziehbar?",
+          "Passt das Modell zum Ausfallmechanismus?",
+          "Wie fließt das Ergebnis in Produkt und Absicherung zurück?",
         ],
         ctaTitle: "Daten sinnvoll nutzen",
         ctaText:
-          "Wir helfen, aus vorhandenen Daten belastbare Entwicklungsentscheidungen abzuleiten.",
+          "Wir verbinden Datenanalyse, Produktwissen und Zuverlässigkeitsmethoden zu nachvollziehbaren Entwicklungsentscheidungen.",
         primaryCta: { label: "Datenanalyse ansehen", href: "/leistungen/datenanalyse-prognostik" },
         secondaryCta: contactLink,
+        related: [
+          { label: "Zuverlässigkeitsprognose", href: "/wissen/prognosen" },
+          { label: "Test und Datenanalyse", href: "/leistungen/datenanalyse-prognostik" },
+          {
+            label: "Reliability Seminar 2021",
+            href: "https://www.hightechcampus.com/events/reliability-seminar-on-data-science-for-reliability-and-root-cause-analysis",
+            external: true,
+          },
+        ],
       },
     ],
     en: [],
@@ -2855,171 +2966,281 @@ detailPageCollections.people.en = detailPageCollections.people.de.map((page) => 
 
 const newsEnglishCopy: Record<
   string,
-  Omit<DetailPage, "slug" | "visual">
+  Omit<DetailPage, "slug">
 > = {
   "webinar-beschleunigte-lebensdauertests": {
-    eyebrow: "News",
+    eyebrow: "Webinar",
     title: "Webinar: Accelerated Life Testing",
     description:
-      "A technical introduction to accelerating life tests without compromising the validity of the result.",
+      "A technical distinction between HALT and ALT, including acceleration models, failure mechanisms and limits of interpretation.",
     metaTitle: "Accelerated Life Testing Webinar | RelTest",
     metaDescription:
-      "Webinar on accelerated life testing: test planning, acceleration models, evaluation and defensible engineering conclusions.",
+      "Webinar on HALT and ALT: qualitative and quantitative reliability testing, acceleration models, failure mechanisms and limits of interpretation.",
+    publishedAt: "27 May 2020",
+    publishedAtIso: "2020-05-27",
     lead:
-      "Accelerated life tests create value when they are based on plausible physics and evaluated with an appropriate statistical model.",
+      "The similar names Highly Accelerated Life Test (HALT) and Accelerated Life Test (ALT) can create misleading expectations. The webinar establishes a common technical basis and explains which question each test can actually answer.",
+    visual: {
+      src: "/graphics/news/reliability-webinar-setup.webp",
+      alt: "Laptop with a technical webinar presentation, webcam and microphone",
+      caption:
+        "The webinar places HALT and ALT within qualitative and quantitative reliability testing and clarifies their different objectives.",
+    },
     sections: [
       {
-        title: "Why acceleration requires engineering judgement",
-        body: "A faster test is useful only if it activates the same relevant failure mechanisms as the product experiences in service.",
+        title: "HALT and ALT answer different questions",
+        body: "HALT is primarily used to reveal robustness limits and weak points early. ALT, in contrast, is intended to produce time-dependent failures more quickly under increased but physically justified stress and to enable a quantitative transfer to service conditions. A HALT result is therefore not automatically a statistical lifetime demonstration.",
       },
       {
-        title: "Acceleration model and limits of interpretation",
-        body: "Stress level, failure mechanism and transfer model must be consistent before a shortened test can support a statement about field use.",
+        title: "The failure mechanism is the constraint",
+        body: "Acceleration is meaningful only while the relevant failure mechanism remains unchanged. Excessive temperature, vibration or load may activate artefacts that would not occur in service. Test levels must therefore be derived from product physics, usage and the intended statement rather than from the shortest possible duration.",
+      },
+      {
+        title: "Acceleration models need transparent assumptions",
+        body: "Models such as Arrhenius, inverse power law or combined approaches translate elevated stress to service conditions. Their parameters, applicable range and uncertainty need to be documented. A precise calculation cannot compensate for an unsuitable model or an unrepresentative test condition.",
+      },
+      {
+        title: "From test result to development decision",
+        body: "A sound plan connects objective, specimen, load profile, failure criterion and evaluation before the test begins. The result can then support design changes, further testing or release decisions without claiming more than the available evidence provides.",
       },
     ],
     proofPointsTitle: "Technical focus",
     proofPoints: [
-      "life testing",
-      "failure mechanisms",
-      "Weibull analysis",
-      "lifetime prediction",
+      "Clear distinction between HALT and ALT",
+      "Unchanged relevant failure mechanism",
+      "Physically justified acceleration model",
+      "Transparent limits of interpretation",
     ],
-    ctaTitle: "Explore reliability testing",
+    ctaTitle: "Plan accelerated tests on a sound basis",
     ctaText:
-      "See how test objectives, load spectra, sample size and evaluation are connected to form a defensible lifetime statement.",
+      "RelTest connects test objectives, product physics, stress levels and statistical evaluation into a defensible testing strategy.",
     primaryCta: { label: "Explore testing", href: "/wissen/erprobung" },
     secondaryCta: contactLinkEn,
+    related: [
+      { label: "Reliability testing", href: "/wissen/erprobung" },
+      { label: "Reliability prediction", href: "/wissen/prognosen" },
+      { label: "Data analysis and prognostics", href: "/leistungen/datenanalyse-prognostik" },
+    ],
   },
   "kooperation-holland-innovative": {
-    eyebrow: "News",
+    eyebrow: "Cooperation",
     title: "Cooperation with Holland Innovative",
     description:
-      "International collaboration and technical exchange in the field of reliability engineering.",
+      "An archived note on the international exchange in reliability engineering, data science and technical training established in 2020.",
     metaTitle: "Cooperation with Holland Innovative | RelTest",
     metaDescription:
-      "RelTest and Holland Innovative: cooperation and technical exchange in reliability engineering.",
+      "RelTest and Holland Innovative: an archived cooperation note on reliability engineering, root-cause analysis, data science and technical training.",
+    publishedAt: "2 June 2020",
+    publishedAtIso: "2020-06-02",
     lead:
-      "Reliability engineering benefits from international exchange and from connecting different industrial and methodological perspectives.",
+      "RelTest announced its cooperation with the Dutch innovation and engineering network Holland Innovative in June 2020. The aim was to connect complementary experience in reliability, root-cause analysis, data science and knowledge transfer.",
+    visual: {
+      src: "/team/reliability-test-laboratory.jpg",
+      alt: "Reliability engineer evaluating measurement data in a test laboratory",
+      caption:
+        "The technical working motif represents the cooperation fields of reliability engineering and data analysis; it is not a photograph of the agreement being signed.",
+    },
     sections: [
       {
-        title: "Technical exchange",
-        body: "The cooperation broadens the perspective on reliability methods and their application in industrial projects.",
+        title: "How the cooperation began",
+        body: "The partnership grew out of professional exchange around reliability engineering and the shared ambition to make specialist methods usable in industrial projects. It extended RelTest's German network with a Dutch perspective on innovation and product development.",
       },
       {
-        title: "Value for projects",
-        body: "Clients benefit from a wider experience base, an established technical network and international viewpoints.",
+        title: "Reliability, root-cause analysis and data science",
+        body: "The subject areas complement each other: reliability engineering structures targets and evidence; root-cause analysis investigates failures; and data science helps identify patterns in test and field data. The value lies in combining these perspectives around a concrete engineering decision.",
+      },
+      {
+        title: "Training and knowledge transfer",
+        body: "The cooperation also included technical seminars and training formats. For participants, this meant access to practical experience from different markets and a broader methodological context for applying reliability tools.",
+      },
+      {
+        title: "Historical context",
+        body: "This page documents the announcement made in 2020. Current project constellations are agreed according to the specific question, required expertise and availability; the archived contribution should not be read as a general statement about every present-day project.",
       },
     ],
-    proofPointsTitle: "What the cooperation adds",
+    proofPointsTitle: "Areas of exchange",
     proofPoints: [
-      "technical network",
-      "international exchange",
-      "reliability expertise",
-      "method and project focus",
+      "Reliability engineering",
+      "Root-cause analysis",
+      "Data science for engineering questions",
+      "International knowledge transfer",
     ],
     ctaTitle: "Discuss a collaboration",
     ctaText:
-      "RelTest supports companies with specialised expertise for demanding reliability challenges.",
+      "RelTest assembles the technical expertise required for the actual reliability question and project scope.",
     primaryCta: contactLinkEn,
+    secondaryCta: { label: "View references", href: "/referenzen" },
+    related: [
+      { label: "References and technical network", href: "/referenzen" },
+      { label: "Training and education", href: "/education" },
+      { label: "Holland Innovative", href: "https://www.holland-innovative.nl/", external: true },
+    ],
   },
   "rams-award": {
-    eyebrow: "News",
-    title: "RAMS Award",
+    eyebrow: "Award",
+    title: "Thomas L. Fagan, Jr. RAMS Student Paper Award",
     description:
-      "Recognition within the professional field of Reliability, Availability, Maintainability and Safety.",
-    metaTitle: "RAMS Award | RelTest Solutions",
+      "First place for a paper by Kevin Lucan, Martin Dazer, Kim Hintz and Bernd Bertsche on competing failure modes and system reliability estimation.",
+    metaTitle: "RAMS Student Paper Award | RelTest Solutions",
     metaDescription:
-      "RAMS Award and its technical context in Reliability, Availability, Maintainability and Safety.",
+      "RAMS Student Paper Award for Kevin Lucan, Martin Dazer, Kim Hintz and Bernd Bertsche: competing failure modes and system reliability estimation.",
+    publishedAt: "31 January 2020",
+    publishedAtIso: "2020-01-31",
     lead:
-      "RAMS demonstrates why reliability is often part of a wider system context that includes availability, maintainability and safety.",
+      "Kevin Lucan, Martin Dazer, Kim Hintz and Bernd Bertsche received first place in the Thomas L. Fagan, Jr. RAMS Student Paper Award for their contribution 'Effect of Competing Failure Modes on the System Reliability Estimation'.",
+    visual: {
+      src: "/graphics/news/rams-student-paper-award.webp",
+      alt: "Plaque for first place in the Thomas L. Fagan, Jr. RAMS Student Paper Award",
+      caption:
+        "The award was presented in Palm Springs in January 2020 for the paper on system reliability under competing failure modes.",
+    },
     sections: [
       {
-        title: "Reliability in the system context",
-        body: "Reliability is assessed together with availability, maintainability and safety rather than as an isolated product attribute.",
+        title: "The award",
+        body: "The plaque records first place in the 2019 RAMS Student Paper Award and names the four authors Kevin Lucan, Martin Dazer, Kim Hintz and Bernd Bertsche. It was presented in January 2020 at the Reliability and Maintainability Symposium in Palm Springs, California.",
       },
       {
-        title: "A visible technical contribution",
-        body: "Recognition in the professional community provides an additional signal of methodological depth and engineering credibility.",
+        title: "The paper's technical question",
+        body: "The paper examines how competing failure modes influence the estimation of system reliability. When several modes can cause a component or system to fail, the observed lifetime data cannot automatically be attributed to a single statistical mechanism.",
+      },
+      {
+        title: "Why competing risks matter",
+        body: "Failure modes may mask one another or occur under different stress and usage conditions. Ignoring this structure can distort parameters and system-level conclusions. A defensible assessment therefore needs failure-mode information, suitable models and transparent assumptions.",
+      },
+      {
+        title: "Relevance for engineering projects",
+        body: "The topic affects reliability prediction, test evaluation and risk decisions wherever several technical causes contribute to observed failures. The publication connects academic method development with the practical need to interpret data without oversimplifying the system.",
       },
     ],
-    proofPointsTitle: "RAMS dimensions",
+    proofPointsTitle: "Award and subject",
     proofPoints: [
-      "reliability",
-      "availability",
-      "maintainability",
-      "safety",
+      "First place in the RAMS Student Paper Award",
+      "Four authors from reliability research",
+      "Competing failure modes",
+      "System reliability estimation",
     ],
-    ctaTitle: "Put RAMS into engineering context",
+    ctaTitle: "Assess system reliability without losing the failure context",
     ctaText:
-      "We help structure system risks, validation activities and technical evidence.",
+      "RelTest connects failure mechanisms, statistical models and system structure to support transparent reliability decisions.",
     primaryCta: contactLinkEn,
     secondaryCta: { label: "Explore risk management", href: "/leistungen/risikomanagement" },
+    related: [
+      { label: "Paper at IEEE", href: "https://doi.org/10.1109/RAMS.2019.8768946", external: true },
+      { label: "Reliability prediction", href: "/wissen/prognosen" },
+      { label: "Specialist books and publications", href: "/literatur" },
+    ],
   },
   "webinar-effiziente-lebensdauertestplanung": {
-    eyebrow: "News",
+    eyebrow: "Webinar",
     title: "Webinar: Efficient Life Test Planning",
     description:
-      "A technical perspective on planning life tests with an appropriate sample size, duration and level of confidence.",
+      "How sample size, test duration, confidence and probability of test success can be combined into an economical demonstration strategy.",
     metaTitle: "Efficient Life Test Planning Webinar | RelTest",
     metaDescription:
-      "Efficient life test planning: test duration, sample size, confidence and statistical lifetime evaluation.",
+      "Efficient life test planning: reliability target, sample size, duration, confidence and probability of a successful demonstration.",
+    publishedAt: "6 January 2021",
+    publishedAtIso: "2021-01-06",
     lead:
-      "Efficient test planning reduces effort without sacrificing the engineering value of the result.",
+      "A life test is not efficient merely because it uses few specimens or a short duration. What matters is whether the chosen effort supports a clearly defined reliability statement with sufficient certainty.",
+    visual: {
+      src: "/graphics/news/reliability-webinar-setup.webp",
+      alt: "Laptop with a technical webinar presentation, webcam and microphone",
+      caption:
+        "The webinar considers test effort and statistical evidence together, from target definition to the probability of a successful demonstration.",
+    },
     sections: [
       {
-        title: "Not every test provides the same value",
-        body: "The required engineering decision determines which result the test must provide and how certain that result needs to be.",
+        title: "Begin with the decision",
+        body: "Before defining sample size and duration, the required decision must be clear. Reliability target, mission time or cycles, permissible failure fraction and confidence level have to be stated unambiguously. Without this framework, test effort cannot be evaluated or optimised.",
       },
       {
-        title: "Connecting DoE and statistics",
-        body: "Sample size, test duration, censoring and evaluation must be planned as one coherent strategy.",
+        title: "Confidence alone does not fully plan the test",
+        body: "A demonstration may be statistically valid and still have a low chance of passing when the true product reliability lies only slightly above the target. The probability of test success therefore complements confidence: it describes the planning risk of obtaining the required evidence with the selected design.",
+      },
+      {
+        title: "Compare test strategies on a common basis",
+        body: "Failure-free tests, time-censored tests and plans with permissible failures distribute effort differently. A useful comparison considers specimen count, duration per specimen, total accumulated time, assumptions about the lifetime distribution and the consequence of a failed demonstration.",
+      },
+      {
+        title: "Allocate effort deliberately",
+        body: "An efficient plan does not minimise one variable in isolation. It balances available specimens, test-bench capacity, calendar time and statistical evidence, while leaving a transparent path for evaluation and follow-up decisions.",
       },
     ],
-    proofPointsTitle: "Technical focus",
+    proofPointsTitle: "Planning parameters",
     proofPoints: [
-      "test duration",
-      "sample size",
-      "confidence",
-      "lifetime analysis",
+      "Reliability target and reference life",
+      "Sample size and test duration",
+      "Confidence and probability of test success",
+      "Transparent comparison of strategies",
     ],
     ctaTitle: "Plan tests more efficiently",
     ctaText:
-      "RelTest develops test strategies that remain economical while supporting a defensible decision.",
+      "RelTest develops test strategies that use available time and specimens economically while supporting a defensible engineering decision.",
     primaryCta: { label: "Explore testing", href: "/wissen/erprobung" },
     secondaryCta: contactLinkEn,
+    related: [
+      { label: "Reliability testing", href: "/wissen/erprobung" },
+      { label: "Validation and demonstration", href: "/wissen/absicherung" },
+      { label: "Paper on Probability of Test Success", href: "https://doi.org/10.3390/app12126190", external: true },
+    ],
   },
   "smart-data-produktdesign": {
-    eyebrow: "News",
+    eyebrow: "Technical article",
     title: "Smart Data for Product Design",
     description:
-      "How product and field data can be translated into better-supported engineering decisions.",
+      "How field, test and simulation data can support defensible product-design and reliability decisions.",
     metaTitle: "Smart Data for Product Design | RelTest",
     metaDescription:
-      "Smart data for product design: data analysis, failure behaviour, prediction and better engineering decisions.",
+      "Smart data for product design: data quality, failure mechanisms, field and test data, and the path to defensible development decisions.",
+    publishedAt: "27 October 2021",
+    publishedAtIso: "2021-10-27",
     lead:
-      "Smart data creates value when information is not merely collected, but interpreted in the context of a specific engineering decision.",
+      "This contribution from the Reliability Seminar 2021 examines how data can be used in reliability engineering. The decisive factor is not volume but whether context, quality and analysis fit the specific engineering question.",
+    visual: {
+      src: "/team/reltest-weibull-data-analysis.jpg",
+      alt: "Reliability engineer analysing technical lifetime data",
+      caption:
+        "Field, test and simulation data create value when they are connected to product knowledge and a clear decision question.",
+    },
     sections: [
       {
-        title: "Start with the engineering question",
-        body: "A useful analysis begins by defining which technical question the available data needs to answer.",
+        title: "From the Reliability Seminar to project practice",
+        body: "The technical impulse was presented during the Reliability Seminar on Data Science for Reliability and Root Cause Analysis. It focused on how data-driven methods can complement established reliability work without ignoring product physics, boundary conditions and uncertainty.",
       },
       {
-        title: "Improve product design",
-        body: "Data can reveal weak points, influential factors and opportunities for focused product improvement.",
+        title: "Smart data is more than a large data set",
+        body: "Measurements become interpretable through units, operating states, loads, censoring and traceable provenance. Before choosing a model, the required decision and the fitness of the available data need to be established.",
+      },
+      {
+        title: "Read product physics and data together",
+        body: "Field, test-bench and simulation data describe different parts of product behaviour. Connecting them to known failure mechanisms and the usage profile helps explain differences, test hypotheses and define technically credible limits for predictions.",
+      },
+      {
+        title: "Feed the result back into product design",
+        body: "An analysis should not end with a chart. Relevant effects are translated into actions for design, test planning, data acquisition or release, creating a learning loop between use, assessment and product improvement.",
       },
     ],
-    proofPointsTitle: "Technical focus",
+    proofPointsTitle: "Questions for smart data",
     proofPoints: [
-      "data analysis",
-      "prognostics",
-      "weak-point analysis",
-      "product optimisation",
+      "Which decision should the analysis support?",
+      "Are data provenance and boundary conditions traceable?",
+      "Does the model fit the failure mechanism?",
+      "How will the result improve product and validation?",
     ],
     ctaTitle: "Turn data into decisions",
     ctaText:
-      "We help transform existing data into robust development and release decisions.",
+      "We combine data analysis, product knowledge and reliability methods to support transparent development decisions.",
     primaryCta: { label: "Explore data analysis", href: "/leistungen/datenanalyse-prognostik" },
     secondaryCta: contactLinkEn,
+    related: [
+      { label: "Reliability prediction", href: "/wissen/prognosen" },
+      { label: "Testing and data analysis", href: "/leistungen/datenanalyse-prognostik" },
+      {
+        label: "Reliability Seminar 2021",
+        href: "https://www.hightechcampus.com/events/reliability-seminar-on-data-science-for-reliability-and-root-cause-analysis",
+        external: true,
+      },
+    ],
   },
 };
 

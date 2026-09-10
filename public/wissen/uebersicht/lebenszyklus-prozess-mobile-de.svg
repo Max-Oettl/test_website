@@ -32,6 +32,7 @@
     <text class="copy" x="84" y="409">Felddaten · Frühwarnindikatoren</text>
   </g>
 
+  <rect x="24" y="464" width="672" height="616" rx="6" fill="#eaf5fb" stroke="#d5ecf7"/>
   <text class="label" x="48" y="498">PRODUKTLEBENSZYKLUS</text>
   <path d="M92 552v448" stroke="#142452" stroke-width="3"/>
   <g>

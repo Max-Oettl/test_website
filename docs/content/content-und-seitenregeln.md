@@ -74,7 +74,7 @@ Die Website soll vermitteln:
 
 Die Positionierung soll eher in Richtung:
 
-- `Advanced Reliability Engineering Partner`
+- `Advanced Reliability Engineering-Partner`
 
 gehen und nicht mehr stark auf:
 
@@ -189,6 +189,11 @@ Arbeitsregel:
 Seminare und RelTest Education gehören unter Weiterbildung zusammen, müssen aber als zwei
 verschiedene Wege erklärt werden.
 
+RelTest Education mit seinem digitalen E-Learning ist das strategische
+Hauptangebot. In Navigation und vergleichenden Darstellungen steht E-Learning
+daher vor der Vor-Ort-Schulung; die Vor-Ort-Schulung bleibt als klar getrennte
+Präsenzalternative erhalten.
+
 ## 8. DoE richtig einordnen
 
 DoE darf nicht als isolierter Fremdkörper erscheinen.
@@ -210,6 +215,24 @@ Wichtig:
 - DoE nicht losgelöst von Testing und Erprobung darstellen
 - fachlich korrekt `Design of Experiments` schreiben
 - keine falsche Formulierung wie `Design of Experience`
+
+### Verbindliche DoE-Seitenlogik
+
+- `/leistungen/design-of-experiments` ist der zentrale Solutions-Einstieg für
+  konkrete DoE-Projektunterstützung und führt zu Consulting, Coaching und dem
+  passenden Weiterbildungsangebot.
+- `/wissen/design-of-experiments` erklärt Methode, Begriffe und fachliche
+  Zusammenhänge unabhängig von einem konkreten Auftrag.
+- DoE-Seminare und E-Learning bleiben klar dem Bereich RelTest Education
+  zugeordnet.
+- In der Solutions-Navigation erscheint DoE als Methodenfokus innerhalb von
+  Test und Datenanalyse, nicht als fünftes gleichrangiges Leistungsfeld.
+- Auf der Wissensübersicht erscheint DoE nach den fünf Teilprozessen als
+  eigenständiger, unnummerierter Methodenfokus neben dem
+  Zuverlässigkeitsprozess. Im Wissen-Dropdown steht der DoE-Einstieg aus
+  demselben Grund am Ende.
+- Linktexte benennen die jeweilige Nutzerintention eindeutig, zum Beispiel
+  `DoE-Projektunterstützung`, `DoE-Grundlagen` und `DoE Seminar`.
 
 ## 9. Wissensbereich
 
@@ -252,6 +275,62 @@ Jede Wissensseite braucht:
 - CTA oder nächster Schritt
 - Autoritätssignal, wenn passend
 
+Das technische Glossar ist über einen sichtbaren Lupen-Link im Header und den
+Schnellzugriff im Footer erreichbar. Es wird nicht zusätzlich im
+Wissen-Dropdown geführt, damit dort die fachlichen Wissensartikel im Mittelpunkt
+bleiben. Die Lupe führt im selben Tab auf die Glossarseite und dort direkt zur
+Suche. Das vollständige Verzeichnis bleibt alphabetisch gegliedert und als HTML
+sichtbar; die Eingabe filtert Begriffe und Definitionen innerhalb dieser
+A–Z-Ansicht, statt einen separaten Suchdialog zu öffnen.
+
+### Verbindliche Logik der Wissensübersicht
+
+- Der mittlere Produktlebenszyklus wird dezent hinterlegt. Dadurch bleibt die
+  symmetrische Zuordnung der qualitativen Methoden oberhalb und der
+  quantitativen Methoden unterhalb der Phasen auf einen Blick erkennbar.
+- Die Schwachstellenanalyse zeigt drei unterschiedliche Wirkungen der
+  Maßnahmen: Früh- und Zufallsausfälle werden reduziert,
+  Verschleißausfälle zeitlich nach hinten verschoben. Unklare Sternchen und
+  starke Hell-Dunkel-Sprünge werden vermieden.
+- Die Absicherung verwendet `F(t)` ausschließlich als kumulierte
+  Ausfallwahrscheinlichkeit. Bei einem dargestellten nicht redundanten
+  Serienschaltungssystem liegt die System-Ausfallwahrscheinlichkeit über den
+  Einzelwahrscheinlichkeiten; eine Bildunterschrift grenzt redundante
+  Architekturen davon ab.
+- Die Absicherungsdetailseite trifft eine Bq-Nachweisentscheidung direkt auf
+  dem Niveau `F(t) = q`: Die obere einseitige Konfidenzgrenze der
+  Ausfallwahrscheinlichkeitskurve liefert dort die untere einseitige
+  Konfidenzgrenze `Bq,L`. Ein Nachweis gilt in der schematischen Darstellung
+  als erbracht, wenn `Bq,L >= Bq,soll`. Erfolgreiches und nicht erfolgreiches
+  Beispiel werden getrennt als Python-generierte Weibull-Kurvenplots gezeigt.
+  Der einseitige Vertrauensbereich reicht von `F(t) = 0` bis zur oberen
+  Konfidenzgrenze und läuft über den gesamten dargestellten Zeitbereich;
+  geschätztes Ist-Verhalten und Grenzkurve sind eindeutig beschriftet. Desktop
+  und Mobile erhalten eigenständig lesbare Varianten.
+- Die Zuverlässigkeitsprognose verbindet Versuchs- und Felddaten mit einem
+  Lebensdauermodell und zeigt kurze, mittlere und lange Laufzeitverläufe.
+- Der DoE-Methodenfokus auf der Wissensübersicht nutzt eine reduzierte SVG-
+  Darstellung aus Faktoren, gezielten Kombinationen und Wechselwirkung. Ein
+  detaillierter Statistik-Plot bleibt den fachlichen Detailseiten vorbehalten.
+- Fachgrafiken erhalten deutsche und englische Varianten sowie fachlich
+  erklärende Alternativtexte; notwendige Einordnungen stehen als sichtbare
+  Bildunterschrift im HTML und nicht nur innerhalb der Grafik.
+
+### Verbindliche Logik der Aktuelles-Seite
+
+- Die Seite trennt zwei redaktionelle Ebenen sichtbar und sprachlich:
+  `Direkt von RelTest` enthält eigene Webinare, Kooperationen,
+  Auszeichnungen und Fachbeiträge; `Aus Forschung, Normung und technischer
+  Praxis` enthält ausgewählte externe Entwicklungen.
+- RelTest-Inhalte werden als markengeprägte Unternehmenschronik mit einem
+  hervorgehobenen Beitrag und einem strukturierten Beitragsindex dargestellt.
+- Externe Meldungen nennen Quelle und Datum vor dem Inhalt, kennzeichnen die
+  fachliche Bewertung ausdrücklich als `RelTest-Einordnung` und führen über
+  einen klar als extern erkennbaren Link zur Originalquelle.
+- Die Unterscheidung darf nicht nur über kleine Kategoriezeilen erfolgen. Beide
+  Bereiche erhalten eigenständige große Überschriften, unterschiedliche
+  Flächen- und Layoutlogiken sowie verständliche Einleitungstexte.
+
 ## 10. Startseite
 
 Die Startseite muss schnell beantworten:
@@ -279,6 +358,45 @@ Pflichtbestandteile:
 Die Startseite soll nicht alle Inhalte vollständig erklären. Sie soll
 orientieren, Vertrauen aufbauen und zu den passenden Unterseiten führen.
 
+### Verbindliche Branchenlogik
+
+Die Branchenkommunikation folgt auf allen Übersichtsseiten demselben Modell:
+
+- Startseite und Expertise zeigen dieselben acht Branchen: Automotive,
+  Maschinenbau, elektronische Produkte, Halbleiterindustrie, Consumer-Technik,
+  erneuerbare Energien, Medizintechnik sowie Luft- und Raumfahrt.
+- Die Branchenübersicht zeigt zusätzlich Produktionstechnik und damit alle neun
+  eigenständigen Branchenseiten.
+- Der Branchen-Hero hebt keine Teilmenge hervor, sondern zeigt ein ruhiges
+  3×3-Raster aus neun klar erkennbaren, einheitlich generierten minimalistischen
+  Piktogrammen für das gesamte Branchenspektrum. Die einzelnen Branchenkarten
+  verwenden dagegen weiterhin dieselben realistischen Branchenbilder wie die
+  Branchenverweise auf der Landingpage.
+- Die allgemeine Einordnung steht vollständig im Branchen-Hero. Nach der
+  Bereichs- und Rücknavigation beginnt direkt das Raster der neun Branchen;
+  eine zweite allgemeine Einführung wird dort nicht wiederholt.
+
+Branchen werden nicht nummeriert, weil keine Rangfolge gemeint ist.
+Benennungen, Reihenfolge, Links und Bilder werden aus der gemeinsamen
+Branchen-Datenquelle gepflegt.
+
+Auf langen Branchendetailseiten werden die allgemeinen Vertiefungsinhalte von
+`Fachwissen zur Vertiefung` über die Projektfragen bis zum `Fachlichen Rahmen`
+als zusammenhängender, hellblau abgesetzter Bereich gestaltet. So bleibt der
+Übergang von der branchenspezifischen Leistungserklärung zu ergänzendem Wissen
+und allgemeiner Einordnung auch bei langen Seiten klar erkennbar.
+
+### Verbindliche Verknüpfung von Branchen und Leistungen
+
+- Die Hauptnavigation erschließt Branchen als eigenständigen Bereich mit allen
+  neun Branchendetailseiten.
+- Leistungsseiten erklären das Angebot und werden nicht durch zusätzliche
+  Branchen-Leitpfad-Karten unterbrochen.
+- Branchenseiten konkretisieren die Anwendung der Leistungen im jeweiligen
+  technischen Umfeld und verlinken von dort kontextbezogen zurück.
+- So bleiben Suchintention und Seitenaufgabe klar getrennt, ohne dieselben
+  Aussagen auf Leistungs- und Branchenseiten zu wiederholen.
+
 ## 11. Hero-Bereich
 
 Der Hero ist besonders wichtig.
@@ -296,6 +414,17 @@ Er soll:
 Wichtig aus bisherigen Entscheidungen:
 
 - keine Nummerierung von Kompetenzpunkten, wenn keine echte Reihenfolge besteht
+- der Startseiten-Slider zeigt alle vier Leistungsfelder einschließlich der
+  Projektpartnerschaft als eigenständige Slides und verwendet die zugehörigen
+  Solutions-Piktogramme
+- im kompakten Hero-Reiter wird der fachliche Dachbegriff
+  `Zuverlässigkeitstechnik` als `Planung & Lebensdauer` konkretisiert; die
+  Kurzzeile nennt zusätzlich Ziele, Nutzung und Nachweiskonzept
+- die übrigen Reiter grenzen sich ebenfalls bereits vor Auswahl mit konkreten
+  Leitbegriffen ab: Schwachstellen/FMEA/Freigabe, Versuche/Felddaten/Modelle
+  sowie Arbeitspakete/Abnahme/Verantwortung
+- ein zusätzlicher, inhaltlich doppelter Leistungsbalken unterhalb der
+  Slider-Navigation wird nicht eingesetzt
 - Kompetenzpunkte müssen erweiterbar bleiben
 - DoE nicht als isolierter fünfter Punkt darstellen
 - keine überladene Kreisgrafik mit RelTest in der Mitte und Armen nach außen,
@@ -384,6 +513,27 @@ Darstellung:
 - Link zur Springer-Seite
 - Bezug zu Zuverlässigkeit im Fahrzeug- und Maschinenbau
 - Verbindung zu Kompetenz und Erfahrung von RelTest
+
+### Expertise-Hub und Detailtiefe
+
+- Die Expertise-Seite führt Referenzen, Literatur, Podcast und Branchen nach
+  einer gemeinsamen Einführung direkt in die fachlichen Bereiche. Eine zweite
+  allgemeine Einführung unmittelbar nach der Bereichsnavigation wird nicht
+  wiederholt.
+- Ausgewählte Detailinformationen dürfen auf der Expertise-Seite mit nativen
+  ausklappbaren Elementen verdichtet werden. Kernaussagen und Links bleiben
+  dabei im serverseitig gerenderten HTML vorhanden.
+- Eigenständige Detail-URLs für Literatur, Referenzen und Branchen bleiben als
+  stabile Such-, Direkt- und Vertiefungsziele bestehen. Diese Seiten erhalten
+  einen sichtbaren Rückweg zur Expertise-Übersicht; Branchendetailseiten führen
+  zunächst zur Branchenübersicht und von dort weiter zur Expertise.
+- Die Expertise-Seite verlinkt nur einmal zentral auf die Literaturseite.
+  Buchbezogene Links führen direkt zum jeweiligen Verlagseintrag.
+- Die ausführliche Publikationsauswahl von Prof. Dr.-Ing. Bernd Bertsche wird
+  auf der zentralen Literaturseite gepflegt und dort nach Publikationstyp
+  ausklappbar dargestellt. Sein Personenprofil ordnet die Autorität ein und
+  verweist auf diese zentrale Auswahl, dupliziert aber nicht die gesamte
+  Bibliografie.
 
 ## 16. Mehrsprachigkeit
 

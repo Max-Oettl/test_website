@@ -1,5 +1,6 @@
 export type KnowledgeVisualCopy = {
   src?: string;
+  mobileSrc?: string;
   ratio?: "landscape" | "wide" | "sixteen-nine" | "two-one";
   maxWidth?: "tiny" | "small" | "compact" | "standard" | "wide";
   alt: string;
@@ -178,24 +179,28 @@ export const knowledgeVisuals: Record<string, KnowledgeVisualSet> = {
       },
     },
     inline: {
-      src: "reliability-demonstration-confidence-limit",
+      src: "/graphics/wissen/technical-plots/reliability-demonstration-bq-decision-de-v2.png",
       de: {
-        ratio: "landscape",
-        maxWidth: "tiny",
-        alt: "Diagramm zum Zuverlässigkeitsnachweis mit geforderter Bq-Lebensdauer, beobachteter Lebensdauer, oberer Vertrauensgrenze und Bereichen für erfolgreichen oder fehlgeschlagenen Nachweis.",
+        src: "/graphics/wissen/technical-plots/reliability-demonstration-bq-decision-de-v2.png",
+        mobileSrc: "/graphics/wissen/technical-plots/reliability-demonstration-bq-decision-de-v2-mobile.png",
+        ratio: "two-one",
+        maxWidth: "wide",
+        alt: "Zwei Weibull-Kurvenplots zur Nachweisentscheidung am Bq-Niveau: Im erfolgreichen Beispiel liegt Bq,L rechts von Bq,soll, im nicht erfolgreichen Beispiel links davon.",
         lead:
-          "Für einen erfolgreichen Zuverlässigkeitsnachweis muss die statistisch abgesicherte Lebensdaueraussage die geforderte Bq-Lebensdauer erreichen; die Punktschätzung allein genügt nicht.",
+          "Die Entscheidung wird am zulässigen Ausfallanteil q getroffen: Die obere einseitige Konfidenzgrenze der geschätzten Ausfallwahrscheinlichkeit liefert dort die konservative Lebensdauer Bq,L.",
         caption:
-          "Die Vertrauensgrenze entscheidet, ob eine beobachtete Lebensdauer als belastbarer Nachweis akzeptiert werden kann.",
+          "Der Nachweis ist erbracht, wenn Bq,L ≥ Bq,soll. Der hellblaue einseitige Vertrauensbereich reicht von F(t) = 0 bis zur oberen Konfidenzgrenze Fᵤ(t) und läuft über den gesamten dargestellten Zeitbereich; die dunkelblaue Kurve zeigt das aus Daten geschätzte Ist-Verhalten.",
       },
       en: {
-        ratio: "landscape",
-        maxWidth: "tiny",
-        alt: "Reliability demonstration diagram with required Bq life, observed life, upper confidence limit and regions for successful or failed proof.",
+        src: "/graphics/wissen/technical-plots/reliability-demonstration-bq-decision-en-v2.png",
+        mobileSrc: "/graphics/wissen/technical-plots/reliability-demonstration-bq-decision-en-v2-mobile.png",
+        ratio: "two-one",
+        maxWidth: "wide",
+        alt: "Two Weibull curve plots for the Bq-level demonstration decision: Bq,L lies to the right of Bq,req in the demonstrated example and to the left in the example that is not demonstrated.",
         lead:
-          "For a successful reliability demonstration, the statistically supported lifetime statement must reach the required Bq life; the point estimate alone is insufficient.",
+          "The decision is made at the permitted failure fraction q: the upper one-sided confidence bound of the estimated failure probability yields the conservative life Bq,L at that level.",
         caption:
-          "The confidence limit determines whether an observed lifetime can be accepted as defensible proof.",
+          "The requirement is demonstrated when Bq,L ≥ Bq,req. The light-blue one-sided confidence region extends from F(t) = 0 to the upper confidence bound Fᵤ(t) across the full time range; the dark-blue curve shows the field behaviour estimated from data.",
       },
     },
   },
@@ -237,16 +242,18 @@ export const knowledgeVisuals: Record<string, KnowledgeVisualSet> = {
   },
   "design-of-experiments": {
     hero: {
-      src: "doe-context",
+      src: "/graphics/wissen/technical-plots/doe-context-de-v2.svg",
       de: {
-        alt: "Interaktionsdiagramm eines Versuchsplans mit Temperaturstufen und zwei Drehzahlniveaus.",
+        src: "/graphics/wissen/technical-plots/doe-context-de-v2.svg",
+        alt: "Reduzierte DoE-Grafik mit den Faktoren Temperatur und Drehzahl, vier gezielten Versuchskombinationen und einer sichtbaren Wechselwirkung.",
         caption:
-          "Nicht parallele Wirkungslinien zeigen, dass der Temperatureffekt vom gewählten Drehzahlniveau abhängt.",
+          "Ein strukturierter Versuchsplan variiert Temperatur und Drehzahl gemeinsam. Nicht parallele Wirkungslinien machen die Wechselwirkung sichtbar.",
       },
       en: {
-        alt: "Interaction plot from an experimental design with temperature levels and two speed levels.",
+        src: "/graphics/wissen/technical-plots/doe-context-en-v2.svg",
+        alt: "Reduced DoE diagram showing temperature and speed as factors, four targeted experimental combinations and a visible interaction.",
         caption:
-          "Non-parallel response lines indicate that the temperature effect depends on the selected speed level.",
+          "A structured experimental design varies temperature and speed together. Non-parallel response lines reveal the interaction.",
       },
     },
     inline: {

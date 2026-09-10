@@ -4,6 +4,7 @@ import { Archivo, IBM_Plex_Sans, Oxanium, Sora } from "next/font/google";
 import { SiteFooter } from "../_components/site-footer";
 import { SiteHeader } from "../_components/site-header";
 import { NavigationScrollReset } from "../_components/navigation-scroll-reset";
+import { CookieConsentManager } from "../_components/cookie-consent-manager";
 import { getSiteContent } from "../_content/site-content";
 import { locales, resolveLocale } from "../_i18n/config";
 import { absoluteUrl, getRobotsMetadata, siteUrl } from "../_seo/metadata";
@@ -99,7 +100,10 @@ export default async function LocaleLayout({
           telephone: "+49 711 25253531",
           availableLanguage: ["de", "en"],
         },
-        sameAs: ["https://www.linkedin.com/company/reltest-solutions"],
+        sameAs: [
+          "https://www.linkedin.com/company/reltest-solutions",
+          "https://www.xing.com/pages/reltest-solutions-gmbh",
+        ],
         knowsAbout: [
           "Reliability Engineering",
           "Zuverlässigkeitstechnik",
@@ -132,6 +136,7 @@ export default async function LocaleLayout({
           <main>{children}</main>
           <SiteFooter locale={locale} />
         </div>
+        <CookieConsentManager locale={locale} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

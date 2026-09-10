@@ -45,6 +45,8 @@ export type SolutionServicePage = {
     links: Array<{
       label: string;
       href: string;
+      category?: string;
+      theme?: "neutral" | "solutions" | "education";
     }>;
   };
   cta: {
@@ -61,9 +63,9 @@ const solutionServicePages: Record<
     zuverlaessigkeitstechnik: {
       slug: "zuverlaessigkeitstechnik",
       metaTitle:
-        "Zuverlässigkeitstechnik & Lebensdauerbewertung | RelTest Solutions",
+        "Zuverlässigkeitstechnik & Zuverlässigkeitsbewertung | RelTest Solutions",
       metaDescription:
-        "Zuverlässigkeitsplanung, Lebensdauerbewertung und belastbare Zuverlässigkeitsnachweise für technische Produkte und Systeme.",
+        "Zuverlässigkeitsplanung, Zuverlässigkeitsbewertung und belastbare Zuverlässigkeitsnachweise für technische Produkte und Systeme.",
       hero: {
         title: "Zuverlässigkeit planen und nachweisen.",
         description:
@@ -89,7 +91,7 @@ const solutionServicePages: Record<
           },
           {
             id: "lebensdauerbewertung",
-            title: "Lebensdauerbewertung",
+            title: "Zuverlässigkeitsbewertung",
             work:
               "Bauteilbelastungen, Festigkeiten, Ausfallmechanismen sowie Prüf- und Felddaten werden zu einer nachvollziehbaren Lebensdaueraussage zusammengeführt.",
             result:
@@ -440,6 +442,143 @@ const solutionServicePages: Record<
           "Wir prüfen Fragestellung, Datenlage und Versuchsrahmen und definieren daraus ein belastbares Vorgehen.",
       },
     },
+    "design-of-experiments": {
+      slug: "design-of-experiments",
+      metaTitle:
+        "Design of Experiments für Engineering-Projekte | RelTest",
+      metaDescription:
+        "DoE-Projektunterstützung für technische Versuchsplanung: Zielgrößen und Faktoren klären, Versuchsdesign wählen, Daten auswerten und robuste Einstellungen ableiten.",
+      hero: {
+        title: "Design of Experiments für effiziente Versuchsplanung.",
+        description:
+          "DoE macht Versuche aussagekräftiger, reduziert unnötige Testschleifen und verbindet Erprobung mit belastbarer statistischer Auswertung.",
+        image: "/projects/design-of-experiments-testbench-v2.webp",
+        imageAlt:
+          "Ingenieur richtet einen technischen Prüfstand für ein DoE-Versuchsprogramm ein",
+      },
+      topics: {
+        title: "Vom Faktorraum zur belastbaren Entscheidung.",
+        description:
+          "RelTest plant, begleitet und bewertet DoE-Versuche entlang der technischen Fragestellung. Statistik und Produktverständnis werden so verbunden, dass aus Versuchspunkten eine nutzbare Engineering-Entscheidung entsteht.",
+        items: [
+          {
+            id: "fragestellung-faktorraum",
+            title: "Fragestellung & Faktorraum",
+            work:
+              "Wir präzisieren Zielgrößen und Bewertungskriterien, identifizieren relevante Einfluss- und Störgrößen und legen technisch sinnvolle Faktorstufen sowie Grenzen des Versuchsraums fest.",
+            result:
+              "Eine eindeutig dokumentierte Versuchsfrage mit Zielgrößen, Faktoren, Randbedingungen und Annahmen.",
+            icon: "/graphics/solutions-icons/icon-target.svg",
+          },
+          {
+            id: "versuchsdesign-durchfuehrung",
+            title: "Versuchsdesign & Durchführung",
+            work:
+              "Wir wählen ein geeignetes Design, planen Randomisierung, Wiederholungen und Blockbildung und stimmen Versuchsablauf, Messmittel sowie Datenqualität aufeinander ab.",
+            result:
+              "Ein effizienter, durchführbarer DoE-Plan mit klarer Versuchsmatrix und abgesichertem Ablauf.",
+            icon: "/graphics/solutions-icons/icon-factors.svg",
+          },
+          {
+            id: "auswertung-modell",
+            title: "Auswertung & Modell",
+            work:
+              "Effekte und Wechselwirkungen werden geschätzt, Modelle geprüft und Ergebnisse gemeinsam mit Residuen, Modellgüte und technischer Plausibilität bewertet.",
+            result:
+              "Ein nachvollziehbares Wirkmodell, das zeigt, welche Faktoren wie stark und in welcher Kombination auf die Zielgröße wirken.",
+            icon: "/graphics/solutions-icons/icon-chart.svg",
+          },
+          {
+            id: "robuste-einstellung-transfer",
+            title: "Robuste Einstellung & Transfer",
+            work:
+              "Wir optimieren Zielgrößen, prüfen Sensitivitäten und Störgrößen und übersetzen die Erkenntnisse in Parameterempfehlungen, weitere Versuche oder technische Maßnahmen.",
+            result:
+              "Empfohlene Einstellungen mit Robustheitsbewertung, dokumentierten Grenzen und einem klaren nächsten Schritt.",
+            icon: "/graphics/solutions-icons/icon-optimum.svg",
+          },
+        ],
+      },
+      situations: {
+        title: "Wann DoE besonders wirksam ist",
+        description:
+          "DoE schafft vor allem dann Wert, wenn Versuchskapazität knapp ist und mehrere Einflüsse gleichzeitig verstanden werden müssen.",
+        items: [
+          {
+            title: "Teure oder zeitkritische Versuche",
+            text:
+              "Jeder Versuch bindet Muster, Prüfstand und Entwicklungszeit. Ein begründetes Design konzentriert den Aufwand auf Versuchspunkte mit hoher Aussagekraft.",
+          },
+          {
+            title: "Viele mögliche Einflussgrößen",
+            text:
+              "Screening und geeignete Versuchspläne zeigen, welche Faktoren relevant sind und wo Wechselwirkungen klassische Ein-Faktor-Versuche in die Irre führen.",
+          },
+          {
+            title: "Optimierung unter Streuung",
+            text:
+              "Produkte und Prozesse sollen nicht nur im Mittel gut funktionieren. DoE hilft, robuste Parameterbereiche gegenüber Fertigung, Umwelt und Nutzung zu finden.",
+          },
+        ],
+      },
+      deliverables: {
+        title: "Was am Ende vorliegt",
+        description:
+          "Keine isolierte Statistikdatei, sondern eine dokumentierte Grundlage für Versuch, Optimierung und technische Entscheidung.",
+        items: [
+          {
+            title: "Geklärte Versuchsfrage",
+            text:
+              "Zielgrößen, Faktoren, Grenzen und Annahmen sind eindeutig festgelegt.",
+          },
+          {
+            title: "Belastbarer Versuchsplan",
+            text:
+              "Versuchsmatrix, Ablauf, Randomisierung und Wiederholungen sind begründet.",
+          },
+          {
+            title: "Ausgewertetes Wirkmodell",
+            text:
+              "Effekte, Wechselwirkungen, Modellgüte und Unsicherheit sind nachvollziehbar bewertet.",
+          },
+          {
+            title: "Dokumentierte Entscheidung",
+            text:
+              "Empfehlungen, Grenzen und nächste Schritte sind technisch interpretierbar aufbereitet.",
+          },
+        ],
+      },
+      knowledge: {
+        title: "DoE passend zur Aufgabe einsetzen.",
+        description:
+          "Diese Solutions-Seite bündelt die Projektunterstützung. Methodische Grundlagen stehen im Wissensbereich; strukturierter Kompetenzaufbau gehört zu RelTest Education.",
+        links: [
+          {
+            label: "DoE-Grundlagen",
+            href: "/wissen/design-of-experiments",
+            category: "Wissen – Methode verstehen",
+            theme: "neutral",
+          },
+          {
+            label: "DoE Consulting",
+            href: "/leistungen/doe-consulting",
+            category: "Solutions – Im Projekt anwenden",
+            theme: "solutions",
+          },
+          {
+            label: "DoE Seminar",
+            href: "/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung",
+            category: "Education – Teams befähigen",
+            theme: "education",
+          },
+        ],
+      },
+      cta: {
+        title: "Versuchsprogramm methodisch absichern.",
+        text:
+          "Wir klären Ihre technische Frage, den verfügbaren Versuchsrahmen und welches DoE-Vorgehen die notwendige Aussage mit vertretbarem Aufwand ermöglicht.",
+      },
+    },
     "langfristige-kooperation": {
       slug: "langfristige-kooperation",
       metaTitle: "Engineering-Projektpartnerschaft & Verantwortung | RelTest",
@@ -449,9 +588,9 @@ const solutionServicePages: Record<
         title: "Engineering-Arbeitspakete verlässlich übernehmen.",
         description:
           "RelTest übernimmt klar definierte Arbeitspakete, liefert prüfbare Ergebnisse und arbeitet als verlässlicher Engineering-Partner über einzelne Analysen hinaus. Umfang, Schnittstellen, Abnahme und Verantwortungsrahmen werden vor Projektbeginn eindeutig vereinbart.",
-        image: "/team/engineering-project-partnership-review.webp",
+        image: "/team/engineering-project-partnership-review-v2.webp",
         imageAlt:
-          "Engineering-Team stimmt Arbeitspakete, Schnittstellen und technische Ergebnisse ab",
+          "Zwei Engineering-Fachkräfte werten am Prüfstand gemeinsam technische Daten am Laptop aus",
       },
       topics: {
         title: "Unsere Leistungen in der Projektpartnerschaft",
@@ -569,9 +708,9 @@ const solutionServicePages: Record<
   en: {
     zuverlaessigkeitstechnik: {
       slug: "zuverlaessigkeitstechnik",
-      metaTitle: "Reliability Engineering & Lifetime Assessment | RelTest",
+      metaTitle: "Reliability Engineering & Reliability Assessment | RelTest",
       metaDescription:
-        "Reliability planning, lifetime assessment and robust reliability evidence for technical products and systems.",
+        "Reliability planning, reliability assessment and robust reliability evidence for technical products and systems.",
       hero: {
         title: "Plan and demonstrate reliability.",
         description:
@@ -597,7 +736,7 @@ const solutionServicePages: Record<
           },
           {
             id: "lifetime-assessment",
-            title: "Lifetime assessment",
+            title: "Reliability assessment",
             work:
               "Component loads, strengths, failure mechanisms as well as test and field data are combined into a traceable lifetime statement.",
             result:
@@ -946,6 +1085,143 @@ const solutionServicePages: Record<
           "We review the question, available data and test framework and define a robust approach.",
       },
     },
+    "design-of-experiments": {
+      slug: "design-of-experiments",
+      metaTitle:
+        "Design of Experiments for Engineering Projects | RelTest",
+      metaDescription:
+        "DoE project support for technical experimental design: clarify responses and factors, select a design, analyse data and derive robust settings.",
+      hero: {
+        title: "Design of Experiments for efficient testing.",
+        description:
+          "DoE makes tests more meaningful, reduces unnecessary loops and connects testing with robust statistical evaluation.",
+        image: "/projects/design-of-experiments-testbench-v2.webp",
+        imageAlt:
+          "Engineer setting up a technical test bench for a DoE programme",
+      },
+      topics: {
+        title: "From factor space to a robust decision.",
+        description:
+          "RelTest plans, supports and evaluates DoE studies around the technical question. Statistics and product understanding are combined so that experimental points lead to a usable engineering decision.",
+        items: [
+          {
+            id: "question-factor-space",
+            title: "Question & factor space",
+            work:
+              "We clarify responses and evaluation criteria, identify relevant control and noise factors and define technically meaningful levels and design-space limits.",
+            result:
+              "A clearly documented experimental question with responses, factors, constraints and assumptions.",
+            icon: "/graphics/solutions-icons/icon-target.svg",
+          },
+          {
+            id: "design-execution",
+            title: "Design & execution",
+            work:
+              "We select an appropriate design, plan randomisation, replication and blocking, and align the experimental sequence, measurement system and data quality.",
+            result:
+              "An efficient, executable DoE plan with a clear design matrix and controlled workflow.",
+            icon: "/graphics/solutions-icons/icon-factors.svg",
+          },
+          {
+            id: "analysis-model",
+            title: "Analysis & model",
+            work:
+              "Effects and interactions are estimated, models are checked, and results are evaluated together with residuals, model fit and technical plausibility.",
+            result:
+              "A traceable response model showing which factors act on the response, how strongly and in which combinations.",
+            icon: "/graphics/solutions-icons/icon-chart.svg",
+          },
+          {
+            id: "robust-setting-transfer",
+            title: "Robust setting & transfer",
+            work:
+              "We optimise responses, assess sensitivities and noise factors and translate findings into parameter recommendations, further tests or engineering measures.",
+            result:
+              "Recommended settings with a robustness assessment, documented limits and a clear next step.",
+            icon: "/graphics/solutions-icons/icon-optimum.svg",
+          },
+        ],
+      },
+      situations: {
+        title: "When DoE is especially effective",
+        description:
+          "DoE creates the greatest value when test capacity is scarce and several influences need to be understood together.",
+        items: [
+          {
+            title: "Expensive or time-critical tests",
+            text:
+              "Every run consumes samples, test-bench capacity and development time. A justified design focuses effort on highly informative experimental points.",
+          },
+          {
+            title: "Many possible influencing factors",
+            text:
+              "Screening and suitable designs reveal which factors matter and where interactions make one-factor-at-a-time testing misleading.",
+          },
+          {
+            title: "Optimisation under variation",
+            text:
+              "Products and processes must perform beyond the mean. DoE helps identify parameter regions that remain robust to manufacturing, environment and use.",
+          },
+        ],
+      },
+      deliverables: {
+        title: "What the project delivers",
+        description:
+          "Not an isolated statistics file, but a documented basis for testing, optimisation and technical decisions.",
+        items: [
+          {
+            title: "Clarified experimental question",
+            text:
+              "Responses, factors, limits and assumptions are defined unambiguously.",
+          },
+          {
+            title: "Robust experimental plan",
+            text:
+              "Design matrix, workflow, randomisation and replications are justified.",
+          },
+          {
+            title: "Evaluated response model",
+            text:
+              "Effects, interactions, model fit and uncertainty are assessed transparently.",
+          },
+          {
+            title: "Documented decision",
+            text:
+              "Recommendations, limits and next steps are prepared for engineering use.",
+          },
+        ],
+      },
+      knowledge: {
+        title: "Use DoE in the right way for the task.",
+        description:
+          "This Solutions page brings together project support. Method foundations belong in Knowledge; structured capability building belongs to RelTest Education.",
+        links: [
+          {
+            label: "DoE fundamentals",
+            href: "/wissen/design-of-experiments",
+            category: "Knowledge – Understand the method",
+            theme: "neutral",
+          },
+          {
+            label: "DoE consulting",
+            href: "/leistungen/doe-consulting",
+            category: "Solutions – Apply it in a project",
+            theme: "solutions",
+          },
+          {
+            label: "DoE training",
+            href: "/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung",
+            category: "Education – Build team capability",
+            theme: "education",
+          },
+        ],
+      },
+      cta: {
+        title: "Strengthen your experimental programme methodically.",
+        text:
+          "We clarify the technical question, available test framework and the DoE approach that can deliver the required evidence with reasonable effort.",
+      },
+    },
     "langfristige-kooperation": {
       slug: "langfristige-kooperation",
       metaTitle: "Engineering Project Partnership & Responsibility | RelTest",
@@ -955,9 +1231,9 @@ const solutionServicePages: Record<
         title: "Deliver engineering work packages reliably.",
         description:
           "RelTest takes ownership of clearly defined work packages, delivers verifiable results and supports projects beyond isolated analyses. Scope, interfaces, acceptance and responsibility are agreed before the project begins.",
-        image: "/team/engineering-project-partnership-review.webp",
+        image: "/team/engineering-project-partnership-review-v2.webp",
         imageAlt:
-          "Engineering team aligning work packages, interfaces and technical results",
+          "Two engineering professionals reviewing technical data together at a test rig",
       },
       topics: {
         title: "Our project partnership services",

@@ -29,6 +29,69 @@ export function NavigationScrollReset() {
   const pendingPathname = useRef<string | null>(null);
 
   useEffect(() => {
+    function handleRepeatedHashClick(event: MouseEvent) {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.altKey ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.shiftKey
+      ) {
+        return;
+      }
+
+      const target = event.target;
+      const link =
+        target instanceof Element
+          ? target.closest<HTMLAnchorElement>("a[href]")
+          : null;
+
+      if (!link || link.download || (link.target && link.target !== "_self")) {
+        return;
+      }
+
+      const targetUrl = new URL(link.href, window.location.href);
+      const nextPathname = normalizePathname(targetUrl.pathname);
+      const currentPathname = normalizePathname(window.location.pathname);
+
+      if (
+        targetUrl.origin !== window.location.origin ||
+        !targetUrl.hash ||
+        nextPathname !== currentPathname ||
+        targetUrl.hash !== window.location.hash
+      ) {
+        return;
+      }
+
+      let anchorId: string;
+
+      try {
+        anchorId = decodeURIComponent(targetUrl.hash.slice(1));
+      } catch {
+        return;
+      }
+
+      const anchorTarget = document.getElementById(anchorId);
+
+      if (!anchorTarget) {
+        return;
+      }
+
+      // Next.js does not repeat its anchor scroll when pathname and hash are
+      // already identical. Keep the real href, but replay that scroll after
+      // click handlers have had a chance to close the compact navigation.
+      event.preventDefault();
+      window.requestAnimationFrame(() => {
+        anchorTarget.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
+          block: "start",
+        });
+      });
+    }
+
     function handleNavigationClick(event: MouseEvent) {
       if (
         event.defaultPrevented ||
@@ -67,8 +130,13 @@ export function NavigationScrollReset() {
       pendingPathname.current = nextPathname;
     }
 
+    window.addEventListener("click", handleRepeatedHashClick, true);
     window.addEventListener("click", handleNavigationClick);
-    return () => window.removeEventListener("click", handleNavigationClick);
+
+    return () => {
+      window.removeEventListener("click", handleRepeatedHashClick, true);
+      window.removeEventListener("click", handleNavigationClick);
+    };
   }, []);
 
   useLayoutEffect(() => {

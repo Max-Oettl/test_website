@@ -1,7 +1,9 @@
 import Link from "next/link";
 
+import { GlossaryDirectory } from "../../_components/glossary-directory";
 import { getGlossary } from "../../_content/knowledge-content";
 import { localizeHref, resolveLocale } from "../../_i18n/config";
+import { getSiteSearchEntries } from "../../_lib/site-search-index";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
 
 type Props = { params: Promise<{ lang: string }> };
@@ -23,13 +25,7 @@ export default async function GlossaryPage({ params }: Props) {
   const locale = await resolveLocale(params);
   const isGerman = locale === "de";
   const entries = [...getGlossary(locale)].sort((a, b) => a.term.localeCompare(b.term, locale));
-  const groups = entries.reduce((result, entry) => {
-    const letter = entry.term[0].toLocaleUpperCase(locale);
-    const letterEntries = result.get(letter) ?? [];
-    letterEntries.push(entry);
-    result.set(letter, letterEntries);
-    return result;
-  }, new Map<string, typeof entries>());
+  const siteEntries = getSiteSearchEntries(locale);
 
   return (
     <>
@@ -51,29 +47,11 @@ export default async function GlossaryPage({ params }: Props) {
       </header>
 
       <main className="mx-auto max-w-5xl px-6 py-14 font-winnstein-body lg:px-8 lg:py-20">
-        <nav className="flex flex-wrap gap-x-6 gap-y-3 border-b border-[var(--solution-marine-20)] pb-7" aria-label={isGerman ? "Glossar-Buchstaben" : "Glossary letters"}>
-          {[...groups.keys()].map((letter) => (
-            <a key={letter} href={`#glossar-${letter}`} className="font-winnstein-display text-lg font-semibold text-[var(--solution-steel-cyan)] underline decoration-transparent underline-offset-8 hover:decoration-current">
-              {letter}
-            </a>
-          ))}
-        </nav>
-
-        {[...groups.entries()].map(([letter, letterEntries]) => (
-          <section key={letter} id={`glossar-${letter}`} className="scroll-mt-28 border-b border-[var(--solution-marine-20)] py-12">
-            <div className="grid gap-8 sm:grid-cols-[80px_1fr]">
-              <h2 className="font-winnstein-display text-5xl font-semibold text-[var(--solution-steel-cyan)]">{letter}</h2>
-              <dl>
-                {letterEntries.map((entry, index) => (
-                  <div key={entry.term} className={`${index ? "border-t border-[var(--solution-marine-20)]" : ""} grid gap-3 py-6 md:grid-cols-[minmax(190px,.6fr)_minmax(0,1.4fr)] md:gap-10`}>
-                    <dt className="font-winnstein-display text-xl font-semibold text-[var(--solution-marine)]">{entry.term}</dt>
-                    <dd className="text-base leading-7 text-[var(--solution-marine-80)]">{entry.definition}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </section>
-        ))}
+        <GlossaryDirectory
+          entries={entries}
+          siteEntries={siteEntries}
+          locale={locale}
+        />
       </main>
     </>
   );

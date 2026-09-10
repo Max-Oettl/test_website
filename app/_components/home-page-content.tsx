@@ -302,6 +302,7 @@ const contentByLocale = {
     referencesCta: "Alle Referenzen ansehen",
     industriesTitle: "Zuverlässigkeit kennt keine Branchengrenzen",
     industryCta: "Entdecken",
+    industriesOverviewCta: "Zur Branchenübersicht",
   },
   en: {
     supportTitle: "Plan and demonstrate reliability.",
@@ -558,6 +559,7 @@ const contentByLocale = {
     referencesCta: "View all references",
     industriesTitle: "Reliability knows no industry boundaries",
     industryCta: "Explore",
+    industriesOverviewCta: "View industry overview",
   },
 } as const;
 
@@ -982,6 +984,17 @@ export function HomePageContent({
                 </span>
               </Link>
             ))}
+          </div>
+          <div className="mt-8 flex justify-end">
+            <Link
+              href={localizeHref(locale, "/branchen")}
+              className="brand-action group inline-flex min-h-12 w-full items-center justify-center gap-4 bg-brand-marine px-7 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-white sm:w-auto"
+            >
+              {content.industriesOverviewCta}
+              <span className="transition-transform group-hover:translate-x-1">
+                <ArrowIcon />
+              </span>
+            </Link>
           </div>
         </div>
       </section>

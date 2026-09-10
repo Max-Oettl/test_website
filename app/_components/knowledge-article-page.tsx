@@ -1,30 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const knowledgeHeaderImages = {
-  de: {
-    zuverlaessigkeitstechnik: { src: "/graphics/wissen/technical-plots/reliability-engineering-motor-de.png", width: 1536, height: 1024, alt: "Zuverlässigkeitstechnik vom technischen Anforderungsdokument über Prüfobjekt und Prüfdaten bis zur abgesicherten Entscheidung" },
-    planung: { src: "/wissen/uebersicht/planung-de.png", width: 1672, height: 941, alt: "Diagramm zum Entscheidungsraum der Zuverlässigkeitsplanung mit Zuverlässigkeitskosten, Folgekosten und akzeptablen Kosten" },
-    schwachstellenanalyse: { src: "/wissen/uebersicht/schwachstellenanalyse-de.png", width: 1672, height: 941, alt: "Badewannenkurve zur Schwachstellenanalyse mit Frühausfällen, Zufallsausfällen und Verschleißausfällen" },
-    erprobung: { src: "/wissen/uebersicht/erprobung-de.png", width: 2172, height: 724, alt: "Vergleich von Worst-Case-, einsatzbezogenen und synthetischen Lastkollektiven für die Zuverlässigkeitserprobung" },
-    absicherung: { src: "/wissen/uebersicht/absicherung-de.png", width: 1672, height: 941, alt: "Technisches Diagramm zur Zuverlässigkeitsabsicherung vom Bauteilmodell bis zum Systemnachweis" },
-    prognosen: { src: "/wissen/uebersicht/reliability-prediction-overview.png", width: 760, height: 680, alt: "Veranschaulichung einer Zuverlässigkeitsprognose aus Versuchs- und Felddaten mit statistischem Lebensdauermodell" },
-  },
-  en: {
-    zuverlaessigkeitstechnik: { src: "/graphics/wissen/technical-plots/reliability-engineering-motor-en.png", width: 1536, height: 1024, alt: "Reliability engineering from technical requirements through test object and test data to a substantiated decision" },
-    planung: { src: "/wissen/uebersicht/planung-en.png", width: 1672, height: 941, alt: "Reliability planning decision-space diagram comparing reliability costs, failure costs and acceptable customer costs" },
-    schwachstellenanalyse: { src: "/wissen/uebersicht/schwachstellenanalyse-en.png", width: 1672, height: 941, alt: "Bathtub curve for weak-point analysis showing early, random and wear-out failures" },
-    erprobung: { src: "/wissen/uebersicht/erprobung-en.png", width: 1748, height: 900, alt: "Comparison of worst-case, use-specific and synthetic load profiles for reliability testing" },
-    absicherung: { src: "/wissen/uebersicht/absicherung-en.png", width: 1672, height: 941, alt: "Technical reliability assurance diagram from component models to system verification" },
-    prognosen: { src: "/wissen/uebersicht/reliability-prediction-overview.png", width: 760, height: 680, alt: "Reliability prediction based on test and field data using a statistical lifetime model" },
-  },
-} as const;
-
 import type { KnowledgeArticle, KnowledgeMedia } from "../_content/knowledge-content";
 import { getKnowledgeArticles } from "../_content/knowledge-content";
+import {
+  knowledgeProcessImages,
+  type KnowledgeImageAsset,
+} from "../_content/knowledge-image-assets";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { KnowledgeMediaPlaceholder } from "./knowledge-media-placeholder";
 import { SectionRailNavigation } from "./section-rail-navigation";
+
+const specialKnowledgeHeaderImages: Record<Locale, Record<string, KnowledgeImageAsset>> = {
+  de: {
+    zuverlaessigkeitstechnik: {
+      src: "/graphics/wissen/technical-plots/reliability-engineering-motor-de.png",
+      width: 1448,
+      height: 1086,
+      alt: "Zuverlässigkeitstechnik vom technischen Anforderungsdokument über Prüfobjekt und Prüfdaten bis zur abgesicherten Entscheidung",
+    },
+  },
+  en: {
+    zuverlaessigkeitstechnik: {
+      src: "/graphics/wissen/technical-plots/reliability-engineering-motor-en.png",
+      width: 1448,
+      height: 1086,
+      alt: "Reliability engineering from technical requirements through test object and test data to a substantiated decision",
+    },
+  },
+};
 
 type Props = {
   article: KnowledgeArticle;
@@ -50,7 +53,10 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
     .filter((item): item is KnowledgeArticle => Boolean(item));
   const isQuantitative = ["prognosen", "design-of-experiments", "erprobung"].includes(article.slug);
   const isDiagnostic = ["schwachstellenanalyse", "risikomanagement"].includes(article.slug);
-  const headerImage = knowledgeHeaderImages[locale][article.slug as keyof (typeof knowledgeHeaderImages)[Locale]];
+  const hasWideKnowledgeHeader = article.slug === "zuverlaessigkeitstechnik";
+  const headerImage =
+    specialKnowledgeHeaderImages[locale][article.slug] ??
+    knowledgeProcessImages[locale][article.slug];
   const sectionIdPrefix = `knowledge-${article.slug}`;
   const sectionNavigationItems = article.sections.map((section, index) => ({
     href: `#${sectionIdPrefix}-${index + 1}`,
@@ -61,8 +67,14 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
   return (
     <>
       <header className="bg-[var(--solution-marine)] font-winnstein-body text-white">
-        <div className="mx-auto grid max-w-[1440px] gap-10 px-6 py-14 lg:grid-cols-[minmax(0,.92fr)_minmax(360px,.68fr)] lg:items-center lg:px-12 lg:py-20">
-          <div>
+        <div
+          className={
+            hasWideKnowledgeHeader
+              ? "mx-auto max-w-[1440px] px-6 py-14 lg:px-12 lg:py-16"
+              : "mx-auto grid max-w-[1440px] gap-10 px-6 py-14 lg:grid-cols-[minmax(0,.92fr)_minmax(360px,.68fr)] lg:items-center lg:px-12 lg:py-20"
+          }
+        >
+          <div className={hasWideKnowledgeHeader ? "max-w-6xl" : undefined}>
             <Link
               href={localizeHref(locale, "/wissen")}
               className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)] underline decoration-transparent underline-offset-8 transition hover:decoration-current"
@@ -80,15 +92,30 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
             </p>
           </div>
           {headerImage ? (
-            <figure className="relative flex min-h-[240px] w-full max-w-[560px] items-center justify-center justify-self-center lg:min-h-[300px]">
+            <figure
+              className={
+                hasWideKnowledgeHeader
+                  ? "relative mt-10 aspect-[4/3] w-full overflow-hidden sm:aspect-[16/9] lg:mt-12 lg:aspect-[2.2/1]"
+                  : "relative flex min-h-[240px] w-full max-w-[560px] items-center justify-center justify-self-center lg:min-h-[300px]"
+              }
+            >
               <Image
                 src={headerImage.src}
                 alt={headerImage.alt}
                 width={headerImage.width}
                 height={headerImage.height}
-                sizes="(min-width: 1024px) 48vw, 100vw"
+                sizes={
+                  hasWideKnowledgeHeader
+                    ? "(min-width: 1440px) 1344px, (min-width: 1024px) calc(100vw - 6rem), 100vw"
+                    : "(min-width: 1024px) 48vw, 100vw"
+                }
                 preload
-                className="h-auto max-h-[360px] w-full object-contain [filter:brightness(1.06)_invert(1)_hue-rotate(180deg)] mix-blend-screen"
+                quality={90}
+                className={
+                  hasWideKnowledgeHeader
+                    ? "h-full w-full object-cover [filter:brightness(1.06)_invert(1)_hue-rotate(180deg)] mix-blend-screen"
+                    : "h-auto max-h-[360px] w-full object-contain [filter:brightness(1.06)_invert(1)_hue-rotate(180deg)] mix-blend-screen"
+                }
               />
             </figure>
           ) : (

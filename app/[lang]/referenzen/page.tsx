@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { BrandLineWatermark } from "../../_components/brand-line-watermark";
+import { PageContextBar } from "../../_components/page-context-bar";
 import { PageClosingCta } from "../../_components/page-closing-cta";
 import {
   localizeHref,
@@ -203,7 +204,14 @@ export default async function ReferencesPage({ params }: Props) {
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <BrandLineWatermark placement="expertise" />
         <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-          <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
+          <Link
+            href={localizeHref(locale, "/expertise")}
+            className="inline-flex w-fit items-center gap-3 font-winnstein-display text-sm font-bold text-brand-steel-cyan transition-colors hover:text-white"
+          >
+            <span aria-hidden="true">←</span>
+            Expertise
+          </Link>
+          <p className="mt-8 font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
             {copy.hero.eyebrow}
           </p>
           <h1 className="mt-5 max-w-5xl font-winnstein-display text-4xl leading-[1.08] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.8rem]">
@@ -215,6 +223,13 @@ export default async function ReferencesPage({ params }: Props) {
         </div>
         <div className="h-2 bg-brand-steel-cyan" />
       </section>
+
+      <PageContextBar
+        locale={locale}
+        sectionHref="/expertise"
+        sectionLabel="Expertise"
+        currentLabel={copy.hero.title}
+      />
 
       <section className="bg-white px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">

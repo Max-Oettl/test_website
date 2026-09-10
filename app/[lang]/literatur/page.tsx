@@ -1,8 +1,14 @@
 import Link from "next/link";
 
 import { AiAwareImage as Image } from "../../_components/ai-aware-image";
-import { getSiteContent } from "../../_content/site-content";
+import { PageContextBar } from "../../_components/page-context-bar";
 import { PageClosingCta } from "../../_components/page-closing-cta";
+import { PublicationAccordion } from "../../_components/publication-accordion";
+import {
+  berndPublications,
+  berndUniversityProfileUrl,
+} from "../../_content/bernd-publications";
+import { getSiteContent } from "../../_content/site-content";
 import { localizeHref, resolveLocale, type Locale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
 
@@ -13,6 +19,11 @@ type Props = {
 const literatureCopy = {
   de: {
     sectionTitle: "Zuverlässigkeitstests und technische Absicherung",
+    publicationsEyebrow: "Publikationsprofil",
+    publicationsTitle: "Publikationen von Prof. Dr.-Ing. Bernd Bertsche",
+    publicationsLead:
+      "Bernd Bertsches Fachbücher, Buchbeiträge und wissenschaftliche Veröffentlichungen bilden die fachliche Entwicklung der Zuverlässigkeitstechnik über mehrere Jahrzehnte ab. Die Auswahl ist hier zentral gebündelt und thematisch aufklappbar.",
+    profileCta: "Zum Profil von Bernd Bertsche",
     ctaTitle: "Fachfrage aus Ihrem Projekt klären",
     ctaText:
       "Wir übertragen die Methodik auf Ihre konkrete Produkt-, Prüf- oder Datenfrage.",
@@ -20,6 +31,11 @@ const literatureCopy = {
   },
   en: {
     sectionTitle: "Reliability testing and technical assurance",
+    publicationsEyebrow: "Publication profile",
+    publicationsTitle: "Publications by Prof. Dr.-Ing. Bernd Bertsche",
+    publicationsLead:
+      "Bernd Bertsche's books, book contributions and scientific publications trace the development of reliability engineering across several decades. This central selection can be expanded by publication type.",
+    profileCta: "View Bernd Bertsche's profile",
     ctaTitle: "Clarify a technical question from your project",
     ctaText:
       "We apply the methodology to your specific product, testing or data challenge.",
@@ -61,6 +77,7 @@ export default async function LiteraturePage({ params }: Props) {
   const content = getSiteContent(locale);
   const page = content.pages.literature;
   const copy = literatureCopy[locale];
+  const publications = berndPublications[locale];
 
   return (
     <main className="font-winnstein-body text-brand-marine">
@@ -68,7 +85,14 @@ export default async function LiteraturePage({ params }: Props) {
         <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:64px_64px]" />
         <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[0.9fr_1.1fr]">
           <div className="flex flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-            <h1 className="max-w-3xl font-winnstein-display text-4xl font-extrabold sm:text-5xl lg:text-[3.6rem]">
+            <Link
+              href={localizeHref(locale, "/expertise")}
+              className="inline-flex w-fit items-center gap-3 font-winnstein-display text-sm font-bold text-brand-steel-cyan transition-colors hover:text-white"
+            >
+              <span aria-hidden="true">←</span>
+              Expertise
+            </Link>
+            <h1 className="mt-10 max-w-3xl font-winnstein-display text-4xl font-extrabold sm:text-5xl lg:text-[3.6rem]">
               {page.intro.title}
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-[1.55] text-white/78">
@@ -90,6 +114,13 @@ export default async function LiteraturePage({ params }: Props) {
         </div>
         <div className="h-2 bg-brand-steel-cyan" />
       </section>
+
+      <PageContextBar
+        locale={locale}
+        sectionHref="/expertise"
+        sectionLabel="Expertise"
+        currentLabel={page.intro.title}
+      />
 
       <section className="bg-white px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
@@ -152,6 +183,64 @@ export default async function LiteraturePage({ params }: Props) {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section
+        id="bernd-bertsche-publications"
+        className="scroll-mt-36 border-y border-brand-marine/16 bg-brand-steel-cyan-10 px-5 py-16 sm:px-6 lg:px-8 lg:py-24"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-7 lg:grid-cols-[minmax(0,0.74fr)_minmax(0,1.26fr)] lg:items-end lg:gap-14">
+            <div>
+              <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
+                {copy.publicationsEyebrow}
+              </p>
+              <h2 className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
+                {copy.publicationsTitle}
+              </h2>
+            </div>
+            <div className="lg:border-l lg:border-brand-marine/18 lg:pl-10">
+              <p className="max-w-3xl text-base leading-8 text-brand-marine/72">
+                {copy.publicationsLead}
+              </p>
+              <Link
+                href={localizeHref(locale, "/ueber-uns/bernd-bertsche")}
+                className="mt-6 inline-flex items-center gap-4 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-steel-cyan"
+              >
+                {copy.profileCta}
+                <ArrowIcon />
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <PublicationAccordion
+              defaultOpen
+              locale={locale}
+              title={publications.booksTitle}
+              lead={publications.booksLead}
+              items={publications.books}
+            />
+            <PublicationAccordion
+              locale={locale}
+              title={publications.articlesTitle}
+              lead={publications.articlesLead}
+              items={publications.articles}
+            />
+          </div>
+
+          <p className="mt-10 max-w-5xl border-l-2 border-brand-steel-cyan pl-5 text-sm leading-7 text-brand-marine/64">
+            {publications.sourceNote}{" "}
+            <Link
+              href={berndUniversityProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-brand-marine underline decoration-brand-steel-cyan underline-offset-4 transition-colors hover:text-brand-steel-cyan"
+            >
+              {publications.sourceLabel}
+            </Link>
+          </p>
         </div>
       </section>
 

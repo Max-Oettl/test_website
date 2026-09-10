@@ -398,54 +398,71 @@ function IndustryEditorialFlow({ locale, content }: Props) {
               ))}
             </div>
 
-            <div className="mt-10 border-t border-brand-marine/18 pt-8 sm:ml-[5.5rem]">
-              <h3 className="font-winnstein-display text-xl font-bold">{labels.knowledge}</h3>
-              <p className="mt-3 max-w-3xl text-base leading-7 text-brand-marine/68">
-                {editorial.knowledgeLead}
-              </p>
-              <ul className="mt-5 flex flex-wrap gap-x-7 gap-y-4">
-                {editorial.knowledge.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={localizeHref(locale, item.href)}
-                      className="inline-flex items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold hover:text-brand-steel-cyan"
-                    >
-                      {item.title}
-                      <ArrowIcon />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="mt-12 border-t border-brand-marine/18 pt-9 sm:ml-[5.5rem]">
-              <h3 className="font-winnstein-display text-2xl font-bold">{labels.questions}</h3>
-              <div className="mt-5 border-t border-brand-marine/16">
-                {content.questions.map((item, index) => (
-                  <details key={item.question} open={index === 0} className="group border-b border-brand-marine/16">
-                    <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-5 font-winnstein-display text-base leading-7 font-bold marker:hidden">
-                      <span>{item.question}</span>
-                      <span aria-hidden="true" className="text-brand-steel-cyan group-open:rotate-45">+</span>
-                    </summary>
-                    <p className="max-w-3xl pb-6 text-base leading-8 text-brand-marine/70">
-                      {item.answer}
-                    </p>
-                  </details>
-                ))}
+            <div className="mt-12 border-y border-brand-marine/18 bg-brand-steel-cyan-10 px-5 py-9 sm:ml-[5.5rem] sm:px-8 sm:py-10">
+              <div className="border-l-4 border-brand-steel-cyan pl-5 sm:pl-6">
+                <h3 className="font-winnstein-display text-xl font-bold">
+                  {labels.knowledge}
+                </h3>
+                <p className="mt-3 max-w-3xl text-base leading-7 text-brand-marine/68">
+                  {editorial.knowledgeLead}
+                </p>
+                <ul className="mt-5 flex flex-wrap gap-x-7 gap-y-4">
+                  {editorial.knowledge.map((item) => (
+                    <li key={item.href}>
+                      <Link
+                        href={localizeHref(locale, item.href)}
+                        className="inline-flex items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold hover:text-brand-steel-cyan"
+                      >
+                        {item.title}
+                        <ArrowIcon />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
 
-            <div className="mt-10 border-t border-brand-marine/18 pt-8 sm:ml-[5.5rem]">
-              <p className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
-                {labels.context}
-              </p>
-              <p className="mt-3 max-w-4xl text-base leading-8 text-brand-marine/70">
-                <strong className="font-winnstein-display text-brand-marine">{content.contextTitle}.</strong>{" "}
-                {content.contextText}
-              </p>
-              <p className="mt-4 text-sm leading-7 text-brand-marine/60">
-                {content.contextTerms.join(" · ")}
-              </p>
+              <div className="mt-10 border-t border-brand-marine/18 pt-8">
+                <h3 className="font-winnstein-display text-2xl font-bold">
+                  {labels.questions}
+                </h3>
+                <div className="mt-5 border-t border-brand-marine/16">
+                  {content.questions.map((item, index) => (
+                    <details
+                      key={item.question}
+                      open={index === 0}
+                      className="group border-b border-brand-marine/16"
+                    >
+                      <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-5 font-winnstein-display text-base leading-7 font-bold marker:hidden">
+                        <span>{item.question}</span>
+                        <span
+                          aria-hidden="true"
+                          className="text-brand-steel-cyan group-open:rotate-45"
+                        >
+                          +
+                        </span>
+                      </summary>
+                      <p className="max-w-3xl pb-6 text-base leading-8 text-brand-marine/70">
+                        {item.answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-10 border-t border-brand-marine/18 pt-8">
+                <p className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+                  {labels.context}
+                </p>
+                <p className="mt-3 max-w-4xl text-base leading-8 text-brand-marine/70">
+                  <strong className="font-winnstein-display text-brand-marine">
+                    {content.contextTitle}.
+                  </strong>{" "}
+                  {content.contextText}
+                </p>
+                <p className="mt-4 text-sm leading-7 text-brand-marine/60">
+                  {content.contextTerms.join(" · ")}
+                </p>
+              </div>
             </div>
           </section>
         </article>

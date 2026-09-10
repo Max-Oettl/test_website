@@ -214,6 +214,15 @@ Für relevante Bilder gilt:
 - Hero-Bilder priorisieren, wenn sie LCP-relevant sind
 - keine Originalfotos mit unnötig hoher Auflösung direkt ausliefern
 - Dateinamen beschreibend wählen
+- lokal gepflegte Raster- und SVG-Grafiken, die regelmäßig ersetzt werden,
+  statisch importieren; Next.js erzeugt dadurch inhaltsbasierte Asset-URLs und
+  verhindert, dass Browser oder CDNs unter einer alten URL eine veraltete
+  Bildversion zeigen
+- mehrfach verwendete Fachgrafiken aus einer gemeinsamen Asset-Zuordnung
+  beziehen; Übersicht und Detailseiten dürfen dafür keine getrennten
+  Bildtabellen pflegen
+- nach einem Bildaustausch sowohl die direkte Datei als auch die gerenderte
+  `/_next/static/media/`- beziehungsweise `/_next/image`-URL prüfen
 
 ### 4.6 Akzeptanzkriterien vor Go-live
 
@@ -226,6 +235,19 @@ Vor Go-live sollte gelten:
 - LCP-Probleme der Startseite sind analysiert
 - keine unnötigen Drittanbieter-Skripte
 - mobile Startseite lädt spürbar schneller als die alte WordPress-Seite
+
+### 4.7 Einwilligung und externe Inhalte
+
+Bei neuen Cookies, Trackern oder eingebetteten Drittanbieter-Inhalten wird vor
+der Veröffentlichung geprüft:
+
+- technisch notwendige und optionale Kategorien sind klar getrennt
+- optionale Skripte, Iframes und Netzwerkverbindungen starten erst nach Zustimmung
+- Ablehnen und Zustimmen sind gleich leicht erreichbar
+- eine gespeicherte Auswahl kann jederzeit über den Footer geändert oder widerrufen werden
+- Widerruf entfernt bereits geladene optionale Einbettungen für die weitere Nutzung
+- Dialog, Einstellungen und blockierte Inhalte funktionieren auf Deutsch und Englisch
+- Datenschutzerklärung, Speicherdauer und tatsächlich eingesetzte Dienste stimmen mit der Implementierung überein
 
 ## 5. SEO-Reviewer auf Abruf
 

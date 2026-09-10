@@ -12,7 +12,7 @@ export function SiteBrandLogo({ placement }: SiteBrandLogoProps) {
         alt="RelTest"
         fill
         className="object-contain object-left"
-        sizes="(min-width: 640px) 208px, 168px"
+        sizes="(min-width: 861px) 236px, (min-width: 640px) 176px, 168px"
       />
     );
   }

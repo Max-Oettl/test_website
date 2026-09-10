@@ -15,7 +15,10 @@ const precompressedImagePaths = new Set([
   "/industries/halbleiterindustrie.webp",
   "/industries/maschinenbau.webp",
   "/industries/medical-device-reliability-testing.webp",
+  "/projects/design-of-experiments-testbench-v2.webp",
   "/graphics/knowledge/testing-realistic.webp",
+  "/graphics/news/reliability-webinar-setup.webp",
+  "/graphics/news/rams-student-paper-award.webp",
   "/team/home-engineering-consulting.webp",
   "/team/reliability-engineering-seminar.webp",
 ]);

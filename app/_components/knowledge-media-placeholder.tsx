@@ -19,8 +19,15 @@ export function KnowledgeMediaPlaceholder({
   preload = false,
   locale = "de",
 }: Props) {
-  const aspectRatio =
-    media.ratio === "wide"
+  const aspectRatio = media.mobileSrc
+    ? media.ratio === "wide"
+      ? "aspect-[38/71] sm:aspect-[16/7]"
+      : media.ratio === "two-one"
+        ? "aspect-[38/71] sm:aspect-[2/1]"
+        : media.ratio === "sixteen-nine"
+          ? "aspect-[38/71] sm:aspect-video"
+          : "aspect-[38/71] sm:aspect-[4/3]"
+    : media.ratio === "wide"
       ? "aspect-[16/7]"
       : media.ratio === "two-one"
         ? "aspect-[2/1]"
@@ -62,11 +69,22 @@ export function KnowledgeMediaPlaceholder({
                 ? "(max-width: 1024px) 100vw, 960px"
                 : "(max-width: 1024px) 100vw, 560px"
             }
-            className="object-contain"
+            className={`object-contain ${media.mobileSrc ? "hidden sm:block" : ""}`}
             preload={preload}
             quality={90}
             disclosureLocale={locale}
           />
+          {media.mobileSrc ? (
+            <Image
+              src={media.mobileSrc}
+              alt={media.alt ?? media.label}
+              fill
+              sizes="(max-width: 639px) 100vw, 1px"
+              className="object-contain sm:hidden"
+              quality={90}
+              disclosureLocale={locale}
+            />
+          ) : null}
         </div>
         {media.caption ? (
           <figcaption

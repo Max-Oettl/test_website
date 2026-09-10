@@ -51,13 +51,28 @@ function ArrowIcon() {
 
 export function SolutionServiceDetailPage({ locale, page }: Props) {
   const text = labels[locale];
+  const isDoePage = page.slug === "design-of-experiments";
+  const primaryHeroCta = isDoePage
+    ? locale === "de"
+      ? "DoE-Projekt besprechen"
+      : "Discuss your DoE project"
+    : text.discuss;
+  const secondaryHeroCta = isDoePage
+    ? locale === "de"
+      ? "Leistungsbausteine"
+      : "Service modules"
+    : text.overview;
 
   return (
     <main className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:64px_64px]" />
-        <div className="absolute -left-24 bottom-0 h-72 w-72 rounded-full border border-brand-steel-cyan/20" />
-        <div className="absolute -left-8 bottom-16 h-48 w-48 rounded-full border border-brand-steel-cyan/15" />
+        {isDoePage ? null : (
+          <>
+            <div className="absolute -left-24 bottom-0 h-72 w-72 rounded-full border border-brand-steel-cyan/20" />
+            <div className="absolute -left-8 bottom-16 h-48 w-48 rounded-full border border-brand-steel-cyan/15" />
+          </>
+        )}
 
         <div className="relative mx-auto grid max-w-7xl xl:grid-cols-[56%_44%]">
           <div className="flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
@@ -72,14 +87,14 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
                 href={localizeHref(locale, "/kontakt")}
                 className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
               >
-                {text.discuss}
+                {primaryHeroCta}
                 <ArrowIcon />
               </Link>
               <Link
                 href="#leistungsbausteine"
                 className="brand-action brand-action-outline inline-flex min-h-14 items-center justify-between gap-5 border border-white/35 px-6 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
               >
-                {text.overview}
+                {secondaryHeroCta}
                 <ArrowIcon />
               </Link>
             </div>
@@ -91,6 +106,7 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
               alt={page.hero.imageAlt}
               fill
               preload
+              quality={90}
               sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
               className="object-cover object-center"
             />
@@ -141,10 +157,10 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
             </p>
           </div>
 
-          <div className="hidden grid-cols-[minmax(15rem,0.8fr)_minmax(0,1.12fr)_minmax(0,1fr)] border-x border-b border-brand-marine/15 bg-brand-marine-10 px-8 py-4 text-sm font-bold text-brand-marine/65 xl:grid">
+          <div className="hidden grid-cols-[minmax(15rem,0.8fr)_minmax(0,1.12fr)_minmax(0,1fr)] border-x border-b border-brand-marine/15 bg-brand-marine-10 py-4 text-sm font-bold text-brand-marine/65 xl:grid">
             <span />
-            <span>{text.work}</span>
-            <span>{text.result}</span>
+            <span className="px-8">{text.work}</span>
+            <span className="px-8">{text.result}</span>
           </div>
 
           <div className="border-l border-brand-marine/15">
@@ -259,18 +275,42 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
             </p>
           </div>
           <div className="grid border-l border-brand-marine/15 sm:grid-cols-3">
-            {page.knowledge.links.map((link) => (
-              <Link
-                key={link.href}
-                href={localizeHref(locale, link.href)}
-                className="flex min-h-24 min-w-0 items-center justify-between gap-4 border-r border-y border-brand-marine/15 px-5 py-4 font-winnstein-display text-sm font-bold transition-colors hover:bg-brand-steel-cyan-10 sm:border-y-0"
-              >
-                <span className="min-w-0 hyphens-auto [overflow-wrap:anywhere]">
-                  {link.label}
-                </span>
-                <ArrowIcon />
-              </Link>
-            ))}
+            {page.knowledge.links.map((link) => {
+              const isEducation = link.theme === "education";
+              const isSolutions = link.theme === "solutions";
+
+              return (
+                <Link
+                  key={link.href}
+                  href={localizeHref(locale, link.href)}
+                  className={`flex min-h-24 min-w-0 items-center justify-between gap-4 border-r border-y border-brand-marine/15 px-5 py-4 font-winnstein-display text-sm font-bold transition-colors sm:border-y-0 ${
+                    isEducation
+                      ? "hover:bg-brand-education/[0.07] hover:text-brand-education"
+                      : "hover:bg-brand-steel-cyan-10"
+                  }`}
+                >
+                  <span className="min-w-0">
+                    {link.category ? (
+                      <span
+                        className={`mb-2 block text-[0.68rem] leading-5 font-bold tracking-[0.06em] ${
+                          isEducation
+                            ? "text-brand-education"
+                            : isSolutions
+                              ? "text-brand-steel-cyan"
+                              : "text-brand-marine/58"
+                        }`}
+                      >
+                        {link.category}
+                      </span>
+                    ) : null}
+                    <span className="block hyphens-auto [overflow-wrap:anywhere]">
+                      {link.label}
+                    </span>
+                  </span>
+                  <ArrowIcon />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

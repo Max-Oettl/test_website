@@ -2,8 +2,9 @@ import Link from "next/link";
 
 import { AiAwareImage as Image } from "../../_components/ai-aware-image";
 import { BrandLineWatermark } from "../../_components/brand-line-watermark";
-import { referenceLogos } from "../../_content/site-content";
 import { PageClosingCta } from "../../_components/page-closing-cta";
+import { getSummaryIndustries } from "../../_content/industry-overview-content";
+import { getSiteContent, referenceLogos } from "../../_content/site-content";
 import { localizeHref, resolveLocale, type Locale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
 
@@ -37,18 +38,7 @@ const expertiseContent = {
     intro: {
       title: "Industrieerfahrung, Forschung und Fachliteratur.",
       description:
-        "RelTest arbeitet in anspruchsvollen technischen Kontexten. Diese Seite bündelt ausgewählte Vertrauenssignale: industrielle Referenzen, veröffentlichte Fachbücher, persönliche Einblicke und Branchen, in denen Zuverlässigkeit messbar entscheidend ist.",
-    },
-    proof: {
-      eyebrow: "Kompetenz in der Anwendung",
-      title: "Daten in technische Entscheidungen übersetzen.",
-      description:
-        "RelTest verbindet technische Bewertung, methodische Diskussion und nachvollziehbare Ergebnisse. Entscheidend ist nicht die einzelne Methode, sondern ihr belastbarer Einsatz im Projekt.",
-      items: [
-        "Zuverlässigkeit technisch bewerten",
-        "Ergebnisse entscheidbar machen",
-        "Fachwissen nachvollziehbar belegen",
-      ],
+        "RelTest arbeitet in anspruchsvollen technischen Kontexten. Industrielle Referenzen, veröffentlichte Fachbücher, persönliche Einblicke und konkrete Branchenanwendungen zeigen, wie aus Methoden und Daten belastbare technische Entscheidungen werden.",
       imageAlt:
         "Technisches Meeting mit Zuverlässigkeitsdashboard, Risikomatrix und Projektdaten",
     },
@@ -59,36 +49,17 @@ const expertiseContent = {
         "Die Referenzen zeigen, dass RelTest dort arbeitet, wo Produktzuverlässigkeit, Lebensdauer, Erprobung und belastbare Nachweise echte Projektwirkung haben.",
       cta: "Alle Referenzen ansehen",
       linkLabel: "Referenzwebsite öffnen",
-      imageAlt:
-        "Industriegruppe bespricht Zuverlässigkeitsdaten im Prüfumfeld",
     },
     books: {
       eyebrow: "Literatur",
       title: "Zwei Springer-Fachbücher",
       cta: "Zur Literaturseite",
-      items: [
-        {
-          title:
-            "Zuverlässigkeitstests für eine effiziente und entwicklungsbegleitende Absicherung",
-          subtitle: "Testplanung, Testauswertung und Zuverlässigkeitsnachweis",
-          cover: "/book-reliability-tests-cover.webp",
-          href: "https://link.springer.com/book/9783662729663",
-          alt: "Cover des Springer-Fachbuchs Zuverlässigkeitstests für eine effiziente und entwicklungsbegleitende Absicherung",
-        },
-        {
-          title: "Zuverlässigkeit im Fahrzeug- und Maschinenbau",
-          subtitle: "Ermittlung von Bauteil- und System-Zuverlässigkeiten",
-          cover: "/book-reliability-cover.jpg",
-          href: "https://link.springer.com/book/10.1007/978-3-662-65024-0",
-          alt: "Cover des Springer-Fachbuchs Zuverlässigkeit im Fahrzeug- und Maschinenbau",
-        },
-      ],
     },
     podcast: {
       eyebrow: "Podcast",
       title: "Kevin Lucan im Ingenieurshelden-Podcast",
       description:
-        "Im Podcast der Ingenieurshelden spricht Geschäftsführer Dr.-Ing. Kevin Lucan über Werdegang, technische Verantwortung und Engineering-Mindset. Für Besucher ist das ein guter erster Kontakt mit der Person hinter RelTest.",
+        "Im Podcast der Ingenieurshelden spricht Geschäftsführer Dr.-Ing. Kevin Lucan über Werdegang, technische Verantwortung und Engineering-Mindset. Besucher erhalten so einen persönlichen Eindruck von einem der Gründer von RelTest.",
       cta: "Podcast anhören",
       href: "https://ingenieurshelden.de/podcast-fuer-ingenieure-und-ingenieurinnen/kevin-lucan",
       imageAlt:
@@ -102,14 +73,6 @@ const expertiseContent = {
       cta: "Alle Branchen im Detail entdecken",
       imageAlt:
         "Remote-Review mit geteiltem Zuverlässigkeitsdashboard und drei Ingenieuren",
-      items: [
-        "Automotive",
-        "Maschinenbau",
-        "Elektronik",
-        "Medizintechnik",
-        "Erneuerbare Energien",
-        "Luft- und Raumfahrt",
-      ],
     },
     cta: {
       title: "Expertise für Ihr Projekt",
@@ -126,18 +89,7 @@ const expertiseContent = {
     intro: {
       title: "Industrial experience, research and technical literature.",
       description:
-        "RelTest works in demanding technical environments. This page brings together selected trust signals: industrial references, published technical books, personal insights and industries where reliability has measurable impact.",
-    },
-    proof: {
-      eyebrow: "Expertise in application",
-      title: "Turn data into technical decisions.",
-      description:
-        "RelTest combines technical assessment, methodological discussion and traceable results. What matters is not the individual method, but its robust use in the project.",
-      items: [
-        "Assess reliability technically",
-        "Make results decision-ready",
-        "Demonstrate expertise credibly",
-      ],
+        "RelTest works in demanding technical environments. Industrial references, published books, personal insights and concrete industry applications show how methods and data become robust technical decisions.",
       imageAlt:
         "Technical meeting with reliability dashboard, risk matrix and project data",
     },
@@ -148,36 +100,17 @@ const expertiseContent = {
         "The references show that RelTest works where product reliability, lifetime, testing and robust evidence directly influence project outcomes.",
       cta: "View all references",
       linkLabel: "Open reference website",
-      imageAlt:
-        "Industrial team discussing reliability data in a test environment",
     },
     books: {
       eyebrow: "Books",
       title: "Two Springer books",
       cta: "View literature page",
-      items: [
-        {
-          title:
-            "Reliability tests for efficient development-accompanying validation",
-          subtitle: "Test planning, test evaluation and reliability demonstration",
-          cover: "/book-reliability-tests-cover.webp",
-          href: "https://link.springer.com/book/9783662729663",
-          alt: "Cover of the Springer book on reliability tests for efficient development-accompanying validation",
-        },
-        {
-          title: "Reliability in automotive and mechanical engineering",
-          subtitle: "Determining component and system reliability",
-          cover: "/book-reliability-cover.jpg",
-          href: "https://link.springer.com/book/10.1007/978-3-662-65024-0",
-          alt: "Cover of the Springer book Reliability in Automotive and Mechanical Engineering",
-        },
-      ],
     },
     podcast: {
       eyebrow: "Podcast",
       title: "Kevin Lucan on the Ingenieurshelden podcast",
       description:
-        "In the Ingenieurshelden podcast, Managing Director Dr.-Ing. Kevin Lucan talks about his career, technical responsibility and engineering mindset. It gives visitors a first personal impression of the people behind RelTest.",
+        "In the Ingenieurshelden podcast, Managing Director Dr.-Ing. Kevin Lucan talks about his career, technical responsibility and engineering mindset. It gives visitors a personal introduction to one of RelTest's founders.",
       cta: "Listen to the podcast",
       href: "https://ingenieurshelden.de/podcast-fuer-ingenieure-und-ingenieurinnen/kevin-lucan",
       imageAlt:
@@ -191,14 +124,6 @@ const expertiseContent = {
       cta: "Explore all industries in detail",
       imageAlt:
         "Remote review with shared reliability dashboard and three engineers",
-      items: [
-        "Automotive",
-        "Mechanical engineering",
-        "Electronics",
-        "Medical technology",
-        "Renewable energy",
-        "Aerospace",
-      ],
     },
     cta: {
       title: "Expertise for your project",
@@ -248,6 +173,8 @@ export async function generateMetadata({ params }: Props) {
 export default async function ExpertisePage({ params }: Props) {
   const locale = await resolveLocale(params);
   const content = getContent(locale);
+  const siteContent = getSiteContent(locale);
+  const summaryIndustries = getSummaryIndustries(locale);
   const logos = featuredReferences.flatMap((name) => {
     const logo = referenceLogos.find((item) => item.name === name);
 
@@ -294,7 +221,7 @@ export default async function ExpertisePage({ params }: Props) {
           <div className="relative min-h-[25rem] border-t border-white/15 lg:min-h-[39rem] lg:border-t-0 lg:border-l">
             <Image
               src="/expertise/decision-dashboard.webp"
-              alt={content.proof.imageAlt}
+              alt={content.intro.imageAlt}
               fill
               preload
               sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
@@ -311,59 +238,18 @@ export default async function ExpertisePage({ params }: Props) {
         >
           <div className="mx-auto grid max-w-7xl grid-cols-2 sm:grid-cols-4">
             {sectionLinks.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 className="flex min-h-16 items-center justify-between gap-4 border-r border-b border-white/15 px-5 font-winnstein-display text-sm font-bold transition-colors hover:bg-white/8 sm:border-b-0 sm:px-7"
               >
                 {item.label}
                 <ArrowIcon />
-              </Link>
+              </a>
             ))}
           </div>
         </nav>
         <div className="h-2 bg-brand-steel-cyan" />
-      </section>
-
-      <section className="bg-white px-5 py-20 sm:px-6 lg:px-8 lg:py-24">
-        <div className="mx-auto grid max-w-7xl border-y border-brand-marine/18 lg:grid-cols-[minmax(0,1.12fr)_minmax(24rem,0.88fr)]">
-          <div className="relative min-h-[28rem] border-b border-brand-marine/18 lg:min-h-[42rem] lg:border-r lg:border-b-0">
-            <Image
-              src="/expertise/lab-review.webp"
-              alt={content.reference.imageAlt}
-              fill
-              sizes="(min-width: 1024px) 58vw, 100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(3,19,52,.2),transparent_45%)]" />
-          </div>
-          <div className="flex flex-col justify-center bg-brand-steel-cyan-10 p-7 sm:p-10 lg:p-12">
-            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-              {content.proof.eyebrow}
-            </p>
-            <h2 className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
-              {content.proof.title}
-            </h2>
-            <p className="mt-6 text-base leading-8 text-brand-marine/72">
-              {content.proof.description}
-            </p>
-            <ol className="mt-9 border-t border-brand-marine/18">
-              {content.proof.items.map((item, index) => (
-                <li
-                  key={item}
-                  className="grid grid-cols-[3rem_1fr] items-center gap-4 border-b border-brand-marine/18 py-5"
-                >
-                  <span className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
-                    0{index + 1}
-                  </span>
-                  <span className="font-winnstein-display text-lg font-bold">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
       </section>
 
       <section
@@ -423,10 +309,10 @@ export default async function ExpertisePage({ params }: Props) {
 
       <section
         id={sectionIds.books}
-        className="scroll-mt-28 bg-brand-marine px-5 py-20 text-white sm:px-6 lg:px-8 lg:py-24"
+        className="scroll-mt-28 bg-brand-marine px-5 py-16 text-white sm:px-6 lg:px-8 lg:py-20"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="border-b border-white/20 pb-10">
+          <div className="border-b border-white/20 pb-8">
             <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
               {content.books.eyebrow}
             </p>
@@ -435,8 +321,8 @@ export default async function ExpertisePage({ params }: Props) {
             </h2>
           </div>
 
-          <div className="mt-10 grid border border-white/20 lg:grid-cols-[minmax(0,1.25fr)_minmax(23rem,0.75fr)]">
-            <div className="relative min-h-[24rem] border-b border-white/20 lg:min-h-[34rem] lg:border-r lg:border-b-0">
+          <div className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1.6fr)_minmax(19rem,0.8fr)] lg:items-start">
+            <div className="brand-panel-cut-bottom-right relative min-h-[20rem] overflow-hidden border border-white/20 sm:min-h-[24rem] lg:min-h-[27rem]">
               <Image
                 src="/expertise/books-and-methods.webp"
                 alt={
@@ -446,35 +332,33 @@ export default async function ExpertisePage({ params }: Props) {
                 }
                 fill
                 showAiDisclosure={false}
-                sizes="(min-width: 1024px) 62vw, 100vw"
-                className="object-cover"
+                sizes="(min-width: 1024px) 68vw, 100vw"
+                className="object-cover object-center"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.12),transparent_55%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,19,52,.16),transparent_50%)]" />
             </div>
-            <div className="bg-white text-brand-marine">
-              {content.books.items.map((book) => (
+
+            <div className="flex flex-col justify-center lg:pl-4">
+              {siteContent.books.map((book) => (
                 <article
                   key={book.title}
-                  className="flex min-h-64 flex-col justify-between border-b border-brand-marine/18 p-7 last:border-b-0 sm:p-9"
+                  className="border-b border-white/18 py-6 first:pt-0"
                 >
-                  <div>
-                    <h3 className="font-winnstein-display text-xl leading-snug font-bold">
-                      {book.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-6 text-brand-marine/68">
-                      {book.subtitle}
-                    </p>
-                  </div>
-                  <Link
-                    href={localizeHref(locale, "/literatur")}
-                    aria-label={`${content.books.cta}: ${book.title}`}
-                    className="mt-6 inline-flex w-fit items-center gap-4 self-end border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold"
-                  >
-                    {content.books.cta}
-                    <ArrowIcon />
-                  </Link>
+                  <h3 className="font-winnstein-display text-xl leading-7 font-bold text-white">
+                    {book.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-white/65">
+                    {book.subtitle}
+                  </p>
                 </article>
               ))}
+              <Link
+                href={localizeHref(locale, "/literatur")}
+                className="mt-6 inline-flex w-fit items-center gap-4 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold text-white transition-colors hover:text-brand-steel-cyan"
+              >
+                {content.books.cta}
+                <ArrowIcon />
+              </Link>
             </div>
           </div>
         </div>
@@ -553,18 +437,19 @@ export default async function ExpertisePage({ params }: Props) {
               />
             </div>
             <div className="grid border-l border-brand-marine/18 sm:grid-cols-2">
-              {content.industries.items.map((item, index) => (
-                <div
-                  key={item}
-                  className="flex min-h-20 items-center gap-5 border-r border-b border-brand-marine/18 bg-white px-6 py-4"
+              {summaryIndustries.map((industry) => (
+                <Link
+                  key={industry.slug}
+                  href={localizeHref(locale, `/branchen/${industry.slug}`)}
+                  className="group flex min-h-20 items-center justify-between gap-5 border-r border-b border-brand-marine/18 bg-white px-6 py-4 transition-colors hover:bg-brand-steel-cyan-10 focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset"
                 >
-                  <span className="font-winnstein-display text-xs font-bold text-brand-steel-cyan">
-                    0{index + 1}
-                  </span>
                   <span className="font-winnstein-display text-base font-bold">
-                    {item}
+                    {industry.title}
                   </span>
-                </div>
+                  <span className="text-brand-steel-cyan transition-transform group-hover:translate-x-1">
+                    <ArrowIcon />
+                  </span>
+                </Link>
               ))}
             </div>
           </div>

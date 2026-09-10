@@ -1,5 +1,6 @@
 import { AiAwareImage as Image } from "../../_components/ai-aware-image";
 import { BrandLineWatermark } from "../../_components/brand-line-watermark";
+import { ConsentCalendlyEmbed } from "../../_components/consent-calendly-embed";
 import { ContactInquiryForm } from "../../_components/contact-inquiry-form";
 
 import { resolveLocale, type Locale } from "../../_i18n/config";
@@ -181,12 +182,13 @@ export default async function ContactPage({ params }: Props) {
 
           <div className="relative min-h-[31rem] border-t border-white/18 lg:min-h-[39rem] lg:border-t-0 lg:border-l">
             <Image
-              src="/about/kevin-lucan-professional.webp"
+              src="/about/kevin-lucan-professional-v2.png"
               alt={copy.hero.imageAlt}
               fill
               preload
+              quality={90}
               sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-[50%_10%]"
+              className="object-cover object-[50%_20%] lg:object-[50%_34%]"
             />
             <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(20,36,82,.94)_0%,rgba(20,36,82,.22)_42%,transparent_68%)]" />
             <div className="absolute right-0 bottom-0 left-0 p-7 sm:p-9">
@@ -221,11 +223,10 @@ export default async function ContactPage({ params }: Props) {
 
           <div className="brand-panel-cut-bottom-right mt-10 grid border border-brand-marine/15 bg-white lg:grid-cols-[1fr_21rem]">
             <div className="min-w-0 overflow-hidden">
-              <iframe
+              <ConsentCalendlyEmbed
+                locale={locale}
                 title={copy.booking.embedTitle}
                 src={calendlyEmbedHref}
-                loading="lazy"
-                className="h-[760px] w-full border-0 sm:h-[800px]"
               />
             </div>
 

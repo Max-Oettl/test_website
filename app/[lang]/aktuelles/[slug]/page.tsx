@@ -60,6 +60,12 @@ export default async function NewsDetailPage({ params }: Props) {
         url: pageUrl,
         mainEntityOfPage: pageUrl,
         inLanguage: locale === "de" ? "de-DE" : "en-US",
+        ...(page.publishedAtIso
+          ? { datePublished: page.publishedAtIso }
+          : {}),
+        ...(page.visual
+          ? { image: absoluteUrl(page.visual.src) }
+          : {}),
         author: { "@id": `${siteUrl}/#organization` },
         publisher: { "@id": `${siteUrl}/#organization` },
       },

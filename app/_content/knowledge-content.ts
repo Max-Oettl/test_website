@@ -7,6 +7,7 @@ export type KnowledgeMedia = {
   ratio?: "landscape" | "wide" | "sixteen-nine" | "two-one";
   maxWidth?: "tiny" | "small" | "compact" | "standard" | "wide";
   src?: string;
+  mobileSrc?: string;
   alt?: string;
   caption?: string;
   lead?: string;
@@ -382,7 +383,10 @@ const deArticles: readonly KnowledgeArticle[] = [
       },
     ],
     related: ["erprobung", "prognosen", "risikomanagement"],
-    service: { label: "DoE als Beratungsleistung", href: "/leistungen/datenanalyse-prognostik" },
+    service: {
+      label: "DoE als Solutions-Leistung",
+      href: "/leistungen/design-of-experiments",
+    },
   },
   {
     slug: "risikomanagement",
@@ -498,7 +502,7 @@ const enOverrides: Record<string, KnowledgeArticle> = {
       { heading: "From trial and error to a planned investigation", paragraphs: ["Changing one factor at a time hides interactions and quickly increases effort. DoE varies several factors according to a statistically reasoned design.", "The work starts with a clear response, meaningful factors and levels and technically valid experimental boundaries."], media: { label: "Graphic placeholder: factors and design space", brief: "Factors, levels, experimental points and a response surface.", ratio: "wide" } },
       { heading: "Identify effects and interactions", paragraphs: ["DoE reveals which factors matter and whether the effect of one factor depends on another.", "An empirical model then supports prediction, sensitivity analysis and optimisation within the investigated design space. Model quality and residuals must be checked before technical interpretation."] },
       { heading: "Optimise for robustness", paragraphs: ["Engineering decisions should not target the best mean alone. Product and process settings must remain stable against manufacturing variation, environment and use.", "DoE can include noise factors deliberately and improve the information gained per experiment."], bullets: ["identify relevant factors and interactions", "optimise products and processes", "account for variation and noise", "focus testing on decision-relevant points"] },
-    ], related: ["erprobung", "prognosen", "risikomanagement"], service: { label: "DoE consulting", href: "/leistungen/datenanalyse-prognostik" },
+    ], related: ["erprobung", "prognosen", "risikomanagement"], service: { label: "DoE project support", href: "/leistungen/design-of-experiments" },
   },
   risikomanagement: {
     ...deArticles[7], navLabel: "Risk management", eyebrow: "Technical risk management", title: "Technical risks become manageable when causes and evidence fit together.", lead: "Risk management in product development links failure mechanisms, consequences, technical measures and evidence of effectiveness.", metaTitle: "Technical Risk Management and Reliability | RelTest", metaDescription: "Technical risk management explained: FMEA, FTA, assessment, assurance measures, effectiveness and documentation.", heroMedia: { label: "Image placeholder: technical risk management", brief: "Engineering review with product, risk matrix and evidence planning." },
@@ -514,8 +518,10 @@ function addKnowledgeVisuals(article: KnowledgeArticle, locale: Locale): Knowled
   const visuals = knowledgeVisuals[article.slug];
   if (!visuals) return article;
 
-  const pngSource = (source: string) => {
-    return `/graphics/wissen/technical-plots/${source}-${locale}.png`;
+  const assetSource = (source: string) => {
+    return source.startsWith("/")
+      ? source
+      : `/graphics/wissen/technical-plots/${source}-${locale}.png`;
   };
 
   let inlineVisualAdded = false;
@@ -525,7 +531,7 @@ function addKnowledgeVisuals(article: KnowledgeArticle, locale: Locale): Knowled
     heroMedia: {
       ...article.heroMedia,
       ...visuals.hero[locale],
-      src: pngSource(visuals.hero[locale].src ?? visuals.hero.src),
+      src: assetSource(visuals.hero[locale].src ?? visuals.hero.src),
     },
     sections: article.sections.map((section) => {
       if (!section.media || inlineVisualAdded) return section;
@@ -536,7 +542,10 @@ function addKnowledgeVisuals(article: KnowledgeArticle, locale: Locale): Knowled
         media: {
           ...section.media,
           ...visuals.inline[locale],
-          src: pngSource(visuals.inline[locale].src ?? visuals.inline.src),
+          src: assetSource(visuals.inline[locale].src ?? visuals.inline.src),
+          mobileSrc: visuals.inline[locale].mobileSrc
+            ? assetSource(visuals.inline[locale].mobileSrc)
+            : undefined,
         },
       };
     }),
@@ -550,62 +559,110 @@ const articlesByLocale: Record<Locale, readonly KnowledgeArticle[]> = {
 
 const glossaryDe: readonly GlossaryEntry[] = [
   { term: "Ausfallmechanismus", definition: "Physikalischer, chemischer, elektronischer oder softwarebezogener Vorgang, der zu einem Funktionsverlust führt." },
+  { term: "Ausfallwahrscheinlichkeit", definition: "Wahrscheinlichkeit, dass eine Einheit bis zu einem festgelegten Zeitpunkt oder Nutzungsumfang ausfällt; häufig als F(t) dargestellt." },
   { term: "Ausfallrate", definition: "Zeitabhängige Rate, mit der Einheiten einer betrachteten Population ausfallen." },
   { term: "B10-Lebensdauer", definition: "Zeit oder Nutzung, bis zu der statistisch zehn Prozent einer Population ausgefallen sind." },
   { term: "Badewannenkurve", definition: "Modellhafter Verlauf der Ausfallrate mit Früh-, Nutzungs- und Verschleißphase." },
+  { term: "Beschleunigte Lebensdauererprobung", definition: "Erprobung unter erhöhten, physikalisch begründeten Belastungen, um Ausfälle schneller zu beobachten und mit einem geeigneten Beschleunigungsmodell auf Einsatzbedingungen zu übertragen." },
+  { term: "Bq-Lebensdauer", definition: "Zeit oder Nutzung, bis zu der ein Anteil q einer Population ausgefallen ist; die B10-Lebensdauer ist der häufige Sonderfall mit q = 10 %." },
+  { term: "Dependability", definition: "Überbegriff für die Fähigkeit einer Einheit, die geforderte Leistung bei Bedarf zu erbringen; umfasst insbesondere Zuverlässigkeit, Instandhaltbarkeit, Unterstützbarkeit und die daraus resultierende Verfügbarkeit." },
   { term: "Design for Reliability (DfR)", definition: "Konstruktiver Ansatz, der Zuverlässigkeit systematisch in Anforderungen und Produktentwicklung integriert." },
   { term: "Design of Experiments (DoE)", definition: "Statistische Versuchsplanung zur effizienten Untersuchung von Faktoren, Wechselwirkungen und Zielgrößen." },
   { term: "Ermüdungsausfall", definition: "Ausfall infolge wiederholter oder wechselnder mechanischer Beanspruchung." },
   { term: "Fault Tree Analysis (FTA)", definition: "Deduktive Fehlerbaumanalyse, die mögliche Ursachen eines unerwünschten Top-Ereignisses logisch strukturiert." },
+  { term: "Felddatenanalyse", definition: "Auswertung von Betriebs-, Nutzungs-, Ausfall- und gegebenenfalls zensierten Daten aus dem realen Einsatz eines Produkts." },
   { term: "Fehlermöglichkeits- und Einflussanalyse (FMEA)", definition: "Systematische Methode zur Analyse möglicher Fehlerarten, ihrer Ursachen, Folgen und Maßnahmen." },
   { term: "Frühausfall", definition: "Ausfall zu Beginn der Nutzungsdauer, häufig ausgelöst durch Fertigungs-, Montage- oder Materialfehler." },
+  { term: "Highly Accelerated Life Testing (HALT)", definition: "Entwicklungsverfahren, das Produkte stufenweise über den vorgesehenen Einsatzbereich hinaus belastet, um konstruktive Grenzen und verborgene Schwachstellen zu finden; HALT ist kein statistischer Lebensdauernachweis." },
   { term: "Health Monitoring", definition: "Überwachung technischer Zustände, um Veränderungen und kritische Entwicklungen früh zu erkennen." },
+  { term: "Konfidenzgrenze", definition: "Einseitige oder zweiseitige Grenze eines Konfidenzintervalls, die die Unsicherheit einer aus Stichprobendaten geschätzten Größe ausdrückt." },
+  { term: "Konfidenzniveau", definition: "Vorab festgelegtes Vertrauensniveau, beispielsweise 90 oder 95 Prozent, mit dem ein statistisches Schätz- oder Nachweisverfahren arbeitet." },
+  { term: "Lastkollektiv", definition: "Beschreibung von Höhe, Häufigkeit, Dauer und Reihenfolge der Belastungen, denen ein Produkt während seiner Nutzung ausgesetzt ist." },
   { term: "Lebensdauer", definition: "Zeit, Lastwechsel oder Nutzung bis zum Erreichen eines definierten Ausfallkriteriums." },
   { term: "Lebensdaueranalyse", definition: "Statistische und technische Auswertung von Ausfallzeiten, zensierten Daten und Einflussbedingungen." },
+  { term: "Lebensdauererprobung", definition: "Versuch zur Ermittlung oder Absicherung des zeit- beziehungsweise nutzungsabhängigen Ausfallverhaltens unter festgelegten Belastungen und Ausfallkriterien." },
   { term: "Lebensdauermodell", definition: "Mathematische Beschreibung des Zusammenhangs zwischen Belastung, Zeit und Ausfallverhalten." },
   { term: "Maintainability", definition: "Fähigkeit eines Systems, unter definierten Bedingungen instand gehalten oder wiederhergestellt zu werden." },
   { term: "Mean Time Between Failures (MTBF)", definition: "Mittlere Betriebszeit zwischen aufeinanderfolgenden Ausfällen eines reparierbaren Systems." },
   { term: "Mean Time To Failure (MTTF)", definition: "Mittlere Zeit bis zum Ausfall einer nicht reparierbaren Einheit." },
   { term: "Mean Time To Repair (MTTR)", definition: "Mittlere Zeit, die zur Wiederherstellung eines reparierbaren Systems benötigt wird." },
+  { term: "Missionsprofil (Mission Profile)", definition: "Strukturierte Beschreibung der tatsächlichen Nutzung und Umgebungsbedingungen über die Zeit, aus der relevante Lasten und Prüfbedingungen abgeleitet werden." },
   { term: "Prognostics and Health Management (PHM)", definition: "Methoden zur Zustandsbewertung, Fehlerprognose und Planung geeigneter Instandhaltungsmaßnahmen." },
+  { term: "RAMS", definition: "Gemeinsame Betrachtung von Reliability, Availability, Maintainability und Safety zur Bewertung technischer Systeme über ihren Lebenszyklus." },
   { term: "Reliability Block Diagram (RBD)", definition: "Logische Darstellung, wie die Zuverlässigkeit von Komponenten die Systemfunktion beeinflusst." },
   { term: "Reliability Engineering", definition: "Ingenieurdisziplin zur Planung, Analyse, Erprobung, Absicherung und Prognose technischer Zuverlässigkeit." },
+  { term: "Risikobewertung", definition: "Analyse und Bewertung technischer Risiken nach Eintrittsmöglichkeit und Auswirkung, um Prioritäten und geeignete Maßnahmen festzulegen." },
+  { term: "Risikomanagement", definition: "Fortlaufender Prozess zum Identifizieren, Bewerten, Behandeln und Überwachen technischer Risiken über den Produktlebenszyklus." },
   { term: "Root Cause Analysis (RCA)", definition: "Strukturierte Untersuchung, um die grundlegende Ursache eines Fehlers oder Ausfalls zu bestimmen." },
+  { term: "Robustheit", definition: "Fähigkeit eines Produkts oder Prozesses, Anforderungen trotz unvermeidbarer Streuung von Material, Fertigung, Umwelt und Nutzung zu erfüllen." },
+  { term: "Stichprobe", definition: "Ausgewählte Teilmenge einer Grundgesamtheit, aus deren Beobachtungen Aussagen über die Population abgeleitet werden." },
   { term: "Stress Screening", definition: "Belastungsverfahren zur Erkennung latenter Fertigungs- oder Montagefehler vor dem Feldeinsatz." },
+  { term: "Systemzuverlässigkeit", definition: "Zuverlässigkeit des Gesamtsystems, die sich aus Systemstruktur, Abhängigkeiten, Redundanzen und den Eigenschaften seiner Elemente ergibt." },
   { term: "Systemverfügbarkeit", definition: "Anteil der Zeit, in der ein System funktionsfähig und einsatzbereit ist." },
+  { term: "Validierung", definition: "Bestätigung durch objektive Nachweise, dass ein Produkt oder System die Anforderungen und Bedürfnisse der vorgesehenen Anwendung erfüllt." },
+  { term: "Verifikation", definition: "Bestätigung durch objektive Nachweise, dass festgelegte Anforderungen oder Spezifikationen erfüllt sind." },
   { term: "Verschleißausfall", definition: "Ausfall durch fortschreitende Alterung, Abnutzung oder Materialdegradation." },
   { term: "Weibull-Analyse", definition: "Statistisches Verfahren zur Beschreibung von Lebensdauer, Streuung und charakteristischem Ausfallverhalten." },
+  { term: "Zensierte Daten", definition: "Beobachtungen, bei denen der genaue Ausfallzeitpunkt nicht vollständig bekannt ist, etwa weil eine Einheit bis zum Ende der Beobachtung nicht ausgefallen ist." },
   { term: "Zuverlässigkeit", definition: "Wahrscheinlichkeit, dass ein Produkt seine geforderte Funktion unter definierten Bedingungen über eine festgelegte Zeit erfüllt." },
+  { term: "Zuverlässigkeitsabsicherung", definition: "Abgestimmte Kombination aus Analysen, Simulationen, Erprobung und Dokumentation, mit der die Erfüllung definierter Zuverlässigkeitsanforderungen begründet wird." },
+  { term: "Zuverlässigkeitsnachweis", definition: "Dokumentierte technische oder statistische Begründung, dass ein festgelegtes Zuverlässigkeitsziel unter definierten Bedingungen und mit vereinbartem Vertrauensniveau erreicht wird." },
+  { term: "Zuverlässigkeitsplanung", definition: "Festlegung, Zuordnung und Verfolgung von Zuverlässigkeitszielen, Methoden, Verantwortlichkeiten und Nachweisen im Produktentwicklungsprozess." },
+  { term: "Zuverlässigkeitsziel", definition: "Messbare Anforderung an Funktion, Nutzungsbedingungen, Dauer und zulässiges Ausfallniveau eines Produkts oder Systems." },
 ];
 
 const glossaryEnOverrides: Record<string, GlossaryEntry> = {
   Ausfallmechanismus: { term: "Failure mechanism", definition: "Physical, chemical, electronic or software-related process that causes loss of function." },
+  Ausfallwahrscheinlichkeit: { term: "Failure probability", definition: "Probability that an item fails by a specified time or amount of use; commonly denoted by F(t)." },
   Ausfallrate: { term: "Failure rate", definition: "Time-dependent rate at which units in a population fail." },
   "B10-Lebensdauer": { term: "B10 life", definition: "Time or usage by which ten percent of a population have statistically failed." },
   Badewannenkurve: { term: "Bathtub curve", definition: "Conceptual failure-rate curve with early-life, useful-life and wear-out phases." },
+  "Beschleunigte Lebensdauererprobung": { term: "Accelerated life testing (ALT)", definition: "Testing under increased, physically justified stresses to observe failures sooner and transfer the results to use conditions with a suitable acceleration model." },
+  "Bq-Lebensdauer": { term: "Bq life", definition: "Time or usage by which a fraction q of a population has failed; B10 life is the common special case with q = 10%." },
+  Dependability: { term: "Dependability", definition: "Ability of an item to perform as and when required; it encompasses reliability, maintainability, supportability and the resulting availability." },
   "Design for Reliability (DfR)": { term: "Design for Reliability (DfR)", definition: "Engineering approach that integrates reliability into requirements and product development." },
   "Design of Experiments (DoE)": { term: "Design of Experiments (DoE)", definition: "Statistical experimental design for efficient investigation of factors, interactions and responses." },
   Ermüdungsausfall: { term: "Fatigue failure", definition: "Failure caused by repeated or alternating mechanical loading." },
   "Fault Tree Analysis (FTA)": { term: "Fault Tree Analysis (FTA)", definition: "Deductive analysis that structures possible causes of an unwanted top event." },
+  Felddatenanalyse: { term: "Field data analysis", definition: "Evaluation of operating, usage, failure and, where applicable, censored data from products in real-world service." },
   "Fehlermöglichkeits- und Einflussanalyse (FMEA)": { term: "Failure Mode and Effects Analysis (FMEA)", definition: "Systematic analysis of potential failure modes, causes, effects and actions." },
   Frühausfall: { term: "Early-life failure", definition: "Failure at the beginning of use, often related to manufacturing, assembly or material defects." },
+  "Highly Accelerated Life Testing (HALT)": { term: "Highly Accelerated Life Testing (HALT)", definition: "Development method that exposes products step by step beyond their intended operating range to reveal design limits and hidden weak points; HALT is not a statistical lifetime demonstration." },
   "Health Monitoring": { term: "Health monitoring", definition: "Monitoring technical condition to detect changes and critical developments early." },
+  Konfidenzgrenze: { term: "Confidence bound", definition: "One-sided or two-sided boundary of a confidence interval that expresses the uncertainty of a quantity estimated from sample data." },
+  Konfidenzniveau: { term: "Confidence level", definition: "Predefined level of confidence, such as 90 or 95 percent, used by a statistical estimation or demonstration procedure." },
+  Lastkollektiv: { term: "Load spectrum", definition: "Description of the magnitude, frequency, duration and sequence of loads experienced by a product during use." },
   Lebensdauer: { term: "Lifetime", definition: "Time, load cycles or use until a defined failure criterion is reached." },
   Lebensdaueranalyse: { term: "Lifetime analysis", definition: "Statistical and technical evaluation of failure times, censored data and operating conditions." },
+  Lebensdauererprobung: { term: "Lifetime testing", definition: "Testing used to determine or demonstrate time- or usage-dependent failure behaviour under specified loads and failure criteria." },
   Lebensdauermodell: { term: "Lifetime model", definition: "Mathematical relationship between stress, time and failure behaviour." },
   Maintainability: { term: "Maintainability", definition: "Ability of a system to be maintained or restored under defined conditions." },
   "Mean Time Between Failures (MTBF)": { term: "Mean Time Between Failures (MTBF)", definition: "Average operating time between successive failures of a repairable system." },
   "Mean Time To Failure (MTTF)": { term: "Mean Time To Failure (MTTF)", definition: "Average time to failure of a non-repairable item." },
   "Mean Time To Repair (MTTR)": { term: "Mean Time To Repair (MTTR)", definition: "Average time required to restore a repairable system." },
+  "Missionsprofil (Mission Profile)": { term: "Mission profile", definition: "Structured description of actual use and environmental conditions over time from which relevant loads and test conditions are derived." },
   "Prognostics and Health Management (PHM)": { term: "Prognostics and Health Management (PHM)", definition: "Methods for condition assessment, failure prediction and maintenance planning." },
+  RAMS: { term: "RAMS", definition: "Joint consideration of reliability, availability, maintainability and safety when assessing technical systems over their life cycle." },
   "Reliability Block Diagram (RBD)": { term: "Reliability Block Diagram (RBD)", definition: "Logical representation of how component reliability influences system function." },
   "Reliability Engineering": { term: "Reliability engineering", definition: "Engineering discipline covering reliability planning, analysis, testing, assurance and prediction." },
+  Risikobewertung: { term: "Risk assessment", definition: "Analysis and evaluation of technical risks by likelihood and consequence to establish priorities and suitable actions." },
+  Risikomanagement: { term: "Risk management", definition: "Continuous process of identifying, assessing, treating and monitoring technical risks throughout the product life cycle." },
   "Root Cause Analysis (RCA)": { term: "Root Cause Analysis (RCA)", definition: "Structured investigation to identify the fundamental cause of a failure." },
+  Robustheit: { term: "Robustness", definition: "Ability of a product or process to meet requirements despite unavoidable variation in material, manufacturing, environment and use." },
+  Stichprobe: { term: "Sample", definition: "Selected subset of a population whose observations are used to draw conclusions about that population." },
   "Stress Screening": { term: "Stress screening", definition: "Loading process used to reveal latent manufacturing or assembly defects before field use." },
+  Systemzuverlässigkeit: { term: "System reliability", definition: "Reliability of the complete system resulting from its structure, dependencies, redundancies and the properties of its elements." },
   Systemverfügbarkeit: { term: "System availability", definition: "Proportion of time for which a system is functional and ready for use." },
+  Validierung: { term: "Validation", definition: "Confirmation by objective evidence that a product or system fulfils the requirements and needs of its intended application." },
+  Verifikation: { term: "Verification", definition: "Confirmation by objective evidence that specified requirements or specifications have been fulfilled." },
   Verschleißausfall: { term: "Wear-out failure", definition: "Failure caused by progressive ageing, wear or material degradation." },
   "Weibull-Analyse": { term: "Weibull analysis", definition: "Statistical method for describing lifetime, variation and characteristic failure behaviour." },
+  "Zensierte Daten": { term: "Censored data", definition: "Observations for which the exact failure time is not fully known, for example because an item has not failed by the end of observation." },
   Zuverlässigkeit: { term: "Reliability", definition: "Probability that a product performs its required function under defined conditions for a specified period." },
+  Zuverlässigkeitsabsicherung: { term: "Reliability assurance", definition: "Coordinated combination of analyses, simulations, testing and documentation used to justify fulfilment of defined reliability requirements." },
+  Zuverlässigkeitsnachweis: { term: "Reliability demonstration", definition: "Documented technical or statistical evidence that a defined reliability target is met under specified conditions and at an agreed confidence level." },
+  Zuverlässigkeitsplanung: { term: "Reliability planning", definition: "Definition, allocation and tracking of reliability targets, methods, responsibilities and evidence throughout product development." },
+  Zuverlässigkeitsziel: { term: "Reliability target", definition: "Measurable requirement linking function, use conditions, duration and the permitted failure level of a product or system." },
 };
 
 export function getKnowledgeArticles(locale: Locale) {

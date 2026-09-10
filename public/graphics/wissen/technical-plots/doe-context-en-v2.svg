@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-labelledby="title description">
+  <title id="title">Design of Experiments: factors, combinations and interaction</title>
+  <desc id="description">Temperature and speed are studied as two factors in four targeted combinations. Two non-parallel response lines reveal an interaction.</desc>
+  <defs>
+    <style>
+      .heading{font:700 27px Arial,sans-serif;fill:#142452}
+      .label{font:700 20px Arial,sans-serif;fill:#142452}
+      .small{font:600 17px Arial,sans-serif;fill:#435075}
+      .insight{font:700 21px Arial,sans-serif;fill:#142452}
+      .note{font:600 17px Arial,sans-serif;fill:#435075}
+      .factor{fill:#eaf5fb;stroke:#2ea1cf;stroke-width:2}
+      .matrix{fill:#fff;stroke:#d0d3dc;stroke-width:2}
+      .axis{fill:none;stroke:#142452;stroke-width:3;stroke-linecap:round}
+      .line-a{fill:none;stroke:#142452;stroke-width:6;stroke-linecap:round}
+      .line-b{fill:none;stroke:#2ea1cf;stroke-width:6;stroke-linecap:round}
+      .arrow{fill:none;stroke:#2ea1cf;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+
+  <rect width="760" height="520" fill="#fff"/>
+
+  <text class="heading" x="96" y="54" text-anchor="middle">Factors</text>
+  <rect class="factor" x="24" y="78" width="144" height="92"/>
+  <text class="small" x="42" y="107">FACTOR A</text>
+  <text class="label" x="42" y="140">Temperature</text>
+  <rect class="factor" x="24" y="190" width="144" height="92"/>
+  <text class="small" x="42" y="219">FACTOR B</text>
+  <text class="label" x="42" y="252">Speed</text>
+
+  <path class="arrow" d="M190 180h44m-12-11 12 11-12 11"/>
+
+  <text class="heading" x="340" y="54" text-anchor="middle">4 combinations</text>
+  <g transform="translate(254 78)">
+    <rect class="matrix" width="172" height="204"/>
+    <line x1="86" y1="0" x2="86" y2="204" stroke="#d0d3dc" stroke-width="2"/>
+    <line x1="0" y1="102" x2="172" y2="102" stroke="#d0d3dc" stroke-width="2"/>
+    <circle cx="43" cy="51" r="17" fill="#142452"/>
+    <circle cx="129" cy="51" r="17" fill="#2ea1cf"/>
+    <circle cx="43" cy="153" r="17" fill="#2ea1cf"/>
+    <circle cx="129" cy="153" r="17" fill="#142452"/>
+    <path d="m34 51 7 7 13-15m66 8 7 7 13-15m-106 110 7 7 13-15m66 8 7 7 13-15" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text class="small" x="340" y="306" text-anchor="middle">targeted rather than isolated tests</text>
+
+  <path class="arrow" d="M448 180h44m-12-11 12 11-12 11"/>
+
+  <text class="heading" x="620" y="54" text-anchor="middle">Interaction</text>
+  <g transform="translate(516 78)">
+    <path class="axis" d="M0 190V12M0 190h208"/>
+    <path class="line-a" d="M28 145 176 78"/>
+    <path class="line-b" d="M28 72 176 128"/>
+    <circle cx="28" cy="145" r="7" fill="#142452"/>
+    <circle cx="176" cy="78" r="7" fill="#142452"/>
+    <circle cx="28" cy="72" r="7" fill="#2ea1cf"/>
+    <circle cx="176" cy="128" r="7" fill="#2ea1cf"/>
+    <text class="small" x="24" y="218">low</text>
+    <text class="small" x="160" y="218">high</text>
+  </g>
+
+  <rect x="24" y="364" width="704" height="112" fill="#eaf5fb"/>
+  <path d="M48 390h4v60h-4z" fill="#2ea1cf"/>
+  <text class="insight" x="76" y="407">The effect of one factor depends</text>
+  <text class="insight" x="76" y="433">on the level of the other factor.</text>
+  <text class="note" x="76" y="458">DoE reveals this relationship with a small number of targeted experiments.</text>
+</svg>

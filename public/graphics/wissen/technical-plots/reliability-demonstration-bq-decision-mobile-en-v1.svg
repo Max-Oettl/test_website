@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1420" role="img" aria-labelledby="title description">
+  <title id="title">Reliability demonstration decision at the Bq level</title>
+  <desc id="description">Mobile diagram with one demonstrated and one not demonstrated reliability requirement at the Bq level.</desc>
+  <defs>
+    <style>
+      .title{font:700 36px Arial,sans-serif;fill:#142452}.subtitle{font:400 22px Arial,sans-serif;fill:#3f4d73}.panel-title{font:700 30px Arial,sans-serif;fill:#142452}.status{font:700 22px Arial,sans-serif}.axis{stroke:#142452;stroke-width:4;fill:none}.axis-label{font:600 23px Arial,sans-serif;fill:#142452}.small{font:500 20px Arial,sans-serif;fill:#3f4d73}.legend{font:500 21px Arial,sans-serif;fill:#142452}.qline{stroke:#2ea1cf;stroke-width:4;stroke-dasharray:11 9}.requirement{stroke:#142452;stroke-width:3;stroke-dasharray:8 8}.bound-pass{stroke:#07985a;stroke-width:4;stroke-dasharray:8 8}.bound-fail{stroke:#c93333;stroke-width:4;stroke-dasharray:8 8}.estimate{stroke:#142452;stroke-width:6;fill:none;stroke-linecap:round}.upper{stroke:#2ea1cf;stroke-width:5;fill:none;stroke-linecap:round}.band{fill:#d9eef8;stroke:none}.result{font:700 22px Arial,sans-serif}.math{font:italic 600 23px Arial,sans-serif;fill:#142452}
+    </style>
+  </defs>
+
+  <rect width="760" height="1420" fill="#fff"/>
+  <text class="title" x="380" y="48" text-anchor="middle">Decision at the</text>
+  <text class="title" x="380" y="88" text-anchor="middle">Bq level</text>
+  <text class="subtitle" x="380" y="124" text-anchor="middle">The statistically supported lifetime is decisive,</text>
+  <text class="subtitle" x="380" y="152" text-anchor="middle">not the point estimate alone.</text>
+
+  <line x1="72" y1="186" x2="132" y2="186" class="estimate"/>
+  <text class="legend" x="148" y="193">Estimated field behaviour (data basis)</text>
+  <rect x="72" y="210" width="60" height="26" rx="3" class="band"/>
+  <line x1="72" y1="210" x2="132" y2="210" class="upper"/>
+  <text class="legend" x="148" y="231">one-sided confidence region with Fᴜ(t)</text>
+
+  <!-- Beispiel A -->
+  <rect x="30" y="260" width="700" height="540" rx="12" fill="#fbfdff" stroke="#cdd8e6"/>
+  <text class="panel-title" x="66" y="306">Example A</text>
+  <rect x="245" y="276" width="430" height="46" rx="23" fill="#e5f6ee"/>
+  <circle cx="273" cy="299" r="11" fill="#07985a"/>
+  <path d="m267 299 5 5 9-11" fill="none" stroke="#fff" stroke-width="3"/>
+  <text class="status" x="299" y="307" fill="#067746">Requirement demonstrated</text>
+
+  <line class="axis" x1="112" y1="704" x2="696" y2="704"/>
+  <polygon points="696,704 676,694 676,714" fill="#142452"/>
+  <line class="axis" x1="112" y1="704" x2="112" y2="352"/>
+  <polygon points="112,352 102,372 122,372" fill="#142452"/>
+  <text class="axis-label" x="404" y="770" text-anchor="middle">Lifetime t</text>
+  <text class="axis-label" x="66" y="536" text-anchor="middle" transform="rotate(-90 66 536)">Failure probability F(t)</text>
+
+  <path class="band" d="M184 684 C268 665 347 628 414 588 C500 530 560 430 610 350 L690 350 C642 438 580 538 502 588 C429 632 330 672 220 692 Z"/>
+  <path class="upper" d="M184 684 C268 665 347 628 414 588 C500 530 560 430 610 350"/>
+  <path class="estimate" d="M220 692 C330 672 429 632 502 588 C580 538 642 438 690 350"/>
+  <line class="qline" x1="112" y1="588" x2="696" y2="588"/>
+  <text class="math" x="126" y="571">q</text>
+  <text class="small" x="151" y="571">permitted failure fraction</text>
+  <line class="requirement" x1="300" y1="704" x2="300" y2="588"/>
+  <line class="bound-pass" x1="414" y1="704" x2="414" y2="588"/>
+  <circle cx="414" cy="588" r="10" fill="#07985a" stroke="#fff" stroke-width="4"/>
+  <text class="math" x="300" y="738" text-anchor="middle">Bq,req</text>
+  <text class="result" x="414" y="738" text-anchor="middle" fill="#07985a">Bq,L</text>
+  <rect x="486" y="650" width="188" height="40" rx="20" fill="#e5f6ee"/>
+  <text class="result" x="580" y="677" text-anchor="middle" fill="#067746">Bq,L ≥ Bq,req</text>
+
+  <!-- Beispiel B -->
+  <rect x="30" y="830" width="700" height="540" rx="12" fill="#fbfdff" stroke="#cdd8e6"/>
+  <text class="panel-title" x="66" y="876">Example B</text>
+  <rect x="245" y="846" width="430" height="46" rx="23" fill="#fdecec"/>
+  <circle cx="273" cy="869" r="11" fill="#c93333"/>
+  <path d="m268 864 10 10m0-10-10 10" stroke="#fff" stroke-width="3"/>
+  <text class="status" x="299" y="877" fill="#a92929">Requirement not demonstrated</text>
+
+  <line class="axis" x1="112" y1="1274" x2="696" y2="1274"/>
+  <polygon points="696,1274 676,1264 676,1284" fill="#142452"/>
+  <line class="axis" x1="112" y1="1274" x2="112" y2="922"/>
+  <polygon points="112,922 102,942 122,942" fill="#142452"/>
+  <text class="axis-label" x="404" y="1340" text-anchor="middle">Lifetime t</text>
+  <text class="axis-label" x="66" y="1106" text-anchor="middle" transform="rotate(-90 66 1106)">Failure probability F(t)</text>
+
+  <path class="band" d="M184 1254 C248 1235 320 1198 374 1158 C460 1100 520 1000 570 920 L650 920 C602 1008 540 1108 462 1158 C399 1202 330 1242 220 1262 Z"/>
+  <path class="upper" d="M184 1254 C248 1235 320 1198 374 1158 C460 1100 520 1000 570 920"/>
+  <path class="estimate" d="M220 1262 C330 1242 399 1202 462 1158 C540 1108 602 1008 650 920"/>
+  <line class="qline" x1="112" y1="1158" x2="696" y2="1158"/>
+  <text class="math" x="126" y="1141">q</text>
+  <text class="small" x="151" y="1141">permitted failure fraction</text>
+  <line class="bound-fail" x1="374" y1="1274" x2="374" y2="1158"/>
+  <line class="requirement" x1="488" y1="1274" x2="488" y2="1158"/>
+  <circle cx="374" cy="1158" r="10" fill="#c93333" stroke="#fff" stroke-width="4"/>
+  <text class="result" x="374" y="1308" text-anchor="middle" fill="#c93333">Bq,L</text>
+  <text class="math" x="488" y="1308" text-anchor="middle">Bq,req</text>
+  <rect x="500" y="1220" width="174" height="40" rx="20" fill="#fdecec"/>
+  <text class="result" x="587" y="1247" text-anchor="middle" fill="#a92929">Bq,L &lt; Bq,req</text>
+</svg>
