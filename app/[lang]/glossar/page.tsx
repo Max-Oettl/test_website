@@ -1,8 +1,6 @@
-import Link from "next/link";
-
 import { GlossaryDirectory } from "../../_components/glossary-directory";
 import { getGlossary } from "../../_content/knowledge-content";
-import { localizeHref, resolveLocale } from "../../_i18n/config";
+import { resolveLocale } from "../../_i18n/config";
 import { getSiteSearchEntries } from "../../_lib/site-search-index";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
 
@@ -30,11 +28,8 @@ export default async function GlossaryPage({ params }: Props) {
   return (
     <>
       <header className="bg-[var(--solution-marine)] font-winnstein-body text-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8 lg:py-20">
-          <Link href={localizeHref(locale, "/wissen")} className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)] underline decoration-transparent underline-offset-8 hover:decoration-current">
-            {isGerman ? "Wissen im Überblick" : "Knowledge overview"} <span aria-hidden="true">←</span>
-          </Link>
-          <p className="mt-12 font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)]">{isGerman ? "Glossar" : "Glossary"}</p>
+        <div className="mx-auto max-w-6xl px-6 py-12 lg:px-8 lg:py-14">
+          <p className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)]">{isGerman ? "Glossar" : "Glossary"}</p>
           <h1 className="mt-4 max-w-4xl font-winnstein-display text-5xl font-semibold leading-tight sm:text-6xl">
             {isGerman ? "Fachbegriffe klar und kompakt erklärt." : "Technical terms explained clearly and concisely."}
           </h1>

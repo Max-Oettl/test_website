@@ -31,9 +31,9 @@ const conceptContent = {
     academyCta: "RelTest Education entdecken",
     slides: [
       {
-        title: "Ziele definieren. Lebensdauer systematisch bewerten.",
+        title: "Zuverlässigkeit gezielt entwickeln.",
         description:
-          "Wir übersetzen reale Nutzung in messbare Zuverlässigkeitsziele, bewerten relevante Ausfallmechanismen und entwickeln passende Nachweiskonzepte.",
+          "Als spezialisierte Zuverlässigkeitsberatung übersetzen wir reale Nutzung in messbare Zuverlässigkeitsziele, bewerten relevante Ausfallmechanismen und entwickeln belastbare Nachweiskonzepte.",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.webp",
         imagePosition:
@@ -98,9 +98,9 @@ const conceptContent = {
     academyCta: "Explore RelTest Education",
     slides: [
       {
-        title: "Define targets. Assess lifetime systematically.",
+        title: "Develop reliability systematically.",
         description:
-          "We translate real-world use into measurable reliability targets, assess relevant failure mechanisms and develop suitable verification concepts.",
+          "As a specialist reliability consultancy, we translate real-world use into measurable reliability targets, assess relevant failure mechanisms and develop robust verification concepts.",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.webp",
         imagePosition:
@@ -396,7 +396,7 @@ export function HomePageHero({
           <div className="relative z-20 flex min-h-[52rem] items-center px-6 pt-12 pb-48 sm:min-h-[43rem] sm:px-10 sm:pt-14 sm:pb-48 md:min-h-[38rem] md:pt-16 md:pb-24 lg:px-16 xl:px-20">
             <div
               key={activeSlide.title}
-              className="winnstein-hero-copy flex min-h-[31rem] w-full min-w-0 max-w-[56rem] translate-y-3 flex-col sm:min-h-[27rem] sm:translate-y-3.5"
+              className="winnstein-hero-copy flex min-h-[31rem] w-full min-w-0 max-w-[56rem] -translate-y-5 flex-col sm:min-h-[27rem]"
             >
               <div className="flex min-h-0 flex-1 items-end">
                 <h1
@@ -407,20 +407,6 @@ export function HomePageHero({
                   }`}
                 >
                   {activeSlide.href ===
-                  "/leistungen/zuverlaessigkeitstechnik" ? (
-                    <>
-                      <span>
-                        {locale === "de"
-                          ? "Ziele definieren."
-                          : "Define targets."}
-                      </span>
-                      <span className="block">
-                        {locale === "de"
-                          ? "Lebensdauer systematisch bewerten."
-                          : "Assess lifetime systematically."}
-                      </span>
-                    </>
-                  ) : activeSlide.href ===
                     "/leistungen/datenanalyse-prognostik" ? (
                     <>
                       <span>

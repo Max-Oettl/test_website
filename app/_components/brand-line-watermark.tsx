@@ -3,6 +3,7 @@ type BrandLineWatermarkProps = {
     | "education"
     | "solutions"
     | "knowledge"
+    | "industries"
     | "expertise"
     | "about"
     | "contact";
@@ -15,6 +16,8 @@ const placementClasses = {
     "-bottom-48 -right-56 h-[36rem] w-[52rem] sm:-bottom-56 sm:-right-40 sm:h-[44rem] sm:w-[64rem] lg:-bottom-64 lg:-right-28 lg:h-[52rem] lg:w-[76rem]",
   knowledge:
     "-right-72 -top-40 h-[34rem] w-[50rem] sm:-right-52 sm:-top-48 sm:h-[42rem] sm:w-[62rem] lg:-right-40 lg:-top-56 lg:h-[50rem] lg:w-[74rem]",
+  industries:
+    "-bottom-52 -left-64 h-[38rem] w-[54rem] sm:-bottom-60 sm:-left-48 sm:h-[46rem] sm:w-[66rem] lg:-bottom-72 lg:-left-32 lg:h-[54rem] lg:w-[78rem]",
   expertise:
     "-bottom-52 -left-64 h-[38rem] w-[54rem] sm:-bottom-60 sm:-left-48 sm:h-[46rem] sm:w-[66rem] lg:-bottom-72 lg:-left-32 lg:h-[54rem] lg:w-[78rem]",
   about:

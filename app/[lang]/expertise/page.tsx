@@ -209,14 +209,24 @@ export default async function ExpertisePage({ params }: Props) {
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <BrandLineWatermark placement="expertise" />
         <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,1.05fr)_minmax(28rem,0.95fr)]">
-          <div className="flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-            <h1 className="max-w-4xl hyphens-auto font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.25rem] xl:text-[3.55rem]">
-              {content.intro.title}
-            </h1>
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/76">
-              {content.intro.description}
-            </p>
-            <div className="mt-10 h-1 w-16 bg-brand-steel-cyan" />
+          <div className="relative flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(ellipse 88% 72% at 48% 48%, #142452 0%, #142452 62%, rgb(20 36 82 / 0.94) 74%, rgb(20 36 82 / 0) 100%)",
+              }}
+            />
+            <div className="relative z-10">
+              <h1 className="max-w-4xl hyphens-auto font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.25rem] xl:text-[3.55rem]">
+                {content.intro.title}
+              </h1>
+              <p className="mt-7 max-w-3xl text-lg leading-8 text-white/76">
+                {content.intro.description}
+              </p>
+              <div className="mt-10 h-1 w-16 bg-brand-steel-cyan" />
+            </div>
           </div>
           <div className="relative min-h-[25rem] border-t border-white/15 lg:min-h-[39rem] lg:border-t-0 lg:border-l">
             <Image

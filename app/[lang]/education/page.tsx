@@ -198,6 +198,10 @@ export async function generateMetadata({ params }: Props) {
 export default async function EducationPage({ params }: Props) {
   const locale = await resolveLocale(params);
   const copy = educationCopy[locale];
+  const onSiteInquiryHref = localizeHref(
+    locale,
+    "/kontakt?topic=training#anfrageformular",
+  );
   const seminars = getDetailPages("education", locale).filter(
     ({ slug }) => slug !== "seminare" && slug !== "academy",
   );
@@ -294,7 +298,7 @@ export default async function EducationPage({ params }: Props) {
               </span>
             </Link>
             <Link
-              href={localizeHref(locale, "/kontakt")}
+              href={onSiteInquiryHref}
               className="group flex min-h-32 items-center justify-between gap-6 border-t border-brand-marine/15 px-7 py-6 transition-colors hover:bg-brand-steel-cyan-10 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-brand-steel-cyan sm:border-l lg:border-t-0"
             >
               <span>
@@ -418,7 +422,7 @@ export default async function EducationPage({ params }: Props) {
                 ))}
               </ul>
               <Link
-                href={localizeHref(locale, "/kontakt")}
+                href={onSiteInquiryHref}
                 className="mt-9 inline-flex w-fit items-center gap-5 border-b-2 border-brand-education pb-2 font-winnstein-display text-sm font-bold"
               >
                 {copy.paths.onSite.cta}

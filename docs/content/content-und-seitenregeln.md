@@ -367,14 +367,21 @@ Die Branchenkommunikation folgt auf allen Übersichtsseiten demselben Modell:
   erneuerbare Energien, Medizintechnik sowie Luft- und Raumfahrt.
 - Die Branchenübersicht zeigt zusätzlich Produktionstechnik und damit alle neun
   eigenständigen Branchenseiten.
-- Der Branchen-Hero hebt keine Teilmenge hervor, sondern zeigt ein ruhiges
-  3×3-Raster aus neun klar erkennbaren, einheitlich generierten minimalistischen
-  Piktogrammen für das gesamte Branchenspektrum. Die einzelnen Branchenkarten
-  verwenden dagegen weiterhin dieselben realistischen Branchenbilder wie die
-  Branchenverweise auf der Landingpage.
-- Die allgemeine Einordnung steht vollständig im Branchen-Hero. Nach der
-  Bereichs- und Rücknavigation beginnt direkt das Raster der neun Branchen;
-  eine zweite allgemeine Einführung wird dort nicht wiederholt.
+- Der Branchen-Hero hebt keine Teilmenge hervor, sondern zeigt neun klar
+  erkennbare, einheitliche Linienpiktogramme für das gesamte Branchenspektrum.
+  Sie stehen als offene, unterschiedlich gewichtete Komposition auf der
+  rechten Hero-Hälfte; ein gerahmtes Raster oder eine gleichförmige
+  Kachelcollage wird dort nicht eingesetzt. Im Hintergrund liegt wie in den
+  anderen Hero-Bereichen der abstrahierte Linienzug aus dem RelTest-Logo. Er ist
+  am linken Rand verankert; seine Linien blenden im Bereich der
+  Piktogramm-Komposition weich aus, damit beide Ebenen visuell klar getrennt
+  bleiben. Die einzelnen Branchenkarten verwenden dagegen weiterhin dieselben
+  realistischen Branchenbilder wie die Branchenverweise auf der Landingpage.
+- Die allgemeine Einordnung steht vollständig im Branchen-Hero. Die
+  Branchenübersicht ist ein eigenständiger Hauptbereich und zeigt dort weder
+  einen Rückweg zur Expertise noch eine zusätzliche Bereichsbezeichnung. Danach
+  beginnt direkt das Raster der neun Branchen; eine zweite allgemeine
+  Einführung wird dort nicht wiederholt.
 
 Branchen werden nicht nummeriert, weil keine Rangfolge gemeint ist.
 Benennungen, Reihenfolge, Links und Bilder werden aus der gemeinsamen
@@ -516,6 +523,9 @@ Darstellung:
 
 ### Expertise-Hub und Detailtiefe
 
+- Im Expertise-Hero blendet der abstrahierte Logo-Linienzug hinter Überschrift
+  und Einleitung weich aus. Außerhalb des Textbereichs bleibt das Wasserzeichen
+  sichtbar, ohne die Lesbarkeit zu beeinträchtigen.
 - Die Expertise-Seite führt Referenzen, Literatur, Podcast und Branchen nach
   einer gemeinsamen Einführung direkt in die fachlichen Bereiche. Eine zweite
   allgemeine Einführung unmittelbar nach der Bereichsnavigation wird nicht
@@ -524,9 +534,10 @@ Darstellung:
   ausklappbaren Elementen verdichtet werden. Kernaussagen und Links bleiben
   dabei im serverseitig gerenderten HTML vorhanden.
 - Eigenständige Detail-URLs für Literatur, Referenzen und Branchen bleiben als
-  stabile Such-, Direkt- und Vertiefungsziele bestehen. Diese Seiten erhalten
-  einen sichtbaren Rückweg zur Expertise-Übersicht; Branchendetailseiten führen
-  zunächst zur Branchenübersicht und von dort weiter zur Expertise.
+  stabile Such-, Direkt- und Vertiefungsziele bestehen. Literatur und Referenzen
+  erhalten einen sichtbaren Rückweg zur Expertise-Übersicht. Die
+  Branchenübersicht steht als eigener Hauptbereich ohne diesen Rückweg;
+  Branchendetailseiten führen zunächst zur Branchenübersicht.
 - Die Expertise-Seite verlinkt nur einmal zentral auf die Literaturseite.
   Buchbezogene Links führen direkt zum jeweiligen Verlagseintrag.
 - Die ausführliche Publikationsauswahl von Prof. Dr.-Ing. Bernd Bertsche wird

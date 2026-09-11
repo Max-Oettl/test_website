@@ -1,7 +1,12 @@
+import { Suspense } from "react";
+
 import { AiAwareImage as Image } from "../../_components/ai-aware-image";
 import { BrandLineWatermark } from "../../_components/brand-line-watermark";
 import { ConsentCalendlyEmbed } from "../../_components/consent-calendly-embed";
-import { ContactInquiryForm } from "../../_components/contact-inquiry-form";
+import {
+  ContactInquiryForm,
+  ContactInquiryFormFromQuery,
+} from "../../_components/contact-inquiry-form";
 
 import { resolveLocale, type Locale } from "../../_i18n/config";
 import { buildLocalizedMetadata } from "../../_seo/metadata";
@@ -205,7 +210,9 @@ export default async function ContactPage({ params }: Props) {
         <div className="mx-auto h-2 max-w-7xl bg-brand-steel-cyan" />
       </section>
 
-      <ContactInquiryForm locale={locale} />
+      <Suspense fallback={<ContactInquiryForm locale={locale} />}>
+        <ContactInquiryFormFromQuery locale={locale} />
+      </Suspense>
 
       <section
         id="termin"

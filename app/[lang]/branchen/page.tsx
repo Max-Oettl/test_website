@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { AiAwareImage as Image } from "../../_components/ai-aware-image";
+import { BrandLineWatermark } from "../../_components/brand-line-watermark";
 import { IndustrySpectrumGraphic } from "../../_components/industry-spectrum-graphic";
 import { PageClosingCta } from "../../_components/page-closing-cta";
 import {
@@ -20,7 +21,6 @@ const industriesContent = {
     metaDescription:
       "Zuverlässigkeitstechnik, Risikomanagement, Erprobung und Datenanalyse für Automotive, Maschinenbau, Elektronik, Medizintechnik und weitere technische Branchen.",
     hero: {
-      eyebrow: "Branchen",
       title: "Zuverlässigkeit nach Branche.",
       description:
         "Produkte, Einsatzbedingungen und Nachweispflichten unterscheiden sich. Deshalb passt RelTest Prüfstrategie, Datenanalyse und Absicherung an Produkt, Nutzung und Entwicklungsstand an – mit dem Ziel, technische Risiken früh zu verstehen und Entscheidungen auf belastbare Daten zu stützen.",
@@ -43,7 +43,6 @@ const industriesContent = {
     metaDescription:
       "Reliability engineering, risk management, testing and data analysis for automotive, mechanical engineering, electronics, medical technology and other technical industries.",
     hero: {
-      eyebrow: "Industries",
       title: "Reliability by industry.",
       description:
         "Products, operating conditions and evidence requirements differ. RelTest therefore adapts test strategy, data analysis and validation to the product, its use and development status – with the aim of understanding technical risks early and basing decisions on robust data.",
@@ -151,20 +150,12 @@ export default async function IndustriesPage({ params }: Props) {
   return (
     <main className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
-        <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:64px_64px]" />
+        <div className="pointer-events-none absolute inset-0 overflow-hidden text-white">
+          <BrandLineWatermark placement="industries" />
+        </div>
         <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,0.9fr)_minmax(30rem,1.1fr)]">
           <div className="flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-            <Link
-              href={localizeHref(locale, "/expertise")}
-              className="inline-flex w-fit items-center gap-3 font-winnstein-display text-sm font-bold text-brand-steel-cyan transition-colors hover:text-white"
-            >
-              <span aria-hidden="true">←</span>
-              Expertise
-            </Link>
-            <p className="mt-8 font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
-              {content.hero.eyebrow}
-            </p>
-            <h1 className="mt-5 max-w-4xl font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.8rem]">
+            <h1 className="max-w-4xl font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.8rem]">
               {content.hero.title}
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-white/76">
@@ -172,8 +163,16 @@ export default async function IndustriesPage({ params }: Props) {
             </p>
             <div className="mt-10 h-1 w-16 bg-brand-steel-cyan" />
           </div>
-          <div className="relative flex min-h-[22rem] items-center justify-center overflow-hidden bg-brand-marine px-8 py-12 lg:min-h-[39rem] lg:px-14">
-            <div className="relative w-full max-w-[30rem]">
+          <div className="relative flex min-h-[20rem] items-center justify-center overflow-hidden px-6 py-8 sm:min-h-[24rem] sm:px-10 lg:min-h-[39rem] lg:px-10 lg:py-12">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgb(20 36 82 / 0.82) 0%, #142452 14%, #142452 100%)",
+              }}
+            />
+            <div className="relative z-10 w-full max-w-[38rem]">
               <IndustrySpectrumGraphic label={content.hero.graphicAlt} />
             </div>
           </div>

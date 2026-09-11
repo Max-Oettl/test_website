@@ -68,13 +68,9 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
     <>
       <header className="bg-[var(--solution-marine)] font-winnstein-body text-white">
         <div
-          className={
-            hasWideKnowledgeHeader
-              ? "mx-auto max-w-[1440px] px-6 py-14 lg:px-12 lg:py-16"
-              : "mx-auto grid max-w-[1440px] gap-10 px-6 py-14 lg:grid-cols-[minmax(0,.92fr)_minmax(360px,.68fr)] lg:items-center lg:px-12 lg:py-20"
-          }
+          className="mx-auto grid max-w-[1440px] gap-10 px-6 py-14 lg:grid-cols-[minmax(0,.92fr)_minmax(360px,.68fr)] lg:items-center lg:px-12 lg:py-20"
         >
-          <div className={hasWideKnowledgeHeader ? "max-w-6xl" : undefined}>
+          <div>
             <Link
               href={localizeHref(locale, "/wissen")}
               className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)] underline decoration-transparent underline-offset-8 transition hover:decoration-current"
@@ -95,7 +91,7 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
             <figure
               className={
                 hasWideKnowledgeHeader
-                  ? "relative mt-10 aspect-[4/3] w-full overflow-hidden sm:aspect-[16/9] lg:mt-12 lg:aspect-[2.2/1]"
+                  ? "relative flex min-h-[290px] w-full max-w-[640px] items-center justify-center justify-self-center sm:min-h-[350px] lg:min-h-[340px] lg:max-w-[560px]"
                   : "relative flex min-h-[240px] w-full max-w-[560px] items-center justify-center justify-self-center lg:min-h-[300px]"
               }
             >
@@ -106,14 +102,14 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
                 height={headerImage.height}
                 sizes={
                   hasWideKnowledgeHeader
-                    ? "(min-width: 1440px) 1344px, (min-width: 1024px) calc(100vw - 6rem), 100vw"
+                    ? "(min-width: 1024px) 560px, (min-width: 640px) 640px, 100vw"
                     : "(min-width: 1024px) 48vw, 100vw"
                 }
                 preload
                 quality={90}
                 className={
                   hasWideKnowledgeHeader
-                    ? "h-full w-full object-cover [filter:brightness(1.06)_invert(1)_hue-rotate(180deg)] mix-blend-screen"
+                    ? "h-auto max-h-[430px] w-full object-contain [filter:brightness(1.06)_invert(1)_hue-rotate(180deg)] mix-blend-screen"
                     : "h-auto max-h-[360px] w-full object-contain [filter:brightness(1.06)_invert(1)_hue-rotate(180deg)] mix-blend-screen"
                 }
               />

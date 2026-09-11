@@ -48,7 +48,7 @@ const copy: Record<
       imageTitle: string;
       imageBrief: string;
     };
-    definition: { label: string; text: string; terms: string[] };
+    definition: { label: string; text: string };
     processIntro: { eyebrow: string; title: string; text: string };
     processLink: string;
     processes: ProcessItem[];
@@ -84,19 +84,18 @@ const copy: Record<
     },
     lifecycle: {
       eyebrow: "Gesamtprozess",
-      title: "Methoden im Lebenszyklus",
+      title: "Teilprozesse im Lebenszyklus",
       intro:
-        "Qualitative und quantitative Methoden greifen von der ersten Anforderung bis zur Felderfahrung ineinander. So bleibt Zuverlässigkeit über alle Entwicklungsphasen hinweg steuerbar.",
+        "Die Lebenszyklusphasen bilden die zeitliche Abfolge. Die fünf Teilprozesse strukturieren die fachliche Arbeit und greifen phasenübergreifend ineinander – von der Zieldefinition bis zur Prognose aus Felddaten.",
       stages: ["Konzeption", "Entwurf", "Ausarbeitung", "Fertigung", "Kundeneinsatz", "Wiederverwendung"],
-      imageTitle: "Zuverlässigkeitsmanagement im Produktlebenszyklus",
+      imageTitle: "Fünf Teilprozesse im Produktlebenszyklus",
       imageBrief:
-        "Platz für eine Prozessgrafik mit qualitativen Methoden oberhalb und quantitativen Methoden unterhalb der Entwicklungsphasen.",
+        "Prozessgrafik mit unnummerierten Lebenszyklusphasen und den fünf nummerierten, phasenübergreifenden Teilprozessen der Zuverlässigkeitstechnik.",
     },
     definition: {
       label: "Begriffsdefinition",
       text:
         "„Zuverlässigkeit ist die Wahrscheinlichkeit, dass ein Produkt seine geforderte Funktion über eine definierte Zeit unter festgelegten Einsatz- und Umgebungsbedingungen ohne Ausfall erfüllt.“",
-      terms: ["Funktion", "Zeit", "Bedingungen", "Wahrscheinlichkeit"],
     },
     processIntro: {
       eyebrow: "Fünf Teilprozesse",
@@ -204,19 +203,18 @@ const copy: Record<
     },
     lifecycle: {
       eyebrow: "Overall process",
-      title: "Methods across the life cycle",
+      title: "Sub-processes across the life cycle",
       intro:
-        "Qualitative and quantitative methods interact from the initial requirement through to field experience, keeping reliability manageable across all development phases.",
+        "The life-cycle phases show the chronological sequence. The five sub-processes structure the technical work across all phases – from defining targets to predicting reliability from field data.",
       stages: ["Concept", "Design", "Development", "Production", "Field use", "Reuse"],
-      imageTitle: "Reliability management across the product life cycle",
+      imageTitle: "Five sub-processes across the product life cycle",
       imageBrief:
-        "Space for a process graphic showing qualitative methods above and quantitative methods below the development phases.",
+        "Process diagram with unnumbered life-cycle phases and the five numbered reliability-engineering sub-processes spanning those phases.",
     },
     definition: {
       label: "Definition",
       text:
         "“Reliability is the probability that a product performs its required function without failure for a defined period under specified operating and environmental conditions.”",
-      terms: ["Function", "Time", "Conditions", "Probability"],
     },
     processIntro: {
       eyebrow: "Five sub-processes",
@@ -523,14 +521,16 @@ export default async function KnowledgePage({ params }: Props) {
         </section>
 
         <section className="bg-brand-marine px-6 py-14 text-white lg:px-8 lg:py-16">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.38fr_1.62fr] lg:items-center">
-            <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-steel-cyan">{content.definition.label}</p>
+          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.38fr_1.62fr] lg:items-start lg:gap-10">
             <div>
-              <p className="max-w-5xl font-winnstein-display text-2xl font-semibold leading-relaxed sm:text-3xl">{content.definition.text}</p>
-              <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/20 pt-6">
-                {content.definition.terms.map((term) => <span key={term} className="font-winnstein-display text-sm font-semibold text-white/72">— {term}</span>)}
-              </div>
+              <span aria-hidden="true" className="block h-1 w-16 bg-brand-steel-cyan" />
+              <h2 className="mt-4 font-winnstein-display text-xl font-bold tracking-[0.04em] text-brand-steel-cyan sm:text-2xl">
+                {content.definition.label}
+              </h2>
             </div>
+            <blockquote className="max-w-5xl border-l border-white/25 pl-6 font-winnstein-display text-2xl font-semibold leading-relaxed sm:pl-8 sm:text-3xl">
+              {content.definition.text}
+            </blockquote>
           </div>
         </section>
 

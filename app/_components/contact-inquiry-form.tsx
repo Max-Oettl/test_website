@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useState, type FormEvent } from "react";
 
 import { localizeHref, type Locale } from "../_i18n/config";
 
 type ContactInquiryFormProps = {
   locale: Locale;
+  initialTopic?: TopicKey;
 };
 
 const formCopy = {
@@ -112,6 +114,20 @@ const formCopy = {
   },
 } as const;
 
+type TopicKey = keyof typeof formCopy.de.topics;
+
+const topicKeys = [
+  "project",
+  "training",
+  "education",
+  "literature",
+  "general",
+] as const satisfies readonly TopicKey[];
+
+function isTopicKey(value: string | null): value is TopicKey {
+  return value !== null && topicKeys.includes(value as TopicKey);
+}
+
 const fieldClassName =
   "mt-1.5 min-h-13 w-full border border-brand-marine/20 bg-white px-4 py-3 text-base text-brand-marine outline-none transition-colors placeholder:text-sm placeholder:text-brand-marine/30 focus:border-brand-steel-cyan focus:ring-2 focus:ring-brand-steel-cyan/15";
 
@@ -133,9 +149,15 @@ function ArrowIcon() {
   );
 }
 
-export function ContactInquiryForm({ locale }: ContactInquiryFormProps) {
+export function ContactInquiryForm({
+  locale,
+  initialTopic,
+}: ContactInquiryFormProps) {
   const copy = formCopy[locale];
   const [prepared, setPrepared] = useState(false);
+  const [selectedTopic, setSelectedTopic] = useState<"" | TopicKey>(
+    initialTopic ?? "",
+  );
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -225,7 +247,15 @@ export function ContactInquiryForm({ locale }: ContactInquiryFormProps) {
           <div className="mt-7 grid gap-5 sm:grid-cols-2">
             <label className={pairedFieldLabelClassName}>
               <span className={pairedFieldCaptionClassName}>{copy.topic}</span>
-              <select name="topic" required defaultValue="" className={fieldClassName}>
+              <select
+                name="topic"
+                required
+                value={selectedTopic}
+                onChange={(event) =>
+                  setSelectedTopic(event.target.value as "" | TopicKey)
+                }
+                className={fieldClassName}
+              >
                 <option value="" disabled>
                   {copy.topicPlaceholder}
                 </option>
@@ -331,5 +361,19 @@ export function ContactInquiryForm({ locale }: ContactInquiryFormProps) {
         </form>
       </div>
     </section>
+  );
+}
+
+export function ContactInquiryFormFromQuery({
+  locale,
+}: ContactInquiryFormProps) {
+  const searchParams = useSearchParams();
+  const requestedTopic = searchParams.get("topic");
+
+  return (
+    <ContactInquiryForm
+      locale={locale}
+      initialTopic={isTopicKey(requestedTopic) ? requestedTopic : undefined}
+    />
   );
 }

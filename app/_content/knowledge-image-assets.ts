@@ -55,7 +55,7 @@ export const knowledgeLifecycleImages: Record<Locale, KnowledgeLifecycleImageAss
     mobileSrc: lebenszyklusMobileDe,
     mobileWidth: 720,
     mobileHeight: 1248,
-    alt: "Lebensdauerbegleitendes Zuverlässigkeitsmanagement mit qualitativen und quantitativen Methoden entlang des Produktlebenszyklus",
+    alt: "Sechs unnummerierte Produktlebenszyklusphasen und die fünf phasenübergreifenden Teilprozesse Zuverlässigkeitsplanung, Schwachstellenanalyse, Erprobung, Absicherung und Prognose",
   },
   en: {
     src: lebenszyklusEn,
@@ -64,7 +64,7 @@ export const knowledgeLifecycleImages: Record<Locale, KnowledgeLifecycleImageAss
     mobileSrc: lebenszyklusMobileEn,
     mobileWidth: 720,
     mobileHeight: 1248,
-    alt: "Lifecycle reliability management with qualitative and quantitative methods across the product lifecycle",
+    alt: "Six unnumbered product life-cycle phases and the five cross-phase sub-processes reliability planning, weak-point analysis, testing, assurance and prediction",
   },
 };
 

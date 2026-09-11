@@ -1,76 +1,74 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="760" viewBox="0 0 1440 760" role="img" aria-labelledby="title desc" xml:lang="en">
-  <title id="title">Reliability management across the product lifecycle</title>
-  <desc id="desc">Qualitative methods accompany six product phases. Quantitative evidence connects targets, tests, field data and forecasts. Field experience feeds back into planning.</desc>
+  <title id="title">Five sub-processes across the product life cycle</title>
+  <desc id="desc">Six unnumbered life-cycle phases show the chronological sequence. Below them, the five cross-phase reliability-engineering sub-processes are numbered.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M1 1l8 4-8 4z" fill="#2ea1cf"/>
     </marker>
     <style>
       .label{font:700 18px Arial,sans-serif;letter-spacing:2px;fill:#2ea1cf}
-      .heading{font:700 24px Arial,sans-serif;fill:#142452}
-      .copy{font:400 17px Arial,sans-serif;fill:#435075}
-      .stage{font:700 18px Arial,sans-serif;fill:#142452}
-      .number{font:700 16px Arial,sans-serif;fill:#fff}
+      .heading{font:700 22px Arial,sans-serif;fill:#142452}
+      .copy{font:400 16px Arial,sans-serif;fill:#435075}
+      .stage{font:700 17px Arial,sans-serif;fill:#142452}
+      .number{font:700 17px Arial,sans-serif;fill:#2ea1cf}
     </style>
   </defs>
   <rect width="1440" height="760" fill="#fff"/>
 
-  <text class="label" x="72" y="62">QUALITATIVE</text>
-  <path d="M220 56h1148" stroke="#d5ecf7" stroke-width="2"/>
+  <text class="label" x="72" y="62">PRODUCT LIFE CYCLE</text>
+  <path d="M330 56h1038" stroke="#d5ecf7" stroke-width="2"/>
 
-  <g>
-    <rect x="72" y="96" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
-    <path d="M72 96h8v132h-8z" fill="#2ea1cf"/>
-    <text class="heading" x="108" y="143">Understand requirements</text>
-    <text class="copy" x="108" y="181">Specifications · experience</text>
-  </g>
-  <g>
-    <rect x="522" y="96" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
-    <path d="M522 96h8v132h-8z" fill="#2ea1cf"/>
-    <text class="heading" x="558" y="143">Assess risks</text>
-    <text class="copy" x="558" y="181">Design reviews · FTA · audits</text>
-  </g>
-  <g>
-    <rect x="972" y="96" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
-    <path d="M972 96h8v132h-8z" fill="#2ea1cf"/>
-    <text class="heading" x="1008" y="143">Derive improvements</text>
-    <text class="copy" x="1008" y="181">Field data · early indicators</text>
-  </g>
-
-  <rect x="48" y="260" width="1320" height="264" rx="6" fill="#eaf5fb" stroke="#d5ecf7"/>
-  <text class="label" x="72" y="296">PRODUCT LIFECYCLE</text>
-  <path d="M170 354h1100" stroke="#142452" stroke-width="3"/>
+  <rect x="48" y="90" width="1320" height="222" rx="6" fill="#eaf5fb" stroke="#d5ecf7"/>
+  <path d="M150 178h1140" fill="none" stroke="#142452" stroke-width="3" marker-end="url(#arrow)"/>
   <g text-anchor="middle">
-    <circle cx="170" cy="354" r="26" fill="#142452"/><text class="number" x="170" y="360">01</text>
-    <text class="stage" x="170" y="410">Concept</text>
-    <circle cx="390" cy="354" r="26" fill="#142452"/><text class="number" x="390" y="360">02</text>
-    <text class="stage" x="390" y="410">Design</text>
-    <circle cx="610" cy="354" r="26" fill="#142452"/><text class="number" x="610" y="360">03</text>
-    <text class="stage" x="610" y="410">Detailing</text>
-    <circle cx="830" cy="354" r="26" fill="#142452"/><text class="number" x="830" y="360">04</text>
-    <text class="stage" x="830" y="410">Production</text>
-    <circle cx="1050" cy="354" r="26" fill="#142452"/><text class="number" x="1050" y="360">05</text>
-    <text class="stage" x="1050" y="410">Customer use</text>
-    <circle cx="1270" cy="354" r="26" fill="#2ea1cf"/><text class="number" x="1270" y="360">06</text>
-    <text class="stage" x="1270" y="410">Reuse</text>
+    <circle cx="150" cy="178" r="9" fill="#142452"/>
+    <text class="stage" x="150" y="222">Concept</text>
+    <circle cx="378" cy="178" r="9" fill="#142452"/>
+    <text class="stage" x="378" y="222">Design</text>
+    <circle cx="606" cy="178" r="9" fill="#142452"/>
+    <text class="stage" x="606" y="222">Detailing</text>
+    <circle cx="834" cy="178" r="9" fill="#142452"/>
+    <text class="stage" x="834" y="222">Production</text>
+    <circle cx="1062" cy="178" r="9" fill="#142452"/>
+    <text class="stage" x="1062" y="222">Customer use</text>
+    <circle cx="1290" cy="178" r="11" fill="#2ea1cf"/>
+    <text class="stage" x="1290" y="222">Reuse</text>
   </g>
-  <path d="M1270 448v18c0 18-15 32-32 32H202c-18 0-32-14-32-32v-18" fill="none" stroke="#2ea1cf" stroke-width="2.5" marker-end="url(#arrow)"/>
-  <text class="copy" x="720" y="486" text-anchor="middle">Field experience feeds back into targets and planning</text>
+  <path d="M1290 248v16c0 16-13 28-28 28H178c-15 0-28-12-28-28v-16" fill="none" stroke="#2ea1cf" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text class="copy" x="720" y="282" text-anchor="middle">Field experience feeds back into targets and planning</text>
 
-  <text class="label" x="72" y="566">QUANTITATIVE</text>
-  <path d="M230 560h1138" stroke="#d5ecf7" stroke-width="2"/>
+  <text class="label" x="72" y="352">FIVE SUB-PROCESSES ACROSS THE LIFE CYCLE</text>
+  <path d="M610 346h758" stroke="#d5ecf7" stroke-width="2"/>
+
   <g>
-    <rect x="72" y="596" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
-    <path d="M72 596h8v132h-8z" fill="#2ea1cf"/>
-    <text class="heading" x="108" y="643">Targets &amp; risk</text>
-    <text class="copy" x="108" y="681">Reliability targets · risk analysis</text>
-    <rect x="522" y="596" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
-    <path d="M522 596h8v132h-8z" fill="#2ea1cf"/>
-    <text class="heading" x="558" y="643">Tests &amp; process</text>
-    <text class="copy" x="558" y="681">Test planning · statistical process control</text>
-    <rect x="972" y="596" width="396" height="132" fill="#f7fbfd" stroke="#dbe5ec"/>
-    <path d="M972 596h8v132h-8z" fill="#2ea1cf"/>
-    <text class="heading" x="1008" y="643">Field &amp; forecast</text>
-    <text class="copy" x="1008" y="681">Field-data analysis · remaining useful life</text>
+    <rect x="72" y="374" width="1296" height="60" fill="#f7fbfd" stroke="#dbe5ec"/>
+    <path d="M72 374h8v60h-8z" fill="#2ea1cf"/>
+    <text class="number" x="104" y="410">01</text>
+    <text class="heading" x="154" y="410">Reliability planning</text>
+    <text class="copy" x="530" y="409">Targets, responsibilities and verification plan</text>
+
+    <rect x="72" y="446" width="1296" height="60" fill="#f7fbfd" stroke="#dbe5ec"/>
+    <path d="M72 446h8v60h-8z" fill="#2ea1cf"/>
+    <text class="number" x="104" y="482">02</text>
+    <text class="heading" x="154" y="482">Weak-point analysis</text>
+    <text class="copy" x="530" y="481">Risks, failure causes and improvements</text>
+
+    <rect x="72" y="518" width="1296" height="60" fill="#f7fbfd" stroke="#dbe5ec"/>
+    <path d="M72 518h8v60h-8z" fill="#2ea1cf"/>
+    <text class="number" x="104" y="554">03</text>
+    <text class="heading" x="154" y="554">Reliability testing</text>
+    <text class="copy" x="530" y="553">Tests, loads and lifetime</text>
+
+    <rect x="72" y="590" width="1296" height="60" fill="#f7fbfd" stroke="#dbe5ec"/>
+    <path d="M72 590h8v60h-8z" fill="#2ea1cf"/>
+    <text class="number" x="104" y="626">04</text>
+    <text class="heading" x="154" y="626">Reliability assurance</text>
+    <text class="copy" x="530" y="625">Evidence, assessment and release</text>
+
+    <rect x="72" y="662" width="1296" height="60" fill="#f7fbfd" stroke="#dbe5ec"/>
+    <path d="M72 662h8v60h-8z" fill="#2ea1cf"/>
+    <text class="number" x="104" y="698">05</text>
+    <text class="heading" x="154" y="698">Reliability prediction</text>
+    <text class="copy" x="530" y="697">Field data, lifetime models and forecast</text>
   </g>
 </svg>
