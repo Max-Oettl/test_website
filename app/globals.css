@@ -352,7 +352,6 @@ html.site-compact-menu-open body {
 
 @media (max-width: 639px) {
   .site-compact-menu-panel {
-    max-width: none;
     border-left: 0;
   }
 }

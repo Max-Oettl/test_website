@@ -93,6 +93,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           className="site-header-brand flex items-center gap-3"
           activeClassName=""
           exact
+          scrollToTopWhenActive
           aria-label={navigation.homeLabel}
         >
           <span className="site-header-logo-mark relative block h-11 w-36 sm:w-44">

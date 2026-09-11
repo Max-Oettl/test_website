@@ -528,7 +528,7 @@ export function HomePageHero({
                         />
                       </span>
                       <span className="min-w-0">
-                        <span className="block text-xs leading-tight font-bold sm:text-sm xl:text-[0.95rem]">
+                        <span className="block hyphens-auto text-xs leading-tight font-bold [overflow-wrap:anywhere] sm:text-sm xl:text-[0.95rem]">
                           {topic.title}
                         </span>
                       </span>

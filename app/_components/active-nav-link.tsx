@@ -12,6 +12,7 @@ type ActiveNavLinkProps = Omit<ComponentProps<typeof Link>, "href"> & {
   children: ReactNode;
   exact?: boolean;
   inactiveClassName?: string;
+  scrollToTopWhenActive?: boolean;
 };
 
 function cx(...classes: Array<string | false | null | undefined>) {
@@ -53,7 +54,9 @@ export function ActiveNavLink({
   exact = false,
   href,
   inactiveClassName,
+  onClick,
   onPointerUp,
+  scrollToTopWhenActive = false,
   ...props
 }: ActiveNavLinkProps) {
   const pathname = usePathname();
@@ -67,6 +70,31 @@ export function ActiveNavLink({
       href={href}
       aria-current={isActive ? "page" : undefined}
       className={cx(className, isActive ? activeClassName : inactiveClassName)}
+      onClick={(event) => {
+        onClick?.(event);
+
+        if (
+          event.defaultPrevented ||
+          !scrollToTopWhenActive ||
+          !isActive ||
+          event.button !== 0 ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
+        });
+      }}
       onPointerUp={(event) => {
         onPointerUp?.(event);
         if (blurOnPointerActivation && !event.defaultPrevented) {

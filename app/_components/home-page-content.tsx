@@ -606,7 +606,7 @@ export function HomePageContent({
               </div>
               <Link
                 href={localizeHref(locale, "/leistungen")}
-                className="group mt-10 inline-flex min-h-12 w-fit items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-[#edf5f8]"
+                className="group mt-6 inline-flex min-h-12 w-fit items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-[#edf5f8]"
               >
                 {content.supportCta}
                 <span className="transition-transform group-hover:translate-x-1">
@@ -985,7 +985,7 @@ export function HomePageContent({
               </Link>
             ))}
           </div>
-          <div className="mt-8 flex justify-end">
+          <div className="mt-5 flex justify-end">
             <Link
               href={localizeHref(locale, "/branchen")}
               className="brand-action group inline-flex min-h-12 w-full items-center justify-center gap-4 bg-brand-marine px-7 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-white sm:w-auto"

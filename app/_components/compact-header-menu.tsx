@@ -167,7 +167,7 @@ export function CompactHeaderMenu({
         />
         <div
           ref={panelRef}
-          className="site-compact-menu-panel relative ml-auto flex h-full w-full max-w-[30rem] flex-col border-l border-brand-marine/15 bg-white shadow-[-18px_0_45px_rgba(20,36,82,0.16)]"
+          className="site-compact-menu-panel relative ml-auto flex h-full w-full max-w-none flex-col border-l border-brand-marine/15 bg-white shadow-[-18px_0_45px_rgba(20,36,82,0.16)] sm:max-w-[30rem]"
           role="dialog"
           aria-modal="true"
           aria-label={label}
