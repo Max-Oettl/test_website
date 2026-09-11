@@ -12,6 +12,7 @@ import {
 import { createPortal } from "react-dom";
 
 type CompactHeaderMenuProps = {
+  brand?: ReactNode;
   children: ReactNode;
   closeLabel: string;
   footer?: ReactNode;
@@ -23,6 +24,7 @@ function subscribeToClientState() {
 }
 
 export function CompactHeaderMenu({
+  brand,
   children,
   closeLabel,
   footer,
@@ -211,6 +213,12 @@ export function CompactHeaderMenu({
                   }
                 }}
               >
+                {brand ? (
+                  <div className="shrink-0 border-b border-brand-steel-cyan/20 bg-white px-5 sm:hidden">
+                    {brand}
+                  </div>
+                ) : null}
+
                 <div className="flex min-h-16 shrink-0 items-center justify-between border-b border-brand-marine/12 px-5">
                   <p className="font-winnstein-display text-base font-bold text-brand-marine">
                     {label}

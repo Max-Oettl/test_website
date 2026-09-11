@@ -250,6 +250,22 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         <CompactHeaderMenu
           label={navigation.menu}
           closeLabel={locale === "de" ? "Menü schließen" : "Close menu"}
+          brand={
+            <Link
+              href={localizeHref(locale, "/")}
+              className="grid min-h-[5.125rem] grid-cols-[8.5rem_minmax(0,1fr)] items-center gap-4 py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset"
+              aria-label={navigation.homeLabel}
+            >
+              <span className="relative block h-11 w-[8.5rem]">
+                <SiteBrandLogo placement="header" />
+              </span>
+              <span className="text-xs leading-[1.35] font-semibold text-brand-marine/75">
+                {locale === "de"
+                  ? "Zuverlässigkeitsberatung und Engineering für anspruchsvolle Produkte."
+                  : "Reliability consulting and engineering for demanding products."}
+              </span>
+            </Link>
+          }
           footer={
             <Link
               href={localizeHref(locale, "/kontakt")}

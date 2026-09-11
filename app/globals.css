@@ -351,6 +351,12 @@ html.site-compact-menu-open body {
 }
 
 @media (max-width: 639px) {
+  .site-compact-menu-layer {
+    top: 0;
+    height: 100vh;
+    height: 100dvh;
+  }
+
   .site-compact-menu-panel {
     border-left: 0;
   }

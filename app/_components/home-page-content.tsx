@@ -679,12 +679,12 @@ export function HomePageContent({
                 className="group overflow-hidden border border-line-soft bg-white shadow-[0_18px_55px_rgba(18,42,64,0.055)]"
               >
                 <summary className="grid cursor-pointer list-none transition-colors hover:bg-[#fbfdfe] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-inset lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.32fr)] [&::-webkit-details-marker]:hidden">
-                  <div className="flex min-w-0 flex-col justify-center p-6 sm:p-8 lg:px-10 lg:py-9">
+                  <div className="order-2 flex min-w-0 flex-col justify-center p-6 sm:p-8 lg:order-1 lg:px-10 lg:py-9">
                     <h3 className="max-w-4xl text-2xl leading-[1.08] font-semibold tracking-[-0.045em] text-brand-ink sm:text-[2rem]">
                       {project.title}
                     </h3>
                     <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
-                      <span className="flex w-fit flex-wrap items-center gap-x-3 gap-y-1 bg-brand-steel-cyan-10 px-4 py-2.5 sm:px-5">
+                      <span className="flex w-full flex-wrap items-center gap-x-3 gap-y-1 bg-brand-steel-cyan-10 px-4 py-2.5 sm:w-fit sm:px-5">
                         <span className="text-xs font-bold tracking-[0.12em] text-brand-cyan uppercase">
                           {content.roleLabel}:
                         </span>
@@ -693,7 +693,7 @@ export function HomePageContent({
                         </span>
                       </span>
 
-                      <span className="inline-flex items-center gap-3 text-sm font-bold text-brand-blue">
+                      <span className="inline-flex w-full items-center justify-between gap-3 border-t border-line-soft pt-4 text-sm font-bold text-brand-blue sm:w-auto sm:border-t-0 sm:pt-0">
                         <span className="group-open:hidden">{content.expandLabel}</span>
                         <span className="hidden group-open:inline">{content.collapseLabel}</span>
                         <span className="brand-icon-point relative grid size-10 place-items-center text-white">
@@ -704,7 +704,7 @@ export function HomePageContent({
                     </div>
                   </div>
 
-                  <div className="relative min-h-40 overflow-hidden border-t border-line-soft bg-brand-steel-cyan-10 lg:min-h-full lg:border-t-0 lg:border-l">
+                  <div className="relative order-1 min-h-48 overflow-hidden border-b border-line-soft bg-brand-steel-cyan-10 sm:min-h-56 lg:order-2 lg:min-h-full lg:border-b-0 lg:border-l">
                     <Image
                       src={project.image}
                       alt={project.imageAlt}

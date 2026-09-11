@@ -351,7 +351,7 @@ export function HomePageHero({
         onBlurCapture={() => setIsPaused(false)}
       >
         <div
-          className="relative min-h-[49rem] touch-pan-y overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[40rem] md:min-h-[38rem]"
+          className="relative min-h-[52rem] touch-pan-y overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[43rem] md:min-h-[38rem]"
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerCancel}
@@ -393,7 +393,7 @@ export function HomePageHero({
           <div className="absolute inset-0 z-20 bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.96)_24%,rgba(255,255,255,0.76)_38%,rgba(255,255,255,0.46)_52%,rgba(255,255,255,0.18)_66%,rgba(255,255,255,0.04)_78%,rgba(255,255,255,0)_86%)]" />
           <div className="absolute inset-x-0 bottom-0 z-20 h-32 bg-gradient-to-t from-white/40 via-white/10 to-transparent" />
 
-          <div className="relative z-20 flex min-h-[49rem] items-center px-6 pt-12 pb-36 sm:min-h-[40rem] sm:px-10 sm:pt-14 sm:pb-36 md:min-h-[38rem] md:pt-16 md:pb-24 lg:px-16 xl:px-20">
+          <div className="relative z-20 flex min-h-[52rem] items-center px-6 pt-12 pb-48 sm:min-h-[43rem] sm:px-10 sm:pt-14 sm:pb-48 md:min-h-[38rem] md:pt-16 md:pb-24 lg:px-16 xl:px-20">
             <div
               key={activeSlide.title}
               className="winnstein-hero-copy flex min-h-[31rem] w-full min-w-0 max-w-[56rem] translate-y-3 flex-col sm:min-h-[27rem] sm:translate-y-3.5"
@@ -479,7 +479,7 @@ export function HomePageHero({
           </div>
 
           <div className="absolute inset-x-0 bottom-0 z-30 border-t border-brand-marine/12 bg-white/88 px-3 py-2 backdrop-blur-md sm:px-5 lg:px-6">
-            <div className="flex items-stretch gap-2">
+            <div className="flex flex-col gap-2 md:flex-row md:items-stretch">
               <div
                 className="grid min-w-0 flex-1 grid-cols-2 items-stretch md:grid-cols-4"
                 aria-label={content.slideLabel}
@@ -537,11 +537,11 @@ export function HomePageHero({
                 })}
               </div>
 
-              <div className="hidden shrink-0 items-center gap-1 border-l border-brand-marine/12 pl-2 lg:flex">
+              <div className="flex shrink-0 items-center justify-end gap-1 border-t border-brand-marine/12 pt-2 md:border-t-0 md:border-l md:pt-0 md:pl-2">
                 <button
                   type="button"
                   onClick={() => moveSlide(-1)}
-                  className="flex h-11 w-11 items-center justify-center text-brand-marine transition-colors hover:bg-white/70 hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+                  className="flex h-11 w-11 items-center justify-center border border-brand-marine/15 bg-white/55 text-brand-marine transition-colors hover:bg-white hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan lg:border-0 lg:bg-transparent"
                   aria-label={content.previousSlide}
                 >
                   <span className="rotate-180">
@@ -551,7 +551,7 @@ export function HomePageHero({
                 <button
                   type="button"
                   onClick={() => moveSlide(1)}
-                  className="flex h-11 w-11 items-center justify-center text-brand-marine transition-colors hover:bg-white/70 hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+                  className="flex h-11 w-11 items-center justify-center border border-brand-marine/15 bg-white/55 text-brand-marine transition-colors hover:bg-white hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan lg:border-0 lg:bg-transparent"
                   aria-label={content.nextSlide}
                 >
                   <ArrowIcon />
@@ -569,10 +569,10 @@ export function HomePageHero({
             href="https://reltest-academy.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-2 px-4 py-3 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-education focus-visible:ring-inset sm:flex sm:min-h-16 sm:w-auto sm:flex-row sm:items-center sm:gap-5 sm:px-6 sm:py-3"
+            className="group grid min-h-20 w-full grid-cols-[7rem_minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-education focus-visible:ring-inset sm:flex sm:min-h-16 sm:w-auto sm:flex-row sm:items-center sm:gap-5 sm:px-6 sm:py-3"
           >
             <span className="contents sm:flex sm:min-w-0 sm:flex-row sm:items-center sm:gap-5">
-              <span className="relative col-span-2 h-10 w-28 shrink-0 overflow-hidden sm:h-12 sm:w-36 lg:h-14 lg:w-40">
+              <span className="relative h-12 w-28 shrink-0 overflow-hidden sm:h-12 sm:w-36 lg:h-14 lg:w-40">
                 <Image
                   src="/branding/reltest-education-horizontal-positive.svg"
                   alt="RelTest Education"
@@ -581,14 +581,14 @@ export function HomePageHero({
                   className="absolute left-0 top-1/2 h-14 w-28 -translate-y-1/2 object-contain sm:h-[4.5rem] sm:w-36 lg:h-20 lg:w-40"
                 />
               </span>
-              <span className="col-start-1 row-start-2 min-w-0 text-slate-500">
+              <span className="min-w-0 leading-5 text-slate-500">
                 {content.academyPrompt}{" "}
                 <span className="font-semibold text-brand-marine transition-colors group-hover:text-brand-education">
                   {content.academyCta}
                 </span>
               </span>
             </span>
-            <span className="col-start-2 row-start-2 self-end shrink-0 pb-1 text-brand-education transition-transform duration-200 group-hover:translate-x-1 sm:self-auto sm:pb-0">
+            <span className="shrink-0 text-brand-education transition-transform duration-200 group-hover:translate-x-1">
               <ArrowIcon />
             </span>
           </Link>
