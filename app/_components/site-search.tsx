@@ -49,7 +49,7 @@ export function SiteSearch({
       aria-label={label}
       title={label}
       className={`group flex min-h-12 min-w-12 items-center justify-center text-brand-marine transition-colors hover:bg-brand-steel-cyan-10 hover:text-brand-steel-cyan focus-visible:bg-brand-steel-cyan-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan ${
-        compact ? "w-full" : ""
+        compact ? "w-12" : ""
       }`}
     >
       <SearchIcon />

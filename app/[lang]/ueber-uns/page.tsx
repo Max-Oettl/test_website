@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getImageProps } from "next/image";
 
 import { AiAwareImage as Image } from "../../_components/ai-aware-image";
 import { BrandLineWatermark } from "../../_components/brand-line-watermark";
@@ -796,6 +797,26 @@ function TeamSection({
   locale: Locale;
   content: AboutPageContent["team"];
 }) {
+  const commonImageProps = {
+    alt: content.imageAlt,
+    sizes:
+      "(min-width: 1280px) 1280px, (min-width: 1024px) calc(100vw - 64px), calc(100vw - 40px)",
+  };
+  const { props: desktopImageProps } = getImageProps({
+    ...commonImageProps,
+    src: "/about/reltest-team-knowledge-network.webp",
+    width: 1817,
+    height: 866,
+    quality: 75,
+  });
+  const { props: mobileImageProps } = getImageProps({
+    ...commonImageProps,
+    src: "/about/reltest-team-knowledge-network-mobile.webp",
+    width: 960,
+    height: 960,
+    quality: 75,
+  });
+
   return (
     <section id="team" className="scroll-mt-28 bg-surface-muted">
       <div className="mx-auto max-w-[90rem] px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
@@ -814,14 +835,19 @@ function TeamSection({
         </div>
 
         <div className="brand-panel-cut-bottom-right mx-auto mt-10 max-w-7xl overflow-hidden border border-line-soft bg-white">
-          <div className="relative aspect-[8/3] min-h-[14rem] overflow-hidden border-b border-line-soft bg-white">
-            <Image
-              src="/about/reltest-team-knowledge-network.webp"
-              alt={content.imageAlt}
-              fill
-              sizes="(min-width: 1280px) 1280px, (min-width: 1024px) calc(100vw - 64px), calc(100vw - 40px)"
-              className="object-cover object-center"
-            />
+          <div className="relative aspect-square overflow-hidden border-b border-line-soft bg-white sm:aspect-[8/3] sm:min-h-[14rem]">
+            <picture>
+              <source
+                media="(min-width: 640px)"
+                srcSet={desktopImageProps.srcSet}
+                sizes={desktopImageProps.sizes}
+              />
+              <img
+                {...mobileImageProps}
+                alt={content.imageAlt}
+                className="absolute inset-0 h-full w-full object-cover object-center"
+              />
+            </picture>
           </div>
 
           <div className="grid gap-px bg-line-soft md:grid-cols-2 xl:grid-cols-4">
@@ -1144,7 +1170,11 @@ export default async function AboutPage({ params }: Props) {
           <div className="mt-10 grid gap-8 lg:gap-10">
             {content.leadership.profiles.map((profile, index) => {
               const image = (
-                <div className="relative min-h-[25rem] lg:min-h-[30rem]">
+                <div
+                  className={`relative min-h-[25rem] lg:min-h-[30rem] ${
+                    index % 2 === 1 ? "lg:order-2" : ""
+                  }`}
+                >
                   <Image
                     src={profile.image}
                     alt={profile.imageAlt}
@@ -1158,7 +1188,11 @@ export default async function AboutPage({ params }: Props) {
               );
 
               const details = (
-                <div className="flex min-w-0 flex-col justify-center bg-brand-marine p-7 text-white sm:p-10 lg:p-12">
+                <div
+                  className={`flex min-w-0 flex-col justify-center bg-brand-marine p-7 text-white sm:p-10 lg:p-12 ${
+                    index % 2 === 1 ? "lg:order-1" : ""
+                  }`}
+                >
                   <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan sm:text-base">
                     {profile.role}
                   </p>
@@ -1216,8 +1250,8 @@ export default async function AboutPage({ params }: Props) {
                   key={profile.name}
                   className="grid overflow-hidden border border-line-soft shadow-[0_30px_80px_-52px_rgba(3,19,52,0.5)] lg:grid-cols-2"
                 >
-                  {index % 2 === 0 ? image : details}
-                  {index % 2 === 0 ? details : image}
+                  {image}
+                  {details}
                 </article>
               );
             })}

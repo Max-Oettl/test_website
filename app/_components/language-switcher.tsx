@@ -170,7 +170,7 @@ export function LanguageSwitcher({
     <div
       className={`language-switcher inline-flex items-center gap-2 ${
         compact
-          ? "w-full justify-center rounded-xl border border-slate-200 px-3 py-2.5"
+          ? "w-auto justify-start rounded-xl border border-slate-200 px-3 py-2.5"
           : "px-1"
       }`}
       aria-label={locale === "de" ? "Sprache auswählen" : "Select language"}

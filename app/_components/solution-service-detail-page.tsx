@@ -243,7 +243,7 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
               {page.deliverables.items.map((item) => (
                 <div
                   key={item.title}
-                  className="grid gap-2 py-5 sm:grid-cols-[2.5rem_1fr]"
+                  className="grid grid-cols-[1rem_minmax(0,1fr)] gap-x-4 py-5 sm:grid-cols-[2.5rem_minmax(0,1fr)] sm:gap-x-2"
                 >
                   <span
                     aria-hidden="true"

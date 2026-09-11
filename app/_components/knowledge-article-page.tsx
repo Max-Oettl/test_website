@@ -13,18 +13,18 @@ import { SectionRailNavigation } from "./section-rail-navigation";
 const specialKnowledgeHeaderImages: Record<Locale, Record<string, KnowledgeImageAsset>> = {
   de: {
     zuverlaessigkeitstechnik: {
-      src: "/graphics/wissen/technical-plots/reliability-engineering-motor-de.png",
-      width: 1448,
-      height: 1086,
-      alt: "Zuverlässigkeitstechnik vom technischen Anforderungsdokument über Prüfobjekt und Prüfdaten bis zur abgesicherten Entscheidung",
+      src: "/graphics/wissen/technical-plots/reliability-engineering-motor-no-text.webp",
+      width: 1440,
+      height: 1080,
+      alt: "Technische Skizzen eines Anforderungsdokuments, Elektromotors, Prüfverlaufs und abgesicherten Entscheidungsdokuments",
     },
   },
   en: {
     zuverlaessigkeitstechnik: {
-      src: "/graphics/wissen/technical-plots/reliability-engineering-motor-en.png",
-      width: 1448,
-      height: 1086,
-      alt: "Reliability engineering from technical requirements through test object and test data to a substantiated decision",
+      src: "/graphics/wissen/technical-plots/reliability-engineering-motor-no-text.webp",
+      width: 1440,
+      height: 1080,
+      alt: "Technical sketches of a requirements document, electric motor, test curve and substantiated decision document",
     },
   },
 };

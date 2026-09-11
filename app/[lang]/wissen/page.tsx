@@ -100,7 +100,7 @@ const copy: Record<
     },
     processIntro: {
       eyebrow: "Fünf Teilprozesse",
-      title: "Fünf Teilprozesse der Zuverlässigkeitstechnik",
+      title: "Fünf Teilprozesse der Zuverlässigkeits\u00adtechnik",
       text:
         "Die fünf Themen bilden den fachlichen Kern der Zuverlässigkeitstechnik. Je nach Produkt und Entwicklungsstand werden sie einzeln vertieft oder als durchgängiger Prozess verbunden.",
     },
@@ -159,7 +159,7 @@ const copy: Record<
     ],
     doeFocus: {
       eyebrow: "Separater Methodenfokus",
-      title: "Design of Experiments ergänzt den Zuverlässigkeitsprozess.",
+      title: "Design of Experiments ergänzt den Zuverlässigkeits\u00adprozess.",
       text:
         "DoE ist kein sechster Teilprozess. Die statistische Versuchsplanung ergänzt vor allem Erprobung und Datenanalyse, wenn mehrere Einflussgrößen, Wechselwirkungen und robuste Einstellungen mit möglichst wenigen Versuchen verstanden werden sollen.",
       link: "DoE fachlich einordnen",
@@ -363,9 +363,9 @@ function LifecycleDiagram({ image }: { image: KnowledgeLifecycleImageAsset }) {
 
 function ProcessSection({ item, index, locale, linkLabel }: { item: ProcessItem; index: number; locale: Locale; linkLabel: string }) {
   const content = (
-    <div className="flex h-full flex-col py-4 lg:px-10 lg:py-4">
+    <div className="flex h-full min-w-0 flex-col py-4 lg:px-10 lg:py-4">
       <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-steel-cyan">{item.eyebrow}</p>
-      <h3 className="mt-4 font-winnstein-display text-3xl font-bold leading-tight text-brand-marine sm:text-4xl">{item.title}</h3>
+      <h3 className="mt-4 hyphens-auto font-winnstein-display text-3xl font-bold leading-tight text-brand-marine [overflow-wrap:anywhere] sm:text-4xl">{item.title}</h3>
       <p className="mt-5 max-w-2xl text-base leading-8 text-brand-marine/75">{item.summary}</p>
       <Link
         href={localizeHref(locale, `/wissen/${item.slug}`)}
@@ -403,7 +403,7 @@ function DoeFocusSection({ content, locale }: { content: DoeFocus; locale: Local
           <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-steel-cyan">
             {content.eyebrow}
           </p>
-          <h2 className="mt-4 max-w-2xl font-winnstein-display text-4xl leading-tight font-bold text-brand-marine [overflow-wrap:anywhere] sm:text-5xl">
+          <h2 className="mt-4 max-w-2xl hyphens-manual font-winnstein-display text-4xl font-bold leading-tight text-brand-marine [overflow-wrap:break-word] sm:text-5xl">
             {content.title}
           </h2>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-brand-marine/75">
@@ -464,8 +464,8 @@ export default async function KnowledgePage({ params }: Props) {
             width={knowledgeOverviewHeroImages[locale].width}
             height={knowledgeOverviewHeroImages[locale].height}
             preload
-            sizes="(min-width: 1280px) 860px, (min-width: 1024px) 60vw, 100vw"
-            className="h-auto max-h-[460px] w-full object-contain mix-blend-screen lg:max-h-[520px] lg:w-[140%] lg:max-w-none lg:-translate-x-[5%]"
+            sizes="(min-width: 1280px) 860px, (min-width: 1024px) 60vw, (min-width: 640px) 100vw, 120vw"
+            className="h-auto max-h-[460px] w-[120%] max-w-none shrink-0 -translate-x-[15%] object-contain mix-blend-screen sm:w-full sm:max-w-full sm:shrink sm:translate-x-0 lg:max-h-[520px] lg:w-[140%] lg:max-w-none lg:-translate-x-[5%]"
           />
         </figure>
       </div>
@@ -537,8 +537,8 @@ export default async function KnowledgePage({ params }: Props) {
         <section id="teilprozesse" className="scroll-mt-24 bg-white px-6 py-16 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 pb-12 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
-              <div>
-                <h2 className="font-winnstein-display text-4xl font-bold leading-tight text-brand-marine sm:text-5xl">{content.processIntro.title}</h2>
+              <div className="min-w-0">
+                <h2 className="hyphens-auto font-winnstein-display text-4xl font-bold leading-tight text-brand-marine [overflow-wrap:anywhere] sm:text-5xl">{content.processIntro.title}</h2>
               </div>
               <p className="max-w-3xl text-lg leading-8 text-brand-marine/75">{content.processIntro.text}</p>
             </div>

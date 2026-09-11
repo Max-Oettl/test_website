@@ -569,10 +569,10 @@ export function HomePageHero({
             href="https://reltest-academy.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex min-h-16 w-full flex-col items-start gap-3 px-4 py-3.5 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-education focus-visible:ring-inset sm:w-auto sm:flex-row sm:items-center sm:gap-5 sm:px-6 sm:py-3"
+            className="group grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-2 px-4 py-3 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-education focus-visible:ring-inset sm:flex sm:min-h-16 sm:w-auto sm:flex-row sm:items-center sm:gap-5 sm:px-6 sm:py-3"
           >
-            <span className="flex min-w-0 flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
-              <span className="relative h-10 w-28 shrink-0 overflow-hidden sm:h-12 sm:w-36 lg:h-14 lg:w-40">
+            <span className="contents sm:flex sm:min-w-0 sm:flex-row sm:items-center sm:gap-5">
+              <span className="relative col-span-2 h-10 w-28 shrink-0 overflow-hidden sm:h-12 sm:w-36 lg:h-14 lg:w-40">
                 <Image
                   src="/branding/reltest-education-horizontal-positive.svg"
                   alt="RelTest Education"
@@ -581,14 +581,14 @@ export function HomePageHero({
                   className="absolute left-0 top-1/2 h-14 w-28 -translate-y-1/2 object-contain sm:h-[4.5rem] sm:w-36 lg:h-20 lg:w-40"
                 />
               </span>
-              <span className="min-w-0 text-slate-500">
+              <span className="col-start-1 row-start-2 min-w-0 text-slate-500">
                 {content.academyPrompt}{" "}
                 <span className="font-semibold text-brand-marine transition-colors group-hover:text-brand-education">
                   {content.academyCta}
                 </span>
               </span>
             </span>
-            <span className="self-end shrink-0 text-brand-education transition-transform duration-200 group-hover:translate-x-1 sm:self-auto">
+            <span className="col-start-2 row-start-2 self-end shrink-0 pb-1 text-brand-education transition-transform duration-200 group-hover:translate-x-1 sm:self-auto sm:pb-0">
               <ArrowIcon />
             </span>
           </Link>

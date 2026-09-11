@@ -6,8 +6,8 @@ import erprobungDe from "../../public/wissen/uebersicht/erprobung-de.png";
 import erprobungEn from "../../public/wissen/uebersicht/erprobung-en.png";
 import lebenszyklusDe from "../../public/wissen/uebersicht/lebenszyklus-prozess-de.svg";
 import lebenszyklusEn from "../../public/wissen/uebersicht/lebenszyklus-prozess-en.svg";
-import lebenszyklusMobileDe from "../../public/wissen/uebersicht/lebenszyklus-prozess-mobile-de.svg";
-import lebenszyklusMobileEn from "../../public/wissen/uebersicht/lebenszyklus-prozess-mobile-en.svg";
+import lebenszyklusMobileDe from "../../public/wissen/uebersicht/lebenszyklus-prozess-mobile-compact-de.svg";
+import lebenszyklusMobileEn from "../../public/wissen/uebersicht/lebenszyklus-prozess-mobile-compact-en.svg";
 import planungDe from "../../public/wissen/uebersicht/planung-de.png";
 import planungEn from "../../public/wissen/uebersicht/planung-en.png";
 import prognosenDe from "../../public/wissen/uebersicht/prognosen-de.png";
@@ -54,7 +54,7 @@ export const knowledgeLifecycleImages: Record<Locale, KnowledgeLifecycleImageAss
     height: 760,
     mobileSrc: lebenszyklusMobileDe,
     mobileWidth: 720,
-    mobileHeight: 1536,
+    mobileHeight: 1248,
     alt: "Lebensdauerbegleitendes Zuverlässigkeitsmanagement mit qualitativen und quantitativen Methoden entlang des Produktlebenszyklus",
   },
   en: {
@@ -63,7 +63,7 @@ export const knowledgeLifecycleImages: Record<Locale, KnowledgeLifecycleImageAss
     height: 760,
     mobileSrc: lebenszyklusMobileEn,
     mobileWidth: 720,
-    mobileHeight: 1536,
+    mobileHeight: 1248,
     alt: "Lifecycle reliability management with qualitative and quantitative methods across the product lifecycle",
   },
 };
