@@ -426,12 +426,17 @@ Wichtig aus bisherigen Entscheidungen:
   Solutions-Piktogramme
 - Unter 768 Pixel Breite erhält der Startseiten-Hero einen separaten, flachen
   Bildbereich mit motivbezogenem Ausschnitt und eine kompakte Textfläche.
-  Mobile Kurzfassungen bewahren die Kernaussagen der Desktop-Texte. Die vier
-  Themen-Piktogramme und beide Pfeile stehen in einer gemeinsamen Steuerzeile;
-  das ausgewählte Thema wird über der Überschrift benannt. Auf Smartphones
+  Mobile Kurzfassungen bewahren die Kernaussagen der Desktop-Texte. Bild und
+  Text stehen ohne äußeren Kartenrahmen auf einer gemeinsamen weißen Fläche.
+  Vier dezente Auswahlpunkte ersetzen mobil die Icon-Kacheln; das ausgewählte
+  Thema steht zwischen den beiden Pfeilen direkt über den Punkten. Alle
+  Bedienelemente behalten mindestens 44 Pixel große Touch-Flächen. Auf Smartphones
   wechselt der Slider nur per Tippen oder Wischen. Bild, Text und Steuerung
   werden gemeinsam bei 402 Pixel Breite und reduzierter sichtbarer Höhe
   (Safari-Browserleisten) geprüft; größere Schrift darf die Karte verlängern.
+- Der mobile Aktuelles-Schalter sitzt als kleines horizontales Element unten
+  rechts. Die Beitragsvorschau öffnet sich darüber; das Hero-Bild wird nicht
+  durch eine große seitliche Lasche verdeckt.
 - im kompakten Hero-Reiter wird der fachliche Dachbegriff
   `Zuverlässigkeitstechnik` als `Planung & Lebensdauer` konkretisiert; die
   Kurzzeile nennt zusätzlich Ziele, Nutzung und Nachweiskonzept

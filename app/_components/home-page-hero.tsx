@@ -28,7 +28,9 @@ const conceptContent = {
     previousSlide: "Vorheriges Hero-Thema",
     nextSlide: "Nächstes Hero-Thema",
     contactTitle: "Projekt besprechen",
+    mobileContactTitle: "Projekt anfragen",
     serviceCta: "Leistung im Detail",
+    mobileServiceCta: "Mehr erfahren",
     academyPrompt: "Weiterbildung gesucht?",
     academyCta: "RelTest Education entdecken",
     slides: [
@@ -111,7 +113,9 @@ const conceptContent = {
     previousSlide: "Previous hero topic",
     nextSlide: "Next hero topic",
     contactTitle: "Discuss a project",
+    mobileContactTitle: "Discuss a project",
     serviceCta: "View service details",
+    mobileServiceCta: "Learn more",
     academyPrompt: "Looking for professional training?",
     academyCta: "Explore RelTest Education",
     slides: [
@@ -434,9 +438,6 @@ export function HomePageHero({
               key={activeSlide.title}
               className={`${styles.copy} winnstein-hero-copy flex min-h-[31rem] w-full min-w-0 max-w-[56rem] flex-col sm:min-h-[27rem] md:-translate-y-5`}
             >
-              <p className={`${styles.mobileOnly} ${styles.currentTopic}`} aria-live="polite" aria-atomic="true">
-                {content.services[activeIndex].title}
-              </p>
               <div className={`${styles.titleSlot} flex min-h-0 flex-1 items-end`}>
                 <h1
                   className={`${styles.title} winnstein-hero-title min-w-0 max-w-full text-[clamp(2rem,8vw,2.5rem)] leading-[1.15] font-semibold text-brand-ink hyphens-auto [overflow-wrap:anywhere] sm:text-[clamp(2.5rem,4.8vw,4.1rem)] lg:text-[clamp(3rem,3.2vw,4.1rem)] ${
@@ -488,17 +489,19 @@ export function HomePageHero({
                   href={localizeHref(locale, "/kontakt")}
                   className="brand-action group inline-flex min-h-14 items-center justify-center gap-4 bg-brand-marine px-8 text-base font-bold text-white transition-colors hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
                 >
-                  {content.contactTitle}
+                  <span className={styles.mobileOnly}>{content.mobileContactTitle}</span>
+                  <span className={styles.desktopOnly}>{content.contactTitle}</span>
                   <span className="transition-transform duration-200 group-hover:translate-x-1">
                     <ArrowIcon />
                   </span>
                 </Link>
                 <Link
                   href={localizeHref(locale, activeSlide.href)}
-                  aria-label={`${content.serviceCta}: ${content.services[activeIndex].title}`}
                   className="group inline-flex min-h-12 w-fit items-center justify-center gap-3 border-b-2 border-brand-steel-cyan px-1 py-2 text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
                 >
-                  {content.serviceCta}
+                  <span className={styles.mobileOnly}>{content.mobileServiceCta}</span>
+                  <span className={styles.desktopOnly}>{content.serviceCta}</span>
+                  <span className="sr-only">: {content.services[activeIndex].title}</span>
                   <span className="transition-transform duration-200 group-hover:translate-x-1">
                     <ArrowIcon />
                   </span>
@@ -509,61 +512,67 @@ export function HomePageHero({
 
           <div className={`${styles.navigation} absolute inset-x-0 bottom-0 z-30 border-t border-brand-marine/12 bg-white/88 px-3 py-2 backdrop-blur-md sm:px-5 lg:px-6`}>
             <div className={`${styles.navigationRow} flex flex-col gap-2 md:flex-row md:items-stretch`}>
-              <div
-                className={`${styles.topics} grid min-w-0 flex-1 grid-cols-2 items-stretch md:grid-cols-4`}
-                aria-label={content.slideLabel}
-              >
-                {content.slides.map((slide, index) => {
-                  const isActive = index === activeIndex;
-                  const topic = content.services[index];
+              <div className={styles.topicNavigation}>
+                <p className={`${styles.mobileOnly} ${styles.currentTopic}`} aria-live="polite" aria-atomic="true">
+                  {content.services[activeIndex].title}
+                </p>
+                <div
+                  className={`${styles.topics} grid min-w-0 flex-1 grid-cols-2 items-stretch md:grid-cols-4`}
+                  aria-label={content.slideLabel}
+                >
+                  {content.slides.map((slide, index) => {
+                    const isActive = index === activeIndex;
+                    const topic = content.services[index];
 
-                  return (
-                    <button
-                      key={slide.title}
-                      type="button"
-                      onClick={() => selectSlide(index, true)}
-                      onMouseEnter={() => selectSlide(index, true)}
-                      onFocus={() => selectSlide(index, true)}
-                      className={`${styles.topic} group relative flex min-h-14 min-w-0 items-center justify-start gap-2.5 px-2.5 py-2 text-left font-winnstein-display transition-colors focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:gap-3 sm:px-3 lg:px-4 ${
-                        isActive
-                          ? "text-brand-marine"
-                          : "text-brand-marine/68 hover:bg-white/55 hover:text-brand-marine"
-                      }`}
-                      aria-pressed={isActive}
-                      aria-label={`${topic.title}: ${topic.summary}`}
-                    >
-                      <span
-                        aria-hidden="true"
-                        className={`absolute inset-x-3 top-0 h-0.5 transition-colors ${
+                    return (
+                      <button
+                        key={slide.title}
+                        type="button"
+                        onClick={() => selectSlide(index, true)}
+                        onMouseEnter={() => selectSlide(index, true)}
+                        onFocus={() => selectSlide(index, true)}
+                        className={`${styles.topic} group relative flex min-h-14 min-w-0 items-center justify-start gap-2.5 px-2.5 py-2 text-left font-winnstein-display transition-colors focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:gap-3 sm:px-3 lg:px-4 ${
                           isActive
-                            ? "bg-brand-steel-cyan"
-                            : "bg-transparent group-hover:bg-brand-steel-cyan/35"
+                            ? "text-brand-marine"
+                            : "text-brand-marine/68 hover:bg-white/55 hover:text-brand-marine"
                         }`}
-                      />
-                      <span
-                        className={`flex h-9 w-9 shrink-0 items-center justify-center transition-colors ${
-                          isActive
-                            ? "bg-brand-steel-cyan-20"
-                            : "bg-white/60 group-hover:bg-brand-steel-cyan-10"
-                        }`}
+                        aria-pressed={isActive}
+                        aria-label={`${topic.title}: ${topic.summary}`}
                       >
-                        <Image
-                          src={`${iconBase}/${topic.icon}`}
-                          alt=""
+                        <span
                           aria-hidden="true"
-                          width={40}
-                          height={40}
-                          className="h-8 w-8"
+                          className={`${styles.desktopOnly} absolute inset-x-3 top-0 h-0.5 transition-colors ${
+                            isActive
+                              ? "bg-brand-steel-cyan"
+                              : "bg-transparent group-hover:bg-brand-steel-cyan/35"
+                          }`}
                         />
-                      </span>
-                      <span className={`${styles.desktopOnly} min-w-0`}>
-                        <span className="block hyphens-auto text-xs leading-tight font-bold [overflow-wrap:anywhere] sm:text-sm xl:text-[0.95rem]">
-                          {topic.title}
+                        <span
+                          className={`${styles.desktopOnly} flex h-9 w-9 shrink-0 items-center justify-center transition-colors ${
+                            isActive
+                              ? "bg-brand-steel-cyan-20"
+                              : "bg-white/60 group-hover:bg-brand-steel-cyan-10"
+                          }`}
+                        >
+                          <Image
+                            src={`${iconBase}/${topic.icon}`}
+                            alt=""
+                            aria-hidden="true"
+                            width={40}
+                            height={40}
+                            className="h-8 w-8"
+                          />
                         </span>
-                      </span>
-                    </button>
-                  );
-                })}
+                        <span className={styles.mobileIndicator} aria-hidden="true" />
+                        <span className={`${styles.desktopOnly} min-w-0`}>
+                          <span className="block hyphens-auto text-xs leading-tight font-bold [overflow-wrap:anywhere] sm:text-sm xl:text-[0.95rem]">
+                            {topic.title}
+                          </span>
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
               <div className={`${styles.arrows} flex shrink-0 items-center justify-end gap-1 md:border-l md:border-brand-marine/12 md:pl-2`}>

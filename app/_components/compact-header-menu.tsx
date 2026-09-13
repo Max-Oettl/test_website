@@ -262,7 +262,7 @@ export function CompactHeaderMenu({
                 </nav>
 
                 {footer ? (
-                  <div className="shrink-0 border-t border-brand-marine/12 bg-white p-4 sm:p-5">
+                  <div className="shrink-0 border-t border-brand-marine/12 bg-white px-4 pt-4 pb-0 sm:p-5">
                     {footer}
                   </div>
                 ) : null}

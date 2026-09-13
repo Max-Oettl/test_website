@@ -1,0 +1,55 @@
+@media (max-width: 767px) {
+  .mobileDock {
+    /* Keep the control inside the viewport even if page content overflows. */
+    top: calc(100dvh - 44px - max(12px, env(safe-area-inset-bottom)));
+    right: auto;
+    left: calc(100vw - 16px);
+    width: max-content;
+    translate: -100% 0;
+  }
+
+  .mobileDock .trigger {
+    width: auto;
+    height: 44px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 14px;
+    border: 1px solid var(--solution-marine-20);
+    background: white;
+    box-shadow: none;
+  }
+
+  .mobileDock .trigger:hover {
+    border-color: var(--solution-steel-cyan);
+  }
+
+  .mobileDock .label {
+    writing-mode: horizontal-tb;
+    rotate: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: normal;
+  }
+
+  .mobileDock .chevron {
+    rotate: -90deg;
+  }
+
+  .mobileDock[open] .chevron {
+    rotate: 90deg;
+  }
+
+  .mobileDock .panel {
+    top: auto;
+    right: 0;
+    bottom: calc(100% + 8px);
+    width: min(20rem, calc(100vw - 32px));
+    max-height: calc(100dvh - 88px);
+    overflow-y: auto;
+    padding: 20px;
+    border-right-width: 1px;
+    border-top-width: 2px;
+    box-shadow: 0 6px 24px rgb(20 36 82 / 12%);
+  }
+}
