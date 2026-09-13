@@ -318,7 +318,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
 
             {portraitImage && imageSources?.portrait && (
               <figure className="mt-10 sm:ml-[5.5rem]">
-                <div className="relative aspect-[16/8] min-h-[20rem] overflow-hidden bg-brand-steel-cyan-10">
+                <div className="relative aspect-[4/3] overflow-hidden bg-brand-steel-cyan-10 sm:aspect-[16/9] lg:aspect-[16/8] lg:min-h-[20rem]">
                   <Image
                     src={imageSources.portrait}
                     alt={portraitImage.alt}
