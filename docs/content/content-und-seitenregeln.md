@@ -424,6 +424,14 @@ Wichtig aus bisherigen Entscheidungen:
 - der Startseiten-Slider zeigt alle vier Leistungsfelder einschließlich der
   Projektpartnerschaft als eigenständige Slides und verwendet die zugehörigen
   Solutions-Piktogramme
+- Unter 768 Pixel Breite erhält der Startseiten-Hero einen separaten, flachen
+  Bildbereich mit motivbezogenem Ausschnitt und eine kompakte Textfläche.
+  Mobile Kurzfassungen bewahren die Kernaussagen der Desktop-Texte. Die vier
+  Themen-Piktogramme und beide Pfeile stehen in einer gemeinsamen Steuerzeile;
+  das ausgewählte Thema wird über der Überschrift benannt. Auf Smartphones
+  wechselt der Slider nur per Tippen oder Wischen. Bild, Text und Steuerung
+  werden gemeinsam bei 402 Pixel Breite und reduzierter sichtbarer Höhe
+  (Safari-Browserleisten) geprüft; größere Schrift darf die Karte verlängern.
 - im kompakten Hero-Reiter wird der fachliche Dachbegriff
   `Zuverlässigkeitstechnik` als `Planung & Lebensdauer` konkretisiert; die
   Kurzzeile nennt zusätzlich Ziele, Nutzung und Nachweiskonzept

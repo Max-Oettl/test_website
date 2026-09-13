@@ -6,12 +6,14 @@ import {
   useEffect,
   useRef,
   useState,
+  type CSSProperties,
   type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent,
 } from "react";
 
 import { AiAwareImage as Image } from "./ai-aware-image";
 import { localizeHref, type Locale } from "../_i18n/config";
+import styles from "./home-page-hero.module.css";
 
 type HomePageHeroProps = {
   locale: Locale;
@@ -32,15 +34,23 @@ const conceptContent = {
     slides: [
       {
         title: "Zuverlässigkeit gezielt entwickeln.",
+        mobileTitle: "Zuverlässigkeit gezielt entwickeln.",
+        mobileDescription:
+          "Zuverlässigkeitsberatung: Wir übersetzen Nutzung in messbare Ziele, bewerten Ausfallmechanismen und planen Nachweise.",
+        mobileImagePosition: "50% 48%",
         description:
           "Als spezialisierte Zuverlässigkeitsberatung übersetzen wir reale Nutzung in messbare Zuverlässigkeitsziele, bewerten relevante Ausfallmechanismen und entwickeln belastbare Nachweiskonzepte.",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.webp",
         imagePosition:
-          "object-[50%_48%] sm:translate-x-[14%] sm:translate-y-[8%] sm:scale-[1.3] sm:object-center",
+          "object-[50%_48%] md:translate-x-[14%] md:translate-y-[8%] md:scale-[1.3] md:object-center",
       },
       {
         title: "Technische Risiken gezielt absichern.",
+        mobileTitle: "Technische Risiken gezielt absichern.",
+        mobileDescription:
+          "Mit FMEA, FTA und Risikobewertung priorisieren wir Risiken und planen die passenden Nachweise.",
+        mobileImagePosition: "50% 44%",
         description:
           "FMEA, FTA, Risikobewertung und Nachweisplanung werden zu einer nachvollziehbaren Entscheidungsgrundlage verbunden.",
         href: "/leistungen/risikomanagement",
@@ -49,6 +59,10 @@ const conceptContent = {
       },
       {
         title: "Versuche planen. Lebensdauer belastbar bewerten.",
+        mobileTitle: "Versuche planen. Lebensdauer bewerten.",
+        mobileDescription:
+          "DoE, Lebensdauererprobung und Felddatenanalyse liefern belastbare Antworten auf Ihre technische Frage.",
+        mobileImagePosition: "68% 64%",
         description:
           "Design of Experiments, Lebensdauererprobung, Felddatenanalyse und statistische Modelle werden passend zur technischen Frage eingesetzt.",
         href: "/leistungen/datenanalyse-prognostik",
@@ -57,6 +71,10 @@ const conceptContent = {
       },
       {
         title: "Engineering-Arbeitspakete verlässlich übernehmen.",
+        mobileTitle: "Engineering verlässlich übernehmen.",
+        mobileDescription:
+          "Wir übernehmen definierte Arbeitspakete – mit vereinbarten Ergebnissen, Schnittstellen und klarer Verantwortung.",
+        mobileImagePosition: "50% 44%",
         description:
           "RelTest übernimmt klar definierte Arbeitspakete über Projektphasen hinweg. Ergebnisse, Schnittstellen, Abnahme, Dokumentation und Verantwortungsrahmen werden vorab vereinbart.",
         href: "/leistungen/langfristige-kooperation",
@@ -99,15 +117,23 @@ const conceptContent = {
     slides: [
       {
         title: "Develop reliability systematically.",
+        mobileTitle: "Develop reliability systematically.",
+        mobileDescription:
+          "Reliability consulting: We turn real-world use into measurable targets, assess failure mechanisms and plan verification.",
+        mobileImagePosition: "50% 48%",
         description:
           "As a specialist reliability consultancy, we translate real-world use into measurable reliability targets, assess relevant failure mechanisms and develop robust verification concepts.",
         href: "/leistungen/zuverlaessigkeitstechnik",
         image: "/team/home-engineering-consulting.webp",
         imagePosition:
-          "object-[50%_48%] sm:translate-x-[14%] sm:translate-y-[8%] sm:scale-[1.3] sm:object-center",
+          "object-[50%_48%] md:translate-x-[14%] md:translate-y-[8%] md:scale-[1.3] md:object-center",
       },
       {
         title: "Assure technical risks systematically.",
+        mobileTitle: "Manage technical risks systematically.",
+        mobileDescription:
+          "We use FMEA, FTA and risk assessment to prioritise risks and plan the evidence needed for decisions.",
+        mobileImagePosition: "50% 44%",
         description:
           "FMEA, FTA, risk assessment and evidence planning are combined into a traceable basis for decisions.",
         href: "/leistungen/risikomanagement",
@@ -116,6 +142,10 @@ const conceptContent = {
       },
       {
         title: "Plan tests. Assess lifetime robustly.",
+        mobileTitle: "Plan tests. Assess lifetime robustly.",
+        mobileDescription:
+          "DoE, lifetime testing and field data analysis provide robust answers to your technical question.",
+        mobileImagePosition: "68% 64%",
         description:
           "Design of Experiments, lifetime testing, field data analysis and statistical models are selected for the technical question.",
         href: "/leistungen/datenanalyse-prognostik",
@@ -124,6 +154,10 @@ const conceptContent = {
       },
       {
         title: "Take ownership of defined engineering work packages.",
+        mobileTitle: "Engineering you can rely on.",
+        mobileDescription:
+          "We take on defined work packages with agreed deliverables, interfaces, acceptance criteria and clear responsibility.",
+        mobileImagePosition: "50% 44%",
         description:
           "RelTest takes ownership of clearly defined work packages across project phases. Deliverables, interfaces, acceptance, documentation and responsibility are agreed in advance.",
         href: "/leistungen/langfristige-kooperation",
@@ -292,7 +326,7 @@ export function HomePageHero({
   }
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (window.matchMedia("(max-width: 767px), (prefers-reduced-motion: reduce)").matches) {
       return;
     }
 
@@ -316,7 +350,7 @@ export function HomePageHero({
     if (
       isPaused ||
       isDragging ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      window.matchMedia("(max-width: 767px), (prefers-reduced-motion: reduce)").matches
     ) {
       return;
     }
@@ -336,9 +370,9 @@ export function HomePageHero({
   ]);
 
   return (
-    <section className="winnstein-hero border-t border-line-soft bg-white">
+    <section className={`${styles.hero} winnstein-hero border-t border-line-soft bg-white`}>
       <div
-        className="relative mx-auto max-w-[96rem] px-5 pt-12 sm:px-6 sm:pt-14 lg:px-12 lg:pt-16 xl:px-16"
+        className={`${styles.layout} relative mx-auto max-w-[96rem] px-5 pt-12 sm:px-6 sm:pt-14 lg:px-12 lg:pt-16 xl:px-16`}
         role="region"
         aria-roledescription="carousel"
         aria-label={content.carouselLabel}
@@ -351,7 +385,7 @@ export function HomePageHero({
         onBlurCapture={() => setIsPaused(false)}
       >
         <div
-          className="relative min-h-[52rem] touch-pan-y overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[43rem] md:min-h-[38rem]"
+          className={`${styles.frame} relative min-h-[52rem] touch-pan-y overflow-hidden border border-line-soft bg-brand-steel-cyan-10 shadow-[0_28px_80px_rgba(3,19,52,0.12)] sm:min-h-[43rem] md:min-h-[38rem]`}
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerCancel}
@@ -369,7 +403,8 @@ export function HomePageHero({
               <div
                 key={slide.title}
                 aria-hidden="true"
-                className={`absolute inset-0 transition-[opacity,transform] duration-1000 ease-out motion-reduce:transition-none ${
+                style={{ "--hero-mobile-focus": slide.mobileImagePosition } as CSSProperties}
+                className={`${styles.slideImage} absolute inset-0 transition-[opacity,transform] duration-1000 ease-out motion-reduce:transition-none ${
                   isActive
                     ? "z-10 scale-100 opacity-100"
                     : "pointer-events-none z-0 scale-[1.015] opacity-0"
@@ -381,6 +416,7 @@ export function HomePageHero({
                   fill
                   preload={index === 0}
                   quality={90}
+                  unoptimized={false}
                   aria-hidden="true"
                   draggable={false}
                   className={`object-cover ${slide.imagePosition}`}
@@ -390,57 +426,64 @@ export function HomePageHero({
             );
           })}
 
-          <div className="absolute inset-0 z-20 bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.96)_24%,rgba(255,255,255,0.76)_38%,rgba(255,255,255,0.46)_52%,rgba(255,255,255,0.18)_66%,rgba(255,255,255,0.04)_78%,rgba(255,255,255,0)_86%)]" />
-          <div className="absolute inset-x-0 bottom-0 z-20 h-32 bg-gradient-to-t from-white/40 via-white/10 to-transparent" />
+          <div className={`${styles.desktopOnly} absolute inset-0 z-20 bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.96)_24%,rgba(255,255,255,0.76)_38%,rgba(255,255,255,0.46)_52%,rgba(255,255,255,0.18)_66%,rgba(255,255,255,0.04)_78%,rgba(255,255,255,0)_86%)]`} />
+          <div className={`${styles.desktopOnly} absolute inset-x-0 bottom-0 z-20 h-32 bg-gradient-to-t from-white/40 via-white/10 to-transparent`} />
 
-          <div className="relative z-20 flex min-h-[52rem] items-center px-6 pt-12 pb-48 sm:min-h-[43rem] sm:px-10 sm:pt-14 sm:pb-48 md:min-h-[38rem] md:pt-16 md:pb-24 lg:px-16 xl:px-20">
+          <div className={`${styles.content} relative z-20 flex min-h-[52rem] items-center px-6 pt-12 pb-48 sm:min-h-[43rem] sm:px-10 sm:pt-14 sm:pb-48 md:min-h-[38rem] md:pt-16 md:pb-24 lg:px-16 xl:px-20`}>
             <div
               key={activeSlide.title}
-              className="winnstein-hero-copy flex min-h-[31rem] w-full min-w-0 max-w-[56rem] -translate-y-5 flex-col sm:min-h-[27rem]"
+              className={`${styles.copy} winnstein-hero-copy flex min-h-[31rem] w-full min-w-0 max-w-[56rem] flex-col sm:min-h-[27rem] md:-translate-y-5`}
             >
-              <div className="flex min-h-0 flex-1 items-end">
+              <p className={`${styles.mobileOnly} ${styles.currentTopic}`} aria-live="polite" aria-atomic="true">
+                {content.services[activeIndex].title}
+              </p>
+              <div className={`${styles.titleSlot} flex min-h-0 flex-1 items-end`}>
                 <h1
-                  className={`winnstein-hero-title min-w-0 max-w-full text-[clamp(2rem,8vw,2.5rem)] leading-[1.15] font-semibold text-brand-ink hyphens-auto [overflow-wrap:anywhere] sm:text-[clamp(2.5rem,4.8vw,4.1rem)] lg:text-[clamp(3rem,3.2vw,4.1rem)] ${
+                  className={`${styles.title} winnstein-hero-title min-w-0 max-w-full text-[clamp(2rem,8vw,2.5rem)] leading-[1.15] font-semibold text-brand-ink hyphens-auto [overflow-wrap:anywhere] sm:text-[clamp(2.5rem,4.8vw,4.1rem)] lg:text-[clamp(3rem,3.2vw,4.1rem)] ${
                     activeSlide.href === "/leistungen/risikomanagement"
                       ? "max-w-[36rem] 2xl:max-w-[52rem]"
                       : "max-w-[52rem]"
                   }`}
                 >
-                  {activeSlide.href ===
-                    "/leistungen/datenanalyse-prognostik" ? (
-                    <>
-                      <span>
-                        {locale === "de" ? "Versuche planen." : "Plan tests."}
-                      </span>
-                      <span className="block">
-                        {locale === "de"
-                          ? "Lebensdauer belastbar bewerten."
-                          : "Assess lifetime robustly."}
-                      </span>
-                    </>
-                  ) : activeSlide.href ===
-                    "/leistungen/langfristige-kooperation" ? (
-                    <>
-                      <span>
-                        {locale === "de"
-                          ? "Engineering-Arbeitspakete"
-                          : "Take ownership of defined"}
-                      </span>
-                      <span className="min-[1120px]:block 2xl:inline">
-                        {locale === "de"
-                          ? " verlässlich übernehmen."
-                          : " engineering work packages."}
-                      </span>
-                    </>
-                  ) : (
-                    activeSlide.title
-                  )}
+                  <span className={styles.mobileOnly}>{activeSlide.mobileTitle}</span>
+                  <span className={styles.desktopOnly}>
+                    {activeSlide.href ===
+                      "/leistungen/datenanalyse-prognostik" ? (
+                      <>
+                        <span>
+                          {locale === "de" ? "Versuche planen." : "Plan tests."}
+                        </span>
+                        <span className="block">
+                          {locale === "de"
+                            ? "Lebensdauer belastbar bewerten."
+                            : "Assess lifetime robustly."}
+                        </span>
+                      </>
+                    ) : activeSlide.href ===
+                      "/leistungen/langfristige-kooperation" ? (
+                      <>
+                        <span>
+                          {locale === "de"
+                            ? "Engineering-Arbeitspakete"
+                            : "Take ownership of defined"}
+                        </span>
+                        <span className="min-[1120px]:block 2xl:inline">
+                          {locale === "de"
+                            ? " verlässlich übernehmen."
+                            : " engineering work packages."}
+                        </span>
+                      </>
+                    ) : (
+                      activeSlide.title
+                    )}
+                  </span>
                 </h1>
               </div>
-              <p className="mt-7 min-h-[4.25rem] max-w-[50rem] text-[clamp(1.1rem,1.25vw,1.35rem)] leading-[1.45] font-semibold tracking-[-0.015em] text-brand-marine/82">
-                {activeSlide.description}
+              <p className={`${styles.description} mt-7 min-h-[4.25rem] max-w-[50rem] text-[clamp(1.1rem,1.25vw,1.35rem)] leading-[1.45] font-semibold tracking-[-0.015em] text-brand-marine/82`}>
+                <span className={styles.mobileOnly}>{activeSlide.mobileDescription}</span>
+                <span className={styles.desktopOnly}>{activeSlide.description}</span>
               </p>
-              <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
+              <div className={`${styles.actions} mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7`}>
                 <Link
                   href={localizeHref(locale, "/kontakt")}
                   className="brand-action group inline-flex min-h-14 items-center justify-center gap-4 bg-brand-marine px-8 text-base font-bold text-white transition-colors hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
@@ -464,10 +507,10 @@ export function HomePageHero({
             </div>
           </div>
 
-          <div className="absolute inset-x-0 bottom-0 z-30 border-t border-brand-marine/12 bg-white/88 px-3 py-2 backdrop-blur-md sm:px-5 lg:px-6">
-            <div className="flex flex-col gap-2 md:flex-row md:items-stretch">
+          <div className={`${styles.navigation} absolute inset-x-0 bottom-0 z-30 border-t border-brand-marine/12 bg-white/88 px-3 py-2 backdrop-blur-md sm:px-5 lg:px-6`}>
+            <div className={`${styles.navigationRow} flex flex-col gap-2 md:flex-row md:items-stretch`}>
               <div
-                className="grid min-w-0 flex-1 grid-cols-2 items-stretch md:grid-cols-4"
+                className={`${styles.topics} grid min-w-0 flex-1 grid-cols-2 items-stretch md:grid-cols-4`}
                 aria-label={content.slideLabel}
               >
                 {content.slides.map((slide, index) => {
@@ -481,7 +524,7 @@ export function HomePageHero({
                       onClick={() => selectSlide(index, true)}
                       onMouseEnter={() => selectSlide(index, true)}
                       onFocus={() => selectSlide(index, true)}
-                      className={`group relative flex min-h-14 min-w-0 items-center justify-start gap-2.5 px-2.5 py-2 text-left font-winnstein-display transition-colors focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:gap-3 sm:px-3 lg:px-4 ${
+                      className={`${styles.topic} group relative flex min-h-14 min-w-0 items-center justify-start gap-2.5 px-2.5 py-2 text-left font-winnstein-display transition-colors focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-inset sm:gap-3 sm:px-3 lg:px-4 ${
                         isActive
                           ? "text-brand-marine"
                           : "text-brand-marine/68 hover:bg-white/55 hover:text-brand-marine"
@@ -513,7 +556,7 @@ export function HomePageHero({
                           className="h-8 w-8"
                         />
                       </span>
-                      <span className="min-w-0">
+                      <span className={`${styles.desktopOnly} min-w-0`}>
                         <span className="block hyphens-auto text-xs leading-tight font-bold [overflow-wrap:anywhere] sm:text-sm xl:text-[0.95rem]">
                           {topic.title}
                         </span>
@@ -523,7 +566,7 @@ export function HomePageHero({
                 })}
               </div>
 
-              <div className="flex shrink-0 items-center justify-end gap-1 border-t border-brand-marine/12 pt-2 md:border-t-0 md:border-l md:pt-0 md:pl-2">
+              <div className={`${styles.arrows} flex shrink-0 items-center justify-end gap-1 md:border-l md:border-brand-marine/12 md:pl-2`}>
                 <button
                   type="button"
                   onClick={() => moveSlide(-1)}

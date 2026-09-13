@@ -12,6 +12,7 @@ import {
 import { createPortal } from "react-dom";
 
 type CompactHeaderMenuProps = {
+  actions?: ReactNode;
   brand?: ReactNode;
   children: ReactNode;
   closeLabel: string;
@@ -24,6 +25,7 @@ function subscribeToClientState() {
 }
 
 export function CompactHeaderMenu({
+  actions,
   brand,
   children,
   closeLabel,
@@ -219,14 +221,19 @@ export function CompactHeaderMenu({
                   </div>
                 ) : null}
 
-                <div className="flex min-h-16 shrink-0 items-center justify-between border-b border-brand-marine/12 px-5">
-                  <p className="font-winnstein-display text-base font-bold text-brand-marine">
+                <div className="relative z-10 flex min-h-16 shrink-0 items-center gap-2 border-b border-brand-marine/12 bg-white px-5">
+                  <p className="mr-auto shrink-0 font-winnstein-display text-base font-bold text-brand-marine">
                     {label}
                   </p>
+                  {actions ? (
+                    <div className="flex shrink-0 items-center gap-1">
+                      {actions}
+                    </div>
+                  ) : null}
                   <button
                     ref={closeButtonRef}
                     type="button"
-                    className="flex min-h-11 min-w-11 items-center justify-center border border-brand-marine/15 text-brand-marine transition-colors hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+                    className="flex min-h-11 min-w-11 shrink-0 items-center justify-center border border-brand-marine/15 text-brand-marine transition-colors hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
                     aria-label={closeLabel}
                     onClick={closeMenuAndRestoreFocus}
                   >

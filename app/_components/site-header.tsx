@@ -250,6 +250,16 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         <CompactHeaderMenu
           label={navigation.menu}
           closeLabel={locale === "de" ? "Menü schließen" : "Close menu"}
+          actions={
+            <>
+              <LanguageSwitcher locale={locale} compact />
+              <SiteSearch
+                locale={locale}
+                glossaryHref={glossaryHref}
+                compact
+              />
+            </>
+          }
           brand={
             <Link
               href={localizeHref(locale, "/")}
@@ -289,24 +299,6 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             </Link>
           }
         >
-            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b border-brand-marine/12 bg-brand-steel-cyan-10/45 px-5 py-2">
-              <div className="flex min-w-0 items-center gap-3">
-                <p className="shrink-0 font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.14em] text-brand-marine/60">
-                  {locale === "de" ? "Sprache" : "Language"}
-                </p>
-                <LanguageSwitcher locale={locale} compact />
-              </div>
-              <div className="flex items-center gap-2">
-                <p className="font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.14em] text-brand-marine/60">
-                  {locale === "de" ? "Suche" : "Search"}
-                </p>
-                <SiteSearch
-                  locale={locale}
-                  glossaryHref={glossaryHref}
-                  compact
-                />
-              </div>
-            </div>
             {navigation.items.map((item) => {
               const dropdown = dropdowns[item.href];
               const isEducationItem = item.href === "/education";

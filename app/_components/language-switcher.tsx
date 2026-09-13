@@ -213,7 +213,11 @@ export function LanguageSwitcher({
         ref={winnsteinMenuRef}
         className="language-switcher-winnstein group/language relative hidden"
       >
-        <summary className="flex min-h-10 cursor-pointer list-none items-center gap-2 rounded-sm px-2.5 text-sm font-semibold text-brand-ink transition-colors hover:bg-[#edf5f8] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan [&::-webkit-details-marker]:hidden">
+        <summary
+          className={`flex cursor-pointer list-none items-center gap-2 rounded-sm px-2.5 text-sm font-semibold text-brand-ink transition-colors hover:bg-[#edf5f8] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan [&::-webkit-details-marker]:hidden ${compact ? "min-h-11" : "min-h-10"}`}
+          aria-label={locale === "de" ? "Sprache auswählen" : "Select language"}
+          title={locale === "de" ? "Sprache auswählen" : "Select language"}
+        >
           <LanguageFlag language={locale} />
           <span>{locale.toUpperCase()}</span>
           <svg
