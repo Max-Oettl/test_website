@@ -1,14 +1,35 @@
+import {
+  HeroBrandLines,
+  type BrandLinePlacement,
+  type HeroBrandLineVariant,
+} from "./brand-line-watermark";
+
 type PageIntroProps = {
   eyebrow: string;
   title: string;
   description: string;
+  brandLinePlacement?: BrandLinePlacement;
+  brandLineVariant?: HeroBrandLineVariant;
 };
 
-export function PageIntro({ eyebrow, title, description }: PageIntroProps) {
+export function PageIntro({
+  eyebrow,
+  title,
+  description,
+  brandLinePlacement,
+  brandLineVariant,
+}: PageIntroProps) {
   return (
     <section className="relative overflow-hidden bg-brand-marine text-white">
-      <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
+      {brandLinePlacement ? (
+        <HeroBrandLines
+          placement={brandLinePlacement}
+          variant={brandLineVariant}
+        />
+      ) : (
+        <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:64px_64px]" />
+      )}
+      <div className="relative z-20 mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
         <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">
           {eyebrow}
         </p>

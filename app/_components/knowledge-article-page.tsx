@@ -7,6 +7,10 @@ import {
   type KnowledgeImageAsset,
 } from "../_content/knowledge-image-assets";
 import { localizeHref, type Locale } from "../_i18n/config";
+import {
+  getHeroBrandLineVariant,
+  HeroBrandLines,
+} from "./brand-line-watermark";
 import { KnowledgeMediaPlaceholder } from "./knowledge-media-placeholder";
 import { SectionRailNavigation } from "./section-rail-navigation";
 
@@ -54,6 +58,7 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
   const isQuantitative = ["prognosen", "design-of-experiments", "erprobung"].includes(article.slug);
   const isDiagnostic = ["schwachstellenanalyse", "risikomanagement"].includes(article.slug);
   const hasWideKnowledgeHeader = article.slug === "zuverlaessigkeitstechnik";
+  const brandLineVariant = getHeroBrandLineVariant("knowledge", article.slug);
   const headerImage =
     specialKnowledgeHeaderImages[locale][article.slug] ??
     knowledgeProcessImages[locale][article.slug];
@@ -66,26 +71,33 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
 
   return (
     <>
-      <header className="bg-[var(--solution-marine)] font-winnstein-body text-white">
+      <header className="relative overflow-hidden bg-[var(--solution-marine)] font-winnstein-body text-white">
         <div
-          className="mx-auto grid max-w-[1440px] gap-10 px-6 py-14 lg:grid-cols-[minmax(0,.92fr)_minmax(360px,.68fr)] lg:items-center lg:px-12 lg:py-20"
+          className="relative mx-auto grid max-w-[1440px] gap-10 px-6 py-14 lg:grid-cols-[minmax(0,.92fr)_minmax(360px,.68fr)] lg:items-center lg:px-12 lg:py-20"
         >
-          <div>
-            <Link
-              href={localizeHref(locale, "/wissen")}
-              className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)] underline decoration-transparent underline-offset-8 transition hover:decoration-current"
-            >
-              {isGerman ? "Wissen im Überblick" : "Knowledge overview"} <span aria-hidden="true">←</span>
-            </Link>
-            <p className="mt-12 font-winnstein-display text-sm font-semibold tracking-[0.08em] text-[var(--solution-steel-cyan)]">
-              {article.eyebrow}
-            </p>
-            <h1 className="mt-4 max-w-4xl font-winnstein-display text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-[3.65rem]">
-              {article.title}
-            </h1>
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/[0.78]">
-              {article.lead}
-            </p>
+          <div className="relative isolate min-w-0 overflow-hidden">
+            <HeroBrandLines
+              placement="knowledge"
+              variant={brandLineVariant}
+              mediaEdge="right-lg"
+            />
+            <div className="relative z-20">
+              <Link
+                href={localizeHref(locale, "/wissen")}
+                className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)] underline decoration-transparent underline-offset-8 transition hover:decoration-current"
+              >
+                {isGerman ? "Wissen im Überblick" : "Knowledge overview"} <span aria-hidden="true">←</span>
+              </Link>
+              <p className="mt-12 font-winnstein-display text-sm font-semibold tracking-[0.08em] text-[var(--solution-steel-cyan)]">
+                {article.eyebrow}
+              </p>
+              <h1 className="mt-4 max-w-4xl font-winnstein-display text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-[3.65rem]">
+                {article.title}
+              </h1>
+              <p className="mt-7 max-w-3xl text-lg leading-8 text-white/[0.78]">
+                {article.lead}
+              </p>
+            </div>
           </div>
           {headerImage ? (
             <figure
@@ -118,6 +130,7 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
             <KnowledgeMediaPlaceholder media={article.heroMedia} dark preload locale={locale} />
           )}
         </div>
+        <div className="h-2 bg-brand-steel-cyan" />
       </header>
 
       <main className="font-winnstein-body">

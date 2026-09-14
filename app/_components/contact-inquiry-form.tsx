@@ -45,22 +45,16 @@ const formCopy = {
     privacyPrefix: "Ich habe die",
     privacyLink: "Datenschutzerklärung",
     privacySuffix:
-      "gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu.",
-    submit: "Anfrage vorbereiten",
+      "gelesen. Meine Angaben werden zur Bearbeitung der Anfrage verarbeitet.",
+    submit: "Anfrage senden",
+    submitting: "Anfrage wird gesendet …",
     mailNote:
-      "Beim Absenden öffnet sich Ihr E-Mail-Programm mit den ausgefüllten Angaben. Anlagen können Sie dort ergänzen.",
-    prepared:
-      "Die Anfrage wurde in Ihrem E-Mail-Programm vorbereitet. Falls sich kein Fenster öffnet, schreiben Sie bitte an info@reltest-solutions.com.",
-    subject: "Anfrage über reltest-solutions.com",
-    bodyLabels: {
-      audience: "Anfrage als",
-      topic: "Anliegen",
-      name: "Name",
-      company: "Unternehmen / Organisation",
-      email: "E-Mail",
-      phone: "Telefon",
-      message: "Nachricht",
-    },
+      "Ihre Angaben werden direkt und verschlüsselt an RelTest übermittelt. Dateianhänge sind nicht möglich. Alternativ per E-Mail:",
+    success:
+      "Vielen Dank. Ihre Anfrage wurde erfolgreich versendet. Wir melden uns in der Regel innerhalb von zwei Werktagen.",
+    error:
+      "Die Anfrage konnte gerade nicht versendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an",
+    fallback: "info@reltest-solutions.com",
   },
   en: {
     eyebrow: "Project inquiry",
@@ -95,26 +89,21 @@ const formCopy = {
     privacyPrefix: "I have read the",
     privacyLink: "privacy policy",
     privacySuffix:
-      "and consent to the processing of my details for the purpose of handling this inquiry.",
-    submit: "Prepare inquiry",
+      "and understand that my details will be processed to handle this inquiry.",
+    submit: "Send inquiry",
+    submitting: "Sending inquiry …",
     mailNote:
-      "Submitting opens your email application with the completed details. You can add attachments there.",
-    prepared:
-      "The inquiry has been prepared in your email application. If no window opens, please email info@reltest-solutions.com.",
-    subject: "Inquiry via reltest-solutions.com",
-    bodyLabels: {
-      audience: "Inquiry as",
-      topic: "Subject",
-      name: "Name",
-      company: "Company / organisation",
-      email: "Email",
-      phone: "Phone",
-      message: "Message",
-    },
+      "Your details are transmitted directly and securely to RelTest. File attachments are not supported. Alternatively, email:",
+    success:
+      "Thank you. Your inquiry has been sent successfully. We usually respond within two business days.",
+    error:
+      "Your inquiry could not be sent at the moment. Please try again or email us directly at",
+    fallback: "info@reltest-solutions.com",
   },
 } as const;
 
 type TopicKey = keyof typeof formCopy.de.topics;
+type SubmissionStatus = "idle" | "submitting" | "success" | "error";
 
 const topicKeys = [
   "project",
@@ -154,41 +143,53 @@ export function ContactInquiryForm({
   initialTopic,
 }: ContactInquiryFormProps) {
   const copy = formCopy[locale];
-  const [prepared, setPrepared] = useState(false);
+  const [submissionStatus, setSubmissionStatus] =
+    useState<SubmissionStatus>("idle");
   const [selectedTopic, setSelectedTopic] = useState<"" | TopicKey>(
     initialTopic ?? "",
   );
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (submissionStatus === "submitting") {
+      return;
+    }
 
     const form = event.currentTarget;
     const data = new FormData(form);
-
-    if (String(data.get("website") ?? "").trim()) return;
-
-    const audienceKey = String(data.get("audience") ?? "company") as keyof typeof copy.audiences;
-    const topicKey = String(data.get("topic") ?? "general") as keyof typeof copy.topics;
-    const audience = copy.audiences[audienceKey] ?? copy.audiences.company;
-    const topic = copy.topics[topicKey] ?? copy.topics.general;
     const value = (key: string) => String(data.get(key) ?? "").trim();
-    const body = [
-      `${copy.bodyLabels.audience}: ${audience}`,
-      `${copy.bodyLabels.topic}: ${topic}`,
-      "",
-      `${copy.bodyLabels.name}: ${value("name")}`,
-      `${copy.bodyLabels.company}: ${value("company") || "–"}`,
-      `${copy.bodyLabels.email}: ${value("email")}`,
-      `${copy.bodyLabels.phone}: ${value("phone") || "–"}`,
-      "",
-      `${copy.bodyLabels.message}:`,
-      value("message"),
-    ].join("\n");
 
-    setPrepared(true);
-    window.location.href = `mailto:info@reltest-solutions.com?subject=${encodeURIComponent(
-      `${copy.subject}: ${topic}`,
-    )}&body=${encodeURIComponent(body)}`;
+    setSubmissionStatus("submitting");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          audience: value("audience"),
+          company: value("company"),
+          email: value("email"),
+          locale,
+          message: value("message"),
+          name: value("name"),
+          phone: value("phone"),
+          privacy: data.get("privacy") === "on",
+          topic: value("topic"),
+          website: value("website"),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Contact request failed with status ${response.status}`);
+      }
+
+      form.reset();
+      setSelectedTopic("");
+      setSubmissionStatus("success");
+    } catch {
+      setSubmissionStatus("error");
+    }
   }
 
   return (
@@ -273,6 +274,8 @@ export function ContactInquiryForm({
                 name="name"
                 type="text"
                 autoComplete="name"
+                minLength={2}
+                maxLength={120}
                 required
                 className={fieldClassName}
               />
@@ -284,6 +287,7 @@ export function ContactInquiryForm({
                 name="company"
                 type="text"
                 autoComplete="organization"
+                maxLength={160}
                 placeholder={copy.companyOptional}
                 className={fieldClassName}
               />
@@ -295,6 +299,7 @@ export function ContactInquiryForm({
                 name="email"
                 type="email"
                 autoComplete="email"
+                maxLength={254}
                 required
                 className={fieldClassName}
               />
@@ -306,6 +311,7 @@ export function ContactInquiryForm({
                 name="phone"
                 type="tel"
                 autoComplete="tel"
+                maxLength={60}
                 placeholder={copy.phoneOptional}
                 className={fieldClassName}
               />
@@ -316,6 +322,8 @@ export function ContactInquiryForm({
               <textarea
                 name="message"
                 required
+                minLength={20}
+                maxLength={5000}
                 rows={7}
                 placeholder={copy.messageHint}
                 className={`${fieldClassName} resize-y`}
@@ -345,17 +353,47 @@ export function ContactInquiryForm({
           <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center">
             <button
               type="submit"
-              className="brand-action inline-flex min-h-12 shrink-0 items-center justify-between gap-5 whitespace-nowrap bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-steel-cyan/25"
+              disabled={submissionStatus === "submitting"}
+              aria-busy={submissionStatus === "submitting"}
+              className="brand-action inline-flex min-h-12 shrink-0 items-center justify-between gap-5 whitespace-nowrap bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-steel-cyan/25 disabled:cursor-wait disabled:opacity-65"
             >
-              {copy.submit}
+              {submissionStatus === "submitting" ? copy.submitting : copy.submit}
               <ArrowIcon />
             </button>
-            <p className="max-w-lg text-xs leading-5 text-brand-marine/58">{copy.mailNote}</p>
+            <p className="max-w-lg text-xs leading-5 text-brand-marine/58">
+              {copy.mailNote}{" "}
+              <a
+                href="mailto:info@reltest-solutions.com"
+                className="font-semibold text-brand-marine underline decoration-brand-steel-cyan underline-offset-4"
+              >
+                {copy.fallback}
+              </a>
+            </p>
           </div>
 
-          {prepared ? (
-            <p className="mt-5 border-l-2 border-brand-steel-cyan pl-4 text-sm leading-6 text-brand-marine" aria-live="polite">
-              {copy.prepared}
+          {submissionStatus === "success" ? (
+            <p
+              className="mt-5 border-l-2 border-brand-education pl-4 text-sm leading-6 text-brand-marine"
+              role="status"
+              aria-live="polite"
+            >
+              {copy.success}
+            </p>
+          ) : null}
+
+          {submissionStatus === "error" ? (
+            <p
+              className="mt-5 border-l-2 border-red-600 pl-4 text-sm leading-6 text-brand-marine"
+              role="alert"
+            >
+              {copy.error}{" "}
+              <a
+                href="mailto:info@reltest-solutions.com"
+                className="font-semibold underline decoration-brand-steel-cyan underline-offset-4"
+              >
+                {copy.fallback}
+              </a>
+              .
             </p>
           ) : null}
         </form>

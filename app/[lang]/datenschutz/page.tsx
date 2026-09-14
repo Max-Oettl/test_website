@@ -42,7 +42,7 @@ function GermanSections(locale: Locale): LegalSection[] {
           <div>
             <h3 className="font-winnstein-display font-bold text-brand-marine">Wie werden Daten erfasst?</h3>
             <p className="mt-2">
-              Daten werden erhoben, wenn Sie uns diese mitteilen, etwa per E-Mail, Telefon, vorbereitetem Anfrageformular oder bei einer Terminbuchung. Daneben fallen beim Aufruf der Website technisch notwendige Verbindungsdaten an.
+              Daten werden erhoben, wenn Sie uns diese mitteilen, etwa über das Anfrageformular, per E-Mail, Telefon oder bei einer Terminbuchung. Daneben fallen beim Aufruf der Website technisch notwendige Verbindungsdaten an.
             </p>
           </div>
           <div>
@@ -124,7 +124,10 @@ function GermanSections(locale: Locale): LegalSection[] {
       content: (
         <div className="space-y-5">
           <p>
-            Das sichtbare Anfrageformular bereitet derzeit auf Ihrem Gerät eine E-Mail an RelTest Solutions vor. Die eingegebenen Angaben werden nicht über einen eigenen Formularserver der Website versendet. Beim Absenden öffnet sich Ihr E-Mail-Programm; erst mit dem dortigen Versand werden Name, Kontaktdaten, Organisation, Anliegen und Nachricht per E-Mail an uns übermittelt.
+            Das Anfrageformular übermittelt Name, Kontaktdaten, Organisation, Anliegen und Nachricht an eine serverseitige Schnittstelle dieser Website. Die Angaben werden auf der Hosting-Infrastruktur von Vercel verarbeitet und über eine TLS-verschlüsselte SMTP-Verbindung mit einem IONOS-Mailpostfach an uns weitergeleitet. Die von Ihnen angegebene E-Mail-Adresse wird als Antwortadresse verwendet. Dateianhänge können nicht übermittelt werden.
+          </p>
+          <p>
+            Zur Abwehr automatisierter oder missbräuchlicher Anfragen nutzen wir ein unsichtbares Kontrollfeld, serverseitige Prüfungen, Größenbegrenzungen und eine begrenzte Anfragefrequenz. Dafür wird aus der IP-Adresse eine nicht unmittelbar lesbare Kennung gebildet und innerhalb der jeweiligen Serverinstanz für höchstens 15 Minuten vorgehalten. Eine dauerhafte Speicherung dieser Kennung im Formularsystem erfolgt nicht. Unabhängig davon können beim Website-Aufruf die im Abschnitt „Hosting und technische Bereitstellung“ beschriebenen Server-Logdaten anfallen.
           </p>
           <p>
             Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung der Anfrage und für Anschlussfragen. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, wenn Ihre Anfrage der Vertragsanbahnung oder Vertragsdurchführung dient. In anderen Fällen beruht sie auf Art. 6 Abs. 1 lit. f DSGVO, wobei unser berechtigtes Interesse in der sachgerechten Bearbeitung Ihrer Anfrage liegt, oder auf Art. 6 Abs. 1 lit. a DSGVO, sofern eine Einwilligung eingeholt wurde.
@@ -271,7 +274,7 @@ function EnglishSections(locale: Locale): LegalSection[] {
           <div>
             <h3 className="font-winnstein-display font-bold text-brand-marine">How is data collected?</h3>
             <p className="mt-2">
-              Data is collected when you provide it to us, for example by email, phone, the inquiry form prepared in your email application or a scheduling request. Technical connection data is also generated when the website is accessed.
+              Data is collected when you provide it to us, for example through the inquiry form, by email, phone or a scheduling request. Technical connection data is also generated when the website is accessed.
             </p>
           </div>
           <div>
@@ -353,7 +356,10 @@ function EnglishSections(locale: Locale): LegalSection[] {
       content: (
         <div className="space-y-5">
           <p>
-            The inquiry form currently prepares an email to RelTest Solutions on your device. The information entered is not submitted through a form server operated by this website. Submitting the form opens your email application; your name, contact details, organisation, subject and message are transferred to us only when you send that email.
+            The inquiry form submits your name, contact details, organisation, subject and message to a server-side endpoint of this website. The information is processed on Vercel&apos;s hosting infrastructure and forwarded to us through a TLS-encrypted SMTP connection using an IONOS mailbox. The email address you provide is used as the reply-to address. File attachments cannot be submitted.
+          </p>
+          <p>
+            To prevent automated or abusive requests, we use an invisible control field, server-side validation, size limits and a limited request rate. For this purpose, the IP address is converted into a non-readable identifier and retained within the respective server instance for no more than 15 minutes. This identifier is not stored permanently by the form system. Independently of this, the server log data described under “Hosting and technical delivery” may be generated when the website is accessed.
           </p>
           <p>
             If you contact us by email or phone, we process your information to respond and manage follow-up questions. Processing is based on Article 6(1)(b) GDPR where the inquiry concerns pre-contractual steps or performance of a contract. In other cases, it is based on Article 6(1)(f) GDPR and our legitimate interest in handling inquiries effectively, or on Article 6(1)(a) GDPR where consent has been requested.

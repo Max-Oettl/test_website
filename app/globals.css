@@ -203,6 +203,172 @@ body {
   );
 }
 
+/* Logo-line watermarks live only in solid hero areas and fade before content. */
+.hero-brand-lines {
+  --brand-line-focus-x: 100%;
+  --brand-line-focus-y: 100%;
+  -webkit-mask-image: radial-gradient(
+    ellipse 48% 40% at var(--brand-line-focus-x) var(--brand-line-focus-y),
+    #000 0%,
+    rgb(0 0 0 / 0.72) 34%,
+    rgb(0 0 0 / 0.24) 58%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 48% 40% at var(--brand-line-focus-x) var(--brand-line-focus-y),
+    #000 0%,
+    rgb(0 0 0 / 0.72) 34%,
+    rgb(0 0 0 / 0.24) 58%,
+    transparent 78%
+  );
+}
+
+.hero-brand-lines-media-fade > .brand-line-watermark {
+  width: 48rem;
+  height: 36rem;
+  opacity: 0.14;
+}
+
+.hero-brand-lines:not([data-media-edge="none"]) .hero-brand-lines-media-fade {
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    #000 70%,
+    rgb(0 0 0 / 0.4) 86%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    #000 70%,
+    rgb(0 0 0 / 0.4) 86%,
+    transparent 100%
+  );
+}
+
+.hero-brand-lines[data-variant="top-left"] {
+  --brand-line-focus-x: 0%;
+  --brand-line-focus-y: 0%;
+}
+
+.hero-brand-lines[data-variant="top-left"] .brand-line-watermark {
+  top: -14rem;
+  right: auto;
+  bottom: auto;
+  left: -18rem;
+}
+
+.hero-brand-lines[data-variant="top-right"] {
+  --brand-line-focus-x: 100%;
+  --brand-line-focus-y: 0%;
+}
+
+.hero-brand-lines[data-variant="top-right"] .brand-line-watermark {
+  top: -14rem;
+  right: -18rem;
+  bottom: auto;
+  left: auto;
+}
+
+.hero-brand-lines[data-variant="bottom-left"] {
+  --brand-line-focus-x: 0%;
+  --brand-line-focus-y: 100%;
+}
+
+.hero-brand-lines[data-variant="bottom-left"] .brand-line-watermark {
+  top: auto;
+  right: auto;
+  bottom: -8rem;
+  left: -18rem;
+}
+
+.hero-brand-lines[data-variant="bottom-right"] .brand-line-watermark {
+  top: auto;
+  right: -18rem;
+  bottom: -8rem;
+  left: auto;
+}
+
+@media (max-width: 639px) {
+  .hero-brand-lines {
+    -webkit-mask-image: radial-gradient(
+      ellipse 58% 36% at var(--brand-line-focus-x) var(--brand-line-focus-y),
+      #000 0%,
+      rgb(0 0 0 / 0.62) 32%,
+      rgb(0 0 0 / 0.2) 56%,
+      transparent 78%
+    );
+    mask-image: radial-gradient(
+      ellipse 58% 36% at var(--brand-line-focus-x) var(--brand-line-focus-y),
+      #000 0%,
+      rgb(0 0 0 / 0.62) 32%,
+      rgb(0 0 0 / 0.2) 56%,
+      transparent 78%
+    );
+  }
+
+  .hero-brand-lines-media-fade > .brand-line-watermark {
+    width: 40rem;
+    height: 30rem;
+    opacity: 0.13;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-brand-lines[data-media-edge="right-lg"] .hero-brand-lines-media-fade {
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      #000 0%,
+      #000 72%,
+      rgb(0 0 0 / 0.45) 88%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      #000 0%,
+      #000 72%,
+      rgb(0 0 0 / 0.45) 88%,
+      transparent 100%
+    );
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-brand-lines[data-media-edge="right-xl"] .hero-brand-lines-media-fade {
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      #000 0%,
+      #000 72%,
+      rgb(0 0 0 / 0.45) 88%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      #000 0%,
+      #000 72%,
+      rgb(0 0 0 / 0.45) 88%,
+      transparent 100%
+    );
+  }
+
+  .hero-brand-lines[data-media-edge="left-xl"] .hero-brand-lines-media-fade {
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(0 0 0 / 0.45) 12%,
+      #000 28%,
+      #000 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(0 0 0 / 0.45) 12%,
+      #000 28%,
+      #000 100%
+    );
+  }
+}
+
 /* Keep the contact watermark inside the free area below the calls to action. */
 .contact-watermark-mask {
   -webkit-mask-image: radial-gradient(
@@ -334,7 +500,7 @@ html.site-compact-menu-open body {
   -webkit-overflow-scrolling: touch;
 }
 
-@media (min-width: 861px) and (max-width: 1359px) {
+@media (min-width: 861px) and (max-width: 1199px) {
   .site-compact-menu-layer {
     top: 120px;
     height: calc(100vh - 120px);
@@ -511,8 +677,8 @@ body[data-site-design="winnstein"] .site-header-logo-mark {
 
 @media (min-width: 861px) {
   body[data-site-design="winnstein"] .site-header-logo-mark {
-    width: 14.75rem;
-    height: 6rem;
+    width: 12.5rem;
+    height: 5.25rem;
     overflow: visible;
   }
 
@@ -547,7 +713,7 @@ body[data-site-design="winnstein"] .site-header-nav {
   flex: 1 1 auto;
   justify-content: center;
   min-width: 0;
-  gap: clamp(1.35rem, 2vw, 2.65rem);
+  gap: clamp(0.75rem, 1.2vw, 1.75rem);
 }
 
 body[data-site-design="winnstein"] .site-nav-link {
@@ -556,7 +722,7 @@ body[data-site-design="winnstein"] .site-nav-link {
   background: transparent !important;
   padding: 0.65rem 0.15rem;
   color: #0a1831;
-  font-size: 1.05rem;
+  font-size: clamp(0.9rem, calc(0.45rem + 0.6vw), 1.2rem);
   font-weight: 760;
   box-shadow: none !important;
 }
@@ -1099,7 +1265,7 @@ body[data-site-design="winnstein"] .home-contact-secondary {
   }
 }
 
-@media (max-width: 1359px) {
+@media (max-width: 1199px) {
   body[data-site-design="winnstein"] .site-header-language-desktop {
     display: none;
   }

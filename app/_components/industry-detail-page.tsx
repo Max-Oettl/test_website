@@ -9,6 +9,10 @@ import {
 import type { IndustryEditorialLayout } from "../_content/industry-editorial-content";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { ActiveNavLink } from "./active-nav-link";
+import {
+  getHeroBrandLineVariant,
+  HeroBrandLines,
+} from "./brand-line-watermark";
 import { PageClosingCta } from "./page-closing-cta";
 import { SectionRailNavigation } from "./section-rail-navigation";
 
@@ -614,6 +618,12 @@ function IndustryNavigation({ locale, currentSlug }: { locale: Locale; currentSl
 export function IndustryDetailPage({ locale, content }: Props) {
   const { editorial } = content;
   const reverseHero = reverseHeroLayouts.has(editorial.layout);
+  const baseBrandLineVariant = getHeroBrandLineVariant("industries", content.slug);
+  const brandLineVariant = reverseHero
+    ? baseBrandLineVariant.startsWith("top")
+      ? "top-right"
+      : "bottom-right"
+    : baseBrandLineVariant;
   const labels =
     locale === "de"
       ? { industries: "Alle Branchen" }
@@ -622,19 +632,25 @@ export function IndustryDetailPage({ locale, content }: Props) {
   return (
     <main className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
-        <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:64px_64px]" />
         <div className="relative mx-auto grid max-w-7xl xl:grid-cols-[minmax(0,0.92fr)_minmax(30rem,1.08fr)]">
-          <div className={`flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24 ${reverseHero ? "xl:order-2" : ""}`}>
-            <Link href={localizeHref(locale, "/branchen")} className="inline-flex w-fit items-center gap-3 font-winnstein-display text-sm font-bold text-brand-steel-cyan">
-              <span aria-hidden="true">←</span>
-              {labels.industries}
-            </Link>
-            <h1 className="mt-10 max-w-4xl hyphens-auto font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-5xl xl:text-[3.4rem]">{content.title}</h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78">{content.heroLead}</p>
-            <Link href={localizeHref(locale, "/kontakt")} className="brand-action mt-9 inline-flex min-h-14 w-fit items-center justify-between gap-8 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine">
-              {content.heroCta}
-              <ArrowIcon />
-            </Link>
+          <div className={`relative isolate flex min-w-0 flex-col justify-center overflow-hidden px-5 py-16 sm:px-8 lg:px-10 lg:py-24 ${reverseHero ? "xl:order-2" : ""}`}>
+            <HeroBrandLines
+              placement="industries"
+              variant={brandLineVariant}
+              mediaEdge={reverseHero ? "left-xl" : "right-xl"}
+            />
+            <div className="relative z-20">
+              <Link href={localizeHref(locale, "/branchen")} className="inline-flex w-fit items-center gap-3 font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+                <span aria-hidden="true">←</span>
+                {labels.industries}
+              </Link>
+              <h1 className="mt-10 max-w-4xl hyphens-auto font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-5xl xl:text-[3.4rem]">{content.title}</h1>
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78">{content.heroLead}</p>
+              <Link href={localizeHref(locale, "/kontakt")} className="brand-action mt-9 inline-flex min-h-14 w-fit items-center justify-between gap-8 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine">
+                {content.heroCta}
+                <ArrowIcon />
+              </Link>
+            </div>
           </div>
 
           <div className={`relative min-h-[28rem] border-t border-white/15 xl:min-h-[43rem] xl:border-t-0 ${reverseHero ? "xl:order-1 xl:border-r" : "xl:border-l"}`}>

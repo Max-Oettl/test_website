@@ -1,12 +1,27 @@
+export type BrandLinePlacement =
+  | "education"
+  | "solutions"
+  | "knowledge"
+  | "industries"
+  | "expertise"
+  | "about"
+  | "contact";
+
 type BrandLineWatermarkProps = {
-  placement?:
-    | "education"
-    | "solutions"
-    | "knowledge"
-    | "industries"
-    | "expertise"
-    | "about"
-    | "contact";
+  placement?: BrandLinePlacement;
+  mirrored?: boolean;
+};
+
+export type HeroBrandLineVariant =
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right";
+
+type HeroBrandLinesProps = {
+  placement: BrandLinePlacement;
+  variant?: HeroBrandLineVariant;
+  mediaEdge?: "none" | "right-lg" | "right-xl" | "left-xl";
 };
 
 const placementClasses = {
@@ -26,31 +41,87 @@ const placementClasses = {
     "-bottom-20 -left-56 h-[30rem] w-[44rem] sm:-bottom-24 sm:-left-48 sm:h-[34rem] sm:w-[50rem] lg:-bottom-28 lg:-left-40 lg:h-[38rem] lg:w-[56rem]",
 };
 
+const placementTransforms: Record<BrandLinePlacement, string> = {
+  education: "rotate(-4 450 330)",
+  solutions: "translate(10 20) rotate(4 450 330)",
+  knowledge: "translate(18 -12) rotate(-7 450 330)",
+  industries: "translate(-12 14) rotate(7 450 330)",
+  expertise: "translate(-8 8) rotate(5 450 330)",
+  about: "translate(14 10) rotate(-5 450 330)",
+  contact: "translate(-10 18) rotate(3 450 330)",
+};
+
+const heroBrandLineVariants: readonly HeroBrandLineVariant[] = [
+  "top-left",
+  "bottom-right",
+  "bottom-left",
+  "top-right",
+];
+
+export function getHeroBrandLineVariant(
+  placement: BrandLinePlacement,
+  key: string,
+): HeroBrandLineVariant {
+  const variantKey = `${placement}:${key}`;
+  let hash = 0;
+
+  for (let index = 0; index < variantKey.length; index += 1) {
+    hash += variantKey.charCodeAt(index) * (index + 1);
+  }
+
+  return heroBrandLineVariants[hash % heroBrandLineVariants.length];
+}
+
 export function BrandLineWatermark({
   placement = "education",
+  mirrored = false,
 }: BrandLineWatermarkProps) {
   return (
     <svg
       aria-hidden="true"
-      className={`pointer-events-none absolute opacity-[0.11] ${placementClasses[placement]}`}
+      className={`brand-line-watermark pointer-events-none absolute origin-center opacity-[0.11] ${mirrored ? "-scale-x-100" : ""} ${placementClasses[placement]}`}
       viewBox="0 0 900 660"
       fill="none"
     >
-      <path
-        d="M-30 510C170 500 330 472 455 404C578 337 674 220 770-30"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <path
-        d="M-30 176C155 322 317 404 465 431C612 457 755 452 930 486"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <path
-        d="M-30 342L758 225C804 217 859 209 930 201"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
+      <g transform={placementTransforms[placement]}>
+        <path
+          d="M-30 510C170 500 330 472 455 404C578 337 674 220 770-30"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <path
+          d="M-30 176C155 322 317 404 465 431C612 457 755 452 930 486"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <path
+          d="M-30 342L758 225C804 217 859 209 930 201"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+      </g>
     </svg>
+  );
+}
+
+export function HeroBrandLines({
+  placement,
+  variant = "bottom-right",
+  mediaEdge = "none",
+}: HeroBrandLinesProps) {
+  const mirrored = variant === "top-right" || variant === "bottom-right";
+
+  return (
+    <div
+      aria-hidden="true"
+      data-placement={placement}
+      data-variant={variant}
+      data-media-edge={mediaEdge}
+      className="hero-brand-lines pointer-events-none absolute inset-0 z-10 overflow-hidden text-white"
+    >
+      <div className="hero-brand-lines-media-fade absolute inset-0">
+        <BrandLineWatermark placement={placement} mirrored={mirrored} />
+      </div>
+    </div>
   );
 }

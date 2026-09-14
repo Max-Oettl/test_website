@@ -296,29 +296,34 @@ Vor Go-live entscheiden:
 - Wird ein externer Form-Service genutzt oder eine eigene API-Route?
 - Welche Datenschutzhinweise sind erforderlich?
 
-Vorgemerkte Zielumsetzung (18. August 2026):
+Festgelegte Umsetzung (14. September 2026):
 
-- Das sichtbare Kontaktformular soll perspektivisch nicht mehr per `mailto:`
-  das lokale E-Mail-Programm öffnen, sondern im Browser an eine serverseitige
-  Next.js-Route senden.
-- Empfohlener Versandweg ist die Resend-E-Mail-API. Zieladresse bleibt
+- Das Kontaktformular sendet im Browser an die serverseitige Next.js-Route
+  `/api/contact` und öffnet kein lokales E-Mail-Programm mehr.
+- Der Versand erfolgt über das bestehende IONOS-Mail-Basic-Postfach mit
+  `smtp.ionos.de`, Port 465 und SSL/TLS. Absender ist
+  `website@reltest-solutions.de`, Zieladresse ist
   `info@reltest-solutions.com`; die vom Besucher angegebene Adresse wird als
   `Reply-To` gesetzt.
-- Der Versand erfolgt ausschließlich serverseitig. API-Schlüssel und
-  Empfängeradresse werden als geschützte Umgebungsvariablen in Vercel
-  hinterlegt und niemals an den Browser ausgeliefert oder in Git gespeichert.
-- Für den Absender wird vorzugsweise eine eigene Versand-Subdomain mit SPF und
-  DKIM verifiziert, damit die bestehende Microsoft-365-Mailkonfiguration der
-  Hauptdomain nicht unnötig verändert wird.
-- Als Spam-Schutz ist Cloudflare Turnstile vorgesehen; Honeypot, serverseitige
-  Feldvalidierung, Größenlimits und eine begrenzte Anfragefrequenz bleiben
-  zusätzlich erforderlich.
-- Das Formular benötigt Lade-, Erfolgs- und Fehlerzustände sowie einen
-  weiterhin sichtbaren E-Mail-Fallback.
-- Vor Aktivierung sind Auftragsverarbeitung, Datenflüsse und Datenschutzhinweise
-  für Hosting, Resend und Turnstile zu prüfen und zu dokumentieren.
-- Bis API-Schlüssel, DNS-Freigabe und Datenschutzentscheidung vorliegen, bleibt
-  der bestehende `mailto:`-Versand als vorläufige, funktionsfähige Lösung aktiv.
+- SMTP-Zugangsdaten und Mailadressen werden ausschließlich als serverseitige
+  Umgebungsvariablen in `.env.local` beziehungsweise Vercel hinterlegt und
+  niemals an den Browser ausgeliefert oder in Git gespeichert. Das
+  SMTP-Passwort und ein anschließender echter Versandtest stehen noch aus.
+- Es sind keine Dateianhänge vorgesehen. Die E-Mail wird als reiner Text
+  versendet.
+- Der Spam-Schutz besteht zunächst aus Honeypot, Same-Origin-Prüfung,
+  serverseitiger Feldvalidierung, Größenlimits und einer begrenzten
+  Anfragefrequenz je kurzzeitig gehashter IP-Adresse. Die Begrenzung arbeitet
+  auf Vercel pro laufender Serverinstanz und ist deshalb als Basisschutz zu
+  verstehen.
+- Cloudflare Turnstile wird vorerst nicht geladen. Obwohl der Dienst kostenlos
+  verfügbar ist, würde er zusätzliches Drittanbieter-JavaScript sowie einen
+  Cloudflare-Account und Schlüssel erfordern. Bei relevantem Spam-Aufkommen
+  kann diese Entscheidung neu bewertet werden.
+- Das Formular besitzt Lade-, Erfolgs- und Fehlerzustände sowie einen sichtbar
+  bleibenden E-Mail-Fallback.
+- Die Datenschutzhinweise wurden an den Formularversand über Vercel und IONOS
+  angepasst. Die finale rechtliche Freigabe bleibt eine Go-live-Voraussetzung.
 
 Migrationsrisiko:
 
@@ -338,9 +343,9 @@ Umsetzungsstand 18. August 2026:
   Google Analytics, Google Tag Manager, Adobe Fonts und Google Maps wurden
   nicht in die neue Datenschutzerklaerung uebernommen, weil diese Dienste im
   aktuellen Next.js-Stand nicht eingesetzt werden.
-- Dokumentiert sind der technische Sprach-Cookie `NEXT_LOCALE`, das derzeitige
-  Mailto-Anfrageformular, lokale Webfonts, externe Links und die
-  Calendly-Einbindung.
+- Dokumentiert sind der technische Sprach-Cookie `NEXT_LOCALE`, der
+  serverseitige Formularversand über Vercel und IONOS, lokale Webfonts,
+  externe Links und die Calendly-Einbindung.
 - Die finale rechtliche Freigabe und die Consent-Entscheidung fuer das
   Calendly-Iframe bleiben Go-live-Voraussetzungen.
 

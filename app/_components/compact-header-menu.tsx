@@ -59,7 +59,7 @@ export function CompactHeaderMenu({
   }, [closeMenu, pathname]);
 
   useEffect(() => {
-    const desktopNavigation = window.matchMedia("(min-width: 1360px)");
+    const desktopNavigation = window.matchMedia("(min-width: 1200px)");
 
     function closeWhenDesktopNavigationAppears(event: MediaQueryListEvent) {
       if (event.matches) {
@@ -150,7 +150,7 @@ export function CompactHeaderMenu({
     <>
       <details
         ref={menuRef}
-        className="site-compact-menu group relative min-[1360px]:hidden"
+        className="site-compact-menu group relative min-[1200px]:hidden"
         onToggle={(event) => {
           const nextIsOpen = event.currentTarget.open;
 

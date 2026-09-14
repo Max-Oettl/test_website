@@ -6,6 +6,7 @@ import type { DetailPage, DetailLink } from "../_content/migration-pages";
 import { localizeHref, type Locale } from "../_i18n/config";
 import { PageContextBar } from "./page-context-bar";
 import { PageIntro } from "./page-intro";
+import { getHeroBrandLineVariant } from "./brand-line-watermark";
 
 type ServiceDetailTemplateProps = {
   locale: Locale;
@@ -670,6 +671,8 @@ export function ServiceDetailTemplate({
         eyebrow={page.eyebrow}
         title={page.title}
         description={page.description}
+        brandLinePlacement="solutions"
+        brandLineVariant={getHeroBrandLineVariant("solutions", page.slug)}
       />
 
       <PageContextBar

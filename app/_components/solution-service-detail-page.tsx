@@ -4,6 +4,10 @@ import { AiAwareImage as Image } from "./ai-aware-image";
 import { PageClosingCta } from "./page-closing-cta";
 import type { SolutionServicePage } from "../_content/solution-service-pages";
 import { localizeHref, type Locale } from "../_i18n/config";
+import {
+  getHeroBrandLineVariant,
+  HeroBrandLines,
+} from "./brand-line-watermark";
 import { PageContextBar } from "./page-context-bar";
 
 type Props = {
@@ -52,6 +56,7 @@ function ArrowIcon() {
 export function SolutionServiceDetailPage({ locale, page }: Props) {
   const text = labels[locale];
   const isDoePage = page.slug === "design-of-experiments";
+  const brandLineVariant = getHeroBrandLineVariant("solutions", page.slug);
   const primaryHeroCta = isDoePage
     ? locale === "de"
       ? "DoE-Projekt besprechen"
@@ -66,37 +71,36 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
   return (
     <main className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
-        <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:64px_64px]" />
-        {isDoePage ? null : (
-          <>
-            <div className="absolute -left-24 bottom-0 h-72 w-72 rounded-full border border-brand-steel-cyan/20" />
-            <div className="absolute -left-8 bottom-16 h-48 w-48 rounded-full border border-brand-steel-cyan/15" />
-          </>
-        )}
-
         <div className="relative mx-auto grid max-w-7xl xl:grid-cols-[56%_44%]">
-          <div className="flex min-w-0 flex-col justify-center px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
-            <h1 className="max-w-4xl font-winnstein-display text-4xl leading-[1.06] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.35rem]">
-              {page.hero.title}
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78">
-              {page.hero.description}
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href={localizeHref(locale, "/kontakt")}
-                className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
-              >
-                {primaryHeroCta}
-                <ArrowIcon />
-              </Link>
-              <Link
-                href="#leistungsbausteine"
-                className="brand-action brand-action-outline inline-flex min-h-14 items-center justify-between gap-5 border border-white/35 px-6 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
-              >
-                {secondaryHeroCta}
-                <ArrowIcon />
-              </Link>
+          <div className="relative isolate flex min-w-0 flex-col justify-center overflow-hidden px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
+            <HeroBrandLines
+              placement="solutions"
+              variant={brandLineVariant}
+              mediaEdge="right-xl"
+            />
+            <div className="relative z-20">
+              <h1 className="max-w-4xl font-winnstein-display text-4xl leading-[1.06] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.35rem]">
+                {page.hero.title}
+              </h1>
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78">
+                {page.hero.description}
+              </p>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href={localizeHref(locale, "/kontakt")}
+                  className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
+                >
+                  {primaryHeroCta}
+                  <ArrowIcon />
+                </Link>
+                <Link
+                  href="#leistungsbausteine"
+                  className="brand-action brand-action-outline inline-flex min-h-14 items-center justify-between gap-5 border border-white/35 px-6 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/8"
+                >
+                  {secondaryHeroCta}
+                  <ArrowIcon />
+                </Link>
+              </div>
             </div>
           </div>
 

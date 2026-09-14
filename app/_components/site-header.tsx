@@ -102,7 +102,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         </ActiveNavLink>
 
         <nav
-          className="site-header-nav hidden items-center gap-5 min-[1360px]:flex 2xl:gap-6"
+          className="site-header-nav hidden items-center gap-5 min-[1200px]:flex 2xl:gap-6"
           aria-label={navigation.ariaLabel}
         >
           {navigation.items.map((item) => {
@@ -225,7 +225,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           })}
         </nav>
 
-        <div className="hidden items-center gap-2 min-[1360px]:flex">
+        <div className="hidden items-center gap-2 min-[1200px]:flex">
           <SiteSearch
             locale={locale}
             glossaryHref={glossaryHref}
@@ -235,7 +235,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           </div>
         </div>
 
-        <div className="site-header-actions hidden items-center gap-3 min-[1360px]:flex">
+        <div className="site-header-actions hidden items-center gap-3 min-[1200px]:flex">
           <Link
             href={localizeHref(locale, "/kontakt")}
             className="brand-action site-header-cta whitespace-nowrap bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan"
