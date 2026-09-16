@@ -40,14 +40,14 @@ export function PageClosingCta({
   const formLabel =
     locale === "de" ? "Anliegen schriftlich senden" : "Send your inquiry";
   const primaryClasses = isEducation
-    ? "bg-brand-education hover:bg-[#008f48]"
-    : "bg-brand-marine hover:bg-brand-steel-cyan";
+    ? "bg-brand-education text-brand-marine hover:bg-brand-education/80"
+    : "bg-brand-marine text-white hover:bg-brand-steel-cyan hover:text-brand-marine";
   const accentClasses = isEducation
     ? "bg-brand-education"
     : "bg-brand-steel-cyan";
   const secondaryClasses = isEducation
-    ? "text-brand-education hover:text-[#008f48]"
-    : "text-brand-marine hover:text-brand-steel-cyan";
+    ? "text-brand-marine hover:bg-brand-education/[0.08]"
+    : "text-brand-marine hover:bg-brand-steel-cyan-10";
 
   return (
     <section className="border-t border-line-soft bg-white px-5 py-14 sm:px-6 lg:px-8 lg:py-20">
@@ -68,7 +68,7 @@ export function PageClosingCta({
           <div className="flex w-full flex-col gap-3 sm:w-72 lg:justify-self-end">
             <Link
               href={localizeHref(locale, "/kontakt#termin")}
-              className={`brand-action inline-flex min-h-12 w-full items-center justify-between gap-5 px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors ${primaryClasses}`}
+              className={`brand-action inline-flex min-h-12 w-full items-center justify-between gap-5 px-6 py-3 font-winnstein-display text-sm font-bold transition-colors ${primaryClasses}`}
             >
               {scheduleLabel}
               <ArrowIcon />

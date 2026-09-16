@@ -80,7 +80,7 @@ export default async function LiteraturePage({ params }: Props) {
   const publications = berndPublications[locale];
 
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:64px_64px]" />
         <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[0.9fr_1.1fr]">
@@ -158,7 +158,7 @@ export default async function LiteraturePage({ params }: Props) {
                   <p className="mt-5 text-base leading-[1.65] text-brand-marine/72">
                     {book.description}
                   </p>
-                  <p className="mt-4 text-sm leading-6 text-brand-marine/62">
+                  <p className="mt-4 text-sm leading-6 text-brand-marine/75">
                     {page.authorsLabel}: {book.authors}
                   </p>
                   <div className="mt-7 flex flex-col items-start gap-4">
@@ -166,14 +166,14 @@ export default async function LiteraturePage({ params }: Props) {
                       href={book.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-5 border-b-2 border-brand-steel-cyan pb-1.5 font-winnstein-display text-sm font-semibold transition-colors hover:text-brand-steel-cyan"
+                      className="inline-flex items-center gap-5 border-b-2 border-brand-steel-cyan pb-1.5 font-winnstein-display text-sm font-semibold transition-colors hover:text-brand-marine"
                     >
                       {page.bookCta}
                       <ArrowIcon />
                     </Link>
                     <Link
                       href={localizeHref(locale, "/kontakt")}
-                      className="inline-flex items-center gap-5 font-winnstein-display text-sm font-semibold text-brand-marine/68 transition-colors hover:text-brand-steel-cyan"
+                      className="inline-flex items-center gap-5 font-winnstein-display text-sm font-semibold text-brand-marine/68 transition-colors hover:text-brand-marine"
                     >
                       {page.questionCta}
                       <ArrowIcon />
@@ -193,7 +193,7 @@ export default async function LiteraturePage({ params }: Props) {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-7 lg:grid-cols-[minmax(0,0.74fr)_minmax(0,1.26fr)] lg:items-end lg:gap-14">
             <div>
-              <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
+              <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-marine">
                 {copy.publicationsEyebrow}
               </p>
               <h2 className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
@@ -206,7 +206,7 @@ export default async function LiteraturePage({ params }: Props) {
               </p>
               <Link
                 href={localizeHref(locale, "/ueber-uns/bernd-bertsche")}
-                className="mt-6 inline-flex items-center gap-4 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-steel-cyan"
+                className="mt-6 inline-flex items-center gap-4 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-marine"
               >
                 {copy.profileCta}
                 <ArrowIcon />
@@ -230,13 +230,13 @@ export default async function LiteraturePage({ params }: Props) {
             />
           </div>
 
-          <p className="mt-10 max-w-5xl border-l-2 border-brand-steel-cyan pl-5 text-sm leading-7 text-brand-marine/64">
+          <p className="mt-10 max-w-5xl border-l-2 border-brand-steel-cyan pl-5 text-sm leading-7 text-brand-marine/75">
             {publications.sourceNote}{" "}
             <Link
               href={berndUniversityProfileUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-brand-marine underline decoration-brand-steel-cyan underline-offset-4 transition-colors hover:text-brand-steel-cyan"
+              className="font-semibold text-brand-marine underline decoration-brand-steel-cyan underline-offset-4 transition-colors hover:text-brand-marine"
             >
               {publications.sourceLabel}
             </Link>
@@ -249,6 +249,6 @@ export default async function LiteraturePage({ params }: Props) {
         title={copy.ctaTitle}
         description={copy.ctaText}
       />
-    </main>
+    </div>
   );
 }

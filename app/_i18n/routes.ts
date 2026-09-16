@@ -185,3 +185,11 @@ export function switchLocalePathname(
 
   return localizedPath(nextLocale, internalPath);
 }
+
+export function switchLocaleHash(pathname: string, hash: string, nextLocale: RouteLocale) {
+  const internal = pathname.replace(/^\/(de|en)(?=\/|$)/, "");
+  if (internal === "/education" && ["#vor-ort-schulung", "#on-site-training"].includes(hash)) {
+    return nextLocale === "de" ? "#vor-ort-schulung" : "#on-site-training";
+  }
+  return hash;
+}

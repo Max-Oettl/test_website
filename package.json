@@ -7,10 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test:contact": "node scripts/test-contact.mjs",
+    "test:indexing": "node scripts/test-indexing.mjs",
+    "email:preview": "node scripts/preview-contact-email.mjs",
     "images:optimize": "node scripts/optimize-runtime-photos.mjs"
   },
   "dependencies": {
-    "next": "16.2.7",
+    "next": "16.3.5",
     "nodemailer": "^10.0.10",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -22,7 +25,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.7",
+    "eslint-config-next": "16.3.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -151,7 +151,7 @@ export default async function ContactPage({ params }: Props) {
   )}`;
 
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="bg-white px-5 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl overflow-hidden border border-brand-marine/15 bg-brand-marine text-white lg:grid-cols-[1.04fr_0.96fr]">
           <div className="relative flex min-w-0 flex-col justify-center overflow-hidden px-7 py-14 sm:px-10 lg:px-14 lg:py-20">
@@ -169,7 +169,7 @@ export default async function ContactPage({ params }: Props) {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#termin"
-                  className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
+                  className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:bg-white hover:text-brand-marine"
                 >
                   {copy.hero.primaryCta}
                   <ArrowIcon />
@@ -284,7 +284,7 @@ export default async function ContactPage({ params }: Props) {
 
           <dl className="grid border-l border-brand-marine/15 md:grid-cols-3">
             <div className="border-r border-b border-brand-marine/15 p-7 lg:p-9">
-              <dt className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">
+              <dt className="font-winnstein-display text-sm font-semibold text-brand-marine">
                 {copy.direct.emailLabel}
               </dt>
               <dd className="mt-4">
@@ -298,7 +298,7 @@ export default async function ContactPage({ params }: Props) {
               </dd>
             </div>
             <div className="border-r border-b border-brand-marine/15 p-7 lg:p-9">
-              <dt className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">
+              <dt className="font-winnstein-display text-sm font-semibold text-brand-marine">
                 {copy.direct.phoneLabel}
               </dt>
               <dd className="mt-4">
@@ -311,7 +311,7 @@ export default async function ContactPage({ params }: Props) {
               </dd>
             </div>
             <div className="border-r border-b border-brand-marine/15 p-7 lg:p-9">
-              <dt className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">
+              <dt className="font-winnstein-display text-sm font-semibold text-brand-marine">
                 {copy.direct.addressLabel}
               </dt>
               <dd className="mt-4 text-base leading-7 text-brand-marine/76">
@@ -325,6 +325,6 @@ export default async function ContactPage({ params }: Props) {
           </dl>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

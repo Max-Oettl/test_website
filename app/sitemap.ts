@@ -5,6 +5,7 @@ import { getKnowledgeArticles } from "./_content/knowledge-content";
 import { locales, type Locale } from "./_i18n/config";
 import { localizedPath } from "./_i18n/routes";
 import { absoluteUrl } from "./_seo/metadata";
+import { isSiteIndexingEnabled } from "./_seo/deployment";
 
 const staticPaths = [
   "",
@@ -53,7 +54,6 @@ function sitemapEntry(
 
   return {
     url: absoluteUrl(publicPath),
-    lastModified: "2026-08-12",
     changeFrequency: "monthly",
     priority,
     alternates: localizedAlternates(path),
@@ -61,6 +61,8 @@ function sitemapEntry(
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  if (!isSiteIndexingEnabled) return [];
+
   const staticEntries = locales.flatMap((locale) =>
     staticPaths.map((path) =>
       sitemapEntry(locale, path, path === "" ? 1 : 0.75),

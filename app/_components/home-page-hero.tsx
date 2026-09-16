@@ -418,8 +418,9 @@ export function HomePageHero({
                   src={slide.image}
                   alt=""
                   fill
-                  preload={index === 0}
-                  quality={90}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  quality={75}
                   unoptimized={false}
                   aria-hidden="true"
                   draggable={false}
@@ -487,7 +488,7 @@ export function HomePageHero({
               <div className={`${styles.actions} mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7`}>
                 <Link
                   href={localizeHref(locale, "/kontakt")}
-                  className="brand-action group inline-flex min-h-14 items-center justify-center gap-4 bg-brand-marine px-8 text-base font-bold text-white transition-colors hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
+                  className="brand-action group inline-flex min-h-14 items-center justify-center gap-4 bg-brand-marine px-8 text-base font-bold text-white transition-colors hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4 hover:text-brand-marine"
                 >
                   <span className={styles.mobileOnly}>{content.mobileContactTitle}</span>
                   <span className={styles.desktopOnly}>{content.contactTitle}</span>
@@ -497,7 +498,7 @@ export function HomePageHero({
                 </Link>
                 <Link
                   href={localizeHref(locale, activeSlide.href)}
-                  className="group inline-flex min-h-12 w-fit items-center justify-center gap-3 border-b-2 border-brand-steel-cyan px-1 py-2 text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
+                  className="group inline-flex min-h-12 w-fit items-center justify-center gap-3 border-b-2 border-brand-steel-cyan px-1 py-2 text-sm font-bold text-brand-marine transition-colors hover:text-brand-marine focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4"
                 >
                   <span className={styles.mobileOnly}>{content.mobileServiceCta}</span>
                   <span className={styles.desktopOnly}>{content.serviceCta}</span>
@@ -579,7 +580,7 @@ export function HomePageHero({
                 <button
                   type="button"
                   onClick={() => moveSlide(-1)}
-                  className="flex h-11 w-11 items-center justify-center border border-brand-marine/15 bg-white/55 text-brand-marine transition-colors hover:bg-white hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan lg:border-0 lg:bg-transparent"
+                  className="flex h-11 w-11 items-center justify-center border border-brand-marine/15 bg-white/55 text-brand-marine transition-colors hover:bg-white hover:text-brand-marine focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan lg:border-0 lg:bg-transparent"
                   aria-label={content.previousSlide}
                 >
                   <span className="rotate-180">
@@ -589,7 +590,7 @@ export function HomePageHero({
                 <button
                   type="button"
                   onClick={() => moveSlide(1)}
-                  className="flex h-11 w-11 items-center justify-center border border-brand-marine/15 bg-white/55 text-brand-marine transition-colors hover:bg-white hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan lg:border-0 lg:bg-transparent"
+                  className="flex h-11 w-11 items-center justify-center border border-brand-marine/15 bg-white/55 text-brand-marine transition-colors hover:bg-white hover:text-brand-marine focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan lg:border-0 lg:bg-transparent"
                   aria-label={content.nextSlide}
                 >
                   <ArrowIcon />
@@ -621,7 +622,7 @@ export function HomePageHero({
               </span>
               <span className="min-w-0 leading-5 text-slate-500">
                 {content.academyPrompt}{" "}
-                <span className="font-semibold text-brand-marine transition-colors group-hover:text-brand-education">
+                <span className="font-semibold text-brand-marine transition-colors group-hover:text-brand-marine">
                   {content.academyCta}
                 </span>
               </span>

@@ -58,7 +58,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
 
   return (
     <footer className="site-footer-shell border-t border-slate-800 bg-slate-950 text-white">
-      <div className="mx-auto grid max-w-[100rem] gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.7fr_0.9fr_0.7fr] lg:gap-12 lg:px-8 lg:py-16 xl:gap-16">
+      <div className="mx-auto grid max-w-[100rem] grid-cols-1 gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1.2fr_0.7fr_0.9fr_0.7fr] lg:gap-12 lg:px-8 lg:py-16 xl:gap-16">
         <div>
           <SiteBrandLogo placement="footer" />
           <p className="mt-5 max-w-md text-sm leading-7 text-slate-300">
@@ -131,7 +131,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
           />
         </div>
       </div>
-      <div className="border-t border-slate-800 px-5 py-5 text-xs text-slate-500 sm:px-6 lg:px-8">
+      <div className="border-t border-slate-800 px-5 py-5 text-xs text-slate-300 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-[100rem] flex-col items-center justify-between gap-3 sm:flex-row">
           <span>{footer.copyright}</span>
           <nav

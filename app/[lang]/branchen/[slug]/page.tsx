@@ -15,6 +15,8 @@ type Props = {
   params: Promise<{ lang: string; slug: string }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return locales.flatMap((lang) =>
     getIndustryDetails(lang).map((page) => ({

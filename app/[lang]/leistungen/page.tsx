@@ -143,7 +143,7 @@ export default async function ServicesPage({ params }: Props) {
   const technicalServices = content.services.slice(0, 3);
 
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <BrandLineWatermark placement="solutions" />
 
@@ -167,7 +167,7 @@ export default async function ServicesPage({ params }: Props) {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={localizeHref(locale, "/kontakt")}
-                className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
+                className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:bg-[#0a729d] hover:text-white"
               >
                 {copy.hero.primaryCta}
                 <ArrowIcon />
@@ -296,7 +296,7 @@ export default async function ServicesPage({ params }: Props) {
                 locale,
                 "/leistungen/langfristige-kooperation",
               )}
-              className="brand-action mt-9 inline-flex min-h-14 w-full items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d] sm:w-fit"
+              className="brand-action mt-9 inline-flex min-h-14 w-full items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:bg-[#0a729d] sm:w-fit hover:text-white"
             >
               {copy.partnership.cta}
               <ArrowIcon />
@@ -335,6 +335,6 @@ export default async function ServicesPage({ params }: Props) {
         title={copy.contact.title}
         description={copy.contact.description}
       />
-    </main>
+    </div>
   );
 }

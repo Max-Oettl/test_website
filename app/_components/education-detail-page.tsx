@@ -86,7 +86,7 @@ export function EducationDetailPage({
   };
 
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:64px_64px]" />
         <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,0.96fr)_minmax(30rem,1.04fr)]">
@@ -143,7 +143,7 @@ export function EducationDetailPage({
                   key={section.title}
                   className="grid gap-4 border-b border-brand-marine/20 py-8 sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:gap-6"
                 >
-                  <span className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+                  <span className="font-winnstein-display text-sm font-bold text-brand-marine">
                     0{index + 1}
                   </span>
                   <div>
@@ -181,7 +181,7 @@ export function EducationDetailPage({
               href={resolveHref(locale, page.primaryCta.href)}
               target={page.primaryCta.external ? "_blank" : undefined}
               rel={page.primaryCta.external ? "noopener noreferrer" : undefined}
-              className="brand-action mt-7 inline-flex min-h-12 w-full items-center justify-between gap-5 bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
+              className="brand-action mt-7 inline-flex min-h-12 w-full items-center justify-between gap-5 bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan hover:text-brand-marine"
             >
               {page.primaryCta.label}
               <ArrowIcon />
@@ -201,7 +201,7 @@ export function EducationDetailPage({
                 key={section.title}
                 className="border-b border-brand-marine/20 py-7 md:border-r md:px-7 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
               >
-                <span className="font-winnstein-display text-3xl font-bold text-brand-education">
+                <span className="font-winnstein-display text-3xl font-bold text-brand-marine">
                   0{index + 1}
                 </span>
                 <p className="mt-4 text-base leading-7 font-semibold">
@@ -243,6 +243,6 @@ export function EducationDetailPage({
         description={page.ctaText}
         theme="education"
       />
-    </main>
+    </div>
   );
 }

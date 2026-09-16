@@ -45,7 +45,7 @@ export function PublicationAccordion({
     >
       <summary className="flex cursor-pointer list-none items-start justify-between gap-5 py-8 marker:hidden sm:items-center sm:gap-8 sm:py-10">
         <span className="min-w-0">
-          <span className="font-winnstein-display text-xs font-bold tracking-[0.08em] text-brand-steel-cyan uppercase">
+          <span className="font-winnstein-display text-xs font-bold tracking-[0.08em] text-brand-marine uppercase">
             {itemLabel}
           </span>
           <span className="mt-3 block font-winnstein-display text-2xl leading-tight font-bold tracking-[-0.03em] sm:text-3xl">
@@ -98,7 +98,7 @@ export function PublicationAccordion({
                 <span className="absolute right-0 bottom-0 h-1 w-24 bg-brand-steel-cyan" />
               </div>
             )}
-            <p className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+            <p className="font-winnstein-display text-sm font-bold text-brand-marine">
               {item.year}
             </p>
             {item.credit ? (
@@ -116,7 +116,7 @@ export function PublicationAccordion({
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-auto inline-flex items-center gap-3 pt-7 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-steel-cyan"
+              className="mt-auto inline-flex items-center gap-3 pt-7 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-marine"
             >
               <span className="border-b border-brand-steel-cyan pb-1">
                 {item.linkLabel}

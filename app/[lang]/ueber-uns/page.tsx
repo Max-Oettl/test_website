@@ -822,7 +822,7 @@ function TeamSection({
       <div className="mx-auto max-w-[90rem] px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-8 border-b border-line-soft pb-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
           <div>
-            <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-steel-cyan">
+            <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-marine">
               {content.eyebrow}
             </p>
             <h2 className="mt-3 font-winnstein-display text-3xl font-bold tracking-[-0.04em] sm:text-4xl lg:text-5xl">
@@ -896,7 +896,7 @@ function TeamSection({
                   href={linkedInUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="brand-action inline-flex min-h-12 w-full min-w-[15rem] items-center justify-center gap-3 bg-brand-steel-cyan px-5 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine"
+                  className="brand-action inline-flex min-h-12 w-full min-w-[15rem] items-center justify-center gap-3 bg-brand-steel-cyan px-5 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:bg-white hover:text-brand-marine"
                 >
                   <LinkedInIcon />
                   {content.linkedInLabel}
@@ -1081,7 +1081,7 @@ export default async function AboutPage({ params }: Props) {
                     aria-hidden="true"
                     className="h-px w-10 bg-brand-steel-cyan"
                   />
-                  <p className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+                  <p className="font-winnstein-display text-sm font-bold text-brand-marine">
                     {content.identity.visionLabel}
                   </p>
                 </div>
@@ -1097,7 +1097,7 @@ export default async function AboutPage({ params }: Props) {
                   key={value.title}
                   className="grid grid-cols-[3rem_1fr] gap-5 bg-white p-7 lg:p-8"
                 >
-                  <span className="brand-panel-cut-bottom-right flex h-12 w-12 items-center justify-center rounded-tl-xl bg-brand-steel-cyan-10 text-brand-steel-cyan [--brand-panel-cut:0.625rem]">
+                  <span className="brand-panel-cut-bottom-right flex h-12 w-12 items-center justify-center rounded-tl-xl bg-brand-steel-cyan-10 text-brand-marine [--brand-panel-cut:0.625rem]">
                     <ValueIcon index={index} />
                   </span>
                   <div>
@@ -1130,12 +1130,12 @@ export default async function AboutPage({ params }: Props) {
                   className="brand-panel-cut-bottom-right flex min-h-52 flex-col border border-line-soft bg-white p-7"
                 >
                   <div className="flex items-center justify-between gap-4">
-                    <span className="font-winnstein-display text-3xl font-bold text-brand-steel-cyan">
+                    <span className="font-winnstein-display text-3xl font-bold text-brand-marine">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <span aria-hidden="true" className="h-px flex-1 bg-line-soft" />
                   </div>
-                  <p className="mt-8 font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+                  <p className="mt-8 font-winnstein-display text-sm font-bold text-brand-marine">
                     {milestone.label}
                   </p>
                   <h4 className="mt-3 font-winnstein-display text-xl font-bold leading-7 tracking-[-0.02em]">
@@ -1155,7 +1155,7 @@ export default async function AboutPage({ params }: Props) {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
           <div className="grid gap-8 border-b border-line-soft pb-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
             <div>
-              <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-steel-cyan">
+              <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-marine">
                 {content.leadership.eyebrow}
               </p>
               <h2 className="mt-3 max-w-3xl font-winnstein-display text-3xl font-bold tracking-[-0.04em] sm:text-4xl lg:text-5xl">
@@ -1193,7 +1193,7 @@ export default async function AboutPage({ params }: Props) {
                     index % 2 === 1 ? "lg:order-1" : ""
                   }`}
                 >
-                  <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan sm:text-base">
+                  <p className="font-winnstein-display text-sm font-semibold text-brand-marine sm:text-base">
                     {profile.role}
                   </p>
                   <h3 className="mt-3 font-winnstein-display text-3xl font-bold tracking-[-0.035em] sm:text-4xl">
@@ -1265,7 +1265,7 @@ export default async function AboutPage({ params }: Props) {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <div>
-              <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-steel-cyan">
+              <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-marine">
                 {content.company.eyebrow}
               </p>
               <h2 className="mt-3 max-w-2xl font-winnstein-display text-3xl font-bold tracking-[-0.04em] sm:text-4xl lg:text-5xl">
@@ -1305,7 +1305,7 @@ export default async function AboutPage({ params }: Props) {
                 key={signal.title}
                 className="flex min-h-36 flex-col justify-between bg-white p-7 lg:p-8"
               >
-                <p className="font-winnstein-display text-xl font-bold text-brand-steel-cyan">
+                <p className="font-winnstein-display text-xl font-bold text-brand-marine">
                   {signal.value}
                 </p>
                 <h3 className="mt-6 font-winnstein-display text-xl font-bold tracking-[-0.02em]">
@@ -1360,7 +1360,7 @@ export default async function AboutPage({ params }: Props) {
       >
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-6 lg:grid-cols-[1fr_0.92fr] lg:items-center lg:px-8 lg:py-24">
           <div>
-            <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">
+            <p className="font-winnstein-display text-sm font-semibold text-brand-marine">
               {content.podcast.label}
             </p>
             <h2 className="mt-3 font-winnstein-display text-3xl font-bold tracking-[-0.035em] sm:text-4xl">
@@ -1374,7 +1374,7 @@ export default async function AboutPage({ params }: Props) {
                 href={podcastUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brand-action inline-flex min-h-12 items-center justify-center gap-3 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
+                className="brand-action inline-flex min-h-12 items-center justify-center gap-3 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan hover:text-brand-marine"
               >
                 {content.podcast.linkLabel}
                 <ArrowIcon />

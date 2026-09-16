@@ -1,11 +1,10 @@
 import type { NextConfig } from "next";
+import { isSiteIndexingEnabled, noIndexHeader } from "./app/_seo/deployment";
 
 import {
   canonicalizeLocalizedHref,
   englishRoutePairs,
 } from "./app/_i18n/routes";
-
-const isVercelPreviewDeployment = process.env.VERCEL_ENV === "preview";
 
 const legacyRedirectPairs = [
   ["/", "/de"],
@@ -227,25 +226,37 @@ function canonicalRedirectPairs() {
 }
 
 const nextConfig: NextConfig = {
+  experimental: { globalNotFound: true },
   skipTrailingSlashRedirect: true,
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1440, 1600, 1920, 2048],
     qualities: [75, 90],
   },
   async headers() {
-    if (!isVercelPreviewDeployment) {
-      return [];
-    }
-
     return [
       {
         source: "/:path*",
         headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        ],
+      },
+      {
+        source: "/:path*",
+        // Generated Vercel URLs must remain out of search, even after go-live.
+        ...(isSiteIndexingEnabled ? {
+          has: [{ type: "host" as const, value: ".*\\.vercel\\.app" }],
+        } : {}),
+        headers: [
           {
             key: "X-Robots-Tag",
-            value: "noindex, nofollow, noarchive, nosnippet",
+            value: noIndexHeader,
           },
         ],
+      },
+      {
+        source: "/wp-content/uploads/2021/08/:file(Flyer-Zuv|Flyer-DOE|Flyer-E-Zuv).pdf",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
       },
     ];
   },

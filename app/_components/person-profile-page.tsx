@@ -189,7 +189,7 @@ export function PersonProfilePage({
         <div className="mx-auto max-w-7xl px-5 pb-16 pt-10 sm:px-6 lg:px-8 lg:pb-24 lg:pt-14">
           <Link
             href={localizeHref(locale, "/ueber-uns")}
-            className="inline-flex items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan"
+            className="inline-flex items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-marine"
           >
             <span aria-hidden="true">←</span>
             {copy.backLabel}
@@ -197,7 +197,7 @@ export function PersonProfilePage({
 
           <div className="mt-10 grid overflow-hidden border border-line-soft bg-white shadow-[0_30px_80px_-50px_rgba(3,19,52,0.52)] lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch">
             <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
-              <p className="font-winnstein-display text-base font-semibold text-brand-steel-cyan">
+              <p className="font-winnstein-display text-base font-semibold text-brand-marine">
                 {personCopy.role}
               </p>
               <h1 className="mt-4 font-winnstein-display text-[2.35rem] font-bold leading-[1.04] tracking-[-0.04em] sm:text-5xl lg:text-6xl">

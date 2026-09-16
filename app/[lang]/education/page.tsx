@@ -207,7 +207,7 @@ export default async function EducationPage({ params }: Props) {
   );
 
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <BrandLineWatermark placement="education" />
 
@@ -233,7 +233,7 @@ export default async function EducationPage({ params }: Props) {
                 href="https://reltest-academy.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-education px-7 py-4 font-winnstein-display text-base font-bold text-white transition-colors hover:bg-[#008f48]"
+                className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-education px-7 py-4 font-winnstein-display text-base font-bold text-brand-marine transition-colors hover:bg-brand-education/80"
               >
                 {copy.hero.digitalCta}
                 <ArrowIcon />
@@ -293,7 +293,7 @@ export default async function EducationPage({ params }: Props) {
                   {copy.paths.selector.digitalText}
                 </span>
               </span>
-              <span className="brand-action flex h-11 w-11 shrink-0 items-center justify-center bg-brand-education text-white transition-transform group-hover:translate-x-1">
+              <span className="brand-action flex h-11 w-11 shrink-0 items-center justify-center bg-brand-education text-brand-marine transition-transform group-hover:translate-x-1">
                 <ArrowIcon />
               </span>
             </Link>
@@ -309,7 +309,7 @@ export default async function EducationPage({ params }: Props) {
                   {copy.paths.selector.onSiteText}
                 </span>
               </span>
-              <span className="brand-action brand-action-outline brand-action-outline-light flex h-11 w-11 shrink-0 items-center justify-center text-brand-steel-cyan transition-transform group-hover:translate-x-1">
+              <span className="brand-action brand-action-outline brand-action-outline-light flex h-11 w-11 shrink-0 items-center justify-center text-brand-marine transition-transform group-hover:translate-x-1">
                 <ArrowIcon />
               </span>
             </Link>
@@ -359,7 +359,7 @@ export default async function EducationPage({ params }: Props) {
                 href="https://reltest-academy.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brand-action mt-9 inline-flex min-h-14 w-full items-center justify-between gap-7 bg-brand-education px-7 py-4 font-winnstein-display text-base font-bold text-white transition-colors hover:bg-[#008f48] sm:w-fit"
+                className="brand-action mt-9 inline-flex min-h-14 w-full items-center justify-between gap-7 bg-brand-education px-7 py-4 font-winnstein-display text-base font-bold text-brand-marine transition-colors hover:bg-brand-education/80 sm:w-fit"
               >
                 {copy.paths.digital.cta}
                 <ArrowIcon />
@@ -453,7 +453,7 @@ export default async function EducationPage({ params }: Props) {
                 )}
                 className="group grid gap-4 border-b border-brand-marine/20 bg-white px-5 py-7 transition-colors hover:bg-brand-marine hover:text-white sm:grid-cols-[4rem_minmax(0,1fr)_auto] sm:items-center sm:px-7"
               >
-                <span className="font-winnstein-display text-sm font-bold text-brand-steel-cyan group-hover:text-brand-education">
+                <span className="font-winnstein-display text-sm font-bold text-brand-marine group-hover:text-brand-marine">
                   0{index + 1}
                 </span>
                 <span>
@@ -482,6 +482,6 @@ export default async function EducationPage({ params }: Props) {
         description={copy.choice.ctaText}
         theme="education"
       />
-    </main>
+    </div>
   );
 }

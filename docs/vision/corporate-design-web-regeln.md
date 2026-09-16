@@ -69,6 +69,15 @@ bereichsübergreifende Inhalte Marineblau.
 
 ## 4. Typografie
 
+Ergänzung aus dem Prelaunch-Audit vom 15. September 2026: Kleine Texte auf
+hellen Flächen verwenden Marine bzw. eine ausreichend kontrastreiche
+Marine-Abstufung. Stahlcyan und Signalgrün bleiben Markenakzente für Linien,
+Flächen und Kennzeichnungen, sind aber nicht automatisch als kleine
+Textfarbe auf Weiß geeignet. Normaler Text benötigt mindestens 4,5:1
+Kontrast, großer Text mindestens 3:1. Hover-/Aktivzustände und die tatsächlich
+zusammengesetzte Hintergrundfarbe mitprüfen. Auf Cyan-/Grün-Buttons kann
+Marine statt Weiß erforderlich sein. Offizielle Logos bleiben unverändert.
+
 - H1: Oxanium Bold oder ExtraBold, Zeilenhöhe 115 %.
 - H2: Oxanium Medium oder SemiBold, Zeilenhöhe 115 %.
 - H3: Archivo SemiBold, Zeilenhöhe 115 %.

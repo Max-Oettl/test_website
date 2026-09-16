@@ -41,13 +41,13 @@ export default async function GlossaryPage({ params }: Props) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-6 py-14 font-winnstein-body lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-5xl px-6 py-14 font-winnstein-body lg:px-8 lg:py-20">
         <GlossaryDirectory
           entries={entries}
           siteEntries={siteEntries}
           locale={locale}
         />
-      </main>
+      </div>
     </>
   );
 }

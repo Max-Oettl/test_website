@@ -67,8 +67,8 @@
   --color-brand-marine-10: var(--solution-marine-10);
   --color-brand-steel-cyan-20: var(--solution-steel-cyan-20);
   --color-brand-steel-cyan-10: var(--solution-steel-cyan-10);
-  --font-sans: var(--font-plex-sans);
-  --font-display: var(--font-sora);
+  --font-sans: var(--font-archivo);
+  --font-display: var(--font-oxanium);
   --font-winnstein-body: var(--font-archivo);
   --font-winnstein-display: var(--font-oxanium);
   --radius-card: 1.5rem;
@@ -82,7 +82,39 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-plex-sans), sans-serif;
+  font-family: var(--font-archivo, Arial), sans-serif;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 110;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background: #ffffff;
+  color: var(--solution-marine);
+  border: 2px solid var(--solution-marine);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.error-screen {
+  min-height: 65vh;
+  padding: clamp(2rem, 6vw, 5rem) 1.25rem;
+  background: var(--solution-steel-cyan-10);
+  color: var(--solution-marine);
+  font-family: var(--font-archivo, Arial), Helvetica, sans-serif;
+}
+
+.error-screen-card {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border-top: 0.35rem solid var(--solution-steel-cyan);
+  background: #ffffff;
 }
 
 .brand-action,
@@ -454,7 +486,7 @@ body {
 .site-compact-menu-link-education:focus-visible {
   border-left-color: var(--education-signal-green);
   background: color-mix(in srgb, var(--education-signal-green) 11%, white);
-  color: var(--education-signal-green);
+  color: var(--solution-marine);
 }
 
 html.site-compact-menu-open,
@@ -1296,7 +1328,7 @@ h1,
 h2,
 h3,
 .font-display {
-  font-family: var(--font-sora), sans-serif;
+  font-family: var(--font-oxanium, Arial), sans-serif;
 }
 
 ::selection {
@@ -1377,7 +1409,7 @@ body[data-site-design="winnstein"]
 
 body[data-site-design="winnstein"]
   .site-nav-link:hover {
-  color: var(--solution-steel-cyan) !important;
+  color: var(--solution-marine) !important;
 }
 
 body[data-site-design="winnstein"]
@@ -1395,7 +1427,7 @@ body[data-site-design="winnstein"]
   .site-nav-link-education-active,
 body[data-site-design="winnstein"]
   .site-nav-link-education[aria-current="page"] {
-  color: var(--education-signal-green) !important;
+  color: var(--solution-marine) !important;
 }
 
 body[data-site-design="winnstein"] .site-nav-link-education::after,

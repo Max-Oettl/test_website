@@ -362,12 +362,12 @@ function LifecycleDiagram({ image }: { image: KnowledgeLifecycleImageAsset }) {
 function ProcessSection({ item, index, locale, linkLabel }: { item: ProcessItem; index: number; locale: Locale; linkLabel: string }) {
   const content = (
     <div className="flex h-full min-w-0 flex-col py-4 lg:px-10 lg:py-4">
-      <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-steel-cyan">{item.eyebrow}</p>
+      <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-marine">{item.eyebrow}</p>
       <h3 className="mt-4 hyphens-auto font-winnstein-display text-3xl font-bold leading-tight text-brand-marine [overflow-wrap:anywhere] sm:text-4xl">{item.title}</h3>
       <p className="mt-5 max-w-2xl text-base leading-8 text-brand-marine/75">{item.summary}</p>
       <Link
         href={localizeHref(locale, `/wissen/${item.slug}`)}
-        className="group mt-7 inline-flex w-fit items-center gap-8 border-b border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan"
+        className="group mt-7 inline-flex w-fit items-center gap-8 border-b border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-marine"
       >
         {linkLabel}
         <ArrowIcon />
@@ -398,7 +398,7 @@ function DoeFocusSection({ content, locale }: { content: DoeFocus; locale: Local
     <section className="border-y border-brand-marine/15 bg-brand-steel-cyan-10 px-6 py-16 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(26rem,.95fr)] lg:items-center lg:gap-14 xl:gap-20">
         <div className="min-w-0">
-          <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-steel-cyan">
+          <p className="font-winnstein-display text-sm font-semibold tracking-[0.08em] text-brand-marine">
             {content.eyebrow}
           </p>
           <h2 className="mt-4 max-w-2xl hyphens-manual font-winnstein-display text-4xl font-bold leading-tight text-brand-marine [overflow-wrap:break-word] sm:text-5xl">
@@ -409,7 +409,7 @@ function DoeFocusSection({ content, locale }: { content: DoeFocus; locale: Local
           </p>
           <Link
             href={localizeHref(locale, "/wissen/design-of-experiments")}
-            className="group mt-8 inline-flex w-fit items-center gap-8 border-b border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan"
+            className="group mt-8 inline-flex w-fit items-center gap-8 border-b border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-marine"
           >
             {content.link}
             <ArrowIcon />
@@ -470,7 +470,7 @@ export default async function KnowledgePage({ params }: Props) {
         <div className="h-2 bg-brand-steel-cyan" />
       </header>
 
-      <main>
+      <div>
         <section className="bg-white px-6 py-16 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-10 lg:grid-cols-[.78fr_1.22fr] lg:gap-20">
@@ -487,17 +487,17 @@ export default async function KnowledgePage({ params }: Props) {
               className="group mt-12 grid gap-5 border-y border-brand-marine-20 py-7 transition-colors hover:border-brand-steel-cyan sm:grid-cols-[minmax(15rem,.72fr)_minmax(0,1.28fr)_auto] sm:items-center sm:gap-8"
             >
               <div>
-                <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">
+                <p className="font-winnstein-display text-sm font-semibold text-brand-marine">
                   {content.foundation.eyebrow}
                 </p>
-                <h2 className="mt-2 font-winnstein-display text-2xl font-bold text-brand-marine transition-colors group-hover:text-brand-steel-cyan sm:text-3xl">
+                <h2 className="mt-2 font-winnstein-display text-2xl font-bold text-brand-marine transition-colors group-hover:text-brand-marine sm:text-3xl">
                   {content.foundation.title}
                 </h2>
               </div>
               <p className="max-w-3xl text-base leading-7 text-brand-marine/75">
                 {content.foundation.text}
               </p>
-              <span className="inline-flex items-center gap-5 font-winnstein-display text-sm font-bold text-brand-marine transition-colors group-hover:text-brand-steel-cyan">
+              <span className="inline-flex items-center gap-5 font-winnstein-display text-sm font-bold text-brand-marine transition-colors group-hover:text-brand-marine">
                 {content.foundation.link}
                 <ArrowIcon />
               </span>
@@ -509,7 +509,7 @@ export default async function KnowledgePage({ params }: Props) {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:items-end">
               <div>
-                <p className="font-winnstein-display text-sm font-semibold text-brand-steel-cyan">{content.lifecycle.eyebrow}</p>
+                <p className="font-winnstein-display text-sm font-semibold text-brand-marine">{content.lifecycle.eyebrow}</p>
                 <h2 className="mt-4 font-winnstein-display text-4xl font-bold leading-tight text-brand-marine [overflow-wrap:anywhere] sm:text-5xl">{content.lifecycle.title}</h2>
               </div>
               <p className="max-w-3xl text-lg leading-8 text-brand-marine/75">{content.lifecycle.intro}</p>
@@ -549,7 +549,7 @@ export default async function KnowledgePage({ params }: Props) {
         </section>
 
         <DoeFocusSection content={content.doeFocus} locale={locale} />
-      </main>
+      </div>
 
       <PageClosingCta
         locale={locale}

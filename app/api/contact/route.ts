@@ -1,6 +1,10 @@
 import { createHash } from "node:crypto";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 import nodemailer, { type Transporter } from "nodemailer";
+
+import { createConfirmationEmail } from "./confirmation-email";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -8,6 +12,13 @@ export const dynamic = "force-dynamic";
 const maximumRequestSize = 16_384;
 const rateLimitWindowMs = 15 * 60 * 1000;
 const rateLimitMaximum = 4;
+const maximumRateLimitEntries = 10_000;
+const emailLogoPath = join(
+  process.cwd(),
+  "public",
+  "branding",
+  "reltest-email-logo.png",
+);
 
 const audiences = ["company", "private", "public"] as const;
 const topics = [
@@ -98,6 +109,7 @@ const mailCopy = {
 
 let transporter: Transporter | undefined;
 let transporterConfigurationKey = "";
+let emailLogoPromise: Promise<Buffer> | undefined;
 
 function jsonResponse(body: object, status: number, headers?: HeadersInit) {
   const responseHeaders = new Headers(headers);
@@ -130,7 +142,7 @@ function isValidEmail(value: string) {
     value.length <= 254 &&
     !value.includes("\r") &&
     !value.includes("\n") &&
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+    /^[^\s@<>,;:"\\]+@(?:[a-z\d](?:[a-z\d-]{0,61}[a-z\d])?\.)+[a-z\d](?:[a-z\d-]{0,61}[a-z\d])?$/i.test(value)
   );
 }
 
@@ -156,6 +168,7 @@ function validateContactRequest(value: unknown): ValidContactRequest | null {
     name.length < 2 ||
     name.length > 120 ||
     company.length > 160 ||
+    (audience !== "private" && company.length === 0) ||
     !isValidEmail(email) ||
     phone.length > 60 ||
     message.length < 20 ||
@@ -183,17 +196,8 @@ function hasSameOrigin(request: Request) {
   }
 
   const requestUrl = new URL(request.url);
-  const forwardedHost = request.headers.get("x-forwarded-host")?.split(",")[0]?.trim();
-  const forwardedProtocol = request.headers
-    .get("x-forwarded-proto")
-    ?.split(",")[0]
-    ?.trim();
-  const forwardedOrigin =
-    forwardedHost && forwardedProtocol
-      ? `${forwardedProtocol}://${forwardedHost}`
-      : null;
-
-  return origin === requestUrl.origin || origin === forwardedOrigin;
+  // Never accept an arbitrary forwarded host as an additional trusted origin.
+  return origin === requestUrl.origin;
 }
 
 function getRateLimitKey(request: Request) {
@@ -209,9 +213,13 @@ function getRateLimitKey(request: Request) {
 
 function isRateLimited(key: string) {
   const now = Date.now();
+  for (const [entryKey, entry] of rateLimits) {
+    if (entry.resetAt <= now) rateLimits.delete(entryKey);
+  }
   const current = rateLimits.get(key);
 
   if (!current || current.resetAt <= now) {
+    if (rateLimits.size >= maximumRateLimitEntries) return true;
     rateLimits.set(key, {
       count: 1,
       resetAt: now + rateLimitWindowMs,
@@ -233,6 +241,7 @@ function getMailConfiguration() {
   const port = Number(process.env.SMTP_PORT);
   const user = process.env.SMTP_USER?.trim();
   const from = process.env.MAIL_FROM?.trim();
+  const confirmationFrom = process.env.MAIL_CONFIRMATION_FROM?.trim();
   const to = process.env.MAIL_TO?.trim();
 
   if (
@@ -240,6 +249,7 @@ function getMailConfiguration() {
     !password ||
     !user ||
     !isValidEmail(from ?? "") ||
+    !isValidEmail(confirmationFrom ?? "") ||
     !isValidEmail(to ?? "") ||
     !Number.isInteger(port) ||
     port < 1 ||
@@ -249,6 +259,7 @@ function getMailConfiguration() {
   }
 
   return {
+    confirmationFrom,
     from,
     host,
     password,
@@ -274,6 +285,7 @@ function getTransporter(
       host: configuration.host,
       port: configuration.port,
       secure: configuration.secure,
+      requireTLS: !configuration.secure,
       auth: {
         user: configuration.user,
         pass: configuration.password,
@@ -286,6 +298,11 @@ function getTransporter(
   }
 
   return transporter;
+}
+
+function getEmailLogo() {
+  emailLogoPromise ??= readFile(emailLogoPath);
+  return emailLogoPromise;
 }
 
 function formatMessage(data: ValidContactRequest) {
@@ -318,11 +335,27 @@ export async function POST(request: Request) {
 
   let body: unknown;
   try {
-    const rawBody = await request.text();
-    if (rawBody.length > maximumRequestSize) {
-      return jsonResponse({ error: "Request too large" }, 413);
+    // Count actual UTF-8 bytes and stop reading oversized/chunked bodies early.
+    const reader = request.body?.getReader();
+    const chunks: Uint8Array[] = [];
+    let bytes = 0;
+    if (reader) {
+      try {
+        for (;;) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          bytes += value.byteLength;
+          if (bytes > maximumRequestSize) {
+            await reader.cancel();
+            return jsonResponse({ error: "Request too large" }, 413);
+          }
+          chunks.push(value);
+        }
+      } finally {
+        reader.releaseLock();
+      }
     }
-    body = JSON.parse(rawBody) as unknown;
+    body = JSON.parse(Buffer.concat(chunks).toString("utf8")) as unknown;
   } catch {
     return jsonResponse({ error: "Invalid request body" }, 400);
   }
@@ -373,5 +406,51 @@ export async function POST(request: Request) {
     return jsonResponse({ error: "Mail delivery failed" }, 502);
   }
 
-  return jsonResponse({ ok: true }, 200);
+  const confirmationEmail = createConfirmationEmail({
+    locale: contactRequest.locale,
+    name: contactRequest.name,
+    topic: copy.topic[contactRequest.topic],
+  });
+  let confirmationSent = true;
+
+  try {
+    await getTransporter(mailConfiguration).sendMail({
+      from: {
+        name: "RelTest Solutions",
+        address: mailConfiguration.confirmationFrom,
+      },
+      to: {
+        name: contactRequest.name,
+        address: contactRequest.email,
+      },
+      replyTo: {
+        name: "RelTest Solutions",
+        address: mailConfiguration.to,
+      },
+      subject: confirmationEmail.subject,
+      text: confirmationEmail.text,
+      html: confirmationEmail.html,
+      attachments: [
+        {
+          filename: "reltest-logo.png",
+          content: await getEmailLogo(),
+          cid: "reltest-logo",
+          contentDisposition: "inline",
+          contentType: "image/png",
+        },
+      ],
+      headers: {
+        "Auto-Submitted": "auto-generated",
+        "X-Auto-Response-Suppress": "All",
+      },
+    });
+  } catch (error) {
+    confirmationSent = false;
+    console.error(
+      "Contact confirmation email delivery failed:",
+      error instanceof Error ? error.message : "Unknown SMTP error",
+    );
+  }
+
+  return jsonResponse({ ok: true, confirmationSent }, 200);
 }

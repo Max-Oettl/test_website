@@ -606,7 +606,7 @@ export function HomePageContent({
               </div>
               <Link
                 href={localizeHref(locale, "/leistungen")}
-                className="group mt-6 inline-flex min-h-12 w-fit items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-[#edf5f8]"
+                className="group mt-6 inline-flex min-h-12 w-fit items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-marine focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-[#edf5f8]"
               >
                 {content.supportCta}
                 <span className="transition-transform group-hover:translate-x-1">
@@ -641,7 +641,7 @@ export function HomePageContent({
                       {item.description}
                     </span>
                   </span>
-                  <span className="mt-1 text-brand-cyan transition-transform group-hover:translate-x-1">
+                  <span className="mt-1 text-brand-marine transition-transform group-hover:translate-x-1">
                     <ArrowIcon className="h-5 w-5" />
                   </span>
                 </Link>
@@ -663,10 +663,10 @@ export function HomePageContent({
             action={
               <Link
                 href={localizeHref(locale, "/kontakt")}
-                className="brand-action group inline-flex min-h-12 items-center justify-center gap-4 bg-brand-ink px-7 text-sm font-bold text-white transition-colors hover:bg-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-[#f7fafc]"
+                className="brand-action group inline-flex min-h-12 items-center justify-center gap-4 bg-brand-ink px-7 text-sm font-bold text-white transition-colors hover:bg-brand-blue hover:text-brand-marine focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-[#f7fafc]"
               >
                 {content.projectsCta}
-                <span className="text-white transition-transform group-hover:translate-x-1">
+                <span className="transition-transform group-hover:translate-x-1">
                   <ArrowIcon />
                 </span>
               </Link>
@@ -685,7 +685,7 @@ export function HomePageContent({
                     </h3>
                     <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
                       <span className="flex w-full flex-wrap items-center gap-x-3 gap-y-1 bg-brand-steel-cyan-10 px-4 py-2.5 sm:w-fit sm:px-5">
-                        <span className="text-xs font-bold tracking-[0.12em] text-brand-cyan uppercase">
+                        <span className="text-xs font-bold tracking-[0.12em] text-brand-marine uppercase">
                           {content.roleLabel}:
                         </span>
                         <span className="text-sm font-semibold text-brand-ink">
@@ -693,7 +693,7 @@ export function HomePageContent({
                         </span>
                       </span>
 
-                      <span className="inline-flex w-full items-center justify-between gap-3 border-t border-line-soft pt-4 text-sm font-bold text-brand-blue sm:w-auto sm:border-t-0 sm:pt-0">
+                      <span className="inline-flex w-full items-center justify-between gap-3 border-t border-line-soft pt-4 text-sm font-bold text-brand-marine sm:w-auto sm:border-t-0 sm:pt-0">
                         <span className="group-open:hidden">{content.expandLabel}</span>
                         <span className="hidden group-open:inline">{content.collapseLabel}</span>
                         <span className="brand-icon-point relative grid size-10 place-items-center text-white">
@@ -763,10 +763,10 @@ export function HomePageContent({
 
       <section className="border-b border-white/10 bg-brand-ink text-white">
         <div className="mx-auto max-w-[96rem] px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(32rem,1.1fr)] lg:items-end lg:gap-16">
+          <div className="grid min-w-0 grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(32rem,1.1fr)] lg:items-end lg:gap-16">
             <div>
               <span aria-hidden="true" className="block h-1 w-20 bg-brand-cyan" />
-              <h2 className="mt-8 max-w-3xl text-[clamp(2.25rem,3vw,3.65rem)] leading-[1.02] font-semibold tracking-[-0.06em] text-white">
+              <h2 className="mt-8 max-w-3xl text-[clamp(2.25rem,3vw,3.65rem)] leading-[1.02] font-semibold tracking-[-0.06em] break-words hyphens-auto text-white">
                 {content.trustTitle}
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-8 font-medium text-slate-300">
@@ -805,7 +805,6 @@ export function HomePageContent({
                 href={sfzHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={content.universityLabel}
                 className="group/sfz relative block w-full max-w-xl overflow-hidden bg-white shadow-[0_18px_44px_rgba(0,0,0,0.18)] transition-transform duration-200 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-brand-marine-80"
               >
                 <span className="flex min-h-36 items-center px-6 py-2 sm:px-8">
@@ -821,7 +820,7 @@ export function HomePageContent({
                 </span>
                 <span className="flex items-center justify-between gap-5 border-t border-slate-200 bg-brand-steel-cyan-10 px-6 py-4 sm:px-8">
                   <span>
-                    <span className="block text-[0.65rem] leading-4 font-bold tracking-[0.18em] text-brand-cyan uppercase">
+                    <span className="block text-[0.65rem] leading-4 font-bold tracking-[0.18em] text-brand-marine uppercase">
                       {content.universityAffiliation}
                     </span>
                     <span className="mt-1 block max-w-md text-sm leading-5 font-semibold text-brand-marine-80 sm:text-[0.95rem]">
@@ -867,7 +866,7 @@ export function HomePageContent({
                 </div>
                 <Link
                   href={localizeHref(locale, "/literatur")}
-                  className="group inline-flex w-fit shrink-0 items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4"
+                  className="group inline-flex w-fit shrink-0 items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-marine focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4"
                 >
                   {content.booksCta}
                   <span className="transition-transform group-hover:translate-x-1">
@@ -911,7 +910,7 @@ export function HomePageContent({
               </div>
               <Link
                 href={localizeHref(locale, "/referenzen")}
-                className="group inline-flex w-fit items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 lg:justify-self-end"
+                className="group inline-flex w-fit items-center gap-4 border-b-2 border-brand-cyan text-sm font-bold text-brand-ink transition-colors hover:text-brand-marine focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4 lg:justify-self-end"
               >
                 {content.referencesCta}
                 <span className="transition-transform group-hover:translate-x-1">
@@ -976,7 +975,7 @@ export function HomePageContent({
                 <span className="text-xl leading-tight font-semibold tracking-[-0.035em] text-brand-ink sm:text-2xl">
                   {industry.name}
                 </span>
-                <span className="flex min-w-0 items-center gap-2 text-sm font-bold text-brand-marine/58 transition-colors group-hover:text-brand-steel-cyan">
+                <span className="flex min-w-0 items-center gap-2 text-sm font-bold text-brand-marine/75 transition-colors group-hover:text-brand-marine">
                   <span>{content.industryCta}</span>
                   <span className="transition-transform group-hover:translate-x-1">
                     <ArrowIcon className="h-5 w-5" />
@@ -988,7 +987,7 @@ export function HomePageContent({
           <div className="mt-5 flex justify-end">
             <Link
               href={localizeHref(locale, "/branchen")}
-              className="brand-action group inline-flex min-h-12 w-full items-center justify-center gap-4 bg-brand-marine px-7 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-white sm:w-auto"
+              className="brand-action group inline-flex min-h-12 w-full items-center justify-center gap-4 bg-brand-marine px-7 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-4 focus-visible:ring-offset-white sm:w-auto hover:text-brand-marine"
             >
               {content.industriesOverviewCta}
               <span className="transition-transform group-hover:translate-x-1">

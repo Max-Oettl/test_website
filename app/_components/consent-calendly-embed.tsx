@@ -66,7 +66,7 @@ export function ConsentCalendlyEmbed({
   return (
     <div className="flex min-h-[32rem] items-center justify-center bg-[linear-gradient(135deg,rgba(46,161,207,0.1),rgba(255,255,255,0.96)_58%)] px-6 py-12 sm:min-h-[36rem] sm:px-10">
       <div className="max-w-xl border-l-4 border-brand-steel-cyan bg-white p-7 sm:p-9">
-        <p className="font-winnstein-display text-xs font-bold uppercase tracking-[0.14em] text-brand-steel-cyan">
+        <p className="font-winnstein-display text-xs font-bold uppercase tracking-[0.14em] text-brand-marine">
           {copy.eyebrow}
         </p>
         <h3 className="mt-3 font-winnstein-display text-2xl leading-tight font-bold sm:text-3xl">
@@ -78,7 +78,7 @@ export function ConsentCalendlyEmbed({
         <div className="mt-7 flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
-            className="brand-action inline-flex min-h-12 items-center justify-center bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+            className="brand-action inline-flex min-h-12 items-center justify-center bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan hover:text-brand-marine"
             onClick={() => saveConsentChoice(true)}
           >
             {copy.activate}

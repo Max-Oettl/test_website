@@ -133,7 +133,7 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
         <div className="h-2 bg-brand-steel-cyan" />
       </header>
 
-      <main className="font-winnstein-body">
+      <div className="font-winnstein-body">
         {article.definition ? (
           <section className="border-b border-[var(--solution-marine-20)] bg-white">
             <div className="mx-auto max-w-5xl px-6 py-12 lg:px-8 lg:py-16">
@@ -199,7 +199,7 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
                         {section.media.lead}
                       </p>
                     ) : null}
-                    <KnowledgeMediaPlaceholder media={section.media} />
+                <KnowledgeMediaPlaceholder media={section.media} locale={locale} />
                   </div>
                 ) : null}
               </section>
@@ -211,7 +211,7 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
           <div className="mx-auto max-w-5xl px-6 py-14 lg:px-8 lg:py-16">
             <div className="flex flex-col justify-between gap-6 border-b border-[var(--solution-marine-20)] pb-8 sm:flex-row sm:items-end">
               <div>
-                <p className="font-winnstein-display text-sm font-semibold text-[var(--solution-steel-cyan)]">
+                <p className="font-winnstein-display text-sm font-semibold text-brand-marine">
                   {isGerman ? "Zusammenhänge" : "Related knowledge"}
                 </p>
                 <h2 className="mt-2 font-winnstein-display text-3xl font-semibold text-[var(--solution-marine)]">
@@ -232,7 +232,7 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
                   href={localizeHref(locale, `/wissen/${item.slug}`)}
                   className="group flex items-center justify-between gap-6 border-b border-[var(--solution-marine-20)] py-6"
                 >
-                  <span className="font-winnstein-display text-xl font-semibold text-[var(--solution-marine)] group-hover:text-[var(--solution-steel-cyan)]">
+                  <span className="font-winnstein-display text-xl font-semibold text-brand-marine group-hover:underline decoration-brand-steel-cyan underline-offset-4">
                     {item.navLabel}
                   </span>
                   <span aria-hidden="true" className="text-2xl text-[var(--solution-steel-cyan)]">→</span>
@@ -241,7 +241,7 @@ export function KnowledgeArticlePage({ article, locale }: Props) {
             </nav>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

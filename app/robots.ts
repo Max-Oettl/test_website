@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 
-import { isVercelPreviewDeployment } from "./_seo/deployment";
+import { isSiteIndexingEnabled } from "./_seo/deployment";
 import { absoluteUrl, siteUrl } from "./_seo/metadata";
 
 export default function robots(): MetadataRoute.Robots {
-  if (isVercelPreviewDeployment) {
+  if (!isSiteIndexingEnabled) {
     return {
       rules: {
         userAgent: "*",

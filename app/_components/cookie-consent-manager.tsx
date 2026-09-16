@@ -94,8 +94,9 @@ export function CookieConsentManager({ locale }: CookieConsentManagerProps) {
   }, []);
 
   function restorePreviousFocus() {
-    window.requestAnimationFrame(() => previousFocusRef.current?.focus());
+    const previousFocus = previousFocusRef.current;
     previousFocusRef.current = null;
+    window.requestAnimationFrame(() => previousFocus?.focus());
   }
 
   function commitChoice(allowExternalMedia: boolean) {
@@ -120,7 +121,7 @@ export function CookieConsentManager({ locale }: CookieConsentManagerProps) {
       <div className="mx-auto max-w-[100rem] px-5 py-6 sm:px-6 sm:py-7 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-10">
           <div className="max-w-4xl">
-            <p className="font-winnstein-display text-xs font-bold uppercase tracking-[0.14em] text-brand-steel-cyan">
+            <p className="font-winnstein-display text-xs font-bold uppercase tracking-[0.14em] text-brand-marine">
               {copy.eyebrow}
             </p>
             <h2
@@ -145,14 +146,14 @@ export function CookieConsentManager({ locale }: CookieConsentManagerProps) {
           <div className="grid min-w-0 gap-3 sm:grid-cols-3 lg:min-w-[38rem]">
             <button
               type="button"
-              className="brand-action brand-action-outline brand-action-outline-light inline-flex min-h-12 items-center justify-center px-5 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+              className="brand-action brand-action-outline brand-action-outline-light inline-flex min-h-12 items-center justify-center px-5 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-marine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
               onClick={() => commitChoice(false)}
             >
               {copy.necessaryOnly}
             </button>
             <button
               type="button"
-              className="brand-action brand-action-outline brand-action-outline-light inline-flex min-h-12 items-center justify-center px-5 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+              className="brand-action brand-action-outline brand-action-outline-light inline-flex min-h-12 items-center justify-center px-5 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-marine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
               onClick={() => setShowSettings((current) => !current)}
               aria-expanded={showSettings}
               aria-controls="cookie-consent-settings"
@@ -161,7 +162,7 @@ export function CookieConsentManager({ locale }: CookieConsentManagerProps) {
             </button>
             <button
               type="button"
-              className="brand-action inline-flex min-h-12 items-center justify-center bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+              className="brand-action inline-flex min-h-12 items-center justify-center bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan hover:text-brand-marine"
               onClick={() => commitChoice(true)}
             >
               {copy.acceptAll}
@@ -184,7 +185,7 @@ export function CookieConsentManager({ locale }: CookieConsentManagerProps) {
                     {copy.necessaryDescription}
                   </p>
                 </div>
-                <span className="shrink-0 text-xs font-bold text-brand-steel-cyan">
+                <span className="shrink-0 text-xs font-bold text-brand-marine">
                   {copy.alwaysActive}
                 </span>
               </div>
@@ -210,7 +211,7 @@ export function CookieConsentManager({ locale }: CookieConsentManagerProps) {
             <div className="md:col-span-2 md:flex md:justify-end">
               <button
                 type="button"
-                className="brand-action inline-flex min-h-12 w-full items-center justify-center bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan md:w-auto"
+                className="brand-action inline-flex min-h-12 w-full items-center justify-center bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan md:w-auto hover:text-brand-marine"
                 onClick={() => commitChoice(externalMedia)}
               >
                 {copy.save}

@@ -69,7 +69,7 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
     : text.overview;
 
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <div className="relative mx-auto grid max-w-7xl xl:grid-cols-[56%_44%]">
           <div className="relative isolate flex min-w-0 flex-col justify-center overflow-hidden px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
@@ -88,7 +88,7 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href={localizeHref(locale, "/kontakt")}
-                  className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-[#0a729d]"
+                  className="brand-action inline-flex min-h-14 items-center justify-between gap-7 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:bg-[#0a729d] hover:text-white"
                 >
                   {primaryHeroCta}
                   <ArrowIcon />
@@ -161,7 +161,7 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
             </p>
           </div>
 
-          <div className="hidden grid-cols-[minmax(15rem,0.8fr)_minmax(0,1.12fr)_minmax(0,1fr)] border-x border-b border-brand-marine/15 bg-brand-marine-10 py-4 text-sm font-bold text-brand-marine/65 xl:grid">
+          <div className="hidden grid-cols-[minmax(15rem,0.8fr)_minmax(0,1.12fr)_minmax(0,1fr)] border-x border-b border-brand-marine/15 bg-brand-marine-10 py-4 text-sm font-bold text-brand-marine/80 xl:grid">
             <span />
             <span className="px-8">{text.work}</span>
             <span className="px-8">{text.result}</span>
@@ -189,7 +189,7 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
                   </h3>
                 </div>
                 <div className="min-w-0 p-6 lg:p-8">
-                  <p className="mb-3 text-sm font-bold text-brand-marine/55 xl:hidden">
+                  <p className="mb-3 text-sm font-bold text-brand-marine/75 xl:hidden">
                     {text.work}
                   </p>
                   <p className="min-w-0 text-base leading-8 text-brand-marine/76 hyphens-auto [overflow-wrap:anywhere]">
@@ -197,7 +197,7 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
                   </p>
                 </div>
                 <div className="min-w-0 border-t border-brand-marine/15 bg-brand-steel-cyan-10 p-6 lg:p-8 xl:border-t-0 xl:border-l">
-                  <p className="mb-3 text-sm font-bold text-brand-marine/55 xl:hidden">
+                  <p className="mb-3 text-sm font-bold text-brand-marine/75 xl:hidden">
                     {text.result}
                   </p>
                   <p className="min-w-0 text-base leading-8 font-medium text-brand-marine hyphens-auto [overflow-wrap:anywhere]">
@@ -281,7 +281,6 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
           <div className="grid border-l border-brand-marine/15 sm:grid-cols-3">
             {page.knowledge.links.map((link) => {
               const isEducation = link.theme === "education";
-              const isSolutions = link.theme === "solutions";
 
               return (
                 <Link
@@ -289,21 +288,13 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
                   href={localizeHref(locale, link.href)}
                   className={`flex min-h-24 min-w-0 items-center justify-between gap-4 border-r border-y border-brand-marine/15 px-5 py-4 font-winnstein-display text-sm font-bold transition-colors sm:border-y-0 ${
                     isEducation
-                      ? "hover:bg-brand-education/[0.07] hover:text-brand-education"
+                      ? "hover:bg-brand-education/[0.07]"
                       : "hover:bg-brand-steel-cyan-10"
                   }`}
                 >
                   <span className="min-w-0">
                     {link.category ? (
-                      <span
-                        className={`mb-2 block text-[0.68rem] leading-5 font-bold tracking-[0.06em] ${
-                          isEducation
-                            ? "text-brand-education"
-                            : isSolutions
-                              ? "text-brand-steel-cyan"
-                              : "text-brand-marine/58"
-                        }`}
-                      >
+                      <span className="mb-2 block text-[0.68rem] leading-5 font-bold tracking-[0.06em] text-brand-marine/80">
                         {link.category}
                       </span>
                     ) : null}
@@ -324,6 +315,6 @@ export function SolutionServiceDetailPage({ locale, page }: Props) {
         title={page.cta.title}
         description={page.cta.text}
       />
-    </main>
+    </div>
   );
 }

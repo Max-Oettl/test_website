@@ -48,12 +48,16 @@ const formCopy = {
       "gelesen. Meine Angaben werden zur Bearbeitung der Anfrage verarbeitet.",
     submit: "Anfrage senden",
     submitting: "Anfrage wird gesendet …",
-    mailNote:
-      "Ihre Angaben werden direkt und verschlüsselt an RelTest übermittelt. Dateianhänge sind nicht möglich. Alternativ per E-Mail:",
+    successTitle: "Anfrage erfolgreich versendet",
     success:
-      "Vielen Dank. Ihre Anfrage wurde erfolgreich versendet. Wir melden uns in der Regel innerhalb von zwei Werktagen.",
+      "Vielen Dank. Eine Eingangsbestätigung wurde an Ihre E-Mail-Adresse gesendet. Wir melden uns in der Regel innerhalb von zwei Werktagen persönlich bei Ihnen.",
+    partialSuccessTitle: "Anfrage erfolgreich übermittelt",
+    partialSuccess:
+      "Ihre Anfrage ist bei RelTest eingegangen. Die automatische E-Mail-Bestätigung konnte jedoch nicht versendet werden. Wir melden uns trotzdem persönlich bei Ihnen.",
     error:
       "Die Anfrage konnte gerade nicht versendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an",
+    rateLimitError: "Es wurden bereits mehrere Anfragen gesendet. Bitte warten Sie bis zu 15 Minuten oder schreiben Sie direkt an",
+    validationError: "Bitte prüfen Sie Ihre Angaben und die Pflichtfelder. Alternativ erreichen Sie uns unter",
     fallback: "info@reltest-solutions.com",
   },
   en: {
@@ -92,18 +96,27 @@ const formCopy = {
       "and understand that my details will be processed to handle this inquiry.",
     submit: "Send inquiry",
     submitting: "Sending inquiry …",
-    mailNote:
-      "Your details are transmitted directly and securely to RelTest. File attachments are not supported. Alternatively, email:",
+    successTitle: "Inquiry sent successfully",
     success:
-      "Thank you. Your inquiry has been sent successfully. We usually respond within two business days.",
+      "Thank you. A confirmation has been sent to your email address. We usually respond personally within two business days.",
+    partialSuccessTitle: "Inquiry received successfully",
+    partialSuccess:
+      "Your inquiry has reached RelTest, but the automated email confirmation could not be sent. We will still respond to you personally.",
     error:
       "Your inquiry could not be sent at the moment. Please try again or email us directly at",
+    rateLimitError: "Several inquiries have already been sent. Please wait up to 15 minutes or email us directly at",
+    validationError: "Please check your details and the required fields. Alternatively, email us at",
     fallback: "info@reltest-solutions.com",
   },
 } as const;
 
 type TopicKey = keyof typeof formCopy.de.topics;
-type SubmissionStatus = "idle" | "submitting" | "success" | "error";
+type SubmissionStatus =
+  | "idle"
+  | "submitting"
+  | "success"
+  | "partial-success"
+  | "error";
 
 const topicKeys = [
   "project",
@@ -138,6 +151,20 @@ function ArrowIcon() {
   );
 }
 
+function SuccessIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4" fill="none">
+      <path
+        d="m4.5 10.2 3.3 3.3 7.7-7.7"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function ContactInquiryForm({
   locale,
   initialTopic,
@@ -145,6 +172,8 @@ export function ContactInquiryForm({
   const copy = formCopy[locale];
   const [submissionStatus, setSubmissionStatus] =
     useState<SubmissionStatus>("idle");
+  const [failureReason, setFailureReason] = useState<"error" | "rateLimitError" | "validationError">("error");
+  const [audience, setAudience] = useState("company");
   const [selectedTopic, setSelectedTopic] = useState<"" | TopicKey>(
     initialTopic ?? "",
   );
@@ -161,6 +190,7 @@ export function ContactInquiryForm({
     const value = (key: string) => String(data.get(key) ?? "").trim();
 
     setSubmissionStatus("submitting");
+    setFailureReason("error");
 
     try {
       const response = await fetch("/api/contact", {
@@ -181,12 +211,18 @@ export function ContactInquiryForm({
       });
 
       if (!response.ok) {
+        setFailureReason(response.status === 429 ? "rateLimitError" : response.status === 400 ? "validationError" : "error");
         throw new Error(`Contact request failed with status ${response.status}`);
       }
 
+      const result = (await response.json()) as { confirmationSent?: boolean };
+
       form.reset();
+      setAudience("company");
       setSelectedTopic("");
-      setSubmissionStatus("success");
+      setSubmissionStatus(
+        result.confirmationSent === false ? "partial-success" : "success",
+      );
     } catch {
       setSubmissionStatus("error");
     }
@@ -226,7 +262,7 @@ export function ContactInquiryForm({
             </legend>
             <div className="mt-3 grid gap-2 sm:grid-cols-3">
               {(Object.keys(copy.audiences) as Array<keyof typeof copy.audiences>).map(
-                (key, index) => (
+                (key) => (
                   <label
                     key={key}
                     className="flex min-h-14 cursor-pointer items-center gap-3 border border-brand-marine/18 bg-white px-4 py-3 text-sm font-semibold transition-colors has-[:checked]:border-brand-steel-cyan has-[:checked]:bg-brand-steel-cyan-10"
@@ -235,7 +271,8 @@ export function ContactInquiryForm({
                       type="radio"
                       name="audience"
                       value={key}
-                      defaultChecked={index === 0}
+                      checked={audience === key}
+                      onChange={() => setAudience(key)}
                       className="size-4 accent-brand-steel-cyan"
                     />
                     {copy.audiences[key]}
@@ -287,6 +324,7 @@ export function ContactInquiryForm({
                 name="company"
                 type="text"
                 autoComplete="organization"
+                required={audience !== "private"}
                 maxLength={160}
                 placeholder={copy.companyOptional}
                 className={fieldClassName}
@@ -350,35 +388,51 @@ export function ContactInquiryForm({
             </span>
           </label>
 
-          <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center">
+          <div className="mt-8">
             <button
               type="submit"
               disabled={submissionStatus === "submitting"}
               aria-busy={submissionStatus === "submitting"}
-              className="brand-action inline-flex min-h-12 shrink-0 items-center justify-between gap-5 whitespace-nowrap bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-steel-cyan/25 disabled:cursor-wait disabled:opacity-65"
+              className="brand-action inline-flex min-h-12 shrink-0 items-center justify-between gap-5 whitespace-nowrap bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-steel-cyan/25 disabled:cursor-wait disabled:opacity-65 hover:text-brand-marine"
             >
               {submissionStatus === "submitting" ? copy.submitting : copy.submit}
               <ArrowIcon />
             </button>
-            <p className="max-w-lg text-xs leading-5 text-brand-marine/58">
-              {copy.mailNote}{" "}
-              <a
-                href="mailto:info@reltest-solutions.com"
-                className="font-semibold text-brand-marine underline decoration-brand-steel-cyan underline-offset-4"
-              >
-                {copy.fallback}
-              </a>
-            </p>
           </div>
 
-          {submissionStatus === "success" ? (
-            <p
-              className="mt-5 border-l-2 border-brand-education pl-4 text-sm leading-6 text-brand-marine"
+          {submissionStatus === "success" ||
+          submissionStatus === "partial-success" ? (
+            <div
+              className={`mt-6 flex items-start gap-4 border border-l-4 px-4 py-4 text-brand-marine shadow-[0_10px_28px_rgba(3,19,52,0.08)] sm:px-5 ${
+                submissionStatus === "success"
+                  ? "border-brand-education/35 bg-brand-education/[0.08]"
+                  : "border-brand-steel-cyan/45 bg-brand-steel-cyan-10"
+              }`}
               role="status"
               aria-live="polite"
             >
-              {copy.success}
-            </p>
+              <span
+                className={`mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full text-white ${
+                  submissionStatus === "success"
+                    ? "bg-brand-education"
+                    : "bg-brand-steel-cyan"
+                }`}
+              >
+                <SuccessIcon />
+              </span>
+              <span>
+                <strong className="block font-winnstein-display text-base leading-6">
+                  {submissionStatus === "success"
+                    ? copy.successTitle
+                    : copy.partialSuccessTitle}
+                </strong>
+                <span className="mt-1 block text-sm leading-6 text-brand-marine/76">
+                  {submissionStatus === "success"
+                    ? copy.success
+                    : copy.partialSuccess}
+                </span>
+              </span>
+            </div>
           ) : null}
 
           {submissionStatus === "error" ? (
@@ -386,7 +440,7 @@ export function ContactInquiryForm({
               className="mt-5 border-l-2 border-red-600 pl-4 text-sm leading-6 text-brand-marine"
               role="alert"
             >
-              {copy.error}{" "}
+              {copy[failureReason]}{" "}
               <a
                 href="mailto:info@reltest-solutions.com"
                 className="font-semibold underline decoration-brand-steel-cyan underline-offset-4"

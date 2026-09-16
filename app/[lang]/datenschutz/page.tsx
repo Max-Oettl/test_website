@@ -124,7 +124,7 @@ function GermanSections(locale: Locale): LegalSection[] {
       content: (
         <div className="space-y-5">
           <p>
-            Das Anfrageformular übermittelt Name, Kontaktdaten, Organisation, Anliegen und Nachricht an eine serverseitige Schnittstelle dieser Website. Die Angaben werden auf der Hosting-Infrastruktur von Vercel verarbeitet und über eine TLS-verschlüsselte SMTP-Verbindung mit einem IONOS-Mailpostfach an uns weitergeleitet. Die von Ihnen angegebene E-Mail-Adresse wird als Antwortadresse verwendet. Dateianhänge können nicht übermittelt werden.
+            Das Anfrageformular übermittelt Name, Kontaktdaten, Organisation, Anliegen und Nachricht an eine serverseitige Schnittstelle dieser Website. Die Angaben werden auf der Hosting-Infrastruktur von Vercel verarbeitet und über eine TLS-verschlüsselte SMTP-Verbindung mit Microsoft 365 an uns weitergeleitet. Die von Ihnen angegebene E-Mail-Adresse wird als Antwortadresse verwendet und erhält von info@reltest-solutions.com eine automatische Eingangsbestätigung. Diese Bestätigung enthält nicht den vollständigen Nachrichtentext. Dateianhänge können nicht übermittelt werden.
           </p>
           <p>
             Zur Abwehr automatisierter oder missbräuchlicher Anfragen nutzen wir ein unsichtbares Kontrollfeld, serverseitige Prüfungen, Größenbegrenzungen und eine begrenzte Anfragefrequenz. Dafür wird aus der IP-Adresse eine nicht unmittelbar lesbare Kennung gebildet und innerhalb der jeweiligen Serverinstanz für höchstens 15 Minuten vorgehalten. Eine dauerhafte Speicherung dieser Kennung im Formularsystem erfolgt nicht. Unabhängig davon können beim Website-Aufruf die im Abschnitt „Hosting und technische Bereitstellung“ beschriebenen Server-Logdaten anfallen.
@@ -356,7 +356,7 @@ function EnglishSections(locale: Locale): LegalSection[] {
       content: (
         <div className="space-y-5">
           <p>
-            The inquiry form submits your name, contact details, organisation, subject and message to a server-side endpoint of this website. The information is processed on Vercel&apos;s hosting infrastructure and forwarded to us through a TLS-encrypted SMTP connection using an IONOS mailbox. The email address you provide is used as the reply-to address. File attachments cannot be submitted.
+            The inquiry form submits your name, contact details, organisation, subject and message to a server-side endpoint of this website. The information is processed on Vercel&apos;s hosting infrastructure and forwarded to us through a TLS-encrypted SMTP connection using Microsoft 365. The email address you provide is used as the reply-to address and receives an automated confirmation of receipt from info@reltest-solutions.com. The confirmation does not contain the full message text. File attachments cannot be submitted.
           </p>
           <p>
             To prevent automated or abusive requests, we use an invisible control field, server-side validation, size limits and a limited request rate. For this purpose, the IP address is converted into a non-readable identifier and retained within the respective server instance for no more than 15 minutes. This identifier is not stored permanently by the form system. Independently of this, the server log data described under “Hosting and technical delivery” may be generated when the website is accessed.

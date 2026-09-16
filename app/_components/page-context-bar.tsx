@@ -67,11 +67,7 @@ export function PageContextBar({
           </span>
           <span className="min-w-0 font-winnstein-display leading-tight">
             <span
-              className={`block text-[0.62rem] font-bold tracking-[0.1em] uppercase ${
-                isEducation
-                  ? "text-brand-education"
-                  : "text-brand-steel-cyan"
-              }`}
+              className="block text-[0.62rem] font-bold tracking-[0.1em] text-brand-marine uppercase"
             >
               {overviewLabel}
             </span>
@@ -81,7 +77,7 @@ export function PageContextBar({
           </span>
         </Link>
         <span className="min-w-0 flex-1 px-3 font-winnstein-display leading-tight sm:px-5">
-          <span className="block text-[0.62rem] font-bold tracking-[0.1em] text-brand-marine/50 uppercase">
+          <span className="block text-[0.62rem] font-bold tracking-[0.1em] text-brand-marine/75 uppercase">
             {currentIndicator}
           </span>
           <span

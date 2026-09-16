@@ -151,7 +151,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                   <div className="site-nav-dropdown border border-brand-marine/15 bg-white p-3">
                     <ActiveNavLink
                       href={localizeHref(locale, item.href)}
-                      className="block border-l-2 border-transparent px-4 py-3 font-winnstein-display text-sm font-semibold text-brand-marine hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-steel-cyan"
+                      className="block border-l-2 border-transparent px-4 py-3 font-winnstein-display text-sm font-semibold text-brand-marine hover:border-brand-steel-cyan hover:bg-brand-steel-cyan-10 hover:text-brand-marine"
                       activeClassName="border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
                     >
                       {dropdown.overview}
@@ -161,7 +161,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                       <div className="grid gap-3">
                         {dropdown.groups.map((group) => (
                           <div key={group.title}>
-                            <p className="px-4 pb-1 font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.16em] text-brand-steel-cyan">
+                            <p className="px-4 pb-1 font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.16em] text-brand-marine">
                               {group.title}
                             </p>
                             <div className="grid gap-1">
@@ -238,7 +238,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         <div className="site-header-actions hidden items-center gap-3 min-[1200px]:flex">
           <Link
             href={localizeHref(locale, "/kontakt")}
-            className="brand-action site-header-cta whitespace-nowrap bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan"
+            className="brand-action site-header-cta whitespace-nowrap bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan hover:text-brand-marine"
           >
             {navigation.inquiry}
           </Link>
@@ -279,7 +279,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           footer={
             <Link
               href={localizeHref(locale, "/kontakt")}
-              className="brand-action site-header-cta flex min-h-12 w-full items-center justify-between bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan/40"
+              className="brand-action site-header-cta flex min-h-12 w-full items-center justify-between bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-semibold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan/40 hover:text-brand-marine"
             >
               {navigation.inquiry}
               <svg
@@ -324,7 +324,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     activeHrefs={activeHrefs}
                     activeClassName={
                       isEducationItem
-                        ? "border-brand-education bg-brand-education/[0.07] text-brand-education"
+                        ? "border-brand-education bg-brand-education/[0.07] text-brand-marine"
                         : "border-brand-steel-cyan bg-brand-steel-cyan-10 text-brand-marine"
                     }
                   >
@@ -334,7 +334,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     {dropdown.groups ? (
                       dropdown.groups.map((group) => (
                         <div key={group.title} className="py-1">
-                          <p className="px-3 pb-1.5 font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.14em] text-brand-steel-cyan">
+                          <p className="px-3 pb-1.5 font-winnstein-display text-[0.68rem] font-bold uppercase tracking-[0.14em] text-brand-marine">
                             {group.title}
                           </p>
                           <div className="grid gap-1">

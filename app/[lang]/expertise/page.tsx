@@ -205,7 +205,7 @@ export default async function ExpertisePage({ params }: Props) {
   ];
 
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <BrandLineWatermark placement="expertise" />
         <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,1.05fr)_minmax(28rem,0.95fr)]">
@@ -269,7 +269,7 @@ export default async function ExpertisePage({ params }: Props) {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-end">
             <div>
-              <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
+              <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-marine">
                 {content.reference.eyebrow}
               </p>
               <h2 className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
@@ -391,7 +391,7 @@ export default async function ExpertisePage({ params }: Props) {
             <div className="absolute inset-y-0 right-0 hidden w-1/4 bg-gradient-to-r from-transparent to-white lg:block" />
           </div>
           <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
-            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
+            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-marine">
               {content.podcast.eyebrow}
             </p>
             <h2 className="mt-4 font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
@@ -404,7 +404,7 @@ export default async function ExpertisePage({ params }: Props) {
               href={content.podcast.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="brand-action mt-8 inline-flex min-h-12 w-fit items-center gap-6 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
+              className="brand-action mt-8 inline-flex min-h-12 w-fit items-center gap-6 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan hover:text-brand-marine"
             >
               {content.podcast.cta}
               <ArrowIcon />
@@ -427,7 +427,7 @@ export default async function ExpertisePage({ params }: Props) {
             </p>
             <Link
               href={localizeHref(locale, "/branchen")}
-              className="group mt-8 inline-flex items-center gap-5 border-b-2 border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-steel-cyan"
+              className="group mt-8 inline-flex items-center gap-5 border-b-2 border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-marine"
             >
               {content.industries.cta}
               <span className="transition-transform group-hover:translate-x-1">
@@ -456,7 +456,7 @@ export default async function ExpertisePage({ params }: Props) {
                   <span className="font-winnstein-display text-base font-bold">
                     {industry.title}
                   </span>
-                  <span className="text-brand-steel-cyan transition-transform group-hover:translate-x-1">
+                  <span className="text-brand-marine transition-transform group-hover:translate-x-1">
                     <ArrowIcon />
                   </span>
                 </Link>
@@ -471,6 +471,6 @@ export default async function ExpertisePage({ params }: Props) {
         title={content.cta.title}
         description={content.cta.description}
       />
-    </main>
+    </div>
   );
 }

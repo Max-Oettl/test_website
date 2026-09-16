@@ -200,7 +200,7 @@ export default async function ReferencesPage({ params }: Props) {
   const copy = getCopy(locale);
 
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <BrandLineWatermark placement="expertise" />
         <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
@@ -234,7 +234,7 @@ export default async function ReferencesPage({ params }: Props) {
       <section className="bg-white px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div>
-            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
+            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-marine">
               {copy.references.eyebrow}
             </p>
             <h2 className="mt-4 max-w-4xl font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] sm:text-4xl">
@@ -329,6 +329,6 @@ export default async function ReferencesPage({ params }: Props) {
       </section>
 
       <PageClosingCta locale={locale} title={copy.cta.title} description={copy.cta.description} />
-    </main>
+    </div>
   );
 }

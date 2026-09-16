@@ -85,7 +85,7 @@ function NewsDock({
         </p>
         <Link
           href={localizeHref(locale, "/aktuelles")}
-          className="mt-6 inline-flex items-center gap-4 border-b-2 border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+          className="mt-6 inline-flex items-center gap-4 border-b-2 border-brand-steel-cyan pb-2 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-marine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
         >
           {copy.link}
           <ArrowIcon />

@@ -120,7 +120,7 @@ function IndustryCard({
         </p>
         <Link
           href={href}
-          className="mt-auto inline-flex w-fit items-center gap-4 border-b border-brand-steel-cyan pt-7 pb-1 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-steel-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+          className="mt-auto inline-flex w-fit items-center gap-4 border-b border-brand-steel-cyan pt-7 pb-1 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-marine focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
         >
           {linkLabel}
           <ArrowIcon />
@@ -148,7 +148,7 @@ export default async function IndustriesPage({ params }: Props) {
   const industries = getIndustries(locale);
 
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <div className="pointer-events-none absolute inset-0 overflow-hidden text-white">
           <BrandLineWatermark placement="industries" />
@@ -203,6 +203,6 @@ export default async function IndustriesPage({ params }: Props) {
         title={content.cta.title}
         description={content.cta.description}
       />
-    </main>
+    </div>
   );
 }

@@ -2785,8 +2785,8 @@ export const detailPageCollections: Record<
           { label: "Zuverlässigkeitsprognose", href: "/wissen/prognosen" },
           { label: "Test und Datenanalyse", href: "/leistungen/datenanalyse-prognostik" },
           {
-            label: "Reliability Seminar 2021",
-            href: "https://www.hightechcampus.com/events/reliability-seminar-on-data-science-for-reliability-and-root-cause-analysis",
+            label: "Reliability Seminar 2021: Veranstalterbericht",
+            href: "https://www.holland-innovative.nl/blog/experts-address-reliability-in-the-high-tech",
             external: true,
           },
         ],
@@ -3236,8 +3236,8 @@ const newsEnglishCopy: Record<
       { label: "Reliability prediction", href: "/wissen/prognosen" },
       { label: "Testing and data analysis", href: "/leistungen/datenanalyse-prognostik" },
       {
-        label: "Reliability Seminar 2021",
-        href: "https://www.hightechcampus.com/events/reliability-seminar-on-data-science-for-reliability-and-root-cause-analysis",
+        label: "Reliability Seminar 2021: organiser's report",
+        href: "https://www.holland-innovative.nl/blog/experts-address-reliability-in-the-high-tech",
         external: true,
       },
     ],

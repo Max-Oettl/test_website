@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import type { Locale } from "../_i18n/config";
 import { localizedPath } from "../_i18n/routes";
-import { isVercelPreviewDeployment } from "./deployment";
+import { isSiteIndexingEnabled } from "./deployment";
 
 export const siteUrl = "https://reltest-solutions.com";
 
@@ -11,7 +11,7 @@ export function absoluteUrl(path: string) {
 }
 
 export function getRobotsMetadata(): Metadata["robots"] {
-  if (isVercelPreviewDeployment) {
+  if (!isSiteIndexingEnabled) {
     return {
       index: false,
       follow: false,
@@ -76,11 +76,18 @@ export function buildLocalizedMetadata({
       siteName: "RelTest",
       locale: locale === "de" ? "de_DE" : "en_US",
       alternateLocale: locale === "de" ? ["en_US"] : ["de_DE"],
+      images: [{
+        url: absoluteUrl(`/${locale}/opengraph-image`),
+        width: 1200,
+        height: 630,
+        alt: "RelTest – Advanced Reliability Engineering",
+      }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [absoluteUrl(`/${locale}/twitter-image`)],
     },
   };
 }

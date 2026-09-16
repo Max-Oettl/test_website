@@ -221,7 +221,7 @@ export default async function NewsPage({ params }: Props) {
   const labels = copy[locale];
 
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <BrandLineWatermark placement="knowledge" />
         <div className="relative mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
@@ -276,7 +276,7 @@ export default async function NewsPage({ params }: Props) {
                 </div>
                 <div className="brand-panel-cut-bottom-right relative flex min-h-80 flex-col bg-white px-6 py-8 sm:px-9 sm:py-10">
                   <div className="flex flex-wrap items-center justify-between gap-3">
-                    <p className="font-winnstein-display text-sm font-bold tracking-[0.1em] text-brand-steel-cyan">
+                    <p className="font-winnstein-display text-sm font-bold tracking-[0.1em] text-brand-marine">
                       {newsTypes[locale][featuredItem.slug] ?? featuredItem.eyebrow}
                       {featuredItem.publishedAt ? (
                         <>
@@ -287,7 +287,7 @@ export default async function NewsPage({ params }: Props) {
                         </>
                       ) : null}
                     </p>
-                    <p className="font-winnstein-display text-xs font-bold tracking-[0.1em] text-brand-marine/45">
+                    <p className="font-winnstein-display text-xs font-bold tracking-[0.1em] text-brand-marine/75">
                       {labels.own.feature}
                     </p>
                   </div>
@@ -315,7 +315,7 @@ export default async function NewsPage({ params }: Props) {
                   className="group relative flex min-h-48 flex-col px-6 py-7 transition-colors hover:bg-brand-steel-cyan-10/45 sm:px-8"
                 >
                   <span className="absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-brand-steel-cyan transition-transform duration-300 group-hover:scale-y-100" />
-                  <p className="font-winnstein-display text-xs font-bold tracking-[0.1em] text-brand-steel-cyan">
+                  <p className="font-winnstein-display text-xs font-bold tracking-[0.1em] text-brand-marine">
                     {newsTypes[locale][item.slug] ?? item.eyebrow}
                     {item.publishedAt ? (
                       <>
@@ -334,7 +334,7 @@ export default async function NewsPage({ params }: Props) {
                   </p>
                   <Link
                     href={localizeHref(locale, `/aktuelles/${item.slug}`)}
-                    className="mt-auto inline-flex items-center gap-4 pt-5 font-winnstein-display text-sm font-bold text-brand-marine transition-colors group-hover:text-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+                    className="mt-auto inline-flex items-center gap-4 pt-5 font-winnstein-display text-sm font-bold text-brand-marine transition-colors group-hover:text-brand-marine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
                   >
                     {labels.own.link}
                     <ArrowIcon />
@@ -389,7 +389,7 @@ export default async function NewsPage({ params }: Props) {
                     <p className="font-winnstein-display text-sm leading-5 font-bold text-brand-marine">
                       {signal.source}
                     </p>
-                    <p className="mt-3 text-sm font-semibold text-brand-steel-cyan">
+                    <p className="mt-3 text-sm font-semibold text-brand-marine">
                       {signal.date}
                     </p>
                   </div>
@@ -400,7 +400,7 @@ export default async function NewsPage({ params }: Props) {
                     {signal.title}
                   </h3>
                   <div className="mt-5 border-l-2 border-brand-steel-cyan pl-5">
-                    <p className="font-winnstein-display text-xs font-bold tracking-[0.1em] text-brand-steel-cyan">
+                    <p className="font-winnstein-display text-xs font-bold tracking-[0.1em] text-brand-marine">
                       {labels.field.assessmentLabel}
                     </p>
                     <p className="mt-3 text-base leading-7 text-brand-marine/72">
@@ -412,7 +412,7 @@ export default async function NewsPage({ params }: Props) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${labels.field.link}: ${signal.title}`}
-                    className="mt-auto inline-flex min-h-12 w-fit items-center gap-4 border-b border-brand-steel-cyan pt-6 pb-1 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+                    className="mt-auto inline-flex min-h-12 w-fit items-center gap-4 border-b border-brand-steel-cyan pt-6 pb-1 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-marine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
                   >
                     {labels.field.link}
                     <ExternalLinkIcon />
@@ -429,6 +429,6 @@ export default async function NewsPage({ params }: Props) {
         title={labels.cta.title}
         description={labels.cta.text}
       />
-    </main>
+    </div>
   );
 }

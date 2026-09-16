@@ -1,0 +1,4238 @@
+{
+  "date": "2026-09-15",
+  "environment": "Local Next.js 16.3.5 production build; localhost:3100; no deployment performed",
+  "browser": "Local Microsoft Edge via Playwright; Browser plugin had no connected browser",
+  "crawl": {
+    "stage": "final",
+    "pages": 104,
+    "failedPages": [],
+    "missingMeta": [],
+    "badH1": [],
+    "placeholders": [],
+    "duplicateTitles": [
+      {
+        "value": "Dr.-Ing. Kevin Lucan | RelTest Solutions",
+        "urls": [
+          "http://localhost:3100/de/ueber-uns/kevin-lucan",
+          "http://localhost:3100/en/about-us/kevin-lucan"
+        ]
+      },
+      {
+        "value": "Prof. Dr.-Ing. Bernd Bertsche | RelTest Solutions",
+        "urls": [
+          "http://localhost:3100/de/ueber-uns/bernd-bertsche",
+          "http://localhost:3100/en/about-us/bernd-bertsche"
+        ]
+      },
+      {
+        "value": "RAMS Student Paper Award | RelTest Solutions",
+        "urls": [
+          "http://localhost:3100/de/aktuelles/rams-award",
+          "http://localhost:3100/en/news/rams-award"
+        ]
+      }
+    ],
+    "duplicateDescriptions": [],
+    "missingAlts": [],
+    "internalProblems": [],
+    "assetProblems": [],
+    "jsonLdProblems": [],
+    "canonicalProblems": [],
+    "indexable": 0,
+    "assets": 167,
+    "links": 495
+  },
+  "accessibility": [
+    {
+      "path": "/de/leistungen",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/education",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/wissen",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/expertise",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/prozess",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/referenzen",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/literatur",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/kontakt",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/branchen",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/ueber-uns",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/aktuelles",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/impressum",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/glossar",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/datenschutz",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/services",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/education",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/knowledge",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/expertise",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/reliability-process",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/literature",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/references",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/contact",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/industries",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/about-us",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/news",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/glossary",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/legal-notice",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/privacy-policy",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/leistungen/zuverlaessigkeitstechnik",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/leistungen/zuverlaessigkeitsmanagement",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/leistungen/beratung",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/leistungen/design-of-experiments",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/leistungen/doe-consulting",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/leistungen/doe-coaching",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/leistungen/coaching",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/leistungen/langfristige-kooperation",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/leistungen/datenanalyse-prognostik",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/leistungen/risikomanagement",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/services/reliability-engineering",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/services/reliability-management",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/services/reliability-consulting",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/services/design-of-experiments",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/services/doe-consulting",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/services/doe-coaching",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/services/reliability-coaching",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/services/engineering-project-partnership",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/services/data-analysis-and-prognostics",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/services/risk-management",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/weiterbildung/zuverlaessigkeit-erprobung-fuer-praktiker",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/weiterbildung/entwicklung-absicherung-elektronischer-komponenten",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/education/practical-design-of-experiments",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/education/reliability-testing-for-practitioners",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/education/development-and-assurance-of-electronic-components",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/branchen/automotive",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/branchen/maschinenbau",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/branchen/elektronische-produkte",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/branchen/halbleiterindustrie",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/branchen/erneuerbare-energien",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/branchen/konsumgueter",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/branchen/luft-und-raumfahrt",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/branchen/medizintechnik",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/branchen/produktionstechnik",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/industries/automotive",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/industries/mechanical-engineering",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/industries/electronic-products",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/industries/semiconductor-industry",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/industries/renewable-energy",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/industries/consumer-products",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/industries/aerospace",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/industries/medical-technology",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/industries/production-technology",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/ueber-uns/kevin-lucan",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/ueber-uns/bernd-bertsche",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/about-us/kevin-lucan",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/about-us/bernd-bertsche",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/aktuelles/webinar-beschleunigte-lebensdauertests",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/aktuelles/kooperation-holland-innovative",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/aktuelles/rams-award",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/aktuelles/webinar-effiziente-lebensdauertestplanung",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/aktuelles/smart-data-produktdesign",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/news/accelerated-life-testing-webinar",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/news/cooperation-with-holland-innovative",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/news/rams-award",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/news/efficient-life-test-planning-webinar",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/news/smart-data-product-design",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/wissen/zuverlaessigkeitstechnik",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/wissen/planung",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/wissen/schwachstellenanalyse",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/wissen/erprobung",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/wissen/absicherung",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/wissen/prognosen",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/wissen/design-of-experiments",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/de/wissen/risikomanagement",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/knowledge/reliability-engineering",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/knowledge/reliability-planning",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/knowledge/weak-point-analysis",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/knowledge/reliability-testing",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/knowledge/reliability-assurance",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/knowledge/reliability-prediction",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/knowledge/design-of-experiments",
+      "violations": [],
+      "mainCount": 1
+    },
+    {
+      "path": "/en/knowledge/technical-risk-management",
+      "violations": [],
+      "mainCount": 1
+    }
+  ],
+  "responsive": {
+    "desktopTemplates": [
+      {
+        "path": "/de",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      },
+      {
+        "path": "/en",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      },
+      {
+        "path": "/de/education",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      },
+      {
+        "path": "/de/kontakt",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      },
+      {
+        "path": "/de/wissen/absicherung",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      },
+      {
+        "path": "/en/knowledge/reliability-assurance",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      },
+      {
+        "path": "/de/branchen/automotive",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      },
+      {
+        "path": "/de/literatur",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      },
+      {
+        "path": "/de/glossar",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      },
+      {
+        "path": "/de/impressum",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      },
+      {
+        "path": "/de/ueber-uns",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "violations": [],
+        "brokenImages": []
+      }
+    ],
+    "mobilePages": [
+      {
+        "path": "/de",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "RelTest Solutions | Advanced Reliability Engineering-Partner",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Engineering-Leistungen & Projektpartnerschaft | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/education",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "RelTest Education: E-Learning für Ingenieure | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/wissen",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeitstechnik: Planung, Erprobung und Prognose | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/expertise",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Expertise | Referenzen, Literatur und Podcast",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/prozess",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeitsprozess | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/literatur",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Fachliteratur zu Zuverlässigkeitstests und Zuverlässigkeit | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/referenzen",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Referenzen und Branchenerfahrung | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/kontakt",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Projektanfrage und Kontakt | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/branchen",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Branchen für Reliability Engineering | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/ueber-uns",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "RelTest Solutions | Unternehmen, Team und Expertise",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/aktuelles",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Aktuelles zu Zuverlässigkeitstechnik | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/glossar",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Glossar Zuverlässigkeitstechnik | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/impressum",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Impressum | RelTest Solutions GmbH",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/datenschutz",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Datenschutzerklärung | RelTest Solutions GmbH",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "RelTest Solutions | Advanced Reliability Engineering Partner",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/services",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Engineering Services & Project Partnership | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/education",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "RelTest Education: E-learning for Engineers | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/knowledge",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Engineering: Planning, Testing and Prediction | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/expertise",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Expertise | References, books and podcast",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/reliability-process",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Engineering Process | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/literature",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Engineering Literature | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/references",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "References and Industry Experience | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/contact",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Project Inquiry and Contact | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/industries",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Industries for Reliability Engineering | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/about-us",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "RelTest Solutions | Company, team and expertise",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/news",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Engineering News and Insights | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/glossary",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Engineering Glossary | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/legal-notice",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Legal notice | RelTest Solutions GmbH",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/privacy-policy",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Privacy policy | RelTest Solutions GmbH",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen/zuverlaessigkeitstechnik",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeitstechnik & Zuverlässigkeitsbewertung | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen/zuverlaessigkeitsmanagement",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeitsmanagement | Beratung für Entwicklungsprojekte",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen/beratung",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Engineering Beratung | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen/design-of-experiments",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Design of Experiments für Engineering-Projekte | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen/doe-consulting",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "DoE Consulting | Statistische Versuchsplanung im Projekt",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen/doe-coaching",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "DoE Coaching | Statistische Versuchsplanung sicher anwenden",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen/coaching",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Coaching | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen/langfristige-kooperation",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Engineering-Projektpartnerschaft & Verantwortung | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen/datenanalyse-prognostik",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "DoE, Lebensdauererprobung & Datenanalyse | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/leistungen/risikomanagement",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Risikomanagement, FMEA & technische Absicherung | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/services/reliability-engineering",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Engineering & Reliability Assessment | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/services/reliability-management",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Management Consulting | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/services/reliability-consulting",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Engineering Consulting | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/services/design-of-experiments",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Design of Experiments for Engineering Projects | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/services/doe-consulting",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "DoE Consulting | Statistical Experimental Design",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/services/doe-coaching",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "DoE Coaching | Apply Statistical Experimental Design Safely",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/services/reliability-coaching",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Engineering Coaching | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/services/engineering-project-partnership",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Engineering Project Partnership & Responsibility | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/services/data-analysis-and-prognostics",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "DoE, Lifetime Testing & Data Analysis | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/services/risk-management",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Risk Management, FMEA & Technical Assurance | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "DoE Seminar | Praxisorientierte statistische Versuchsplanung",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/weiterbildung/zuverlaessigkeit-erprobung-fuer-praktiker",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Seminar Zuverlässigkeit und Erprobung für Praktiker",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/weiterbildung/entwicklung-absicherung-elektronischer-komponenten",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Seminar Entwicklung und Absicherung elektronischer Komponenten",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/education/practical-design-of-experiments",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "DoE Seminar | Practical Statistical Experimental Design",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/education/reliability-testing-for-practitioners",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability and Testing Seminar for Practitioners",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/education/development-and-assurance-of-electronic-components",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Seminar Development and Validation of Electronic Components",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/branchen/automotive",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeit Automotive & Erprobung | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/branchen/maschinenbau",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeit Maschinenbau & Lebensdauer | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/branchen/elektronische-produkte",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeit Elektronik & Umwelterprobung | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/branchen/halbleiterindustrie",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Halbleiter Zuverlässigkeit, DoE & Qualifikation | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/branchen/erneuerbare-energien",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeit Windenergie & Erneuerbare | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/branchen/konsumgueter",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Consumer Electronics Zuverlässigkeit & Tests | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/branchen/luft-und-raumfahrt",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Luft- und Raumfahrt Reliability Engineering | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/branchen/medizintechnik",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Medizintechnik Zuverlässigkeit & Risikomanagement | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/branchen/produktionstechnik",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Produktionstechnik Zuverlässigkeit & Verfügbarkeit | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/industries/automotive",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Automotive Reliability Engineering & Testing | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/industries/mechanical-engineering",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Mechanical Engineering Reliability & Lifetime | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/industries/electronic-products",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Electronics Reliability & Environmental Testing | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/industries/semiconductor-industry",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Semiconductor Reliability, DoE & Qualification | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/industries/renewable-energy",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Wind Energy & Renewable Reliability | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/industries/consumer-products",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Consumer Electronics Reliability & Testing | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/industries/aerospace",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Aerospace Reliability Engineering & Dependability | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/industries/medical-technology",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Medical Device Reliability & Risk Management | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/industries/production-technology",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Production Reliability & Equipment Availability | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/ueber-uns/kevin-lucan",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Dr.-Ing. Kevin Lucan | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/ueber-uns/bernd-bertsche",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Prof. Dr.-Ing. Bernd Bertsche | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/about-us/kevin-lucan",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Dr.-Ing. Kevin Lucan | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/about-us/bernd-bertsche",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Prof. Dr.-Ing. Bernd Bertsche | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/aktuelles/webinar-beschleunigte-lebensdauertests",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Webinar beschleunigte Lebensdauertests | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/aktuelles/kooperation-holland-innovative",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Kooperation mit Holland Innovative | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/aktuelles/rams-award",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "RAMS Student Paper Award | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/aktuelles/webinar-effiziente-lebensdauertestplanung",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Webinar effiziente Lebensdauertestplanung | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/aktuelles/smart-data-produktdesign",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Smart Data im Produktdesign | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/news/accelerated-life-testing-webinar",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Accelerated Life Testing Webinar | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/news/cooperation-with-holland-innovative",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Cooperation with Holland Innovative | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/news/rams-award",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "RAMS Student Paper Award | RelTest Solutions",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/news/efficient-life-test-planning-webinar",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Efficient Life Test Planning Webinar | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/news/smart-data-product-design",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Smart Data for Product Design | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/wissen/zuverlaessigkeitstechnik",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeitstechnik und Reliability Engineering | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/wissen/planung",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeitsplanung für technische Produkte | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/wissen/schwachstellenanalyse",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Schwachstellenanalyse mit FMEA, FTA und HALT | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/wissen/erprobung",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeitserprobung und Lebensdauertests | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/wissen/absicherung",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeitsabsicherung und Nachweisführung | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/wissen/prognosen",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Zuverlässigkeitsprognose und Lebensdauermodelle | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/wissen/design-of-experiments",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Design of Experiments (DoE) verständlich erklärt | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/de/wissen/risikomanagement",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Technisches Risikomanagement und Zuverlässigkeit | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/knowledge/reliability-engineering",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Engineering Fundamentals | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/knowledge/reliability-planning",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Planning for Technical Products | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/knowledge/weak-point-analysis",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Weak-Point Analysis with FMEA, FTA and HALT | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/knowledge/reliability-testing",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Testing and Lifetime Tests | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/knowledge/reliability-assurance",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Assurance and Evidence | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/knowledge/reliability-prediction",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Reliability Prediction and Lifetime Models | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/knowledge/design-of-experiments",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Design of Experiments (DoE) Explained | RelTest",
+        "blank": false,
+        "brokenImages": []
+      },
+      {
+        "path": "/en/knowledge/technical-risk-management",
+        "width": 360,
+        "scrollWidth": 360,
+        "title": "Technical Risk Management and Reliability | RelTest",
+        "blank": false,
+        "brokenImages": []
+      }
+    ],
+    "viewportChecks": [
+      {
+        "width": 320,
+        "scrollWidth": 320,
+        "navVisible": false,
+        "font": "14.4px"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "navVisible": false,
+        "font": "14.4px"
+      },
+      {
+        "width": 430,
+        "scrollWidth": 430,
+        "navVisible": false,
+        "font": "14.4px"
+      },
+      {
+        "width": 768,
+        "scrollWidth": 768,
+        "navVisible": false,
+        "font": "14.4px"
+      },
+      {
+        "width": 1024,
+        "scrollWidth": 1024,
+        "navVisible": false,
+        "font": "14.4px"
+      },
+      {
+        "width": 1200,
+        "scrollWidth": 1200,
+        "navVisible": true,
+        "font": "14.4px"
+      },
+      {
+        "width": 1366,
+        "scrollWidth": 1366,
+        "navVisible": true,
+        "font": "15.396px"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "navVisible": true,
+        "font": "15.84px"
+      },
+      {
+        "width": 1920,
+        "scrollWidth": 1920,
+        "navVisible": true,
+        "font": "18.72px"
+      },
+      {
+        "width": 2560,
+        "scrollWidth": 2560,
+        "navVisible": true,
+        "font": "19.2px"
+      }
+    ],
+    "errors": [],
+    "externalRequestsWithoutConsent": []
+  },
+  "interactions": [
+    {
+      "name": "Mobile menu opens, traps focus, closes with Escape and restores focus",
+      "passed": true
+    },
+    {
+      "name": "Mobile menu link navigation and desktop-resize dismissal",
+      "passed": true
+    },
+    {
+      "name": "Desktop dropdown supports keyboard focus and link navigation",
+      "passed": true
+    },
+    {
+      "name": "Language switch preserves page, query and translated Education anchor",
+      "passed": true
+    },
+    {
+      "name": "Glossary search, empty result, clear and term links",
+      "passed": true
+    },
+    {
+      "name": "Hero slide controls change active topic",
+      "passed": true
+    },
+    {
+      "name": "Consent required, allow Calendly, revoke, restore settings-button focus",
+      "passed": true
+    },
+    {
+      "name": "Consent works with blocked storage for current tab",
+      "passed": true
+    },
+    {
+      "name": "Keyboard skip link moves focus to main content",
+      "passed": true
+    },
+    {
+      "name": "Contact UI de / 200 / confirmation=true",
+      "passed": true
+    },
+    {
+      "name": "Contact UI en / 200 / confirmation=true",
+      "passed": true
+    },
+    {
+      "name": "Contact UI de / 200 / confirmation=false",
+      "passed": true
+    },
+    {
+      "name": "Contact UI de / 502 / confirmation=undefined",
+      "passed": true
+    },
+    {
+      "name": "Contact UI de / 429 / confirmation=undefined",
+      "passed": true
+    },
+    {
+      "name": "Contact UI de / 400 / confirmation=undefined",
+      "passed": true
+    },
+    {
+      "name": "Contact form blocks empty required fields and makes company optional for private inquiry",
+      "passed": true
+    }
+  ],
+  "contactUnitTests": [
+    {
+      "name": "Foreign origin rejected",
+      "passed": true
+    },
+    {
+      "name": "Spoofed forwarded origin rejected",
+      "passed": true
+    },
+    {
+      "name": "Malformed JSON rejected",
+      "passed": true
+    },
+    {
+      "name": "Declared oversized body rejected",
+      "passed": true
+    },
+    {
+      "name": "Actual UTF-8 body bytes limited without Content-Length",
+      "passed": true
+    },
+    {
+      "name": "Single-recipient validation rejects lists and header syntax",
+      "passed": true
+    },
+    {
+      "name": "Privacy required server-side",
+      "passed": true
+    },
+    {
+      "name": "Organisation required for company inquiry",
+      "passed": true
+    },
+    {
+      "name": "Private inquiry permits empty organisation",
+      "passed": true
+    },
+    {
+      "name": "Short message rejected server-side",
+      "passed": true
+    },
+    {
+      "name": "Honeypot returns benign response without mail",
+      "passed": true
+    },
+    {
+      "name": "Missing SMTP configuration handled as 503",
+      "passed": true
+    },
+    {
+      "name": "German inquiry + branded confirmation, correct From/Reply-To",
+      "passed": true
+    },
+    {
+      "name": "English confirmation and escaped visitor name",
+      "passed": true
+    },
+    {
+      "name": "Internal mail failure: 502, no confirmation sent",
+      "passed": true
+    },
+    {
+      "name": "Confirmation failure: inquiry retained, partial success",
+      "passed": true
+    },
+    {
+      "name": "Fifth request in window blocked with Retry-After",
+      "passed": true
+    }
+  ],
+  "indexingUnitTests": [
+    {
+      "name": "default production",
+      "passed": true,
+      "indexing": false,
+      "sitemapEntries": 0
+    },
+    {
+      "name": "explicit disabled",
+      "passed": true,
+      "indexing": false,
+      "sitemapEntries": 0
+    },
+    {
+      "name": "preview cannot opt in",
+      "passed": true,
+      "indexing": false,
+      "sitemapEntries": 0
+    },
+    {
+      "name": "development cannot opt in",
+      "passed": true,
+      "indexing": false,
+      "sitemapEntries": 0
+    },
+    {
+      "name": "approved production",
+      "passed": true,
+      "indexing": true,
+      "sitemapEntries": 104
+    }
+  ],
+  "errorHandling": [
+    {
+      "path": "/de/audit-not-found",
+      "status": 404,
+      "h1": [
+        "Diese Seite wurde nicht gefunden."
+      ],
+      "lang": "de"
+    },
+    {
+      "path": "/en/knowledge/audit-not-found",
+      "status": 404,
+      "h1": [
+        "This page could not be found."
+      ],
+      "lang": "en"
+    },
+    {
+      "path": "/missing.pdf",
+      "status": 404,
+      "h1": [
+        "Diese Seite wurde nicht gefunden."
+      ],
+      "lang": "de"
+    },
+    {
+      "name": "Simulated render failure and retry",
+      "passed": true
+    }
+  ],
+  "smtpConnectionOnly": {
+    "verified": true,
+    "note": "TLS connection and authentication only. No email submitted."
+  },
+  "assetChecks": [
+    {
+      "path": "/wp-content/uploads/2020/01/RAMS-award.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/aesculp.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/asys.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/bosch.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/ekk.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/hofer_power.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/hyundai.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/knorr.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/kostyrka.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/mtu.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/nidec.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/optibelt.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/reltest-solutions-logo-white-1.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/reltest-solutions-logo.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/sma.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/testo.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/walther.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/10/zf.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/11/Kevin-Lucan.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/11/Prozess-s.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/11/Referenzen-s.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/Bild-Mercedes.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/doe-seminar.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/elektronik-zuverlaessigkeit-seminar.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/erprobung-zuverlaessigkeit-seminar.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/hi-logo.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/Lebensdauerbegleitendes-Zuverlaessigkeitsmanagement.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/Leistungen.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/LoI-Reltest-HI7.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/Management-Beratung2.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/uni-stuttgart-logo-300x67.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/uni-stuttgart-logo-grey-300x67.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2020/12/Visionaere-Ziele2.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/abb4-s.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/Coaching-im-Zuverlaessigkeitsmanagement.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/Consulting-im-Zuverlaessigkeitsmanagement.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/Grafik-1_1024x696_Version2.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/Grafik-1_englisch_1024x696.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/Grafik-2_1024x645.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/Grafik-2_englisch_1024x645.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/Mercedes-Benz-logo.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/Systemzuverlaessigkeit2.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/Trainings-im-Zuverlaessigkeitsmanagement.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/Unbenannt-1-t.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/uni-stuttgart-logo-grey2.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/unistuttgart_logo_de-2-300x64.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/unistuttgart_logo_de-2.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/01/ZUV_Absicherung2.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/02/Ebmpapst.svg-1024x322.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/02/leybold.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/02/vat_logo.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/07/Am-Zahn-der-Zeit.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/07/Konaktbild.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/07/Leica.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/07/stihl-1024x463.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/07/weber-1024x326.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/08/Flyer-DOE.pdf",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex"
+    },
+    {
+      "path": "/wp-content/uploads/2021/08/Flyer-E-Zuv.pdf",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex"
+    },
+    {
+      "path": "/wp-content/uploads/2021/08/Flyer-Zuv.pdf",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/032-150x150.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/033-1024x681.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/033-150x150.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/034-1024x681.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/034-150x150.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/035-150x150.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/036-150x150.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/037-1-150x150.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/037.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/039-150x150.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/md-1024x683.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2021/10/Medizintechnik-1024x446.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/01/117-karcher_logo.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/01/Bertsche_Profil2.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/01/olympus.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/01/porsche-1024x619.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/02/1-Elektronische-Produkte-t-1024x446.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/02/1-Luft-und-Raumfahrt-t-1024x446.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/02/Automotive-1024x575.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/02/Erneuerbare-Energien-t-1024x446.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/02/Konsumgueter2-t-1024x446.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/02/Maschinenbau-t-1024x446.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/02/Produktionstechnik-t-1024x446.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/06/PI.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/Analyse-b.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/Analyse.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/Analyse2.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/Erprobung.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2022/08/Zuverlaessigkeitsabsicherung.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2023/02/ZUV-Buch_Cover.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/dazer1-Kopie-1024x683.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/dazer1-Kopie-150x150.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/dazer2-Kopie-1024x683.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/dazer2-Kopie-150x150.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/dazer3-Kopie-1024x683.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/dazer3-Kopie-150x150.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/dazer5-Kopie-1024x683.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/dazer5-Kopie-150x150.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/DSC07652-Kopie-1024x683.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/DSC07652-Kopie-150x150.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/DSC07983-Kopie-1024x683.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2024/02/DSC07983-Kopie-150x150.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2025/10/RSA-Logo_final_png.png",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2025/10/RSA-Logo_final_white-300x149-1.webp",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/wp-content/uploads/2025/11/20250410_144750-768x1024.jpg",
+      "status": 200,
+      "sha256Matches": true,
+      "xRobots": "noindex, nofollow, noarchive, nosnippet"
+    },
+    {
+      "path": "/de/opengraph-image",
+      "status": 200,
+      "type": "image/png",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "path": "/de/twitter-image",
+      "status": 200,
+      "type": "image/png",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "path": "/en/opengraph-image",
+      "status": 200,
+      "type": "image/png",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "path": "/en/twitter-image",
+      "status": 200,
+      "type": "image/png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "lighthouse": [
+    {
+      "path": "/de",
+      "scores": {
+        "performance": 0.94,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 0.69
+      },
+      "metrics": {
+        "first-contentful-paint": "1.4 s",
+        "largest-contentful-paint": "3.1 s",
+        "total-blocking-time": "20 ms",
+        "cumulative-layout-shift": "0",
+        "speed-index": "1.4 s"
+      },
+      "issues": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "display": "3.1 s"
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 27 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "subItemsHeading": {
+                  "key": "source",
+                  "valueType": "code"
+                },
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "subItemsHeading": {
+                  "key": "sourceBytes"
+                },
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "subItemsHeading": {
+                  "key": "sourceWastedBytes"
+                },
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                "totalBytes": 73344,
+                "wastedBytes": 27958,
+                "wastedPercent": 38.118887987359614
+              }
+            ],
+            "overallSavingsMs": 250,
+            "overallSavingsBytes": 27958,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 250
+              }
+            }
+          }
+        },
+        {
+          "id": "is-crawlable",
+          "title": "Page is blocked from indexing",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "source",
+                "valueType": "code",
+                "label": "Blocking Directive Source"
+              }
+            ],
+            "items": [
+              {
+                "source": {
+                  "type": "node",
+                  "lhId": "1-233-META",
+                  "path": "1,HTML,0,HEAD,23,META",
+                  "selector": "head > meta",
+                  "boundingRect": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "width": 0,
+                    "height": 0
+                  },
+                  "snippet": "<meta name=\"robots\" content=\"noindex, nofollow, noarchive, nosnippet\" />",
+                  "nodeLabel": "head > meta"
+                }
+              },
+              {
+                "source": "X-Robots-Tag: noindex, nofollow, noarchive, nosnippet"
+              },
+              {
+                "source": {
+                  "type": "source-location",
+                  "url": "http://localhost:3100/robots.txt",
+                  "urlProvider": "network",
+                  "line": 1,
+                  "column": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 157 KiB",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": ""
+              },
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL",
+                "subItemsHeading": {
+                  "key": "reason",
+                  "valueType": "text"
+                }
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Resource Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings",
+                "subItemsHeading": {
+                  "key": "wastedBytes",
+                  "valueType": "bytes"
+                }
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-1-IMG",
+                  "path": "1,HTML,1,BODY,2,DIV,1,MAIN,3,DIV,1,SECTION,0,DIV,1,DIV,0,DIV,2,DETAILS,0,SUMMARY,1,DIV,0,IMG",
+                  "selector": "details.group > summary.grid > div.relative > img.object-cover",
+                  "boundingRect": {
+                    "top": 3210,
+                    "bottom": 3401,
+                    "left": 21,
+                    "right": 391,
+                    "width": 370,
+                    "height": 191
+                  },
+                  "snippet": "<img alt=\"Ingenieur bei einem Design-of-Experiments-Versuch am Prüfstand\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover object-center opacity-100 saturate-[0.92] contrast-[1.04] tra…\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px;\" src=\"/projects/design-of-experiments-testbench-v2.webp\">",
+                  "nodeLabel": "Ingenieur bei einem Design-of-Experiments-Versuch am Prüfstand"
+                },
+                "url": "http://localhost:3100/projects/design-of-experiments-testbench-v2.webp",
+                "totalBytes": 136354,
+                "wastedBytes": 129082,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "reason": "This image file is larger than it needs to be (1672x864) for its displayed dimensions (370x208). Use responsive images to reduce the image download size.",
+                      "wastedBytes": 129082
+                    }
+                  ]
+                }
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-0-IMG",
+                  "path": "1,HTML,1,BODY,2,DIV,1,MAIN,0,SECTION,0,DIV,0,DIV,0,DIV,0,IMG",
+                  "selector": "div.home-page-hero-module__pcqqoW__layout > div.home-page-hero-module__pcqqoW__frame > div.home-page-hero-module__pcqqoW__slideImage > img.object-cover",
+                  "boundingRect": {
+                    "top": 96,
+                    "bottom": 269,
+                    "left": 20,
+                    "right": 392,
+                    "width": 372,
+                    "height": 173
+                  },
+                  "snippet": "<img aria-hidden=\"true\" draggable=\"false\" alt=\"\" fetchpriority=\"high\" loading=\"eager\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover object-[50%_48%] md:translate-x-[14%] md:translate-y-[8%] md:…\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px;\" sizes=\"(min-width: 1536px) 1408px, (min-width: 1280px) calc(100vw - 128px), (min-…\" srcset=\"/_next/image?url=%2Fteam%2Fhome-engineering-consulting.webp&amp;w=32&amp;q=75 32w,…\" src=\"http://localhost:3100/_next/image?url=%2Fteam%2Fhome-engineering-consultin…\">",
+                  "nodeLabel": "div.home-page-hero-module__pcqqoW__layout > div.home-page-hero-module__pcqqoW__frame > div.home-page-hero-module__pcqqoW__slideImage > img.object-cover"
+                },
+                "url": "http://localhost:3100/_next/image?url=%2Fteam%2Fhome-engineering-consulting.webp&w=750&q=75",
+                "totalBytes": 27126,
+                "wastedBytes": 16364,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "reason": "This image file is larger than it needs to be (750x348) for its displayed dimensions (372x279). Use responsive images to reduce the image download size.",
+                      "wastedBytes": 16364
+                    }
+                  ]
+                }
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-2-IMG",
+                  "path": "1,HTML,1,BODY,2,DIV,1,MAIN,3,DIV,1,SECTION,0,DIV,1,DIV,0,DIV,0,DETAILS,0,SUMMARY,1,DIV,0,IMG",
+                  "selector": "details.group > summary.grid > div.relative > img.object-cover",
+                  "boundingRect": {
+                    "top": 2167,
+                    "bottom": 2358,
+                    "left": 21,
+                    "right": 391,
+                    "width": 370,
+                    "height": 191
+                  },
+                  "snippet": "<img alt=\"Engineering-Team bei der Entwicklung eines Zuverlässigkeitsprozesses\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover object-center opacity-100 saturate-[0.92] contrast-[1.04] tra…\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px;\" sizes=\"(min-width: 1024px) 24rem, 100vw\" srcset=\"/_next/image?url=%2Fprojects%2Freliability-process-integration-natural.png…\" src=\"http://localhost:3100/_next/image?url=%2Fprojects%2Freliability-process-in…\">",
+                  "nodeLabel": "Engineering-Team bei der Entwicklung eines Zuverlässigkeitsprozesses"
+                },
+                "url": "http://localhost:3100/_next/image?url=%2Fprojects%2Freliability-process-integration-natural.png&w=750&q=75",
+                "totalBytes": 20212,
+                "wastedBytes": 14855,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "reason": "This image file is larger than it needs to be (750x388) for its displayed dimensions (370x208). Use responsive images to reduce the image download size.",
+                      "wastedBytes": 14855
+                    }
+                  ]
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "wastedBytes": 160301
+            }
+          }
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "display": "Est savings of 13 KiB",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "subItemsHeading": {
+                  "key": "location",
+                  "valueType": "source-location"
+                },
+                "label": "URL"
+              },
+              {
+                "key": null,
+                "valueType": "code",
+                "subItemsHeading": {
+                  "key": "signal"
+                },
+                "label": ""
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Wasted bytes"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                "wastedBytes": 13811,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "signal": "Array.prototype.at",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 1116
+                      }
+                    },
+                    {
+                      "signal": "Array.prototype.flat",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 504
+                      }
+                    },
+                    {
+                      "signal": "Array.prototype.flatMap",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 617
+                      }
+                    },
+                    {
+                      "signal": "Object.fromEntries",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 993
+                      }
+                    },
+                    {
+                      "signal": "Object.hasOwn",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 1251
+                      }
+                    },
+                    {
+                      "signal": "String.prototype.trimEnd",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 246
+                      }
+                    },
+                    {
+                      "signal": "String.prototype.trimStart",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 161
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "wastedBytes": 13811
+            }
+          }
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "782DA7E09E6CF7F0DEDD2CEBABEAC6BB": {
+                      "url": "http://localhost:3100/de",
+                      "navStartToEndTime": 24,
+                      "transferSize": 34862,
+                      "isLongest": true,
+                      "children": {
+                        "8648.7": {
+                          "url": "http://localhost:3100/_next/static/chunks/3338kg2knhp9w.css",
+                          "navStartToEndTime": 31,
+                          "transferSize": 26673,
+                          "isLongest": true,
+                          "children": {}
+                        },
+                        "8648.8": {
+                          "url": "http://localhost:3100/_next/static/chunks/0dwq82zuubo9u.css",
+                          "navStartToEndTime": 27,
+                          "transferSize": 1868,
+                          "children": {}
+                        },
+                        "8648.6": {
+                          "url": "http://localhost:3100/_next/static/chunks/14-5f59ezyry-.css",
+                          "navStartToEndTime": 25,
+                          "transferSize": 1145,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 31
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "display": "Est savings of 510 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3338kg2knhp9w.css",
+                "totalBytes": 26673,
+                "wastedMs": 604
+              },
+              {
+                "url": "http://localhost:3100/_next/static/chunks/0dwq82zuubo9u.css",
+                "totalBytes": 1868,
+                "wastedMs": 304
+              },
+              {
+                "url": "http://localhost:3100/_next/static/chunks/14-5f59ezyry-.css",
+                "totalBytes": 1145,
+                "wastedMs": 154
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "/de/kontakt",
+      "scores": {
+        "performance": 0.94,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 0.69
+      },
+      "metrics": {
+        "first-contentful-paint": "1.2 s",
+        "largest-contentful-paint": "3.1 s",
+        "total-blocking-time": "20 ms",
+        "cumulative-layout-shift": "0",
+        "speed-index": "1.2 s"
+      },
+      "issues": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "display": "3.1 s"
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 26 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "subItemsHeading": {
+                  "key": "source",
+                  "valueType": "code"
+                },
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "subItemsHeading": {
+                  "key": "sourceBytes"
+                },
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "subItemsHeading": {
+                  "key": "sourceWastedBytes"
+                },
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                "totalBytes": 73344,
+                "wastedBytes": 26349,
+                "wastedPercent": 35.92475551949438
+              }
+            ],
+            "overallSavingsMs": 300,
+            "overallSavingsBytes": 26349,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 300
+              }
+            }
+          }
+        },
+        {
+          "id": "is-crawlable",
+          "title": "Page is blocked from indexing",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "source",
+                "valueType": "code",
+                "label": "Blocking Directive Source"
+              }
+            ],
+            "items": [
+              {
+                "source": {
+                  "type": "node",
+                  "lhId": "1-163-META",
+                  "path": "1,HTML,0,HEAD,22,META",
+                  "selector": "head > meta",
+                  "boundingRect": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "width": 0,
+                    "height": 0
+                  },
+                  "snippet": "<meta name=\"robots\" content=\"noindex, nofollow, noarchive, nosnippet\" />",
+                  "nodeLabel": "head > meta"
+                }
+              },
+              {
+                "source": "X-Robots-Tag: noindex, nofollow, noarchive, nosnippet"
+              },
+              {
+                "source": {
+                  "type": "source-location",
+                  "url": "http://localhost:3100/robots.txt",
+                  "urlProvider": "network",
+                  "line": 1,
+                  "column": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 45 KiB",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": ""
+              },
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL",
+                "subItemsHeading": {
+                  "key": "reason",
+                  "valueType": "text"
+                }
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Resource Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings",
+                "subItemsHeading": {
+                  "key": "wastedBytes",
+                  "valueType": "bytes"
+                }
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-0-IMG",
+                  "path": "1,HTML,1,BODY,2,DIV,1,MAIN,0,DIV,0,SECTION,0,DIV,1,DIV,0,IMG",
+                  "selector": "section.bg-white > div.mx-auto > div.relative > img.object-cover",
+                  "boundingRect": {
+                    "top": 695,
+                    "bottom": 1190,
+                    "left": 21,
+                    "right": 391,
+                    "width": 370,
+                    "height": 495
+                  },
+                  "snippet": "<img alt=\"Dr.-Ing. Kevin Lucan, Geschäftsführer von RelTest Solutions\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover object-[50%_20%] lg:object-[50%_34%]\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px;\" sizes=\"(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw\" srcset=\"/_next/image?url=%2Fabout%2Fkevin-lucan-professional-v2.png&amp;w=384&amp;q=90 384…\" src=\"http://localhost:3100/_next/image?url=%2Fabout%2Fkevin-lucan-professional-…\">",
+                  "nodeLabel": "Dr.-Ing. Kevin Lucan, Geschäftsführer von RelTest Solutions"
+                },
+                "url": "http://localhost:3100/_next/image?url=%2Fabout%2Fkevin-lucan-professional-v2.png&w=750&q=90",
+                "totalBytes": 65480,
+                "wastedBytes": 45616,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "reason": "This image file is larger than it needs to be (750x1004) for its displayed dimensions (370x617). Use responsive images to reduce the image download size.",
+                      "wastedBytes": 45616
+                    }
+                  ]
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "wastedBytes": 45616
+            }
+          }
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "checklist",
+                "items": {
+                  "priorityHinted": {
+                    "label": "fetchpriority=high should be applied to the image preload request",
+                    "value": false
+                  },
+                  "requestDiscoverable": {
+                    "label": "Request is discoverable in initial document",
+                    "value": true
+                  },
+                  "eagerlyLoaded": {
+                    "label": "LCP resources should not use loading=lazy",
+                    "value": true
+                  }
+                }
+              },
+              {
+                "type": "node",
+                "lhId": "page-0-IMG",
+                "path": "1,HTML,1,BODY,2,DIV,1,MAIN,0,DIV,0,SECTION,0,DIV,1,DIV,0,IMG",
+                "selector": "section.bg-white > div.mx-auto > div.relative > img.object-cover",
+                "boundingRect": {
+                  "top": 695,
+                  "bottom": 1190,
+                  "left": 21,
+                  "right": 391,
+                  "width": 370,
+                  "height": 495
+                },
+                "snippet": "<img alt=\"Dr.-Ing. Kevin Lucan, Geschäftsführer von RelTest Solutions\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover object-[50%_20%] lg:object-[50%_34%]\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px;\" sizes=\"(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw\" srcset=\"/_next/image?url=%2Fabout%2Fkevin-lucan-professional-v2.png&amp;w=384&amp;q=90 384…\" src=\"http://localhost:3100/_next/image?url=%2Fabout%2Fkevin-lucan-professional-…\">",
+                "nodeLabel": "Dr.-Ing. Kevin Lucan, Geschäftsführer von RelTest Solutions"
+              }
+            ]
+          }
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "display": "Est savings of 13 KiB",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "subItemsHeading": {
+                  "key": "location",
+                  "valueType": "source-location"
+                },
+                "label": "URL"
+              },
+              {
+                "key": null,
+                "valueType": "code",
+                "subItemsHeading": {
+                  "key": "signal"
+                },
+                "label": ""
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Wasted bytes"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                "wastedBytes": 13811,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "signal": "Array.prototype.at",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 1116
+                      }
+                    },
+                    {
+                      "signal": "Array.prototype.flat",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 504
+                      }
+                    },
+                    {
+                      "signal": "Array.prototype.flatMap",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 617
+                      }
+                    },
+                    {
+                      "signal": "Object.fromEntries",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 993
+                      }
+                    },
+                    {
+                      "signal": "Object.hasOwn",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 1251
+                      }
+                    },
+                    {
+                      "signal": "String.prototype.trimEnd",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 246
+                      }
+                    },
+                    {
+                      "signal": "String.prototype.trimStart",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 161
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "wastedBytes": 13811
+            }
+          }
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "D6D4B973C36CEEC45C5284F023510B80": {
+                      "url": "http://localhost:3100/de/kontakt",
+                      "navStartToEndTime": 21,
+                      "transferSize": 20107,
+                      "isLongest": true,
+                      "children": {
+                        "26152.7": {
+                          "url": "http://localhost:3100/_next/static/chunks/3338kg2knhp9w.css",
+                          "navStartToEndTime": 26,
+                          "transferSize": 26673,
+                          "isLongest": true,
+                          "children": {}
+                        },
+                        "26152.6": {
+                          "url": "http://localhost:3100/_next/static/chunks/14-5f59ezyry-.css",
+                          "navStartToEndTime": 21,
+                          "transferSize": 1145,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 26
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "display": "Est savings of 420 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3338kg2knhp9w.css",
+                "totalBytes": 26673,
+                "wastedMs": 454
+              },
+              {
+                "url": "http://localhost:3100/_next/static/chunks/14-5f59ezyry-.css",
+                "totalBytes": 1145,
+                "wastedMs": 154
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "/de/education",
+      "scores": {
+        "performance": 0.98,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 0.69
+      },
+      "metrics": {
+        "first-contentful-paint": "1.2 s",
+        "largest-contentful-paint": "2.4 s",
+        "total-blocking-time": "20 ms",
+        "cumulative-layout-shift": "0",
+        "speed-index": "1.2 s"
+      },
+      "issues": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 27 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "subItemsHeading": {
+                  "key": "source",
+                  "valueType": "code"
+                },
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "subItemsHeading": {
+                  "key": "sourceBytes"
+                },
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "subItemsHeading": {
+                  "key": "sourceWastedBytes"
+                },
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                "totalBytes": 73344,
+                "wastedBytes": 27944,
+                "wastedPercent": 38.09967117905795
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 27944,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        },
+        {
+          "id": "is-crawlable",
+          "title": "Page is blocked from indexing",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "source",
+                "valueType": "code",
+                "label": "Blocking Directive Source"
+              }
+            ],
+            "items": [
+              {
+                "source": {
+                  "type": "node",
+                  "lhId": "1-151-META",
+                  "path": "1,HTML,0,HEAD,21,META",
+                  "selector": "head > meta",
+                  "boundingRect": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "width": 0,
+                    "height": 0
+                  },
+                  "snippet": "<meta name=\"robots\" content=\"noindex, nofollow, noarchive, nosnippet\" />",
+                  "nodeLabel": "head > meta"
+                }
+              },
+              {
+                "source": "X-Robots-Tag: noindex, nofollow, noarchive, nosnippet"
+              },
+              {
+                "source": {
+                  "type": "source-location",
+                  "url": "http://localhost:3100/robots.txt",
+                  "urlProvider": "network",
+                  "line": 1,
+                  "column": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 149 KiB",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": ""
+              },
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL",
+                "subItemsHeading": {
+                  "key": "reason",
+                  "valueType": "text"
+                }
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Resource Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings",
+                "subItemsHeading": {
+                  "key": "wastedBytes",
+                  "valueType": "bytes"
+                }
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-1-IMG",
+                  "path": "1,HTML,1,BODY,2,DIV,1,MAIN,0,DIV,1,SECTION,0,DIV,2,ARTICLE,0,DIV,0,IMG",
+                  "selector": "div.mx-auto > article#vor-ort-schulung > div.relative > img.object-cover",
+                  "boundingRect": {
+                    "top": 3014,
+                    "bottom": 3334,
+                    "left": 20,
+                    "right": 392,
+                    "width": 372,
+                    "height": 320
+                  },
+                  "snippet": "<img alt=\"RelTest Experten vermitteln Zuverlässigkeitstechnik in einer Vor-Ort-Schul…\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover object-center\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px;\" src=\"/team/reliability-engineering-seminar.webp\">",
+                  "nodeLabel": "RelTest Experten vermitteln Zuverlässigkeitstechnik in einer Vor-Ort-Schulung"
+                },
+                "url": "http://localhost:3100/team/reliability-engineering-seminar.webp",
+                "totalBytes": 104960,
+                "wastedBytes": 94524,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "reason": "This image file is larger than it needs to be (1264x1086) for its displayed dimensions (427x320). Use responsive images to reduce the image download size.",
+                      "wastedBytes": 94524
+                    }
+                  ]
+                }
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-2-IMG",
+                  "path": "1,HTML,1,BODY,2,DIV,1,MAIN,0,DIV,0,SECTION,1,DIV,1,DIV,0,IMG",
+                  "selector": "section.relative > div.relative > div.relative > img.object-cover",
+                  "boundingRect": {
+                    "top": 795,
+                    "bottom": 1178,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 383
+                  },
+                  "snippet": "<img alt=\"Ingenieur beim digitalen E-Learning zur Zuverlässigkeitstechnik mit techni…\" decoding=\"async\" data-nimg=\"fill\" class=\"object-cover object-[55%_center]\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px;\" src=\"/education/digital-reliability-engineering-elearning.webp\">",
+                  "nodeLabel": "Ingenieur beim digitalen E-Learning zur Zuverlässigkeitstechnik mit technischen…"
+                },
+                "url": "http://localhost:3100/education/digital-reliability-engineering-elearning.webp",
+                "totalBytes": 82222,
+                "wastedBytes": 57610,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "reason": "This image file is larger than it needs to be (968x900) for its displayed dimensions (681x383). Use responsive images to reduce the image download size.",
+                      "wastedBytes": 57610
+                    }
+                  ]
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "wastedBytes": 152134
+            }
+          }
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "display": "Est savings of 13 KiB",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "subItemsHeading": {
+                  "key": "location",
+                  "valueType": "source-location"
+                },
+                "label": "URL"
+              },
+              {
+                "key": null,
+                "valueType": "code",
+                "subItemsHeading": {
+                  "key": "signal"
+                },
+                "label": ""
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Wasted bytes"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                "wastedBytes": 13811,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "signal": "Array.prototype.at",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 1116
+                      }
+                    },
+                    {
+                      "signal": "Array.prototype.flat",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 504
+                      }
+                    },
+                    {
+                      "signal": "Array.prototype.flatMap",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 617
+                      }
+                    },
+                    {
+                      "signal": "Object.fromEntries",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 993
+                      }
+                    },
+                    {
+                      "signal": "Object.hasOwn",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 1251
+                      }
+                    },
+                    {
+                      "signal": "String.prototype.trimEnd",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 246
+                      }
+                    },
+                    {
+                      "signal": "String.prototype.trimStart",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 161
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "wastedBytes": 13811
+            }
+          }
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "6D281D75B60FB25966A6D3AB0E1A3658": {
+                      "url": "http://localhost:3100/de/education",
+                      "navStartToEndTime": 20,
+                      "transferSize": 21140,
+                      "isLongest": true,
+                      "children": {
+                        "14624.7": {
+                          "url": "http://localhost:3100/_next/static/chunks/3338kg2knhp9w.css",
+                          "navStartToEndTime": 29,
+                          "transferSize": 26673,
+                          "isLongest": true,
+                          "children": {}
+                        },
+                        "14624.6": {
+                          "url": "http://localhost:3100/_next/static/chunks/14-5f59ezyry-.css",
+                          "navStartToEndTime": 24,
+                          "transferSize": 1145,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 29
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "display": "Est savings of 400 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3338kg2knhp9w.css",
+                "totalBytes": 26673,
+                "wastedMs": 453
+              },
+              {
+                "url": "http://localhost:3100/_next/static/chunks/14-5f59ezyry-.css",
+                "totalBytes": 1145,
+                "wastedMs": 153
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "/de/wissen/absicherung",
+      "scores": {
+        "performance": 0.93,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 0.69
+      },
+      "metrics": {
+        "first-contentful-paint": "1.4 s",
+        "largest-contentful-paint": "3.2 s",
+        "total-blocking-time": "20 ms",
+        "cumulative-layout-shift": "0",
+        "speed-index": "1.4 s"
+      },
+      "issues": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "display": "3.2 s"
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 27 KiB",
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "subItemsHeading": {
+                  "key": "source",
+                  "valueType": "code"
+                },
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "subItemsHeading": {
+                  "key": "sourceBytes"
+                },
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "subItemsHeading": {
+                  "key": "sourceWastedBytes"
+                },
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                "totalBytes": 73344,
+                "wastedBytes": 27944,
+                "wastedPercent": 38.09967117905795
+              }
+            ],
+            "overallSavingsMs": 300,
+            "overallSavingsBytes": 27944,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 300
+              }
+            }
+          }
+        },
+        {
+          "id": "is-crawlable",
+          "title": "Page is blocked from indexing",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "source",
+                "valueType": "code",
+                "label": "Blocking Directive Source"
+              }
+            ],
+            "items": [
+              {
+                "source": {
+                  "type": "node",
+                  "lhId": "1-145-META",
+                  "path": "1,HTML,0,HEAD,21,META",
+                  "selector": "head > meta",
+                  "boundingRect": {
+                    "top": 0,
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "width": 0,
+                    "height": 0
+                  },
+                  "snippet": "<meta name=\"robots\" content=\"noindex, nofollow, noarchive, nosnippet\" />",
+                  "nodeLabel": "head > meta"
+                }
+              },
+              {
+                "source": "X-Robots-Tag: noindex, nofollow, noarchive, nosnippet"
+              },
+              {
+                "source": {
+                  "type": "source-location",
+                  "url": "http://localhost:3100/robots.txt",
+                  "urlProvider": "network",
+                  "line": 1,
+                  "column": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 66 KiB",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": ""
+              },
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL",
+                "subItemsHeading": {
+                  "key": "reason",
+                  "valueType": "text"
+                }
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Resource Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings",
+                "subItemsHeading": {
+                  "key": "wastedBytes",
+                  "valueType": "bytes"
+                }
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-1-IMG",
+                  "path": "1,HTML,1,BODY,2,DIV,1,MAIN,2,DIV,0,DIV,1,ARTICLE,2,SECTION,1,DIV,1,FIGURE,0,DIV,1,IMG",
+                  "selector": "div.mx-auto > figure.mx-auto > div.brand-panel-cut-bottom-right > img.object-contain",
+                  "boundingRect": {
+                    "top": 3302,
+                    "bottom": 3980,
+                    "left": 25,
+                    "right": 387,
+                    "width": 362,
+                    "height": 678
+                  },
+                  "snippet": "<img alt=\"Zwei Weibull-Kurvenplots zur Nachweisentscheidung am Bq-Niveau: Im erfolgr…\" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" class=\"object-contain sm:hidden\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px;\" sizes=\"(max-width: 639px) 100vw, 1px\" srcset=\"/_next/image?url=%2Fgraphics%2Fwissen%2Ftechnical-plots%2Freliability-demo…\" src=\"http://localhost:3100/_next/image?url=%2Fgraphics%2Fwissen%2Ftechnical-plo…\">",
+                  "nodeLabel": "Zwei Weibull-Kurvenplots zur Nachweisentscheidung am Bq-Niveau: Im erfolgreiche…"
+                },
+                "url": "http://localhost:3100/_next/image?url=%2Fgraphics%2Fwissen%2Ftechnical-plots%2Freliability-demonstration-bq-decision-de-v2-mobile.png&w=750&q=90",
+                "totalBytes": 69270,
+                "wastedBytes": 53133,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "reason": "This image file is larger than it needs to be (750x1401) for its displayed dimensions (362x676). Use responsive images to reduce the image download size.",
+                      "wastedBytes": 53133
+                    }
+                  ]
+                }
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "page-2-IMG",
+                  "path": "1,HTML,1,BODY,2,DIV,1,MAIN,1,HEADER,0,DIV,1,FIGURE,0,IMG",
+                  "selector": "header.relative > div.relative > figure.relative > img.h-auto",
+                  "boundingRect": {
+                    "top": 695,
+                    "bottom": 900,
+                    "left": 24,
+                    "right": 388,
+                    "width": 364,
+                    "height": 205
+                  },
+                  "snippet": "<img alt=\"Komponenten-Ausfallwahrscheinlichkeiten werden über ein Serienschaltungssy…\" width=\"1672\" height=\"941\" decoding=\"async\" data-nimg=\"1\" class=\"h-auto max-h-[360px] w-full object-contain [filter:brightness(1.06)_invert…\" style=\"color:transparent\" sizes=\"(min-width: 1024px) 48vw, 100vw\" srcset=\"/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabsicherung-de.1vj3v6uwq16oh.…\" src=\"http://localhost:3100/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabsicher…\">",
+                  "nodeLabel": "Komponenten-Ausfallwahrscheinlichkeiten werden über ein Serienschaltungssystem …"
+                },
+                "url": "http://localhost:3100/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabsicherung-de.1vj3v6uwq16oh.png&w=750&q=90",
+                "totalBytes": 19388,
+                "wastedBytes": 14821,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "reason": "This image file is larger than it needs to be (750x422) for its displayed dimensions (364x205). Use responsive images to reduce the image download size.",
+                      "wastedBytes": 14821
+                    }
+                  ]
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "wastedBytes": 67954
+            }
+          }
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "display": "Est savings of 13 KiB",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "subItemsHeading": {
+                  "key": "location",
+                  "valueType": "source-location"
+                },
+                "label": "URL"
+              },
+              {
+                "key": null,
+                "valueType": "code",
+                "subItemsHeading": {
+                  "key": "signal"
+                },
+                "label": ""
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Wasted bytes"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                "wastedBytes": 13811,
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "signal": "Array.prototype.at",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 1116
+                      }
+                    },
+                    {
+                      "signal": "Array.prototype.flat",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 504
+                      }
+                    },
+                    {
+                      "signal": "Array.prototype.flatMap",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 617
+                      }
+                    },
+                    {
+                      "signal": "Object.fromEntries",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 993
+                      }
+                    },
+                    {
+                      "signal": "Object.hasOwn",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 1251
+                      }
+                    },
+                    {
+                      "signal": "String.prototype.trimEnd",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 246
+                      }
+                    },
+                    {
+                      "signal": "String.prototype.trimStart",
+                      "location": {
+                        "type": "source-location",
+                        "url": "http://localhost:3100/_next/static/chunks/3z6h-42vc8z6q.js",
+                        "urlProvider": "network",
+                        "line": 0,
+                        "column": 161
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "wastedBytes": 13811
+            }
+          }
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "details": {
+            "type": "list",
+            "items": [
+              {
+                "type": "list-section",
+                "value": {
+                  "type": "network-tree",
+                  "chains": {
+                    "3CC57214C68B779F9CDEED150B239505": {
+                      "url": "http://localhost:3100/de/wissen/absicherung",
+                      "navStartToEndTime": 19,
+                      "transferSize": 21596,
+                      "isLongest": true,
+                      "children": {
+                        "24132.6": {
+                          "url": "http://localhost:3100/_next/static/chunks/14-5f59ezyry-.css",
+                          "navStartToEndTime": 21,
+                          "transferSize": 1145,
+                          "isLongest": true,
+                          "children": {
+                            "24132.49": {
+                              "url": "http://localhost:3100/_next/static/media/651aaf1801011892.357dd_6abeqge.woff2",
+                              "navStartToEndTime": 88,
+                              "transferSize": 33110,
+                              "isLongest": true,
+                              "children": {}
+                            }
+                          }
+                        },
+                        "24132.7": {
+                          "url": "http://localhost:3100/_next/static/chunks/3338kg2knhp9w.css",
+                          "navStartToEndTime": 26,
+                          "transferSize": 26673,
+                          "children": {}
+                        }
+                      }
+                    }
+                  },
+                  "longestChain": {
+                    "duration": 88
+                  }
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnected origins",
+                "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+                "value": {
+                  "type": "text",
+                  "value": "no origins were preconnected"
+                }
+              },
+              {
+                "type": "list-section",
+                "title": "Preconnect candidates",
+                "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+                "value": {
+                  "type": "text",
+                  "value": "No additional origins are good candidates for preconnecting"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "display": "Est savings of 540 ms",
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Transfer Size"
+              },
+              {
+                "key": "wastedMs",
+                "valueType": "timespanMs",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "url": "http://localhost:3100/_next/static/chunks/3338kg2knhp9w.css",
+                "totalBytes": 26673,
+                "wastedMs": 454
+              },
+              {
+                "url": "http://localhost:3100/_next/static/chunks/14-5f59ezyry-.css",
+                "totalBytes": 1145,
+                "wastedMs": 154
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "gates": {
+    "lint": "passed",
+    "productionBuild": "passed",
+    "npmAuditVulnerabilities": 0,
+    "realEmailDelivery": "not tested",
+    "productionDomainCutover": "not performed"
+  }
+}

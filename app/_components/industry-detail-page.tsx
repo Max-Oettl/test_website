@@ -163,7 +163,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
         <article className="min-w-0">
           <section id={`${idPrefix}-anforderungen`} className="scroll-mt-36 pb-16 sm:pb-20">
             <header className="grid gap-4 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6">
-              <span className="font-winnstein-display text-2xl font-bold text-brand-steel-cyan">01</span>
+              <span className="font-winnstein-display text-2xl font-bold text-brand-marine">01</span>
               <div>
                 <h2 className="max-w-4xl hyphens-auto font-winnstein-display text-3xl leading-[1.12] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl xl:text-[2.65rem]">
                   {editorial.seoTitle}
@@ -200,7 +200,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
 
           <section id={`${idPrefix}-systeme`} className="scroll-mt-36 border-t border-brand-marine/18 py-16 sm:py-20">
             <header className="grid gap-4 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6">
-              <span className="font-winnstein-display text-2xl font-bold text-brand-steel-cyan">02</span>
+              <span className="font-winnstein-display text-2xl font-bold text-brand-marine">02</span>
               <div>
                 <h2 className="max-w-4xl hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">
                   {editorial.productTitle}
@@ -223,13 +223,13 @@ function IndustryEditorialFlow({ locale, content }: Props) {
                   <div>
                     <p className="text-base leading-7 text-brand-marine/72">{product.context}</p>
                     <div className="mt-5 grid gap-5 sm:grid-cols-2">
-                      <p className="text-sm leading-6 text-brand-marine/64">
+                      <p className="text-sm leading-6 text-brand-marine/75">
                         <strong className="mb-1 block font-winnstein-display text-brand-marine">
                           {labels.risk}
                         </strong>
                         {product.risk}
                       </p>
-                      <p className="text-sm leading-6 text-brand-marine/64">
+                      <p className="text-sm leading-6 text-brand-marine/75">
                         <strong className="mb-1 block font-winnstein-display text-brand-marine">
                           {labels.evidence}
                         </strong>
@@ -244,7 +244,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
 
           <section id={`${idPrefix}-nachweis`} className="scroll-mt-36 border-t border-brand-marine/18 py-16 sm:py-20">
             <header className="grid gap-4 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6">
-              <span className="font-winnstein-display text-2xl font-bold text-brand-steel-cyan">03</span>
+              <span className="font-winnstein-display text-2xl font-bold text-brand-marine">03</span>
               <div>
                 {wideImage && (
                   <>
@@ -271,7 +271,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
                     className="object-cover saturate-[0.94] contrast-[1.02]"
                   />
                 </div>
-                <figcaption className="mt-3 text-sm leading-6 text-brand-marine/56">
+                <figcaption className="mt-3 text-sm leading-6 text-brand-marine/75">
                   {wideImage.alt}
                 </figcaption>
               </figure>
@@ -287,7 +287,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
                     key={projectTerms[index]}
                     className="grid gap-2 border-b border-brand-marine/16 py-5 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6"
                   >
-                    <dt className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+                    <dt className="font-winnstein-display text-sm font-bold text-brand-marine">
                       {projectTerms[index]}
                     </dt>
                     <dd className="text-base leading-7 text-brand-marine/70">{text}</dd>
@@ -305,7 +305,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
 
           <section id={`${idPrefix}-felddaten`} className="scroll-mt-36 border-t border-brand-marine/18 py-16 sm:py-20">
             <header className="grid gap-4 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6">
-              <span className="font-winnstein-display text-2xl font-bold text-brand-steel-cyan">04</span>
+              <span className="font-winnstein-display text-2xl font-bold text-brand-marine">04</span>
               <div>
                 {portraitImage && (
                   <>
@@ -332,7 +332,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
                     className="object-cover saturate-[0.94] contrast-[1.02]"
                   />
                 </div>
-                <figcaption className="mt-3 text-sm leading-6 text-brand-marine/56">
+                <figcaption className="mt-3 text-sm leading-6 text-brand-marine/75">
                   {portraitImage.alt}
                 </figcaption>
               </figure>
@@ -351,7 +351,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
                   href={history.sourceHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-3 font-winnstein-display text-sm font-bold text-brand-steel-cyan hover:text-brand-marine"
+                  className="mt-6 inline-flex items-center gap-3 font-winnstein-display text-sm font-bold text-brand-marine hover:text-brand-marine"
                 >
                   {labels.source}: {history.sourceLabel}
                   <ArrowIcon external />
@@ -362,7 +362,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
 
           <section id={`${idPrefix}-zusammenarbeit`} className="scroll-mt-36 border-t border-brand-marine/18 pt-16 sm:pt-20">
             <header className="grid gap-4 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6">
-              <span className="font-winnstein-display text-2xl font-bold text-brand-steel-cyan">05</span>
+              <span className="font-winnstein-display text-2xl font-bold text-brand-marine">05</span>
               <div>
                 <h2 className="max-w-4xl hyphens-auto font-winnstein-display text-3xl leading-tight font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-4xl">
                   {content.servicesTitle}
@@ -384,7 +384,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
                   </h3>
                   <div>
                     <p className="text-base leading-7 text-brand-marine/70">{service.text}</p>
-                    <p className="mt-3 text-sm leading-6 text-brand-marine/60">
+                    <p className="mt-3 text-sm leading-6 text-brand-marine/75">
                       <strong className="font-winnstein-display text-brand-marine">
                         {labels.serviceTopics}:
                       </strong>{" "}
@@ -392,7 +392,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
                     </p>
                     <Link
                       href={localizeHref(locale, service.href)}
-                      className="mt-4 inline-flex items-center gap-3 font-winnstein-display text-sm font-bold text-brand-steel-cyan hover:text-brand-marine"
+                      className="mt-4 inline-flex items-center gap-3 font-winnstein-display text-sm font-bold text-brand-marine hover:text-brand-marine"
                     >
                       {labels.serviceLink}
                       <ArrowIcon />
@@ -415,7 +415,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
                     <li key={item.href}>
                       <Link
                         href={localizeHref(locale, item.href)}
-                        className="inline-flex items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold hover:text-brand-steel-cyan"
+                        className="inline-flex items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold hover:text-brand-marine"
                       >
                         {item.title}
                         <ArrowIcon />
@@ -454,7 +454,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
               </div>
 
               <div className="mt-10 border-t border-brand-marine/18 pt-8">
-                <p className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+                <p className="font-winnstein-display text-sm font-bold text-brand-marine">
                   {labels.context}
                 </p>
                 <p className="mt-3 max-w-4xl text-base leading-8 text-brand-marine/70">
@@ -463,7 +463,7 @@ function IndustryEditorialFlow({ locale, content }: Props) {
                   </strong>{" "}
                   {content.contextText}
                 </p>
-                <p className="mt-4 text-sm leading-7 text-brand-marine/60">
+                <p className="mt-4 text-sm leading-7 text-brand-marine/75">
                   {content.contextTerms.join(" · ")}
                 </p>
               </div>
@@ -521,11 +521,11 @@ function IndustryNavigationCardVisual({
         {name}
       </span>
       {current ? (
-        <span className="shrink-0 text-xs font-semibold text-brand-steel-cyan">
+        <span className="shrink-0 text-xs font-semibold text-brand-marine">
           {labels.current}
         </span>
       ) : (
-        <span className="shrink-0 text-brand-steel-cyan transition-transform group-hover:translate-x-1">
+        <span className="shrink-0 text-brand-marine transition-transform group-hover:translate-x-1">
           <ArrowIcon />
         </span>
       )}
@@ -563,7 +563,7 @@ function IndustryNavigation({ locale, currentSlug }: { locale: Locale; currentSl
           </div>
           <Link
             href={localizeHref(locale, "/branchen")}
-            className="inline-flex w-fit items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold hover:text-brand-steel-cyan"
+            className="inline-flex w-fit items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold hover:text-brand-marine"
           >
             {labels.all}
             <ArrowIcon />
@@ -630,7 +630,7 @@ export function IndustryDetailPage({ locale, content }: Props) {
       : { industries: "All industries" };
 
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <div className="relative mx-auto grid max-w-7xl xl:grid-cols-[minmax(0,0.92fr)_minmax(30rem,1.08fr)]">
           <div className={`relative isolate flex min-w-0 flex-col justify-center overflow-hidden px-5 py-16 sm:px-8 lg:px-10 lg:py-24 ${reverseHero ? "xl:order-2" : ""}`}>
@@ -646,7 +646,7 @@ export function IndustryDetailPage({ locale, content }: Props) {
               </Link>
               <h1 className="mt-10 max-w-4xl hyphens-auto font-winnstein-display text-4xl leading-[1.04] font-bold tracking-[-0.035em] [overflow-wrap:anywhere] sm:text-5xl xl:text-[3.4rem]">{content.title}</h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78">{content.heroLead}</p>
-              <Link href={localizeHref(locale, "/kontakt")} className="brand-action mt-9 inline-flex min-h-14 w-fit items-center justify-between gap-8 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand-marine">
+              <Link href={localizeHref(locale, "/kontakt")} className="brand-action mt-9 inline-flex min-h-14 w-fit items-center justify-between gap-8 bg-brand-steel-cyan px-7 py-4 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:bg-white hover:text-brand-marine">
                 {content.heroCta}
                 <ArrowIcon />
               </Link>
@@ -677,6 +677,6 @@ export function IndustryDetailPage({ locale, content }: Props) {
       />
 
       <IndustryNavigation locale={locale} currentSlug={content.slug} />
-    </main>
+    </div>
   );
 }

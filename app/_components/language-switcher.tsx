@@ -12,7 +12,7 @@ import {
 import { createPortal } from "react-dom";
 
 import type { Locale } from "../_i18n/config";
-import { switchLocalePathname } from "../_i18n/routes";
+import { switchLocaleHash, switchLocalePathname } from "../_i18n/routes";
 
 type LanguageSwitcherProps = {
   locale: Locale;
@@ -132,7 +132,7 @@ export function LanguageSwitcher({
     const nextPath =
       typeof window === "undefined"
         ? nextPathname
-        : `${nextPathname}${window.location.search}${window.location.hash}`;
+        : `${nextPathname}${window.location.search}${switchLocaleHash(pathname, window.location.hash, nextLocale)}`;
 
     await Promise.allSettled([
       fetch("/api/locale", {

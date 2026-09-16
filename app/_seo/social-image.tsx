@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 import type { Locale } from "../_i18n/config";
 
@@ -7,6 +9,8 @@ export const socialImageSize = {
   height: 630,
 };
 
+const logo = `data:image/png;base64,${readFileSync(join(process.cwd(), "public/branding/reltest-email-logo.png")).toString("base64")}`;
+
 const copy: Record<
   Locale,
   { eyebrow: string; title: string; claim: string; topics: string }
@@ -14,13 +18,13 @@ const copy: Record<
   de: {
     eyebrow: "RELIABILITY ENGINEERING",
     title: "Zuverlässigkeitsberatung für belastbare Produktentscheidungen.",
-    claim: "Ingenieurberatung für belastbare Produktentscheidungen",
+    claim: "Wir verankern Zuverlässigkeit als Ihren strategischen Erfolgsfaktor.",
     topics: "Zuverlässigkeitstechnik  •  Risikomanagement  •  DoE",
   },
   en: {
     eyebrow: "RELIABILITY ENGINEERING",
     title: "Reliability engineering consulting for robust product decisions.",
-    claim: "Engineering consulting for robust product decisions",
+    claim: "We make reliability your strategic advantage.",
     topics: "Reliability engineering  •  Risk management  •  DoE",
   },
 };
@@ -37,7 +41,7 @@ export function renderSocialImage(locale: Locale) {
           display: "flex",
           position: "relative",
           overflow: "hidden",
-          background: "#1f2559",
+          background: "#142452",
           color: "#ffffff",
           fontFamily: "Arial, Helvetica, sans-serif",
         }}
@@ -55,7 +59,7 @@ export function renderSocialImage(locale: Locale) {
               position: "absolute",
               width: 780,
               height: 2,
-              background: "#75a7ff",
+              background: "#2ea1cf",
               transform: "rotate(16deg)",
               right: -120,
               top: 170,
@@ -66,7 +70,7 @@ export function renderSocialImage(locale: Locale) {
               position: "absolute",
               width: 680,
               height: 2,
-              background: "#75a7ff",
+                background: "#2ea1cf",
               transform: "rotate(-12deg)",
               right: -80,
               bottom: 135,
@@ -78,7 +82,7 @@ export function renderSocialImage(locale: Locale) {
           style={{
             width: 18,
             height: "100%",
-            background: "#48a5d1",
+            background: "#2ea1cf",
           }}
         />
 
@@ -87,7 +91,7 @@ export function renderSocialImage(locale: Locale) {
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            padding: "62px 72px 58px",
+            padding: "40px 60px 40px",
             width: "100%",
           }}
         >
@@ -103,26 +107,28 @@ export function renderSocialImage(locale: Locale) {
           >
             <div
               style={{
-                width: 62,
-                height: 62,
-                border: "3px solid #ffffff",
-                borderRadius: 8,
+                width: 270,
+                height: 106,
+                padding: 14,
+                background: "#ffffff",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "#48a5d1",
-                fontSize: 34,
               }}
             >
-              R
+              {/* next/og embeds the local, official logo; no external fetch. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={logo} alt="RelTest" width={240} height={77} />
             </div>
-            RELTEST
+            <div style={{ maxWidth: 650, fontSize: 24, fontWeight: 400, letterSpacing: 0, lineHeight: 1.4 }}>
+              {text.claim}
+            </div>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
             <div
               style={{
-                color: "#48a5d1",
+                color: "#2ea1cf",
                 fontSize: 19,
                 fontWeight: 700,
                 letterSpacing: 4,
@@ -134,7 +140,7 @@ export function renderSocialImage(locale: Locale) {
               style={{
                 display: "flex",
                 maxWidth: 920,
-                fontSize: locale === "de" ? 64 : 60,
+                fontSize: locale === "de" ? 54 : 52,
                 lineHeight: 1.08,
                 fontWeight: 800,
                 letterSpacing: -1.5,
@@ -142,7 +148,6 @@ export function renderSocialImage(locale: Locale) {
             >
               {text.title}
             </div>
-            <div style={{ fontSize: 25, color: "#d7dcef" }}>{text.claim}</div>
           </div>
 
           <div
@@ -157,7 +162,7 @@ export function renderSocialImage(locale: Locale) {
             }}
           >
             <div>{text.topics}</div>
-            <div style={{ color: "#48a5d1", fontWeight: 700 }}>
+            <div style={{ color: "#2ea1cf", fontWeight: 700 }}>
               reltest-solutions.com
             </div>
           </div>

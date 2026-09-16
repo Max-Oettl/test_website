@@ -20,6 +20,14 @@ function getPreferredLocale(request: NextRequest): Locale {
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  // Legacy redirects run before Proxy, so they keep their direct 301 targets.
+  // Normalize remaining page URLs without losing query parameters.
+  if (pathname !== "/" && pathname.endsWith("/")) {
+    const canonicalUrl = new URL(request.url);
+    canonicalUrl.pathname = pathname.replace(/\/+$/, "");
+    return NextResponse.redirect(canonicalUrl, 301);
+  }
+
   const localeSegment = pathname.split("/")[1];
 
   if (!hasLocale(localeSegment)) {

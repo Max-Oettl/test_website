@@ -1,7 +1,61 @@
 # Migrationsplan WordPress zu Next.js
 
-Stand: 21. Juni 2026  
+Aktualisiert: 16. September 2026; historische Bestandsaufnahme: 21. Juni 2026
+
 Status: Arbeitsdokument fuer Planung, Umsetzung und Go-live
+
+## Aktueller Prelaunch-Status
+
+Maßgeblich für die aktuelle Prüfliste ist der
+[Prelaunch-Audit vom 15. September 2026](../seo/reviews/2026-09-15-prelaunch-audit.md).
+104 neue Inhaltsseiten und 83 alte Sitemap-URLs wurden erfolgreich geprüft;
+101 alte Bilder und drei PDFs werden zusätzlich am alten Pfad erhalten.
+Die PDFs sind Archivmaterial und erhalten dauerhaft `X-Robots-Tag: noindex`.
+Die [URL-Matrix](../seo/url-migrationsmatrix.md) enthält jetzt alle 83 Fälle.
+
+**Noch kein Go-live:** `SITE_INDEXING_ENABLED` bleibt fehlend oder false.
+Auch Vercel-Production-Testdeployments sind damit standardmäßig gesperrt.
+Die späteren Hinweise dieses Plans zum Entfernen von noindex gelten erst
+nach ausdrücklicher Launchfreigabe, nicht für den jetzigen Testbetrieb.
+Zusätzlich Vercel Deployment Protection einschließlich Production prüfen.
+Der korrigierte Code wurde im Audit nicht veröffentlicht und DNS nicht geändert.
+
+Offene externe Voraussetzungen: vollständiger WordPress-/Medienexport,
+Search-Console-/Backlink-Daten, Entscheidung zur alten Membership-Funktion,
+echter Mailzustelltest auf Vercel, Hosting-/Mail-DNS-/Rollback-Plan und
+fachliche/rechtliche Freigaben. Details und alle Änderungen stehen im Audit.
+
+## Kontaktformular: vorbereitete Microsoft-365-Umstellung
+
+Stand 16. September 2026: Die API-Route verwendet weiter SMTP mit Anmeldung
+über ein Postfach. Für beide Nachrichten ist jetzt ein eigener Absender
+konfigurierbar. Die folgenden Werte sind für das Vercel-Projekt
+`reltest-solutions-website` vorgesehen; die produktive Zustellung wurde noch
+nicht getestet. Die IONOS-Angaben weiter unten beschreiben den früheren Stand.
+
+| Variable | Wert / Zweck |
+| --- | --- |
+| `SMTP_HOST` | `smtp.office365.com` |
+| `SMTP_PORT` | `587` |
+| `SMTP_SECURE` | `false` – STARTTLS wird vom Code erzwungen |
+| `SMTP_USER` | `maximilian.oettl@reltest-solutions.com`, nur SMTP-Anmeldung |
+| `SMTP_PASSWORD` | Passwort dieses Postfachs, ausschließlich als Vercel Secret |
+| `MAIL_FROM` | `website@reltest-solutions.com`, Absender der internen Anfrage |
+| `MAIL_CONFIRMATION_FROM` | `info@reltest-solutions.com`, Absender der Eingangsbestätigung; Pflichtvariable |
+| `MAIL_TO` | `info@reltest-solutions.com`, Empfänger der Anfrage und Antwortadresse der Bestätigung |
+
+Das angemeldete Postfach benötigt „Authentifiziertes SMTP“ sowie „Senden als“
+für **beide** Absenderadressen. Eine gemeinsame Domain ersetzt diese Rechte
+nicht. Ob Microsoft 365 die Passwort-Anmeldung im Mandanten zulässt und beide
+Nachrichten tatsächlich zustellt, ist nach dem geschützten Vercel-Deployment
+mit einer echten Anfrage zu prüfen. Es wurde kein Passwort im Repository
+hinterlegt. Die Datenschutzhinweise nennen für diesen vorbereiteten Stand
+Microsoft 365; ihre finale Freigabe bleibt vor einem öffentlichen Launch nötig.
+
+Die frühere Überlegung zu Microsoft Graph wurde nicht stillschweigend
+implementiert: `website@reltest-solutions.com` ist derzeit ein Verteiler ohne
+eigenes Postfach. Die vorgeschlagene App-only-Sendung über dieses Postfach
+erfordert eine gesonderte Entscheidung zur Postfach-/Verteilerstruktur.
 
 ## 1. Ziel des Migrationsplans
 
@@ -296,21 +350,37 @@ Vor Go-live entscheiden:
 - Wird ein externer Form-Service genutzt oder eine eigene API-Route?
 - Welche Datenschutzhinweise sind erforderlich?
 
-Festgelegte Umsetzung (14. September 2026):
+Umsetzung ab 14. September 2026 (aktuelle Mailkonfiguration siehe Ergänzung oben):
 
 - Das Kontaktformular sendet im Browser an die serverseitige Next.js-Route
   `/api/contact` und öffnet kein lokales E-Mail-Programm mehr.
-- Der Versand erfolgt über das bestehende IONOS-Mail-Basic-Postfach mit
-  `smtp.ionos.de`, Port 465 und SSL/TLS. Absender ist
-  `website@reltest-solutions.de`, Zieladresse ist
-  `info@reltest-solutions.com`; die vom Besucher angegebene Adresse wird als
-  `Reply-To` gesetzt.
+- Im ursprünglichen Stand vom 14. September erfolgte der Versand über das
+  IONOS-Mail-Basic-Postfach mit `smtp.ionos.de`, Port 465 und SSL/TLS. Absender
+  war `website@reltest-solutions.de`, Zieladresse `info@reltest-solutions.com`;
+  die Besucheradresse war `Reply-To`. Die aktuelle Microsoft-365-Konfiguration
+  steht am Anfang dieses Dokuments.
 - SMTP-Zugangsdaten und Mailadressen werden ausschließlich als serverseitige
   Umgebungsvariablen in `.env.local` beziehungsweise Vercel hinterlegt und
-  niemals an den Browser ausgeliefert oder in Git gespeichert. Das
-  SMTP-Passwort und ein anschließender echter Versandtest stehen noch aus.
-- Es sind keine Dateianhänge vorgesehen. Die E-Mail wird als reiner Text
-  versendet.
+  niemals an den Browser ausgeliefert oder in Git gespeichert.
+- Es sind keine Dateianhänge im Formular vorgesehen. Die interne Anfrage wird
+  als reiner Text versendet. Der Anfragende erhält anschließend eine
+  zweisprachige Eingangsbestätigung als HTML- und Text-E-Mail im RelTest-Design;
+  der vollständige Nachrichtentext wird darin nicht wiederholt.
+- Text und Design der Eingangsbestätigung liegen in
+  `app/api/contact/confirmation-email.ts`. Die Nachricht verwendet die offizielle
+  RelTest-Dachmarke als eingebettetes PNG, Marineblau und eine Cyan-Linie unter
+  dem dunklen Titelbereich. Drei Schriftgrößen (28, 16 und 14 px) sowie der
+  vollständige Kontaktblock einschließlich Telefonnummer sorgen für eine
+  einheitliche, gut lesbare Darstellung auf Deutsch und Englisch.
+- `npm run email:preview` erzeugt aus derselben Versandvorlage lokale HTML-
+  und `.eml`-Vorschauen beider Sprachen in einem temporären Verzeichnis. Dabei
+  werden nur Beispieldaten verwendet; es erfolgt kein SMTP-Versand und kein
+  Zugriff auf Zugangsdaten. Der Beispielabsender ist jetzt
+  `info@reltest-solutions.com`, unabhängig von Vercel-Einstellungen.
+- Die Eingangsbestätigung verwendet `MAIL_CONFIRMATION_FROM` als Absender und
+  `MAIL_TO` als Antwortadresse. Die interne Anfrage verwendet `MAIL_FROM` als
+  Absender. Bis zur Ergänzung vom 16. September nutzten beide Nachrichten
+  denselben Absender.
 - Der Spam-Schutz besteht zunächst aus Honeypot, Same-Origin-Prüfung,
   serverseitiger Feldvalidierung, Größenlimits und einer begrenzten
   Anfragefrequenz je kurzzeitig gehashter IP-Adresse. Die Begrenzung arbeitet
@@ -320,10 +390,11 @@ Festgelegte Umsetzung (14. September 2026):
   verfügbar ist, würde er zusätzliches Drittanbieter-JavaScript sowie einen
   Cloudflare-Account und Schlüssel erfordern. Bei relevantem Spam-Aufkommen
   kann diese Entscheidung neu bewertet werden.
-- Das Formular besitzt Lade-, Erfolgs- und Fehlerzustände sowie einen sichtbar
-  bleibenden E-Mail-Fallback.
-- Die Datenschutzhinweise wurden an den Formularversand über Vercel und IONOS
-  angepasst. Die finale rechtliche Freigabe bleibt eine Go-live-Voraussetzung.
+- Das Formular besitzt Lade-, Erfolgs- und Fehlerzustände sowie im Fehlerfall
+  einen E-Mail-Fallback.
+- Die Datenschutzhinweise beschreiben den vorbereiteten Formularversand über
+  Vercel und Microsoft 365. Die finale rechtliche Freigabe bleibt eine
+  Go-live-Voraussetzung.
 
 Migrationsrisiko:
 

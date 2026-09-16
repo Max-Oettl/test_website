@@ -1,0 +1,3189 @@
+{
+  "date": "2026-09-15",
+  "environment": "local production build; indexing disabled",
+  "pages": [
+    {
+      "path": "/de",
+      "status": 200,
+      "lang": "de",
+      "title": "RelTest Solutions | Advanced Reliability Engineering-Partner",
+      "description": "Zuverlässigkeitstechnik, Erprobung, Absicherung und Reliability Engineering für anspruchsvolle technische B2B-Produkte.",
+      "canonical": "https://reltest-solutions.com/de",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 63
+    },
+    {
+      "path": "/de/leistungen",
+      "status": 200,
+      "lang": "de",
+      "title": "Engineering-Leistungen & Projektpartnerschaft | RelTest",
+      "description": "Zuverlässigkeitstechnik, Risikomanagement, Test und Datenanalyse sowie verantwortliche Engineering-Projektpartnerschaft für technische Produkte.",
+      "canonical": "https://reltest-solutions.com/de/leistungen",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 9
+    },
+    {
+      "path": "/de/education",
+      "status": 200,
+      "lang": "de",
+      "title": "RelTest Education: E-Learning für Ingenieure | RelTest",
+      "description": "Flexibles E-Learning für Reliability Engineering und Design of Experiments sowie Vor-Ort-Schulungen als eigenständige Präsenzalternative.",
+      "canonical": "https://reltest-solutions.com/de/education",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/education"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/education"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/education"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/de/wissen",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeitstechnik: Planung, Erprobung und Prognose | RelTest",
+      "description": "Grundlagen der Zuverlässigkeitstechnik: Planung, Schwachstellenanalyse, Erprobung, Absicherung und Prognose sowie DoE als separater Methodenfokus.",
+      "canonical": "https://reltest-solutions.com/de/wissen",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 12
+    },
+    {
+      "path": "/de/expertise",
+      "status": 200,
+      "lang": "de",
+      "title": "Expertise | Referenzen, Literatur und Podcast",
+      "description": "Referenzen, Springer-Fachbücher, Podcast und Branchenkontexte zeigen die fachliche Substanz hinter RelTest Solutions.",
+      "canonical": "https://reltest-solutions.com/de/expertise",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/expertise"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/expertise"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/expertise"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 13
+    },
+    {
+      "path": "/de/prozess",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeitsprozess | RelTest Solutions",
+      "description": "Der methodische Ablauf macht sichtbar, wie aus einzelnen Analysen, Versuchen und Bewertungen ein belastbarer Gesamtansatz entsteht.",
+      "canonical": "https://reltest-solutions.com/de/prozess",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/prozess"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/reliability-process"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/prozess"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/literatur",
+      "status": 200,
+      "lang": "de",
+      "title": "Fachliteratur zu Zuverlässigkeitstests und Zuverlässigkeit | RelTest",
+      "description": "Die Springer-Fachbücher mit Beteiligung aus dem RelTest-Umfeld zeigen die wissenschaftliche und praktische Tiefe hinter den Leistungen von RelTest: von Zuverlässigkeit im Maschinenbau bis zu effizienter entwicklungsbegleitender Absicherung.",
+      "canonical": "https://reltest-solutions.com/de/literatur",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/literatur"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/literature"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/literatur"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 12
+    },
+    {
+      "path": "/de/referenzen",
+      "status": 200,
+      "lang": "de",
+      "title": "Referenzen und Branchenerfahrung | RelTest",
+      "description": "Ausgewählte Referenzen zeigen die Branchenerfahrung von RelTest in Zuverlässigkeitstechnik, Erprobung und technischer Absicherung.",
+      "canonical": "https://reltest-solutions.com/de/referenzen",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/referenzen"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/references"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/referenzen"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 3
+    },
+    {
+      "path": "/de/kontakt",
+      "status": 200,
+      "lang": "de",
+      "title": "Projektanfrage und Kontakt | RelTest Solutions",
+      "description": "Sprechen Sie mit RelTest Solutions über Ihre technische Fragestellung in Zuverlässigkeitstechnik, Risikomanagement, Test oder Datenanalyse.",
+      "canonical": "https://reltest-solutions.com/de/kontakt",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/kontakt"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/contact"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/kontakt"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/branchen",
+      "status": 200,
+      "lang": "de",
+      "title": "Branchen für Reliability Engineering | RelTest Solutions",
+      "description": "Zuverlässigkeitstechnik, Risikomanagement, Erprobung und Datenanalyse für Automotive, Maschinenbau, Elektronik, Medizintechnik und weitere technische Branchen.",
+      "canonical": "https://reltest-solutions.com/de/branchen",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 13
+    },
+    {
+      "path": "/de/ueber-uns",
+      "status": 200,
+      "lang": "de",
+      "title": "RelTest Solutions | Unternehmen, Team und Expertise",
+      "description": "RelTest Solutions verbindet Zuverlässigkeitstechnik, Lebensdauer, Erprobung, Statistik und DoE in einem spezialisierten Engineering-Team.",
+      "canonical": "https://reltest-solutions.com/de/ueber-uns",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/ueber-uns"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/about-us"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/ueber-uns"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 7
+    },
+    {
+      "path": "/de/aktuelles",
+      "status": 200,
+      "lang": "de",
+      "title": "Aktuelles zu Zuverlässigkeitstechnik | RelTest",
+      "description": "Webinare, Fachbeiträge und Unternehmensmeldungen von RelTest sowie ausgewählte Primärquellen aus Forschung, Normung und technischer Praxis.",
+      "canonical": "https://reltest-solutions.com/de/aktuelles",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 7
+    },
+    {
+      "path": "/de/glossar",
+      "status": 200,
+      "lang": "de",
+      "title": "Glossar Zuverlässigkeitstechnik | RelTest",
+      "description": "Zentrale Begriffe aus Zuverlässigkeitstechnik, Lebensdaueranalyse, DoE, Erprobung und Risikomanagement verständlich erklärt.",
+      "canonical": "https://reltest-solutions.com/de/glossar",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/glossar"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/glossary"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/glossar"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 3
+    },
+    {
+      "path": "/de/impressum",
+      "status": 200,
+      "lang": "de",
+      "title": "Impressum | RelTest Solutions GmbH",
+      "description": "Impressum und Anbieterkennzeichnung der RelTest Solutions GmbH mit Kontakt-, Register- und Vertretungsangaben.",
+      "canonical": "https://reltest-solutions.com/de/impressum",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/impressum"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/legal-notice"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/impressum"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 3
+    },
+    {
+      "path": "/de/datenschutz",
+      "status": 200,
+      "lang": "de",
+      "title": "Datenschutzerklärung | RelTest Solutions GmbH",
+      "description": "Datenschutzerklärung der RelTest Solutions GmbH zu Websitebesuch, Kontaktaufnahme, Terminbuchung mit Calendly und Betroffenenrechten.",
+      "canonical": "https://reltest-solutions.com/de/datenschutz",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/datenschutz"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/privacy-policy"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/datenschutz"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 3
+    },
+    {
+      "path": "/en",
+      "status": 200,
+      "lang": "en",
+      "title": "RelTest Solutions | Advanced Reliability Engineering Partner",
+      "description": "Reliability engineering, testing, validation and technical consulting for demanding B2B products.",
+      "canonical": "https://reltest-solutions.com/en",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 63
+    },
+    {
+      "path": "/en/services",
+      "status": 200,
+      "lang": "en",
+      "title": "Engineering Services & Project Partnership | RelTest",
+      "description": "Reliability engineering, risk management, testing and data analysis, plus accountable engineering project partnership for technical products.",
+      "canonical": "https://reltest-solutions.com/en/services",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 9
+    },
+    {
+      "path": "/en/education",
+      "status": 200,
+      "lang": "en",
+      "title": "RelTest Education: E-learning for Engineers | RelTest",
+      "description": "Flexible e-learning for reliability engineering and Design of Experiments, with on-site training as a separate face-to-face alternative.",
+      "canonical": "https://reltest-solutions.com/en/education",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/education"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/education"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/education"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/en/knowledge",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Engineering: Planning, Testing and Prediction | RelTest",
+      "description": "Reliability engineering fundamentals covering planning, weak-point analysis, testing, assurance and prediction, with DoE as a separate methodological focus.",
+      "canonical": "https://reltest-solutions.com/en/knowledge",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 12
+    },
+    {
+      "path": "/en/expertise",
+      "status": 200,
+      "lang": "en",
+      "title": "Expertise | References, books and podcast",
+      "description": "References, Springer books, podcast insights and industry contexts show the technical substance behind RelTest Solutions.",
+      "canonical": "https://reltest-solutions.com/en/expertise",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/expertise"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/expertise"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/expertise"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 13
+    },
+    {
+      "path": "/en/reliability-process",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Engineering Process | RelTest Solutions",
+      "description": "The methodological workflow shows how individual analyses, tests and assessments become a robust overall approach.",
+      "canonical": "https://reltest-solutions.com/en/reliability-process",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/prozess"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/reliability-process"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/prozess"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/literature",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Engineering Literature | RelTest",
+      "description": "The Springer references connected to the RelTest environment demonstrate the scientific and practical depth behind RelTest's services: from reliability in mechanical engineering to efficient development-accompanying validation.",
+      "canonical": "https://reltest-solutions.com/en/literature",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/literatur"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/literature"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/literatur"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 12
+    },
+    {
+      "path": "/en/references",
+      "status": 200,
+      "lang": "en",
+      "title": "References and Industry Experience | RelTest",
+      "description": "Selected references demonstrate RelTest's industry experience in reliability engineering, testing and technical validation.",
+      "canonical": "https://reltest-solutions.com/en/references",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/referenzen"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/references"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/referenzen"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 3
+    },
+    {
+      "path": "/en/contact",
+      "status": 200,
+      "lang": "en",
+      "title": "Project Inquiry and Contact | RelTest Solutions",
+      "description": "Talk to RelTest Solutions about your technical question in reliability engineering, risk management, testing or data analysis.",
+      "canonical": "https://reltest-solutions.com/en/contact",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/kontakt"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/contact"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/kontakt"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/industries",
+      "status": 200,
+      "lang": "en",
+      "title": "Industries for Reliability Engineering | RelTest Solutions",
+      "description": "Reliability engineering, risk management, testing and data analysis for automotive, mechanical engineering, electronics, medical technology and other technical industries.",
+      "canonical": "https://reltest-solutions.com/en/industries",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 13
+    },
+    {
+      "path": "/en/about-us",
+      "status": 200,
+      "lang": "en",
+      "title": "RelTest Solutions | Company, team and expertise",
+      "description": "RelTest Solutions combines reliability engineering, lifetime, testing, statistics and DoE in a specialised engineering team.",
+      "canonical": "https://reltest-solutions.com/en/about-us",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/ueber-uns"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/about-us"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/ueber-uns"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 7
+    },
+    {
+      "path": "/en/news",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Engineering News and Insights | RelTest",
+      "description": "Webinars, technical articles and company updates from RelTest, plus selected primary sources from research, standards and engineering practice.",
+      "canonical": "https://reltest-solutions.com/en/news",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 7
+    },
+    {
+      "path": "/en/glossary",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Engineering Glossary | RelTest",
+      "description": "Key terms in reliability engineering, lifetime analysis, DoE, testing and risk management explained clearly.",
+      "canonical": "https://reltest-solutions.com/en/glossary",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/glossar"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/glossary"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/glossar"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 3
+    },
+    {
+      "path": "/en/legal-notice",
+      "status": 200,
+      "lang": "en",
+      "title": "Legal notice | RelTest Solutions GmbH",
+      "description": "Legal notice and provider information for RelTest Solutions GmbH, including contact, company register and representation details.",
+      "canonical": "https://reltest-solutions.com/en/legal-notice",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/impressum"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/legal-notice"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/impressum"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 3
+    },
+    {
+      "path": "/en/privacy-policy",
+      "status": 200,
+      "lang": "en",
+      "title": "Privacy policy | RelTest Solutions GmbH",
+      "description": "Privacy policy of RelTest Solutions GmbH covering website visits, contact requests, Calendly scheduling and data subject rights.",
+      "canonical": "https://reltest-solutions.com/en/privacy-policy",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/datenschutz"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/privacy-policy"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/datenschutz"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 3
+    },
+    {
+      "path": "/de/leistungen/zuverlaessigkeitstechnik",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeitstechnik & Zuverlässigkeitsbewertung | RelTest Solutions",
+      "description": "Zuverlässigkeitsplanung, Zuverlässigkeitsbewertung und belastbare Zuverlässigkeitsnachweise für technische Produkte und Systeme.",
+      "canonical": "https://reltest-solutions.com/de/leistungen/zuverlaessigkeitstechnik",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/zuverlaessigkeitstechnik"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/reliability-engineering"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/zuverlaessigkeitstechnik"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/de/leistungen/zuverlaessigkeitsmanagement",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeitsmanagement | Beratung für Entwicklungsprojekte",
+      "description": "Zuverlässigkeitsmanagement für technische Produkte: Anforderungen, Risiken, Prüfstrategie, Datenbewertung und dokumentierte Nachweisführung.",
+      "canonical": "https://reltest-solutions.com/de/leistungen/zuverlaessigkeitsmanagement",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/zuverlaessigkeitsmanagement"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/reliability-management"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/zuverlaessigkeitsmanagement"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/leistungen/beratung",
+      "status": 200,
+      "lang": "de",
+      "title": "Reliability Engineering Beratung | RelTest Solutions",
+      "description": "Beratung für Zuverlässigkeitstechnik, Erprobung, DoE und Datenanalyse entlang des gesamten Produktentwicklungsprozesses.",
+      "canonical": "https://reltest-solutions.com/de/leistungen/beratung",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/beratung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/reliability-consulting"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/beratung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/leistungen/design-of-experiments",
+      "status": 200,
+      "lang": "de",
+      "title": "Design of Experiments für Engineering-Projekte | RelTest",
+      "description": "DoE-Projektunterstützung für technische Versuchsplanung: Zielgrößen und Faktoren klären, Versuchsdesign wählen, Daten auswerten und robuste Einstellungen ableiten.",
+      "canonical": "https://reltest-solutions.com/de/leistungen/design-of-experiments",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/design-of-experiments"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/design-of-experiments"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/design-of-experiments"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/de/leistungen/doe-consulting",
+      "status": 200,
+      "lang": "de",
+      "title": "DoE Consulting | Statistische Versuchsplanung im Projekt",
+      "description": "DoE Consulting von RelTest: Faktorauswahl, Versuchsdesign, Auswertung, Interpretation und Projektunterstützung für robuste technische Entscheidungen.",
+      "canonical": "https://reltest-solutions.com/de/leistungen/doe-consulting",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/doe-consulting"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/doe-consulting"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/doe-consulting"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/leistungen/doe-coaching",
+      "status": 200,
+      "lang": "de",
+      "title": "DoE Coaching | Statistische Versuchsplanung sicher anwenden",
+      "description": "DoE Coaching für Entwicklungs- und Versuchsteams: Begleitung realer Projekte, Methodenaufbau und sichere Interpretation von Versuchsergebnissen.",
+      "canonical": "https://reltest-solutions.com/de/leistungen/doe-coaching",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/doe-coaching"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/doe-coaching"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/doe-coaching"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/leistungen/coaching",
+      "status": 200,
+      "lang": "de",
+      "title": "Reliability Coaching | RelTest Solutions",
+      "description": "Coaching für Zuverlässigkeitstechnik, Zuverlässigkeitsmanagement und DoE im konkreten Entwicklungsprojekt.",
+      "canonical": "https://reltest-solutions.com/de/leistungen/coaching",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/coaching"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/reliability-coaching"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/coaching"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/leistungen/langfristige-kooperation",
+      "status": 200,
+      "lang": "de",
+      "title": "Engineering-Projektpartnerschaft & Verantwortung | RelTest",
+      "description": "Feste Engineering-Projektpartnerschaft für Zuverlässigkeit mit definierten Arbeitspaketen, prüfbaren Ergebnissen, Dokumentation und klar geregelter Verantwortung.",
+      "canonical": "https://reltest-solutions.com/de/leistungen/langfristige-kooperation",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/langfristige-kooperation"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/engineering-project-partnership"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/langfristige-kooperation"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/de/leistungen/datenanalyse-prognostik",
+      "status": 200,
+      "lang": "de",
+      "title": "DoE, Lebensdauererprobung & Datenanalyse | RelTest Solutions",
+      "description": "Versuchsplanung mit DoE, Lebensdauererprobung, Felddatenanalyse und Prognostik für belastbare technische Entscheidungen.",
+      "canonical": "https://reltest-solutions.com/de/leistungen/datenanalyse-prognostik",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/datenanalyse-prognostik"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/data-analysis-and-prognostics"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/datenanalyse-prognostik"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/de/leistungen/risikomanagement",
+      "status": 200,
+      "lang": "de",
+      "title": "Risikomanagement, FMEA & technische Absicherung | RelTest",
+      "description": "Technische Risiken mit FMEA, FTA und risikobasierten Absicherungsstrategien systematisch bewerten, priorisieren und dokumentieren.",
+      "canonical": "https://reltest-solutions.com/de/leistungen/risikomanagement",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/risikomanagement"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/risk-management"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/risikomanagement"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/en/services/reliability-engineering",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Engineering & Reliability Assessment | RelTest",
+      "description": "Reliability planning, reliability assessment and robust reliability evidence for technical products and systems.",
+      "canonical": "https://reltest-solutions.com/en/services/reliability-engineering",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/zuverlaessigkeitstechnik"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/reliability-engineering"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/zuverlaessigkeitstechnik"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/en/services/reliability-management",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Management Consulting | RelTest Solutions",
+      "description": "Reliability management for technical products: requirements, risk, test strategy, data evaluation and documented evidence.",
+      "canonical": "https://reltest-solutions.com/en/services/reliability-management",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/zuverlaessigkeitsmanagement"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/reliability-management"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/zuverlaessigkeitsmanagement"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/services/reliability-consulting",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Engineering Consulting | RelTest Solutions",
+      "description": "Consulting for reliability engineering, testing, Design of Experiments and data analysis across the product development process.",
+      "canonical": "https://reltest-solutions.com/en/services/reliability-consulting",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/beratung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/reliability-consulting"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/beratung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/services/design-of-experiments",
+      "status": 200,
+      "lang": "en",
+      "title": "Design of Experiments for Engineering Projects | RelTest",
+      "description": "DoE project support for technical experimental design: clarify responses and factors, select a design, analyse data and derive robust settings.",
+      "canonical": "https://reltest-solutions.com/en/services/design-of-experiments",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/design-of-experiments"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/design-of-experiments"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/design-of-experiments"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/en/services/doe-consulting",
+      "status": 200,
+      "lang": "en",
+      "title": "DoE Consulting | Statistical Experimental Design",
+      "description": "DoE consulting by RelTest: factor selection, experimental design, evaluation, interpretation and project support for robust technical decisions.",
+      "canonical": "https://reltest-solutions.com/en/services/doe-consulting",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/doe-consulting"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/doe-consulting"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/doe-consulting"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/services/doe-coaching",
+      "status": 200,
+      "lang": "en",
+      "title": "DoE Coaching | Apply Statistical Experimental Design Safely",
+      "description": "DoE coaching for development and test teams: support in real projects, method transfer and reliable interpretation of test results.",
+      "canonical": "https://reltest-solutions.com/en/services/doe-coaching",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/doe-coaching"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/doe-coaching"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/doe-coaching"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/services/reliability-coaching",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Engineering Coaching | RelTest Solutions",
+      "description": "Coaching for reliability engineering, reliability management and DoE in concrete development projects.",
+      "canonical": "https://reltest-solutions.com/en/services/reliability-coaching",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/coaching"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/reliability-coaching"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/coaching"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/services/engineering-project-partnership",
+      "status": 200,
+      "lang": "en",
+      "title": "Engineering Project Partnership & Responsibility | RelTest",
+      "description": "Long-term engineering project partnership for reliability with defined work packages, verifiable results, documentation and clearly agreed responsibility.",
+      "canonical": "https://reltest-solutions.com/en/services/engineering-project-partnership",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/langfristige-kooperation"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/engineering-project-partnership"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/langfristige-kooperation"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/en/services/data-analysis-and-prognostics",
+      "status": 200,
+      "lang": "en",
+      "title": "DoE, Lifetime Testing & Data Analysis | RelTest Solutions",
+      "description": "Design of Experiments, lifetime testing, field data analysis and prognostics for robust technical decisions.",
+      "canonical": "https://reltest-solutions.com/en/services/data-analysis-and-prognostics",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/datenanalyse-prognostik"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/data-analysis-and-prognostics"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/datenanalyse-prognostik"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/en/services/risk-management",
+      "status": 200,
+      "lang": "en",
+      "title": "Risk Management, FMEA & Technical Assurance | RelTest",
+      "description": "Assess, prioritise and document technical risks systematically with FMEA, FTA and risk-based assurance strategies.",
+      "canonical": "https://reltest-solutions.com/en/services/risk-management",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/leistungen/risikomanagement"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/services/risk-management"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/leistungen/risikomanagement"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 8
+    },
+    {
+      "path": "/de/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung",
+      "status": 200,
+      "lang": "de",
+      "title": "DoE Seminar | Praxisorientierte statistische Versuchsplanung",
+      "description": "DoE-Seminar für Ingenieure: Faktoren, Versuchsdesigns, Wechselwirkungen, Auswertung und technische Interpretation.",
+      "canonical": "https://reltest-solutions.com/de/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/education/practical-design-of-experiments"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/weiterbildung/zuverlaessigkeit-erprobung-fuer-praktiker",
+      "status": 200,
+      "lang": "de",
+      "title": "Seminar Zuverlässigkeit und Erprobung für Praktiker",
+      "description": "Praxis-Seminar zu Zuverlässigkeit, Lebensdauererprobung, Weibull, Ausfallwahrscheinlichkeit und Testplanung.",
+      "canonical": "https://reltest-solutions.com/de/weiterbildung/zuverlaessigkeit-erprobung-fuer-praktiker",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/weiterbildung/zuverlaessigkeit-erprobung-fuer-praktiker"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/education/reliability-testing-for-practitioners"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/weiterbildung/zuverlaessigkeit-erprobung-fuer-praktiker"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/weiterbildung/entwicklung-absicherung-elektronischer-komponenten",
+      "status": 200,
+      "lang": "de",
+      "title": "Seminar Entwicklung und Absicherung elektronischer Komponenten",
+      "description": "Seminar zur Absicherung elektronischer Komponenten: Anforderungen, Ausfallmechanismen, Erprobung, Datenanalyse und Nachweise.",
+      "canonical": "https://reltest-solutions.com/de/weiterbildung/entwicklung-absicherung-elektronischer-komponenten",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/weiterbildung/entwicklung-absicherung-elektronischer-komponenten"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/education/development-and-assurance-of-electronic-components"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/weiterbildung/entwicklung-absicherung-elektronischer-komponenten"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/education/practical-design-of-experiments",
+      "status": 200,
+      "lang": "en",
+      "title": "DoE Seminar | Practical Statistical Experimental Design",
+      "description": "DoE seminar for engineers: factors, experimental designs, interactions, evaluation and technical interpretation.",
+      "canonical": "https://reltest-solutions.com/en/education/practical-design-of-experiments",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/education/practical-design-of-experiments"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/education/reliability-testing-for-practitioners",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability and Testing Seminar for Practitioners",
+      "description": "Practical seminar on reliability, lifetime testing, Weibull, failure probability and test planning.",
+      "canonical": "https://reltest-solutions.com/en/education/reliability-testing-for-practitioners",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/weiterbildung/zuverlaessigkeit-erprobung-fuer-praktiker"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/education/reliability-testing-for-practitioners"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/weiterbildung/zuverlaessigkeit-erprobung-fuer-praktiker"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/education/development-and-assurance-of-electronic-components",
+      "status": 200,
+      "lang": "en",
+      "title": "Seminar Development and Validation of Electronic Components",
+      "description": "Seminar on validation of electronic components: requirements, failure mechanisms, testing, data analysis and evidence.",
+      "canonical": "https://reltest-solutions.com/en/education/development-and-assurance-of-electronic-components",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/weiterbildung/entwicklung-absicherung-elektronischer-komponenten"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/education/development-and-assurance-of-electronic-components"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/weiterbildung/entwicklung-absicherung-elektronischer-komponenten"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/branchen/automotive",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeit Automotive & Erprobung | RelTest",
+      "description": "Reliability Engineering für Automotive: Lebensdauererprobung, Risikomanagement, DoE, Felddatenanalyse und belastbare Zuverlässigkeitsnachweise.",
+      "canonical": "https://reltest-solutions.com/de/branchen/automotive",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/automotive"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/automotive"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/automotive"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/de/branchen/maschinenbau",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeit Maschinenbau & Lebensdauer | RelTest",
+      "description": "Zuverlässigkeitstechnik im Maschinenbau: Lebensdauerbewertung, Verschleiß, Erprobungsstrategie, Weibull-Analyse und Verfügbarkeitsbewertung.",
+      "canonical": "https://reltest-solutions.com/de/branchen/maschinenbau",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/maschinenbau"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/mechanical-engineering"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/maschinenbau"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/de/branchen/elektronische-produkte",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeit Elektronik & Umwelterprobung | RelTest",
+      "description": "Reliability Engineering für Elektronik: Umwelterprobung, thermische Zyklen, Alterung, DoE, Ausfallmechanismen und Lebensdauerbewertung.",
+      "canonical": "https://reltest-solutions.com/de/branchen/elektronische-produkte",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/elektronische-produkte"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/electronic-products"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/elektronische-produkte"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/de/branchen/halbleiterindustrie",
+      "status": 200,
+      "lang": "de",
+      "title": "Halbleiter Zuverlässigkeit, DoE & Qualifikation | RelTest",
+      "description": "Reliability Engineering für Halbleiter: DoE, Prozessstreuung, AEC-Q100-Kontext, IEC 60749, Lebensdauertests und statistische Datenanalyse.",
+      "canonical": "https://reltest-solutions.com/de/branchen/halbleiterindustrie",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/halbleiterindustrie"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/semiconductor-industry"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/halbleiterindustrie"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/de/branchen/erneuerbare-energien",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeit Windenergie & Erneuerbare | RelTest",
+      "description": "Reliability Engineering für erneuerbare Energien: Windenergie, Lebensdauerprognose, Felddatenanalyse, Verfügbarkeit und risikobasierte Erprobung.",
+      "canonical": "https://reltest-solutions.com/de/branchen/erneuerbare-energien",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/erneuerbare-energien"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/renewable-energy"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/erneuerbare-energien"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/de/branchen/konsumgueter",
+      "status": 200,
+      "lang": "de",
+      "title": "Consumer Electronics Zuverlässigkeit & Tests | RelTest",
+      "description": "Zuverlässigkeit für Consumer-Technik: Nutzungsprofile, Robust Design, beschleunigte Tests, DoE, Rückläuferdaten und wirtschaftliche Absicherung.",
+      "canonical": "https://reltest-solutions.com/de/branchen/konsumgueter",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/konsumgueter"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/consumer-products"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/konsumgueter"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/de/branchen/luft-und-raumfahrt",
+      "status": 200,
+      "lang": "de",
+      "title": "Luft- und Raumfahrt Reliability Engineering | RelTest",
+      "description": "Reliability Engineering für Luft- und Raumfahrt: Dependability, FMEA, FTA, Lebensdauer, Umwelterprobung und nachvollziehbare Nachweise.",
+      "canonical": "https://reltest-solutions.com/de/branchen/luft-und-raumfahrt",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/luft-und-raumfahrt"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/aerospace"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/luft-und-raumfahrt"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/de/branchen/medizintechnik",
+      "status": 200,
+      "lang": "de",
+      "title": "Medizintechnik Zuverlässigkeit & Risikomanagement | RelTest",
+      "description": "Zuverlässigkeitstechnik für Medizintechnik: ISO-14971-Kontext, Risikoanalyse, Verifikation, Lebensdauererprobung und technische Dokumentation.",
+      "canonical": "https://reltest-solutions.com/de/branchen/medizintechnik",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/medizintechnik"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/medical-technology"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/medizintechnik"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/de/branchen/produktionstechnik",
+      "status": 200,
+      "lang": "de",
+      "title": "Produktionstechnik Zuverlässigkeit & Verfügbarkeit | RelTest",
+      "description": "Reliability Engineering für Produktionstechnik: Anlagenverfügbarkeit, Ausfalldaten, Schwachstellenanalyse, Wartung und Lebensdauerprognose.",
+      "canonical": "https://reltest-solutions.com/de/branchen/produktionstechnik",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/produktionstechnik"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/production-technology"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/produktionstechnik"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/en/industries/automotive",
+      "status": 200,
+      "lang": "en",
+      "title": "Automotive Reliability Engineering & Testing | RelTest",
+      "description": "Automotive reliability engineering: lifetime testing, risk management, DoE, field data analysis and robust reliability demonstration.",
+      "canonical": "https://reltest-solutions.com/en/industries/automotive",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/automotive"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/automotive"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/automotive"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/en/industries/mechanical-engineering",
+      "status": 200,
+      "lang": "en",
+      "title": "Mechanical Engineering Reliability & Lifetime | RelTest",
+      "description": "Reliability engineering for machinery: lifetime assessment, wear, test strategy, Weibull analysis and availability evaluation.",
+      "canonical": "https://reltest-solutions.com/en/industries/mechanical-engineering",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/maschinenbau"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/mechanical-engineering"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/maschinenbau"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/en/industries/electronic-products",
+      "status": 200,
+      "lang": "en",
+      "title": "Electronics Reliability & Environmental Testing | RelTest",
+      "description": "Electronics reliability engineering: environmental testing, thermal cycling, ageing, DoE, failure mechanisms and lifetime assessment.",
+      "canonical": "https://reltest-solutions.com/en/industries/electronic-products",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/elektronische-produkte"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/electronic-products"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/elektronische-produkte"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/en/industries/semiconductor-industry",
+      "status": 200,
+      "lang": "en",
+      "title": "Semiconductor Reliability, DoE & Qualification | RelTest",
+      "description": "Semiconductor reliability engineering: DoE, process variation, AEC-Q100 context, IEC 60749, life testing and statistical analysis.",
+      "canonical": "https://reltest-solutions.com/en/industries/semiconductor-industry",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/halbleiterindustrie"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/semiconductor-industry"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/halbleiterindustrie"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/en/industries/renewable-energy",
+      "status": 200,
+      "lang": "en",
+      "title": "Wind Energy & Renewable Reliability | RelTest",
+      "description": "Renewable energy reliability engineering: wind energy, lifetime prediction, field data, availability and risk-based testing.",
+      "canonical": "https://reltest-solutions.com/en/industries/renewable-energy",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/erneuerbare-energien"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/renewable-energy"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/erneuerbare-energien"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/en/industries/consumer-products",
+      "status": 200,
+      "lang": "en",
+      "title": "Consumer Electronics Reliability & Testing | RelTest",
+      "description": "Reliability for consumer technology: use profiles, robust design, accelerated testing, DoE, returns data and efficient assurance.",
+      "canonical": "https://reltest-solutions.com/en/industries/consumer-products",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/konsumgueter"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/consumer-products"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/konsumgueter"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/en/industries/aerospace",
+      "status": 200,
+      "lang": "en",
+      "title": "Aerospace Reliability Engineering & Dependability | RelTest",
+      "description": "Aerospace reliability engineering: dependability, FMEA, FTA, lifetime, environmental testing and traceable evidence.",
+      "canonical": "https://reltest-solutions.com/en/industries/aerospace",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/luft-und-raumfahrt"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/aerospace"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/luft-und-raumfahrt"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/en/industries/medical-technology",
+      "status": 200,
+      "lang": "en",
+      "title": "Medical Device Reliability & Risk Management | RelTest",
+      "description": "Medical-device reliability engineering: ISO 14971 context, risk analysis, verification, lifetime testing and technical documentation.",
+      "canonical": "https://reltest-solutions.com/en/industries/medical-technology",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/medizintechnik"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/medical-technology"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/medizintechnik"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/en/industries/production-technology",
+      "status": 200,
+      "lang": "en",
+      "title": "Production Reliability & Equipment Availability | RelTest",
+      "description": "Reliability engineering for production systems: equipment availability, failure data, weakness analysis, maintenance and lifetime prediction.",
+      "canonical": "https://reltest-solutions.com/en/industries/production-technology",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/branchen/produktionstechnik"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/industries/production-technology"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/branchen/produktionstechnik"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/de/ueber-uns/kevin-lucan",
+      "status": 200,
+      "lang": "de",
+      "title": "Dr.-Ing. Kevin Lucan | RelTest Solutions",
+      "description": "Dr.-Ing. Kevin Lucan: Geschäftsführer von RelTest Solutions, Zuverlässigkeitsingenieur sowie Experte für Erprobung, DoE, Felddaten und Normung.",
+      "canonical": "https://reltest-solutions.com/de/ueber-uns/kevin-lucan",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/ueber-uns/kevin-lucan"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/about-us/kevin-lucan"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/ueber-uns/kevin-lucan"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/ueber-uns/bernd-bertsche",
+      "status": 200,
+      "lang": "de",
+      "title": "Prof. Dr.-Ing. Bernd Bertsche | RelTest Solutions",
+      "description": "Prof. Dr.-Ing. Bernd Bertsche: Gründer des Forschungsgebiets Zuverlässigkeitstechnik, ehemaliger IMA-Institutsleiter, Autor und Industrieexperte.",
+      "canonical": "https://reltest-solutions.com/de/ueber-uns/bernd-bertsche",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/ueber-uns/bernd-bertsche"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/about-us/bernd-bertsche"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/ueber-uns/bernd-bertsche"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/about-us/kevin-lucan",
+      "status": 200,
+      "lang": "en",
+      "title": "Dr.-Ing. Kevin Lucan | RelTest Solutions",
+      "description": "Dr.-Ing. Kevin Lucan: Managing Director of RelTest Solutions and expert in testing, DoE, field data, standardisation and reliability engineering.",
+      "canonical": "https://reltest-solutions.com/en/about-us/kevin-lucan",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/ueber-uns/kevin-lucan"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/about-us/kevin-lucan"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/ueber-uns/kevin-lucan"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/about-us/bernd-bertsche",
+      "status": 200,
+      "lang": "en",
+      "title": "Prof. Dr.-Ing. Bernd Bertsche | RelTest Solutions",
+      "description": "Prof. Dr.-Ing. Bernd Bertsche: founder of the reliability engineering research field, former IMA director, author and industry expert.",
+      "canonical": "https://reltest-solutions.com/en/about-us/bernd-bertsche",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/ueber-uns/bernd-bertsche"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/about-us/bernd-bertsche"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/ueber-uns/bernd-bertsche"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/aktuelles/webinar-beschleunigte-lebensdauertests",
+      "status": 200,
+      "lang": "de",
+      "title": "Webinar beschleunigte Lebensdauertests | RelTest",
+      "description": "Webinar zu HALT und ALT: qualitative und quantitative Zuverlässigkeitstests, Beschleunigungsmodelle, Ausfallmechanismen und Aussagegrenzen.",
+      "canonical": "https://reltest-solutions.com/de/aktuelles/webinar-beschleunigte-lebensdauertests",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles/webinar-beschleunigte-lebensdauertests"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news/accelerated-life-testing-webinar"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles/webinar-beschleunigte-lebensdauertests"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/aktuelles/kooperation-holland-innovative",
+      "status": 200,
+      "lang": "de",
+      "title": "Kooperation mit Holland Innovative | RelTest",
+      "description": "RelTest und Holland Innovative: Zusammenarbeit bei Reliability Engineering, Root Cause Analysis, Data Science, Trainings und internationalen Projekten.",
+      "canonical": "https://reltest-solutions.com/de/aktuelles/kooperation-holland-innovative",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles/kooperation-holland-innovative"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news/cooperation-with-holland-innovative"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles/kooperation-holland-innovative"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/aktuelles/rams-award",
+      "status": 200,
+      "lang": "de",
+      "title": "RAMS Student Paper Award | RelTest Solutions",
+      "description": "RAMS Student Paper Award für Kevin Lucan, Martin Dazer, Kim Hintz und Bernd Bertsche: konkurrierende Ausfallarten und Systemzuverlässigkeit.",
+      "canonical": "https://reltest-solutions.com/de/aktuelles/rams-award",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles/rams-award"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news/rams-award"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles/rams-award"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/aktuelles/webinar-effiziente-lebensdauertestplanung",
+      "status": 200,
+      "lang": "de",
+      "title": "Webinar effiziente Lebensdauertestplanung | RelTest",
+      "description": "Effiziente Lebensdauertestplanung: Zuverlässigkeitsziel, Stichprobe, Testdauer, Konfidenz und Wahrscheinlichkeit eines erfolgreichen Nachweises.",
+      "canonical": "https://reltest-solutions.com/de/aktuelles/webinar-effiziente-lebensdauertestplanung",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles/webinar-effiziente-lebensdauertestplanung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news/efficient-life-test-planning-webinar"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles/webinar-effiziente-lebensdauertestplanung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/aktuelles/smart-data-produktdesign",
+      "status": 200,
+      "lang": "de",
+      "title": "Smart Data im Produktdesign | RelTest",
+      "description": "Smart Data im Produktdesign: Datenqualität, Ausfallmechanismen, Feld- und Prüfdaten sowie der Weg zu belastbaren Entwicklungsentscheidungen.",
+      "canonical": "https://reltest-solutions.com/de/aktuelles/smart-data-produktdesign",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles/smart-data-produktdesign"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news/smart-data-product-design"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles/smart-data-produktdesign"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/news/accelerated-life-testing-webinar",
+      "status": 200,
+      "lang": "en",
+      "title": "Accelerated Life Testing Webinar | RelTest",
+      "description": "Webinar on HALT and ALT: qualitative and quantitative reliability testing, acceleration models, failure mechanisms and limits of interpretation.",
+      "canonical": "https://reltest-solutions.com/en/news/accelerated-life-testing-webinar",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles/webinar-beschleunigte-lebensdauertests"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news/accelerated-life-testing-webinar"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles/webinar-beschleunigte-lebensdauertests"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/news/cooperation-with-holland-innovative",
+      "status": 200,
+      "lang": "en",
+      "title": "Cooperation with Holland Innovative | RelTest",
+      "description": "RelTest and Holland Innovative: an archived cooperation note on reliability engineering, root-cause analysis, data science and technical training.",
+      "canonical": "https://reltest-solutions.com/en/news/cooperation-with-holland-innovative",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles/kooperation-holland-innovative"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news/cooperation-with-holland-innovative"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles/kooperation-holland-innovative"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/news/rams-award",
+      "status": 200,
+      "lang": "en",
+      "title": "RAMS Student Paper Award | RelTest Solutions",
+      "description": "RAMS Student Paper Award for Kevin Lucan, Martin Dazer, Kim Hintz and Bernd Bertsche: competing failure modes and system reliability estimation.",
+      "canonical": "https://reltest-solutions.com/en/news/rams-award",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles/rams-award"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news/rams-award"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles/rams-award"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/news/efficient-life-test-planning-webinar",
+      "status": 200,
+      "lang": "en",
+      "title": "Efficient Life Test Planning Webinar | RelTest",
+      "description": "Efficient life test planning: reliability target, sample size, duration, confidence and probability of a successful demonstration.",
+      "canonical": "https://reltest-solutions.com/en/news/efficient-life-test-planning-webinar",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles/webinar-effiziente-lebensdauertestplanung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news/efficient-life-test-planning-webinar"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles/webinar-effiziente-lebensdauertestplanung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/en/news/smart-data-product-design",
+      "status": 200,
+      "lang": "en",
+      "title": "Smart Data for Product Design | RelTest",
+      "description": "Smart data for product design: data quality, failure mechanisms, field and test data, and the path to defensible development decisions.",
+      "canonical": "https://reltest-solutions.com/en/news/smart-data-product-design",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/aktuelles/smart-data-produktdesign"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/news/smart-data-product-design"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/aktuelles/smart-data-produktdesign"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 4
+    },
+    {
+      "path": "/de/wissen/zuverlaessigkeitstechnik",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeitstechnik und Reliability Engineering | RelTest",
+      "description": "Zuverlässigkeitstechnik verständlich erklärt: Definition, Anforderungen, Planung, Schwachstellenanalyse, Erprobung, Absicherung und Prognose.",
+      "canonical": "https://reltest-solutions.com/de/wissen/zuverlaessigkeitstechnik",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/zuverlaessigkeitstechnik"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/reliability-engineering"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/zuverlaessigkeitstechnik"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/de/wissen/planung",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeitsplanung für technische Produkte | RelTest",
+      "description": "Zuverlässigkeitsplanung erklärt: Anforderungen, Zuverlässigkeitsziele, Top-down- und Bottom-up-Planung sowie wirtschaftliche Abwägungen.",
+      "canonical": "https://reltest-solutions.com/de/wissen/planung",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/planung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/reliability-planning"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/planung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/de/wissen/schwachstellenanalyse",
+      "status": 200,
+      "lang": "de",
+      "title": "Schwachstellenanalyse mit FMEA, FTA und HALT | RelTest",
+      "description": "Schwachstellenanalyse für technische Produkte: FMEA, FTA, HALT, Ausfallmechanismen und Priorisierung von Zuverlässigkeitsrisiken.",
+      "canonical": "https://reltest-solutions.com/de/wissen/schwachstellenanalyse",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/schwachstellenanalyse"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/weak-point-analysis"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/schwachstellenanalyse"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/de/wissen/erprobung",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeitserprobung und Lebensdauertests | RelTest",
+      "description": "Zuverlässigkeitserprobung erklärt: Erprobungsstrategie, Funktionstest, Lebensdauertest, Lastkollektive und repräsentative Nutzung.",
+      "canonical": "https://reltest-solutions.com/de/wissen/erprobung",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/erprobung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/reliability-testing"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/erprobung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/de/wissen/absicherung",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeitsabsicherung und Nachweisführung | RelTest",
+      "description": "Zuverlässigkeitsabsicherung erklärt: qualitative und quantitative Methoden, Erprobung, Simulation, Dokumentation und Freigaben.",
+      "canonical": "https://reltest-solutions.com/de/wissen/absicherung",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/absicherung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/reliability-assurance"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/absicherung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/de/wissen/prognosen",
+      "status": 200,
+      "lang": "de",
+      "title": "Zuverlässigkeitsprognose und Lebensdauermodelle | RelTest",
+      "description": "Zuverlässigkeitsprognosen erklärt: Versuchs- und Felddaten, Weibull-Analyse, Lebensdauermodelle, Extrapolation und Unsicherheit.",
+      "canonical": "https://reltest-solutions.com/de/wissen/prognosen",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/prognosen"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/reliability-prediction"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/prognosen"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/de/wissen/design-of-experiments",
+      "status": 200,
+      "lang": "de",
+      "title": "Design of Experiments (DoE) verständlich erklärt | RelTest",
+      "description": "Design of Experiments erklärt: Faktoren, Faktorstufen, Störgrößen, Wechselwirkungen, Versuchspläne, Modelle und robuste Optimierung.",
+      "canonical": "https://reltest-solutions.com/de/wissen/design-of-experiments",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/design-of-experiments"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/design-of-experiments"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/design-of-experiments"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/de/wissen/risikomanagement",
+      "status": 200,
+      "lang": "de",
+      "title": "Technisches Risikomanagement und Zuverlässigkeit | RelTest",
+      "description": "Technisches Risikomanagement erklärt: FMEA, FTA, Risikobewertung, Absicherungsmaßnahmen, Wirksamkeitsnachweis und Dokumentation.",
+      "canonical": "https://reltest-solutions.com/de/wissen/risikomanagement",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/risikomanagement"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/technical-risk-management"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/risikomanagement"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/en/knowledge/reliability-engineering",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Engineering Fundamentals | RelTest",
+      "description": "Reliability engineering explained: definition, planning, weak-point analysis, testing, assurance and prediction.",
+      "canonical": "https://reltest-solutions.com/en/knowledge/reliability-engineering",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/zuverlaessigkeitstechnik"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/reliability-engineering"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/zuverlaessigkeitstechnik"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/en/knowledge/reliability-planning",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Planning for Technical Products | RelTest",
+      "description": "Reliability planning explained: requirements, targets, top-down and bottom-up allocation and economic trade-offs.",
+      "canonical": "https://reltest-solutions.com/en/knowledge/reliability-planning",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/planung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/reliability-planning"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/planung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/en/knowledge/weak-point-analysis",
+      "status": 200,
+      "lang": "en",
+      "title": "Weak-Point Analysis with FMEA, FTA and HALT | RelTest",
+      "description": "Weak-point analysis for technical products: FMEA, FTA, HALT, failure mechanisms and risk prioritisation.",
+      "canonical": "https://reltest-solutions.com/en/knowledge/weak-point-analysis",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/schwachstellenanalyse"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/weak-point-analysis"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/schwachstellenanalyse"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/en/knowledge/reliability-testing",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Testing and Lifetime Tests | RelTest",
+      "description": "Reliability testing explained: test strategy, function and lifetime tests, load collectives and representative use.",
+      "canonical": "https://reltest-solutions.com/en/knowledge/reliability-testing",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/erprobung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/reliability-testing"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/erprobung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/en/knowledge/reliability-assurance",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Assurance and Evidence | RelTest",
+      "description": "Reliability assurance explained: qualitative and quantitative methods, testing, simulation, documentation and release.",
+      "canonical": "https://reltest-solutions.com/en/knowledge/reliability-assurance",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/absicherung"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/reliability-assurance"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/absicherung"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 6
+    },
+    {
+      "path": "/en/knowledge/reliability-prediction",
+      "status": 200,
+      "lang": "en",
+      "title": "Reliability Prediction and Lifetime Models | RelTest",
+      "description": "Reliability prediction explained: test and field data, Weibull analysis, lifetime models, extrapolation and uncertainty.",
+      "canonical": "https://reltest-solutions.com/en/knowledge/reliability-prediction",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/prognosen"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/reliability-prediction"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/prognosen"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/en/knowledge/design-of-experiments",
+      "status": 200,
+      "lang": "en",
+      "title": "Design of Experiments (DoE) Explained | RelTest",
+      "description": "DoE explained: factors, levels, noise, interactions, experimental designs, empirical models and robust optimisation.",
+      "canonical": "https://reltest-solutions.com/en/knowledge/design-of-experiments",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/design-of-experiments"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/design-of-experiments"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/design-of-experiments"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    },
+    {
+      "path": "/en/knowledge/technical-risk-management",
+      "status": 200,
+      "lang": "en",
+      "title": "Technical Risk Management and Reliability | RelTest",
+      "description": "Technical risk management explained: FMEA, FTA, assessment, assurance measures, effectiveness and documentation.",
+      "canonical": "https://reltest-solutions.com/en/knowledge/technical-risk-management",
+      "alternates": [
+        {
+          "lang": "de",
+          "href": "https://reltest-solutions.com/de/wissen/risikomanagement"
+        },
+        {
+          "lang": "en",
+          "href": "https://reltest-solutions.com/en/knowledge/technical-risk-management"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://reltest-solutions.com/de/wissen/risikomanagement"
+        }
+      ],
+      "h1Count": 1,
+      "noindex": true,
+      "imageCount": 5
+    }
+  ],
+  "migration": [
+    {
+      "oldUrl": "https://reltest-solutions.com/",
+      "target": "https://reltest-solutions.com/de",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitstechnik/planung/",
+      "target": "https://reltest-solutions.com/de/wissen/planung",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitstechnik/absicherung/",
+      "target": "https://reltest-solutions.com/de/wissen/absicherung",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/coaching/",
+      "target": "https://reltest-solutions.com/de/leistungen/coaching",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/ueber-uns/dr-ing-kevin-lucan/",
+      "target": "https://reltest-solutions.com/de/ueber-uns/kevin-lucan",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/aktuelles/",
+      "target": "https://reltest-solutions.com/de/aktuelles",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/seminare/entwicklung-und-absicherung-elektronischer-komponenten/",
+      "target": "https://reltest-solutions.com/de/weiterbildung/entwicklung-absicherung-elektronischer-komponenten",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitstechnik/schwachstellenanalyse/",
+      "target": "https://reltest-solutions.com/de/wissen/schwachstellenanalyse",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitstechnik/prognosen/",
+      "target": "https://reltest-solutions.com/de/wissen/prognosen",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitstechnik/erprobung/",
+      "target": "https://reltest-solutions.com/de/wissen/erprobung",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/about-us/dr-ing-kevin-lucan/",
+      "target": "https://reltest-solutions.com/en/about-us/kevin-lucan",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/credentials/",
+      "target": "https://reltest-solutions.com/en/references",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/news/",
+      "target": "https://reltest-solutions.com/en/news",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-engineering/reliability-planning/",
+      "target": "https://reltest-solutions.com/en/knowledge/reliability-planning",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-engineering/reliability-testing/",
+      "target": "https://reltest-solutions.com/en/knowledge/reliability-testing",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-engineering/vulnerability-analysis/",
+      "target": "https://reltest-solutions.com/en/knowledge/weak-point-analysis",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/coaching/",
+      "target": "https://reltest-solutions.com/en/services/reliability-coaching",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/consulting/",
+      "target": "https://reltest-solutions.com/en/services/reliability-consulting",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-engineering/reliability-forecast/",
+      "target": "https://reltest-solutions.com/en/knowledge/reliability-prediction",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-engineering/reliability-assurance/",
+      "target": "https://reltest-solutions.com/en/knowledge/reliability-assurance",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/buch-fuer-zuverlaessigkeit-im-fahrzeug-und-maschinenbau/",
+      "target": "https://reltest-solutions.com/de/literatur",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/maschinenbau/",
+      "target": "https://reltest-solutions.com/de/branchen/maschinenbau",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/ueber-uns/prof-dr-ing-bernd-bertsche/",
+      "target": "https://reltest-solutions.com/de/ueber-uns/bernd-bertsche",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/about-us/prof-dr-ing-bernd-bertsche/",
+      "target": "https://reltest-solutions.com/en/about-us/bernd-bertsche",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/consulting/",
+      "target": "https://reltest-solutions.com/de/leistungen/beratung",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/design-of-experiments/consulting/",
+      "target": "https://reltest-solutions.com/de/leistungen/doe-consulting",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/design-of-experiments/coaching/",
+      "target": "https://reltest-solutions.com/de/leistungen/doe-coaching",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/design-of-experiments/training/",
+      "target": "https://reltest-solutions.com/de/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/seminare/doe-praxisorientierte-statistische-versuchsplanung/",
+      "target": "https://reltest-solutions.com/de/weiterbildung/doe-praxisorientierte-statistische-versuchsplanung",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/membership-login/",
+      "target": "https://reltest-solutions.com/de/kontakt",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitstechnik/",
+      "target": "https://reltest-solutions.com/de/wissen/zuverlaessigkeitstechnik",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/",
+      "target": "https://reltest-solutions.com/de/leistungen/zuverlaessigkeitsmanagement",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/branchen/",
+      "target": "https://reltest-solutions.com/de/branchen",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/automotive/",
+      "target": "https://reltest-solutions.com/de/branchen/automotive",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/elektronische-produkte/",
+      "target": "https://reltest-solutions.com/de/branchen/elektronische-produkte",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/erneuerbare-energien/",
+      "target": "https://reltest-solutions.com/de/branchen/erneuerbare-energien",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/konsumgueter/",
+      "target": "https://reltest-solutions.com/de/branchen/konsumgueter",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/luft-und-raumfahrt/",
+      "target": "https://reltest-solutions.com/de/branchen/luft-und-raumfahrt",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/medizintechnik/",
+      "target": "https://reltest-solutions.com/de/branchen/medizintechnik",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/produktionstechnik/",
+      "target": "https://reltest-solutions.com/de/branchen/produktionstechnik",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/",
+      "target": "https://reltest-solutions.com/en",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-engineering/",
+      "target": "https://reltest-solutions.com/en/knowledge/reliability-engineering",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/",
+      "target": "https://reltest-solutions.com/en/services/reliability-management",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/industries/",
+      "target": "https://reltest-solutions.com/en/industries",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/production-technology/",
+      "target": "https://reltest-solutions.com/en/industries/production-technology",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/medical/",
+      "target": "https://reltest-solutions.com/en/industries/medical-technology",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/mechanical-engineering/",
+      "target": "https://reltest-solutions.com/en/industries/mechanical-engineering",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/aerospace/",
+      "target": "https://reltest-solutions.com/en/industries/aerospace",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/consumer-goods/",
+      "target": "https://reltest-solutions.com/en/industries/consumer-products",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/renewable-energy/",
+      "target": "https://reltest-solutions.com/en/industries/renewable-energy",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/electronic-products/",
+      "target": "https://reltest-solutions.com/en/industries/electronic-products",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/automotive/",
+      "target": "https://reltest-solutions.com/en/industries/automotive",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/seminare/zuverlaessigkeit-erprobung-fuer-praktiker/",
+      "target": "https://reltest-solutions.com/de/weiterbildung/zuverlaessigkeit-erprobung-fuer-praktiker",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/seminars/",
+      "target": "https://reltest-solutions.com/en/education#on-site-training",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/training/",
+      "target": "https://reltest-solutions.com/de/education#vor-ort-schulung",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/reliability-management/training/",
+      "target": "https://reltest-solutions.com/en/education#on-site-training",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/glossar/",
+      "target": "https://reltest-solutions.com/de/glossar",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/design-of-experiments-doe/",
+      "target": "https://reltest-solutions.com/de/wissen/design-of-experiments",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/about-us/",
+      "target": "https://reltest-solutions.com/en/about-us",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/ueber-uns/",
+      "target": "https://reltest-solutions.com/de/ueber-uns",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/kontakt/",
+      "target": "https://reltest-solutions.com/de/kontakt",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/contact/",
+      "target": "https://reltest-solutions.com/en/contact",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/datenschutz/",
+      "target": "https://reltest-solutions.com/de/datenschutz",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/zuverlaessigkeitsmanagement/seminare/",
+      "target": "https://reltest-solutions.com/de/education#vor-ort-schulung",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/impressum/",
+      "target": "https://reltest-solutions.com/de/impressum",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/referenzen/",
+      "target": "https://reltest-solutions.com/de/referenzen",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/karriere/werkstudentin-e-learning/",
+      "target": "https://reltest-solutions.com/de/ueber-uns",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/karriere/",
+      "target": "https://reltest-solutions.com/de/ueber-uns",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/karriere/marketing-manager/",
+      "target": "https://reltest-solutions.com/de/ueber-uns",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/design-of-experiments/",
+      "target": "https://reltest-solutions.com/de/wissen/design-of-experiments",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/webinar-beschleunigte-lebensdauertests/",
+      "target": "https://reltest-solutions.com/de/aktuelles/webinar-beschleunigte-lebensdauertests",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/kooperation-mit-holland-innovative/",
+      "target": "https://reltest-solutions.com/de/aktuelles/kooperation-holland-innovative",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/webinar-accelerated-life-testing/",
+      "target": "https://reltest-solutions.com/en/news/accelerated-life-testing-webinar",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/rams-award/",
+      "target": "https://reltest-solutions.com/de/aktuelles/rams-award",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/rams-award-2/",
+      "target": "https://reltest-solutions.com/en/news/rams-award",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/smart-data-the-new-approach-to-product-design-by-martin-dazer/",
+      "target": "https://reltest-solutions.com/en/news/smart-data-product-design",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/cooperation-with-holland-innovative/",
+      "target": "https://reltest-solutions.com/en/news/cooperation-with-holland-innovative",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/unser-aktuelles-webinar-zum-thema-effiziente-lebensdauertestplanung/",
+      "target": "https://reltest-solutions.com/de/aktuelles/webinar-effiziente-lebensdauertestplanung",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/en/our-current-webinar-on-efficient-life-test-planning/",
+      "target": "https://reltest-solutions.com/en/news/efficient-life-test-planning-webinar",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/smart-data-der-neue-ansatz-fuer-das-produktdesign-von-martin-dazer/",
+      "target": "https://reltest-solutions.com/de/aktuelles/smart-data-produktdesign",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/category/a/",
+      "target": "https://reltest-solutions.com/de/aktuelles",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/category/cee/",
+      "target": "https://reltest-solutions.com/de/aktuelles",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    },
+    {
+      "oldUrl": "https://reltest-solutions.com/author/MasterRel20/",
+      "target": "https://reltest-solutions.com/de/aktuelles",
+      "initialStatus": 301,
+      "finalStatus": 200,
+      "redirects": 1
+    }
+  ]
+}

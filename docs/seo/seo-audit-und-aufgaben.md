@@ -1,6 +1,23 @@
 # SEO-Audit und Aufgabenplan
 
-Stand: 10. Juni 2026
+Aktueller Prüfstand: 15. September 2026
+
+Historischer Audit im folgenden Hauptteil: 10. Juni 2026
+
+## Aktueller Status vor dem Launch
+
+Der [Prelaunch-Audit vom 15. September 2026](reviews/2026-09-15-prelaunch-audit.md)
+ist die aktuelle Ergebnis- und Freigabeliste. Die unten aufgeführten früheren
+Befunde sind historische Ausgangslage, keine ungeprüft weiterhin offenen Fehler.
+Insbesondere Metadaten, Canonicals/hreflang, Inhaltsabdeckung und Redirects
+wurden inzwischen umgesetzt und erneut geprüft: 104 Inhaltsseiten, 83 gültige
+Alt-URL-Weiterleitungen, keine im Crawl erkannten sichtbaren Platzhalter.
+
+Die Suchmaschinensperre ist aktuell ausdrücklich gewollt, auch auf Vercel
+Production. Sie darf erst bei separater Launchfreigabe aufgehoben werden.
+Offen bleiben insbesondere geschütztes Testdeployment, echter Mailzustelltest,
+vollständige Alt-Datenexporte, Membership-Entscheidung und fachliche/rechtliche
+Freigaben. Die [URL-Matrix](url-migrationsmatrix.md) enthält die 83 Einzelfälle.
 
 ## 1. Ziel und Umfang
 

@@ -65,7 +65,7 @@ export function SolutionIndustryPaths({ locale, serviceSlug }: Props) {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-7 border-b border-brand-marine/15 pb-9 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.72fr)] lg:items-end">
           <div>
-            <p className="font-winnstein-display text-xs font-bold tracking-[0.15em] text-brand-steel-cyan uppercase">
+            <p className="font-winnstein-display text-xs font-bold tracking-[0.15em] text-brand-marine uppercase">
               {text.eyebrow}
             </p>
             <h2
@@ -81,7 +81,7 @@ export function SolutionIndustryPaths({ locale, serviceSlug }: Props) {
             </p>
             <Link
               href={localizeHref(locale, "/branchen")}
-              className="mt-5 inline-flex items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-steel-cyan"
+              className="mt-5 inline-flex items-center gap-3 border-b border-brand-steel-cyan pb-1 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-marine"
             >
               {text.all}
               <ArrowIcon />
@@ -96,7 +96,7 @@ export function SolutionIndustryPaths({ locale, serviceSlug }: Props) {
               href={localizeHref(locale, path.href)}
               className="group flex min-w-0 flex-col border-r border-b border-brand-marine/15 p-6 transition-colors hover:bg-brand-steel-cyan-10 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-steel-cyan sm:p-7"
             >
-              <p className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+              <p className="font-winnstein-display text-sm font-bold text-brand-marine">
                 {path.industryTitle}
               </p>
               <h3 className="mt-4 min-w-0 font-winnstein-display text-xl leading-tight font-bold hyphens-auto [overflow-wrap:anywhere] sm:text-2xl">
@@ -107,7 +107,7 @@ export function SolutionIndustryPaths({ locale, serviceSlug }: Props) {
               </p>
 
               <div className="mt-7 border-t border-brand-marine/15 pt-5">
-                <p className="font-winnstein-display text-[0.68rem] font-bold tracking-[0.12em] text-brand-marine/55 uppercase">
+                <p className="font-winnstein-display text-[0.68rem] font-bold tracking-[0.12em] text-brand-marine/75 uppercase">
                   {text.path}
                 </p>
                 <ol className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm font-semibold text-brand-marine/76">
@@ -126,7 +126,7 @@ export function SolutionIndustryPaths({ locale, serviceSlug }: Props) {
 
               <span className="mt-7 inline-flex items-center justify-between gap-5 border-t border-brand-marine/15 pt-5 font-winnstein-display text-sm font-bold">
                 {text.open}
-                <span className="text-brand-steel-cyan transition-transform group-hover:translate-x-1">
+                <span className="text-brand-marine transition-transform group-hover:translate-x-1">
                   <ArrowIcon />
                 </span>
               </span>

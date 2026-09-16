@@ -31,7 +31,7 @@ function ArrowIcon() {
 
 export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
   return (
-    <main className="font-winnstein-body text-brand-marine">
+    <div className="font-winnstein-body text-brand-marine">
       <section className="relative overflow-hidden bg-brand-marine text-white">
         <BrandLineWatermark placement="knowledge" />
         <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24">
@@ -79,7 +79,7 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
                   sizes="(max-width: 1024px) 100vw, 760px"
                 />
                 {page.visual.caption ? (
-                  <figcaption className="mt-4 border-l-2 border-brand-steel-cyan pl-4 text-sm leading-6 text-brand-marine/64">
+                  <figcaption className="mt-4 border-l-2 border-brand-steel-cyan pl-4 text-sm leading-6 text-brand-marine/75">
                     {page.visual.caption}
                   </figcaption>
                 ) : null}
@@ -104,7 +104,7 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
           </div>
 
           <aside className="lg:border-l lg:border-brand-marine/18 lg:pl-10">
-            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
+            <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-marine">
               {page.proofPointsTitle}
             </p>
             <ul className="mt-6 border-t border-brand-marine/18">
@@ -121,7 +121,7 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
 
             {page.related?.length ? (
               <div className="mt-12">
-                <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-steel-cyan">
+                <p className="font-winnstein-display text-sm font-bold tracking-[0.08em] text-brand-marine">
                   {locale === "de" ? "Verwandte Themen" : "Related topics"}
                 </p>
                 <div className="mt-5 flex flex-col border-t border-brand-marine/18">
@@ -131,7 +131,7 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
                       href={resolveHref(locale, link.href)}
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
-                      className="flex items-center justify-between gap-5 border-b border-brand-marine/18 py-4 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-steel-cyan"
+                      className="flex items-center justify-between gap-5 border-b border-brand-marine/18 py-4 font-winnstein-display text-sm font-bold transition-colors hover:text-brand-marine"
                     >
                       {link.label}
                       <ArrowIcon />
@@ -160,7 +160,7 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
               href={resolveHref(locale, page.primaryCta.href)}
               target={page.primaryCta.external ? "_blank" : undefined}
               rel={page.primaryCta.external ? "noopener noreferrer" : undefined}
-              className="brand-action inline-flex min-h-12 w-full items-center justify-between gap-5 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan"
+              className="brand-action inline-flex min-h-12 w-full items-center justify-between gap-5 bg-brand-marine px-6 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan hover:text-brand-marine"
             >
               {page.primaryCta.label}
               <ArrowIcon />
@@ -170,7 +170,7 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
                 href={resolveHref(locale, page.secondaryCta.href)}
                 target={page.secondaryCta.external ? "_blank" : undefined}
                 rel={page.secondaryCta.external ? "noopener noreferrer" : undefined}
-                className="brand-action brand-action-outline brand-action-outline-light inline-flex min-h-12 w-full items-center justify-between gap-5 px-6 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-steel-cyan"
+                className="brand-action brand-action-outline brand-action-outline-light inline-flex min-h-12 w-full items-center justify-between gap-5 px-6 py-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors hover:text-brand-marine"
               >
                 {page.secondaryCta.label}
                 <ArrowIcon />
@@ -179,6 +179,6 @@ export function DetailPageTemplate({ locale, page }: DetailPageTemplateProps) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

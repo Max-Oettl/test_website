@@ -208,7 +208,7 @@ export function GlossaryDirectory({
       >
         <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,.8fr)] lg:items-end">
           <div>
-            <p className="font-winnstein-display text-xs font-bold uppercase tracking-[0.15em] text-brand-steel-cyan">
+            <p className="font-winnstein-display text-xs font-bold uppercase tracking-[0.15em] text-brand-marine">
               {strings.eyebrow}
             </p>
             <h2
@@ -224,7 +224,7 @@ export function GlossaryDirectory({
               {strings.label}
             </label>
             <div className="relative">
-              <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-brand-steel-cyan">
+              <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-brand-marine">
                 <SearchIcon />
               </span>
               <input
@@ -235,7 +235,7 @@ export function GlossaryDirectory({
                 value={query}
                 autoComplete="off"
                 placeholder={strings.placeholder}
-                className="min-h-14 w-full border border-brand-marine/20 bg-white py-3 pl-12 pr-14 text-base text-brand-marine outline-none placeholder:text-brand-marine/50 focus:border-brand-steel-cyan focus:ring-2 focus:ring-brand-steel-cyan/25"
+                className="min-h-14 w-full border border-brand-marine/20 bg-white py-3 pl-12 pr-14 text-base text-brand-marine outline-none placeholder:text-brand-marine/75 focus:border-brand-steel-cyan focus:ring-2 focus:ring-brand-steel-cyan/25"
                 onChange={(event) => setQuery(event.target.value)}
               />
               {query ? (
@@ -244,7 +244,7 @@ export function GlossaryDirectory({
                   onClick={clearSearch}
                   aria-label={strings.clear}
                   title={strings.clear}
-                  className="absolute right-1.5 top-1/2 flex min-h-11 min-w-11 -translate-y-1/2 items-center justify-center text-xl leading-none text-brand-marine/60 transition-colors hover:text-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
+                  className="absolute right-1.5 top-1/2 flex min-h-11 min-w-11 -translate-y-1/2 items-center justify-center text-xl leading-none text-brand-marine/75 transition-colors hover:text-brand-marine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan"
                 >
                   <span aria-hidden="true">×</span>
                 </button>
@@ -272,7 +272,7 @@ export function GlossaryDirectory({
                 >
                   {strings.siteResults}
                 </h2>
-                <span className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+                <span className="font-winnstein-display text-sm font-bold text-brand-marine">
                   {siteResults.length}
                 </span>
               </div>
@@ -284,7 +284,7 @@ export function GlossaryDirectory({
                     className="group grid gap-4 px-1 py-6 transition-colors hover:bg-brand-steel-cyan-10/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:px-5"
                   >
                     <span className="min-w-0">
-                      <span className="block font-winnstein-display text-xs font-bold uppercase tracking-[0.12em] text-brand-steel-cyan">
+                      <span className="block font-winnstein-display text-xs font-bold uppercase tracking-[0.12em] text-brand-marine">
                         {entry.category}
                       </span>
                       <span className="mt-2 block font-winnstein-display text-xl font-bold text-brand-marine sm:text-2xl">
@@ -294,7 +294,7 @@ export function GlossaryDirectory({
                         {entry.description}
                       </span>
                     </span>
-                    <span className="inline-flex items-center gap-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors group-hover:text-brand-steel-cyan">
+                    <span className="inline-flex items-center gap-3 font-winnstein-display text-sm font-bold text-brand-marine transition-colors group-hover:text-brand-marine">
                       {strings.openPage}
                       <ArrowIcon />
                     </span>
@@ -316,7 +316,7 @@ export function GlossaryDirectory({
                 >
                   {strings.glossaryResults}
                 </h2>
-                <span className="font-winnstein-display text-sm font-bold text-brand-steel-cyan">
+                <span className="font-winnstein-display text-sm font-bold text-brand-marine">
                   {filteredEntries.length}
                 </span>
               </div>
@@ -346,7 +346,7 @@ export function GlossaryDirectory({
               <button
                 type="button"
                 onClick={clearSearch}
-                className="brand-action mt-6 min-h-12 bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-2"
+                className="brand-action mt-6 min-h-12 bg-brand-marine px-5 py-3 font-winnstein-display text-sm font-bold text-white transition-colors hover:bg-brand-steel-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-steel-cyan focus-visible:ring-offset-2 hover:text-brand-marine"
               >
                 {strings.clear}
               </button>
@@ -379,7 +379,7 @@ export function GlossaryDirectory({
               className="scroll-mt-28 border-b border-brand-marine/20 py-12"
             >
               <div className="grid gap-8 sm:grid-cols-[80px_1fr]">
-                <h2 className="font-winnstein-display text-5xl font-semibold text-brand-steel-cyan">
+                <h2 className="font-winnstein-display text-5xl font-semibold text-brand-marine">
                   {letter}
                 </h2>
                 <dl>

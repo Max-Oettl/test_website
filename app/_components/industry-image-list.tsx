@@ -94,7 +94,7 @@ export function IndustryImageList({
                   <span className="max-w-[72%] text-lg leading-tight font-semibold tracking-[-0.035em] text-brand-ink transition-transform duration-300 group-hover:translate-x-1 sm:text-xl">
                     {industry.name}
                   </span>
-                  <span className="grid size-12 shrink-0 place-items-center rounded-full bg-white/95 text-brand-cyan shadow-[0_4px_18px_rgba(15,23,42,0.16)] ring-1 ring-slate-200 transition-[color,background-color,box-shadow,transform] duration-300 group-hover:translate-x-1 group-hover:bg-brand-cyan group-hover:text-white group-hover:shadow-[0_6px_20px_rgba(0,159,214,0.28)] group-hover:ring-brand-cyan motion-reduce:transform-none">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-full bg-white/95 text-brand-marine shadow-[0_4px_18px_rgba(15,23,42,0.16)] ring-1 ring-slate-200 transition-[color,background-color,box-shadow,transform] duration-300 group-hover:translate-x-1 group-hover:bg-brand-cyan group-hover:text-white group-hover:shadow-[0_6px_20px_rgba(0,159,214,0.28)] group-hover:ring-brand-cyan motion-reduce:transform-none">
                     <IndustryArrowIcon />
                   </span>
                 </Link>
@@ -106,10 +106,10 @@ export function IndustryImageList({
         <div className="mt-8 flex justify-end">
           <Link
             href={referencesHref}
-            className="group inline-flex min-h-11 items-center gap-3 border-b-2 border-brand-cyan px-1 text-sm font-bold text-brand-ink transition-colors hover:text-brand-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4"
+            className="group inline-flex min-h-11 items-center gap-3 border-b-2 border-brand-cyan px-1 text-sm font-bold text-brand-ink transition-colors hover:text-brand-marine focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-4"
           >
             {referencesLabel}
-            <span className="text-brand-cyan transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none">
+            <span className="text-brand-marine transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none">
               <IndustryArrowIcon />
             </span>
           </Link>
