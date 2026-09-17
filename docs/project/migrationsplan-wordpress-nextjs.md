@@ -27,11 +27,12 @@ fachliche/rechtliche Freigaben. Details und alle Änderungen stehen im Audit.
 
 ## Kontaktformular: vorbereitete Microsoft-365-Umstellung
 
-Stand 16. September 2026: Die API-Route verwendet weiter SMTP mit Anmeldung
+Stand 17. September 2026: Die API-Route verwendet weiter SMTP mit Anmeldung
 über ein Postfach. Für beide Nachrichten ist jetzt ein eigener Absender
 konfigurierbar. Die folgenden Werte sind für das Vercel-Projekt
-`reltest-solutions-website` vorgesehen; die produktive Zustellung wurde noch
-nicht getestet. Die IONOS-Angaben weiter unten beschreiben den früheren Stand.
+`reltest-solutions-website` vorgesehen; ein echter Formularversuch war bislang
+nicht erfolgreich, die Ursache ist noch offen. Die IONOS-Angaben weiter unten
+beschreiben den früheren Stand.
 
 | Variable | Wert / Zweck |
 | --- | --- |
@@ -43,6 +44,14 @@ nicht getestet. Die IONOS-Angaben weiter unten beschreiben den früheren Stand.
 | `MAIL_FROM` | `website@reltest-solutions.com`, Absender der internen Anfrage |
 | `MAIL_CONFIRMATION_FROM` | `info@reltest-solutions.com`, Absender der Eingangsbestätigung; Pflichtvariable |
 | `MAIL_TO` | `info@reltest-solutions.com`, Empfänger der Anfrage und Antwortadresse der Bestätigung |
+| `CONTACT_DIAGNOSTICS_ENABLED` | Optional: `true` zeigt vor dem Launch sichere Fehlerkategorien im Formular; ohne Variable bleibt die allgemeine Fehlermeldung |
+
+Für den echten Zustelltest kann `CONTACT_DIAGNOSTICS_ENABLED=true` im
+richtigen Vercel-Projekt für Production gesetzt werden. Danach neu deployen.
+Die Website zeigt dann nur eine eingegrenzte Fehlerkategorie; die vollständige
+SMTP-Serverantwort steht ausschließlich in den Vercel-Runtime-Logs unter
+`/api/contact`. Vor dem Launch die Variable entfernen oder auf `false` setzen
+und erneut deployen; die Testdiagnostik später aus dem Code entfernen.
 
 Das angemeldete Postfach benötigt „Authentifiziertes SMTP“ sowie „Senden als“
 für **beide** Absenderadressen. Eine gemeinsame Domain ersetzt diese Rechte

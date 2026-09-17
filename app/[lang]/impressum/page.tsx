@@ -67,7 +67,7 @@ function GermanSections(): LegalSection[] {
             <br />
             <strong className="text-brand-marine">Handelsregisternummer:</strong> HRB 784611
             <br />
-            <strong className="text-brand-marine">Steuer-Nr.:</strong> 56465/03531
+            <strong className="text-brand-marine">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:</strong> DE352433525
           </p>
         </div>
       ),
@@ -201,7 +201,7 @@ function EnglishSections(): LegalSection[] {
             <br />
             <strong className="text-brand-marine">Commercial register number:</strong> HRB 784611
             <br />
-            <strong className="text-brand-marine">Tax number:</strong> 56465/03531
+            <strong className="text-brand-marine">VAT identification number pursuant to Section 27a of the German VAT Act (UStG):</strong> DE352433525
           </p>
         </div>
       ),

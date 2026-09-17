@@ -121,6 +121,48 @@ function jsonResponse(body: object, status: number, headers?: HeadersInit) {
   });
 }
 
+// Temporary, opt-in diagnostics for pre-launch testing. Never send raw SMTP
+// responses or credentials to the browser.
+function diagnosticDetails(diagnosticCode: string) {
+  return process.env.CONTACT_DIAGNOSTICS_ENABLED === "true"
+    ? { diagnosticCode }
+    : {};
+}
+
+function classifyMailFailure(error: unknown) {
+  const failure = error as {
+    code?: unknown;
+    message?: unknown;
+    response?: unknown;
+    responseCode?: unknown;
+  } | null;
+  const code = typeof failure?.code === "string" ? failure.code.toUpperCase() : "";
+  const details = [failure?.response, failure?.message]
+    .filter((value): value is string => typeof value === "string")
+    .join(" ")
+    .toLowerCase();
+
+  if (/5\.7\.60|sendasdenied|permissions to send as/.test(details)) {
+    return "SMTP_SEND_AS_DENIED";
+  }
+  if (/smtpclientauthentication is disabled|smtp auth.{0,30}disabled|basic authentication is disabled|security defaults/.test(details)) {
+    return "SMTP_AUTH_DISABLED";
+  }
+  if (code === "EAUTH" || failure?.responseCode === 535 || /authentication unsuccessful/.test(details)) {
+    return "SMTP_AUTH_FAILED";
+  }
+  if (code === "ENOENT") {
+    return "EMAIL_ASSET_MISSING";
+  }
+  if (code === "ETLS" || /starttls|certificate|tls handshake|wrong version number/.test(details)) {
+    return "SMTP_TLS_FAILED";
+  }
+  if (["ECONNECTION", "ETIMEDOUT", "ESOCKET", "ENOTFOUND"].includes(code) || /timed? out|connection refused/.test(details)) {
+    return "SMTP_CONNECTION_FAILED";
+  }
+  return "MAIL_UNKNOWN";
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -325,12 +367,18 @@ function formatMessage(data: ValidContactRequest) {
 
 export async function POST(request: Request) {
   if (!hasSameOrigin(request)) {
-    return jsonResponse({ error: "Invalid request origin" }, 403);
+    return jsonResponse({
+      error: "Invalid request origin",
+      ...diagnosticDetails("INVALID_ORIGIN"),
+    }, 403);
   }
 
   const declaredLength = Number(request.headers.get("content-length") ?? 0);
   if (declaredLength > maximumRequestSize) {
-    return jsonResponse({ error: "Request too large" }, 413);
+    return jsonResponse({
+      error: "Request too large",
+      ...diagnosticDetails("REQUEST_TOO_LARGE"),
+    }, 413);
   }
 
   let body: unknown;
@@ -347,7 +395,10 @@ export async function POST(request: Request) {
           bytes += value.byteLength;
           if (bytes > maximumRequestSize) {
             await reader.cancel();
-            return jsonResponse({ error: "Request too large" }, 413);
+            return jsonResponse({
+              error: "Request too large",
+              ...diagnosticDetails("REQUEST_TOO_LARGE"),
+            }, 413);
           }
           chunks.push(value);
         }
@@ -379,7 +430,10 @@ export async function POST(request: Request) {
 
   const mailConfiguration = getMailConfiguration();
   if (!mailConfiguration) {
-    return jsonResponse({ error: "Mail service is not configured" }, 503);
+    return jsonResponse({
+      error: "Mail service is not configured",
+      ...diagnosticDetails("CONFIG_INVALID"),
+    }, 503);
   }
 
   const copy = mailCopy[contactRequest.locale];
@@ -403,7 +457,10 @@ export async function POST(request: Request) {
       "Contact form email delivery failed:",
       error instanceof Error ? error.message : "Unknown SMTP error",
     );
-    return jsonResponse({ error: "Mail delivery failed" }, 502);
+    return jsonResponse({
+      error: "Mail delivery failed",
+      ...diagnosticDetails(classifyMailFailure(error)),
+    }, 502);
   }
 
   const confirmationEmail = createConfirmationEmail({
@@ -412,6 +469,7 @@ export async function POST(request: Request) {
     topic: copy.topic[contactRequest.topic],
   });
   let confirmationSent = true;
+  let confirmationDiagnosticCode: string | null = null;
 
   try {
     await getTransporter(mailConfiguration).sendMail({
@@ -446,11 +504,16 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     confirmationSent = false;
+    confirmationDiagnosticCode = classifyMailFailure(error);
     console.error(
       "Contact confirmation email delivery failed:",
       error instanceof Error ? error.message : "Unknown SMTP error",
     );
   }
 
-  return jsonResponse({ ok: true, confirmationSent }, 200);
+  return jsonResponse({
+    ok: true,
+    confirmationSent,
+    ...(confirmationDiagnosticCode ? diagnosticDetails(confirmationDiagnosticCode) : {}),
+  }, 200);
 }

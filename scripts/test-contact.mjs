@@ -11,7 +11,7 @@ const compile = async (path) => ts.transpileModule(await readFile(root + '/' + p
 const routeCode = await compile('app/api/contact/route.ts');
 const templateCode = await compile('app/api/contact/confirmation-email.ts');
 const env = { SMTP_HOST: 'smtp.invalid', SMTP_PORT: '587', SMTP_SECURE: 'false', SMTP_USER: 'maximilian.oettl@reltest-solutions.com', SMTP_PASSWORD: 'fake-test-only', MAIL_FROM: 'website@reltest-solutions.com', MAIL_CONFIRMATION_FROM: 'info@reltest-solutions.com', MAIL_TO: 'info@reltest-solutions.com' };
-function setup({ failMail = 0, configured = true, envOverrides = {} } = {}) {
+function setup({ failMail = 0, failMailError = Error('Simulated SMTP failure'), configured = true, envOverrides = {} } = {}) {
     const mails = [];
     const template = { exports: {} };
     const common = { Buffer, Response, Request, Headers, URL, Date, Uint8Array, console: { error() { } }, process: { cwd: () => root, env: configured ? { ...env, ...envOverrides } : {} }, require };
@@ -19,7 +19,7 @@ function setup({ failMail = 0, configured = true, envOverrides = {} } = {}) {
     const sandboxModule = { exports: {} };
     let transport;
     const customRequire = name => name === './confirmation-email' ? template.exports : name === 'nodemailer' ? { createTransport(options) { transport = options; return { async sendMail(mail) { mails.push(mail); if (mails.length === failMail)
-                throw Error('Simulated SMTP failure'); return { messageId: 'fake' }; } }; } } : require(name);
+                throw failMailError; return { messageId: 'fake' }; } }; } } : require(name);
     vm.runInNewContext(routeCode, { ...common, require: customRequire, module: sandboxModule, exports: sandboxModule.exports });
     return { post: sandboxModule.exports.POST, mails, get transport() { return transport; } };
 }
@@ -47,6 +47,13 @@ await test('Short message rejected server-side', async () => assert.equal((await
 await test('Honeypot returns benign response without mail', async () => { const s = setup(); assert.equal((await s.post(request({ ...valid, website: 'spam' }))).status, 200); assert.equal(s.mails.length, 0); });
 await test('Missing SMTP configuration handled as 503', async () => assert.equal((await setup({ configured: false }).post(request())).status, 503));
 await test('Missing confirmation sender prevents delivery', async () => { const s = setup({ envOverrides: { MAIL_CONFIRMATION_FROM: '' } }); assert.equal((await s.post(request())).status, 503); assert.equal(s.mails.length, 0); });
+await test('Diagnostics are disabled by default', async () => { const s = setup({ failMail: 1 }); const body = await (await s.post(request())).json(); assert.equal(body.diagnosticCode, undefined); });
+await test('Opt-in diagnostics identify missing configuration without values', async () => { const s = setup({ envOverrides: { MAIL_CONFIRMATION_FROM: '', CONTACT_DIAGNOSTICS_ENABLED: 'true' } }); const body = await (await s.post(request())).json(); assert.equal(body.diagnosticCode, 'CONFIG_INVALID'); assert.ok(!JSON.stringify(body).includes('fake-test-only')); });
+await test('Opt-in diagnostics identify blocked SMTP authentication', async () => { const error = Object.assign(Error('535 5.7.139 Authentication unsuccessful, basic authentication is disabled'), { code: 'EAUTH', responseCode: 535 }); const s = setup({ failMail: 1, failMailError: error, envOverrides: { CONTACT_DIAGNOSTICS_ENABLED: 'true' } }); const response = await s.post(request()); assert.equal(response.status, 502); assert.equal((await response.json()).diagnosticCode, 'SMTP_AUTH_DISABLED'); });
+await test('Diagnostics never expose raw SMTP responses', async () => { const error = Object.assign(Error('Authentication failed: fake-test-only'), { code: 'EAUTH', responseCode: 535 }); const s = setup({ failMail: 1, failMailError: error, envOverrides: { CONTACT_DIAGNOSTICS_ENABLED: 'true' } }); const body = await (await s.post(request())).json(); assert.equal(body.diagnosticCode, 'SMTP_AUTH_FAILED'); assert.ok(!JSON.stringify(body).includes('fake-test-only')); });
+await test('Opt-in diagnostics distinguish rejected credentials', async () => { const error = Object.assign(Error('535 5.7.3 Authentication unsuccessful'), { code: 'EAUTH', responseCode: 535 }); const s = setup({ failMail: 1, failMailError: error, envOverrides: { CONTACT_DIAGNOSTICS_ENABLED: 'true' } }); assert.equal((await (await s.post(request())).json()).diagnosticCode, 'SMTP_AUTH_FAILED'); });
+await test('Opt-in diagnostics identify Send As denial', async () => { const error = Object.assign(Error('550 5.7.60 Client does not have permissions to send as this sender'), { responseCode: 550 }); const s = setup({ failMail: 1, failMailError: error, envOverrides: { CONTACT_DIAGNOSTICS_ENABLED: 'true' } }); assert.equal((await (await s.post(request())).json()).diagnosticCode, 'SMTP_SEND_AS_DENIED'); });
+await test('Opt-in diagnostics identify connection failures', async () => { const error = Object.assign(Error('Connection timeout'), { code: 'ETIMEDOUT' }); const s = setup({ failMail: 1, failMailError: error, envOverrides: { CONTACT_DIAGNOSTICS_ENABLED: 'true' } }); assert.equal((await (await s.post(request())).json()).diagnosticCode, 'SMTP_CONNECTION_FAILED'); });
 await test('German inquiry + branded confirmation, correct From/Reply-To', async () => {
     const s = setup();
     const r = await s.post(request());
@@ -69,6 +76,7 @@ await test('German inquiry + branded confirmation, correct From/Reply-To', async
 await test('English confirmation and escaped visitor name', async () => { const s = setup(); await s.post(request({ ...valid, locale: 'en', name: '<script>alert(1)</script>' })); assert.match(s.mails[1].html, /Thank you/); assert.ok(!s.mails[1].html.includes('<script>')); assert.match(s.mails[1].html, /&lt;script&gt;/); });
 await test('Internal mail failure: 502, no confirmation sent', async () => { const s = setup({ failMail: 1 }); assert.equal((await s.post(request())).status, 502); assert.equal(s.mails.length, 1); });
 await test('Confirmation failure: inquiry retained, partial success', async () => { const s = setup({ failMail: 2 }); const r = await s.post(request()); assert.equal(r.status, 200); assert.equal((await r.json()).confirmationSent, false); });
+await test('Confirmation diagnostics preserve successful inquiry', async () => { const error = Object.assign(Error('550 5.7.60 Client does not have permissions to send as this sender'), { responseCode: 550 }); const s = setup({ failMail: 2, failMailError: error, envOverrides: { CONTACT_DIAGNOSTICS_ENABLED: 'true' } }); const r = await s.post(request()); assert.equal(r.status, 200); const body = await r.json(); assert.equal(body.confirmationSent, false); assert.equal(body.diagnosticCode, 'SMTP_SEND_AS_DENIED'); });
 await test('Fifth request in window blocked with Retry-After', async () => { const s = setup(); for (let i = 0; i < 4; i++)
     assert.equal((await s.post(request())).status, 200); const r = await s.post(request()); assert.equal(r.status, 429); assert.equal(r.headers.get('retry-after'), '900'); assert.equal(s.mails.length, 8); });
 console.log(JSON.stringify(results, null, 2));

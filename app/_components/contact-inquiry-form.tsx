@@ -58,6 +58,7 @@ const formCopy = {
       "Die Anfrage konnte gerade nicht versendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an",
     rateLimitError: "Es wurden bereits mehrere Anfragen gesendet. Bitte warten Sie bis zu 15 Minuten oder schreiben Sie direkt an",
     validationError: "Bitte prüfen Sie Ihre Angaben und die Pflichtfelder. Alternativ erreichen Sie uns unter",
+    diagnosticLabel: "Technische Diagnose (Testphase):",
     fallback: "info@reltest-solutions.com",
   },
   en: {
@@ -106,9 +107,45 @@ const formCopy = {
       "Your inquiry could not be sent at the moment. Please try again or email us directly at",
     rateLimitError: "Several inquiries have already been sent. Please wait up to 15 minutes or email us directly at",
     validationError: "Please check your details and the required fields. Alternatively, email us at",
+    diagnosticLabel: "Technical diagnosis (testing phase):",
     fallback: "info@reltest-solutions.com",
   },
 } as const;
+
+const diagnosticCopy = {
+  de: {
+    CONFIG_INVALID: "Mindestens eine Mail-Umgebungsvariable fehlt oder ist ungültig. Prüfen Sie die Variablen im richtigen Vercel-Projekt für Production und deployen Sie danach erneut.",
+    INVALID_ORIGIN: "Die Anfrage wurde wegen einer abweichenden Website-Adresse abgewiesen. Prüfen Sie die aufgerufene Domain und eventuelle Weiterleitungen.",
+    REQUEST_TOO_LARGE: "Die Anfrage überschreitet die zulässige Größe des Formulars.",
+    SMTP_AUTH_DISABLED: "Microsoft 365 blockiert die SMTP-Anmeldung. Prüfen Sie SMTP AUTH für das Anmeldepostfach sowie Security Defaults beziehungsweise Richtlinien für Passwort-Anmeldung.",
+    SMTP_AUTH_FAILED: "Microsoft 365 hat die SMTP-Anmeldung abgelehnt. Prüfen Sie SMTP_USER, SMTP_PASSWORD und die SMTP-Freigabe des Anmeldepostfachs.",
+    SMTP_SEND_AS_DENIED: "Microsoft 365 erlaubt dem SMTP-Benutzer nicht, als die konfigurierte Absenderadresse zu senden. Prüfen Sie die Berechtigung „Senden als“ für diese Adresse.",
+    SMTP_CONNECTION_FAILED: "Der SMTP-Server war nicht erreichbar oder die Verbindung ist abgelaufen. Prüfen Sie SMTP_HOST und SMTP_PORT; Details stehen in den Vercel-Runtime-Logs.",
+    SMTP_TLS_FAILED: "Der sichere Verbindungsaufbau zum SMTP-Server ist gescheitert. Für Microsoft 365 auf Port 587 muss SMTP_SECURE auf false stehen.",
+    EMAIL_ASSET_MISSING: "Die Logo-Datei für die Eingangsbestätigung wurde auf dem Server nicht gefunden.",
+    MAIL_UNKNOWN: "Der Mailversand ist aus einem anderen Grund gescheitert. Die genaue Serverantwort steht in den Vercel-Runtime-Logs unter /api/contact.",
+  },
+  en: {
+    CONFIG_INVALID: "At least one mail environment variable is missing or invalid. Check the Production variables in the correct Vercel project and redeploy.",
+    INVALID_ORIGIN: "The request was rejected because the website address did not match. Check the domain and any redirects.",
+    REQUEST_TOO_LARGE: "The inquiry exceeds the allowed form size.",
+    SMTP_AUTH_DISABLED: "Microsoft 365 is blocking SMTP sign-in. Check SMTP AUTH for the login mailbox, Security Defaults, and policies for password authentication.",
+    SMTP_AUTH_FAILED: "Microsoft 365 rejected the SMTP sign-in. Check SMTP_USER, SMTP_PASSWORD, and SMTP access for the login mailbox.",
+    SMTP_SEND_AS_DENIED: "Microsoft 365 does not allow the SMTP user to send as the configured sender. Check the Send As permission for that address.",
+    SMTP_CONNECTION_FAILED: "The SMTP server could not be reached or the connection timed out. Check SMTP_HOST and SMTP_PORT; details are in Vercel Runtime Logs.",
+    SMTP_TLS_FAILED: "The secure SMTP connection failed. For Microsoft 365 on port 587, SMTP_SECURE must be false.",
+    EMAIL_ASSET_MISSING: "The logo file for the confirmation email was not found on the server.",
+    MAIL_UNKNOWN: "Email delivery failed for another reason. Check the exact server response in Vercel Runtime Logs under /api/contact.",
+  },
+} as const;
+
+type DiagnosticCode = keyof typeof diagnosticCopy.de;
+
+function readDiagnosticCode(value: unknown): DiagnosticCode | null {
+  return typeof value === "string" && Object.hasOwn(diagnosticCopy.de, value)
+    ? value as DiagnosticCode
+    : null;
+}
 
 type TopicKey = keyof typeof formCopy.de.topics;
 type SubmissionStatus =
@@ -173,6 +210,7 @@ export function ContactInquiryForm({
   const [submissionStatus, setSubmissionStatus] =
     useState<SubmissionStatus>("idle");
   const [failureReason, setFailureReason] = useState<"error" | "rateLimitError" | "validationError">("error");
+  const [diagnosticCode, setDiagnosticCode] = useState<DiagnosticCode | null>(null);
   const [audience, setAudience] = useState("company");
   const [selectedTopic, setSelectedTopic] = useState<"" | TopicKey>(
     initialTopic ?? "",
@@ -191,6 +229,7 @@ export function ContactInquiryForm({
 
     setSubmissionStatus("submitting");
     setFailureReason("error");
+    setDiagnosticCode(null);
 
     try {
       const response = await fetch("/api/contact", {
@@ -210,18 +249,25 @@ export function ContactInquiryForm({
         }),
       });
 
+      const result = (await response.json().catch(() => null)) as {
+        confirmationSent?: boolean;
+        diagnosticCode?: unknown;
+      } | null;
+      if (response.ok && !result) {
+        throw new Error("Contact request returned no valid response");
+      }
+      setDiagnosticCode(readDiagnosticCode(result?.diagnosticCode));
+
       if (!response.ok) {
         setFailureReason(response.status === 429 ? "rateLimitError" : response.status === 400 ? "validationError" : "error");
         throw new Error(`Contact request failed with status ${response.status}`);
       }
 
-      const result = (await response.json()) as { confirmationSent?: boolean };
-
       form.reset();
       setAudience("company");
       setSelectedTopic("");
       setSubmissionStatus(
-        result.confirmationSent === false ? "partial-success" : "success",
+        result?.confirmationSent === false ? "partial-success" : "success",
       );
     } catch {
       setSubmissionStatus("error");
@@ -431,6 +477,11 @@ export function ContactInquiryForm({
                     ? copy.success
                     : copy.partialSuccess}
                 </span>
+                {submissionStatus === "partial-success" && diagnosticCode ? (
+                  <span className="mt-2 block text-sm leading-6 text-brand-marine/76">
+                    <strong>{copy.diagnosticLabel}</strong> {diagnosticCopy[locale][diagnosticCode]} ({diagnosticCode})
+                  </span>
+                ) : null}
               </span>
             </div>
           ) : null}
@@ -448,6 +499,11 @@ export function ContactInquiryForm({
                 {copy.fallback}
               </a>
               .
+              {diagnosticCode ? (
+                <span className="mt-2 block">
+                  <strong>{copy.diagnosticLabel}</strong> {diagnosticCopy[locale][diagnosticCode]} ({diagnosticCode})
+                </span>
+              ) : null}
             </p>
           ) : null}
         </form>
